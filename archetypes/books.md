@@ -39,6 +39,4 @@ images = ["img.jpg","img1.jpg"]
 # The book details go below
 +++
 
-
-
 The book is a comprehensive book on everything under the sun
