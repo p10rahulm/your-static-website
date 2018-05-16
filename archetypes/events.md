@@ -13,27 +13,28 @@ tags = []
 categories = []
 genre = []
 # Specific Template Meta
-[event.title]= ""
-[event.topic]= ""
-[event.location] = "Bangalore Gymkhana"
-[event.event_date] = "17th Dec 2018"
+[event]
+        title= ""
+        topic= ""
+        location = "Bangalore Gymkhana"
+        event_date = "17th Dec 2018"
 
-# Optional event URL.
-[event.event_url] = ""
+        # Optional event URL.
+        event_url = ""
 
-# Short version
-[event.abstract] = ""
+        # Short version
+        abstract = ""
 
 
-[event.speakers] = [ { name = "K S Madhavan", url = "" }, { name = "ABC", url = "" }, { name = "XYZ", url = "" } ]
+        speakers = [ { name = "K S Madhavan", url = "" }, { name = "ABC", url = "" }, { name = "XYZ", url = "" } ]
 
 
 # Featured image
 # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
 [header]
-image = ""
-caption = ""
-
+        image = ""
+        caption = ""
+# The actual content about the event goes below
 +++
 
 # About the event

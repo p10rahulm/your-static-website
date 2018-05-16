@@ -15,9 +15,10 @@ categories = []
 # Featured image
 # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
 [header]
-image = ""
-caption = ""
+        image = ""
+        caption = ""
 
+# The note goes below.
 +++
 
 # Random and quick notes here. Expected length 140 characters - 300 words

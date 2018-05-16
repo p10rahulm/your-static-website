@@ -16,19 +16,19 @@ categories = []
 
 
 [books]
-title = "5S Organizational Principles"
-tagline = "The last book you'll ever need"
-authors = ["K S Madhavan", "Goody Two Shoes"]
-abstract = "A small snippet about the book is good enough"
-price = 100
-size = "17.8 x 2.5 x 22.9 cm"
-num_pages = 280
-isbn = "978-0262035613"
-reading_level = "18+ years"
-format = "Hardcover"
-publisher = "MIT Press"
-date_of_publication = "3 January 2017"
-language = "English"
+        title = "5S Organizational Principles"
+        tagline = "The last book you'll ever need"
+        authors = ["K S Madhavan", "Goody Two Shoes"]
+        abstract = "A small snippet about the book is good enough"
+        price = 100
+        size = "17.8 x 2.5 x 22.9 cm"
+        num_pages = 280
+        isbn = "978-0262035613"
+        reading_level = "18+ years"
+        format = "Hardcover"
+        publisher = "MIT Press"
+        date_of_publication = "3 January 2017"
+        language = "English"
 
 
 # Featured image
