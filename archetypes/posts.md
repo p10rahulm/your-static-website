@@ -15,7 +15,10 @@ categories = []
 # Featured image
 # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
 [header]
-image = ""
-caption = ""
+        image = ""
+        caption = ""
 
+# The post goes below. Feel free to include images using the shortcode
 +++
+# This is a post on the effects of workplace sustenance
+Workplace work makes jack a dull boy.
