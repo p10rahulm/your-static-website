@@ -14,34 +14,39 @@ categories = []
 subjects = []
 
 # Specific Template Meta
-[course.title]= "A review on Management topics"
-[course.topic]= ["Management"]
-[course.faculty]= ["K S Madhavan","Seethapati"]
-[course.who_should_attend]= ["Management Professionals","Final Year Students"]
-[course.pre-requisites]= ["Knowledge in Marketing"]
+[courses]
+title = "A review on Management topics"
+topic = ["Management"]
+faculty= ["K S Madhavan","Seethapati"]
+who_should_attend= ["Management Professionals","Final Year Students"]
+pre-requisites= ["Knowledge in Marketing"]
 
-[course.date] = "Anytime"
-[course.duration] = "4 weeks"
-[course.delivery] = "In Person/Online"
-[course.location] = "Bangalore Gymkhana/Online"
-[course.fees] = "Rs. 1000"
-[course.certification] = "Rs. 1000"
+date = "Anytime"
+duration = "4 weeks"
+delivery = "In Person/Online"
+location = "Bangalore Gymkhana/Online"
+fees = "Rs. 1000"
+certification = "Rs. 1000"
 
 # Short version
-[course.abstract] = ""
+abstract = ""
 
 # Optional video
-[course.video_url] = ""
-
-# Optional contact details
-[course.contact.name] = ""
-[course.contact.email] = ""
-[course.contact.phone] = ""
-
+video_url = ""
 
 # Optional course files.
 # Place your files in the `static/files/` folder and reference its filename below, e.g. `image = "filename.pdf"`. Leave below empty if no files requried
-[course.brochure_name_url] = [{ name = "K S Madhavan", filepath = "" }, { name = "ABC", filepath = "" }, { name = "XYZ", filepath = "" }]
+brochure_name_url =     [
+                                { name = "K S Madhavan", filepath = "" },
+                                { name = "ABC", filepath = "" },
+                                { name = "XYZ", filepath = "" }
+                        ]
+
+# Optional contact details
+[courses.contact]
+name = "K S Madhavan"
+email = "myname@gmail.com"
+phone = "911533t"
 
 
 # Featured image
