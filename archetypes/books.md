@@ -15,26 +15,26 @@ categories = []
 # Specific Template Meta
 
 
-
-[book.title] = ""
-[book.tagline] = ""
-[book.authors] = [""]
-[book.abstract] = ""
-[book.price] = ""
-[book.size] = "17.8 x 2.5 x 22.9 cm"
-[book.num_pages] = ""
-[book.isbn] = "978-0262035613"
-[book.reading_level] = "18+ years"
-[book.format] = "Hardcover"
-[book.publisher] = "MIT Press"
-[book.date_of_publication] = "3 January 2017"
-[book.language] = "English"
+[books]
+title = "5S Organizational Principles"
+tagline = "The last book you'll ever need"
+authors = ["K S Madhavan", "Goody Two Shoes"]
+abstract = "A small snippet about the book is good enough"
+price = 100
+size = "17.8 x 2.5 x 22.9 cm"
+num_pages = 280
+isbn = "978-0262035613"
+reading_level = "18+ years"
+format = "Hardcover"
+publisher = "MIT Press"
+date_of_publication = "3 January 2017"
+language = "English"
 
 
 # Featured image
-[book.featured_image] = ""
+featured_image = ""
 # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-[book.images_folder] = ""
+images = ["img.jpg","img1.jpg"]
 
 # The book details go below
 +++
