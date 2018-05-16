@@ -1,0 +1,16 @@
+<html>
+{{partial "head" . }}
+
+<body>
+        {{ block "headr" .}}
+                {{ partial "header" (dict "Kind" .Kind "Template" "Single") }}
+                <H1>My header from baseof</H1>
+        {{ end }}
+        {{ block "main" .}}
+                <H1>My main from baseof</H1>
+        {{ end }}
+        {{ block "footr" .}}
+                <H1>My footer from baseof</H1>
+                {{ partial "footer" . }}
+        {{ end }}
+</html>
