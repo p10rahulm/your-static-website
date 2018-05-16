@@ -17,5 +17,4 @@ categories = []
 [header]
 image = ""
 caption = ""
-
 +++

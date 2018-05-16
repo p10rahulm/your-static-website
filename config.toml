@@ -71,6 +71,7 @@ verboseLog =true
     division = "divisions"
     team = "teams"
     genre = "genres"
+    subject = "subjects"
 
 # Menus
 [[menu.main]]
