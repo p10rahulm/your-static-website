@@ -5,6 +5,10 @@ date = {{ .Date }}
 draft = false
 author = "Rahul Madhavan"
 
+# Should this be listed in front page
+featured = true
+
+
 widget = "about"
 
 # Tags and categories

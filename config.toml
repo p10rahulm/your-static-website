@@ -70,6 +70,7 @@ verboseLog =true
     project = "projects"
     division = "divisions"
     team = "teams"
+    genre = "genres"
 
 # Menus
 [[menu.main]]
