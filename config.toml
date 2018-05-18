@@ -1,6 +1,5 @@
 
 
-
 # Basic Options
 baseurl = "https://thinkingtree.codefra.in/"
 title = "The Thinking Tree"
@@ -11,6 +10,10 @@ disqusShortname = "codefra"
 
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = "UA-119166503-1"
+
+# Tags for twitter cards for sharing
+twitter_site = "@CodeFRA"
+twitter_creator = "@rahul_maddy"
 
 # Number in RSS feed
 rssLimit =10

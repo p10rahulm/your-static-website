@@ -31,7 +31,7 @@ highlight_style = "ocean"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 [publication]
-        ["Rahul Madhavan","Ankit Baraskar"]
+        authors = ["Rahul Madhavan","Ankit Baraskar"]
 
         # Publication name and optional abbreviated version.
         name = "IEEE"
