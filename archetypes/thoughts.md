@@ -28,3 +28,4 @@ categories = []
         caption = ""
 
 +++
+This is an example of a thought. It's a thought for the day. From all things hard comes learning. Pot calling the kettle black is racism.

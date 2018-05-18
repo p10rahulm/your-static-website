@@ -66,3 +66,4 @@ highlight_style = "ocean"
         caption = ""
 
 +++
+{{< figure src="/media/spf13.jpg" title="Steve Francia" >}}
