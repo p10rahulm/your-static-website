@@ -57,7 +57,6 @@ highlight_style = "ocean"
         image = "img1.jpg"
         caption = "This is good"
 
-
 +++
 
 # This is how we do code
