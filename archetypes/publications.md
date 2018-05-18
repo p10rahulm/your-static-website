@@ -18,7 +18,7 @@ projects = []
 # Publication type taxonomy (optional).
 # Associate this publication with one or more types like
 # Uncategorized, Conference paper, Journal article, Manuscript, Report, Book, Book section
-publication_types = []
+publication_types = ["Journal article"]
 
 # Does this page contain LaTeX math? (true/false)
 math = true
@@ -31,21 +31,21 @@ highlight_style = "ocean"
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 [publication]
-        authors = [""]
+        ["Rahul Madhavan","Ankit Baraskar"]
 
         # Publication name and optional abbreviated version.
-        name = ""
+        name = "IEEE"
 
         # Abstract and optional shortened version.
-        abstract = ""
+        abstract = "We have created a framework for analyzing subscription based businesses in terms of a unified metric which we call SCV (single customer value). The major advance in this paper is to model customer churn as an exponential decay variable, which directly follows from experimental data relating to subscription based businesses. This Bayesian probabilistic model was used to compute an expected value for the revenue contribution of a single user. We obtain an exact closed-form solution for the constant churn model, and an approximate closed-form solution for the exponential decay model. In addition, we define a general methodology for decision making processes using sensitivity analysis of the model equation, which we illustrate with a real-life case study for a food based subscription business."
 
         # Featured image thumbnail (optional)
         image_preview = ""
 
 
         # Links (optional).
-        url_pdf = ""
-        url_preprint = ""
+        url_pdf = "https://arxiv.org/pdf/1704.05729.pdf"
+        url_preprint = "https://arxiv.org/abs/1704.05729"
         url_code = ""
         url_dataset = ""
         url_project = ""
