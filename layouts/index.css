@@ -3,7 +3,7 @@
 
 {{- partial "css/parse_theme.css" . -}}
 
-{{- $scr.Set "css" (partial "css/academic.css" $scr) -}}
+{{- $scr.Set "css" (partial "css/cssfile.css" $scr) -}}
 
 {{/* Return parsed CSS. */}}
 {{- $scr.Get "css" -}}
