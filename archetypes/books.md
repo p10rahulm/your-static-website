@@ -37,6 +37,7 @@ categories = []
         images = ["img.jpg","img1.jpg"]
 [SEO]
 
+
 # The book details go below
 +++
 
