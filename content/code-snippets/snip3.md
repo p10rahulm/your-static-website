@@ -1,7 +1,7 @@
 +++
 # General
-title = "Snip1"
-date = 2018-05-21T21:22:35+05:30
+title = "Snip3"
+date = 2018-05-21T21:22:44+05:30
 draft = false
 author = "Rahul Madhavan"
 

@@ -1,6 +1,6 @@
 +++
-title = "Post1"
-date = 2018-05-21T21:22:37+05:30
+title = "Post2"
+date = 2018-05-21T21:22:40+05:30
 draft = false
 author = "Rahul Madhavan"
 

@@ -1,6 +1,6 @@
 +++
-title = "Course1"
-date = 2018-05-21T21:22:36+05:30
+title = "Course2"
+date = 2018-05-21T21:22:39+05:30
 draft = false
 author = "Rahul Madhavan"
 

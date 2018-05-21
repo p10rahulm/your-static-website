@@ -1,16 +1,25 @@
 +++
-title = "Post1"
-date = 2018-05-21T21:22:37+05:30
+# General
+title = "Thought3"
+date = 2018-05-21T21:22:55+05:30
 draft = false
 author = "Rahul Madhavan"
 
 # Should this be listed in front page
 featured = true
 
+
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
 tags = []
 categories = []
+
+# Specific Template Meta
+[thoughts]
+        single_line = true
+        include_title = false
+        image_on_right = true
+
 
 # Featured image
 # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
@@ -18,7 +27,5 @@ categories = []
         image = ""
         caption = ""
 
-# The post goes below. Feel free to include images using the shortcode
 +++
-# This is a post on the effects of workplace sustenance
-Workplace work makes jack a dull boy.
+This is an example of a thought. It's a thought for the day. From all things hard comes learning. Pot calling the kettle black is racism.

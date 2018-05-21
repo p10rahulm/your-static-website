@@ -1,11 +1,11 @@
 +++
-title = "Post1"
-date = 2018-05-21T21:22:37+05:30
+title = "Note5"
+date = 2018-05-21T21:23:00+05:30
 draft = false
 author = "Rahul Madhavan"
 
 # Should this be listed in front page
-featured = true
+featured = false
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
@@ -18,7 +18,8 @@ categories = []
         image = ""
         caption = ""
 
-# The post goes below. Feel free to include images using the shortcode
+# The note goes below.
 +++
-# This is a post on the effects of workplace sustenance
-Workplace work makes jack a dull boy.
+
+# Random and quick notes here. Expected length 140 characters - 300 words
+Hi how are you?
