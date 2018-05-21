@@ -1,6 +1,5 @@
 {{ partial "header" . }}
-    <body>
-    {{ partial "header" (dict "Kind" .Kind "Template" "List") }}
+{{partial "navbar" .}}
     <H1> This is an awesome front page</H1>
     {{.Content}}
     <p>I am the hunter</p>
@@ -37,6 +36,5 @@
             <p style="font-size:18px;">{{.Summary}}</p>
         </div>
     {{ end }}
+    {{ partial "footer_container" . }}
     {{ partial "footer" . }}
-    </body>
-</html>

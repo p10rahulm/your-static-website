@@ -1,18 +1,17 @@
 
 {{ $sri := .Site.Data.sri }}
 {{ $scr := .Scratch }}
-{{ if ne (.Scratch.Get "primary") "#3367D6" }}
-    <meta name="theme-color" content="{{ .Scratch.Get " primary" }}">
-{{ end }}
 
+<meta name="theme-color" content="{{ if (isset .Scratch "primary") }}{{ .Scratch.primary }}{{else}}{{""}}{{end}}">
 
+<!-- Not doing SRI check for below guys as if the highlight style changes the SRI check fails -->
 {{if or (isset $.Params "highlight") (isset $.Site.Params "highlight") }}
     {{if (isset $.Params "highlight_style") }}
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/{{ $sri.js.highlight.version }}/styles/{{ $.Params.highlight_style }}.min.css" {{ if not .Site.Params.disable_sri }} integrity="{{$sri.js.highlight.sri}}" crossorigin="anonymous"{{end}}>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/{{ $sri.js.highlight.version }}/styles/{{ $.Params.highlight_style }}.min.css">
     {{else if (isset $.Site.Params "highlight_style")}}
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/{{ $sri.js.highlight.version }}/styles/{{ $.Site.Params.highlight_style }}.min.css"  {{ if not .Site.Params.disable_sri }} integrity="{{$sri.js.highlight.sri}}" crossorigin="anonymous"{{end}}>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/{{ $sri.js.highlight.version }}/styles/{{ $.Site.Params.highlight_style }}.min.css">
     {{else}}
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/{{ $sri.js.highlight.version }}/styles/github-gist.min.css"  {{ if not .Site.Params.disable_sri }} integrity="{{$sri.js.highlight.sri}}" crossorigin="anonymous"{{end}}>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/{{ $sri.js.highlight.version }}/styles/github-gist.min.css">
     {{end}}
 {{ end }}
 
@@ -33,7 +32,7 @@
 {{ with (.Scratch.Get "google_fonts") }}
 <link rel="stylesheet" href="{{ printf "//fonts.googleapis.com/css?family=%s" . }}">
 {{ end }}
-<link rel="stylesheet" href="{{ "{{.Site.outputFormats.css}}.css" | relLangURL }}">
+<link rel="stylesheet" href="/styles.css">
 
 {{ range .Site.Params.custom_css }}
     <link rel="stylesheet" href="{{ "    /css/" | relURL }}{{ . }}">
