@@ -30,11 +30,12 @@ categories = []
         date_of_publication = "3 January 2017"
         language = "English"
 
-
-# Featured image
-featured_image = ""
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-images = ["img.jpg","img1.jpg"]
+[book-images]
+        # Featured image
+        featured_image = ""
+        # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
+        images = ["img.jpg","img1.jpg"]
+[SEO]
 
 # The book details go below
 +++
