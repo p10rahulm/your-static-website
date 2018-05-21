@@ -1,4 +1,6 @@
+<!-- Load the data page sri.toml into a variable $sri  -->
 {{ $sri := .Site.Data.sri }}
+
 <script>
     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
     ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
@@ -9,10 +11,4 @@
     ga('send', 'pageview');
 </script>
 <script async src="//www.google-analytics.com/analytics.js"></script>
-<script async src="//cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-
-{{ if not .Site.Params.disable_sri }}
-{{ printf "<script async src=\"https://cdnjs.cloudflare.com/ajax/libs/autotrack/%s/autotrack.js\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" $sri.js.autotrack.version $sri.js.autotrack.sri | safeHTML }}
-{{ else }}
-<script async src="//cdnjs.cloudflare.com/ajax/libs/autotrack/{{- $sri.js.autotrack.version -}}/autotrack.js"></script>
-{{ end }}
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/{{$sri.js.autotrack.version}}/autotrack.js" {{ if not .Site.Params.disable_sri }} integrity="{{$sri.js.autotrack.sri}}" crossorigin="anonymous" {{end}}></script>

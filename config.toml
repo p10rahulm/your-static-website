@@ -126,6 +126,29 @@ verboseLog =false
     longitude = "77.630389"
     zoom = 15
 
+    # Highlight.js global options, View this demo and choose: https://highlightjs.org/static/demo/
+    # 1) Do you need code highlighting at global level?
+    #     Example: highlight = true
+    # 2) What languages do you typically use. That you need globally loaded?
+    #     Example: highlight_languages = ["go", "lisp", "ocaml"]
+    # 3) What is the style scheme? Choose one of the styles from those listed in the demo
+    #     Example: highlight_style = "github-gist"
+
+    #   For the list of supported languages and styles, see:
+    #   https://cdnjs.com/libraries/highlight.js/
+    #
+    #   For more info on the highlighting options, see:
+    #   https://sourcethemes.com/academic/post/writing-markdown-latex/#highlighting-options
+    highlight = true
+    highlight_languages = ["html","bash"]
+    highlight_style = "ocean"
+
+    # All the subresources are delivered throught an subresource integrity module. This helps if CDN is compromised
+    # details here: https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity
+    # Do you want to disable it? (not recommended)
+    disable_sri = false
+
+
 
 # Menus
 [[menu.main]]
