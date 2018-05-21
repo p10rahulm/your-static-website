@@ -11,10 +11,6 @@ disqusShortname = "codefra"
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = "UA-119166503-1"
 
-# Tags for twitter cards for sharing
-twitter_site = "@CodeFRA"
-twitter_creator = "@rahul_maddy"
-
 # Number in RSS feed
 rssLimit =10
 # When enabled, creates URL of the form /filename.html instead of /filename/.
@@ -64,6 +60,11 @@ logFile ="public/log.txt"
 verbose =true
 verboseLog =true
 
+# SEO Stuff
+[SEO]
+    # Tags for twitter cards for sharing
+    twitter_site = "@CodeFRA"
+    twitter_creator = "@rahul_maddy"
 
 
 # Here we choose to make projects a category.

@@ -1,18 +1,59 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode | default " en-us" }}">
 <head>
-    <!--First the basic meta tags-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--First the basic meta tags. https://moz.com/blog/seo-meta-tags, https://www.w3schools.com/tags/tag_meta.asp-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Robots meta, not required but good to have. https://developers.google.com/search/reference/robots_meta_tag -->
+    <meta name="robots" content="all">
     <meta name="theme" content="hugo-rigamarole">
     <!--The default hugo generator template, for hugo creators to track theme-->
     {{ .Hugo.Generator }}
-    
 
-    <!--Author-->
+    <!-- Place this data between the <head> tags of your website -->
+    <title>
+        {{ if eq .Title .Site.Title }}
+            {{ .Title }}
+        {{ else }}
+            {{ .Title }} &sdot; {{ .Site.Title }}
+        {{ end }}
+    </title>
+    <meta name="description"
+          content=
+                  "Page description. No longer than 155 characters."
+    />
+
+
+
+    <!--Standard Social Media Tag Template: Article as per MOZ https://moz.com/blog/meta-data-templates-123-->
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="The Name or Title Here">
+    <meta itemprop="description" content="This is the page description">
+    <meta itemprop="image" content="http://www.example.com/image.jpg">
+
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@publisher_handle">
+    <meta name="twitter:title" content="Page Title">
+    <meta name="twitter:description" content="Page description less than 200 characters">
+    <meta name="twitter:creator" content="@author_handle">
+    <!--Twitter Summary card images must be at least 120x120px-->
+    <meta name="twitter:image" content="http://www.example.com/image.jpg">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Title Here" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://www.example.com/" />
+    <meta property="og:image" content="http://example.com/image.jpg" />
+    <meta property="og:description" content="Description Here" />
+    <meta property="og:site_name" content="Site Name, i.e. Moz" />
+    <!--The meta property "fb:admins" requires that you enter your numeric Facebook id number, and gives you access to analytics about how your website content is shared on Facebook-->
+    <meta property="fb:admins" content="Facebook numeric ID" />
+
+    <!--Get the site author. Not a required tag, but a good to have-->
     {{ with .Site.Params.name }}
-    <meta name="author" content="{{ . }}">
+        <meta name="author" content="{{ . }}">
     {{ end }}
 
 
@@ -26,20 +67,17 @@
     {{ $scr.Set "description" .Summary }}
     {{ end }}
     {{ end }}
-    <meta name="description" content="{{ $scr.Get " description
-    " }}">
+    <meta name="description" content="{{ $scr.Get " description    " }}">
 
     {{ range .Translations }}
-    <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+        <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
     {{ end }}
-    <link rel="alternate" hreflang="{{ .Site.LanguageCode | default " en-us
-    " }}" href="{{ .Permalink }}">
+    <link rel="alternate" hreflang="{{ .Site.LanguageCode | default "en-us" }}" href="{{ .Permalink }}">
 
     {{ partial "css/parse_theme.css" . }}
     {{ $sri := .Site.Data.sri }}
     {{ if ne ($scr.Get "primary") "#fff" }}
-    <meta name="theme-color" content="{{ $scr.Get " primary
-    " }}">
+    <meta name="theme-color" content="{{ $scr.Get " primary" }}">
     {{ end }}
     {{/* Default to enabling highlighting, but allow the user to override it in .Params or .Site.Params.
     Use $scr to store "highlight_enabled", so that we can read it again in footer.html. */}}
@@ -62,27 +100,12 @@
     {{ end }}
     {{ end }}
     {{ if not .Site.Params.disable_sri }}
-    {{ printf "
-    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/%s/css/bootstrap.min.css\"
-          integrity=\"%s\" crossorigin=\"anonymous\">
-    " $sri.css.bootstrap.version $sri.css.bootstrap.sri | safeHTML }}
-    {{ printf "
-    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/academicons/%s/css/academicons.min.css\"
-          integrity=\"%s\" crossorigin=\"anonymous\">
-    " $sri.css.academicons.version $sri.css.academicons.sri | safeHTML }}
-    {{ printf "
-    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/%s/css/font-awesome.min.css\"
-          integrity=\"%s\" crossorigin=\"anonymous\">
-    " $sri.css.fontAwesome.version $sri.css.fontAwesome.sri | safeHTML }}
-    {{ printf "
-    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/fancybox/%s/jquery.fancybox.min.css\"
-          integrity=\"%s\" crossorigin=\"anonymous\">
-    " $sri.css.fancybox.version $sri.css.fancybox.sri | safeHTML }}
+    {{ printf "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/%s/css/bootstrap.min.css\"integrity=\"%s\" crossorigin=\"anonymous\">" $sri.css.bootstrap.version $sri.css.bootstrap.sri | safeHTML }}
+    {{ printf "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/academicons/%s/css/academicons.min.css\"integrity=\"%s\" crossorigin=\"anonymous\">" $sri.css.academicons.version $sri.css.academicons.sri | safeHTML }}
+    {{ printf "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/%s/css/font-awesome.min.css\"integrity=\"%s\" crossorigin=\"anonymous\">" $sri.css.fontAwesome.version $sri.css.fontAwesome.sri | safeHTML }}
+    {{ printf "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/fancybox/%s/jquery.fancybox.min.css\"integrity=\"%s\" crossorigin=\"anonymous\">" $sri.css.fancybox.version $sri.css.fancybox.sri | safeHTML }}
     {{ if or (eq .Site.Params.map 2) (eq .Site.Params.map 3) }}
-    {{ printf "
-    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/%s/leaflet.css\" integrity=\"%s\"
-          crossorigin=\"anonymous\">
-    " $sri.css.leaflet.version $sri.css.leaflet.sri | safeHTML }}
+    {{ printf "<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/leaflet/%s/leaflet.css\" integrity=\"%s\"crossorigin=\"anonymous\">" $sri.css.leaflet.version $sri.css.leaflet.sri | safeHTML }}
     {{ end }}
     {{ else }}
     <link rel="stylesheet"
@@ -100,14 +123,11 @@
     {{ end }}
     {{/* We cannot use SRI with Google Fonts because the CSS is dynamically generated according to the user agent */}}
     {{ with ($scr.Get "google_fonts") }}
-    <link rel="stylesheet" href="{{ printf "
-    //fonts.googleapis.com/css?family=%s" . }}">
+    <link rel="stylesheet" href="{{ printf "//fonts.googleapis.com/css?family=%s" . }}">
     {{ end }}
-    <link rel="stylesheet" href="{{ " styles.css
-    " | relLangURL }}">
+    <link rel="stylesheet" href="{{ " styles.css    " | relLangURL }}">
     {{ range .Site.Params.custom_css }}
-    <link rel="stylesheet" href="{{ "
-    /css/" | relURL }}{{ . }}">
+    <link rel="stylesheet" href="{{ "    /css/" | relURL }}{{ . }}">
     {{ end }}
 
     {{ if .Site.GoogleAnalytics }}
@@ -117,18 +137,9 @@
         };
         ga.l = +new Date;
         ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
-        {
-            {
-                if .
-                Site.Params.privacy_pack
-            }
-        }
-        ga('set', 'anonymizeIp', true);
-        {
-            {
-                end
-            }
-        }
+        {{if .Site.Params.privacy_pack}}
+            ga('set', 'anonymizeIp', true);
+        {{end}}
         ga('require', 'eventTracker');
         ga('require', 'outboundLinkTracker');
         ga('require', 'urlChangeTracker');
@@ -136,10 +147,7 @@
     </script>
     <script async src="//www.google-analytics.com/analytics.js"></script>
     {{ if not .Site.Params.disable_sri }}
-    {{ printf "
-    <script async src=\"https://cdnjs.cloudflare.com/ajax/libs/autotrack/%s/autotrack.js\" integrity=\"%s\"
-            crossorigin=\"anonymous\"></script>
-    " $sri.js.autotrack.version $sri.js.autotrack.sri | safeHTML }}
+        {{ printf "<script async src=\"https://cdnjs.cloudflare.com/ajax/libs/autotrack/%s/autotrack.js\" integrity=\"%s\"crossorigin=\"anonymous\"></script>" $sri.js.autotrack.version $sri.js.autotrack.sri | safeHTML }}
     {{ else }}
     <script async
             src="//cdnjs.cloudflare.com/ajax/libs/autotrack/{{- $sri.js.autotrack.version -}}/autotrack.js"></script>
@@ -152,12 +160,9 @@
     <link rel="feed" href="{{ .RSSLink | default .Site.RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}">
     {{ end }}
 
-    <link rel="manifest" href="{{ " site.webmanifest
-    " | relURL }}">
-    <link rel="icon" type="image/png" href="{{ "
-    /img/icon.png" | relURL }}">
-    <link rel="apple-touch-icon" type="image/png" href="{{ "
-    /img/icon-192.png" | relURL }}">
+    <link rel="manifest" href="{{ " site.webmanifest" | relURL }}">
+    <link rel="icon" type="image/png" href="{{ "/img/icon.png" | relURL }}">
+    <link rel="apple-touch-icon" type="image/png" href="{{ "/img/icon-192.png" | relURL }}">
 
     <link rel="canonical" href="{{ .Permalink }}">
 
@@ -172,23 +177,17 @@
     <meta property="og:site_name" content="{{ .Site.Title }}">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
-    <meta property="og:description" content="{{ $scr.Get " description
-    " }}">
+    <meta property="og:description" content="{{ $scr.Get " description" }}">
     {{- with .Params.header.image }}
-    <meta property="og:image" content="{{ printf " img
-    /%s" . | absURL }}">{{end}}
-    <meta property="og:locale" content="{{ .Site.LanguageCode | default " en-us
-    " }}">
+    <meta property="og:image" content="{{ printf " img/%s" . | absURL }}">{{end}}
+    <meta property="og:locale" content="{{ .Site.LanguageCode | default " en-us" }}">
     {{ if .IsPage }}
     {{ if not .PublishDate.IsZero }}
-    <meta property="article:published_time" content="{{ .PublishDate.Format " 2006-01-02T15:04:05-07:00
-    " | safeHTML }}">
+    <meta property="article:published_time" content="{{ .PublishDate.Format " 2006-01-02T15:04:05-07:00" | safeHTML }}">
     {{ else if not .Date.IsZero }}
-    <meta property="article:published_time" content="{{ .Date.Format " 2006-01-02T15:04:05-07:00
-    " | safeHTML }}">{{ end }}
+    <meta property="article:published_time" content="{{ .Date.Format " 2006-01-02T15:04:05-07:00" | safeHTML }}">{{ end }}
     {{ if not .Lastmod.IsZero }}
-    <meta property="article:modified_time" content="{{ .Lastmod.Format " 2006-01-02T15:04:05-07:00
-    " | safeHTML }}">{{ end }}
+    <meta property="article:modified_time" content="{{ .Lastmod.Format " 2006-01-02T15:04:05-07:00" | safeHTML }}">{{ end }}
     {{ else }}
     {{ if not .Date.IsZero}}
     <meta property="og:updated_time" content="{{ .Date }}">
