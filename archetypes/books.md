@@ -36,7 +36,11 @@ categories = []
         # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
         images = ["img.jpg","img1.jpg"]
 [SEO]
-
+        # Page description for Search Engines and Social Media shares. No longer than 155 characters.
+        description = "This is the page description. Tis is an amazing awesome book."
+        # The image below will be used in the SEO (the sharing buttons). Please place the image in the static/img folder.
+        image = "bubbles.jpg"
+        author_twitter_handle= "@rahulm"
 
 # The book details go below
 +++

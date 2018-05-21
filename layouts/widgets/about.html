@@ -5,17 +5,13 @@
 <div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person" itemref="{{ if $.Site.Params.email }}person-email{{ end }}{{ if $.Site.Params.phone }} person-telephone{{ end }}{{ if $.Site.Params.address}} person-address{{ end }}">
   <div class="col-xs-12 col-md-4">
     <div id="profile">
-
-      {{ if $.Site.Params.gravatar }}
-      <div class="portrait" style="background-image: url('https://s.gravatar.com/avatar/{{ md5 $.Site.Params.email }}?s=200');"></div>
-      <meta itemprop="image" content="https://s.gravatar.com/avatar/{{ md5 $.Site.Params.email }}?s=200">
-      {{ else if $.Site.Params.avatar }}
-      <div class="portrait" style="background-image: url('{{ (printf "/img/%s" $.Site.Params.avatar) | relURL }}');"></div>
-      <meta itemprop="image" content="{{ (printf "img/%s" $.Site.Params.avatar) | absURL }}">
+      {{ if $.Site.Params.about_page_portrait }}
+      <div class="portrait" style="background-image: url('{{ (printf "/img/%s" $.Site.Params.about_page_portrait) | relURL }}');"></div>
+      <meta itemprop="image" content="{{ (printf "img/%s" $.Site.Params.about_page_portrait) | absURL }}">
       {{ end }}
 
       <div class="portrait-title">
-        <h2 itemprop="name">{{ $.Site.Params.name }}</h2>
+        <h2 itemprop="name">{{ $.Site.Params.site_author_name }}</h2>
         {{ with $.Site.Params.role }}<h3 itemprop="jobTitle">{{ . }}</h3>{{ end }}
 
         {{/* Support legacy `organization` option. */}}

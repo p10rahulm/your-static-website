@@ -1,0 +1,21 @@
+{
+  "short_name": "{{.Site.Title}}",
+  "name": "{{.Site.Title}}",
+  "icons": [
+    {
+      "src": "/{{$.Site.Params.favicon}}",
+      "type": "image/png",
+      "sizes": "30x30"
+    },
+    {
+      "src": "/{{$.Site.Params.logo}}",
+      "type": "image/png",
+      "sizes": "766x627"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#3367D6"
+}

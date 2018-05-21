@@ -57,27 +57,75 @@ log=true
 logFile ="public/log.txt"
 
 # Enable verbose logging.
-verbose =true
-verboseLog =true
+verbose =false
+verboseLog =false
 
 # SEO Stuff
-[SEO]
+
+# Some parameters for the internal theme use
+[params]
+    # After finishing this section config, make sure to look at manifest.json in the static folder
+    # Color theme.
+    #   Choose from `default`, `ocean`, `forest`, `coffee`, `dark`, or `1950s`.
+    color_theme = "default"
+
+    # Font style.
+    #   Choose from `default`, `classic`, or `playfair`.
+    font = "classic"
+
+    # Site Author details.
+    site_author_name = "Rahul Madhavan"
+    role = "Founder, CodeFRA"
+    # SEO Section
+    # When pages don't have description
+    default_description = "-273.15K. So Cool."
+    # FB admin site handler
+    facebook_admin_handle = "rahul.maddy"
+
     # Tags for twitter cards for sharing
-    twitter_site = "@CodeFRA"
-    twitter_creator = "@rahul_maddy"
+    twitter_site_handle = "@codeFRA"
+    twitter_creator_handle = "@rahul_maddy"
+    # The favicon will be used to render the icon in the browser. Save this in the *static/folder*. Please save as png format images of square size.
+    favicon = "favicon.png"
+    # The favicon will be used to render the icon in the browser. Save this in the *static/folder*. Please save as png format images of square size.
+    apple_touch_icon = "favicon.png"
+    # Diplay a logo in navigation bar rather than title (optional).
+    #   To enable, place an image in `static/` and reference its filename below. To disable, set the value to "".
+    logo = "thinking_tree2.jpg"
+
+    # Organizations/Affiliations.
+    #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
+    organizations = [ { name = "Atidiv, Cuemath", url = "" }, { name = "Barclays, Nomura, Lehman Brothers", url = "" }, { name = "IIM Ahmedabad, IIT Madras", url = "" } ]
+
+    about_page_portrait = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+    email = "rahul.maddy@gmail.com"
+    address = "Koramangala, Bangalore"
+    phone = "+91 89714 07799"
+    skype = ""
+    telegram = ""
 
 
-# Here we choose to make projects a category.
-[taxonomies]
-    tag = "tags"
-    category = "categories"
-    project = "projects"
-    division = "divisions"
-    team = "teams"
-    genre = "genres"
-    subject = "subjects"
-    review_category = "review_categories"
-    publication_type = "publication_types"
+    # Below will be used in the main page under the contacts widget
+    # To show your address on a map in the contact widget, you need to enter your latitude, longitude and choose
+    # a map provider below.
+    # To use Google Maps, set `map = 1` and enter your API key that can be obtained here:
+    #   https://developers.google.com/maps/documentation/javascript/get-api-key
+    # To use OpenStreetMap tiles, set `map = 2`.
+    # To use OpenStreetMap on a high traffic site, set `map = 3` and enter your API key that can be obtained here:
+    #   https://www.mapbox.com/studio/account/tokens
+    # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
+    #
+    # Map provider:
+    #   0: No map
+    #   1: Google Maps
+    #   2: OpenStreetMap (Mapnik)
+    #   3: OpenStreetMap (Mapbox)
+    map = 1
+    map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
+    latitude = "12.932376"
+    longitude = "77.630389"
+    zoom = 15
+
 
 # Menus
 [[menu.main]]
@@ -110,73 +158,26 @@ verboseLog =true
   url = "#contact"
   weight = 6
 
+# Here we choose the taxonomies. Various types of pages use various taxonomies
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+    project = "projects"
+    division = "divisions"
+    team = "teams"
+    genre = "genres"
+    subject = "subjects"
+    review_category = "review_categories"
+    publication_type = "publication_types"
 
-# Some parameters for the internal theme use
-[params]
-    # Color theme.
-    #   Choose from `default`, `ocean`, `forest`, `coffee`, `dark`, or `1950s`.
-    color_theme = "default"
-
-    # Font style.
-    #   Choose from `default`, `classic`, or `playfair`.
-    font = "classic"
-
-    # Your details.
-    name = "Rahul Madhavan"
-    role = "Founder, CodeFRA"
-
-    # Organizations/Affiliations.
-    #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-    organizations = [ { name = "Atidiv, Cuemath", url = "" }, { name = "Barclays, Nomura, Lehman Brothers", url = "" }, { name = "IIM Ahmedabad, IIT Madras", url = "" } ]
-
-    gravatar = false  # Get your avatar from Gravatar.com? (true/false)
-    avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
-    email = "rahul.maddy@gmail.com"
-    address = "Koramangala, Bangalore"
-    phone = "+91 89714 07799"
-    skype = ""
-    telegram = ""
-
-    # Enable Keybase in Contact widget by entering your keybase.io username.
-    keybase = ""
-
-    # Discussion link (e.g. link to a forum, mailing list, or chat).
-    #   Uncomment line below to use.
-    #   discussion = { name = "Discuss", url = "https://discourse.gohugo.io" }
-
-    # Diplay a logo in navigation bar rather than title (optional).
-    #   To enable, place an image in `static/img/` and reference its filename below. To disable, set the value to "".
-    logo = "thinking_tree2.jpg"
-
-
-
-    # Below will be used in the main page under the contacts widget
-    # To show your address on a map in the contact widget, you need to enter your latitude, longitude and choose
-    # a map provider below.
-    # To use Google Maps, set `map = 1` and enter your API key that can be obtained here:
-    #   https://developers.google.com/maps/documentation/javascript/get-api-key
-    # To use OpenStreetMap tiles, set `map = 2`.
-    # To use OpenStreetMap on a high traffic site, set `map = 3` and enter your API key that can be obtained here:
-    #   https://www.mapbox.com/studio/account/tokens
-    # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
-    #
-    # Map provider:
-    #   0: No map
-    #   1: Google Maps
-    #   2: OpenStreetMap (Mapnik)
-    #   3: OpenStreetMap (Mapbox)
-    map = 1
-    map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
-    latitude = "12.932376"
-    longitude = "77.630389"
-    zoom = 15
 
 # Configure the English version of the website.
+# TODO: ADD OTHER LANGUAGE SUPPORT
 [Languages.en]
   languageCode = "en-in"
 
 [outputs]
-    home = [ "HTML", "CSS", "RSS" ]
+    home = [ "HTML", "CSS", "RSS", "JSON"]
     section = [ "HTML", "RSS" ]
 
 # Configure BlackFriday Markdown rendering.
@@ -185,3 +186,28 @@ verboseLog =true
   hrefTargetBlank = true  # `true` opens external links in a new tab.
   fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
   smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
+
+
+# We are using the below shortcode for image processing in our documents
+[imaging]
+    # Default resample filter used for resizing. Default is Box,
+    # a simple and fast averaging filter appropriate for downscaling.
+    # See https://github.com/disintegration/imaging
+    # and   https://gohugo.io/content-management/image-processing/
+    resampleFilter = "box"
+
+    # Defatult JPEG quality setting. Default is 75.
+    quality = 75
+
+    # Anchor used when cropping pictures.
+    # Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
+    # Smart Cropping is content aware and tries to find the best crop for each image.
+    # Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+    anchor = "smart"
+
+[outputFormats]
+    [outputFormats.json]
+        baseName = "manifest"
+        isPlainText = true
+    [outputFormats.css]
+        baseName = "styles"

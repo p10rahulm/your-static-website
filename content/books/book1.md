@@ -1,6 +1,6 @@
 +++
 title = "Book1"
-date = 2018-05-18T17:17:27+05:30
+date = 2018-05-21T18:08:19+05:30
 draft = false
 author = "Rahul Madhavan"
 
@@ -30,11 +30,17 @@ categories = []
         date_of_publication = "3 January 2017"
         language = "English"
 
-
-# Featured image
-featured_image = ""
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-images = ["img.jpg","img1.jpg"]
+[book-images]
+        # Featured image
+        featured_image = ""
+        # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
+        images = ["img.jpg","img1.jpg"]
+[SEO]
+        # Page description for Search Engines and Social Media shares. No longer than 155 characters.
+        description = "This is the page description. Tis is an amazing awesome book."
+        # The image below will be used in the SEO (the sharing buttons). Please place the image in the static/img folder.
+        image = "bubbles.jpg"
+        author_twitter_handle= "@rahulm"
 
 # The book details go below
 +++
