@@ -166,15 +166,19 @@ verboseLog =true
 
 
 # Menus
+[menu]
 [[menu.main]]
   name = "Home"
   url = "./#about"
   weight = 1
+  HasChildren = true
+
 
 [[menu.main]]
   name = "Posts"
   url = "./post/"
   weight = 2
+  parent = "Home"
 
 [[menu.main]]
   name = "Publications"

@@ -2,13 +2,6 @@
 {{$comments_enabled := and $.Site.DisqusShortname (or ($.Site.Params.enable_comments | default false) ($.Params.enable_comments | default false))}}
 
 {{partial "load_highlight_math_js" .}}
-<!--Load local js-->
-<script src="{{ "/js/static_javascripts.js" | relURL }}"></script>
-
-<!--// Load any custom js files mentioned in config.toml-->
-{{ range .Site.Params.custom_js }}
-    <script src="{{ "/js/" | relURL }}{{ . }}"></script>
-{{ end }}
 
 <!--Load external js scripts through SRI-->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/{{$js_versions.jQuery.version}}/jquery.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.jQuery.sri}}" crossorigin="anonymous"{{end}}></script>
@@ -16,6 +9,15 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/{{ $js_versions.bootstrap.version}}/js/bootstrap.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.bootstrap.sri}}" crossorigin="anonymous"{{end}}></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/{{ $js_versions.isotope.version}}/isotope.pkgd.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.isotope.sri}}" crossorigin="anonymous"{{end}}></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/{{ $js_versions.fancybox.version}}/jquery.fancybox.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.fancybox.sri}}" crossorigin="anonymous"{{end}}></script>
+
+
+<!--Load local js. This comes after external because jquery is required for some local scripts-->
+<script src="{{ "/js/static_javascripts.js" | relURL }}"></script>
+
+<!--// Load any custom js files mentioned in config.toml-->
+{{ range .Site.Params.custom_js }}
+<script src="{{ "/js/" | relURL }}{{ . }}"></script>
+{{ end }}
 
 <!--Load js required for comment counting-->
 {{ if and $comments_enabled (and ($.Site.Params.comment_count | default true) ($.Params.comment_count | default true)) }}

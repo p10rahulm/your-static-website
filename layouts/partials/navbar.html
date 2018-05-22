@@ -13,12 +13,12 @@
       </button>
       {{ end }}
       <a class="navbar-brand" href="{{ "/" | relLangURL }}">
-        {{- if .Site.Params.logo -}}
-        <img src="{{ printf "/%s" .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
-        {{- .Site.Title -}}
-        {{- else -}}
-        {{- .Site.Title -}}
-        {{- end -}}
+        {{ if .Site.Params.logo }}
+        <img src="/{{.Site.Params.logo}}" alt="{{ .Site.Title }}">
+        {{ .Site.Title }}
+        {{ else }}
+        {{ .Site.Title }}
+        {{ end }}
       </a>
     </div>
 
