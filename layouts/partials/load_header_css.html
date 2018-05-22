@@ -30,10 +30,10 @@
 
 <!--We cannot use SRI with Google Fonts because the CSS is dynamically generated according to the user agent  -->
 {{ with (.Scratch.Get "google_fonts") }}
-<link rel="stylesheet" href="{{ printf "//fonts.googleapis.com/css?family=%s" . }}">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family={{.}}">
 {{ end }}
 <link rel="stylesheet" href="/styles.css">
 
 {{ range .Site.Params.custom_css }}
-    <link rel="stylesheet" href="{{ "    /css/" | relURL }}{{ . }}">
+    <link rel="stylesheet" href="/css/{{ . }}">
 {{ end }}

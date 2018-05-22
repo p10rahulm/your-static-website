@@ -1,5 +1,7 @@
-{{ if and .Site.DisqusShortname (not (or .Site.Params.disable_comments .Params.disable_comments)) }}
-<section id="comments">
-  {{ template "_internal/disqus.html" . }}
-</section>
+<!--https://gohugo.io/templates/internal/-->
+{{$comments_enabled := and $.Site.DisqusShortname (or ($.Site.Params.enable_comments | default false) ($.Params.enable_comments | default false))}}
+{{ if $comments_enabled }}
+    <section id="comments">
+        {{ partial "disqus" . }}
+    </section>
 {{ end }}

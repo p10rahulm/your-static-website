@@ -1,3 +1,6 @@
+# This is the global config file.
+# There are two rules. Any custom variables go into the params section of this page.
+# Prebuild options may be at the corresponding level defined in the hugo build.
 
 
 # Basic Options
@@ -5,7 +8,8 @@ baseurl = "https://thinkingtree.codefra.in/"
 title = "The Thinking Tree"
 theme = "ga-hugo-theme"
 
-# Enable comments by entering your Disqus shortname
+# For comments to be enabled on a page, you need to add your disqus short name here.
+# Get disqus shortname here: https://disqus.com/
 disqusShortname = "codefra"
 
 # Enable analytics by entering your Google Analytics tracking ID
@@ -38,7 +42,7 @@ layoutDir ="layouts"
 
 # Your copyright notice - appears in site footer.
 # To display a copyright symbol, type `&copy;`.
-copyright = "&copy; 2018"
+copyright = "&copy; 2018 CodeFRA"
 
 
 # Generate Robots.txt
@@ -57,8 +61,8 @@ log=true
 logFile ="public/log.txt"
 
 # Enable verbose logging.
-verbose =false
-verboseLog =false
+verbose =true
+verboseLog =true
 
 # SEO Stuff
 
@@ -104,6 +108,10 @@ verboseLog =false
     skype = ""
     telegram = ""
 
+    # In case you want to add custom css and custom js, place them in (i) /static/css/ folder and (ii) /static/js/ folders
+    # Add the filenames in the following two arrays
+    custom_css = []
+    custom_js = []
 
     # Below will be used in the main page under the contacts widget
     # To show your address on a map in the contact widget, you need to enter your latitude, longitude and choose
@@ -126,6 +134,12 @@ verboseLog =false
     longitude = "77.630389"
     zoom = 15
 
+    # You can enable comments on a page by page basis
+    enable_comments = false
+    # Will load the appropriate module only if above two are present
+    comment_count = true
+
+
     # Highlight.js global options, View this demo and choose: https://highlightjs.org/static/demo/
     # 1) Do you need code highlighting at global level?
     #     Example: highlight = true
@@ -139,8 +153,9 @@ verboseLog =false
     #
     #   For more info on the highlighting options, see:
     #   https://sourcethemes.com/academic/post/writing-markdown-latex/#highlighting-options
-    highlight = true
-    highlight_languages = ["html","bash"]
+    highlight = false
+    highlight_languages = ["htmlbars","bash"]
+    # highlight_languages = []
     highlight_style = "ocean"
 
     # All the subresources are delivered throught an subresource integrity module. This helps if CDN is compromised

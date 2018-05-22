@@ -12,6 +12,7 @@
 {{ end }}
 {{define "footr"}}
         <H1>This footer has been overriden from baseof template</H1>
+        {{ partial "comments" . }}
         {{ partial "footer_container" . }}
         {{ partial "footer" . }}
 {{end}}

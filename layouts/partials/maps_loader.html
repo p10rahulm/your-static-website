@@ -1,0 +1,11 @@
+{{ $js_versions := .Site.Data.sri.js }}
+
+{{ if and (eq .Site.Params.map 1) (isset $.Site.Params "map_api_key") }}
+<script async defer src="//maps.googleapis.com/maps/api/js?key={{ .Site.Params.map_api_key }}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gmaps.js/{{ $js_versions.gmaps.version }}/gmaps.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.gmaps.sri}}" crossorigin="anonymous"{{end}}></script>
+{{ else if or (eq .Site.Params.map 2) (eq .Site.Params.map 3) }}
+<script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/{{ $js_versions.leaflet.version }}/leaflet.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.leaflet.sri}}" crossorigin="anonymous"{{end}}></script>
+{{ end }}
+
+
+
