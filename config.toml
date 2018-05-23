@@ -112,6 +112,9 @@ verboseLog =true
     # Add the filenames in the following two arrays
     custom_css = []
     custom_js = []
+    # Below will be the active menu items for the navbar (navigation menu) at the top of the page
+    # Please only include the names as given in the menu.main section below
+    navbar_active = ["Home","Book Reviews","Projects","Publications","Posts"]
 
     # Below will be used in the main page under the contacts widget
     # To show your address on a map in the contact widget, you need to enter your latitude, longitude and choose
