@@ -115,7 +115,7 @@ verboseLog =true
     custom_js = []
     # Below will be the active menu items for the navbar (navigation menu) at the top of the page
     # Please only include the names as given in the menu.main section below
-    navbar_active = ["Home","Book Reviews","Projects","Publications","Posts"]
+    navbar_active = ["Home","Book Reviews","Projects","Publications","Posts","Contact"]
 
     # Below will be used in the main page under the contacts widget
     # To show your address on a map in the contact widget, you need to enter your latitude, longitude and choose
@@ -175,14 +175,12 @@ verboseLog =true
   name = "Home"
   url = "./#about"
   weight = 1
-  HasChildren = true
 
 
 [[menu.main]]
   name = "Posts"
   url = "./post/"
   weight = 2
-  parent = "Home"
 
 [[menu.main]]
   name = "Publications"

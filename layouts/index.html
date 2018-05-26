@@ -1,5 +1,7 @@
-{{ partial "header" . }}
-{{partial "navbar" .}}
+{{ define "main" }}
+    {{partial "homepage-sections/top_image_writeup.html" .}}
+    {{partial "homepage-sections/contact.html" .}}
+
     <H1> This is an awesome front page</H1>
     {{.Content}}
     <p>I am the hunter</p>
@@ -29,12 +31,6 @@
                     {{end}}
                 {{end}}
             </div>
-            <div style="color:grey; font-size:16px;">{{ if .Params.moods }}<strong>Moods:</strong> {{range .Params.moods}}<a
-                    href="{{ "/moods/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}
-            </div>
-
-            <p style="font-size:18px;">{{.Summary}}</p>
         </div>
     {{ end }}
-    {{ partial "footer_container" . }}
-    {{ partial "footer" . }}
+{{ end }}

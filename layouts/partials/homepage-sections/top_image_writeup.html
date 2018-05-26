@@ -1,0 +1,19 @@
+<section id="top_image" class="hero-overlay" style="background-image:url('/img/{{$.Params.top_image.overlay_img}}');">
+
+    <div class="container">
+
+        <h1 class="hero-title" itemprop="headline">
+            {{ with $.Params.top_image.image_heading }}{{ . | markdownify }}{{ end }}
+        </h1>
+
+        {{ with $.Params.top_image.content }}
+        <p class="hero-lead">{{ . | markdownify }}</p>
+        {{ end }}
+
+        {{ if $.Params.top_image.cta.url }}
+        <p><a href="{{ $.Params.top_image.cta.url }}" class="btn btn-light btn-outline btn-large">{{ $.Params.top_image.cta.label | safeHTML}}</a></p>
+        {{ end }}
+
+    </div>
+
+</section>
