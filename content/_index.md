@@ -10,8 +10,6 @@ draft =  false
         image_heading = "<br>Onward and upward, like a dendritic tree<br><br><br><br>"
         content = "Reducing entropy, one post at a time<br>"
         overlay_img = "headers/bubbles-wide.jpg"  # Image path relative to your `static/img/` folder.
-        overlay_filter = 0.5  # Darken the image. Value in range 0-1.
-
 
         # Call to action button (optional).
         # Activate the button by specifying a URL and button label below.
@@ -20,6 +18,31 @@ draft =  false
                 url = "./post"
                 label = '<i class="ai ai-figshare"></i> &nbsp&nbsp View Posts'
 
+# ----------------------------------
+# Showcase section
+[showcase]
+        active=true
+        title = "Greatest ever works"
+        subtitle = "Major Projects and Work Interests"
+
+        # These are the cards we will display. Ideally fill three.
+        [[showcase.card]]
+                icon = "fa-shopping-cart"
+                title = "E-Commerce"
+                link = "#"
+                card_content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+
+        [[showcase.card]]
+                        icon = "fa-laptop"
+                        title = "Responsive Design"
+                        link = "#"
+                        card_content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+
+        [[showcase.card]]
+                        icon = "fa-lock"
+                        title = "Web"
+                        link = "#"
+                        card_content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
 
 # ----------------------------------
 # About us section
