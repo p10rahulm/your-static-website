@@ -43,6 +43,7 @@ draft =  false
         [about_us.left_part]
                 left_logo_image = "portrait.jpg"
                 left_name_title = "Rahul Madhavan"
+                left_name_subtitle = "Founder, CodeFRA"
 
                 # ---------------------------------
                 [[about_us.left_part.affiliations]]
@@ -58,17 +59,17 @@ draft =  false
                         icon_pack = "fa"
                         link = "mailto:rahul.maddy@gmail"
                 [[about_us.left_part.social]]
-                        icon = "linkedin"
+                        icon = "fa-linkedin"
                         icon_pack = "fa"
                         link = "//linkedin.com/in/rahul-madhavan/"
 
                 [[about_us.left_part.social]]
-                        icon = "facebook"
+                        icon = "fa-facebook"
                         icon_pack = "fa"
                         link = "//facebook.com/rahul.maddy"
 
                 [[about_us.left_part.social]]
-                        icon = "github"
+                        icon = "fa-github"
                         icon_pack = "fa"
                         link = "//github.com/p10rahulm"
 
@@ -76,11 +77,21 @@ draft =  false
         # ---------------------------------
         [about_us.right_part]
                 title = "Biography"
-                content = "some content here"
+
+                # ---------------------------------
+                # Put the content below between the triple quotes. You may use markdown.
+                # Make sure alignment is ok. I've used replace of '                '
+                # to remove the leading white space
+                content = '''
+                # Hitoo
+                ### Giving it my best
+                Why are you going away?
+               '''
 
                 # ---------------------------------
                 [about_us.right_part.bottom_left]
                         title = "Education"
+                # Choose fa (font-awesome) icons below
                 [[about_us.right_part.bottom_left.list]]
                         title = "Artificial Intelligence"
                         subtitle = ""

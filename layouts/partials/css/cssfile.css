@@ -508,28 +508,28 @@ a[data-fancybox] img {
   font-size: 2rem;
 }
 
-ul.ul-interests li {
+ul.ul-about_us_left_list li {
   font-size: 0.9rem;
 }
 
-ul.ul-edu {
+ul.ul-about_us_right_list {
   list-style: none;
 }
 
-ul.ul-edu li {
+ul.ul-about_us_right_list li {
   position: relative;
   padding: 0px 15px 4px 3px;
 }
 
-ul.ul-edu li .description p {
+ul.ul-about_us_right_list li .description p {
   margin: 0;
 }
 
-ul.ul-edu li .description p.course {
+ul.ul-about_us_right_list li .description p.title {
   font-size: 0.9rem;
 }
 
-ul.ul-edu li .description p.institution {
+ul.ul-about_us_right_list li .description p.subtitle {
   font-size: 0.75rem;
   color: rgba(0,0,0,0.6);
 }
