@@ -508,8 +508,29 @@ a[data-fancybox] img {
   font-size: 2rem;
 }
 
+
+
+
+ul.ul-about_us_left_list {
+  list-style: none;
+}
+
 ul.ul-about_us_left_list li {
+  position: relative;
+  padding: 0px 15px 4px 3px;
+}
+
+ul.ul-about_us_left_list li .description p {
+  margin: 0;
+}
+
+ul.ul-about_us_left_list li .description p.title {
   font-size: 0.9rem;
+}
+
+ul.ul-about_us_left_list li .description p.subtitle {
+  font-size: 0.75rem;
+  color: rgba(0,0,0,0.6);
 }
 
 ul.ul-about_us_right_list {
@@ -1514,7 +1535,7 @@ body.dark {
   color: rgba(255, 255, 255, 0.54);
 }
 
-.dark ul.ul-edu li .description p.institution {
+.dark ul.ul-about_us_right_list li .description p.subtitle {
   color: rgba(255, 255, 255, 0.6);
 }
 

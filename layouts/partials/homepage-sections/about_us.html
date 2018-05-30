@@ -48,8 +48,8 @@
                 </h1>
             {{ end }}
             {{if isset $.Params.about_us.right_part "content" }}
-                <div class = "content"
-                    {{ replace $.Params.about_us.right_part.content "                " "" | markdownify  }}
+                <div class = "content">
+                    {{ replace $.Params.about_us.right_part.content "                " "" | markdownify | emojify }}
                 </div>
             {{ end }}
 
@@ -63,8 +63,10 @@
                             {{ range $.Params.about_us.right_part.bottom_left.list }}
                                 <li>
                                     <i class="fa-li fa {{ .icon }}"></i>
-                                    <h3>{{ .title }}</h3>
-                                    <p>{{ .subtitle }}</p>
+                                    <div class="description">
+                                        <p class="title">{{ .title }}</p>
+                                        <p class="subtitle">{{ .subtitle }}</p>
+                                    </div>
                                 </li>
                             {{ end }}
                         </ul>

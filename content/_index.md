@@ -20,16 +20,6 @@ draft =  false
                 url = "./post"
                 label = '<i class="ai ai-figshare"></i> &nbsp&nbsp View Posts'
 
-# ----------------------------------
-# Contact us section
-[contact]
-        active = true
-        title = "Contact"
-        subtitle = ""
-        content = ""
-
-        # Automatically link email and phone?
-        autolink = true
 
 # ----------------------------------
 # About us section
@@ -47,12 +37,15 @@ draft =  false
 
                 # ---------------------------------
                 [[about_us.left_part.affiliations]]
-                        name = "Atidiv"
-                        url = "http://www.atidiv.com"
+                        name = "Atidiv, Cuemath"
+                        url = ""
                 [[about_us.left_part.affiliations]]
-                        name = "Atidiv"
-                        url = "http://www.atidiv.com"
+                        name = "Barclays, Nomura, Lehman Brothers"
+                        url = ""
 
+                [[about_us.left_part.affiliations]]
+                                        name = "IIM Ahmedabad, IIT Madras"
+                                        url = ""
                 # ---------------------------------
                 [[about_us.left_part.social]]
                         icon = "fa-envelope"
@@ -83,9 +76,15 @@ draft =  false
                 # Make sure alignment is ok. I've used replace of '                '
                 # to remove the leading white space
                 content = '''
-                # Hitoo
-                ### Giving it my best
-                Why are you going away?
+                Rahul Madhavan founded CodeFRA as a means to work on problems that take time and are more difficult to address than traditional start-ups would allow. Traditionally the distinction between research and production had been fairly well demarcated with research institutions working on technologies that were forward looking and companies working on production oriented technology (technologies which made money today). That distinction has become blurred, especially in computer science with much of the cutting edge improvements happening within companies.
+
+                CodeFRA is an attempt to work on futuristic technologies covering multidisciplinary domains. We follow problems till their origins, dive into rabbit holes and go deep into the root of problems. Many times this leads us to mathematics, which seems to be the foundation of all else. Sometimes it leads to sociology and behavioural science. Few times it leads to the complexity of Biology. Other times it leads to thought experiments. Most of this rests on a backbone of coding as it is ubiquitous as a tool.
+
+                The research areas we work on here are network topologies, computational structures, self-organization and automata, idea space theory. Apart from this core, there is also ongoing work on pattern finding in market microstructure (high frequency trading), and a few applications of complexity and modelling. If you would like to join us to contribute on any of these problems, you are most welcome. We're sure you would find the journey at least slightly enlightening. If you have a problem that you would like us to work on, please contact us below.
+
+                Rahul Madhavan has been the head of Data Science at Atidiv and Cuemath. At Atidiv, he built a data science division from scratch which worked on Data Science as a Service - the Atidiv data science team acted as the remote data science team for our clients. This meant building tools to solve common problems between companies and building a team to deal with bespoke problems and on demand requests for client companies. At Cuemath he was the head of data science and helped in their Series-B fund-raise round.
+
+                Prior to that he was a trader on Wall Street trading currency options. During his time at Barclays he helped setup an automated option price trading/monitoring system. On the research side, he worked on single currency fx pricing and eurchf floor failure models. At Nomura he worked on Equity Exotic Options with a specific focus on RFP pricing and generating client ideas. At Lehman Brothers, he risk managed an exotics trading book. He distinctly remembers being non-plussed at the fuss over the Lehman Brothers collapse, having predicted it a year before (Ref: IIT Madras placement talk - 2007). :rocket:
                '''
 
                 # ---------------------------------
@@ -95,23 +94,23 @@ draft =  false
                 [[about_us.right_part.bottom_left.list]]
                         title = "Artificial Intelligence"
                         subtitle = ""
-                        icon = "fa-dot-circle"
+                        icon = "fa-rocket"
                 [[about_us.right_part.bottom_left.list]]
                         title = "Networks"
                         subtitle = ""
-                        icon = "fa-dot-circle"
+                        icon = "fa-rocket"
                 [[about_us.right_part.bottom_left.list]]
                         title = "Topology"
                         subtitle = ""
-                        icon = "fa-dot-circle"
+                        icon = "fa-rocket"
                 [[about_us.right_part.bottom_left.list]]
                         title = "Language"
                         subtitle = ""
-                        icon = "fa-dot-circle"
+                        icon = "fa-rocket"
                 [[about_us.right_part.bottom_left.list]]
                         title = "Modelling"
                         subtitle = ""
-                        icon = "fa-dot-circle"
+                        icon = "fa-rocket"
 
                 # ---------------------------------
                 [about_us.right_part.bottom_right]
@@ -127,6 +126,17 @@ draft =  false
                         subtitle = "Indian Institute of Technology, Madras"
                         icon = "fa-graduation-cap"
 
+
+# ----------------------------------
+# Contact us section
+[contact]
+        active = true
+        title = "Contact"
+        subtitle = ""
+        content = ""
+
+        # Automatically link email and phone?
+        autolink = true
 
 
 +++
