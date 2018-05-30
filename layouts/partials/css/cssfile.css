@@ -450,6 +450,41 @@ a[data-fancybox] img {
 }
 
 /*************************************************
+ *  Showcase
+ **************************************************/
+#services h2.section-heading  {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    line-height: 1.25;
+}
+#services .fa-stack-2x {
+    color: slategray;
+}
+#services h3.section-subheading {
+    margin-bottom: 75px;
+    text-transform: none;
+    font-size: 1.25em;
+    font-style: italic;
+    line-height: 1.25;
+    font-weight: 200;
+}
+#services a{
+    color: #fed136;
+    font-size: 24px;
+}
+
+#services .service-heading{
+    margin-bottom: 1rem;
+}
+#services .service-text{
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+}
+
+/*************************************************
  *  Biography
  **************************************************/
 
