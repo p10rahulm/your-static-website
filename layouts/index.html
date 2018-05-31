@@ -1,7 +1,20 @@
 {{ define "main" }}
-    {{partial "homepage-sections/top_image_writeup.html" .}}
-    {{partial "homepage-sections/about_us.html" .}}
-    {{partial "homepage-sections/contact.html" .}}
+    {{if .Params.top_image.active}}
+        {{partial "homepage-sections/top_image_writeup.html" .}}
+    {{end}}
+    {{if .Params.showcase.active}}
+        {{partial "homepage-sections/three_showcase.html" .}}
+    {{end}}
+    {{if .Params.about_us.active}}
+        {{partial "homepage-sections/about_us.html" .}}
+    {{end}}
+    {{if .Params.contact.active}}
+        {{partial "homepage-sections/contact.html" .}}
+    {{end}}
+
+
+
+
 
 
     <H1> This is an awesome front page</H1>

@@ -461,8 +461,9 @@ a[data-fancybox] img {
     line-height: 1.25;
 }
 #services .fa-stack-2x {
-    color: slategray;
+    color: #444;
 }
+
 #services h3.section-subheading {
     margin-bottom: 75px;
     text-transform: none;

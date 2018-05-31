@@ -4,6 +4,8 @@ title = "{{ replace .TranslationBaseName "-" " " | title }}"
 date = {{ .Date }}
 draft = false
 author = "Rahul Madhavan"
+allow_comments = false
+show_title_date_author = false
 
 # Should this be listed in front page
 featured = true
