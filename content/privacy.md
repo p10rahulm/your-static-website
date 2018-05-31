@@ -20,7 +20,9 @@ categories = []
         caption = ""
 # Your content goes below
 +++
-
+<br>
+# Privacy Policy
+<br>
 CodeFRA built the CodeFRA website as a Free use website. This SERVICE is provided by CodeFRA at no cost and is intended for use as is and without warranty or liability.
 
 This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service.

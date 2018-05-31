@@ -167,7 +167,23 @@ verboseLog =true
     # Do you want to disable it? (not recommended)
     disable_sri = false
 
+    # The following go on the footer.
+    show_back_to_top = false
 
+    [[params.footer_network]]
+        url = "https://www.facebook.com/rahul.maddy"
+        iconpack = "fa"
+        icon = "fa-facebook"
+
+    [[params.footer_network]]
+        url = "https://www.linkedin.com/in/rahul-madhavan/"
+        iconpack = "fa"
+        icon = "fa-linkedin"
+
+    [[params.footer_network]]
+        url = "http://github.com/p10rahulm"
+        iconpack = "fa"
+        icon = "fa-github"
 
 # Menus
 [menu]
