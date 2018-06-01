@@ -104,6 +104,7 @@ verboseLog =true
 
     about_page_portrait = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
     email = "rahul.maddy@gmail.com"
+
     address = "Koramangala, Bangalore"
     phone = "+91 89714 07799"
     skype = ""

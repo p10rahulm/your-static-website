@@ -2,10 +2,17 @@
     {{ partial "header" . }}
     {{ partial "navbar" . }}
 {{ end }}
+
+{{ block "header_scripts" .}}{{ end }}
+
 {{ block "main" .}}
     <H1>My main from baseof</H1>
 {{ end }}
+
 {{ block "comments" .}}{{ end }}
+
+{{ block "additional_scripts" .}}{{ end }}
+
 {{ block "footr" .}}
     {{ partial "footer_container" . }}
     {{ partial "footer" . }}
