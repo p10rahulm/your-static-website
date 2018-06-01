@@ -1,81 +1,4 @@
 {{define "header_scripts"}}
-    {{ $js_versions := .Site.Data.sri.js }}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/{{$js_versions.jQuery.version}}/jquery.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.jQuery.sri}}" crossorigin="anonymous"{{end}}></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.77/jquery.form-validator.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.77/html5.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.77/toggleDisabled.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.77/theme-default.min.css" rel="stylesheet">
-    <script>
-        // Smooth scrolling via animate()
-        // To Disable Submit Button By Default
-        $("input[type=submit]").attr('disabled','disabled');
-        // When User Fills Out Form Completely
-        $("contactForm").keyup(function(){
-            $("input[type=submit]").removeAttr('disabled');
-        });
-
-        $(document).ready(function(){
-            if ($('.g-recaptcha')) {
-                checkReCaptcha()
-            }
-        });
-
-        // Async contact form
-        $('form[id=contactForm]').submit(function(){
-            $.post($(this).attr('action'), $(this).serialize(), function(data, textStatus, jqXHR){
-                $('form[id=contactForm] #success').hide();
-                $('form[id=contactForm] #error').hide();
-                if (jqXHR.status == 200) {
-                    $('form[id=contactForm] #success').show();
-                }}, 'json').fail(function(){
-                $('form[id=contactForm] #success').hide();
-                $('form[id=contactForm] #error').hide();
-                $('form[id=contactForm] #error').show();
-            });
-            return false;
-        });
-
-        // Contact form validation
-        $.validate({
-            modules : 'html5, toggleDisabled'
-        });
-
-        function onContactCaptcha($form) {
-            $('form#contactForm').submit();
-        }
-
-        function checkReCaptcha() {
-            if (typeof grecaptcha === "undefined") {
-                $('.captcha-error').show();
-                setTimeout(checkReCaptcha, 200);
-            } else {
-                $('.captcha-error').hide();
-                $('.g-recaptcha-filler').hide();
-                $('.g-recaptcha').attr('disabled', false);
-            }
-        }
-
-
-
-        //--------------------------
-        //-  Mine
-        //--------------------------
-        // function onSubmit(token) {
-        //     document.getElementById("contactForm").submit();
-        // }
-        // $('form[id=contactForm]').submit(function() {
-        //     function validateForm() {
-        //         var nameVar = document.forms["contactForm"]["name"].value;
-        //         if (nameVar == "") {
-        //             alert("Name must be filled out");
-        //             return false;
-        //         }
-        //     }
-        //     validateForm();
-        // })
-    </script>
-
 {{end}}
 
 {{define "main"}}
@@ -106,97 +29,48 @@
                             {{ with .Params.form.name }}
                                 <div class="form-group">
                                     <input class="form-control" id="name" required="required" type="text" name="name"
-                                           placeholder="{{ with .text }}{{ .  | markdownify }}{{ end }}"
-                                           data-validation-error-msg="{{ with .warning }}{{ . | markdownify }}{{ end }}">
-                                    <p class="help-block text-danger"></p>
+                                           placeholder="{{ with .text }}{{ .  | markdownify }}{{ end }}">
                                 </div>
                             {{ end }}
                             {{ with .Params.form.email }}
                                 <div class="form-group">
                                     <input class="form-control" id="email" required="required" type="email" name="email"
-                                           placeholder="{{ with .text }}{{ . | markdownify }}{{ end }}"
-                                           data-validation-error-msg="{{ with .warning }}{{ . | markdownify }}{{ end }}">
-                                    <p class="help-block text-danger"></p>
+                                           placeholder="{{ with .text }}{{ . | markdownify }}{{ end }}">
                                 </div>
                             {{ end }}
 
                             {{ with .Params.form.phone }}
                                 <div class="form-group">
                                     <input class="form-control" id="phone" required="required" type="number" name="phone"
-                                           placeholder="{{ with .text }}{{ . | markdownify }}{{ end }}"
-                                           data-validation-error-msg="{{ with .warning }}{{ . | markdownify }}{{ end }}"></textarea>
-                                    <p class="help-block text-danger"></p>
+                                           placeholder="{{ with .text }}{{ . | markdownify }}{{ end }}"></textarea>
                                 </div>
                             {{ end }}
                         </div>
                         <div class="col-md-6">
                             {{ with .Params.form.message }}
-                            <div class="form-group">
-                                <textarea class="form-control" id="message" required="required" name="message"
-                                          placeholder="{{ with .text }}{{ . | markdownify }}{{ end }}"
-                                          data-validation-error-msg="{{ with .warning }}{{ . | markdownify }}{{ end }}"></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" id="message" required="required" name="message"
+                                              placeholder="{{ with .text }}{{ . | markdownify }}{{ end }}"></textarea>
+                                </div>
                             {{ end }}
                         </div>
                         <div class="clearfix"></div>
                         <div class="col-lg-12 text-center">
-                            <div class="text-success" id="success" style="display:none;">
-                                {{ with $.Params.thanks }}
-                                {{ . | markdownify }}
-                                {{ else }}
-                                Thank you for contacting us.
-                                {{ end }}
-                            </div>
-                            <div class="captcha-error text-danger" id="captcha-error">
-                                Message is not sendable due to captcha not loadable. Please contact us at {{ (or $.Params.email .Site.Params.email) -}}.
-                            </div>
-                            <div class="text-danger" id="error" style="display:none;">
-                                {{ with $.Params.error }}
-                                {{ . | markdownify }}
-                                {{ else }}
-                                Message could not be send. Please contact us at {{ (or $.Params.email .Site.Params.email) }} instead.
-                                {{ end }}
-                            </div>
-                            <br/>
-                            <input type="hidden" name="_next" value="{{.Params.onSubmit_link}}"/>
-                            <input type="hidden" name="_subject" value="New submission on {{.Site.Title}}!"/>
-                            {{if isset .Params "contact_secondary_email"}}
-                            <input type="hidden" name="_cc" value="{{.Params.contact_secondary_email}}"/>
-                            {{end}}
+                            <br>
+                            <input type="hidden" name="_next" value="{{.Params.onSubmit_link}}">
+                            <input type="hidden" name="_subject" value="New submission on {{.Site.Title}}!">
                             <!--Below is a honeypot field-->
-                            <input type="text" name="_gotcha" style="display:none"/>
-                            {{ with .Params.captcha }}
-                                <div class="g-recaptcha-container">
-                                    <span class="g-recaptcha-filler"></span>
-                                    <button
-                                            type="submit"
-                                            value="Submit"
-                                            class="g-recaptcha btn btn-xl"
-                                            data-sitekey="{{ .sitekey }}"
-                                            data-size="invisible"
-                                            data-badge="inline"
-                                            data-callback="onContactCaptcha">
-                                        {{ .buttontext }}
-                                    </button>
-                                    <span class="filler"></span>
-                                </div>
-                            {{ else }}
-                                <button type="submit" value="Submit" class="btn btn-xl">
-                                    {{ print .Params.buttontext }}
-                                </button>
-                            {{ end }}
+                            <input type="text" name="_gotcha" style="display:none">
+                            {{if isset .Params "contact_secondary_email"}}
+                                {{range .Params.contact_secondary_email}}
+                                    <input type="hidden" name="_cc" value="{{- . -}}">
+                                {{end}}
+                            {{end}}
+                            <button type="submit" value="Submit" class="btn btn-xl">
+                                {{ .Params.buttontext }}
+                            </button>
                         </div>
                     </div>
-                    {{ range .Params.form.hidden }}
-                    {{ if eq .name "site" }}
-                    <input type="hidden" name="{{ .name }}" value="{{ $.Permalink }}"/>
-                    {{ else if eq .name "page" }}
-                    <input type="hidden" name="{{ .name }}" value="{{ $.URL }}"/>
-                    {{ else }}
-                    <input type="hidden" name="{{ .name }}" value="{{ .value }}"/>
-                    {{ end }}
-                    {{ end }}
                 </fieldset>
                 </form>
             </div>

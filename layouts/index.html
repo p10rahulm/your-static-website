@@ -8,6 +8,9 @@
     {{if .Params.about_us.active}}
         {{partial "homepage-sections/about_us.html" .}}
     {{end}}
+    {{if .Params.logo_wall.active}}
+        {{partial "homepage-sections/logo_wall.html" .}}
+    {{end}}
     {{if .Params.contact.active}}
         {{partial "homepage-sections/contact.html" .}}
     {{end}}

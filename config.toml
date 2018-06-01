@@ -216,7 +216,7 @@ verboseLog =true
 
 [[menu.main]]
   name = "Contact"
-  url = "#contact"
+  url = "/contact"
   weight = 6
 
 # Here we choose the taxonomies. Various types of pages use various taxonomies
