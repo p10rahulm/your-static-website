@@ -188,12 +188,15 @@ verboseLog =true
         #    d) A formspree form for collecting name and email id
         #    e) A subscribe now button
         title = "Subscribe Now to latest and greatest posts"
-        subtext = "This is the subscribe now explanatory text"
+        title_color = "#333333"
+        subtitle = "This is the subscribe now explanatory text"
+        subtitle_color = "#aaaaaa"
         # Use img_position = 1 for full image background and use img_position = 2 for image on the right
         img_position = 2
         img_source = "/img/flowers_line_drawing.png"
 
         # form
+        form_label_color = "#ffaa33"
         [[params.popup.form_inputs]]
             form_input1_label = "Name"
             form_input1_helper_text = "Name..."
@@ -204,6 +207,9 @@ verboseLog =true
 
         # form submit text
         submit_text = "Subscribe"
+        submit_text_color = "#ccaaaa"
+        submit_button_color = "blue"
+
 
 
 

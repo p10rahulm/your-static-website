@@ -1,9 +1,12 @@
 {{ block "headr" .}}
     {{ partial "header" . }}
-    {{ partial "navbar" . }}
 {{ end }}
 
 {{ block "header_scripts" .}}{{ end }}
+
+{{ block "navbar" .}}
+    {{ partial "navbar" . }}
+{{ end }}
 
 {{ block "main" .}}
     <H1>My main from baseof</H1>
@@ -11,9 +14,9 @@
 
 {{ block "comments" .}}{{ end }}
 
-{{ block "additional_scripts" .}}{{ end }}
-
 {{ block "footr" .}}
     {{ partial "footer_container" . }}
     {{ partial "footer" . }}
 {{ end }}
+
+{{ block "additional_scripts" .}}{{ end }}
