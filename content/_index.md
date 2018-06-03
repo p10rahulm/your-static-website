@@ -26,11 +26,8 @@ draft =  false
         subtitle = "Major Projects and Work Interests"
 
         # These are the cards we will display. Ideally fill three.
-        [[showcase.card]]
-                icon = "fa-shopping-cart"
-                title = "E-Commerce"
-                link = "#"
-                card_content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+        # choose from 2,3,4,6
+        numcards = 3
 
         [[showcase.card]]
                         icon = "fa-laptop"
@@ -41,6 +38,12 @@ draft =  false
         [[showcase.card]]
                         icon = "fa-lock"
                         title = "Web"
+                        link = "#"
+                        card_content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+
+        [[showcase.card]]
+                        icon = "fa-shopping-cart"
+                        title = "E-Commerce"
                         link = "#"
                         card_content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
 
@@ -148,6 +151,43 @@ draft =  false
                         title = "Bachelor of Technology, 2007"
                         subtitle = "Indian Institute of Technology, Madras"
                         icon = "fa-graduation-cap"
+
+
+# ----------------------------------
+# Logo Wall section
+[logo_wall]
+        active = true
+        heading = "Our Clients"
+        heading_color = "#666"
+        subheading = "we serve people from everywhere"
+        subheading_color = "#aaa"
+
+
+        # Count the number of logos you want on a row. Choose from 1,2,3,4,6, 12
+        logos_in_row_medium_screen = 4
+        logos_in_row_small_screen = 2
+
+        # List all the logos in the logo wall below.
+        # Ensure height to width ratios of the images are all the same.
+        [[logo_wall.logos]]
+                source = "https://themes.gohugo.io/theme/agency/img/logos/themeforest.jpg"
+                link = "/"
+                name = "Bubbles"
+
+        [[logo_wall.logos]]
+                source = "https://themes.gohugo.io/theme/agency/img/logos/creative-market.jpg"
+                link = "/"
+                name = "Creative"
+
+        [[logo_wall.logos]]
+                source = "https://themes.gohugo.io/theme/agency/img/logos/envato.jpg"
+                link = "/"
+                name = "Envato"
+
+        [[logo_wall.logos]]
+                        source = "https://themes.gohugo.io/theme/agency/img/logos/designmodo.jpg"
+                        link = "/"
+                        name = "Design_Modo"
 
 
 # ----------------------------------

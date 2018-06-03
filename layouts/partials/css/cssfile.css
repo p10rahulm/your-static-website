@@ -509,7 +509,6 @@ a[data-fancybox] img {
 }
 
 #profile .portrait {
-    background-image: url('../img/portrait.jpg');
     width: 200px;
     height: 200px;
     margin: 0 auto;
@@ -999,6 +998,23 @@ article .article-metadata {
 .card:hover .card-image.hover-overlay:after {
     opacity: 0.6;
 }
+/*************************************************
+ *  Home page logo wall section
+ **************************************************/
+section#logo-wall .heading {
+    margin: 0rem 0rem -0.5rem;
+    font-weight: 700;
+    font-size: 2rem;
+}
+section#logo-wall .subheading {
+    padding: 0rem 0rem 0.5rem;
+    font-weight: 200;
+    font-size: 1.2rem;
+}
+section#logo-wall .flexbox {
+    padding-top: 1.5rem;
+}
+
 
 /*************************************************
  *  Home page contact section

@@ -5,6 +5,7 @@ draft = false
 author = "Rahul Madhavan"
 allow_comments = false
 show_title_date_author = false
+show_popup = true
 
 # Should this be listed in front page
 featured = false

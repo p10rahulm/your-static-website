@@ -16,7 +16,7 @@
         <div class="row text-center">
             {{if isset .Params.showcase "card"}}
                 {{range .Params.showcase.card}}
-                    <div class="col-md-4">
+                    <div class="col-md-{{div 12 $.Params.showcase.numcards}}">
                         <span class="fa-stack fa-4x">
                             <i class="fa fa-circle fa-stack-2x text-primary"></i>
                             <i class="fa {{ .icon }} fa-stack-1x fa-inverse"></i>
