@@ -5,8 +5,12 @@ draft = false
 author = "Rahul Madhavan"
 allow_comments = false
 show_title_date_author = false
+
 show_popup = true
 show_sharer = true
+rollup_sharer_active= true
+fixed_sharer_active = true
+content_sharer_active= true
 
 # Should this be listed in front page
 featured = true

@@ -1,6 +1,6 @@
 +++
 title = "Course2"
-date = 2018-06-04T21:09:43+05:30
+date = 2018-06-04T21:12:32+05:30
 draft = false
 author = "Rahul Madhavan"
 show_popup = true

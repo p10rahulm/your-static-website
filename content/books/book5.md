@@ -1,12 +1,16 @@
 +++
 title = "Book5"
-date = 2018-06-04T21:09:45+05:30
+date = 2018-06-04T21:12:35+05:30
 draft = false
 author = "Rahul Madhavan"
 allow_comments = false
 show_title_date_author = false
+
 show_popup = true
 show_sharer = true
+rollup_sharer_active= true
+fixed_sharer_active = true
+content_sharer_active= true
 
 # Should this be listed in front page
 featured = true
