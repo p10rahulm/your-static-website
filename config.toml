@@ -190,7 +190,7 @@ verboseLog =true
         # Of these the button activation is always on. The others can be set here.
 
         # 1. Show Button at bottom of screen
-        popup_show_button_on_bottom_right = false
+        popup_show_button_on_bottom_right = true
         popup_button_color = "#0095eb"
         pullup_button_icon = "fa-fire"
         pullup_button_icon_color = "#fff"

@@ -15,6 +15,7 @@
                     var popup_opened_so_far = "unopened";
                 }
 
+                // Below shows button. https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
                 {{if $.Site.Params.popup.popup_show_button_on_bottom_right}}
                     var x = document.getElementById("popup_activation_button");
                     x.style.display = "block";
@@ -22,6 +23,12 @@
                     var x = document.getElementById("popup_activation_button");
                     x.style.display = "none";
                 {{end}}
+                // Activate modal on click. https://www.w3schools.com/jquery/event_click.asp
+                $("#popup_activation_button").click(function(){
+                    $('#popupModal').modal();
+                    popup_opened_so_far = "opened";
+                    localStorage.setItem("popup_opened_so_far", popup_opened_so_far);
+                });
 
                 {{if $.Site.Params.popup.activate_popup_on_delay}}
                     if(popup_opened_so_far =="unopened"){
@@ -90,7 +97,7 @@
     </header>
     <body>
 
-    <button id="popup_activation_button" class="btn btn-primary btn-sm pull-right float" data-target="#popupModal" data-toggle="modal" style = "background: {{$.Site.Params.popup.popup_button_color}}; border-color: {{$.Site.Params.popup.popup_button_color}}">
+    <button id="popup_activation_button" class="btn btn-primary btn-sm pull-right float" style = "background: {{$.Site.Params.popup.popup_button_color}}; border-color: {{$.Site.Params.popup.popup_button_color}}">
         <i class="fa {{.Site.Params.popup.pullup_button_icon}} float-button" style = "color:{{$.Site.Params.popup.pullup_button_icon_color}}"></i>
     </button>
 
