@@ -3,6 +3,11 @@ title = "{{ replace .TranslationBaseName "-" " " | title }}"
 date = {{ .Date }}
 draft = false
 author = "Rahul Madhavan"
+show_popup = true
+show_sharer = true
+rollup_sharer_active= true
+fixed_sharer_active = true
+content_sharer_active= true
 
 # Should this be listed in front page
 featured = true

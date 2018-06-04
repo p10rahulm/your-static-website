@@ -12,6 +12,14 @@
     <H1>My main from baseof</H1>
 {{ end }}
 
+{{ block "sharer" .}}
+    {{if (and (isset $.Site.Params.sharer "sharer_active") (isset $.Params "show_sharer"))}}
+        {{if (and ($.Site.Params.sharer.sharer_active) ($.Params.show_sharer))}}
+            {{partial "sides/sharer.html" .}}
+        {{end}}
+    {{end}}
+{{ end }}
+
 {{ block "popup" .}}
     {{if (and (isset $.Site.Params.popup "popup_active") (isset $.Params "show_popup"))}}
         {{if (and ($.Site.Params.popup.popup_active) ($.Params.show_popup))}}

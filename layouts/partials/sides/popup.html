@@ -32,7 +32,7 @@
 
                 {{if $.Site.Params.popup.activate_popup_on_delay}}
                     if(popup_opened_so_far =="unopened"){
-                        console.log("inside delay popup");
+                        // console.log("inside delay popup");
                         var popup_delay = {{mul 1000 $.Site.Params.popup.seconds_before_activation}}
                         setTimeout(
                             function() {
@@ -51,9 +51,9 @@
                 {{if $.Site.Params.popup.activate_popup_on_exit_intent}}
                     sensitivity = {{.Site.Params.popup.exit_intent_sensitivity}};
                     $(document).mouseleave(function () {
-                        console.log('out');
+                        // console.log('out');
                         var y = event.clientY;
-                        console.log(y);
+                        // console.log(y);
                         if(-y > sensitivity){
                             if(popup_opened_so_far =="unopened"){
                                 console.log("inside exit intent popup");
@@ -68,12 +68,12 @@
                 //Scroll Popup: https://stackoverflow.com/questions/15798360/show-div-on-scrolldown-after-800px
                 {{if $.Site.Params.popup.activate_popup_on_scroll}}
                     var scrollPixelsforActivation = {{ $.Site.Params.popup.scroll_percentage_before_activation }} * $(document).height();
-                    console.log(scrollPixelsforActivation);
+                    // console.log(scrollPixelsforActivation);
                     $(document).scroll(function() {
                         var scrolly = $(this).scrollTop();
                         if (scrolly > scrollPixelsforActivation) {
                             if(popup_opened_so_far == "unopened"){
-                                console.log("inside scroll popup");
+                                // console.log("inside scroll popup");
                                 $('#popupModal').modal();
                                 popup_opened_so_far = "opened";
                                 localStorage.setItem("popup_opened_so_far", popup_opened_so_far);

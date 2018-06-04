@@ -1,15 +1,93 @@
 <aside class="sharer">
     <header>
         <script type="text/javascript">
+            $(document).ready(function() {
+                {{if $.Site.Params.sharer.sharer_rollup_button_active}}
+                    $("#share_menu_activation_button").click(function() {
+                        if(document.getElementById("toggled_social_shares").style.display == "block"){
+                            document.getElementById("toggled_social_shares").style.display = "none";
+                        } else {
+                            // document.getElementById("toggled_social_shares").style.display = "block";
+                            $("#toggled_social_shares").css({
+                                "opacity":"0",
+                                "display":"block",
+                            }).fadeIn(1000).animate({opacity:1})
+                        }
+                    })
+                {{end}}
+            });
 
         </script>
 
         <style type="text/css">
 
+
         </style>
 
     </header>
     <body>
+    {{if and $.Site.Params.sharer.sharer_rollup_button_active $.Params.rollup_sharer_active}}
+        <div id="floating_sharer">
+            <button class="sharer-opener" id="share_menu_activation_button" style = "background: {{$.Site.Params.sharer.sharer_button_color}}; border-color: {{$.Site.Params.sharer.sharer_button_color}}">
+                <i class="fa {{$.Site.Params.sharer.sharer_pullup_button_icon}} sharer-float-button"></i>
+            </button>
+            <div class="sharer_socials" id="toggled_social_shares">
+                <a class="twitter"
+                   href="https://twitter.com/intent/tweet?text={{ .Title | html }}&amp;url={{ .Permalink | html }}"
+                   target="_blank" rel="noopener">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="facebook"
+                   href="https://www.facebook.com/sharer.php?u={{ .Permalink | html }}"
+                   target="_blank" rel="noopener">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="linkedin"
+                   href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink | html }}&amp;title={{ .Title | html }}"
+                   target="_blank" rel="noopener">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a class="googleplus"
+                   href="https://plus.google.com/share?url={{ .Permalink | html }}"
+                   target="_blank" rel="noopener">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+                <a class="mailto"
+                   href="mailto:?subject={{ .Title | html }}&amp;body={{ .Permalink | html }}">
+                    <i class="fa fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    {{end}}
+
+    {{if and $.Site.Params.sharer.sharer_fixed_menu_active $.Params.fixed_sharer_active}}
+        <div class="sharer_socials_fixed" id="fixed_social_shares">
+            <div class="twitter"
+               href="https://twitter.com/intent/tweet?text={{ .Title | html }}&amp;url={{ .Permalink | html }}"
+               target="_blank" rel="noopener">
+                <i class="fa fa-twitter"></i>
+            </div>
+            <div class="facebook"
+               href="https://www.facebook.com/sharer.php?u={{ .Permalink | html }}"
+               target="_blank" rel="noopener">
+                <i class="fa fa-facebook"></i>
+            </div>
+            <div class="linkedin"
+               href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink | html }}&amp;title={{ .Title | html }}"
+               target="_blank" rel="noopener">
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <div class="googleplus"
+               href="https://plus.google.com/share?url={{ .Permalink | html }}"
+               target="_blank" rel="noopener">
+                <i class="fa fa-google-plus"></i>
+            </div>
+            <div class="mailto"
+               href="mailto:?subject={{ .Title | html }}&amp;body={{ .Permalink | html }}">
+                <i class="fa fa-envelope"></i>
+            </div>
+        </div>
+    {{end}}
 
     </body>
 

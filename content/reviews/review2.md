@@ -1,8 +1,14 @@
 +++
 title = "Review2"
-date = 2018-06-04T10:49:57+05:30
+date = 2018-06-04T21:09:43+05:30
 draft = false
 author = "Rahul Madhavan"
+
+show_popup = true
+show_sharer = true
+rollup_sharer_active= true
+fixed_sharer_active = true
+content_sharer_active= true
 
 # Should this be listed in front page
 featured = true

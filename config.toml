@@ -169,6 +169,23 @@ verboseLog =true
     # The following go on the footer.
     show_back_to_top = false
 
+    # Below we set attributes for the sharer
+    [params.sharer]
+        # Global and page settings for sharer has to be true for it to be shown
+        sharer_active = true
+        # There are three ways in which sharers can be included in your site.
+        #        1. Through a fixed button that when clicked rolls up to show sharing buttons (bottom right of screen)
+        #        2. Through a fixed menu on the left. This is active on larger screens. On smaller screens, there would be a fixed menu at bottom of screen
+        #        3. Through a list of icons just before the start of content on content pages
+
+        # 1. Sharer Rollup button
+        sharer_rollup_button_active = true
+        sharer_button_color = "#0095eb"
+        sharer_pullup_button_icon = "fa-share-alt"
+        # 2. Fixed menu
+        # Note that this changes with screen width. This can be checked by pressing ctrl+shift+i on chrome
+        sharer_fixed_menu_active = true
+
 
     # Below we set attributes for the popup
     [params.popup]
@@ -177,7 +194,8 @@ verboseLog =true
         # page front matter (in the content folder)
         popup_active = true
         # Should popup be shown once per session or persist across browser close? default is persist
-        reload_popup_once_per_session = true
+        reload_popup_once_per_session = false
+
 
         # We will allow three types of popups, timed popup, popup on given amount of scroll and exit intent popup
         # There are three ways of activating a popup.
