@@ -1,9 +1,11 @@
 +++
 # General
 title = "Snip4"
-date = 2018-05-22T10:46:41+05:30
+date = 2018-06-04T10:49:58+05:30
 draft = false
 author = "Rahul Madhavan"
+allow_comments = false
+show_title_date_author = false
 
 # Should this be listed in front page
 featured = true
@@ -19,35 +21,9 @@ categories = []
 # Does the content use math formatting?
 math = false
 
-# Highlight.js options
-#   highlight
-#     Enable global source code highlighting?  If false, you can
-#     override it for a particular page in that page's preamble.
-#
-#     Example: highlight = true
-#
-#   highlight_languages
-#     Add support for highlighting additional languages. Support for
-#     languages mentioned here will be included in all pages. You
-#     can also set this variable for a particular page in that
-#     page's preamble.
-#
-#     Example: highlight_languages = ["go", "lisp", "ocaml"]
-#
-#   highlight_style
-#     Choose a different CSS style for highlighting source
-#     code. Setting this option in a page's preamble has no
-#     effect.
-#
-#     Example: highlight_style = "github-gist"
-#
-#   For the list of supported languages and styles, see:
-#   https://cdnjs.com/libraries/highlight.js/
-#
-#   For more info on the highlighting options, see:
-#   https://sourcethemes.com/academic/post/writing-markdown-latex/#highlighting-options
-highlight = true
-highlight_languages = ["html","bash"]
+# Highlight.js options, View this demo and choose: https://highlightjs.org/static/demo/
+highlight = false
+highlight_languages = []
 highlight_style = "ocean"
 
 
