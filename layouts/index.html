@@ -59,7 +59,7 @@
 {{define "popup"}}
     {{if (and (isset $.Site.Params.popup "popup_active") (isset $.Params "show_popup"))}}
         {{if (and ($.Site.Params.popup.popup_active) ($.Params.show_popup))}}
-            {{partial "popups/popup.html" .}}
+            {{partial "sides/popup.html" .}}
         {{end}}
     {{end}}
 {{end}}

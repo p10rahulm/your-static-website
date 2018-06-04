@@ -1164,7 +1164,7 @@ section#popup_success {
     padding: 10rem 1rem;
 }
 
-.float{
+.popup-float{
     position:fixed;
     width:60px;
     height:60px;
@@ -1176,7 +1176,7 @@ section#popup_success {
     text-align:center;
     box-shadow: 2px 2px 3px #999;
 }
-.float-button{
+.popup-float-button{
     margin:auto;
     font-size:2rem;
 }
