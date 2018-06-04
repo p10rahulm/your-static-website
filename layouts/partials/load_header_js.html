@@ -1,0 +1,3 @@
+
+{{ $js_versions := .Site.Data.sri.js }}
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/{{$js_versions.jQuery.version}}/jquery.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.jQuery.sri}}" crossorigin="anonymous"{{end}}></script>

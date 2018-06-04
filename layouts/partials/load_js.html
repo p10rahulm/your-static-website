@@ -4,7 +4,7 @@
 {{partial "load_highlight_math_js" .}}
 
 <!--Load external js scripts through SRI-->
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/{{$js_versions.jQuery.version}}/jquery.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.jQuery.sri}}" crossorigin="anonymous"{{end}}></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/{{$js_versions.jQuery.version}}/jquery.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.jQuery.sri}}" crossorigin="anonymous"{{end}}></script>-->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/{{ $js_versions.imagesLoaded.version}}/imagesloaded.pkgd.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.imagesLoaded.sri}}" crossorigin="anonymous"{{end}}></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/{{ $js_versions.bootstrap.version}}/js/bootstrap.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.bootstrap.sri}}" crossorigin="anonymous"{{end}}></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/{{ $js_versions.isotope.version}}/isotope.pkgd.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.isotope.sri}}" crossorigin="anonymous"{{end}}></script>

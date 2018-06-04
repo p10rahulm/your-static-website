@@ -178,37 +178,89 @@ verboseLog =true
         # TO activate in a given page, this global switch has to be set to true, and the popup_active has to be true in the
         # page front matter (in the content folder)
         popup_active = true
+        # Should popup be shown once per session or persist across browser close? default is persist
+        reload_popup_once_per_session = true
+
         # We will allow three types of popups, timed popup, popup on given amount of scroll and exit intent popup
-        # (given as option 1, 2, 3  respectively)
-        popup_activation_type = 1
+        # There are three ways of activating a popup.
+        #        1) There is a button on the bottom right which can always be clicked.
+        #        2) There is a delay activation
+        #        3) There is an exit intent activation
+        #        4) There is a scroll amount activation
+        # Of these the button activation is always on. The others can be set here.
+
+        # 1. Show Button at bottom of screen
+        popup_show_button_on_bottom_right = false
+        popup_button_color = "#0095eb"
+        pullup_button_icon = "fa-fire"
+        pullup_button_icon_color = "#fff"
+
+
+
+        # 2. Delay activation
+        activate_popup_on_delay = true
+        seconds_before_activation = 10
+
+        # 3. Exit intent activation
+        activate_popup_on_exit_intent = true
+        # The sensitivity is triggered by how fast the user takes the mouse out from top of the window (measured as mouse y coordinate when exit event is triggered)
+        exit_intent_sensitivity = 20
+
+        # 4. Amount of scroll activation
+        activate_popup_on_scroll = true
+        scroll_percentage_before_activation = 0.6
+
+
         # The popup will have
         #    a) A title
         #    b) explanatory text
         #    c) an image on the right or as a full background
         #    d) A formspree form for collecting name and email id
         #    e) A subscribe now button
-        title = "Subscribe Now to latest and greatest posts"
-        title_color = "#333333"
-        subtitle = "This is the subscribe now explanatory text"
-        subtitle_color = "#aaaaaa"
+
+        # choose from a font-awesome icon for the popup pullup (where applicable)
+
+        title = "Subscribe Now"
+        title_color = "#aaaaaa"
+        subtitle = "Curated selection of articles straight to your inbox"
+        subtitle_color = "#ffaa11"
         # Use img_position = 1 for full image background and use img_position = 2 for image on the right
         img_position = 2
         img_source = "/img/flowers_line_drawing.png"
 
         # form
         form_label_color = "#ffaa33"
-        [[params.popup.form_inputs]]
-            form_input1_label = "Name"
-            form_input1_helper_text = "Name..."
-
-        [[params.popup.form_inputs]]
-            form_input1_label = "Email ID"
-            form_input1_helper_text = "Email ID..."
 
         # form submit text
         submit_text = "Subscribe"
         submit_text_color = "#ccaaaa"
         submit_button_color = "blue"
+
+        # Tries to return to the referrer page, but in case that fails, the option below
+        link_after_submit = "/subscriptionsuccess/"
+
+        popup_submission_mail = "rahul.maddy@gmail.com"
+        popup_submission_subject = "New subscription for your site!"
+        secondary_forwarding_emails = ["rahul.maddy@gmail.com","ksm@ksmadhavan.in"]
+
+        # Close popup by clicking outside the box
+        close_on_click_outside = true
+        # Close popup by pressing escape
+        close_on_escape = true
+
+        [[params.popup.form_inputs]]
+            name="name"
+            required="required"
+            type="text"
+            helper_text = "Your Name *"
+
+        [[params.popup.form_inputs]]
+            name = "Email ID"
+            requried = "required"
+            type= "email"
+            helper_text = "Your Email *"
+
+
 
 
 

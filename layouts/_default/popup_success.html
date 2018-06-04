@@ -1,0 +1,17 @@
+{{define "main"}}
+    <section id="popup_success" style=" background-image: url(../{{.Params.background_image}});
+                                        background-color: {{.Params.background_color}};
+                                        background-position: center;
+                                        background-repeat: no-repeat;
+                                        padding: 4rem 1rem 16rem;"
+    >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <H1 class = "popup_success_title" style = "color:{{.Params.title_color}}">{{.Params.title | markdownify}}</H1>
+                    <p class = "popup_success_message" style = "color:{{.Params.message_color}}">{{.Params.message | markdownify}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{{end}}

@@ -1,0 +1,162 @@
+<aside class = "popup">
+    <header>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                //LocalStorage stores only string values.
+                // Tested for booleans, doesn't work so well: https://stackoverflow.com/questions/16206322/how-to-get-js-variable-to-retain-value-after-page-refresh
+                {{if $.Site.Params.popup.reload_popup_once_per_session}}
+                    localStorage.setItem("popup_opened_so_far", "unopened");
+                {{end}}
+
+                if (localStorage.getItem("popup_opened_so_far")=="opened"){
+                    var popup_opened_so_far = "opened";
+                } else {
+                    var popup_opened_so_far = "unopened";
+                }
+
+                {{if $.Site.Params.popup.popup_show_button_on_bottom_right}}
+                    var x = document.getElementById("popup_activation_button");
+                    x.style.display = "block";
+                {{else}}
+                    var x = document.getElementById("popup_activation_button");
+                    x.style.display = "none";
+                {{end}}
+
+                {{if $.Site.Params.popup.activate_popup_on_delay}}
+                    if(popup_opened_so_far =="unopened"){
+                        console.log("inside delay popup");
+                        var popup_delay = {{mul 1000 $.Site.Params.popup.seconds_before_activation}}
+                        setTimeout(
+                            function() {
+                                // Recheck for popup opened as it may open through other means
+                                if(popup_opened_so_far =="unopened") {
+                                    $('#popupModal').modal();
+                                    popup_opened_so_far = "opened";
+                                    localStorage.setItem("popup_opened_so_far", popup_opened_so_far);
+                                }
+                            }, popup_delay);
+                    }
+                {{end}}
+
+
+                //Exit Intent Popup: Ref: https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_mouseleave_mouseout , https://www.w3schools.com/jsref/event_clientx.asp
+                {{if $.Site.Params.popup.activate_popup_on_exit_intent}}
+                    sensitivity = {{.Site.Params.popup.exit_intent_sensitivity}};
+                    $(document).mouseleave(function () {
+                        console.log('out');
+                        var y = event.clientY;
+                        console.log(y);
+                        if(-y > sensitivity){
+                            if(popup_opened_so_far =="unopened"){
+                                console.log("inside exit intent popup");
+                                $('#popupModal').modal();
+                                popup_opened_so_far = "opened";
+                                localStorage.setItem("popup_opened_so_far", popup_opened_so_far);
+                            }
+                        }
+                    });
+                {{end}}
+
+                //Scroll Popup: https://stackoverflow.com/questions/15798360/show-div-on-scrolldown-after-800px
+                {{if $.Site.Params.popup.activate_popup_on_scroll}}
+                    var scrollPixelsforActivation = {{ $.Site.Params.popup.scroll_percentage_before_activation }} * $(document).height();
+                    console.log(scrollPixelsforActivation);
+                    $(document).scroll(function() {
+                        var scrolly = $(this).scrollTop();
+                        if (scrolly > scrollPixelsforActivation) {
+                            if(popup_opened_so_far == "unopened"){
+                                console.log("inside scroll popup");
+                                $('#popupModal').modal();
+                                popup_opened_so_far = "opened";
+                                localStorage.setItem("popup_opened_so_far", popup_opened_so_far);
+                            }
+                        }
+                    });
+                {{end}}
+
+                // Scroll to top on fresh load: https://stackoverflow.com/questions/7035331/prevent-automatic-browser-scroll-on-refresh
+                $(window).on('beforeunload', function() {
+                    $(window).scrollTop(0);
+                });
+
+            });
+
+        </script>
+        <style type="text/css">
+
+        </style>
+
+    </header>
+    <body>
+
+    <button id="popup_activation_button" class="btn btn-primary btn-sm pull-right float" data-target="#popupModal" data-toggle="modal" style = "background: {{$.Site.Params.popup.popup_button_color}}; border-color: {{$.Site.Params.popup.popup_button_color}}">
+        <i class="fa {{.Site.Params.popup.pullup_button_icon}} float-button" style = "color:{{$.Site.Params.popup.pullup_button_icon_color}}"></i>
+    </button>
+
+
+    <div class="modal fade" tabindex="-1" id="popupModal"
+         {{if not $.Site.Params.popup.close_on_escape }} data-keyboard="false" {{end}}
+         {{if not $.Site.Params.popup.close_on_click_outside}} data-backdrop="static" {{end}}
+    >
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                        <h2 class="modal-title popup_heading" style = "color:{{$.Site.Params.popup.title_color}}">{{$.Site.Params.popup.title}}</h2>
+                        <button class="close pull-right popup_button_close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form
+                            method="POST"
+                            name="sentMessage"
+                            id="popupForm" action="{{- printf "//formspree.io/%s" (or .Params.email .Site.Params.email) -}}"
+                    >
+                    <fieldset>
+                        <div class="row row-eq-height">
+                            <div class="col-md-6">
+                                <h3 class="modal-title" style = "color:{{$.Site.Params.popup.subtitle_color}}; padding: 1rem 0rem 2rem">{{$.Site.Params.popup.subtitle}}</h3>
+                                {{ range $.Site.Params.popup.form_inputs}}
+                                <div class="form-group">
+                                    <input class="form-control" id="{{- .name -}}" required="{{- .required -}}" type="{{- .type -}}" name="{{- .name -}}"
+                                           placeholder="{{ with .helper_text }}{{ .  | markdownify }}{{ end }}">
+                                </div>
+                                {{ end }}
+                                <br>
+                                <div class="clearfix"></div>
+                                {{if isset $.Site.Params.popup "link_after_submit"}}
+                                    <input type="hidden" name="_next" value="{{ .Permalink | default $.Site.Params.popup.link_after_submit}}">
+                                {{end}}
+                                {{if isset $.Site.Params.popup "popup_submission_subject"}}
+                                    <input type="hidden" name="_subject" value="{{$.Site.Params.popup.popup_submission_subject}}">
+                                {{end}}
+                                <!--Below is a honeypot field-->
+                                <input type="text" name="_gotcha" style="display:none">
+                                <!--Below we cc emails to all those listen in the secondary emails list on config.toml-->
+                                {{if isset $.Site.Params "secondary_forwarding_emails"}}
+                                    {{range $.Site.Params.secondary_forwarding_emails}}
+                                        <input type="hidden" name="_cc" value="{{- . -}}">
+                                    {{end}}
+                                {{end}}
+
+                                <button type="submit" value="Submit" class="btn btn-primary btn-xl">
+                                    {{ $.Site.Params.popup.submit_text }}
+                                </button>
+                            </div>
+
+                            <div class="col-md-6 popup_image_wrapper">
+                                <img class = "popup_image" src="/img/flowers_line_drawing.png">
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </body>
+</aside>

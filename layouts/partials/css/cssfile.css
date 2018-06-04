@@ -1094,6 +1094,26 @@ footer {
 }
 
 /*************************************************
+ *  Popup
+ **************************************************/
+.popup_image {
+    max-height: 50vh;
+    max-width: 100%;
+    margin: auto;
+}
+.popup_image_wrapper{
+    max-height: 50vh;
+    max-width: 80vw;
+    margin: auto;
+}
+.popup_button_close {
+    margin-top: 0.5rem!important;
+}
+.popup_heading {
+    float:left;
+    margin-top: 0.5rem!important;
+}
+/*************************************************
  *  Contact Page
  **************************************************/
 
@@ -1133,12 +1153,41 @@ section#contact #message {
     color: #bce8f1;
 }
 /*************************************************
+ *  Popup Contact Success Page
+ **************************************************/
+
+
+section#popup_success {
+    background-color: #222;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10rem 1rem;
+}
+
+.float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+    background-color:#0C9;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+}
+.float-button{
+    margin:auto;
+    font-size:2rem;
+}
+
+/*************************************************
  *  Button Primary: Color Override
  **************************************************/
 
 .btn-primary {
-    border-color: {{ .Get "primary" }} !important;
-    background: {{ .Get "primary" }} !important;
+    border-color: {{ .Get "primary" }};
+    background: {{ .Get "primary" }};
 }
 
 .btn-primary:hover,

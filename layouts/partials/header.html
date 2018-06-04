@@ -9,6 +9,7 @@
     {{ partial "css/parse_theme.css" . }}
 
     {{partial "load_header_css" . }}
+    {{partial "load_header_js" . }}
 
     {{ if .Site.GoogleAnalytics }}
         {{partial "google_analytics" . }}
