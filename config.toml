@@ -118,9 +118,7 @@ verboseLog =true
     # Please only include the names as given in the menu.main section below
     navbar_active = ["Home","Book Reviews","Projects","Publications","Posts","Contact"]
 
-    # Below will be used in the main page under the contacts widget
-    # To show your address on a map in the contact widget, you need to enter your latitude, longitude and choose
-    # a map provider below.
+    # You can set a map in the front page in the contact section.
     # To use Google Maps, set `map = 1` and enter your API key that can be obtained here:
     #   https://developers.google.com/maps/documentation/javascript/get-api-key
     # To use OpenStreetMap tiles, set `map = 2`.
@@ -133,7 +131,7 @@ verboseLog =true
     #   1: Google Maps
     #   2: OpenStreetMap (Mapnik)
     #   3: OpenStreetMap (Mapbox)
-    map = 1
+    map = true
     map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
     latitude = "12.932376"
     longitude = "77.630389"

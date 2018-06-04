@@ -1,14 +1,17 @@
 {{ $js_versions := .Site.Data.sri.js }}
 <!--Code highlighting render. Note that highlight.min.js covers all common languages and the languages need to be mentioned only if uncommon-->
 {{if or (isset $.Params "highlight") (isset $.Site.Params "highlight") }}
+{{if or ($.Params.highlight) ($.Site.Params.highlight) }}
     {{if not (eq (len (union $.Site.Params.highlight_languages $.Params.highlight_languages)) 0)}}
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/{{ $js_versions.highlight.version }}/highlight.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.highlight.sri}}" crossorigin="anonymous"{{end}}></script>
         {{range union $.Site.Params.highlight_languages $.Params.highlight_languages}}
             <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/{{ $js_versions.highlight.version }}/languages/{{.}}.min.js"></script>
         {{end}}
+        <script>hljs.initHighlightingOnLoad();</script>
     {{end}}
 {{end}}
-<script>hljs.initHighlightingOnLoad();</script>
+{{end}}
+
 <!-- LaTeX math rendering -->
 {{ if or .Params.math .Site.Params.math }}
 <script type="text/x-mathjax-config">
