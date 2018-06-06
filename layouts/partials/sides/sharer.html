@@ -15,6 +15,12 @@
                         }
                     })
                 {{end}}
+                {{if $.Site.Params.sharer.show_menu_on_scroll}}
+                    $(window).scroll(function() {
+                        if ($(this).scrollTop()>{{$.Site.Params.sharer.scroll_amount_to_activate_sharer}})
+                        {$('#fixed_social_shares').fadeIn(1000);}
+                    });
+                {{end}}
             });
 
         </script>
@@ -61,7 +67,7 @@
     {{end}}
 
     {{if and $.Site.Params.sharer.sharer_fixed_menu_active $.Params.fixed_sharer_active}}
-        <div class="sharer_socials_fixed" id="fixed_social_shares">
+        <div class="sharer_socials_fixed" id="fixed_social_shares" {{if $.Site.Params.sharer.show_menu_on_scroll}} style="display:none" {{end}}>
             <div class="twitter"
                href="https://twitter.com/intent/tweet?text={{ .Title | html }}&amp;url={{ .Permalink | html }}"
                target="_blank" rel="noopener">

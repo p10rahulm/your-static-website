@@ -1,11 +1,15 @@
 +++
 # General
 title = "Snip1"
-date = 2018-06-04T21:12:31+05:30
+date = 2018-06-06T22:36:29+05:30
 draft = false
 author = "Rahul Madhavan"
 allow_comments = false
 show_title_date_author = false
+
+# The below image will be shown in all the cards pointing to this article
+caption_image = "bubbles.jpg"
+
 show_popup = true
 show_sharer = true
 rollup_sharer_active= true

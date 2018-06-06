@@ -60,6 +60,7 @@ languageCode = "en-us"
 log=true
 logFile ="public/log.txt"
 
+
 # Enable verbose logging.
 verbose =true
 verboseLog =true
@@ -68,6 +69,8 @@ verboseLog =true
 
 # Some parameters for the internal theme use
 [params]
+    #for debug
+    open_at_top = false
     # After finishing this section config, make sure to look at manifest.json in the static folder
     # Color theme. These colors are used from the data/fonts folder
     #   Choose from `default`, `ocean`, `forest`, `coffee`, `dark`, or `1950s`.
@@ -108,7 +111,6 @@ verboseLog =true
     address = "Koramangala, Bangalore"
     phone = "+91 89714 07799"
     skype = ""
-    telegram = ""
 
     # In case you want to add custom css and custom js, place them in (i) /static/css/ folder and (ii) /static/js/ folders
     # Add the filenames in the following two arrays
@@ -169,6 +171,60 @@ verboseLog =true
     # The following go on the footer.
     show_back_to_top = false
 
+    # Below we set attributes for the featured pages on the website front page
+    [params.featured_pages]
+
+    # Below include the sections like books, courses or people (page types) for which you want the featured sections on the front page
+    # Choose the number of pages per section you want featured on the front page as num_featured
+    # Choose how you want sorted: You can choose any parameter found in the content front matter. Prefix ".Params." before the required field name
+    # Choose sort order from "asc" or "desc"
+    # There are three layouts you can choose from 1) card 2) large card 3) scroller 4) list
+    [[params.featured_pages.sections]]
+        name = "books"
+        title = "Books"
+        title_color = "#333"
+        subtitle = "The latest and greatest books"
+        subtitle_color = "#999"
+        num_featured = 3
+        sort_field = ".Params.title"
+        sort_order = "asc"
+        layout = 1
+
+
+    [[params.featured_pages.sections]]
+        name = "publications"
+        title = "Publications"
+        title_color = "#333"
+        subtitle = "The latest and greatest publications"
+        subtitle_color = "#999"
+        num_featured = 1
+        sort_field = ".Params.title"
+        sort_order = "asc"
+        layout = 1
+
+    [[params.featured_pages.sections]]
+        name = "posts"
+        title = "Posts"
+        title_color = "#333"
+        subtitle = "The latest and greatest posts"
+        subtitle_color = "#999"
+        num_featured = 4
+        sort_field = ".Params.title"
+        sort_order = "asc"
+        layout = 1
+
+    [[params.featured_pages.sections]]
+        name = "thoughts"
+        title = "Thoughts"
+        title_color = "#333"
+        subtitle = "My newest thoughts"
+        subtitle_color = "#999"
+        num_featured = 2
+        sort_field = ".Params.title"
+        sort_order = "asc"
+        layout = 1
+
+
     # Below we set attributes for the sharer
     [params.sharer]
         # Global and page settings for sharer has to be true for it to be shown
@@ -185,6 +241,9 @@ verboseLog =true
         # 2. Fixed menu
         # Note that this changes with screen width. This can be checked by pressing ctrl+shift+i on chrome
         sharer_fixed_menu_active = true
+        show_menu_on_scroll = true
+        # If show_menu_on_scroll is true, how much to scroll
+        scroll_amount_to_activate_sharer = 20
 
 
     # Below we set attributes for the popup
@@ -302,36 +361,36 @@ verboseLog =true
 
 # Menus
 [menu]
-[[menu.main]]
-  name = "Home"
-  url = "./#about"
-  weight = 1
+    [[menu.main]]
+        name = "Home"
+        url = "./#about"
+        weight = 1
 
 
-[[menu.main]]
-  name = "Posts"
-  url = "./post/"
-  weight = 2
+    [[menu.main]]
+        name = "Posts"
+        url = "./posts/"
+        weight = 2
 
-[[menu.main]]
-  name = "Publications"
-  url = "./publication/"
-  weight = 5
+    [[menu.main]]
+        name = "Book Reviews"
+        url = "#projects"
+        weight = 3
 
-[[menu.main]]
-  name = "Projects"
-  url = "./project/"
-  weight = 4
+    [[menu.main]]
+        name = "Publications"
+        url = "./publication/"
+        weight = 5
 
-[[menu.main]]
-  name = "Book Reviews"
-  url = "#projects"
-  weight = 3
+    [[menu.main]]
+        name = "Projects"
+        url = "./project/"
+        weight = 4
 
-[[menu.main]]
-  name = "Contact"
-  url = "/contact"
-  weight = 6
+    [[menu.main]]
+        name = "Contact"
+        url = "/contact"
+        weight = 6
 
 # Here we choose the taxonomies. Various types of pages use various taxonomies
 [taxonomies]

@@ -1,9 +1,12 @@
 +++
 # General
 title = "Thought5"
-date = 2018-06-04T21:12:36+05:30
+date = 2018-06-06T22:36:34+05:30
 draft = false
 author = "Rahul Madhavan"
+
+# The below image will be shown in all the cards pointing to this article
+caption_image = "bubbles.jpg"
 
 show_popup = true
 show_sharer = true

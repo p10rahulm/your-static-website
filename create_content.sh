@@ -4,7 +4,7 @@ find content/ -type f -regextype sed ! -regex '.*/_.*.md' | xargs rm
 
 if [ $# -eq 0 ]
     then
-        max=5
+        max=10
 else
     max= $1
 fi
