@@ -1,45 +1,59 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<style>
+    .slick-prev:before, .slick-next:before {
+        color:#333 !important;
+    }
+    .details_cards{
+        text-align: center;
+        padding: 1rem;
+    }
+    .details_cards p{
+        font-weight: 200;
+        font-size: 0.75rem;
+    }
+</style>
 <script type="text/javascript">
+    $(document).ready(function() {
+        $('.carousel_responsive').slick({
+            dots: true,
+            arrows: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                },
+                {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
 
-    $('.responsive').slick({
-        dots: true,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
-        ]
+            ]
+        });
     });
 
 </script>
-
-<body>
 {{range $index, $element := $.Site.Params.featured_pages.sections}}
     <section id="show_featured_{{.name}}" class="home-section">
         <div class="container">
@@ -56,16 +70,17 @@
                 </div>
                 {{ end }}
             </div>
-            <div class="row flexbox">
+            <div class="row flexbox carousel_responsive">
                 {{   $.Scratch.Set "num_featured" .num_featured }}
+                {{   $.Scratch.Set "title_color" .card_title_font_color }}
+                {{   $.Scratch.Set "description_color" .card_description_font_color }}
                 {{ range first .num_featured (sort  (where (where $.Data.Pages "Section" .name) "Params.featured" true) .sort_field .sort_order)}}
-                    <div class="col-md-{{cond (le ($.Scratch.Get "num_featured") 6) (div 12 ($.Scratch.Get "num_featured")) 3}} col-sm-2 col responsive"
-                         style = "padding-top: 1rem;text-align:center">
+                    <div class ="details_cards">
                         <a href="{{.Permalink}}">
                             <img src="/img/{{.Params.caption_image}}" class="img-responsive img-centered" alt="{{.Title}}">
                         </a>
-                        <h4>{{.Params.title}}</h4>
-                        <p>{{ .Summary }}</p>
+                        <h4 style="color: {{$.Scratch.Get "title_color"}}">{{.Params.title}}</h4>
+                        <p style="color: {{$.Scratch.Get "description_color"}}">{{ .Summary }}</p>
                     </div>
                 {{end}}
             </div>
@@ -73,4 +88,3 @@
         </div>
     </section>
 {{end}}
-</body>

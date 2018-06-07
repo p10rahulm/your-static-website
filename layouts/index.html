@@ -11,10 +11,11 @@
     {{if .Params.logo_wall.active}}
         {{partial "homepage-sections/logo_wall.html" .}}
     {{end}}
+    {{partial "homepage-sections/show_featured.html" .}}
     {{if .Params.contact.active}}
         {{partial "homepage-sections/contact.html" .}}
     {{end}}
-    {{partial "homepage-sections/show_featured.html" .}}
+
 
 
 

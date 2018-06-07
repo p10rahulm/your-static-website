@@ -179,15 +179,19 @@ verboseLog =true
     # Choose how you want sorted: You can choose any parameter found in the content front matter. Prefix ".Params." before the required field name
     # Choose sort order from "asc" or "desc"
     # There are three layouts you can choose from 1) card 2) large card 3) scroller 4) list
+    # 1) "cards" 2) "carousel" 3) "list"
+    # 1) If you choose card you can choose from the following options
     [[params.featured_pages.sections]]
         name = "books"
         title = "Books"
         title_color = "#333"
         subtitle = "The latest and greatest books"
         subtitle_color = "#999"
-        num_featured = 3
+        num_featured = 6
         sort_field = ".Params.title"
         sort_order = "asc"
+        card_title_font_color = "#a22"
+        card_description_font_color = "#468"
         layout = 1
 
 
