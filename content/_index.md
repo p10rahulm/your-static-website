@@ -15,6 +15,7 @@ fixed_sharer_active = true
         image_heading = "<br>Onward and upward, like a dendritic tree<br><br><br><br>"
         content = "Reducing entropy, one post at a time<br>"
         overlay_img = "headers/bubbles-wide.jpg"  # Image path relative to your `static/img/` folder.
+        show_particles = true
 
         # Call to action button (optional).
         # Activate the button by specifying a URL and button label below.
@@ -194,6 +195,267 @@ fixed_sharer_active = true
                         link = "/"
                         name = "Design_Modo"
 
+# ----------------------------------
+# featured posts section
+# Below we set attributes for the featured pages on the website front page
+[featured_pages]
+    active = true
+
+    # Below include the sections like books, courses or people (page types) for which you want the featured sections on the front page
+    # Choose the number of pages per section you want featured on the front page as num_featured
+    # Choose how you want sorted: You can choose any parameter found in the content front matter. Prefix "." before the required field name
+    # Choose sort order from "asc" or "desc"
+    # There are three layouts you can choose from
+    # 1) "cards" 2) "carousel" 3) "list"
+
+    [[featured_pages.sections]]
+        name = "books"
+        title = "Books"
+        title_color = "#333"
+        title_alignment = "center" #use "center", "left" or "right"
+        subtitle = "The latest and greatest books"
+        subtitle_color = "#999"
+        subtitle_alignment = "center" #use "center", "left" or "right"
+        num_featured = 6
+        sort_field = ".Params.title" #add the .Params at the start before sort field
+        sort_order = "asc"
+        card_alignment = "center"
+        card_padding = "1rem" # use this to set the padding between cards
+        card_include_image = true #should image be shown or not?
+        card_image_height = "200px" # this will be used to set height of all the cards
+        card_image_width = "200px"  # this will be used only in case of card_layout ="list" else it will be 100% of container
+        card_title_font_color = "#a22"
+        card_title_font_size = "1rem"
+        card_title_font_weight = "700" #choose whole numbers between 100 and 900
+        card_title_padding = "3px"
+        card_title_text_alignment = "left" # choose between left, center or right
+        card_title_top_margin = "1rem"
+        card_title_bottom_margin = "0.5rem"
+
+        box_toggle = false #should the boxes have shadows?
+            box_padding = "0px"
+            box_border_size = "1px"
+            box_border_color = "#333"
+            box_shadow_color = "#aaa" # if so what color
+            box_shadow_horizontal_offset = "10px" # if so what color
+            box_shadow_vertical_offset = "10px" # if so what color
+            box_shadow_blur = "2px" # if so what color
+        clickable_card_overlay_on_hover = false
+            overlay_color = "#246"
+            overlay_opacity = 0.5  #choose from 0 to 1 (ideally less than 0.8)
+        card_layout = "list" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        # If layout is cards
+            number_in_row_large_screen = 3
+            number_in_row_normal_screen = 3
+            number_in_row_small_screen = 2
+
+        # if layout is carousel
+            left_right_arrow_colors = "#a22"
+            arrow_size = "20px"
+            # You may use any left and right arrows: These should help: http://xahlee.info/comp/unicode_arrows.html
+            left_right_arrow_font_family = "Helvetica"
+            left_arrow_content = "⟵"
+            right_arrow_content = "⟶"
+        # if layout is list
+            show_image_on_left = true
+            padding_image_right = "1rem"
+
+        #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+        [[featured_pages.sections.fields]]
+            field_name = "authors" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = "Authors: "
+            font_weight = "900"
+            field_font_color = "#a00"
+            text_align = "left"
+            margin_bottom = "0px"
+            margin_top = "3px"
+            font_style = "italic"
+            font_size = "0.6rem"
+            additional_css_styles = "color:#a00;text-align:left"
+        [[featured_pages.sections.fields]]
+            field_name = "tagline" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = ""
+            font_weight = "900"
+            field_font_color = "#aaa"
+            text_align = "left"
+            margin_bottom = "0px"
+            margin_top = "3px"
+            font_style = "italic"
+            font_size = "0.6rem"
+            additional_css_styles = ""
+        [[featured_pages.sections.fields]]
+            field_name = "abstract" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = "Abstract: "
+            font_weight = "900"
+            field_font_color = "#333"
+            text_align = "left"
+            margin_bottom = "0px"
+            margin_top = "3px"
+            font_style = "normal"
+            font_size = "0.6rem"
+            additional_css_styles = ""
+        [[featured_pages.sections.fields]]
+            field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = ""
+            font_weight = "200"
+            field_font_color = "#468"
+            text_align = "left"
+            margin_bottom = "3px"
+            margin_top = "3px"
+            font_style = "normal"
+            font_size = "0.75rem"
+            additional_css_styles = ""
+
+
+    [[featured_pages.sections]]
+        name = "publications"
+        title = "Publications"
+        title_color = "#333"
+        subtitle = "The latest and greatest publications"
+        subtitle_color = "#999"
+        num_featured = 2
+        sort_field = ".Params.title"
+        sort_order = "asc"
+        card_layout = "carousel"
+        # if layout is carousel
+            left_right_arrow_colors = "#a22"
+            arrow_size = "20px"
+            # You may use any left and right arrows: These should help: http://xahlee.info/comp/unicode_arrows.html
+            left_right_arrow_font_family = "Helvetica"
+            left_arrow_content = "⟵"
+            right_arrow_content = "⟶"
+
+
+    [[featured_pages.sections]]
+        name = "posts"
+        title = "Posts"
+        title_color = "#333"
+        title_alignment = "center" #use "center", "left" or "right"
+        subtitle = "The posts are precocious. Use as you feel good!"
+        subtitle_color = "#999"
+        subtitle_alignment = "center" #use "center", "left" or "right"
+        num_featured = 6
+        sort_field = ".Params.title"
+        sort_order = "asc"
+        card_alignment = "center"
+        card_padding = "1rem" # use this to set the padding between cards
+        card_include_image = true #should image be shown or not?
+        card_image_height = "250px" # this will be used to set height of all the cards
+        card_image_width = "auto"  # this will be used only in case of card_layout ="list" else it will be 100% of container
+        card_title_font_color = "#a22"
+        card_title_font_size = "1rem"
+        card_title_font_weight = "700" #choose whole numbers between 100 and 900
+        card_title_padding = "3px"
+        card_title_text_alignment = "center" # choose between left, center or right
+        card_title_top_margin = "1rem"
+        card_title_bottom_margin = "0.5rem"
+
+        box_toggle = false #should the boxes have shadows?
+            box_padding = "0px"
+            box_border_size = "1px"
+            box_border_color = "#333"
+            box_shadow_color = "#aaa" # if so what color
+            box_shadow_horizontal_offset = "10px" # if so what color
+            box_shadow_vertical_offset = "10px" # if so what color
+            box_shadow_blur = "2px" # if so what color
+        clickable_card_overlay_on_hover = false
+            overlay_color = "#246"
+            overlay_opacity = 0.5  #choose from 0 to 1 (ideally less than 0.8)
+        card_layout = "cards" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        # If layout is cards
+            number_in_row_large_screen = 3
+            number_in_row_normal_screen = 3
+            number_in_row_small_screen = 2
+
+        # if layout is carousel
+            left_right_arrow_colors = "#a22"
+            arrow_size = "20px"
+            # You may use any left and right arrows: These should help: http://xahlee.info/comp/unicode_arrows.html
+            left_right_arrow_font_family = "Helvetica"
+            left_arrow_content = "⟵"
+            right_arrow_content = "⟶"
+        # if layout is list
+            show_image_on_left = true
+            padding_image_right = "1rem"
+
+        #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+        [[featured_pages.sections.fields]]
+            field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = ""
+            font_weight = "200"
+            field_font_color = "#468"
+            text_align = "center"
+            margin_bottom = "3px"
+            margin_top = "3px"
+            font_style = "normal"
+            font_size = "0.75rem"
+            additional_css_styles = ""
+
+
+    [[featured_pages.sections]]
+        name = "thoughts"
+        title = "Thoughts"
+        title_color = "#333"
+        title_alignment = "center" #use "center", "left" or "right"
+        subtitle = "The thoughts are precious. Handle with care!"
+        subtitle_color = "#999"
+        subtitle_alignment = "center" #use "center", "left" or "right"
+        num_featured = 6
+        sort_field = ".Params.title"
+        sort_order = "asc"
+        card_alignment = "center"
+        card_padding = "1rem" # use this to set the padding between cards
+        card_include_image = false #should image be shown or not?
+        card_image_height = "200px" # this will be used to set height of all the cards
+        card_image_width = "200px"  # this will be used only in case of card_layout ="list" else it will be 100% of container
+        card_title_font_color = "#a22"
+        card_title_font_size = "1rem"
+        card_title_font_weight = "700" #choose whole numbers between 100 and 900
+        card_title_padding = "3px"
+        card_title_text_alignment = "left" # choose between left, center or right
+        card_title_top_margin = "1rem"
+        card_title_bottom_margin = "0.5rem"
+
+        box_toggle = false #should the boxes have shadows?
+            box_padding = "0px"
+            box_border_size = "1px"
+            box_border_color = "#333"
+            box_shadow_color = "#aaa" # if so what color
+            box_shadow_horizontal_offset = "10px" # if so what color
+            box_shadow_vertical_offset = "10px" # if so what color
+            box_shadow_blur = "2px" # if so what color
+        clickable_card_overlay_on_hover = false
+            overlay_color = "#246"
+            overlay_opacity = 0.5  #choose from 0 to 1 (ideally less than 0.8)
+        card_layout = "carousel" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        # If layout is cards
+            number_in_row_large_screen = 3
+            number_in_row_normal_screen = 3
+            number_in_row_small_screen = 2
+
+        # if layout is carousel
+            left_right_arrow_colors = "#a22"
+            arrow_size = "20px"
+            # You may use any left and right arrows: These should help: http://xahlee.info/comp/unicode_arrows.html
+            left_right_arrow_font_family = "Helvetica"
+            left_arrow_content = "⟵"
+            right_arrow_content = "⟶"
+        # if layout is list
+            show_image_on_left = true
+            padding_image_right = "1rem"
+
+        #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+        [[featured_pages.sections.fields]]
+            field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = ""
+            font_weight = "200"
+            field_font_color = "#468"
+            text_align = "left"
+            margin_bottom = "3px"
+            margin_top = "3px"
+            font_style = "normal"
+            font_size = "0.75rem"
+            additional_css_styles = ""
 
 # ----------------------------------
 # Contact us section

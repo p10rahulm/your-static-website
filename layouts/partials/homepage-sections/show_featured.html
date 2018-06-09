@@ -1,86 +1,242 @@
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-<style>
-    .slick-prev:before, .slick-next:before {
-        color:#333 !important;
-    }
-    .details_cards{
-        text-align: center;
-        padding: 1rem;
-    }
-    .details_cards p{
-        font-weight: 200;
-        font-size: 0.75rem;
-    }
-</style>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.carousel_responsive').slick({
-            dots: true,
-            arrows: true,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true,
-                        dots: true
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
+<article class ="home_page_featured">
+    <header>
+    <style>
+        /* initialize variable check on any card_layout being carousel. Using string boolean as that gives more stable behaviour*/
+        {{   $.Scratch.Set "any_carousel_card_layout" "false" }}
+        {{range $.Params.featured_pages.sections}}
 
-            ]
+        #featured_{{.name}} .heading {
+            color: {{.title_color}};
+            text-align: {{.title_alignment}};
+        }
+        #featured_{{.name}} .subheading {
+            color: {{.subtitle_color}};
+            text-align: {{.subtitle_alignment}};
+        }
+        {{if .box_toggle}}
+        #{{.name}}_cards .border_box {
+            padding:{{.box_padding}};
+            border-width: {{.box_border_size}};
+            border-style: solid;
+            border-color: {{.box_border_color}};
+            box-shadow: {{ .box_shadow_horizontal_offset }} {{ .box_shadow_vertical_offset }} {{ .box_shadow_blur }} {{ .box_shadow_color }};
+            {{if .clickable_card_overlay_on_hover}}
+            position: relative;
+            {{end}}
+            overflow:auto;
+        }
+        {{end}}
+        #{{.name}}_cards img {
+            height:{{.card_image_height}};
+            {{if (eq .card_layout "list")}}
+            width:{{.card_image_width}};
+            {{else}}
+            width:100%;
+            {{end}}
+            {{if and (eq .card_layout "list") .show_image_on_left}}
+            float: left;
+            padding-right:{{.padding_image_right}};
+            {{end}}
+        }
+        #{{.name}}_cards .details_cards {
+            text-align: {{.card_alignment}};
+            padding: {{.card_padding}};
+            {{if .clickable_card_overlay_on_hover}}
+            position: relative;
+            {{end}}
+            overflow:auto;
+        }
+        #{{.name}}_cards .details_cards .card_title{
+            margin-top:{{.card_title_top_margin}};
+            margin-bottom:{{.card_title_bottom_margin}};
+            color: {{.card_title_font_color}};
+            font-size:{{.card_title_font_size}};
+            font-weight:{{.card_title_font_weight}};
+            padding:{{.card_title_padding}};
+            text-align:{{.card_title_text_alignment}};
+        }
+
+        #{{.name}}_cards .details_cards a:hover{
+            text-decoration: none;
+        }
+        #{{.name}}_cards .details_cards a .card_title:hover{
+            text-decoration: underline;
+        }
+        {{$.Scratch.Set "section_name" .name}}
+        {{range .fields}}
+        #{{$.Scratch.Get "section_name"}}_cards .details_cards .card_{{.field_name}} {
+            font-weight: {{.font_weight}};
+            color: {{.field_font_color}};
+            text-align: {{.text_align}};
+            margin-bottom: {{.margin_bottom}};
+            margin-top: {{.margin_top}};
+            font-style: {{.font_style}};
+            font-size: {{.font_size}};
+        }
+        {{end}}
+        {{ if .clickable_card_overlay_on_hover }}
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+        background-color: {{.overlay_color}};
+        }
+
+        .overlay:hover  {
+            opacity: {{.overlay_opacity}};
+        }
+        {{ end }}
+        {{if eq .card_layout "carousel"}}
+
+        /* check if any card_layout is carousel*/
+        {{$.Scratch.Set "any_carousel_card_layout" "true"}}
+
+        #{{.name}}_cards .slick-prev:before {
+                      content: "{{.left_arrow_content| htmlUnescape | safeHTML}}";
+        font-family: {{.left_right_arrow_font_family}};
+        color: {{.left_right_arrow_colors}};
+        font-size: {{.arrow_size}};
+        }
+
+        #{{.name}}_cards .slick-next:before {
+                      content: "{{.right_arrow_content| htmlUnescape | safeHTML}}";
+        font-family: {{.left_right_arrow_font_family }};
+        color: {{.left_right_arrow_colors}};
+        font-size: {{.arrow_size}};
+        }
+        {{end}}
+        {{end}}
+
+    </style>
+
+
+    {{if (eq ($.Scratch.Get "any_carousel_card_layout") "true")}}
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css"/>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.carousel_responsive').slick({
+                dots: true,
+                arrows: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+
+                ]
+            });
         });
-    });
+    </script>
+    {{end}}
 
-</script>
-{{range $index, $element := $.Site.Params.featured_pages.sections}}
-    <section id="show_featured_{{.name}}" class="home-section">
+</header>
+<body>
+{{range $index, $element := $.Params.featured_pages.sections}}
+    <section id="featured_{{.name}}" class="home-section">
         <div class="container">
             <!-- Contact widget -->
             <div class="row">
-                {{if isset (index $.Site.Params.featured_pages.sections $index) "title"}}
+                {{if isset (index $.Params.featured_pages.sections $index) "title"}}
                 <div class="col-lg-12 text-center">
-                    <h1 class="heading"  style="color: {{.title_color}}">{{.title | humanize}}</h1>
+                    <h1 class="heading">{{.title | humanize}}</h1>
                 </div>
                 {{ end }}
-                {{if isset (index $.Site.Params.featured_pages.sections $index) "subtitle"}}
+                {{if isset (index $.Params.featured_pages.sections $index) "subtitle"}}
                 <div class="col-lg-12 text-center">
-                    <h2 class="subheading" style="color: {{.subtitle_color}}">{{.subtitle}}</h2>
+                    <h2 class="subheading">{{.subtitle}}</h2>
                 </div>
                 {{ end }}
             </div>
-            <div class="row flexbox carousel_responsive">
+            <div id="{{.name}}_cards" class="row flexbox {{if (eq .card_layout "carousel")}}carousel_responsive{{end}}">
                 {{   $.Scratch.Set "num_featured" .num_featured }}
-                {{   $.Scratch.Set "title_color" .card_title_font_color }}
-                {{   $.Scratch.Set "description_color" .card_description_font_color }}
+                {{   $.Scratch.Set "overlay" .clickable_card_overlay_on_hover }}
+                {{   $.Scratch.Set "box_toggle" .box_toggle}}
+                {{   $.Scratch.Set "show_image" .card_include_image}}
+                {{   $.Scratch.Set "other_fields" .fields}}
+
+
+
+                {{ if (eq .card_layout "cards") }}
+                    {{   $.Scratch.Set "card_layout" "cards" }}
+                    {{   $.Scratch.Set "nrow_large_screen" .number_in_row_large_screen }}
+                    {{   $.Scratch.Set "nrow_medium_screen" .number_in_row_normal_screen }}
+                    {{   $.Scratch.Set "nrow_small_screen" .number_in_row_small_screen }}
+                {{end}}
+
                 {{ range first .num_featured (sort  (where (where $.Data.Pages "Section" .name) "Params.featured" true) .sort_field .sort_order)}}
-                    <div class ="details_cards">
+                    <div class ="details_cards
+                        {{if (eq ($.Scratch.Get "card_layout") "cards")}}
+                            col-lg-{{div 12 ($.Scratch.Get "nrow_large_screen")}} col-md-{{div 12 ($.Scratch.Get "nrow_medium_screen")}} col-sm-{{div 12 ($.Scratch.Get "nrow_small_screen")}}
+                        {{end}}
+                    ">
+                    {{if eq ($.Scratch.Get "overlay") true}}
+                    <div class="border_box">
+                    {{end}}
+                    {{if eq ($.Scratch.Get "overlay") true}}
+                        <a href="{{.Permalink}}">
+                            <div class="overlay">
+                            </div>
+                        </a>
+                    {{ end }}
+                        {{if $.Scratch.Get "show_image" |default true}}
                         <a href="{{.Permalink}}">
                             <img src="/img/{{.Params.caption_image}}" class="img-responsive img-centered" alt="{{.Title}}">
                         </a>
-                        <h4 style="color: {{$.Scratch.Get "title_color"}}">{{.Params.title}}</h4>
-                        <p style="color: {{$.Scratch.Get "description_color"}}">{{ .Summary }}</p>
+                        {{end}}
+                        {{if eq ($.Scratch.Get "overlay") false}}
+                        <a href="{{.Permalink}}">
+                        {{end}}
+                            <h4 class="card_title">{{.Params.title}}</h4>
+                            <!--<p class="card_summary">{{ (.Params.summary_content | default .Summary) | markdownify}}</p>-->
+                            {{$.Scratch.Set "page_params" .Params}}
+                            {{$.Scratch.Set "page_summary" .Summary}}
+                            {{range $.Scratch.Get "other_fields"  }}
+                                <p class="card_{{.field_name}}" style="{{ .additional_css_styles | safeCSS }}">
+                                    {{if eq .field_name "summary"}}
+                                        {{.prefix | markdownify }}{{($.Scratch.Get "page_summary") | markdownify}}
+                                    {{else}}
+                                        {{.prefix | markdownify }}{{(index ($.Scratch.Get "page_params") .field_name) | markdownify}}
+                                    {{end}}
+                                </p>
+                            {{ end }}
+                        {{if eq ($.Scratch.Get "overlay") false}}
+                        </a>
+                        {{end}}
+                    {{if eq ($.Scratch.Get "overlay") true}}
+                    </div>
+                    {{end}}
                     </div>
                 {{end}}
             </div>
@@ -88,3 +244,5 @@
         </div>
     </section>
 {{end}}
+</body>
+</article>

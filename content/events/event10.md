@@ -1,6 +1,6 @@
 +++
 title = "Event10"
-date = 2018-06-06T22:36:39+05:30
+date = 2018-06-08T19:44:45+05:30
 draft = false
 author = "Rahul Madhavan"
 

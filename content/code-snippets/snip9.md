@@ -1,7 +1,7 @@
 +++
 # General
 title = "Snip9"
-date = 2018-06-06T22:36:38+05:30
+date = 2018-06-08T19:44:44+05:30
 draft = false
 author = "Rahul Madhavan"
 allow_comments = false

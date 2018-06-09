@@ -1,6 +1,6 @@
 +++
 title = "Book3"
-date = 2018-06-06T22:36:31+05:30
+date = 2018-06-08T19:44:38+05:30
 draft = false
 author = "Rahul Madhavan"
 allow_comments = false
@@ -8,6 +8,12 @@ show_title_date_author = false
 
 # The below image will be shown in all the cards pointing to this article
 caption_image = "bubbles.jpg"
+
+# The below summary message will be shown in all the cards pointing to this article.
+# If not available, it would be generated from the content of the page.
+summary_content = '''
+The book is very very good. It needs to be read by one and all.
+Generally I don't say much. But know this is true'''
 
 show_popup = true
 show_sharer = true
@@ -35,20 +41,19 @@ categories = []
 
 
 # Specific Template Meta
-[books]
-        title = "5S Organizational Principles"
-        tagline = "The last book you'll ever need"
-        authors = ["K S Madhavan", "Goody Two Shoes"]
-        abstract = "A small snippet about the book is good enough"
-        price = 100
-        size = "17.8 x 2.5 x 22.9 cm"
-        num_pages = 280
-        isbn = "978-0262035613"
-        reading_level = "18+ years"
-        format = "Hardcover"
-        publisher = "MIT Press"
-        date_of_publication = "3 January 2017"
-        language = "English"
+book_title = "5S Organizational Principles"
+tagline = "The last book you'll ever need"
+authors = "K S Madhavan and Goody Two Shoes"
+abstract = "A small snippet about the book is good enough"
+price = 100
+size = "17.8 x 2.5 x 22.9 cm"
+num_pages = 280
+isbn = "978-0262035613"
+reading_level = "18+ years"
+format = "Hardcover"
+publisher = "MIT Press"
+date_of_publication = "3 January 2017"
+language = "English"
 
 [book-images]
         # Featured image
@@ -65,4 +70,23 @@ categories = []
 # The book details go below
 +++
 
-The book is a comprehensive book on everything under the sun
+The book is a comprehensive book on everything under the sun.
+How many roads must a man walk down
+
+Before you call him a man?
+
+Yes, 'n' how many seas must a white dove sail
+
+Before she sleeps in the sand?
+
+Yes, 'n' how many times must the cannonballs fly
+
+Before they're forever banned?
+
+The answer, my friend, is blowin' in the wind
+
+The answer is blowin' in the wind
+
+BLOWIN' IN THE WIND, 1962
+
+Copyright 1962 by Warner Bros. Inc. Renewed 1990 by Special Rider Music

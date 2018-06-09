@@ -6,7 +6,7 @@
 # Basic Options
 baseurl = "https://thinkingtree.codefra.in/"
 title = "The Thinking Tree"
-theme = "ga-hugo-theme"
+# theme = "blank"
 
 # For comments to be enabled on a page, you need to add your disqus short name here.
 # Get disqus shortname here: https://disqus.com/
@@ -21,8 +21,8 @@ rssLimit =10
 uglyURLs = false
 
 
-# Summaries in lists
-summaryLength = 70
+# Summaries in lists - number of words
+summaryLength = 25
 
 # Pagination Options
 paginate = 10
@@ -84,6 +84,7 @@ verboseLog =true
     # Site Author details.
     site_author_name = "Rahul Madhavan"
     role = "Founder, CodeFRA"
+    email = "rahul.maddy@gmail.com"
     # SEO Section
     # When pages don't have description
     default_description = "-273.15K. So Cool."
@@ -101,17 +102,6 @@ verboseLog =true
     #   To enable, place an image in `static/` and reference its filename below. To disable, set the value to "".
     logo = "thinking_tree2.jpg"
 
-    # Organizations/Affiliations.
-    #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-    organizations = [ { name = "Atidiv, Cuemath", url = "" }, { name = "Barclays, Nomura, Lehman Brothers", url = "" }, { name = "IIM Ahmedabad, IIT Madras", url = "" } ]
-
-    about_page_portrait = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
-    email = "rahul.maddy@gmail.com"
-
-    address = "Koramangala, Bangalore"
-    phone = "+91 89714 07799"
-    skype = ""
-
     # In case you want to add custom css and custom js, place them in (i) /static/css/ folder and (ii) /static/js/ folders
     # Add the filenames in the following two arrays
     custom_css = []
@@ -120,19 +110,9 @@ verboseLog =true
     # Please only include the names as given in the menu.main section below
     navbar_active = ["Home","Book Reviews","Projects","Publications","Posts","Contact"]
 
-    # You can set a map in the front page in the contact section.
-    # To use Google Maps, set `map = 1` and enter your API key that can be obtained here:
-    #   https://developers.google.com/maps/documentation/javascript/get-api-key
-    # To use OpenStreetMap tiles, set `map = 2`.
-    # To use OpenStreetMap on a high traffic site, set `map = 3` and enter your API key that can be obtained here:
-    #   https://www.mapbox.com/studio/account/tokens
+    # You can set a map in the front page in the contact section from google maps.
+    # Get key here: https://developers.google.com/maps/documentation/javascript/get-api-key
     # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
-    #
-    # Map provider:
-    #   0: No map
-    #   1: Google Maps
-    #   2: OpenStreetMap (Mapnik)
-    #   3: OpenStreetMap (Mapbox)
     map = true
     map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
     latitude = "12.932376"
@@ -146,18 +126,9 @@ verboseLog =true
 
 
     # Highlight.js global options, View this demo and choose: https://highlightjs.org/static/demo/
-    # 1) Do you need code highlighting at global level?
-    #     Example: highlight = true
-    # 2) What languages do you typically use. That you need globally loaded?
-    #     Example: highlight_languages = ["go", "lisp", "ocaml"]
-    # 3) What is the style scheme? Choose one of the styles from those listed in the demo
-    #     Example: highlight_style = "github-gist"
-
+    # Global settings are default. You can override on individual pages. Only if the highlight option is true on page and global level, highlight is used.
     #   For the list of supported languages and styles, see:
     #   https://cdnjs.com/libraries/highlight.js/
-    #
-    #   For more info on the highlighting options, see:
-    #   https://sourcethemes.com/academic/post/writing-markdown-latex/#highlighting-options
     highlight = false
     highlight_languages = ["htmlbars","bash"]
     # highlight_languages = []
@@ -170,64 +141,6 @@ verboseLog =true
 
     # The following go on the footer.
     show_back_to_top = false
-
-    # Below we set attributes for the featured pages on the website front page
-    [params.featured_pages]
-
-    # Below include the sections like books, courses or people (page types) for which you want the featured sections on the front page
-    # Choose the number of pages per section you want featured on the front page as num_featured
-    # Choose how you want sorted: You can choose any parameter found in the content front matter. Prefix ".Params." before the required field name
-    # Choose sort order from "asc" or "desc"
-    # There are three layouts you can choose from 1) card 2) large card 3) scroller 4) list
-    # 1) "cards" 2) "carousel" 3) "list"
-    # 1) If you choose card you can choose from the following options
-    [[params.featured_pages.sections]]
-        name = "books"
-        title = "Books"
-        title_color = "#333"
-        subtitle = "The latest and greatest books"
-        subtitle_color = "#999"
-        num_featured = 6
-        sort_field = ".Params.title"
-        sort_order = "asc"
-        card_title_font_color = "#a22"
-        card_description_font_color = "#468"
-        layout = 1
-
-
-    [[params.featured_pages.sections]]
-        name = "publications"
-        title = "Publications"
-        title_color = "#333"
-        subtitle = "The latest and greatest publications"
-        subtitle_color = "#999"
-        num_featured = 1
-        sort_field = ".Params.title"
-        sort_order = "asc"
-        layout = 1
-
-    [[params.featured_pages.sections]]
-        name = "posts"
-        title = "Posts"
-        title_color = "#333"
-        subtitle = "The latest and greatest posts"
-        subtitle_color = "#999"
-        num_featured = 4
-        sort_field = ".Params.title"
-        sort_order = "asc"
-        layout = 1
-
-    [[params.featured_pages.sections]]
-        name = "thoughts"
-        title = "Thoughts"
-        title_color = "#333"
-        subtitle = "My newest thoughts"
-        subtitle_color = "#999"
-        num_featured = 2
-        sort_field = ".Params.title"
-        sort_order = "asc"
-        layout = 1
-
 
     # Below we set attributes for the sharer
     [params.sharer]

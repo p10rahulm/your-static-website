@@ -11,48 +11,11 @@
     {{if .Params.logo_wall.active}}
         {{partial "homepage-sections/logo_wall.html" .}}
     {{end}}
-    {{partial "homepage-sections/show_featured.html" .}}
+    {{if .Params.featured_pages.active}}
+        {{partial "homepage-sections/show_featured.html" .}}
+    {{end}}
     {{if .Params.contact.active}}
         {{partial "homepage-sections/contact.html" .}}
     {{end}}
 
-
-
-
-
-<div class="container">
-    <div class="row">
-        <H1> This is an awesome front page</H1>
-        {{.Content}}
-        <p>I am the hunter</p>
-        {{ range .Pages }}
-            <div style="border: 1px solid black; margin:10px; padding:10px; ">
-                <div style="font-size:20px;">
-                    <a href="{{.URL}}">{{.Title}}</a>
-                </div>
-                <div style="color:grey; font-size:16px;">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
-                <div style="color:grey; font-size:16px;">
-                    {{ if .Params.tags }}<strong>Tags:</strong>
-                        {{range .Params.tags}}
-                            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
-                                {{ . }}
-                            </a>
-                        {{end}}
-                    {{end}}
-                </div>
-                <div style="color:grey; font-size:16px;">
-                    {{ if .Params.categories }}
-                    <strong>Categories:</strong>
-                        {{range .Params.categories}}
-                            <a href="{{ "/categories/" | relLangURL }}
-                                {{ . | urlize }}">
-                                {{ . }}
-                            </a>
-                        {{end}}
-                    {{end}}
-                </div>
-            </div>
-        {{ end }}
-    </div>
-</div>
 {{ end }}

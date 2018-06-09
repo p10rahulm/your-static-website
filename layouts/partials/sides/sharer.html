@@ -68,30 +68,35 @@
 
     {{if and $.Site.Params.sharer.sharer_fixed_menu_active $.Params.fixed_sharer_active}}
         <div class="sharer_socials_fixed" id="fixed_social_shares" {{if $.Site.Params.sharer.show_menu_on_scroll}} style="display:none" {{end}}>
-            <div class="twitter"
-               href="https://twitter.com/intent/tweet?text={{ .Title | html }}&amp;url={{ .Permalink | html }}"
+            <a href="https://twitter.com/intent/tweet?text={{ .Title | html }}&amp;url={{ .Permalink | html }}"
                target="_blank" rel="noopener">
-                <i class="fa fa-twitter"></i>
-            </div>
-            <div class="facebook"
-               href="https://www.facebook.com/sharer.php?u={{ .Permalink | html }}"
+                <div class="twitter">
+                    <i class="fa fa-twitter"></i>
+                </div>
+            </a>
+            <a href="https://www.facebook.com/sharer.php?u={{ .Permalink | html }}"
                target="_blank" rel="noopener">
-                <i class="fa fa-facebook"></i>
-            </div>
-            <div class="linkedin"
-               href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink | html }}&amp;title={{ .Title | html }}"
+                <div class="facebook">
+                    <i class="fa fa-facebook"></i>
+                </div>
+            </a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink | html }}&amp;title={{ .Title | html }}"
                target="_blank" rel="noopener">
-                <i class="fa fa-linkedin"></i>
-            </div>
-            <div class="googleplus"
-               href="https://plus.google.com/share?url={{ .Permalink | html }}"
+                <div class="linkedin">
+                    <i class="fa fa-linkedin"></i>
+                </div>
+            </a>
+            <a href="https://plus.google.com/share?url={{ .Permalink | html }}"
                target="_blank" rel="noopener">
-                <i class="fa fa-google-plus"></i>
-            </div>
-            <div class="mailto"
-               href="mailto:?subject={{ .Title | html }}&amp;body={{ .Permalink | html }}">
-                <i class="fa fa-envelope"></i>
-            </div>
+                <div class="googleplus">
+                    <i class="fa fa-google-plus"></i>
+                </div>
+            </a>
+            <a href="mailto:?subject={{ .Title | html }}&amp;body={{ .Permalink | html }}">
+                <div class="mailto">
+                    <i class="fa fa-envelope"></i>
+                </div>
+            </a>
         </div>
     {{end}}
 

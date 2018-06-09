@@ -1,7 +1,7 @@
 +++
 # General
 title = "Thought10"
-date = 2018-06-06T22:36:40+05:30
+date = 2018-06-08T19:44:46+05:30
 draft = false
 author = "Rahul Madhavan"
 
