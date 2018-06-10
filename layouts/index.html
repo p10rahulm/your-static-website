@@ -1,6 +1,6 @@
 {{ define "main" }}
-    {{if .Params.top_image.active}}
-        {{partial "homepage-sections/top_image_writeup.html" .}}
+    {{if .Params.top_banner.active}}
+        {{partial "homepage-sections/top_banner.html" .}}
     {{end}}
     {{if .Params.showcase.active}}
         {{partial "homepage-sections/showcase.html" .}}

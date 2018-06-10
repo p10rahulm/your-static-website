@@ -143,12 +143,16 @@ verboseLog =true
 
     # Show cookie consent (required for EU etc)
     show_cookie_consent = true
-        cookie_button_color
-        cookie_button_text_color
+        cookie_button_color = "#fff"
+        cookie_button_text_color = "#0095eb"
+        cookie_button_border_color = "#0095eb"
         cookie_button_message = "Got it!"
-        cookie_background_color
+        cookie_background_color = "#0095eb"
         cookie_text_color = "#fff"
+        cookie_link_color = "#aaa"
         cookie_message = "This website uses cookies to ensure you get the best experience on our website."
+        cookie_container_padding_top = "4px"
+        cookie_container_padding_bottom = "4px"
 
     # Below we set attributes for the sharer
     [params.sharer]

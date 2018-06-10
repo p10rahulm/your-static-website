@@ -1,25 +1,25 @@
 {{ if $.Site.Params.show_cookie_consent }}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.js"></script>
+<style>
+    .cc-window.cc-banner {
+        padding-top: {{$.Site.Params.cookie_container_padding_top}};
+        padding-bottom: {{$.Site.Params.cookie_container_padding_bottom}};
+    }
+</style>
 <script>
     window.addEventListener("load", function(){
         window.cookieconsent.initialise({
-            "palette": {
-                "popup": {
-                    "background": "{{ .Scratch.Get "primary" }}",
-                    "text": "{{ .Scratch.Get "background" }}"
-                },
-                "button": {
-                    "background": "{{ .Scratch.Get "background" }}",
-                    "text": "{{ .Scratch.Get "primary" }}"
-                }
-            },
-            "theme": "classic",
             "content": {
-                "message": {{ i18n "cookie_message" | default "This website uses cookies to ensure you get the best experience on our website." }},
-        "dismiss": {{ i18n "cookie_dismiss" | default "Got it!" }},
-        "link": {{ i18n "cookie_learn" | default "Learn more" }}
-    }
+                "message": {{ i18n "cookie_message" | default $.Site.Params.cookie_message }},
+                "dismiss": {{ i18n "cookie_dismiss" | default $.Site.Params.cookie_button_message }},
+                "link": {{ i18n "cookie_learn" | default "Learn more" }}
+            },
+            "palette": {
+                popup: {background: {{$.Site.Params.cookie_background_color }}, text: {{$.Site.Params.cookie_text_color}}, link: {{$.Site.Params.cookie_link_color}}},
+                button: {background: {{$.Site.Params.cookie_button_color}}, border: {{$.Site.Params.cookie_button_border_color}}, text: {{$.Site.Params.cookie_button_text_color}}},
+                highlight: {background: 'red', border: 'red', text: '#000000'},
+            }
     })});
 </script>
 <div id="content"></div>

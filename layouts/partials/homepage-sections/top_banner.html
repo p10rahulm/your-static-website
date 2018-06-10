@@ -1,0 +1,231 @@
+<section id = "top-banner">
+
+    <header>
+        {{if $.Params.top_banner.show_particles}}
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    particlesJS("particles-js", {
+                        "particles": {
+                            "number": {
+                                "value": 50,
+                                "density": {
+                                    "enable": true,
+                                    "value_area": 800
+                                }
+                            },
+                            "color": {
+                                "value": ["#B8D500", "#21AEC0", "#795CED", "#FF5B00", "#FE9300", "#AB004A"]
+                            },
+                            "shape": {
+                                "type": "circle",
+                                "stroke": {
+                                    "width": 0,
+                                    "color": "#000000"
+                                },
+                                "polygon": {
+                                    "nb_sides": 5
+                                },
+                                "image": {
+                                    "src": "img/github.svg",
+                                    "width": 100,
+                                    "height": 100
+                                }
+                            },
+                            "opacity": {
+                                "value": 0.5,
+                                "random": false,
+                                "anim": {
+                                    "enable": false,
+                                    "speed": 1,
+                                    "opacity_min": 0.1,
+                                    "sync": false
+                                }
+                            },
+                            "size": {
+                                "value": 8,
+                                "random": true,
+                                "anim": {
+                                    "enable": false,
+                                    "speed": 40,
+                                    "size_min": 0.1,
+                                    "sync": false
+                                }
+                            },
+                            "line_linked": {
+                                "enable": true,
+                                "distance": 150,
+                                "color": "#ffffff",
+                                "opacity": 0.4,
+                                "width": 1
+                            },
+                            "move": {
+                                "enable": true,
+                                "speed": 6,
+                                "direction": "none",
+                                "random": false,
+                                "straight": false,
+                                "out_mode": "out",
+                                "bounce": false,
+                                "attract": {
+                                    "enable": false,
+                                    "rotateX": 600,
+                                    "rotateY": 1200
+                                }
+                            }
+                        },
+                        "interactivity": {
+                            "detect_on": "canvas",
+                            "events": {
+                                "onhover": {
+                                    "enable": true,
+                                    "mode": "grab"
+                                },
+                                "onclick": {
+                                    "enable": true,
+                                    "mode": "push"
+                                },
+                                "resize": true
+                            },
+                            "modes": {
+                                "grab": {
+                                    "distance": 140,
+                                    "line_linked": {
+                                        "opacity": 1
+                                    }
+                                },
+                                "bubble": {
+                                    "distance": 400,
+                                    "size": 40,
+                                    "duration": 2,
+                                    "opacity": 8,
+                                    "speed": 3
+                                },
+                                "repulse": {
+                                    "distance": 200,
+                                    "duration": 0.4
+                                },
+                                "push": {
+                                    "particles_nb": 4
+                                },
+                                "remove": {
+                                    "particles_nb": 2
+                                }
+                            }
+                        },
+                        "retina_detect": true
+                    });
+                });
+            </script>
+            <style>
+                .particles-stage{
+                    opacity: 1!important;
+                    height: 100%;
+                    top: 0;
+                    /*left: 0;*/
+                    position: absolute;
+                    width: 100%;
+                }
+            </style>
+
+        {{end}}
+
+        <style>
+            {{range $.Params.top_banner.fixed_fields}}
+            section#top-banner #{{.name}}{
+                font-weight: {{.font_weight}};
+                color: {{.field_font_color}};
+                text-align: {{.text_align}};
+                margin-bottom: {{.margin_bottom}};
+                margin-top: {{.margin_top}};
+                font-style: {{.font_style}};
+                font-size: {{.font_size}};
+            }
+            {{end}}
+
+            /*************************************************
+             *  Hero Widget
+            **************************************************/
+
+            .hero-overlay {
+                position: relative;
+                padding: 3em 0;
+                /*clear: both;*/
+                {{if .Params.top_banner.overlay_gradient}}
+                background-image:   linear-gradient(
+                                    {{$.Params.top_banner.overlay_direction}},
+                                    {{$.Params.top_banner.overlay_color_from |safeCSS}},
+                                    {{$.Params.top_banner.overlay_color_to|safeCSS}}
+                                    ),url("/img/{{$.Params.top_banner.overlay_img}}");
+                {{else }}
+                background-image: url("/img/{{$.Params.top_banner.overlay_img}}");
+                {{end}}
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                animation: intro 0.3s both;
+                animation-delay: 0s;
+                animation-delay: 0.25s;
+            }
+
+            .hero-title {
+                font-size: 2.7rem;
+                margin-top: 0;
+                line-height: 1;
+            }
+
+            .hero-lead {
+                max-width: 768px;
+                font-size: 1.35rem;
+            }
+
+            .hero-overlay .hero-title,
+            .hero-overlay .hero-lead,
+            .hero-overlay .btn {
+                color: #fff;
+                text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            .hero-overlay a {
+                color: #fff;
+            }
+
+            .hero-overlay .hero-lead a {
+                color: #fff;
+                text-decoration-line: underline;
+            }
+
+            .hero-overlay .btn-large {
+                font-size: 1.1rem;
+            }
+
+        </style>
+    </header>
+
+    {{range $.Params.top_banner.slide}}
+        <div class="banner_slide">
+            <div class="container">
+                <h1 class="hero-title" itemprop="headline">
+                    {{ with $.Params.top_banner.image_heading }}{{ . | markdownify }}{{ end }}
+                </h1>
+
+                {{ with $.Params.top_banner.content }}
+                <p class="hero-lead">{{ . | markdownify }}</p>
+                {{ end }}
+
+                {{ if $.Params.top_banner.cta.url }}
+                <p><a href="{{ $.Params.top_banner.cta.url }}" class="btn btn-light btn-outline btn-large">{{ $.Params.top_banner.cta.label | safeHTML}}</a></p>
+                {{ end }}
+
+            </div>
+
+            <div class="particles-stage" id="particles-js"></div>
+        </div>
+
+    {{end}}
+    {{range $.Params.top_banner.fixed_fields}}
+    <div id="{{.name}}" style="{{.additional_css_styles | safeCSS}}">
+        {{.content | markdownify}}
+    </div>
+    {{end}}
+</section>

@@ -10,17 +10,65 @@ fixed_sharer_active = true
 
 # ----------------------------------
 # Top section
-[top_image]
+[top_banner]
     active=true
-    image_heading = "<br>Onward and upward, like a dendritic tree<br><br><br><br>"
-    content = "Reducing entropy, one post at a time<br>"
-    overlay_img = "headers/bubbles-wide.jpg"  # Image path relative to your `static/img/` folder.
-    show_particles = true
+    layout = "banner" # choose from single or carousel
+
+    # SOme fixed fields
+    [[top_banner.fixed_fields]]
+        name = "title"
+        content = "The thinking Tree"
+        font_weight = "900"
+        field_font_color = "#a00"
+        text_align = "left"
+        margin_bottom = "0px"
+        margin_top = "3px"
+        font_style = "italic"
+        font_size = "0.6rem"
+        additional_css_styles = "color:#a00;text-align:left"
+
+    [[top_banner.fixed_fields]]
+            name = "mini_menu"
+            content = ""
+            font_weight = "900"
+            field_font_color = "#a00"
+            text_align = "left"
+            margin_bottom = "0px"
+            margin_top = "3px"
+            font_style = "italic"
+            font_size = "0.6rem"
+            additional_css_styles = "color:#a00;text-align:left"
+
+    # each slide is going to have below fields
+
+    [[top_banner.slide]]
+        overlay_img = "headers/bubbles-wide.jpg"  # Image path relative to your `static/img/` folder.
+
+        show_particles = true
+        overlay_gradient = true
+            overlay_direction = "to bottom right"
+            overlay_color_from = "rgba(0, 0, 150, 0.45)"
+            overlay_color_to = "rgba(120, 120, 150, 0.45)"
+
+        [[top_banner.slide.fields]]
+            name = "title"
+            content = "Reducing entropy, one post at a time<br>"
+            font_weight = "900"
+            field_font_color = "#a00"
+            text_align = "left"
+            margin_bottom = "0px"
+            margin_top = "3px"
+            font_style = "italic"
+            font_size = "0.6rem"
+            additional_css_styles = "color:#a00;text-align:left"
+
+
+
 
     # Call to action button (optional).
     # Activate the button by specifying a URL and button label below.
     # Deactivate by commenting out parameters, prefixing lines with `#`.
-    [top_image.cta]
+    [top_banner.cta]
         url = "./post"
         label = '<i class="ai ai-figshare"></i> &nbsp&nbsp View Posts'
 
@@ -466,7 +514,7 @@ fixed_sharer_active = true
     title = "Contact"
     subtitle = ""
     content = ""
-    
+
     # Automatically link email and phone?
     autolink = true
 
