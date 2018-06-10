@@ -1,6 +1,5 @@
 <aside class = "popup">
     <header>
-
         <script type="text/javascript">
             $(document).ready(function(){
                 //LocalStorage stores only string values.
@@ -50,7 +49,7 @@
                 //Exit Intent Popup: Ref: https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_event_mouseleave_mouseout , https://www.w3schools.com/jsref/event_clientx.asp
                 {{if $.Site.Params.popup.activate_popup_on_exit_intent}}
                     sensitivity = {{.Site.Params.popup.exit_intent_sensitivity}};
-                    $(document).mouseleave(function () {
+                    $(document).mouseleave(function (event) {
                         // console.log('out');
                         var y = event.clientY;
                         // console.log(y);
@@ -97,7 +96,6 @@
         </style>
 
     </header>
-    <body>
 
     <button id="popup_activation_button" class="btn btn-primary btn-sm pull-right popup-float" style = "background: {{$.Site.Params.popup.popup_button_color}}; border-color: {{$.Site.Params.popup.popup_button_color}}">
         <i class="fa {{.Site.Params.popup.pullup_button_icon}} popup-float-button" style = "color:{{$.Site.Params.popup.pullup_button_icon_color}}"></i>
@@ -126,7 +124,7 @@
                                 <h3 class="modal-title" style = "color:{{$.Site.Params.popup.subtitle_color}}; padding: 1rem 0rem 2rem">{{$.Site.Params.popup.subtitle}}</h3>
                                 {{ range $.Site.Params.popup.form_inputs}}
                                 <div class="form-group">
-                                    <input class="form-control" id="{{- .name -}}" required="{{- .required -}}" type="{{- .type -}}" name="{{- .name -}}"
+                                    <input class="form-control" id="{{- .name -}}" required="{{- .required -}}" type="{{- .type -}}" name="{{- .name -}}" autocomplete="{{- .autocomplete -}}"
                                            placeholder="{{ with .helper_text }}{{ .  | markdownify }}{{ end }}">
                                 </div>
                                 {{ end }}
@@ -167,5 +165,4 @@
         </div>
     </div>
 
-    </body>
 </aside>

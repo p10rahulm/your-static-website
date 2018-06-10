@@ -69,7 +69,6 @@ verboseLog =true
 
 # Some parameters for the internal theme use
 [params]
-    #for debug
     open_at_top = false
     # After finishing this section config, make sure to look at manifest.json in the static folder
     # Color theme. These colors are used from the data/fonts folder
@@ -141,6 +140,15 @@ verboseLog =true
 
     # The following go on the footer.
     show_back_to_top = false
+
+    # Show cookie consent (required for EU etc)
+    show_cookie_consent = true
+        cookie_button_color
+        cookie_button_text_color
+        cookie_button_message = "Got it!"
+        cookie_background_color
+        cookie_text_color = "#fff"
+        cookie_message = "This website uses cookies to ensure you get the best experience on our website."
 
     # Below we set attributes for the sharer
     [params.sharer]
@@ -244,12 +252,14 @@ verboseLog =true
             name="name"
             required="required"
             type="text"
+            autocomplete = "name"
             helper_text = "Your Name *"
 
         [[params.popup.form_inputs]]
             name = "Email ID"
             requried = "required"
             type= "email"
+            autocomplete = "email"
             helper_text = "Your Email *"
 
 
