@@ -13,41 +13,205 @@ fixed_sharer_active = true
 [top_banner]
     active=true
     layout = "banner" # choose from single or carousel
+    # going to do particles on the banner basis. Doesn't look good if particles slide along with the slides.
+    show_particles = true
+    height="700px"
+    [top_banner.particles]
+        number_particles = 50
 
-    # SOme fixed fields
+
+    # Some fixed fields
     [[top_banner.fixed_fields]]
         name = "title"
-        content = "The thinking Tree"
-        font_weight = "900"
-        field_font_color = "#a00"
-        text_align = "left"
-        margin_bottom = "0px"
-        margin_top = "3px"
-        font_style = "italic"
-        font_size = "0.6rem"
-        additional_css_styles = "color:#a00;text-align:left"
+        class = "" # use in case belongs to some class of elements
+        content = "The Thinking Tree"
+        has_children = false
+        has_parent = false
+            parent = ""
+        type = "div" # https://www.w3schools.com/html/html_blocks.asp
+        # use css styles below
+        [[top_banner.fixed_fields.styles]]
+            container = "#top-banner"
+            target = "#title"
+
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "font-weight"
+                value = "900"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "color"
+                value = "#fff"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "text-align"
+                value = "center"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "top"
+                value = "10%"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "left"
+                value = "0%"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "width"
+                value = "100%"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "font-style"
+                value = "normal"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "font-size"
+                value = "2rem"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "font=family"
+                value = "inherit"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "margin"
+                value = "3rem 0rem 2rem 0rem"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "position"
+                value = "absolute"
 
     [[top_banner.fixed_fields]]
-            name = "mini_menu"
-            content = ""
-            font_weight = "900"
-            field_font_color = "#a00"
-            text_align = "left"
-            margin_bottom = "0px"
-            margin_top = "3px"
-            font_style = "italic"
-            font_size = "0.6rem"
-            additional_css_styles = "color:#a00;text-align:left"
+        name = "mini_menu"
+        class = "" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = false
+            parent = ""
+        type = "div" # https://www.w3schools.com/html/html_blocks.asp
 
+        # use css styles below
+        [[top_banner.fixed_fields.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = "#mini_menu"
+
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "top"
+                value = "40%"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "margin"
+                value = "auto"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "left"
+                value = "0"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "right"
+                value = "0"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "min-width"
+                value = "50%"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "max-width"
+                value = "400px"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "border-top"
+                value = "1px solid #fff"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "position"
+                value = "absolute"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "display"
+                value = "flex"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "flex-direction"
+                value = "row"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "flex-wrap"
+                value = "nowrap"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "justify-content"
+                value = "space-between"
+
+        [[top_banner.fixed_fields.styles]]
+            media_type = "@media"
+            container = "#top-banner"
+            target = "#mini_menu a"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "color"
+                value = "#fff"
+
+    [[top_banner.fixed_fields]]
+        name = "menu-item1"
+        class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
+        content = "[Books](#featured_books)"
+        has_children = false
+        has_parent = true
+            parent = "mini_menu"
+        type = "div" # https://www.w3schools.com/html/html_blocks.asp
+
+        # use css styles below
+        [[top_banner.fixed_fields.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = ".ff-menu-item"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "width"
+                value = "33.33%"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "color"
+                value = "#fff"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "float"
+                value = "left"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "text-align"
+                value = "center"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "margin-top"
+                value = "25px"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "font-size"
+                value = "1.5rem"
+
+    [[top_banner.fixed_fields]]
+        name = "menu-item2"
+        class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
+        content = "[Posts](#featured_posts)"
+        has_children = false
+        has_parent = true
+            parent = "mini_menu"
+        type = "div" # https://www.w3schools.com/html/html_blocks.asp
+
+    [[top_banner.fixed_fields]]
+        name = "menu-item3"
+        class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
+        content = "[Thoughts](#featured_thoughts)"
+        has_children = false
+        has_parent = true
+            parent = "mini_menu"
+        type = "div" # https://www.w3schools.com/html/html_blocks.asp
+
+        # use css styles below
+        [[top_banner.fixed_fields.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = ""
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "top"
+                value = "50%"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "color"
+                value = "#fff"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "float"
+                value = "left"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "text-align"
+                value = "center"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "margin-top"
+                value = "25px"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "font-size"
+                value = "1.5rem"
     # each slide is going to have below fields
 
     [[top_banner.slide]]
+        name ="primary"
         overlay_img = "headers/bubbles-wide.jpg"  # Image path relative to your `static/img/` folder.
 
-        show_particles = true
+
         overlay_gradient = true
             overlay_direction = "to bottom right"
-            overlay_color_from = "rgba(0, 0, 150, 0.45)"
+            overlay_color_from = "rgba(0, 0, 150, 0.75)"
             overlay_color_to = "rgba(120, 120, 150, 0.45)"
 
         [[top_banner.slide.fields]]
@@ -156,16 +320,15 @@ fixed_sharer_active = true
         # Make sure alignment is ok. I've used replace of '                '
         # to remove the leading white space
         content = '''
-        Rahul Madhavan founded CodeFRA as a means to work on problems that take time and are more difficult to address than traditional start-ups would allow. Traditionally the distinction between research and production had been fairly well demarcated with research institutions working on technologies that were forward looking and companies working on production oriented technology (technologies which made money today). That distinction has become blurred, especially in computer science with much of the cutting edge improvements happening within companies.
+                Rahul Madhavan founded CodeFRA as a means to work on problems that take time and are more difficult to address than traditional start-ups would allow. Traditionally the distinction between research and production had been fairly well demarcated with research institutions working on technologies that were forward looking and companies working on production oriented technology (technologies which made money today). That distinction has become blurred, especially in computer science with much of the cutting edge improvements happening within companies.
 
-        CodeFRA is an attempt to work on futuristic technologies covering multidisciplinary domains. We follow problems till their origins, dive into rabbit holes and go deep into the root of problems. Many times this leads us to mathematics, which seems to be the foundation of all else. Sometimes it leads to sociology and behavioural science. Few times it leads to the complexity of Biology. Other times it leads to thought experiments. Most of this rests on a backbone of coding as it is ubiquitous as a tool.
+                CodeFRA is an attempt to work on futuristic technologies covering multidisciplinary domains. We follow problems till their origins, dive into rabbit holes and go deep into the root of problems. Many times this leads us to mathematics, which seems to be the foundation of all else. Sometimes it leads to sociology and behavioural science. Few times it leads to the complexity of Biology. Other times it leads to thought experiments. Most of this rests on a backbone of coding as it is ubiquitous as a tool.
 
-        The research areas we work on here are network topologies, computational structures, self-organization and automata, idea space theory. Apart from this core, there is also ongoing work on pattern finding in market microstructure (high frequency trading), and a few applications of complexity and modelling. If you would like to join us to contribute on any of these problems, you are most welcome. We're sure you would find the journey at least slightly enlightening. If you have a problem that you would like us to work on, please contact us below.
+                The research areas we work on here are network topologies, computational structures, self-organization and automata, idea space theory. Apart from this core, there is also ongoing work on pattern finding in market microstructure (high frequency trading), and a few applications of complexity and modelling. If you would like to join us to contribute on any of these problems, you are most welcome. We're sure you would find the journey at least slightly enlightening. If you have a problem that you would like us to work on, please contact us below.
 
-        Rahul Madhavan has been the head of Data Science at Atidiv and Cuemath. At Atidiv, he built a data science division from scratch which worked on Data Science as a Service - the Atidiv data science team acted as the remote data science team for our clients. This meant building tools to solve common problems between companies and building a team to deal with bespoke problems and on demand requests for client companies. At Cuemath he was the head of data science and helped in their Series-B fund-raise round.
+                Rahul Madhavan has been the head of Data Science at Atidiv and Cuemath. At Atidiv, he built a data science division from scratch which worked on Data Science as a Service - the Atidiv data science team acted as the remote data science team for our clients. This meant building tools to solve common problems between companies and building a team to deal with bespoke problems and on demand requests for client companies. At Cuemath he was the head of data science and helped in their Series-B fund-raise round.
 
-        Prior to that he was a trader on Wall Street trading currency options. During his time at Barclays he helped setup an automated option price trading/monitoring system. On the research side, he worked on single currency fx pricing and eurchf floor failure models. At Nomura he worked on Equity Exotic Options with a specific focus on RFP pricing and generating client ideas. At Lehman Brothers, he risk managed an exotics trading book. He distinctly remembers being non-plussed at the fuss over the Lehman Brothers collapse, having predicted it a year before (Ref: IIT Madras placement talk - 2007). :rocket:
-       '''
+                Prior to that he was a trader on Wall Street trading currency options. During his time at Barclays he helped setup an automated option price trading/monitoring system. On the research side, he worked on single currency fx pricing and eurchf floor failure models. At Nomura he worked on Equity Exotic Options with a specific focus on RFP pricing and generating client ideas. At Lehman Brothers, he risk managed an exotics trading book. He distinctly remembers being non-plussed at the fuss over the Lehman Brothers collapse, having predicted it a year before (Ref: IIT Madras placement talk - 2007). :rocket:'''
 
         # ---------------------------------
         [about_us.right_part.bottom_left]

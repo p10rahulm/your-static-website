@@ -8,7 +8,7 @@
                     particlesJS("particles-js", {
                         "particles": {
                             "number": {
-                                "value": 50,
+                                "value": {{$.Params.top_banner.particles.number_particles }},
                                 "density": {
                                     "enable": true,
                                     "value_area": 800
@@ -131,34 +131,22 @@
         {{end}}
 
         <style>
-            {{range $.Params.top_banner.fixed_fields}}
-            section#top-banner #{{.name}}{
-                font-weight: {{.font_weight}};
-                color: {{.field_font_color}};
-                text-align: {{.text_align}};
-                margin-bottom: {{.margin_bottom}};
-                margin-top: {{.margin_top}};
-                font-style: {{.font_style}};
-                font-size: {{.font_size}};
+            .top_banner_container {
+                position:relative;
             }
-            {{end}}
-
-            /*************************************************
-             *  Hero Widget
-            **************************************************/
-
-            .hero-overlay {
+            {{$banner_height := $.Params.top_banner.height}}
+            {{range $.Params.top_banner.slide}}
+            section#top-banner #{{.name}} {
                 position: relative;
-                padding: 3em 0;
-                /*clear: both;*/
+                height: {{$banner_height}};
                 {{if .Params.top_banner.overlay_gradient}}
-                background-image:   linear-gradient(
-                                    {{$.Params.top_banner.overlay_direction}},
-                                    {{$.Params.top_banner.overlay_color_from |safeCSS}},
-                                    {{$.Params.top_banner.overlay_color_to|safeCSS}}
-                                    ),url("/img/{{$.Params.top_banner.overlay_img}}");
+                    background-image:   linear-gradient(
+                    {{.overlay_direction}},
+                    {{.overlay_color_from |safeCSS}},
+                    {{.overlay_color_to|safeCSS}}
+                    ),url("/img/{{.overlay_img}}");
                 {{else }}
-                background-image: url("/img/{{$.Params.top_banner.overlay_img}}");
+                    background-image: url("/img/{{.overlay_img}}");
                 {{end}}
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -167,44 +155,20 @@
                 animation-delay: 0s;
                 animation-delay: 0.25s;
             }
+            {{end}}
 
-            .hero-title {
-                font-size: 2.7rem;
-                margin-top: 0;
-                line-height: 1;
-            }
 
-            .hero-lead {
-                max-width: 768px;
-                font-size: 1.35rem;
-            }
+            {{range $.Params.top_banner.fixed_fields}}
+            {{partial "functions/css_style.html" (dict "name" .name "styles" .styles) | safeCSS}}
+            {{end}}
 
-            .hero-overlay .hero-title,
-            .hero-overlay .hero-lead,
-            .hero-overlay .btn {
-                color: #fff;
-                text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
-            }
-
-            .hero-overlay a {
-                color: #fff;
-            }
-
-            .hero-overlay .hero-lead a {
-                color: #fff;
-                text-decoration-line: underline;
-            }
-
-            .hero-overlay .btn-large {
-                font-size: 1.1rem;
-            }
 
         </style>
     </header>
-
+<div class="top_banner_container">
     {{range $.Params.top_banner.slide}}
-        <div class="banner_slide">
-            <div class="container">
+        <div class="banner_slide" id="{{.name}}">
+
                 <h1 class="hero-title" itemprop="headline">
                     {{ with $.Params.top_banner.image_heading }}{{ . | markdownify }}{{ end }}
                 </h1>
@@ -217,15 +181,29 @@
                 <p><a href="{{ $.Params.top_banner.cta.url }}" class="btn btn-light btn-outline btn-large">{{ $.Params.top_banner.cta.label | safeHTML}}</a></p>
                 {{ end }}
 
-            </div>
 
-            <div class="particles-stage" id="particles-js"></div>
+
+
         </div>
 
     {{end}}
-    {{range $.Params.top_banner.fixed_fields}}
-    <div id="{{.name}}" style="{{.additional_css_styles | safeCSS}}">
-        {{.content | markdownify}}
-    </div>
+    {{if $.Params.top_banner.show_particles}}<div class="particles-stage" id="particles-js"></div>{{end}}
+
+
+    <!--{{$ff := $.Params.top_banner.fixed_fields }}-->
+
+    {{$fields := $.Params.top_banner.fixed_fields}}
+    {{range $fields}}
+        {{if not .has_parent}}
+            {{printf "<%s " .type | htmlUnescape | safeHTML }} id="{{.name}}" class = "{{.class}}">
+                {{.content | markdownify}}
+                {{if .has_children}}
+                    {{partial "functions/field_loop.html" (dict "fields" $fields "current_name" .name "css_container" "top-banner")}}
+                {{end}}
+            {{ printf "</%s" .type | htmlUnescape | safeHTML }}>
+        {{end}}
     {{end}}
+
+
+</div>
 </section>
