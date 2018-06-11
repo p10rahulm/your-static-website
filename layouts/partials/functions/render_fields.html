@@ -1,0 +1,24 @@
+{{$fields := $.fields}}
+
+{{range $fields}}{{ range .js_sources }}
+<script type="text/javascript" src="{{.url}}"></script>
+{{end}}{{end}}
+{{range $fields}}{{ range .custom_js_partials }}
+{{partial .partial_location . }}
+{{end}}{{end}}
+<style>
+    {{range $fields}}
+        {{partial "functions/css_style.html" (dict "name" .name "styles" .styles) | safeCSS}}
+    {{end}}
+</style>
+
+{{range $fields}}
+    {{if not .has_parent}}
+        {{printf "<%s " .type | htmlUnescape | safeHTML }} id="{{.name}}" class = "{{.class}}">
+            {{.content | markdownify}}
+            {{if .has_children}}
+                {{partial "functions/field_loop.html" (dict "fields" $fields "current_name" .name )}}
+            {{end}}
+        {{ printf "</%s" .type | htmlUnescape | safeHTML }}>
+    {{end}}
+{{end}}

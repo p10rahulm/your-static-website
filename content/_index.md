@@ -17,7 +17,45 @@ fixed_sharer_active = true
     show_particles = true
     height="700px"
     [top_banner.particles]
-        number_particles = 50
+
+        # Include the js here
+        [[top_banner.particle_fields]]
+        name = "particles-js"
+        class = "particles-stage"
+        content = ""
+        has_children = false
+        has_parent = false
+            parent = ""
+        type = "div"
+        [[top_banner.particle_fields.js_sources]]
+            url = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
+        [[top_banner.particle_fields.custom_js_partials]]
+            partial_location = "js_scripts/particle_fields.html"
+            num_particles = 50
+            colors = ["#B8D500", "#21AEC0", "#795CED", "#FF5B00", "#FE9300", "#AB004A"]
+            # You can add any custom fields here
+        [[top_banner.particle_fields.styles]]
+            media_type = "@media"
+            container = "#top-banner"
+            target = ".particles-stage"
+            [[top_banner.particle_fields.styles.style_value]]
+                field = "position"
+                value = "absolute"
+            [[top_banner.particle_fields.styles.style_value]]
+                field = "height"
+                value = "100%"
+            [[top_banner.particle_fields.styles.style_value]]
+                field = "opacity"
+                value = "1"
+            [[top_banner.particle_fields.styles.style_value]]
+                field = "top"
+                value = "0"
+            [[top_banner.particle_fields.styles.style_value]]
+                field = "width"
+                value = "100%"
+            [[top_banner.particle_fields.styles.style_value]]
+                field = "font-family"
+                value = "Palatino, URW Palladio L, serif"
 
 
     # Some fixed fields
@@ -45,7 +83,7 @@ fixed_sharer_active = true
                 value = "center"
             [[top_banner.fixed_fields.styles.style_value]]
                 field = "top"
-                value = "10%"
+                value = "5%"
             [[top_banner.fixed_fields.styles.style_value]]
                 field = "left"
                 value = "0%"
@@ -70,7 +108,7 @@ fixed_sharer_active = true
 
     [[top_banner.fixed_fields]]
         name = "mini_menu"
-        class = "" # use in case belongs to some class of elements
+        class = "banner_mini_menu" # use in case belongs to some class of elements
         content = ""
         has_children = true
         has_parent = false
@@ -81,11 +119,11 @@ fixed_sharer_active = true
         [[top_banner.fixed_fields.styles]]
             media_type = ""
             container = "#top-banner"
-            target = "#mini_menu"
+            target = ".banner_mini_menu"
 
             [[top_banner.fixed_fields.styles.style_value]]
                 field = "top"
-                value = "40%"
+                value = "30%"
             [[top_banner.fixed_fields.styles.style_value]]
                 field = "margin"
                 value = "auto"
@@ -101,9 +139,6 @@ fixed_sharer_active = true
             [[top_banner.fixed_fields.styles.style_value]]
                 field = "max-width"
                 value = "400px"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "border-top"
-                value = "1px solid #fff"
             [[top_banner.fixed_fields.styles.style_value]]
                 field = "position"
                 value = "absolute"
@@ -149,6 +184,9 @@ fixed_sharer_active = true
                 field = "color"
                 value = "#fff"
             [[top_banner.fixed_fields.styles.style_value]]
+                field = "border-top"
+                value = "1px solid #fff"
+            [[top_banner.fixed_fields.styles.style_value]]
                 field = "float"
                 value = "left"
             [[top_banner.fixed_fields.styles.style_value]]
@@ -159,7 +197,17 @@ fixed_sharer_active = true
                 value = "25px"
             [[top_banner.fixed_fields.styles.style_value]]
                 field = "font-size"
+                value = "1.2rem"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "padding-top"
                 value = "1.5rem"
+        [[top_banner.fixed_fields.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = ".ff-menu-item:hover"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "border-top"
+                value = "6px solid #fff"
 
     [[top_banner.fixed_fields]]
         name = "menu-item2"
@@ -179,33 +227,149 @@ fixed_sharer_active = true
             parent = "mini_menu"
         type = "div" # https://www.w3schools.com/html/html_blocks.asp
 
-        # use css styles below
-        [[top_banner.fixed_fields.styles]]
-            media_type = ""
-            container = "#top-banner"
-            target = ""
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "top"
-                value = "50%"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "color"
-                value = "#fff"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "float"
-                value = "left"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "text-align"
-                value = "center"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "margin-top"
-                value = "25px"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "font-size"
-                value = "1.5rem"
+
     # each slide is going to have below fields
 
+    [[top_banner.slide_elements]]
+        name = "primary_slide"
+        class = "banner_slide" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = false
+            parent = ""
+        type = "div" 
+        # use css styles below
+        [[top_banner.slide_elements.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = ".banner_slide"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "position"
+                value = "relative"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "height"
+                value = "700px"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "max-height"
+                value = "100vh"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "background-size"
+                value = "cover"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "background-repeat"
+                value = "no-repeat"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "background-position"
+                value = "center"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "animation"
+                value = "intro 0.3s both"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "animation-delay"
+                value = "0.25s"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "background-image"
+                value = "linear-gradient(to bottom right,rgba(0,0,200,0.2), rgba(200,0,120,0.2)),url(/img/headers/bubbles-wide.jpg)"
+
+
+
+    [[top_banner.slide_elements]]
+        name = "primary_slide_subject"
+        class = "slide_subject" # use in case belongs to some class of elements
+        content = "Posts"
+        has_children = false
+        has_parent = true
+            parent = "primary_slide"
+        type = "div"
+
+        [[top_banner.slide_elements.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = ".slide_subject"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "position"
+                value = "relative"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "top"
+                value = "60%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "width"
+                value = "100%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "text-align"
+                value = "center"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "color"
+                value = "#fff"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "text-transform"
+                value = "uppercase"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "font-weight"
+                value = "700"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "font-stretch"
+                value = "expanded"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "font-size"
+                value = "0.95rem"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "padding-top"
+                value = "1.25rem"
+
+
+    [[top_banner.slide_elements]]
+        name = "primary_slide_title"
+        class = "slide_title" # use in case belongs to some class of elements
+        content = "Onward and Upward, Like a Dendritic Tree"
+        has_children = false
+        has_parent = true
+            parent = "primary_slide"
+        type = "div" # https://www.w3schools.com/html/html_blocks.asp
+        [[top_banner.slide_elements.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = ".slide_title"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "position"
+                value = "relative"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "top"
+                value = "60%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "width"
+                value = "100%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "text-align"
+                value = "center"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "color"
+                value = "#fff"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "text-transform"
+                value = "capitalize "
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "font-weight"
+                value = "700"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "font-size"
+                value = "1.5rem"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "padding-top"
+                value = "1.25rem"
+
+    [[top_banner.slide_elements]]
+        name = "primary_slide_description"
+        class = "slide_description" # use in case belongs to some class of elements
+        content = ""
+        has_children = false
+        has_parent = true
+            parent = "primary_slide"
+        type = "div" # https://www.w3schools.com/html/html_blocks.asp
+
+
     [[top_banner.slide]]
-        name ="primary"
+        name ="primary_slide"
         overlay_img = "headers/bubbles-wide.jpg"  # Image path relative to your `static/img/` folder.
 
 

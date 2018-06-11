@@ -1,13 +1,5 @@
 {{$current_name := .current_name}}
 {{$fields := .fields}}
-{{$css_container := .css_container}}
-<style>
-    {{range .fields}}
-        {{if eq $current_name .parent}}
-            {{partial "functions/css_style.html" (dict "name" .name "styles" .styles)}}
-        {{end}}
-    {{end}}
-</style>
 
 
 {{range .fields}}
@@ -15,7 +7,7 @@
         {{printf "<%s " .type | htmlUnescape | safeHTML }} id="{{.name}}" class = "{{.class}}">
         {{.content | markdownify}}
         {{if .has_children}}
-            {{partial "functions/field_loop.html" (dict "fields" $fields "current_name" .name  "css_container" $css_container)}}
+            {{partial "functions/field_loop.html" (dict "fields" $fields "current_name" .name )}}
         {{end}}
         {{ printf "</%s" .type | htmlUnescape | safeHTML }}>
     {{end}}

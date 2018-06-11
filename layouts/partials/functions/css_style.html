@@ -7,11 +7,11 @@
     {{ .media_type | safeCSS }} {
         {{end}}
     {{end}}
-    {{if isset . "container"}}{{ .container | safeCSS }}{{end}} {{if isset . "target"}}{{if not (eq .target "")}}{{ .target | safeCSS }}{{else}}#{{ $name | safeCSS }}{{end}}{{else}}#{{ $name | safeCSS }}{{end}} {
-    {{if isset . "style_value"}}{{range .style_value}}
-    {{ .field | safeCSS }}: {{ .value| safeCSS }};
-    {{end}}{{end}}
-    }
+        {{if isset . "container"}}{{ .container | safeCSS }}{{end}} {{if isset . "target"}}{{if not (eq .target "")}}{{ .target | safeCSS }}{{else}}#{{ $name | safeCSS }}{{end}}{{else}}#{{ $name | safeCSS }}{{end}} {
+            {{if isset . "style_value"}}{{range .style_value}}
+            {{ .field | safeCSS }}: {{ .value| safeCSS }};
+            {{end}}{{end}}
+        }
     {{if isset . "media_type"}}{{if not (eq .media_type "")}}
     }
     {{end}}{{end}}
