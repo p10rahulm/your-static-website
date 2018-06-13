@@ -18,268 +18,6 @@ fixed_sharer_active = true
 
 
 
-    # Some fixed fields
-    [[top_banner.fixed_fields]]
-        name = "title"
-        class = "" # use in case belongs to some class of elements
-        content = "The Thinking Tree"
-        has_children = false
-        has_parent = false
-            parent = ""
-        type = "div"
-        # use css styles below
-        [[top_banner.fixed_fields.styles]]
-            container = "#top-banner"
-            target = "#title"
-            media_type = ""
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "font-weight"
-                value = "900"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "color"
-                value = "#fff"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "text-align"
-                value = "center"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "top"
-                value = "5%"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "left"
-                value = "0%"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "width"
-                value = "100%"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "font-style"
-                value = "normal"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "font-size"
-                value = "3.5rem"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "font=family"
-                value = "inherit"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "margin"
-                value = "3rem 0rem 2rem 0rem"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "position"
-                value = "absolute"
-
-    [[top_banner.fixed_fields.styles]]
-            media_type = "@media screen and (max-width: 1024px)"
-            container = "#top-banner"
-            target = "#title"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "font-size"
-                value = "2.5rem"
-    [[top_banner.fixed_fields.styles]]
-            media_type = "@media all and (max-width: 400px)"
-            container = "#top-banner"
-            target = "#title"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "font-size"
-                value = "2rem"
-
-    [[top_banner.fixed_fields]]
-        name = "mini_menu"
-        class = "banner_mini_menu" # use in case belongs to some class of elements
-        content = ""
-        has_children = true
-        has_parent = false
-            parent = ""
-        type = "div"
-
-        # use css styles below
-        [[top_banner.fixed_fields.styles]]
-            media_type = ""
-            container = "#top-banner"
-            target = ".banner_mini_menu"
-
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "top"
-                value = "30%"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "margin"
-                value = "auto"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "left"
-                value = "0"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "right"
-                value = "0"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "min-width"
-                value = "50%"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "max-width"
-                value = "400px"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "position"
-                value = "absolute"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "display"
-                value = "flex"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "flex-direction"
-                value = "row"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "flex-wrap"
-                value = "nowrap"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "justify-content"
-                value = "space-between"
-
-
-        [[top_banner.fixed_fields.styles]]
-            media_type = "@media"
-            container = "#top-banner"
-            target = "#mini_menu a"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "color"
-                value = "#fff"
-
-    [[top_banner.fixed_fields]]
-        name = "menu-item1"
-        class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
-        content = "[Books](#featured_books)"
-        has_children = false
-        has_parent = true
-            parent = "mini_menu"
-        type = "div"
-
-        # use css styles below
-        [[top_banner.fixed_fields.styles]]
-            media_type = ""
-            container = "#top-banner"
-            target = ".ff-menu-item"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "width"
-                value = "33.33%"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "color"
-                value = "#fff"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "border-top"
-                value = "1px solid #fff"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "float"
-                value = "left"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "text-align"
-                value = "center"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "margin-top"
-                value = "25px"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "font-size"
-                value = "1.2rem"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "padding-top"
-                value = "1.5rem"
-        [[top_banner.fixed_fields.styles]]
-            media_type = ""
-            container = "#top-banner"
-            target = ".ff-menu-item:hover"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "border-top"
-                value = "6px solid #fff"
-
-    [[top_banner.fixed_fields]]
-        name = "menu-item2"
-        class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
-        content = "[Posts](#featured_posts)"
-        has_children = false
-        has_parent = true
-            parent = "mini_menu"
-        type = "div"
-
-    [[top_banner.fixed_fields]]
-        name = "menu-item3"
-        class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
-        content = "[Thoughts](#featured_thoughts)"
-        has_children = false
-        has_parent = true
-            parent = "mini_menu"
-        type = "div"
-
-    [[top_banner.fixed_fields]]
-        name = "arrow-left" #Get colors and images from here: https://www.materialui.co/icon/keyboard-arrow-left
-        class = "banner_slide_arrows prev" # use in case belongs to some class of elements
-        content = ""
-        has_children = false
-        has_parent = false
-            parent = ""
-        type = "img"
-        [[top_banner.fixed_fields.tags]]
-            field = "src"
-            value = "/img/arrow-left.png"
-        # use css styles below
-        [[top_banner.fixed_fields.styles]]
-            media_type = ""
-            container = "#top-banner"
-            target = ""
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "position"
-                value = "absolute"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "top"
-                value = "45%"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "left"
-                value = "5%"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "height"
-                value = "50px"
-        [[top_banner.fixed_fields.styles]]
-            media_type = ""
-            container = "#top-banner"
-            target = "#arrow-left:hover"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "transform"
-                value = "scale(1.5)"
-            [[top_banner.fixed_fields.styles.style_value]]
-                field = "transition"
-                value = "transform 0.5s ease-in-out 0.1s"
-
-    [[top_banner.fixed_fields]]
-            name = "arrow-right" #Get colors and images from here: https://www.materialui.co/icon/keyboard-arrow-right
-            class = "banner_slide_arrows next" # use in case belongs to some class of elements
-            content = ""
-            has_children = false
-            has_parent = false
-                parent = ""
-            type = "img"
-            [[top_banner.fixed_fields.tags]]
-                field = "src"
-                value = "/img/arrow-right.png"
-            # use css styles below
-            [[top_banner.fixed_fields.styles]]
-                media_type = ""
-                container = "#top-banner"
-                target = ""
-                [[top_banner.fixed_fields.styles.style_value]]
-                    field = "position"
-                    value = "absolute"
-                [[top_banner.fixed_fields.styles.style_value]]
-                    field = "top"
-                    value = "45%"
-                [[top_banner.fixed_fields.styles.style_value]]
-                    field = "right"
-                    value = "5%"
-                [[top_banner.fixed_fields.styles.style_value]]
-                    field = "height"
-                    value = "50px"
-            [[top_banner.fixed_fields.styles]]
-                media_type = ""
-                container = "#top-banner"
-                target = "#arrow-right:hover"
-                [[top_banner.fixed_fields.styles.style_value]]
-                    field = "transform"
-                    value = "scale(1.5)"
-                [[top_banner.fixed_fields.styles.style_value]]
-                    field = "transition"
-                    value = "transform 0.5s ease-in-out 0.1s"
 
 
 
@@ -293,7 +31,274 @@ fixed_sharer_active = true
             has_parent = false
                 parent = ""
             type = "div" # https://www.w3schools.com/html/html_blocks.asp
+    
+    #-----------------The fixed fields start here ---------------------------
+    # Some fixed fields
+    [[top_banner.slide_elements]]
+        name = "title"
+        class = "" # use in case belongs to some class of elements
+        content = "The Thinking Tree"
+        has_children = false
+        has_parent = false
+            parent = ""
+        type = "div"
+        # use css styles below
+        [[top_banner.slide_elements.styles]]
+            container = "#top-banner"
+            target = "#title"
+            media_type = ""
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "font-weight"
+                value = "900"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "color"
+                value = "#fff"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "text-align"
+                value = "center"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "top"
+                value = "5%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "left"
+                value = "0%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "width"
+                value = "100%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "font-style"
+                value = "normal"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "font-size"
+                value = "3.5rem"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "font=family"
+                value = "inherit"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "margin"
+                value = "3rem 0rem 2rem 0rem"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "position"
+                value = "absolute"
+    
+    [[top_banner.slide_elements.styles]]
+            media_type = "@media screen and (max-width: 1024px)"
+            container = "#top-banner"
+            target = "#title"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "font-size"
+                value = "2.5rem"
+    [[top_banner.slide_elements.styles]]
+            media_type = "@media all and (max-width: 400px)"
+            container = "#top-banner"
+            target = "#title"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "font-size"
+                value = "2rem"
+    
+    [[top_banner.slide_elements]]
+        name = "mini_menu"
+        class = "banner_mini_menu" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = false
+            parent = ""
+        type = "div"
+    
+        # use css styles below
+        [[top_banner.slide_elements.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = ".banner_mini_menu"
+    
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "top"
+                value = "30%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "margin"
+                value = "auto"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "left"
+                value = "0"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "right"
+                value = "0"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "min-width"
+                value = "50%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "max-width"
+                value = "400px"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "position"
+                value = "absolute"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "display"
+                value = "flex"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "flex-direction"
+                value = "row"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "flex-wrap"
+                value = "nowrap"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "justify-content"
+                value = "space-between"
+    
+    
+        [[top_banner.slide_elements.styles]]
+            media_type = "@media"
+            container = "#top-banner"
+            target = "#mini_menu a"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "color"
+                value = "#fff"
+    
+    [[top_banner.slide_elements]]
+        name = "menu-item1"
+        class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
+        content = "[Books](#featured_books)"
+        has_children = false
+        has_parent = true
+            parent = "mini_menu"
+        type = "div"
+    
+        # use css styles below
+        [[top_banner.slide_elements.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = ".ff-menu-item"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "width"
+                value = "33.33%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "color"
+                value = "#fff"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "border-top"
+                value = "1px solid #fff"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "float"
+                value = "left"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "text-align"
+                value = "center"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "margin-top"
+                value = "25px"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "font-size"
+                value = "1.2rem"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "padding-top"
+                value = "1.5rem"
+        [[top_banner.slide_elements.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = ".ff-menu-item:hover"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "border-top"
+                value = "6px solid #fff"
+    
+    [[top_banner.slide_elements]]
+        name = "menu-item2"
+        class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
+        content = "[Posts](#featured_posts)"
+        has_children = false
+        has_parent = true
+            parent = "mini_menu"
+        type = "div"
+    
+    [[top_banner.slide_elements]]
+        name = "menu-item3"
+        class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
+        content = "[Thoughts](#featured_thoughts)"
+        has_children = false
+        has_parent = true
+            parent = "mini_menu"
+        type = "div"
+    
+    [[top_banner.slide_elements]]
+        name = "arrow-left" #Get colors and images from here: https://www.materialui.co/icon/keyboard-arrow-left
+        class = "banner_slide_arrows prev" # use in case belongs to some class of elements
+        content = ""
+        has_children = false
+        has_parent = false
+            parent = ""
+        type = "img"
+        [[top_banner.slide_elements.tags]]
+            field = "src"
+            value = "/img/arrow-left.png"
+        # use css styles below
+        [[top_banner.slide_elements.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = ""
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "position"
+                value = "absolute"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "top"
+                value = "45%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "left"
+                value = "5%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "height"
+                value = "50px"
+        [[top_banner.slide_elements.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = "#arrow-left:hover"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "transform"
+                value = "scale(1.5)"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "transition"
+                value = "transform 0.5s ease-in-out 0.1s"
+    
+    [[top_banner.slide_elements]]
+            name = "arrow-right" #Get colors and images from here: https://www.materialui.co/icon/keyboard-arrow-right
+            class = "banner_slide_arrows next" # use in case belongs to some class of elements
+            content = ""
+            has_children = false
+            has_parent = false
+                parent = ""
+            type = "img"
+            [[top_banner.slide_elements.tags]]
+                field = "src"
+                value = "/img/arrow-right.png"
+            # use css styles below
+            [[top_banner.slide_elements.styles]]
+                media_type = ""
+                container = "#top-banner"
+                target = ""
+                [[top_banner.slide_elements.styles.style_value]]
+                    field = "position"
+                    value = "absolute"
+                [[top_banner.slide_elements.styles.style_value]]
+                    field = "top"
+                    value = "45%"
+                [[top_banner.slide_elements.styles.style_value]]
+                    field = "right"
+                    value = "5%"
+                [[top_banner.slide_elements.styles.style_value]]
+                    field = "height"
+                    value = "50px"
+            [[top_banner.slide_elements.styles]]
+                media_type = ""
+                container = "#top-banner"
+                target = "#arrow-right:hover"
+                [[top_banner.slide_elements.styles.style_value]]
+                    field = "transform"
+                    value = "scale(1.5)"
+                [[top_banner.slide_elements.styles.style_value]]
+                    field = "transition"
+                    value = "transform 0.5s ease-in-out 0.1s"
 
+    #-----------------The fixed fields end here ---------------------------
+    
+    
     #-----------------The slides will be contained in the following container---------------------------
     [[top_banner.slide_elements]]
         name = "slides_container"
@@ -337,7 +342,7 @@ fixed_sharer_active = true
                 value = "relative"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "height"
-                value = "700px"
+                value = "750px"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "max-height"
                 value = "100vh"
@@ -426,8 +431,11 @@ fixed_sharer_active = true
                 field = "top"
                 value = "65%"
             [[top_banner.slide_elements.styles.style_value]]
-                field = "width"
+                field = "min-width"
                 value = "50%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "max-width"
+                value = "400px"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "display"
                 value = "block"
