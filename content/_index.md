@@ -16,47 +16,7 @@ fixed_sharer_active = true
     # going to do particles on the banner basis. Doesn't look good if particles slide along with the slides.
     show_particles = true
 
-    [[top_banner.particle_fields]]
-    name = "particles-js"
-    class = "particles-stage"
-    content = ""
-    has_children = false
-    has_parent = false
-        parent = ""
-    type = "div" # https://www.w3schools.com/html/html_blocks.asp
-    # Include the js here
-    [[top_banner.particle_fields.js_sources]]
-        url = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
-    [[top_banner.particle_fields.custom_js_partials]]
-        partial_location = "js_scripts/particle_fields.html"
-        num_particles = 50
-        colors = ["#B8D500", "#21AEC0", "#795CED", "#FF5B00", "#FE9300", "#AB004A"]
-        # You can add any custom fields here
-    [[top_banner.particle_fields.styles]]
-        media_type = ""
-        container = "#top-banner"
-        target = ".particles-stage"
-        [[top_banner.particle_fields.styles.style_value]]
-            field = "position"
-            value = "absolute"
-        [[top_banner.particle_fields.styles.style_value]]
-            field = "height"
-            value = "100%"
-        [[top_banner.particle_fields.styles.style_value]]
-            field = "opacity"
-            value = "1"
-        [[top_banner.particle_fields.styles.style_value]]
-            field = "top"
-            value = "0"
-        [[top_banner.particle_fields.styles.style_value]]
-            field = "width"
-            value = "100%"
-        [[top_banner.particle_fields.styles.style_value]]
-            field = "font-family"
-            value = "Palatino, URW Palladio L, serif"
-        [[top_banner.particle_fields.styles.style_value]]
-            field = "z-index"
-            value = "05"
+
 
     # Some fixed fields
     [[top_banner.fixed_fields]]
@@ -170,6 +130,7 @@ fixed_sharer_active = true
                 field = "justify-content"
                 value = "space-between"
 
+
         [[top_banner.fixed_fields.styles]]
             media_type = "@media"
             container = "#top-banner"
@@ -280,6 +241,7 @@ fixed_sharer_active = true
             [[top_banner.fixed_fields.styles.style_value]]
                 field = "transition"
                 value = "transform 0.5s ease-in-out 0.1s"
+
     [[top_banner.fixed_fields]]
             name = "arrow-right" #Get colors and images from here: https://www.materialui.co/icon/keyboard-arrow-right
             class = "banner_slide_arrows next" # use in case belongs to some class of elements
@@ -319,23 +281,38 @@ fixed_sharer_active = true
                     field = "transition"
                     value = "transform 0.5s ease-in-out 0.1s"
 
+
+
+    #-----------------This is container for the top banner we will be using---------------------------
     # each slide is going to have below fields
+    [[top_banner.slide_elements]]
+            name = "banner"
+            class = "" # use in case belongs to some class of elements
+            content = ""
+            has_children = true
+            has_parent = false
+                parent = ""
+            type = "div" # https://www.w3schools.com/html/html_blocks.asp
+
+    #-----------------The slides will be contained in the following container---------------------------
     [[top_banner.slide_elements]]
         name = "slides_container"
         class = "" # use in case belongs to some class of elements
         content = ""
         has_children = true
-        has_parent = false
-            parent = ""
+        has_parent = true
+            parent = "banner"
         type = "div"
         # Include the js here
         [[top_banner.slide_elements.js_sources]]
             url = "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
         [[top_banner.slide_elements.custom_js_partials]]
             partial_location = "js_scripts/banner_carousel.html"
-            num_particles = 50
-            colors = ["#B8D500", "#21AEC0", "#795CED", "#FF5B00", "#FE9300", "#AB004A"]
             # You can add any custom fields here
+    #-----------------End of container---------------------------
+
+
+
 
     #-----------------Start of First Slide---------------------------
     [[top_banner.slide_elements]]
@@ -375,9 +352,7 @@ fixed_sharer_active = true
             [[top_banner.slide_elements.styles.style_value]]
                 field = "animation-delay"
                 value = "0.25s"
-            [[top_banner.slide_elements.styles.style_value]]
-                field = "z-index"
-                value = "-10"
+
 
         [[top_banner.slide_elements.styles]]
             media_type = ""
@@ -387,6 +362,43 @@ fixed_sharer_active = true
                 field = "background-image"
                 value = "linear-gradient(to bottom right,rgba(0,0,200,0.2), rgba(200,0,120,0.2)),url(/img/headers/bubbles-wide.jpg)"
 
+        #Below we include particles from particles.js a library that creates randomly moving particles on screen
+        [[top_banner.slide_elements]]
+            name = "primary_slide_particles"
+            class = "particles-stage"
+            content = ""
+            has_children = false
+            has_parent = true
+                parent = "primary_slide"
+            type = "div"
+            # Include the js here
+            [[top_banner.slide_elements.js_sources]]
+                url = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
+            [[top_banner.slide_elements.custom_js_partials]]
+                partial_location = "js_scripts/particle_fields.html"
+                caller_id = "primary_slide_particles"
+                num_particles = 50
+                colors = ["#B8D500", "#21AEC0", "#795CED", "#FF5B00", "#FE9300", "#AB004A"]
+                # You can add any custom fields here
+            [[top_banner.slide_elements.styles]]
+                media_type = ""
+                container = "#top-banner"
+                target = ".particles-stage"
+                [[top_banner.slide_elements.styles.style_value]]
+                    field = "position"
+                    value = "absolute"
+                [[top_banner.slide_elements.styles.style_value]]
+                    field = "height"
+                    value = "100%"
+                [[top_banner.slide_elements.styles.style_value]]
+                    field = "opacity"
+                    value = "1"
+                [[top_banner.slide_elements.styles.style_value]]
+                    field = "top"
+                    value = "0"
+                [[top_banner.slide_elements.styles.style_value]]
+                    field = "width"
+                    value = "100%"
 
     [[top_banner.slide_elements]]
         name = "primary_slide_descriptors_link"
@@ -411,16 +423,20 @@ fixed_sharer_active = true
                 value = "65%"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "width"
-                value = "100%"
+                value = "50%"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "display"
                 value = "block"
             [[top_banner.slide_elements.styles.style_value]]
+                field = "margin-left"
+                value = "auto"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "margin-right"
+                value = "auto"
+            [[top_banner.slide_elements.styles.style_value]]
                 field = "color"
                 value = "#eef"
-            [[top_banner.slide_elements.styles.style_value]]
-                field = "z-index"
-                value = "10"
+
         [[top_banner.slide_elements.styles]]
             media_type = ""
             container = "#top-banner"
@@ -429,6 +445,14 @@ fixed_sharer_active = true
                 field = "text-decoration"
                 value = "none"
 
+    [[top_banner.slide_elements]]
+            name = "primary_slide_descriptor_wrapper"
+            class = "slide_descriptor_wrapper" # use in case belongs to some class of elements
+            content = ""
+            has_children = true
+            has_parent = true
+                parent = "primary_slide_descriptors_link"
+            type = "div"
 
     [[top_banner.slide_elements]]
         name = "primary_slide_subject"
@@ -436,7 +460,7 @@ fixed_sharer_active = true
         content = "Posts"
         has_children = false
         has_parent = true
-            parent = "primary_slide_descriptors_link"
+            parent = "primary_slide_descriptor_wrapper"
         type = "div"
 
         [[top_banner.slide_elements.styles]]
@@ -481,7 +505,7 @@ fixed_sharer_active = true
         content = "Onward and Upward, Like a Dendritic Tree"
         has_children = false
         has_parent = true
-            parent = "primary_slide_descriptors_link"
+            parent = "primary_slide_descriptor_wrapper"
         type = "div"
         [[top_banner.slide_elements.styles]]
             media_type = ""
@@ -521,7 +545,7 @@ fixed_sharer_active = true
         content = "Reducing entropy, one post at a time"
         has_children = false
         has_parent = true
-            parent = "primary_slide_descriptors_link"
+            parent = "primary_slide_descriptor_wrapper"
         type = "div"
         [[top_banner.slide_elements.styles]]
             media_type = ""
@@ -571,6 +595,23 @@ fixed_sharer_active = true
                 field = "background-image"
                 value = "linear-gradient(to bottom right,rgba(0,0,200,0.2), rgba(200,0,120,0.2)),url(/img/orange-fractal.jpg)"
 
+    [[top_banner.slide_elements]]
+        name = "second_slide_particles"
+        class = "particles-stage"
+        content = ""
+        has_children = false
+        has_parent = true
+            parent = "second_slide"
+        type = "div"
+        # Include the js here
+        [[top_banner.slide_elements.js_sources]]
+            url = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
+        [[top_banner.slide_elements.custom_js_partials]]
+            partial_location = "js_scripts/particle_fields.html"
+            caller_id = "second_slide_particles"
+            num_particles = 50
+            colors = ["#B8D500", "#21AEC0", "#795CED", "#FF5B00", "#FE9300", "#AB004A"]
+            # You can add any custom fields here
 
     [[top_banner.slide_elements]]
         name = "second_slide_descriptors_link"
@@ -584,7 +625,14 @@ fixed_sharer_active = true
             field = "href"
             value = "/publications"
 
-
+    [[top_banner.slide_elements]]
+            name = "second_slide_descriptor_wrapper"
+            class = "slide_descriptor_wrapper" # use in case belongs to some class of elements
+            content = ""
+            has_children = true
+            has_parent = true
+                parent = "second_slide_descriptors_link"
+            type = "div"
 
     [[top_banner.slide_elements]]
         name = "second_slide_subject"
@@ -592,7 +640,7 @@ fixed_sharer_active = true
         content = "Publications"
         has_children = false
         has_parent = true
-            parent = "second_slide_descriptors_link"
+            parent = "second_slide_descriptor_wrapper"
         type = "div"
 
 
@@ -604,7 +652,7 @@ fixed_sharer_active = true
         content = "Every new day, better than the last"
         has_children = false
         has_parent = true
-            parent = "second_slide_descriptors_link"
+            parent = "second_slide_descriptor_wrapper"
         type = "div"
 
 
@@ -614,7 +662,7 @@ fixed_sharer_active = true
         content = "Nurturing creativity, like saplings amidst giants"
         has_children = false
         has_parent = true
-            parent = "second_slide_descriptors_link"
+            parent = "second_slide_descriptor_wrapper"
         type = "div"
     #-----------------End of Second Slide---------------------------
 

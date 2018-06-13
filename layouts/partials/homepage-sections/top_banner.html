@@ -5,9 +5,7 @@
     <div class="top_banner_container" style="position:relative">
 
         {{partial "functions/render_fields.html" (dict "fields" $.Params.top_banner.slide_elements)}}
-        {{if $.Params.top_banner.show_particles}}
-        {{partial "functions/render_fields.html" (dict "fields" $.Params.top_banner.particle_fields)}}
-        {{end}}
+
         {{partial "functions/render_fields.html" (dict "fields" $.Params.top_banner.fixed_fields)}}
 
 
