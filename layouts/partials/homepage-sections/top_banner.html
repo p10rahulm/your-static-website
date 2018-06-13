@@ -1,10 +1,15 @@
 <section id = "top-banner">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css"/>
+
     <div class="top_banner_container" style="position:relative">
+
         {{partial "functions/render_fields.html" (dict "fields" $.Params.top_banner.slide_elements)}}
         {{if $.Params.top_banner.show_particles}}
-            {{partial "functions/render_fields.html" (dict "fields" $.Params.top_banner.particle_fields)}}
+        {{partial "functions/render_fields.html" (dict "fields" $.Params.top_banner.particle_fields)}}
         {{end}}
         {{partial "functions/render_fields.html" (dict "fields" $.Params.top_banner.fixed_fields)}}
+
 
     </div>
 </section>

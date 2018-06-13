@@ -98,17 +98,17 @@
         {{$.Scratch.Set "any_carousel_card_layout" "true"}}
 
         #{{.name}}_cards .slick-prev:before {
-                      content: "{{.left_arrow_content| htmlUnescape | safeHTML}}";
-        font-family: {{.left_right_arrow_font_family}};
-        color: {{.left_right_arrow_colors}};
-        font-size: {{.arrow_size}};
+            content: "{{.left_arrow_content| htmlUnescape | safeHTML}}";
+            font-family: {{.left_right_arrow_font_family}};
+            color: {{.left_right_arrow_colors}};
+            font-size: {{.arrow_size}};
         }
 
         #{{.name}}_cards .slick-next:before {
-                      content: "{{.right_arrow_content| htmlUnescape | safeHTML}}";
-        font-family: {{.left_right_arrow_font_family }};
-        color: {{.left_right_arrow_colors}};
-        font-size: {{.arrow_size}};
+            content: "{{.right_arrow_content| htmlUnescape | safeHTML}}";
+            font-family: {{.left_right_arrow_font_family }};
+            color: {{.left_right_arrow_colors}};
+            font-size: {{.arrow_size}};
         }
         {{end}}
         {{end}}

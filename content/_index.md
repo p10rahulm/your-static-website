@@ -15,48 +15,48 @@ fixed_sharer_active = true
     layout = "banner" # choose from single or carousel
     # going to do particles on the banner basis. Doesn't look good if particles slide along with the slides.
     show_particles = true
-    height="700px"
-    [top_banner.particles]
 
-        # Include the js here
-        [[top_banner.particle_fields]]
-        name = "particles-js"
-        class = "particles-stage"
-        content = ""
-        has_children = false
-        has_parent = false
-            parent = ""
-        type = "div"
-        [[top_banner.particle_fields.js_sources]]
-            url = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
-        [[top_banner.particle_fields.custom_js_partials]]
-            partial_location = "js_scripts/particle_fields.html"
-            num_particles = 50
-            colors = ["#B8D500", "#21AEC0", "#795CED", "#FF5B00", "#FE9300", "#AB004A"]
-            # You can add any custom fields here
-        [[top_banner.particle_fields.styles]]
-            media_type = "@media"
-            container = "#top-banner"
-            target = ".particles-stage"
-            [[top_banner.particle_fields.styles.style_value]]
-                field = "position"
-                value = "absolute"
-            [[top_banner.particle_fields.styles.style_value]]
-                field = "height"
-                value = "100%"
-            [[top_banner.particle_fields.styles.style_value]]
-                field = "opacity"
-                value = "1"
-            [[top_banner.particle_fields.styles.style_value]]
-                field = "top"
-                value = "0"
-            [[top_banner.particle_fields.styles.style_value]]
-                field = "width"
-                value = "100%"
-            [[top_banner.particle_fields.styles.style_value]]
-                field = "font-family"
-                value = "Palatino, URW Palladio L, serif"
-
+    [[top_banner.particle_fields]]
+    name = "particles-js"
+    class = "particles-stage"
+    content = ""
+    has_children = false
+    has_parent = false
+        parent = ""
+    type = "div" # https://www.w3schools.com/html/html_blocks.asp
+    # Include the js here
+    [[top_banner.particle_fields.js_sources]]
+        url = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
+    [[top_banner.particle_fields.custom_js_partials]]
+        partial_location = "js_scripts/particle_fields.html"
+        num_particles = 50
+        colors = ["#B8D500", "#21AEC0", "#795CED", "#FF5B00", "#FE9300", "#AB004A"]
+        # You can add any custom fields here
+    [[top_banner.particle_fields.styles]]
+        media_type = ""
+        container = "#top-banner"
+        target = ".particles-stage"
+        [[top_banner.particle_fields.styles.style_value]]
+            field = "position"
+            value = "absolute"
+        [[top_banner.particle_fields.styles.style_value]]
+            field = "height"
+            value = "100%"
+        [[top_banner.particle_fields.styles.style_value]]
+            field = "opacity"
+            value = "1"
+        [[top_banner.particle_fields.styles.style_value]]
+            field = "top"
+            value = "0"
+        [[top_banner.particle_fields.styles.style_value]]
+            field = "width"
+            value = "100%"
+        [[top_banner.particle_fields.styles.style_value]]
+            field = "font-family"
+            value = "Palatino, URW Palladio L, serif"
+        [[top_banner.particle_fields.styles.style_value]]
+            field = "z-index"
+            value = "05"
 
     # Some fixed fields
     [[top_banner.fixed_fields]]
@@ -66,12 +66,12 @@ fixed_sharer_active = true
         has_children = false
         has_parent = false
             parent = ""
-        type = "div" # https://www.w3schools.com/html/html_blocks.asp
+        type = "div"
         # use css styles below
         [[top_banner.fixed_fields.styles]]
             container = "#top-banner"
             target = "#title"
-
+            media_type = ""
             [[top_banner.fixed_fields.styles.style_value]]
                 field = "font-weight"
                 value = "900"
@@ -95,7 +95,7 @@ fixed_sharer_active = true
                 value = "normal"
             [[top_banner.fixed_fields.styles.style_value]]
                 field = "font-size"
-                value = "2rem"
+                value = "3.5rem"
             [[top_banner.fixed_fields.styles.style_value]]
                 field = "font=family"
                 value = "inherit"
@@ -106,6 +106,21 @@ fixed_sharer_active = true
                 field = "position"
                 value = "absolute"
 
+    [[top_banner.fixed_fields.styles]]
+            media_type = "@media screen and (max-width: 1024px)"
+            container = "#top-banner"
+            target = "#title"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "font-size"
+                value = "2.5rem"
+    [[top_banner.fixed_fields.styles]]
+            media_type = "@media all and (max-width: 400px)"
+            container = "#top-banner"
+            target = "#title"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "font-size"
+                value = "2rem"
+
     [[top_banner.fixed_fields]]
         name = "mini_menu"
         class = "banner_mini_menu" # use in case belongs to some class of elements
@@ -113,7 +128,7 @@ fixed_sharer_active = true
         has_children = true
         has_parent = false
             parent = ""
-        type = "div" # https://www.w3schools.com/html/html_blocks.asp
+        type = "div"
 
         # use css styles below
         [[top_banner.fixed_fields.styles]]
@@ -170,7 +185,7 @@ fixed_sharer_active = true
         has_children = false
         has_parent = true
             parent = "mini_menu"
-        type = "div" # https://www.w3schools.com/html/html_blocks.asp
+        type = "div"
 
         # use css styles below
         [[top_banner.fixed_fields.styles]]
@@ -216,7 +231,7 @@ fixed_sharer_active = true
         has_children = false
         has_parent = true
             parent = "mini_menu"
-        type = "div" # https://www.w3schools.com/html/html_blocks.asp
+        type = "div"
 
     [[top_banner.fixed_fields]]
         name = "menu-item3"
@@ -225,18 +240,111 @@ fixed_sharer_active = true
         has_children = false
         has_parent = true
             parent = "mini_menu"
-        type = "div" # https://www.w3schools.com/html/html_blocks.asp
+        type = "div"
 
+    [[top_banner.fixed_fields]]
+        name = "arrow-left" #Get colors and images from here: https://www.materialui.co/icon/keyboard-arrow-left
+        class = "banner_slide_arrows prev" # use in case belongs to some class of elements
+        content = ""
+        has_children = false
+        has_parent = false
+            parent = ""
+        type = "img"
+        [[top_banner.fixed_fields.tags]]
+            field = "src"
+            value = "/img/arrow-left.png"
+        # use css styles below
+        [[top_banner.fixed_fields.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = ""
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "position"
+                value = "absolute"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "top"
+                value = "45%"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "left"
+                value = "5%"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "height"
+                value = "50px"
+        [[top_banner.fixed_fields.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = "#arrow-left:hover"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "transform"
+                value = "scale(1.5)"
+            [[top_banner.fixed_fields.styles.style_value]]
+                field = "transition"
+                value = "transform 0.5s ease-in-out 0.1s"
+    [[top_banner.fixed_fields]]
+            name = "arrow-right" #Get colors and images from here: https://www.materialui.co/icon/keyboard-arrow-right
+            class = "banner_slide_arrows next" # use in case belongs to some class of elements
+            content = ""
+            has_children = false
+            has_parent = false
+                parent = ""
+            type = "img"
+            [[top_banner.fixed_fields.tags]]
+                field = "src"
+                value = "/img/arrow-right.png"
+            # use css styles below
+            [[top_banner.fixed_fields.styles]]
+                media_type = ""
+                container = "#top-banner"
+                target = ""
+                [[top_banner.fixed_fields.styles.style_value]]
+                    field = "position"
+                    value = "absolute"
+                [[top_banner.fixed_fields.styles.style_value]]
+                    field = "top"
+                    value = "45%"
+                [[top_banner.fixed_fields.styles.style_value]]
+                    field = "right"
+                    value = "5%"
+                [[top_banner.fixed_fields.styles.style_value]]
+                    field = "height"
+                    value = "50px"
+            [[top_banner.fixed_fields.styles]]
+                media_type = ""
+                container = "#top-banner"
+                target = "#arrow-right:hover"
+                [[top_banner.fixed_fields.styles.style_value]]
+                    field = "transform"
+                    value = "scale(1.5)"
+                [[top_banner.fixed_fields.styles.style_value]]
+                    field = "transition"
+                    value = "transform 0.5s ease-in-out 0.1s"
 
     # each slide is going to have below fields
+    [[top_banner.slide_elements]]
+        name = "slides_container"
+        class = "" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = false
+            parent = ""
+        type = "div"
+        # Include the js here
+        [[top_banner.slide_elements.js_sources]]
+            url = "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+        [[top_banner.slide_elements.custom_js_partials]]
+            partial_location = "js_scripts/banner_carousel.html"
+            num_particles = 50
+            colors = ["#B8D500", "#21AEC0", "#795CED", "#FF5B00", "#FE9300", "#AB004A"]
+            # You can add any custom fields here
 
+    #-----------------Start of First Slide---------------------------
     [[top_banner.slide_elements]]
         name = "primary_slide"
         class = "banner_slide" # use in case belongs to some class of elements
         content = ""
         has_children = true
-        has_parent = false
-            parent = ""
+        has_parent = true
+            parent = "slides_container"
         type = "div" 
         # use css styles below
         [[top_banner.slide_elements.styles]]
@@ -268,9 +376,58 @@ fixed_sharer_active = true
                 field = "animation-delay"
                 value = "0.25s"
             [[top_banner.slide_elements.styles.style_value]]
+                field = "z-index"
+                value = "-10"
+
+        [[top_banner.slide_elements.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = "#primary_slide"
+            [[top_banner.slide_elements.styles.style_value]]
                 field = "background-image"
                 value = "linear-gradient(to bottom right,rgba(0,0,200,0.2), rgba(200,0,120,0.2)),url(/img/headers/bubbles-wide.jpg)"
 
+
+    [[top_banner.slide_elements]]
+        name = "primary_slide_descriptors_link"
+        class = "slide_descriptors_link" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = true
+            parent = "primary_slide"
+        type = "a"
+        [[top_banner.slide_elements.tags]]
+            field = "href"
+            value = "/posts"
+        [[top_banner.slide_elements.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = ".slide_descriptors_link"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "position"
+                value = "relative"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "top"
+                value = "65%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "width"
+                value = "100%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "display"
+                value = "block"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "color"
+                value = "#eef"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "z-index"
+                value = "10"
+        [[top_banner.slide_elements.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = ".slide_descriptors_link:hover"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "text-decoration"
+                value = "none"
 
 
     [[top_banner.slide_elements]]
@@ -279,7 +436,7 @@ fixed_sharer_active = true
         content = "Posts"
         has_children = false
         has_parent = true
-            parent = "primary_slide"
+            parent = "primary_slide_descriptors_link"
         type = "div"
 
         [[top_banner.slide_elements.styles]]
@@ -291,7 +448,7 @@ fixed_sharer_active = true
                 value = "relative"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "top"
-                value = "60%"
+                value = "65%"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "width"
                 value = "100%"
@@ -300,7 +457,7 @@ fixed_sharer_active = true
                 value = "center"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "color"
-                value = "#fff"
+                value = "#eef"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "text-transform"
                 value = "uppercase"
@@ -308,14 +465,14 @@ fixed_sharer_active = true
                 field = "font-weight"
                 value = "700"
             [[top_banner.slide_elements.styles.style_value]]
-                field = "font-stretch"
-                value = "expanded"
+                field = "letter-spacing"
+                value = "3px"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "font-size"
-                value = "0.95rem"
+                value = "1.25rem"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "padding-top"
-                value = "1.25rem"
+                value = "1.0rem"
 
 
     [[top_banner.slide_elements]]
@@ -324,8 +481,8 @@ fixed_sharer_active = true
         content = "Onward and Upward, Like a Dendritic Tree"
         has_children = false
         has_parent = true
-            parent = "primary_slide"
-        type = "div" # https://www.w3schools.com/html/html_blocks.asp
+            parent = "primary_slide_descriptors_link"
+        type = "div"
         [[top_banner.slide_elements.styles]]
             media_type = ""
             container = "#top-banner"
@@ -335,7 +492,7 @@ fixed_sharer_active = true
                 value = "relative"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "top"
-                value = "60%"
+                value = "65%"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "width"
                 value = "100%"
@@ -353,52 +510,116 @@ fixed_sharer_active = true
                 value = "700"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "font-size"
-                value = "1.5rem"
+                value = "1.6rem"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "padding-top"
-                value = "1.25rem"
+                value = "1.0rem"
 
     [[top_banner.slide_elements]]
         name = "primary_slide_description"
         class = "slide_description" # use in case belongs to some class of elements
-        content = ""
+        content = "Reducing entropy, one post at a time"
         has_children = false
         has_parent = true
-            parent = "primary_slide"
-        type = "div" # https://www.w3schools.com/html/html_blocks.asp
+            parent = "primary_slide_descriptors_link"
+        type = "div"
+        [[top_banner.slide_elements.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = ".slide_description"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "position"
+                value = "relative"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "top"
+                value = "65%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "width"
+                value = "100%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "text-align"
+                value = "center"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "color"
+                value = "#eef"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "font-weight"
+                value = "200"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "font-size"
+                value = "1.2rem"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "padding-top"
+                value = "1.0rem"
+    #-----------------End of First Slide---------------------------
+    #-----------------Start of Second Slide---------------------------
+    # Second slide
+    [[top_banner.slide_elements]]
+        name = "second_slide"
+        class = "banner_slide" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = true
+            parent = "slides_container"
+        type = "div"
+        # use css styles below
+        [[top_banner.slide_elements.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = "#second_slide"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "background-image"
+                value = "linear-gradient(to bottom right,rgba(0,0,200,0.2), rgba(200,0,120,0.2)),url(/img/orange-fractal.jpg)"
 
 
-    [[top_banner.slide]]
-        name ="primary_slide"
-        overlay_img = "headers/bubbles-wide.jpg"  # Image path relative to your `static/img/` folder.
-
-
-        overlay_gradient = true
-            overlay_direction = "to bottom right"
-            overlay_color_from = "rgba(0, 0, 150, 0.75)"
-            overlay_color_to = "rgba(120, 120, 150, 0.45)"
-
-        [[top_banner.slide.fields]]
-            name = "title"
-            content = "Reducing entropy, one post at a time<br>"
-            font_weight = "900"
-            field_font_color = "#a00"
-            text_align = "left"
-            margin_bottom = "0px"
-            margin_top = "3px"
-            font_style = "italic"
-            font_size = "0.6rem"
-            additional_css_styles = "color:#a00;text-align:left"
+    [[top_banner.slide_elements]]
+        name = "second_slide_descriptors_link"
+        class = "slide_descriptors_link" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = true
+            parent = "second_slide"
+        type = "a"
+        [[top_banner.slide_elements.tags]]
+            field = "href"
+            value = "/publications"
 
 
 
+    [[top_banner.slide_elements]]
+        name = "second_slide_subject"
+        class = "slide_subject" # use in case belongs to some class of elements
+        content = "Publications"
+        has_children = false
+        has_parent = true
+            parent = "second_slide_descriptors_link"
+        type = "div"
 
-    # Call to action button (optional).
-    # Activate the button by specifying a URL and button label below.
-    # Deactivate by commenting out parameters, prefixing lines with `#`.
-    [top_banner.cta]
-        url = "./post"
-        label = '<i class="ai ai-figshare"></i> &nbsp&nbsp View Posts'
+
+
+
+    [[top_banner.slide_elements]]
+        name = "second_slide_title"
+        class = "slide_title" # use in case belongs to some class of elements
+        content = "Every new day, better than the last"
+        has_children = false
+        has_parent = true
+            parent = "second_slide_descriptors_link"
+        type = "div"
+
+
+    [[top_banner.slide_elements]]
+        name = "second_slide_description"
+        class = "slide_description" # use in case belongs to some class of elements
+        content = "Nurturing creativity, like saplings amidst giants"
+        has_children = false
+        has_parent = true
+            parent = "second_slide_descriptors_link"
+        type = "div"
+    #-----------------End of Second Slide---------------------------
+
+
+
 
 # ----------------------------------
 # Showcase section

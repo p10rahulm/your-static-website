@@ -14,7 +14,7 @@
 
 {{range $fields}}
     {{if not .has_parent}}
-        {{printf "<%s " .type | htmlUnescape | safeHTML }} id="{{.name}}" class = "{{.class}}">
+        {{printf "<%s " .type | htmlUnescape | safeHTML }} id="{{.name}}" class = "{{.class}}"{{if (isset . "tags")}}{{range .tags}}{{.field}} = {{.value}}{{end}}{{end}}>
             {{.content | markdownify}}
             {{if .has_children}}
                 {{partial "functions/field_loop.html" (dict "fields" $fields "current_name" .name )}}
