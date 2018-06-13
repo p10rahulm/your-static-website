@@ -1,16 +1,31 @@
 {{$fields := $.fields}}
+{{$scratch := $.scratch}}
 
-{{range $fields}}{{ range .js_sources }}
+<!--Load external CSS sheets-->
+{{range $fields}}{{ range .css_sources }}{{if (not (in ($scratch.Get "external_url_loads") .url)) }}
+<link rel="stylesheet" type="text/css" href="{{.url}}">
+{{ $scratch.Add "external_url_loads" .url }}
+{{end}}{{end}}{{end}}
+<!--Load custom CSS-->
+<style>
+    {{range $fields}}
+    {{partial "functions/css_style.html" (dict "name" .name "styles" .styles) | safeCSS}}
+    {{end}}
+</style>
+
+<!--Load external JS-->
+{{range $fields}}{{ range .js_sources }}{{if (not (in ($scratch.Get "external_url_loads") .url)) }}
 <script type="text/javascript" src="{{.url}}"></script>
-{{end}}{{end}}
+{{ $scratch.Add "external_url_loads" .url }}
+{{end}}{{end}}{{end}}
+
+<!--Load custom JS-->
+
 {{range $fields}}{{ range .custom_js_partials }}
 {{partial .partial_location . }}
 {{end}}{{end}}
-<style>
-    {{range $fields}}
-        {{partial "functions/css_style.html" (dict "name" .name "styles" .styles) | safeCSS}}
-    {{end}}
-</style>
+
+<!--Create the HTML-->
 
 {{range $fields}}
     {{if not .has_parent}}

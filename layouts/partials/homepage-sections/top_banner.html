@@ -1,12 +1,13 @@
+{{ .Scratch.Add "external_url_loads" (slice "starts_here") }}
 <section id = "top-banner">
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css"/>
+    <link rel="stylesheet" type="text/css" href=""/>
+    <link rel="stylesheet" type="text/css" href=""/>
 
     <div class="top_banner_container" style="position:relative">
 
-        {{partial "functions/render_fields.html" (dict "fields" $.Params.top_banner.slide_elements)}}
+        {{partial "functions/render_fields.html" (dict "fields" $.Params.top_banner.slide_elements "scratch" .Scratch)}}
 
-        {{partial "functions/render_fields.html" (dict "fields" $.Params.top_banner.fixed_fields)}}
+        {{partial "functions/render_fields.html" (dict "fields" $.Params.top_banner.fixed_fields "scratch" .Scratch )}}
 
 
     </div>

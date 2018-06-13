@@ -304,6 +304,10 @@ fixed_sharer_active = true
             parent = "banner"
         type = "div"
         # Include the js here
+        [[top_banner.slide_elements.css_sources]]
+            url = "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css"
+        [[top_banner.slide_elements.css_sources]]
+            url = "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"
         [[top_banner.slide_elements.js_sources]]
             url = "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
         [[top_banner.slide_elements.custom_js_partials]]
