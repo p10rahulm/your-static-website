@@ -1,9 +1,9 @@
 
 {{ if and $.Site.Params.map (isset $.Site.Params "map_api_key") }}
 {{$maps_urls:= (printf "//maps.googleapis.com/maps/api/js?key=%s" .Site.Params.map_api_key) }}
-{{partial "functions/load_external_js.html" (dict "external_url" $maps_urls "scratch" .Scratch "async" true "defer" true)}}
+{{partial "functions/load_external_js.html" (dict "external_url" $maps_urls "scratch" .Scratch "async" false "defer" false)}}
 {{$maps_urls:= "https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js"}}
-{{partial "functions/load_external_js.html" (dict "external_url" $maps_urls "scratch" .Scratch "async" true "defer" true)}}
+{{partial "functions/load_external_js.html" (dict "external_url" $maps_urls "scratch" .Scratch "async" false "defer" false)}}
 {{ end }}
 
 

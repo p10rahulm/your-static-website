@@ -104,7 +104,12 @@ fixed_sharer_active = true
         has_parent = false
             parent = ""
         type = "div"
-    
+        [[top_banner.slide_elements.custom_js_partials]]
+            partial_location = "js_scripts/smooth_scroll.js"
+            speed = 800
+            target ="#mini_menu > a"
+            # You can add any custom fields here
+
         # use css styles below
         [[top_banner.slide_elements.styles]]
             media_type = ""
@@ -155,12 +160,38 @@ fixed_sharer_active = true
                 value = "#fff"
     
     [[top_banner.slide_elements]]
-        name = "menu-item1"
-        class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
-        content = "[Books](#featured_books)"
-        has_children = false
+        name = "menu-item1-link"
+        class = "col-md-4 ff-menu-item-link" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
         has_parent = true
             parent = "mini_menu"
+        type = "a"
+        [[top_banner.slide_elements.tags]]
+            field = "href"
+            value = "#featured_books"
+        [[top_banner.slide_elements.custom_js_partials]]
+            partial_location = "js_scripts/smooth_scroll.js"
+            speed = 800
+            target ="#menu-item1-link"
+        [[top_banner.slide_elements.styles]]
+            media_type = ""
+            container = "#top-banner"
+            target = ".ff-menu-item-link"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "width"
+                value = "33.33%"
+            [[top_banner.slide_elements.styles.style_value]]
+                field = "padding"
+                value = "0"
+
+    [[top_banner.slide_elements]]
+        name = "menu-item1"
+        class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
+        content = "Books"
+        has_children = false
+        has_parent = true
+            parent = "menu-item1-link"
         type = "div"
     
         # use css styles below
@@ -170,7 +201,7 @@ fixed_sharer_active = true
             target = ".ff-menu-item"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "width"
-                value = "33.33%"
+                value = "100%"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "color"
                 value = "#fff"
@@ -199,25 +230,64 @@ fixed_sharer_active = true
             [[top_banner.slide_elements.styles.style_value]]
                 field = "border-top"
                 value = "6px solid #fff"
-    
+
+
+
+    [[top_banner.slide_elements]]
+        name = "menu-item2-link"
+        class = "col-md-4 ff-menu-item-link" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = true
+            parent = "mini_menu"
+        type = "a"
+        [[top_banner.slide_elements.tags]]
+            field = "href"
+            value = "#featured_posts"
+        [[top_banner.slide_elements.custom_js_partials]]
+            partial_location = "js_scripts/smooth_scroll.js"
+            speed = 800
+            target ="#menu-item2-link"
+
     [[top_banner.slide_elements]]
         name = "menu-item2"
-        class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
-        content = "[Posts](#featured_posts)"
+        class = "ff-menu-item" # use in case belongs to some class of elements
+        content = "Posts"
         has_children = false
         has_parent = true
-            parent = "mini_menu"
+            parent = "menu-item2-link"
         type = "div"
+
     
+
     [[top_banner.slide_elements]]
-        name = "menu-item3"
-        class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
-        content = "[Thoughts](#featured_thoughts)"
-        has_children = false
+        name = "menu-item3-link"
+        class = "col-md-4 ff-menu-item-link" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
         has_parent = true
             parent = "mini_menu"
-        type = "div"
-    
+        type = "a"
+        [[top_banner.slide_elements.tags]]
+            field = "href"
+            value = "#featured_thoughts"
+        [[top_banner.slide_elements.custom_js_partials]]
+            partial_location = "js_scripts/smooth_scroll.js"
+            speed = 800
+            target ="#menu-item3-link"
+
+    [[top_banner.slide_elements]]
+            name = "menu-item3"
+            class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
+            content = "Thoughts"
+            has_children = false
+            has_parent = true
+                parent = "menu-item3-link"
+            type = "div"
+
+
+
+
     [[top_banner.slide_elements]]
         name = "arrow-left" #Get colors and images from here: https://www.materialui.co/icon/keyboard-arrow-left
         class = "banner_slide_arrows prev" # use in case belongs to some class of elements

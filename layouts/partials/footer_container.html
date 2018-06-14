@@ -1,5 +1,5 @@
 <footer class="site-footer">
-    {{partial "js_scripts/back_to_top_scroller.js" .}}
+    {{partial "js_scripts/smooth_scroll.js" (dict "target" "#back_to_top" "speed" 1500)}}
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -30,7 +30,7 @@
                 {{if isset .Site.Params "show_back_to_top"}}
                     {{if .Site.Params.show_back_to_top}}
                         <span class="back_to_top" aria-hidden="true">
-                            <a href="#" id="back_to_top">
+                            <a href="#top-banner" id="back_to_top">
                                 <span class="button_icon">
                                     <i class="fa fa-chevron-up fa-2x"></i>
                                 </span>
