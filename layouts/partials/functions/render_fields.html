@@ -2,10 +2,9 @@
 {{$scratch := $.scratch}}
 
 <!--Load external CSS sheets-->
-{{range $fields}}{{ range .css_sources }}{{if (not (in ($scratch.Get "external_url_loads") .url)) }}
-<link rel="stylesheet" type="text/css" href="{{.url}}">
-{{ $scratch.Add "external_url_loads" .url }}
-{{end}}{{end}}{{end}}
+{{range $fields}}{{ range .css_sources }}
+    {{partial "functions/load_external_css.html" (dict "external_url" .url "scratch" $scratch)}}
+{{end}}{{end}}
 <!--Load custom CSS-->
 <style>
     {{range $fields}}
@@ -14,10 +13,13 @@
 </style>
 
 <!--Load external JS-->
-{{range $fields}}{{ range .js_sources }}{{if (not (in ($scratch.Get "external_url_loads") .url)) }}
-<script type="text/javascript" src="{{.url}}"></script>
-{{ $scratch.Add "external_url_loads" .url }}
-{{end}}{{end}}{{end}}
+{{range $fields}}{{ range .js_sources }}
+{{$async:=false}}
+{{$defer:=false}}
+{{if .async}}{{$async:=true}}{{end}}
+{{if .defer}}{{$defer:=true}}{{end}}
+{{partial "functions/load_external_js.html" (dict "external_url" .url "scratch" $scratch "async" $async "defer" $defer)}}
+{{end}}{{end}}
 
 <!--Load custom JS-->
 

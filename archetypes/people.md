@@ -73,21 +73,9 @@ teams = []
 
 # Social/Academic Networking
 #
-# Icon pack "fa" includes the following social network icons:
-#
-#   twitter, weibo, linkedin, github, facebook, pinterest, google-plus,
-#   youtube, instagram, soundcloud
-#
-#   For email icon, use "fa" icon pack, "envelope" icon, and
-#   "mailto:your@email.com" as the link.
-#
-#   Full list: https://fortawesome.github.io/Font-Awesome/icons/
-#
-# Icon pack "ai" includes the following academic network icons:
-#
-#   google-scholar, arxiv, orcid, researchgate, mendeley
-#
-#   Full list: https://jpswalsh.github.io/academicons/
+# Icon pack "fa" includes the following social network icons: twitter, weibo, linkedin, github, facebook, pinterest, google-plus, youtube, instagram, soundcloud
+#   For email icon, use "fa" icon pack, "envelope" icon, and "mailto:your@email.com" as the link.
+
 
 [[params.social]]
         icon = "envelope"

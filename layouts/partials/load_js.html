@@ -4,11 +4,9 @@
 {{partial "load_highlight_math_js" .}}
 
 <!--Load external js scripts through SRI-->
-<!--<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/{{$js_versions.jQuery.version}}/jquery.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.jQuery.sri}}" crossorigin="anonymous"{{end}}></script>-->
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/{{ $js_versions.imagesLoaded.version}}/imagesloaded.pkgd.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.imagesLoaded.sri}}" crossorigin="anonymous"{{end}}></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/{{ $js_versions.bootstrap.version}}/js/bootstrap.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.bootstrap.sri}}" crossorigin="anonymous"{{end}}></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/{{ $js_versions.isotope.version}}/isotope.pkgd.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.isotope.sri}}" crossorigin="anonymous"{{end}}></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/{{ $js_versions.fancybox.version}}/jquery.fancybox.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.fancybox.sri}}" crossorigin="anonymous"{{end}}></script>
+{{partial "functions/load_external_js.html" (dict "external_url" "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" "scratch" .Scratch "async" false "defer" false)}}
+
+{{partial "functions/load_external_js.html" (dict "external_url" "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" "scratch" .Scratch "async" false "defer" false)}}
 
 
 <!--Load local js. This comes after external because jquery is required for some local scripts-->
@@ -21,5 +19,6 @@
 
 <!--Load js required for comment counting-->
 {{ if and $comments_enabled (and ($.Site.Params.comment_count | default true) ($.Params.comment_count | default true)) }}
-<script async id="dsq-count-scr" src="//{{ .Site.DisqusShortname }}.disqus.com/count.js" ></script>
+{{$link := printf "//%s.disqus.com/count.js" .Site.DisqusShortname }}
+{{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" .Scratch "async" true "defer" false)}}
 {{ end }}

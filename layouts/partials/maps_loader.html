@@ -1,8 +1,10 @@
 {{ $js_versions := .Site.Data.sri.js }}
 
 {{ if and $.Site.Params.map (isset $.Site.Params "map_api_key") }}
-<script async defer src="//maps.googleapis.com/maps/api/js?key={{ .Site.Params.map_api_key }}"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/gmaps.js/{{ $js_versions.gmaps.version }}/gmaps.min.js"{{ if not .Site.Params.disable_sri }} integrity="{{$js_versions.gmaps.sri}}" crossorigin="anonymous"{{end}}></script>
+{{$maps_urls:= (printf "//maps.googleapis.com/maps/api/js?key=%s" .Site.Params.map_api_key) }}
+{{partial "functions/load_external_js.html" (dict "external_url" $maps_urls "scratch" .Scratch "async" true "defer" true)}}
+{{$maps_urls:= "https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js"}}
+{{partial "functions/load_external_js.html" (dict "external_url" $maps_urls "scratch" .Scratch "async" true "defer" true)}}
 {{ end }}
 
 

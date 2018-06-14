@@ -1,7 +1,7 @@
 <!-- Load the data page sri.toml into a variable $sri  -->
 {{ $sri := .Site.Data.sri }}
 
-<script>
+<script type="text/javascript">
     window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
     ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
     {{ if .Site.Params.privacy_pack }}ga('set', 'anonymizeIp', true);{{ end }}
@@ -10,5 +10,4 @@
     ga('require', 'urlChangeTracker');
     ga('send', 'pageview');
 </script>
-<script async src="//www.google-analytics.com/analytics.js"></script>
-<script async src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/{{$sri.js.autotrack.version}}/autotrack.js" {{ if not .Site.Params.disable_sri }} integrity="{{$sri.js.autotrack.sri}}" crossorigin="anonymous" {{end}}></script>
+{{partial "functions/load_external_js.html" (dict "external_url" "//www.google-analytics.com/analytics.js" "scratch" .Scratch "async" true "defer" true)}}

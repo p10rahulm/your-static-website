@@ -117,10 +117,10 @@
 
 
     {{if (eq ($.Scratch.Get "any_carousel_card_layout") "true")}}
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css"/>
+
+    {{partial "functions/load_external_js.html" (dict "external_url" "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" "scratch" .Scratch "async" false "defer" false)}}
+    {{partial "functions/load_external_css.html" (dict "external_url" "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" "scratch" .Scratch)}}
+    {{partial "functions/load_external_css.html" (dict "external_url" "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css" "scratch" .Scratch)}}
     <script type="text/javascript">
         $(document).ready(function() {
             $('.carousel_responsive').slick({

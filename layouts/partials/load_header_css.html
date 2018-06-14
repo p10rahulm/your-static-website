@@ -7,26 +7,25 @@
 <!-- Not doing SRI check for below guys as if the highlight style changes the SRI check fails -->
 {{if or (isset $.Params "highlight") (isset $.Site.Params "highlight") }}
     {{if (isset $.Params "highlight_style") }}
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/{{ $sri.js.highlight.version }}/styles/{{ $.Params.highlight_style }}.min.css">
+        <link rel="stylesheet" href=>
+        {{$link := (printf "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/%s.min.css" $.Params.highlight_style) }}
+        {{partial "functions/load_external_css.html" (dict "external_url" $link "scratch" .Scratch)}}
     {{else if (isset $.Site.Params "highlight_style")}}
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/{{ $sri.js.highlight.version }}/styles/{{ $.Site.Params.highlight_style }}.min.css">
+        {{$link := (printf "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/%s.min.css" $.Site.Params.highlight_style) }}
+        {{partial "functions/load_external_css.html" (dict "external_url" $link "scratch" .Scratch)}}
     {{else}}
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/{{ $sri.js.highlight.version }}/styles/github-gist.min.css">
+        {{partial "functions/load_external_css.html" (dict "external_url" "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github-gist.min.css" "scratch" .Scratch)}}
     {{end}}
 {{ end }}
 
 <!-- bootstrap -->
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/{{ $sri.css.bootstrap.version }}/css/bootstrap.min.css" {{ if not .Site.Params.disable_sri }} integrity="{{$sri.css.bootstrap.sri}}" crossorigin="anonymous"{{end}}>
-<!-- academicons -->
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/academicons/{{ $sri.css.academicons.version }}/css/academicons.min.css"  {{ if not .Site.Params.disable_sri }} integrity="{{$sri.css.academicons.sri}}" crossorigin="anonymous"{{end}}>
+{{partial "functions/load_external_css.html" (dict "external_url" "https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" "scratch" .Scratch)}}
+<!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css">-->
+
+
 <!-- fontawesome -->
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/{{ $sri.css.fontAwesome.version }}/css/font-awesome.min.css"  {{ if not .Site.Params.disable_sri }} integrity="{{$sri.css.fontAwesome.sri}}" crossorigin="anonymous"{{end}}>
-<!-- fancybox -->
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/{{ $sri.css.fancybox.version }}/jquery.fancybox.min.css"  {{ if not .Site.Params.disable_sri }} integrity="{{$sri.css.fancybox.sri}}" crossorigin="anonymous"{{end}}>
-<!-- leaflet maps -->
-{{ if or (eq .Site.Params.map 2) (eq .Site.Params.map 3) }}
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/{{ $sri.css.leaflet.version }}/leaflet.css"  {{ if not .Site.Params.disable_sri }} integrity="{{$sri.css.leaflet.sri}}" crossorigin="anonymous"{{end}}>
-{{end}}
+{{partial "functions/load_external_css.html" (dict "external_url" "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" "scratch" .Scratch)}}
+
 
 <!--We cannot use SRI with Google Fonts because the CSS is dynamically generated according to the user agent  -->
 {{ with (.Scratch.Get "google_fonts") }}

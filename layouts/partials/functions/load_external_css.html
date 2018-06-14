@@ -1,0 +1,7 @@
+{{$external_url := $.external_url}}
+{{$scratch := $.scratch}}
+
+{{if (not (in ($scratch.Get "external_url_loads") $external_url)) }}
+<link rel="stylesheet" type="text/css" href="{{$external_url}}">
+{{ $scratch.Add "external_url_loads" $external_url }}
+{{end}}

@@ -315,6 +315,8 @@ fixed_sharer_active = true
             url = "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css"
         [[top_banner.slide_elements.js_sources]]
             url = "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+            async = false
+            defer = false
         [[top_banner.slide_elements.custom_js_partials]]
             partial_location = "js_scripts/banner_carousel.html"
             # You can add any custom fields here
@@ -383,6 +385,7 @@ fixed_sharer_active = true
             # Include the js here
             [[top_banner.slide_elements.js_sources]]
                 url = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
+                defer = true
             [[top_banner.slide_elements.custom_js_partials]]
                 partial_location = "js_scripts/particle_fields.html"
                 caller_id = "primary_slide_particles"
@@ -448,7 +451,13 @@ fixed_sharer_active = true
             [[top_banner.slide_elements.styles.style_value]]
                 field = "color"
                 value = "#eef"
-
+        [[top_banner.slide_elements.styles]]
+            media_type = "@media screen and (max-height: 800px)"
+            container = "#top-banner"
+            target = ".slide_descriptors_link"
+            [[top_banner.slide_elements.styles.style_value]]
+                    field = "top"
+                    value = "55%"
         [[top_banner.slide_elements.styles]]
             media_type = ""
             container = "#top-banner"
@@ -482,9 +491,6 @@ fixed_sharer_active = true
             [[top_banner.slide_elements.styles.style_value]]
                 field = "position"
                 value = "relative"
-            [[top_banner.slide_elements.styles.style_value]]
-                field = "top"
-                value = "65%"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "width"
                 value = "100%"
@@ -527,9 +533,6 @@ fixed_sharer_active = true
                 field = "position"
                 value = "relative"
             [[top_banner.slide_elements.styles.style_value]]
-                field = "top"
-                value = "65%"
-            [[top_banner.slide_elements.styles.style_value]]
                 field = "width"
                 value = "100%"
             [[top_banner.slide_elements.styles.style_value]]
@@ -566,9 +569,6 @@ fixed_sharer_active = true
             [[top_banner.slide_elements.styles.style_value]]
                 field = "position"
                 value = "relative"
-            [[top_banner.slide_elements.styles.style_value]]
-                field = "top"
-                value = "65%"
             [[top_banner.slide_elements.styles.style_value]]
                 field = "width"
                 value = "100%"

@@ -1,13 +1,13 @@
 {{ if $.Site.Params.show_cookie_consent }}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.js"></script>
-<style>
+{{partial "functions/load_external_css.html" (dict "external_url" "https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.css" "scratch" .Scratch)}}
+{{partial "functions/load_external_js.html" (dict "external_url" "https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.js" "scratch" .Scratch "async" false "defer" false)}}
+<style type="text/css">
     .cc-window.cc-banner {
         padding-top: {{$.Site.Params.cookie_container_padding_top}};
         padding-bottom: {{$.Site.Params.cookie_container_padding_bottom}};
     }
 </style>
-<script>
+<script type="text/javascript">
     window.addEventListener("load", function(){
         window.cookieconsent.initialise({
             "content": {

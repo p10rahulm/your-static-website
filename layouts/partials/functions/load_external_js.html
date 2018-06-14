@@ -1,0 +1,7 @@
+{{$external_url := $.external_url}}
+{{$scratch := $.scratch}}
+
+{{if (not (in ($scratch.Get "external_url_loads") $external_url)) }}
+<script type="text/javascript" src="{{$external_url}}"{{if .async}} async{{end}}{{if .defer}} defer{{end}} ></script>
+{{ $scratch.Add "external_url_loads" $external_url }}
+{{end}}
