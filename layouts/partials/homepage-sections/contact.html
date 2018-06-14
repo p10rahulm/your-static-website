@@ -77,6 +77,8 @@
                 </ul>
 
                 {{ if $.Site.Params.map }}
+                {{partial "maps_loader" .}}
+                {{partial "js_scripts/gmaps_loader.js" . }}
                 <div class="hidden">
                     <input id="map-lat" value="{{ $.Site.Params.latitude }}">
                     <input id="map-lng" value="{{ $.Site.Params.longitude }}">

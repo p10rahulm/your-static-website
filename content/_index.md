@@ -318,7 +318,7 @@ fixed_sharer_active = true
             async = false
             defer = false
         [[top_banner.slide_elements.custom_js_partials]]
-            partial_location = "js_scripts/banner_carousel.html"
+            partial_location = "js_scripts/banner_carousel.js"
             # You can add any custom fields here
     #-----------------End of container---------------------------
 
@@ -387,7 +387,7 @@ fixed_sharer_active = true
                 url = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
                 defer = true
             [[top_banner.slide_elements.custom_js_partials]]
-                partial_location = "js_scripts/particle_fields.html"
+                partial_location = "js_scripts/particle_fields.js"
                 caller_id = "primary_slide_particles"
                 num_particles = 50
                 colors = ["#B8D500", "#21AEC0", "#795CED", "#FF5B00", "#FE9300", "#AB004A"]
@@ -619,7 +619,7 @@ fixed_sharer_active = true
         [[top_banner.slide_elements.js_sources]]
             url = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
         [[top_banner.slide_elements.custom_js_partials]]
-            partial_location = "js_scripts/particle_fields.html"
+            partial_location = "js_scripts/particle_fields.js"
             caller_id = "second_slide_particles"
             num_particles = 50
             colors = ["#B8D500", "#21AEC0", "#795CED", "#FF5B00", "#FE9300", "#AB004A"]
