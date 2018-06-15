@@ -104,12 +104,6 @@ fixed_sharer_active = true
         has_parent = false
             parent = ""
         type = "div"
-        [[top_banner.slide_elements.custom_js_partials]]
-            partial_location = "js_scripts/smooth_scroll.js"
-            speed = 800
-            target ="#mini_menu > a"
-            # You can add any custom fields here
-
         # use css styles below
         [[top_banner.slide_elements.styles]]
             media_type = ""
@@ -1190,7 +1184,7 @@ fixed_sharer_active = true
 [contact]
     active = true
     title = "Contact"
-    subtitle = ""
+    subtitle = "Hello"
     content = ""
 
     # Automatically link email and phone?
