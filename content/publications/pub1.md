@@ -1,5 +1,5 @@
 +++
-title = "Pub1"
+title = "This is a publication in the journal Lingua Franca"
 date = 2018-06-08T19:44:36+05:30
 draft = false
 author = "Rahul Madhavan"

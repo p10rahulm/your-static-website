@@ -1,5 +1,7 @@
 <section id="about_us" class="home-section">
     <div class="container">
+        {{partial "functions/render_fields.html" (dict "fields" $.Params.about_us.headline_elements "scratch" .Scratch)}}
+
         <div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
             <!--Left Section-->
             <div class="col-xs-12 col-md-4">

@@ -2,18 +2,8 @@
 <!-- Clients Aside -->
 <section id="logo-wall" class="home-section">
     <div class="container">
-        <div class="row">
-            {{if isset .Params.logo_wall "heading"}}
-                <div class="col-lg-12 text-center">
-                    <h1 class="heading"  style="color: {{.Params.logo_wall.heading_color}}">{{.Params.logo_wall.heading}}</h1>
-                </div>
-            {{ end }}
-            {{if isset .Params.logo_wall "subheading"}}
-                <div class="col-lg-12 text-center">
-                    <h2 class="subheading" style="color: {{.Params.logo_wall.subheading_color}}">{{.Params.logo_wall.subheading}}</h2>
-                </div>
-            {{ end }}
-        </div>
+        {{partial "functions/render_fields.html" (dict "fields" $.Params.logo_wall.headline_elements "scratch" .Scratch)}}
+
         <div class="row flexbox">
             {{if isset .Params.logo_wall "logos"}}
                 {{range .Params.logo_wall.logos}}

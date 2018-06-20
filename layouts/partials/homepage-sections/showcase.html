@@ -1,21 +1,13 @@
 <!-- Services -->
 <section id="services" class = "home-section">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                {{if isset .Params.showcase "title"}}
-                    <h2 class="section-heading">{{.Params.showcase.title}}</h2>
-                {{end}}
-                {{if isset .Params.showcase "subtitle"}}
-                    <h3 class="section-subheading text-muted">{{.Params.showcase.subtitle}}</h3>
-                {{end}}
+        {{partial "functions/render_fields.html" (dict "fields" $.Params.showcase.headline_elements "scratch" .Scratch)}}
 
-            </div>
-        </div>
 
         <div class="row text-center">
             {{if isset .Params.showcase "card"}}
                 {{range .Params.showcase.card}}
+
                     <div class="col-md-{{div 12 $.Params.showcase.numcards}}">
                         <span class="fa-stack fa-4x">
                             <i class="fa fa-circle fa-stack-2x text-primary"></i>

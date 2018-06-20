@@ -773,14 +773,129 @@ fixed_sharer_active = true
         title = "E-Commerce"
         link = "#"
         card_content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+    
+
+
+    [[showcase.headline_elements]]
+        name = "showcase-title-row"
+        class = "row" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = false
+            parent = ""
+        type = "div"
+
+    [[showcase.headline_elements]]
+        name = "showcase-heading"
+        class = "section-heading" # use in case belongs to some class of elements
+        content = "Greatest Works Ever"
+        has_children = false
+        has_parent = true
+            parent = "showcase-title-row"
+        type = "div"
+        [[showcase.headline_elements.styles]]
+            container = ""
+            target = ".section-heading"
+            media_type = ""
+            [[showcase.headline_elements.styles.style_value]]
+                field = "text-align"
+                value = "center"
+            [[showcase.headline_elements.styles.style_value]]
+                field = "font-weight"
+                value = "700"
+            [[showcase.headline_elements.styles.style_value]]
+                field = "font-size"
+                value = "2.25rem"
+            [[showcase.headline_elements.styles.style_value]]
+                field = "margin-top"
+                value = "0px"
+            [[showcase.headline_elements.styles.style_value]]
+                field = "margin-bottom"
+                value = "0.5rem"
+            [[showcase.headline_elements.styles.style_value]]
+                field = "text-transform"
+                value = "uppercase"
+            [[showcase.headline_elements.styles.style_value]]
+                field = "line-height"
+                value = "1.25"
+            [[showcase.headline_elements.styles.style_value]]
+                field = "letter-spacing"
+                value = "5px"
+            [[showcase.headline_elements.styles.style_value]]
+                field = "color"
+                value = "#333"
+
+    [[showcase.headline_elements]]
+        name = "showcase-subheading"
+        class = "section-subheading" # use in case belongs to some class of elements
+        content = "Rest assured, i'm all ears"
+        has_children = false
+        has_parent = true
+            parent = "showcase-title-row"
+        type = "div"
+        [[showcase.headline_elements.styles]]
+            container = ""
+            target = ".section-subheading"
+            media_type = ""
+            [[showcase.headline_elements.styles.style_value]]
+                field = "text-align"
+                value = "center"
+            [[showcase.headline_elements.styles.style_value]]
+                field = "font-weight"
+                value = "200"
+            [[showcase.headline_elements.styles.style_value]]
+                field = "font-size"
+                value = "1.25rem"
+            [[showcase.headline_elements.styles.style_value]]
+                field = "margin-top"
+                value = "1.5rem"
+            [[showcase.headline_elements.styles.style_value]]
+                field = "margin-bottom"
+                value = "2.5rem"
+
+            [[showcase.headline_elements.styles.style_value]]
+                field = "line-height"
+                value = "1.25"
+            [[showcase.headline_elements.styles.style_value]]
+                field = "letter-spacing"
+                value = "1px"
+            [[showcase.headline_elements.styles.style_value]]
+                field = "color"
+                value = "#aaa"
+
 
 # ----------------------------------
 # About us section
 [about_us]
     active=true
-    title = "Contact"
-    subtitle = ""
-    content = ""
+    
+    [[about_us.headline_elements]]
+        name = "about_us-title-row"
+        class = "row" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = false
+            parent = ""
+        type = "div"
+
+    [[about_us.headline_elements]]
+        name = "about_us-heading"
+        class = "section-heading" # use in case belongs to some class of elements
+        content = "About Us"
+        has_children = false
+        has_parent = true
+            parent = "about_us-title-row"
+        type = "div"
+
+
+    [[about_us.headline_elements]]
+        name = "about_us-subheading"
+        class = "section-subheading" # use in case belongs to some class of elements
+        content = ""
+        has_children = false
+        has_parent = true
+            parent = "about_us-title-row"
+        type = "div"
 
     # ---------------------------------
     [about_us.left_part]
@@ -884,15 +999,38 @@ fixed_sharer_active = true
 # Logo Wall section
 [logo_wall]
     active = true
-    heading = "Our Clients"
-    heading_color = "#666"
-    subheading = "we serve people from everywhere"
-    subheading_color = "#aaa"
-
 
     # Count the number of logos you want on a row. Choose from 1,2,3,4,6, 12
     logos_in_row_medium_screen = 4
     logos_in_row_small_screen = 2
+
+    [[logo_wall.headline_elements]]
+        name = "logo_wall-title-row"
+        class = "row" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = false
+            parent = ""
+        type = "div"
+
+    [[logo_wall.headline_elements]]
+        name = "logo_wall-heading"
+        class = "section-heading" # use in case belongs to some class of elements
+        content = "Our Clients"
+        has_children = false
+        has_parent = true
+            parent = "logo_wall-title-row"
+        type = "div"
+
+
+    [[logo_wall.headline_elements]]
+        name = "logo_wall-subheading"
+        class = "section-subheading" # use in case belongs to some class of elements
+        content = "Serving You Always"
+        has_children = false
+        has_parent = true
+            parent = "logo_wall-title-row"
+        type = "div"
 
     # List all the logos in the logo wall below.
     # Ensure height to width ratios of the images are all the same.
@@ -1033,12 +1171,43 @@ fixed_sharer_active = true
         name = "publications"
         title = "Publications"
         title_color = "#333"
-        subtitle = "The latest and greatest publications"
+        title_alignment = "center" #use "center", "left" or "right"
+        subtitle = "Who has published me, why don't you see?"
         subtitle_color = "#999"
-        num_featured = 2
+        subtitle_alignment = "center" #use "center", "left" or "right"
+        num_featured = 1
         sort_field = ".Params.title"
-        sort_order = "asc"
-        card_layout = "carousel"
+        sort_order = "desc"
+        card_alignment = "center"
+        card_padding = "1rem" # use this to set the padding between cards
+        card_include_image = true #should image be shown or not?
+        card_image_height = "400px" # this will be used to set height of all the cards
+        card_image_width = "auto"  # this will be used only in case of card_layout ="list" else it will be 100% of container
+        card_title_font_color = "#a22"
+        card_title_font_size = "1rem"
+        card_title_font_weight = "700" #choose whole numbers between 100 and 900
+        card_title_padding = "3px"
+        card_title_text_alignment = "center" # choose between left, center or right
+        card_title_top_margin = "1rem"
+        card_title_bottom_margin = "0.5rem"
+
+        box_toggle = true #should the boxes have shadows?
+            box_padding = "0px"
+            box_border_size = "1px"
+            box_border_color = "#333"
+            box_shadow_color = "#aaa" # if so what color
+            box_shadow_horizontal_offset = "10px" # if so what color
+            box_shadow_vertical_offset = "10px" # if so what color
+            box_shadow_blur = "2px" # if so what color
+        clickable_card_overlay_on_hover = true
+            overlay_color = "#246"
+            overlay_opacity = 0.5  #choose from 0 to 1 (ideally less than 0.8)
+        card_layout = "list" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        # If layout is cards
+            number_in_row_large_screen = 3
+            number_in_row_normal_screen = 3
+            number_in_row_small_screen = 2
+
         # if layout is carousel
             left_right_arrow_colors = "#a22"
             arrow_size = "20px"
@@ -1046,7 +1215,22 @@ fixed_sharer_active = true
             left_right_arrow_font_family = "Helvetica"
             left_arrow_content = "⟵"
             right_arrow_content = "⟶"
+        # if layout is list
+            show_image_on_left = true
+            padding_image_right = "1rem"
 
+        #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+        [[featured_pages.sections.fields]]
+            field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = ""
+            font_weight = "200"
+            field_font_color = "#468"
+            text_align = "center"
+            margin_bottom = "3px"
+            margin_top = "3px"
+            font_style = "normal"
+            font_size = "0.75rem"
+            additional_css_styles = ""
 
     [[featured_pages.sections]]
         name = "posts"
@@ -1183,12 +1367,43 @@ fixed_sharer_active = true
 # Contact us section
 [contact]
     active = true
-    title = "Contact"
-    subtitle = "Hello"
-    content = ""
 
     # Automatically link email and phone?
-    autolink = true
+    [[contact.headline_elements]]
+        name = "contact-title-row"
+        class = "row" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = false
+            parent = ""
+        type = "div"
+
+    [[contact.headline_elements]]
+        name = "contact-heading"
+        class = "section-heading" # use in case belongs to some class of elements
+        content = "Contact Us"
+        has_children = false
+        has_parent = true
+            parent = "contact-title-row"
+        type = "div"
+
+
+    [[contact.headline_elements]]
+        name = "contact-subheading"
+        class = "section-subheading" # use in case belongs to some class of elements
+        content = "Always here to help"
+        has_children = false
+        has_parent = true
+            parent = "contact-title-row"
+        type = "div"
+        
+    [[contact.fields]]
+        name = "contact_email"
+        description = "email"
+        font_awesome_icon = "fa-envelope"
+        link = "mailto:{{ . }}"
+        text = "rahul.maddy@gmail.com"
+        style = "color:#333; margin-bottom: 30px; display:block;"
 
 
 +++
