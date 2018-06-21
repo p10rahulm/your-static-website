@@ -14,6 +14,9 @@
     {{if .Params.featured_pages.active}}
         {{partial "homepage-sections/show_featured.html" .}}
     {{end}}
+    {{if .Params.cta.active}}
+    {{partial "homepage-sections/cta.html" .}}
+    {{end}}
     {{if .Params.contact.active}}
         {{partial "homepage-sections/contact.html" .}}
     {{end}}

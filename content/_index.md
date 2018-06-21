@@ -1364,11 +1364,390 @@ fixed_sharer_active = true
             additional_css_styles = ""
 
 # ----------------------------------
+# Call to Action section
+[cta]
+    active = true
+    background_color = "#9660c6"
+
+    [[cta.elements]]
+        name = "cta-container"
+        class = "cta_container" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = false
+            parent = ""
+        type = "div"
+        # use css styles below
+        [[cta.elements.styles]]
+            container = "#cta"
+            target = "#cta-container"
+            media_type = ""
+            [[cta.elements.styles.style_value]]
+                field = "position"
+                value = "relative"
+            [[cta.elements.styles.style_value]]
+                field = "height"
+                value = "900px"
+            [[cta.elements.styles.style_value]]
+                field = "width"
+                value = "100%"
+            [[cta.elements.styles.style_value]]
+                field = "background-color"
+                value = "#9660c6"
+
+    [[cta.elements]]
+        name = "cta-top-right-image"
+        class = "top-right-image"
+        content = ""
+        has_children = false
+        has_parent = true
+            parent = "cta-container"
+        type = "img"
+        [[cta.elements.tags]]
+            field = "src"
+            value = "img/dog_transparency2.png"
+        # use css styles below
+        [[cta.elements.styles]]
+            container = "#cta"
+            target = "#cta-top-right-image"
+            media_type = ""
+            [[cta.elements.styles.style_value]]
+                field = "position"
+                value = "absolute"
+            [[cta.elements.styles.style_value]]
+                field = "right"
+                value = "-20px"
+            [[cta.elements.styles.style_value]]
+                field = "top"
+                value = "0px"
+            [[cta.elements.styles.style_value]]
+                field = "height"
+                value = "300px"
+    [[cta.elements]]
+        name = "cta-bottom-left-image"
+        class = "bottom-left-image" # use in case belongs to some class of elements
+        content = ""
+        has_children = false
+        has_parent = true
+            parent = "cta-container"
+        type = "img"
+        [[cta.elements.tags]]
+            field = "src"
+            value = "img/dog_transparency1.png"
+        # use css styles below
+        [[cta.elements.styles]]
+            container = "#cta"
+            target = "#cta-bottom-left-image"
+            media_type = ""
+            [[cta.elements.styles.style_value]]
+                field = "position"
+                value = "absolute"
+            [[cta.elements.styles.style_value]]
+                field = "left"
+                value = "-20px"
+            [[cta.elements.styles.style_value]]
+                field = "bottom"
+                value = "0px"
+            [[cta.elements.styles.style_value]]
+                field = "height"
+                value = "300px"
+    [[cta.elements]]
+        name = "cta-center-container"
+        class = "cta_center_container container" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = true
+            parent = "cta-container"
+        type = "div"
+        # use css styles below
+        [[cta.elements.styles]]
+            container = "#cta"
+            target = "#cta-center-container"
+            media_type = ""
+            [[cta.elements.styles.style_value]]
+                field = "padding-top"
+                value = "270px"
+            [[cta.elements.styles.style_value]]
+                field = "text-align"
+                value = "center"
+
+    [[cta.elements]]
+        name = "cta-title-row"
+        class = "row" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = true
+            parent = "cta-center-container"
+        type = "div"
+
+    [[cta.elements]]
+        name = "cta-heading"
+        class = "section-heading" # use in case belongs to some class of elements
+        content = "You can call someone to action"
+        has_children = false
+        has_parent = true
+            parent = "cta-title-row"
+        type = "div"
+        [[cta.elements.styles]]
+            container = "#cta"
+            target = "#cta-heading"
+            media_type = ""
+            [[cta.elements.styles.style_value]]
+                field = "color"
+                value = "#eee"
+            [[cta.elements.styles.style_value]]
+                field = "text-align"
+                value = "center"
+
+
+    [[cta.elements]]
+        name = "cta-subheading"
+        class = "section-subheading" # use in case belongs to some class of elements
+        content = "And hope that they come and do the action. This is called call to action"
+        has_children = false
+        has_parent = true
+            parent = "cta-title-row"
+        type = "div"
+        # use css styles below
+        [[cta.elements.styles]]
+            container = "#cta"
+            target = "#cta-subheading"
+            media_type = ""
+            [[cta.elements.styles.style_value]]
+                field = "color"
+                value = "#eee"
+            [[cta.elements.styles.style_value]]
+                field = "text-align"
+                value = "center"
+
+    [[cta.elements]]
+        name = "cta-action-buttons"
+        class = "cta_action_buttons" # use in case belongs to some class of elements
+        content = ""
+        has_children = true
+        has_parent = true
+            parent = "cta-title-row"
+        type = "div"
+        # use css styles below
+        [[cta.elements.styles]]
+            container = "#cta"
+            target = "#cta-action-buttons"
+            media_type = ""
+            [[cta.elements.styles.style_value]]
+                field = "text-align"
+                value = "center"
+
+    [[cta.elements]]
+        name = "cta-first_action_button"
+        class = "cta-first-action-button"
+        content = "Start a new blog with Raz"
+        has_children = false
+        has_parent = true
+            parent = "cta-action-buttons"
+        type = "a"
+        [[cta.elements.tags]]
+            field="href"
+            value="#"
+        [[cta.elements.styles]]
+            container = "#cta"
+            target = "#cta-first_action_button"
+            media = ""
+            [[cta.elements.styles.style_value]]
+                field = "background-color"
+                value = "#00cab6"
+            [[cta.elements.styles.style_value]]
+                field = "z-index"
+                value = "2"
+            [[cta.elements.styles.style_value]]
+                field = "box-shadow"
+                value = "0 4px 4px 0 rgba(42,54,52,.1), 0 8px 8px 0 rgba(42,54,52,.1), 0 16px 16px 0 rgba(42,54,52,.1), 0 16px 32px 0 rgba(42,54,52,.1), 0 32px 64px 0 rgba(42,54,52,.1), 0 64px 128px 0 rgba(42,54,52,.1)"
+            [[cta.elements.styles.style_value]]
+                field = "font-size"
+                value = "1.25rem"
+            [[cta.elements.styles.style_value]]
+                field = "cursor"
+                value = "pointer"
+            [[cta.elements.styles.style_value]]
+                field = "display"
+                value = "inline-block"
+            [[cta.elements.styles.style_value]]
+                field = "position"
+                value = "relative"
+            [[cta.elements.styles.style_value]]
+                field = "vertical-align"
+                value = "middle"
+            [[cta.elements.styles.style_value]]
+                field = "text-align"
+                value = "center"
+            [[cta.elements.styles.style_value]]
+                field = "border"
+                value = "0"
+            [[cta.elements.styles.style_value]]
+                field = "font-weight"
+                value = "500"
+            [[cta.elements.styles.style_value]]
+                field = "white-space"
+                value = "nowrap"
+            [[cta.elements.styles.style_value]]
+                field = "box-sizing"
+                value = "border-box"
+            [[cta.elements.styles.style_value]]
+                field = "padding"
+                value = "30px"
+            [[cta.elements.styles.style_value]]
+                field = "color"
+                value = "#fff"
+
+            [[cta.elements.styles.style_value]]
+                field = "transition-timing-function"
+                value = "cubic-bezier(0,0,.58,1)"
+            [[cta.elements.styles.style_value]]
+                field = "transition-property"
+                value = "transform,background,background-color,color,box-shadow"
+
+
+        [[cta.elements.styles]]
+            container = "#cta"
+            target = "#cta-first_action_button:hover"
+            media = ""
+            [[cta.elements.styles.style_value]]
+                field = "text-decoration"
+                value = "none"
+            [[cta.elements.styles.style_value]]
+                field = "box-shadow"
+                value = "0 10px 20px -10px rgba(0,0,0,.7)"
+            [[cta.elements.styles.style_value]]
+                field = "transform"
+                value = "scale(1.05) translateY(-3px)"
+
+    [[cta.elements]]
+        name = "cta-button_separator"
+        class = "cta-button-separator"
+        content = "or"
+        has_children = false
+        has_parent = true
+            parent = "cta-action-buttons"
+        type = "span"
+        [[cta.elements.styles]]
+            container = "#cta"
+            target = ".cta-button-separator"
+            media = ""
+            [[cta.elements.styles.style_value]]
+                field = "display"
+                value = "inline-block"
+            [[cta.elements.styles.style_value]]
+                field = "margin"
+                value = "0px 20px 0 20px"
+            [[cta.elements.styles.style_value]]
+                field = "vertical-align"
+                value = "middle"
+            [[cta.elements.styles.style_value]]
+                field = "font-weight"
+                value = "500"
+            [[cta.elements.styles.style_value]]
+                field = "line-height"
+                value = "1.5rem"
+            [[cta.elements.styles.style_value]]
+                field = "font-size"
+                value = "1.25rem"
+
+    [[cta.elements]]
+        name = "cta-second_action_button"
+        class = "cta-second-action-button"
+        content = "Sign up for our blog"
+        has_children = false
+        has_parent = true
+            parent = "cta-action-buttons"
+        type = "a"
+        [[cta.elements.tags]]
+            field="href"
+            value="#"
+        [[cta.elements.styles]]
+            container = "#cta"
+            target = "#cta-second_action_button"
+            media = ""
+            [[cta.elements.styles.style_value]]
+                field = "background-color"
+                value = "transparent"
+            [[cta.elements.styles.style_value]]
+                field = "z-index"
+                value = "2"
+            [[cta.elements.styles.style_value]]
+                field = "box-shadow"
+                value = "0 0 1px transparent"
+            [[cta.elements.styles.style_value]]
+                field = "font-size"
+                value = "1.2rem"
+            [[cta.elements.styles.style_value]]
+                field = "cursor"
+                value = "pointer"
+            [[cta.elements.styles.style_value]]
+                field = "display"
+                value = "inline-block"
+            [[cta.elements.styles.style_value]]
+                field = "position"
+                value = "relative"
+            [[cta.elements.styles.style_value]]
+                field = "vertical-align"
+                value = "middle"
+            [[cta.elements.styles.style_value]]
+                field = "text-align"
+                value = "center"
+            [[cta.elements.styles.style_value]]
+                field = "border-style"
+                value = "solid"
+            [[cta.elements.styles.style_value]]
+                field = "border-width"
+                value = "1px"
+            [[cta.elements.styles.style_value]]
+                field = "font-weight"
+                value = "100"
+            [[cta.elements.styles.style_value]]
+                field = "white-space"
+                value = "nowrap"
+            [[cta.elements.styles.style_value]]
+                field = "box-sizing"
+                value = "border-box"
+            [[cta.elements.styles.style_value]]
+                field = "padding"
+                value = "25px"
+            [[cta.elements.styles.style_value]]
+                field = "color"
+                value = "#eee"
+            [[cta.elements.styles.style_value]]
+                field = "border-color"
+                value = "#eee"
+            [[cta.elements.styles.style_value]]
+                field = "transition-timing-function"
+                value = "cubic-bezier(0,0,.58,1)"
+            [[cta.elements.styles.style_value]]
+                field = "transition-property"
+                value = "transform,background,background-color,color,box-shadow"
+
+        [[cta.elements.styles]]
+            container = "#cta"
+            target = "#cta-second_action_button:hover"
+            media = ""
+            [[cta.elements.styles.style_value]]
+                field = "text-decoration"
+                value = "none"
+            [[cta.elements.styles.style_value]]
+                field = "box-shadow"
+                value = "0 10px 20px -10px rgba(0,0,0,.7)"
+            [[cta.elements.styles.style_value]]
+                field = "transform"
+                value = "scale(1.05) translateY(-3px)"
+            [[cta.elements.styles.style_value]]
+                field = "color"
+                value = "#333"
+            [[cta.elements.styles.style_value]]
+                field = "background-color"
+                value = "#fff"
+# ----------------------------------
 # Contact us section
 [contact]
     active = true
 
-    # Automatically link email and phone?
     [[contact.headline_elements]]
         name = "contact-title-row"
         class = "row" # use in case belongs to some class of elements

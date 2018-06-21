@@ -1,3 +1,105 @@
+<header>
+    <style type="text/css">
+        #profile {
+            text-align: center;
+            padding: 30px 10px;
+            position: relative;
+        }
+
+        #profile .portrait {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border-radius: 50%;
+            background-size: cover;
+        }
+
+        #profile .portrait-title h2 {
+            font-size: 1.75em;
+            font-weight: 300;
+            color: #000000;
+            margin: 20px 0 10px 0;
+        }
+
+        #profile .portrait-title h3 {
+            font-size: 1rem;
+            font-weight: 300;
+            color: rgba(0, 0, 0, 0.54);
+            margin: 0px 0 10px 0;
+        }
+
+        #profile ul.network-icon {
+            display: inline-flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        #profile .network-icon li {
+            margin-right: 10px;
+        }
+
+        #profile .network-icon li:last-of-type {
+            margin-right: 0;
+        }
+
+        #profile .network-icon li:hover {
+            transform: scale(1.2)
+        }
+
+        .big-icon {
+            font-size: 2rem;
+        }
+
+        ul.ul-about_us_left_list {
+            list-style: none;
+        }
+
+        ul.ul-about_us_left_list li {
+            position: relative;
+            padding: 0px 15px 4px 3px;
+        }
+
+        ul.ul-about_us_left_list li .description p {
+            margin: 0;
+        }
+
+        ul.ul-about_us_left_list li .description p.title {
+            font-size: 0.9rem;
+        }
+
+        ul.ul-about_us_left_list li .description p.subtitle {
+            font-size: 0.75rem;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        ul.ul-about_us_right_list {
+            list-style: none;
+        }
+
+        ul.ul-about_us_right_list li {
+            position: relative;
+            padding: 0px 15px 4px 3px;
+        }
+
+        ul.ul-about_us_right_list li .description p {
+            margin: 0;
+        }
+
+        ul.ul-about_us_right_list li .description p.title {
+            font-size: 0.9rem;
+        }
+
+        ul.ul-about_us_right_list li .description p.subtitle {
+            font-size: 0.75rem;
+            color: rgba(0, 0, 0, 0.6);
+        }
+    </style>
+</header>
+
 <section id="about_us" class="home-section">
     <div class="container">
         {{partial "functions/render_fields.html" (dict "fields" $.Params.about_us.headline_elements "scratch" .Scratch)}}

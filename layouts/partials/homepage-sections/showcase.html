@@ -1,4 +1,29 @@
 <!-- Services -->
+<header>
+    <style type="text/css">
+        /*************************************************
+        *  Showcase
+        **************************************************/
+        #services .fa-stack-2x {
+            color: #444;
+        }
+
+
+        #services a {
+            color: #fed136;
+            font-size: 24px;
+        }
+
+        #services .service-heading {
+            margin-bottom: 1rem;
+        }
+
+        #services .service-text {
+            font-size: 0.9rem;
+            line-height: 1.6rem;
+        }
+    </style>
+</header>
 <section id="services" class = "home-section">
     <div class="container">
         {{partial "functions/render_fields.html" (dict "fields" $.Params.showcase.headline_elements "scratch" .Scratch)}}
