@@ -2,12 +2,9 @@
 {{ $sri := .Site.Data.sri }}
 {{ $scr := .Scratch }}
 
-<meta name="theme-color" content="{{ if (isset .Scratch "primary") }}{{ .Scratch.primary }}{{else}}{{""}}{{end}}">
-
 <!-- Not doing SRI check for below guys as if the highlight style changes the SRI check fails -->
 {{if or (isset $.Params "highlight") (isset $.Site.Params "highlight") }}
     {{if (isset $.Params "highlight_style") }}
-        <link rel="stylesheet" href=>
         {{$link := (printf "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/%s.min.css" $.Params.highlight_style) }}
         {{partial "functions/load_external_css.html" (dict "external_url" $link "scratch" .Scratch)}}
     {{else if (isset $.Site.Params "highlight_style")}}

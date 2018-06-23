@@ -1,31 +1,33 @@
 {{define "main"}}
         {{.Content}}
-        {{range .Pages}}
-                {{if .Params.title}}
-                        <h2>{{ .Params.title }} </h2>
-                {{end}}
-                {{if .Params.Date}}
-                        <i>{{ dateFormat "Monday, Jan 2, 2006" .Date }} </i>
-                {{end}}<br>
-                {{if .Params.author}}
-                        <b>{{ .Params.author }} </b>
-                {{end}}<br>
-                {{if .Params.tags}}
-                        <strong>Tags:</strong>
-                        {{range .Params.tags}}
-                                <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
-                                        {{ . }}
-                                </a>
-                        {{end}}
-                {{end}}<br>
-                {{if .Params.categories}}
-                        <strong>Categories:</strong>
-                        {{range .Params.categories}}
-                                <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">
-                                        {{ . }}
-                                </a>
-                        {{end}}<br>
-                {{end}}
+    <div class="container">
+            {{range .Pages}}
+                    {{if .Params.title}}
+                            <h2>{{ .Params.title }} </h2>
+                    {{end}}
+                    {{if .Params.Date}}
+                            <i>{{ dateFormat "Monday, Jan 2, 2006" .Date }} </i>
+                    {{end}}<br>
+                    {{if .Params.author}}
+                            <b>{{ .Params.author }} </b>
+                    {{end}}<br>
+                    {{if .Params.tags}}
+                            <strong>Tags:</strong>
+                            {{range .Params.tags}}
+                                    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
+                                            {{ . }}
+                                    </a>
+                            {{end}}
+                    {{end}}<br>
+                    {{if .Params.categories}}
+                            <strong>Categories:</strong>
+                            {{range .Params.categories}}
+                                    <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">
+                                            {{ . }}
+                                    </a>
+                            {{end}}<br>
+                    {{end}}
 
-        {{ end }}
+            {{ end }}
+    </div>
 {{end}}

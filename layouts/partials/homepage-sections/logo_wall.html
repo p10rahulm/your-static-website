@@ -1,5 +1,25 @@
+<style type="text/css">
+    /*************************************************
+ *  Home page logo wall section
+ **************************************************/
+    section#logo-wall .heading {
+        margin: 0rem 0rem -0.5rem;
+        font-weight: 700;
+        font-size: 2rem;
+    }
+    section#logo-wall .subheading {
+        padding: 0rem 0rem 0.5rem;
+        font-weight: 200;
+        font-size: 1.2rem;
+    }
+    section#logo-wall .flexbox {
+        padding-top: 1.5rem;
+    }
 
-<!-- Clients Aside -->
+
+
+</style>
+<!-- Container for Clients?-->
 <section id="logo-wall" class="home-section">
     <div class="container">
         {{partial "functions/render_fields.html" (dict "fields" $.Params.logo_wall.headline_elements "scratch" .Scratch)}}

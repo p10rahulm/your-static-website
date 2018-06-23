@@ -1,5 +1,6 @@
 <aside class = "popup">
     <header>
+        {{partial "functions/load_external_js.html" (dict "external_url" "https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" "scratch" .Scratch "async" false "defer" false)}}
         <script type="text/javascript">
             $(document).ready(function(){
                 //LocalStorage stores only string values.
@@ -24,7 +25,7 @@
                 {{end}}
                 // Activate modal on click. https://www.w3schools.com/jquery/event_click.asp
                 $("#popup_activation_button").click(function(){
-                    $('#popupModal').modal();
+                    $('#popupModal').modal('show');
                     popup_opened_so_far = "opened";
                     localStorage.setItem("popup_opened_so_far", popup_opened_so_far);
                 });
@@ -112,6 +113,49 @@
                 color: red;
             }
 
+            /*************************************************
+             *  Popup
+             **************************************************/
+            .popup_image {
+                max-height: 50vh;
+                max-width: 100%;
+                margin: auto;
+            }
+            .popup_image_wrapper{
+                max-height: 50vh;
+                max-width: 80vw;
+                margin: auto;
+            }
+            .popup_button_close {
+                margin-top: 0.5rem!important;
+            }
+            .popup_heading {
+                float:left;
+                margin-top: 0.5rem!important;
+            }
+
+            .popup-float{
+                position:fixed;
+                width:45px;
+                height:45px;
+                bottom:40px;
+                right:25px;
+                background-color:#0C9;
+                color:#FFF;
+                border-radius:30px;
+                text-align:center;
+                box-shadow: 2px 2px 3px #999;
+            }
+            .popup-float-button{
+                margin:auto;
+                font-size:1.3rem;
+            }
+            #popup_submit_btn{
+                background-color: #0095eb;
+                border-color: #0095eb;
+            }
+
+
 
         </style>
 
@@ -165,7 +209,7 @@
                                     {{end}}
                                 {{end}}
 
-                                <button type="submit" value="Submit" class="btn btn-primary btn-xl">
+                                <button id="popup_submit_btn" type="submit" value="Submit" class="btn btn-primary btn-xl">
                                     {{ $.Site.Params.popup.submit_text }}
                                 </button>
                             </div>
