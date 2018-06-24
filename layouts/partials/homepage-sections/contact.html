@@ -1,35 +1,5 @@
 <style type="text/css">
-    /*************************************************
-     *  Home page contact section
-     **************************************************/
-
-    #contact-home.home-section .fa-ul {
-        margin-left: 3.14285714rem; /* Must be > `fa-2x` icon size. */
-    }
-
-    #contact-home.home-section .fa-li {
-        position: absolute;
-        left: -3.14285714rem; /* Negative of `#contact.home-section .fa-ul` margin. */
-        width: 2rem; /* Match `fa-2x` icon size. */
-        top: 0.14285714em; /* Default FA value. */
-        text-align: center;
-    }
-
-    #contact-home.home-section li {
-        padding-top: 0.8rem; /* Align text with bottom of `fa-2x` icon. */
-        margin-bottom: 0.3rem;
-    }
-
-    #contact-home.home-section li:last-of-type {
-        margin-bottom: 0;
-    }
-
-    #map {
-        height: 350px;
-        width: 100%;
-    }
-
-
+    {{partial "css_scripts/home-section_contact.css" . | safeCSS}}
 </style>
 <section id="contact-home" class="home-section">
     <div class="container">
@@ -51,7 +21,7 @@
         <div class="col-xs-12 col-md-12">
             {{ if $.Site.Params.map }}
             {{partial "maps_loader" .}}
-            {{partial "js_scripts/gmaps_loader.js" . }}
+            <script type="text/javascript"> {{ partial "js_scripts/gmaps_loader.js" . | safeJS }} </script>
             <div class="hidden">
                 <input id="map-lat" value="{{ $.Site.Params.latitude }}">
                 <input id="map-lng" value="{{ $.Site.Params.longitude }}">

@@ -2,9 +2,7 @@
 {{$comments_enabled := and $.Site.DisqusShortname (or ($.Site.Params.enable_comments | default false) ($.Params.enable_comments | default false))}}
 {{ if $comments_enabled }}
     <style type="text/css">
-        #comments {
-            padding-top: 1rem;
-        }
+        {{partial "css_scripts/comments.css" . | safeCSS }}
     </style>
     <section id="comments">
         {{ partial "disqus" . }}

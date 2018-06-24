@@ -2,25 +2,10 @@
 {{partial "functions/load_external_css.html" (dict "external_url" "https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.css" "scratch" .Scratch)}}
 {{partial "functions/load_external_js.html" (dict "external_url" "https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.6/cookieconsent.min.js" "scratch" .Scratch "async" false "defer" false)}}
 <style type="text/css">
-    .cc-window.cc-banner {
-        padding-top: {{$.Site.Params.cookie_container_padding_top}};
-        padding-bottom: {{$.Site.Params.cookie_container_padding_bottom}};
-    }
+    {{partial "css_scripts/cookie_consent.css" . | safeCSS }}
 </style>
 <script type="text/javascript">
-    window.addEventListener("load", function(){
-        window.cookieconsent.initialise({
-            "content": {
-                "message": {{ i18n "cookie_message" | default $.Site.Params.cookie_message }},
-                "dismiss": {{ i18n "cookie_dismiss" | default $.Site.Params.cookie_button_message }},
-                "link": {{ i18n "cookie_learn" | default "Learn more" }}
-            },
-            "palette": {
-                popup: {background: {{$.Site.Params.cookie_background_color }}, text: {{$.Site.Params.cookie_text_color}}, link: {{$.Site.Params.cookie_link_color}}},
-                button: {background: {{$.Site.Params.cookie_button_color}}, border: {{$.Site.Params.cookie_button_border_color}}, text: {{$.Site.Params.cookie_button_text_color}}},
-                highlight: {background: 'red', border: 'red', text: '#000000'},
-            }
-    })});
+{{partial "js_scripts/cookie_consent.js" . | safeJS }}
 </script>
 <div id="content"></div>
 {{ end }}

@@ -1,45 +1,23 @@
 <!-- Services -->
-<header>
-    <style type="text/css">
-        /*************************************************
-        *  Showcase
-        **************************************************/
-        #services .fa-stack-2x {
-            color: #444;
-        }
-
-
-        #services a {
-            color: #fed136;
-            font-size: 24px;
-        }
-
-        #services .service-heading {
-            margin-bottom: 1rem;
-        }
-
-        #services .service-text {
-            font-size: 0.9rem;
-            line-height: 1.6rem;
-        }
-    </style>
-</header>
-<section id="services" class = "home-section">
+<style type="text/css">
+    {{partial "css_scripts/home-section_showcase.css" . | safeCSS}}
+</style>
+<section id="showcase" class = "home-section">
     <div class="container">
         {{partial "functions/render_fields.html" (dict "fields" $.Params.showcase.headline_elements "scratch" .Scratch)}}
 
 
-        <div class="row text-center">
+        <div class="showcase-flex-container">
             {{if isset .Params.showcase "card"}}
                 {{range .Params.showcase.card}}
 
-                    <div class="col-md-{{div 12 $.Params.showcase.numcards}}">
+                    <div class="showcase-flex-child">
                         <span class="fa-stack fa-4x">
                             <i class="fa fa-circle fa-stack-2x text-primary"></i>
                             <i class="fa {{ .icon }} fa-stack-1x fa-inverse"></i>
                         </span>
-                        <h4 class="service-heading"><a href="{{ .link }}">{{.title}}</a></h4>
-                        <p class="service-text">{{ .card_content | markdownify}}</p>
+                        <h4 class="showcase-heading"><a href="{{ .link }}">{{.title}}</a></h4>
+                        <p class="showcase-text">{{ .card_content | markdownify}}</p>
                     </div>
                 {{end}}
             {{end}}

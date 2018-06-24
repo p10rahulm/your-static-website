@@ -1,33 +1,15 @@
 <style type="text/css">
-    /*************************************************
- *  Home page logo wall section
- **************************************************/
-    section#logo-wall .heading {
-        margin: 0rem 0rem -0.5rem;
-        font-weight: 700;
-        font-size: 2rem;
-    }
-    section#logo-wall .subheading {
-        padding: 0rem 0rem 0.5rem;
-        font-weight: 200;
-        font-size: 1.2rem;
-    }
-    section#logo-wall .flexbox {
-        padding-top: 1.5rem;
-    }
-
-
-
+{{ partial "css_scripts/logo_wall.css"  . | safeCSS}}
 </style>
 <!-- Container for Clients?-->
 <section id="logo-wall" class="home-section">
     <div class="container">
         {{partial "functions/render_fields.html" (dict "fields" $.Params.logo_wall.headline_elements "scratch" .Scratch)}}
 
-        <div class="row flexbox">
+        <div id="flexbox-logo-container">
             {{if isset .Params.logo_wall "logos"}}
                 {{range .Params.logo_wall.logos}}
-                <div class="col-md-{{div 12 $.Params.logo_wall.logos_in_row_medium_screen}} col-sm-{{div 12 $.Params.logo_wall.logos_in_row_small_screen}} col"
+                <div class="logo-child"
                 style = "padding-top: 1rem;">
                     <a href="{{.link | relURL}}">
                         <img src="{{.source}}" class="img-responsive img-centered" alt="{{.name}}">

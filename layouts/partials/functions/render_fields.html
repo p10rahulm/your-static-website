@@ -24,7 +24,7 @@
 <!--Load custom JS-->
 
 {{range $fields}}{{ range .custom_js_partials }}
-{{partial .partial_location . }}
+<script type="text/javascript">{{partial .partial_location . | safeJS }}</script>
 {{end}}{{end}}
 
 <!--Create the HTML-->

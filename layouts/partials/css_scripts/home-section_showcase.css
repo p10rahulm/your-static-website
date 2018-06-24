@@ -1,0 +1,33 @@
+/*************************************************
+*  Showcase
+**************************************************/
+section#showcase .showcase-flex-container{
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items:top;
+}
+section#showcase .showcase-flex-child{
+    padding: 3rem 0.5rem 1rem 0.5rem;
+    flex-basis: 300px;
+    flex-grow: 1;
+}
+section#showcase .fa-stack-2x {
+    color: #444;
+}
+
+
+section#showcase a {
+    color: #fed136;
+    font-size: 24px;
+}
+
+section#showcase .showcase-heading {
+    margin-bottom: 1rem;
+}
+
+section#showcase .showcase-text {
+    font-size: 0.9rem;
+    line-height: 1.6rem;
+}

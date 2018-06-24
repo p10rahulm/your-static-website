@@ -1,0 +1,4 @@
+.cc-window.cc-banner {
+    padding-top: {{$.Site.Params.cookie_container_padding_top}};
+    padding-bottom: {{$.Site.Params.cookie_container_padding_bottom}};
+}

@@ -1,6 +1,8 @@
-{{partial "css_scripts/footer_container.html" .}}
+<style type="text/css">
+{{partial "css_scripts/footer_container.css" . | safeCSS}}
+</style>
 <footer class="site-footer">
-    {{partial "js_scripts/smooth_scroll.js" (dict "target" "#back_to_top" "speed" 1500)}}
+    <script type="text/javascript">{{ partial "js_scripts/smooth_scroll.js" (dict "target" "#back_to_top" "speed" 1500) | safeJS }}</script>
     <div class="container">
         <div class="row">
             <div class="col-md-4">

@@ -1001,8 +1001,7 @@ fixed_sharer_active = true
     active = true
 
     # Count the number of logos you want on a row. Choose from 1,2,3,4,6, 12
-    logos_in_row_medium_screen = 4
-    logos_in_row_small_screen = 2
+    min_width_logo = "200px"
 
     [[logo_wall.headline_elements]]
         name = "logo_wall-title-row"
