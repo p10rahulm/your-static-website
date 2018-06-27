@@ -1,9 +1,7 @@
-{{ $js_versions := .Site.Data.sri.js }}
 {{$comments_enabled := and $.Site.DisqusShortname (or ($.Site.Params.enable_comments | default false) ($.Params.enable_comments | default false))}}
 
 {{partial "load_highlight_math_js" .}}
 
-<!--Load external js scripts through SRI-->
 {{partial "functions/load_external_js.html" (dict "external_url" "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" "scratch" .Scratch "async" false "defer" false)}}
 
 {{partial "functions/load_external_js.html" (dict "external_url" "https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" "scratch" .Scratch "async" false "defer" false)}}

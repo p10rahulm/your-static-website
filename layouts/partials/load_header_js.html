@@ -1,5 +1,4 @@
 
-{{ $js_versions := .Site.Data.sri.js }}
 
 {{partial "functions/load_external_js.html" (dict "external_url" "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" "scratch" .Scratch "async" false "defer" false)}}
 {{partial "functions/load_external_js.html" (dict "external_url" "https://cdn.jsdelivr.net/npm/default-passive-events@1.0.10/dist/index.min.js" "scratch" .Scratch "async" false "defer" false)}}

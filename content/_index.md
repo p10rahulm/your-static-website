@@ -155,7 +155,7 @@ fixed_sharer_active = true
     
     [[top_banner.slide_elements]]
         name = "menu-item1-link"
-        class = "col-md-4 ff-menu-item-link" # use in case belongs to some class of elements
+        class = "ff-menu-item-link" # use in case belongs to some class of elements
         content = ""
         has_children = true
         has_parent = true
@@ -181,7 +181,7 @@ fixed_sharer_active = true
 
     [[top_banner.slide_elements]]
         name = "menu-item1"
-        class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
+        class = "ff-menu-item" # use in case belongs to some class of elements
         content = "Books"
         has_children = false
         has_parent = true
@@ -229,7 +229,7 @@ fixed_sharer_active = true
 
     [[top_banner.slide_elements]]
         name = "menu-item2-link"
-        class = "col-md-4 ff-menu-item-link" # use in case belongs to some class of elements
+        class = "ff-menu-item-link" # use in case belongs to some class of elements
         content = ""
         has_children = true
         has_parent = true
@@ -256,7 +256,7 @@ fixed_sharer_active = true
 
     [[top_banner.slide_elements]]
         name = "menu-item3-link"
-        class = "col-md-4 ff-menu-item-link" # use in case belongs to some class of elements
+        class = "ff-menu-item-link" # use in case belongs to some class of elements
         content = ""
         has_children = true
         has_parent = true
@@ -272,7 +272,7 @@ fixed_sharer_active = true
 
     [[top_banner.slide_elements]]
             name = "menu-item3"
-            class = "col-md-4 ff-menu-item" # use in case belongs to some class of elements
+            class = "ff-menu-item" # use in case belongs to some class of elements
             content = "Thoughts"
             has_children = false
             has_parent = true

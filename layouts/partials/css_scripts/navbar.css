@@ -9,13 +9,14 @@ nav#navbar-main .nav_logo{
     *  Navigation Bar
     ******************************************/
 
-.navbar {
-    min-height: 70px !important;
-}
+
 
 .navbar-default {
+    min-height: 70px !important;
     background: #fff;
     box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.11)
+    top: 0;
+    border-width: 0 0 1px;
 }
 
 .navbar-default .navbar-toggle {
@@ -128,7 +129,7 @@ nav#navbar-main li {
 }
 
 @media screen and (max-width: 1200px) {
-    .navbar {
+    .navbar-default {
         min-height: 50px !important;
     }
 
@@ -156,11 +157,6 @@ nav#navbar-main li {
 
     .navbar-toggle {
         display: block;
-    }
-
-    .navbar-fixed-top {
-        top: 0;
-        border-width: 0 0 1px;
     }
 
     .navbar-collapse.collapse:not(.in) {

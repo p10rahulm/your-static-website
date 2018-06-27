@@ -4,44 +4,13 @@
 {{define "main"}}
 <!-- Contact Section -->
 <style>
-    /*************************************************
- *  Contact Page
- **************************************************/
-
-    section#contact {
-        background-color: #222;
-        background-image: url(../img/map-image.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        padding: 10rem 1rem;
-    }
-
-    section#contact .form-group input, section#contact .form-group textarea {
-        padding: 20px;
-    }
-
-    section#contact .section-heading {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 2rem;
-    }
-
-    section#contact .section-subheading {
-        margin-top: 1rem;
-        margin-bottom: 2rem;
-        font-size: 0.9rem;
-        font-weight: 200;
-    }
-
-    section#contact #message {
-        height: 155px;
-    }
+    {{ partial "css_scripts/contact_page.css" . | safeCSS }}
 </style>
 
 <section id="contact">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-center">
+            <div class="text-center">
 
                 <h2 class="section-heading" style="color: {{ .Params.title_color }} ">{{ with .Params.title }}{{ . | markdownify }}{{ end }}</h2>
 
@@ -49,7 +18,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
+            <div>
                 <form
                         method="POST"
                         name="sentMessage"
@@ -89,7 +58,7 @@
                             {{ end }}
                         </div>
                         <div class="clearfix"></div>
-                        <div class="col-lg-12 text-center">
+                        <div class="text-center">
                             <br>
                             <input type="hidden" name="_next" value="{{.Params.onSubmit_link}}">
                             <input type="hidden" name="_subject" value="New submission on {{.Site.Title}}!">

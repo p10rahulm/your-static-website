@@ -70,16 +70,7 @@ verboseLog =true
 # Some parameters for the internal theme use
 [params]
     open_at_top = false
-    # After finishing this section config, make sure to look at manifest.json in the static folder
-    # Color theme. These colors are used from the data/fonts folder
-    #   Choose from `default`, `ocean`, `forest`, `coffee`, `dark`, or `1950s`.
-    color_theme = "default"
-
-    # Font style.
-    #   Choose from `default`, `classic`, or `playfair`.
-    # Color theme. These colors are used from the data/fonts folder
-    font = "classic"
-
+    google_fonts = ["Lato","Roboto Mono","Merriweather"]
     # Site Author details.
     site_author_name = "Rahul Madhavan"
     role = "Founder, CodeFRA"
@@ -132,11 +123,6 @@ verboseLog =true
     highlight_languages = ["htmlbars","bash"]
     # highlight_languages = []
     highlight_style = "ocean"
-
-    # All the subresources are delivered throught an subresource integrity module. This helps if CDN is compromised
-    # details here: https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity
-    # Do you want to disable it? (not recommended)
-    disable_sri = false
 
     # The following go on the footer.
     show_back_to_top = true
