@@ -1,4 +1,5 @@
 {{ define "main" }}
+    <style type="text/css">{{partial "css_scripts/home-section.css" . | safeCSS }}</style>
     {{if .Params.top_banner.active}}
         {{partial "homepage-sections/top_banner.html" .}}
     {{end}}

@@ -1,3 +1,10 @@
+section#navbar {
+    min-height: 70px;
+}
+nav#navbar-main .nav_logo{
+    height: 70px;
+}
+
 /*************************************************
     *  Navigation Bar
     ******************************************/
