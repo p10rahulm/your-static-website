@@ -25,12 +25,28 @@
     }
 }
 
+/*Fonts*/
 html {
-    font-family: 'Merriweather', sans-serif;
+    font-family: 'Lora', serif;
+}
+nav#navbar-main{
+    font-family: 'EB Garamond',serif;
+}
+body p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif;
+}
+
+html {
     font-size: 16px;
     color: rgba(0,0,0,0.8);
     line-height: 1.65;
 }
+
 @media screen and (min-width: 58em) {
     html {
         font-size: 20px;
@@ -47,6 +63,7 @@ body {
     padding-top: 0;
     counter-reset: captions;
 }
+
 @media screen and (max-width: 1200px) {
     /* Match max-width of .nav-bar query. */
     body {
@@ -79,17 +96,8 @@ ul, ol, dl {
     margin-bottom: 1rem;
 }
 
-/* Navigation bar text */
-.navbar-default {
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-    line-height: 1.25;
-    text-rendering: optimizeLegibility;
-}
-
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lato', sans-serif;
     font-weight: 400;
     margin-bottom: .5rem;
     line-height: 1.25;
@@ -155,7 +163,7 @@ figcaption {
     line-height: 1.25;
     font-size: 1rem;
     margin-bottom: 1.65rem;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Old Standard TT', sans-serif;
 }
 
 figcaption.numbered:before {
