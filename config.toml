@@ -70,7 +70,7 @@ verboseLog =true
 # Some parameters for the internal theme use
 [params]
     open_at_top = false
-    google_fonts = ["Lato","Roboto Mono","Merriweather"]
+    google_fonts = ["EB Garamond","Lora","Roboto Mono"]
     # Site Author details.
     site_author_name = "Rahul Madhavan"
     role = "Founder, CodeFRA"

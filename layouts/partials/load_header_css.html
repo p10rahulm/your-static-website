@@ -22,6 +22,9 @@
 {{ range $.Site.Params.google_fonts }}
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family={{ replace . " " "+" | safeURL}}">
 {{ end }}
+
+
+
 <style type="text/css">{{partial "css_scripts/core.css" . | safeCSS}}</style>
 
 

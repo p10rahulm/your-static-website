@@ -27,7 +27,7 @@
 
 /*Fonts*/
 html {
-    font-family: 'Lora', serif;
+    font-family: 'Lora', TimesNewRoman, 'Times New Roman', serif;
 }
 nav#navbar-main{
     font-family: 'EB Garamond',serif;

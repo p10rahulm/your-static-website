@@ -1,85 +1,94 @@
 <section id="navigator">
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            function toggle_collapsible_navbar() {
+                var x = document.getElementById("navbar-right");
+                if (x.style.display === "flex") {
+                    x.style.display = "none";
+                } else {
+                    x.style.display = "flex";
+                }
+            }
+            $("#collapsible_menu_icon").click(function(){
+                toggle_collapsible_navbar();
+            });
+        });
+
+    </script>
     <style type="text/css">
-
         {{partial "css_scripts/navbar.css" . |safeCSS}}
-
     </style>
-<nav class="navbar-default" id="navbar-main">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            {{ if .Site.Menus.main }}
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
-                <span class="sr-only">{{ "toggle_navigation" }}</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                </button>
-            {{ end }}
-            <a class="navbar-brand" href="{{ "/" | relLangURL }}">
-                {{ if .Site.Params.logo }}
-                    <img class = "nav_logo" src="/{{.Site.Params.logo}}" alt="{{ .Site.Title }}">
-                    {{ .Site.Title }}
-                {{ else }}
-                    {{ .Site.Title }}
-                {{ end }}
-            </a>
-        </div>
-        <!--Go templates suck. See: https://github.com/golang/go/issues/10608-->
-        {{ $page_scratch := $.Page.Scratch }}
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse">
-            <!-- Left Nav Bar -->
-            <ul class="nav navbar-nav navbar-right">
-                {{ range .Site.Menus.main }}
-                    {{if in $.Site.Params.navbar_active .Name }}
-                        {{ $page_scratch.Set "haschild" false }}
-                        {{ if .HasChildren }}
-                            {{ range .Children }}
-                                {{if in $.Site.Params.navbar_active .Name }}
-                                    {{ $page_scratch.Set "haschild" true }}
+    <nav class="navbar-default" id="navbar-main">
+        <div class="navbar-container container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div id="navbar-left">
+                <div id="nav_logo">
+                    <a class="navbar-logo-link" href="{{ "/" | relURL }}">
+                        {{ if .Site.Params.logo }}
+                        <img class = "logo_image" src="/{{.Site.Params.logo}}" alt="{{ .Site.Title }}">
+                        {{ end }}
+                    </a>
+                </div>
+                <div class="site_title">{{ .Site.Title }}</div>
+            </div>
+            <div id="collapsible_menu_icon">
+                <i class="fa fa-bars"></i>
+            </div>
+
+            <!--Go templates suck. See: https://github.com/golang/go/issues/10608-->
+            {{ $page_scratch := $.Page.Scratch }}
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="navbar-right">
+                <!-- Left Nav Bar -->
+                    {{ range .Site.Menus.main }}
+                        {{if in $.Site.Params.navbar_active .Name }}
+                            {{ $page_scratch.Set "haschild" false }}
+                            {{ if .HasChildren }}
+                                {{ range .Children }}
+                                    {{if in $.Site.Params.navbar_active .Name }}
+                                        {{ $page_scratch.Set "haschild" true }}
+                                    {{end}}
                                 {{end}}
                             {{end}}
-                        {{end}}
-                        {{if ($page_scratch.Get "haschild")}}
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-                                    {{ .Pre }}
-                                    <span>{{ .Name }}</span>
-                                    {{ .Post }}
-                                    <span class="caret"></span>
-                                </a>
+                            {{if ($page_scratch.Get "haschild")}}
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
+                                        {{ .Pre }}
+                                        <span>{{ .Name }}</span>
+                                        {{ .Post }}
+                                        <span class="caret"></span>
+                                    </a>
 
 
-                                <ul class="dropdown-menu">
-                                    {{ range .Children }}
-                                        {{if in $.Site.Params.navbar_active .Name }}
-                                            <li class="nav-item">
-                                                <a href="{{ .URL | relLangURL }}">
-                                                    {{ .Pre }}
-                                                        <span>{{ .Name }}</span>
-                                                    {{ .Post }}
-                                                </a>
-                                            </li>
-                                        {{end}}
-                                    {{ end }}
-                                </ul>
-                            </li>
-                        {{ else }}
-                            <li class="nav-item">
-                                <a href="{{ .URL | relLangURL }}" {{ if gt (len .URL) 4 }}{{ if eq "http" (slicestr .URL 0 4) }} target="_blank" rel="noopener"{{ end }}{{ end }}>
-                                    {{ .Pre }}
-                                    <span>{{ .Name }}</span>
-                                    {{ .Post }}
-                                </a>
-                            </li>
+                                    <ul class="dropdown-menu">
+                                        {{ range .Children }}
+                                            {{if in $.Site.Params.navbar_active .Name }}
+                                                <li class="nav-item">
+                                                    <a href="{{ .URL | relLangURL }}">
+                                                        {{ .Pre }}
+                                                            <span>{{ .Name }}</span>
+                                                        {{ .Post }}
+                                                    </a>
+                                                </li>
+                                            {{end}}
+                                        {{ end }}
+                                    </ul>
+                                </li>
+                            {{ else }}
+                                <div class="nav-item">
+                                    <a href="{{ .URL | relLangURL }}" {{ if gt (len .URL) 4 }}{{ if eq "http" (slicestr .URL 0 4) }} target="_blank" rel="noopener"{{ end }}{{ end }}>
+                                        {{ .Pre }}
+                                        <span>{{ .Name }}</span>
+                                        {{ .Post }}
+                                    </a>
+                                </div>
+                            {{ end }}
                         {{ end }}
                     {{ end }}
-                {{ end }}
-            </ul>
 
-        </div><!-- /.navbar-collapse -->
+            </div><!-- /.navbar-collapse -->
 
-    </div>
-</nav><!-- /.container -->
+        </div>
+    </nav><!-- /.container -->
 </section>
