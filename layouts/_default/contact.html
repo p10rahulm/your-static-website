@@ -9,13 +9,11 @@
 
 <section id="contact">
     <div class="container">
-        <div class="row">
-            <div class="text-center">
+        <div class="text-center">
 
-                <h2 class="section-heading" style="color: {{ .Params.title_color }} ">{{ with .Params.title }}{{ . | markdownify }}{{ end }}</h2>
+            <h2 class="section-heading" style="color: {{ .Params.title_color }} ">{{ with .Params.title }}{{ . | markdownify }}{{ end }}</h2>
 
-                <h3 class="section-subheading text-muted" style="color: {{ .Params.subtitle_color }} ">{{ with .Params.subtitle }}{{ . | markdownify }}{{ end }}</h3>
-            </div>
+            <h3 class="section-subheading text-muted" style="color: {{ .Params.subtitle_color }} ">{{ with .Params.subtitle }}{{ . | markdownify }}{{ end }}</h3>
         </div>
         <div class="row">
             <div>
@@ -27,8 +25,8 @@
 
 
                 <fieldset>
-                    <div class="row">
-                        <div class="col-md-6">
+                    <div class="flex">
+                        <div id="contact_page-left_half" class="flex-children">
                             {{ with .Params.form.name }}
                                 <div class="form-group">
                                     <input class="form-control" id="name" required="required" type="text" name="name"
@@ -49,7 +47,7 @@
                                 </div>
                             {{ end }}
                         </div>
-                        <div class="col-md-6">
+                        <div id="contact_page-right_half"  class="flex-children">
                             {{ with .Params.form.message }}
                                 <div class="form-group">
                                     <textarea class="form-control" id="message" required="required" name="message"
@@ -57,22 +55,21 @@
                                 </div>
                             {{ end }}
                         </div>
-                        <div class="clearfix"></div>
-                        <div class="text-center">
-                            <br>
-                            <input type="hidden" name="_next" value="{{.Params.onSubmit_link}}">
-                            <input type="hidden" name="_subject" value="New submission on {{.Site.Title}}!">
-                            <!--Below is a honeypot field-->
-                            <input type="text" name="_gotcha" style="display:none">
-                            {{if isset .Params "contact_secondary_email"}}
-                                {{range .Params.contact_secondary_email}}
-                                    <input type="hidden" name="_cc" value="{{- . -}}">
-                                {{end}}
-                            {{end}}
-                            <button type="submit" value="Submit" class="btn btn-xl">
-                                {{ .Params.buttontext }}
-                            </button>
-                        </div>
+                    </div>
+                    <div class="text-center">
+                        <br>
+                        <input type="hidden" name="_next" value="{{.Params.onSubmit_link}}">
+                        <input type="hidden" name="_subject" value="New submission on {{.Site.Title}}!">
+                        <!--Below is a honeypot field-->
+                        <input type="text" name="_gotcha" style="display:none">
+                        {{if isset .Params "contact_secondary_email"}}
+                        {{range .Params.contact_secondary_email}}
+                        <input type="hidden" name="_cc" value="{{- . -}}">
+                        {{end}}
+                        {{end}}
+                        <button type="submit" value="Submit" class="btn btn-xl">
+                            {{ .Params.buttontext }}
+                        </button>
                     </div>
                 </fieldset>
                 </form>

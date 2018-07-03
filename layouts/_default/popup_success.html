@@ -1,28 +1,12 @@
 {{define "main"}}
     <style type="text/css">
-        /*************************************************
-         *  Popup Contact Success Page
-         **************************************************/
-        section#popup_success {
-            background-color: #222;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 10rem 1rem;
-        }
-
+        {{partial "css_scripts/popup_success.css" . | safeCSS }}
     </style>
-    <section id="popup_success" style=" background-image: url(../{{.Params.background_image}});
-                                        background-color: {{.Params.background_color}};
-                                        background-position: center;
-                                        background-repeat: no-repeat;
-                                        padding: 4rem 1rem 16rem;"
-    >
+    <section id="popup_success" style=" ">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <H1 class = "popup_success_title" style = "color:{{.Params.title_color}}">{{.Params.title | markdownify}}</H1>
-                    <p class = "popup_success_message" style = "color:{{.Params.message_color}}">{{.Params.message | markdownify}}</p>
-                </div>
+            <div class="popup_content">
+                <H1 class = "popup_success_title" style = "color:{{.Params.title_color}}">{{.Params.title | markdownify}}</H1>
+                <p class = "popup_success_message" style = "color:{{.Params.message_color}}">{{.Params.message | markdownify}}</p>
             </div>
         </div>
     </section>

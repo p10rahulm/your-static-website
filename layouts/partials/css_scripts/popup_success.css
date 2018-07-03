@@ -1,0 +1,15 @@
+/*************************************************
+ *  Popup Contact Success Page
+ **************************************************/
+section#popup_success {
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10rem 1rem;
+    background-color: {{.Params.background_color}};
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 4rem 1rem 16rem;
+}
+section#popup_success .popup_content{
+    width: 50%;
+}

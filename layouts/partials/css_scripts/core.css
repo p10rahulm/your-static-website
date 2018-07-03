@@ -263,5 +263,17 @@ small,
 .responsive-wrap iframe {
     max-width: 100%;
 }
+.flex {
+    display: flex;
+    flex-basis: 300px;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+.text-center {
+    text-align: center;
+}
+.hidden{
+    display: none;
+}
 
 

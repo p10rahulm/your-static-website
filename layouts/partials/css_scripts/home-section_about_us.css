@@ -84,9 +84,15 @@ ul.ul-about_us_right_list li .description p {
     margin: 0;
 }
 
-
-
 ul.ul-about_us_right_list li .description p.subtitle {
     font-size: 0.9rem;
     color: rgba(0, 0, 0, 0.6);
+}
+
+#about_us_right_list{
+    flex-grow: 2;
+    /*Above makes the right list grow twice as fast in width as the left part*/
+}
+#about_us_left_list{
+    flex-grow: 1;
 }

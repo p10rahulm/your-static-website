@@ -1,48 +1,43 @@
-<style type="text/css">
-    /*************************************************
-     *  Footer
-     **************************************************/
+/*************************************************
+ *  Footer
+ **************************************************/
 
-    footer {
-        margin: 4rem 0 0;
-        padding: 2rem 0;
-        width: 100%;
-    }
+footer {
+    margin: 1.5rem 0 0;
+    padding: 2rem 0;
+    width: 100%;
+    font-size: 20px;
+    font-family: "EB Garamond","Lora",serif;
+    color: #333;
+}
 
-    .powered-by {
-        font-size: 0.8rem;
-    }
+footer a {
+    color: #333;
+}
 
-    .powered-by a {
-        color: #333;
-    }
+#top_level_footer_flex{
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-basis: 30%;
+    flex-wrap: nowrap;
+    padding-bottom: 30px;
+}
 
-    .footer_network_links a {
+#footer_right_child a{
+    padding: 0 5px;
+}
 
-    }
+#footer_center_child i {
+    color: #00aeff;
+    font-size: 24px;
+    padding: 0 10px;
+}
 
-    .footer_network_links {
-        font-size: 0.9rem;
-        text-align: center;
-    }
+.back_to_top {
+    float: right;
+    font-size: 0.75rem;
+}
 
-    .footer_internal_links {
-        font-size: 0.8em;
-        text-align: right;
-    }
-
-    .footer_internal_links a {
-        color: #333;
-    }
-
-    .back_to_top {
-        float: right;
-        font-size: 0.75rem;
-    }
-
-    .back_to_top a {
-        color: #aaa;
-    }
-
-
-</style>
+.back_to_top a {
+    color: #aaa;
+}

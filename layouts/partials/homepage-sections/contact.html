@@ -6,7 +6,7 @@
         {{partial "functions/render_fields.html" (dict "fields" $.Params.contact.headline_elements "scratch" .Scratch)}}
         <!-- Contact widget -->
 
-        <div class="col-xs-12 col-md-12">
+        <div >
             <ul class="fa-ul" itemscope>
                 {{range $.Params.contact.fields}}
                     <li>
@@ -18,7 +18,7 @@
                 {{end}}
             </ul>
         </div>
-        <div class="col-xs-12 col-md-12">
+        <div >
             {{ if $.Site.Params.map }}
             {{partial "maps_loader" .}}
             <script type="text/javascript"> {{ partial "js_scripts/gmaps_loader.js" . | safeJS }} </script>

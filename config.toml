@@ -168,7 +168,7 @@ verboseLog =true
         # page front matter (in the content folder)
         popup_active = true
         # Should popup be shown once per session or persist across browser close? default is persist
-        reload_popup_once_per_session = false
+        reload_popup_once_per_session = true
 
 
         # We will allow three types of popups, timed popup, popup on given amount of scroll and exit intent popup

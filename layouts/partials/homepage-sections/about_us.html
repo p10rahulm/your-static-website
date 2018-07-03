@@ -9,47 +9,42 @@
         {{partial "functions/render_fields.html" (dict "fields" $.Params.about_us.headline_elements "scratch" .Scratch)}}
 
         <div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <!--Left Section-->
-            <div class="col-xs-12 col-md-4">
-                <div id="profile">
-                    {{ if isset $.Params.about_us.left_part "left_logo_image" }}
-                        <div class="portrait" style="background-image: url('{{ ($.Params.about_us.left_part.left_logo_image) | relURL }}');"></div>
-                        <meta itemprop="image" content="{{ ($.Params.about_us.left_part.left_logo_image) | relURL }}">
+            <div id="profile">
+                {{ if isset $.Params.about_us.left_part "left_logo_image" }}
+                    <div class="portrait" style="background-image: url('{{ ($.Params.about_us.left_part.left_logo_image) | relURL }}');"></div>
+                    <meta itemprop="image" content="{{ ($.Params.about_us.left_part.left_logo_image) | relURL }}">
+                {{ end }}
+
+                <div class="portrait-title">
+                    {{ if isset $.Params.about_us.left_part "left_name_title" }}
+                        <h2 itemprop="left_name_title">
+                            {{ $.Params.about_us.left_part.left_name_title }}
+                        </h2>
+                    {{ end }}
+                    {{ if isset $.Params.about_us.left_part "left_name_subtitle" }}
+                        <h3 itemprop="left_name_subtitle">
+                            {{ $.Params.about_us.left_part.left_name_subtitle }}
+                        </h3>
                     {{ end }}
 
-                    <div class="portrait-title">
-                        {{ if isset $.Params.about_us.left_part "left_name_title" }}
-                            <h2 itemprop="left_name_title">
-                                {{ $.Params.about_us.left_part.left_name_title }}
-                            </h2>
-                        {{ end }}
-                        {{ if isset $.Params.about_us.left_part "left_name_subtitle" }}
-                            <h3 itemprop="left_name_subtitle">
-                                {{ $.Params.about_us.left_part.left_name_subtitle }}
-                            </h3>
-                        {{ end }}
-
-                        {{ range $.Params.about_us.left_part.affiliations }}
-                            <h3 itemprop="affiliations" itemscope itemtype="http://schema.org/Organization">
-                                {{ with .url }}<a href="{{ . }}" target="_blank" itemprop="url" rel="noopener">{{ end }}
-                                <span itemprop="name">{{ .name }}</span>
-                                {{ if .url }}</a>{{ end }}
-                            </h3>
-                        {{ end }}
-                    </div>
-                    <ul class="network-icon" aria-hidden="true">
-                        {{ range $.Params.about_us.left_part.social }}
-                            <li>
-                                <a itemprop="sameAs" href="{{ .link | safeURL }}" target="_blank" rel="noopener">
-                                    <i class="{{ .icon_pack }} {{ .icon }} big-icon"></i>
-                                </a>
-                            </li>
-                        {{ end }}
-                    </ul>
+                    {{ range $.Params.about_us.left_part.affiliations }}
+                        <h3 itemprop="affiliations" itemscope itemtype="http://schema.org/Organization">
+                            {{ with .url }}<a href="{{ . }}" target="_blank" itemprop="url" rel="noopener">{{ end }}
+                            <span itemprop="name">{{ .name }}</span>
+                            {{ if .url }}</a>{{ end }}
+                        </h3>
+                    {{ end }}
                 </div>
+                <ul class="network-icon" aria-hidden="true">
+                    {{ range $.Params.about_us.left_part.social }}
+                        <li>
+                            <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">
+                                <i class="{{ .icon_pack }} {{ .icon }} big-icon"></i>
+                            </a>
+                        </li>
+                    {{ end }}
+                </ul>
             </div>
-        <!--Right Section-->
-        <div class="col-xs-12 col-md-8" itemprop="description">
             {{if isset $.Params.about_us.right_part "title" }}
                 <h1 id="title">
                     {{ $.Params.about_us.right_part.title }}
@@ -61,44 +56,43 @@
                 </div>
             {{ end }}
 
-            <div class="row">
-                <div class="col-sm-5">
-                    {{if isset $.Params.about_us.right_part.bottom_left "title" }}
-                        <h3>{{ $.Params.about_us.right_part.bottom_left.title }}</h3>
-                    {{ end }}
-                    {{if isset $.Params.about_us.right_part.bottom_left "list" }}
-                        <ul class="ul-about_us_left_list">
-                            {{ range $.Params.about_us.right_part.bottom_left.list }}
-                                <li>
-                                    <i class="fa-li fa {{ .icon }}"></i>
-                                    <div class="description">
-                                        <p class="title">{{ .title }}</p>
-                                        <p class="subtitle">{{ .subtitle }}</p>
-                                    </div>
-                                </li>
-                            {{ end }}
-                        </ul>
-                    {{ end }}
-                </div>
+        <div class="flex">
+            <div id="about_us_left_list">
+                {{if isset $.Params.about_us.right_part.bottom_left "title" }}
+                    <h3>{{ $.Params.about_us.right_part.bottom_left.title }}</h3>
+                {{ end }}
+                {{if isset $.Params.about_us.right_part.bottom_left "list" }}
+                    <ul class="ul-about_us_left_list">
+                        {{ range $.Params.about_us.right_part.bottom_left.list }}
+                            <li>
+                                <i class="fa-li fa {{ .icon }}"></i>
+                                <div class="description">
+                                    <p class="title">{{ .title }}</p>
+                                    <p class="subtitle">{{ .subtitle }}</p>
+                                </div>
+                            </li>
+                        {{ end }}
+                    </ul>
+                {{ end }}
+            </div>
 
-                <div class="col-sm-7">
-                    {{if isset $.Params.about_us.right_part.bottom_right "title" }}
-                        <h3>{{ $.Params.about_us.right_part.bottom_right.title }}</h3>
-                    {{ end }}
-                    {{if isset $.Params.about_us.right_part.bottom_right "list" }}
-                        <ul class="ul-about_us_right_list">
-                            {{ range $.Params.about_us.right_part.bottom_right.list }}
-                                <li>
-                                    <i class="fa-li fa {{ .icon }}"></i>
-                                    <div class="description">
-                                        <p class="title">{{ .title }}</p>
-                                        <p class="subtitle">{{ .subtitle }}</p>
-                                    </div>
-                                </li>
-                            {{ end }}
-                        </ul>
-                    {{ end }}
-                </div>
+            <div id="about_us_right_list">
+                {{if isset $.Params.about_us.right_part.bottom_right "title" }}
+                    <h3>{{ $.Params.about_us.right_part.bottom_right.title }}</h3>
+                {{ end }}
+                {{if isset $.Params.about_us.right_part.bottom_right "list" }}
+                    <ul class="ul-about_us_right_list">
+                        {{ range $.Params.about_us.right_part.bottom_right.list }}
+                            <li>
+                                <i class="fa-li fa {{ .icon }}"></i>
+                                <div class="description">
+                                    <p class="title">{{ .title }}</p>
+                                    <p class="subtitle">{{ .subtitle }}</p>
+                                </div>
+                            </li>
+                        {{ end }}
+                    </ul>
+                {{ end }}
             </div>
         </div>
     </div>

@@ -2,16 +2,17 @@
  *  Contact Page
  **************************************************/
 
+
 section#contact {
     background-color: #222;
     background-image: url(../img/map-image.png);
     background-position: center;
     background-repeat: no-repeat;
-    padding: 10rem 1rem;
+    padding: 4rem 1rem 6rem 1rem;
 }
 
-section#contact .form-group input, section#contact .form-group textarea {
-    padding: 20px;
+section#contact input,section#contact textarea,section#contact button {
+    font-family: "EB Garamond","Lora",serif;
 }
 
 section#contact .section-heading {
@@ -27,6 +28,34 @@ section#contact .section-subheading {
     font-weight: 200;
 }
 
-section#contact #message {
-    height: 155px;
+section#contact  .flex-children{
+    width: 45%;
+}
+
+section#contact .form-group{
+    text-align: center;
+    margin-top: 10px;
+}
+section#contact  #contact_page-right_half .form-group{
+    height: 100%;
+}
+
+
+section#contact .flex {
+    justify-content: space-between;
+    align-items: stretch;
+    padding-bottom: 30px;
+}
+section#contact input,section#contact textarea {
+    width:100%;
+    height: 80%;
+    padding: 10px 0 10px 5px;
+}
+@media screen and (max-width: 700px) {
+    section#contact  .flex-children{
+        width: 90%;
+    }
+    section#contact .flex {
+        justify-content: center;
+    }
 }

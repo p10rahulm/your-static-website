@@ -1,0 +1,57 @@
+/*************************************************
+ *  Modals.
+ **************************************************/
+
+.modal-header .close {
+    font-size: 40px; /* Bigger cross. */
+    height: 30px; /* Remove icon's vertical spacing. */
+    overflow-y: hidden;
+    position: relative;
+    top: -5px;
+}
+
+.modal-content pre {
+    margin: 0;
+}
+
+#modal-error {
+    color: red;
+}
+
+/*************************************************
+ *  Popup
+ **************************************************/
+
+.popup_image_wrapper{
+    max-height: 50vh;
+    max-width: 80vw;
+    margin: auto;
+}
+.popup_button_close {
+    margin-top: 0.5rem!important;
+}
+.popup_heading {
+    float:left;
+    margin-top: 0.5rem!important;
+}
+
+.popup-float{
+    position:fixed;
+    width:45px;
+    height:45px;
+    bottom:40px;
+    right:25px;
+    background-color:#0C9;
+    color:#FFF;
+    border-radius:30px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+}
+.popup-float-button{
+    margin:auto;
+    font-size:1.3rem;
+}
+#popup_submit_btn{
+    background-color: #0095eb;
+    border-color: #0095eb;
+}

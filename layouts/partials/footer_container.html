@@ -1,47 +1,40 @@
+
 <style type="text/css">
 {{partial "css_scripts/footer_container.css" . | safeCSS}}
 </style>
 <footer class="site-footer">
     <script type="text/javascript">{{ partial "js_scripts/smooth_scroll.js" (dict "target" "#back_to_top" "speed" 1500) | safeJS }}</script>
     <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <p class="powered-by">
+        <div class="flex" id="top_level_footer_flex">
+            <div id="footer_left_child" class="flex-child">
                     {{ with .Site.Copyright }}{{ . | markdownify}} &middot; {{ end }}
                     Made with
                     <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
-                </p>
             </div>
-            <div class="col-md-4">
-                <ul class="list-inline social-buttons footer_network_links">
+            <div class="flex-child" id="footer_center_child">
                     {{if isset .Site.Params "footer_network"}}
                         {{range .Site.Params.footer_network }}
-                            <li>
-                                <a href="{{.url}}" target="_blank" itemprop="url" rel="noopener">
-                                    <i class="{{.iconpack}} {{.icon}}"></i>
-                                </a>
-                            </li>
+                            <a href="{{.url}}" target="_blank" itemprop="url" rel="noopener">
+                                <i class="{{.iconpack}} {{.icon}}"></i>
+                            </a>
                         {{end}}
                     {{end}}
-                </ul>
             </div>
-            <div class="col-md-4">
-                <ul class="list-inline quicklinks footer_internal_links">
-                    <li><a href="{{ "privacy" | relURL}}">Privacy Policy</a></li>
-                    <li><a href="{{ "termsservice" | relURL}}">Terms of Use</a></li>
-                </ul>
-                {{if isset .Site.Params "show_back_to_top"}}
-                    {{if .Site.Params.show_back_to_top}}
-                        <span class="back_to_top" aria-hidden="true">
-                            <a href="#navigator" id="back_to_top">
-                                <span class="button_icon">
-                                    <i class="fa fa-chevron-up fa-2x"></i>
-                                </span>
-                            </a>
-                        </span>
-                    {{end}}
-                {{end}}
+            <div class="flex-child" id="footer_right_child">
+                <a href="{{ "privacy" | relURL}}">Privacy Policy</a>
+                <a href="{{ "termsservice" | relURL}}">Terms of Use</a>
             </div>
         </div>
+        {{if isset .Site.Params "show_back_to_top"}}
+        {{if .Site.Params.show_back_to_top}}
+        <span class="back_to_top" aria-hidden="true">
+            <a href="#navigator" id="back_to_top">
+                <span class="button_icon">
+                    <i class="fa fa-chevron-up fa-2x"></i>
+                </span>
+            </a>
+        </span>
+        {{end}}
+        {{end}}
     </div>
 </footer>

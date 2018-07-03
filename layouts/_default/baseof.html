@@ -31,6 +31,7 @@
 {{ block "comments" .}}{{ end }}
 
 {{ block "footr" .}}
+    {{ partial "cookie_consent" . }}
     {{ partial "footer_container" . }}
     {{ partial "footer" . }}
 {{ end }}

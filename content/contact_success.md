@@ -4,5 +4,6 @@ message = "You have contacted us successfully. Click [here](/) to return to home
 title_color = "azure"
 message_color = "#aaa"
 draft = false
-layout = "popup_success"
+layout = "contact_success"
+background_color = "#222"
 +++

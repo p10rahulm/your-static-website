@@ -1,7 +1,13 @@
 {{define "main"}}
-<section id="contact">
+<section id="contact_success">
+    <style>
+        {{partial "css_scripts/contact_success.css" . |safeCSS}}
+        section#contact_success .contact_success_content{
+            width: 50%;
+        }
+    </style>
     <div class="container">
-        <div class="row">
+        <div class = "contact_success_content">
             <H1 class = "contact_success_title" style = "color:{{.Params.title_color}}">{{.Params.title}}</H1>
             <p class = "contact_success_message" style = "color:{{.Params.message_color}}">{{.Params.message | markdownify}}</p>
         </div>
