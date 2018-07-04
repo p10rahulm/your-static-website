@@ -92,6 +92,18 @@
             opacity: {{.overlay_opacity}};
         }
     {{ end }}
+    {{if eq .card_layout "cards"}}
+        #{{.name}}_cards {
+            flex-wrap: wrap;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: {{.card_min_width }};
+            justify-content:space-evenly;
+        }
+        #{{.name}}_cards  .details_cards {
+            flex-basis: {{.card_min_width}};
+        }
+    {{end}}
     {{if eq .card_layout "carousel"}}
 
         /* check if any card_layout is carousel*/

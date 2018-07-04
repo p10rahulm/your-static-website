@@ -31,28 +31,15 @@
                 </div>
                 {{ end }}
             </div>
-            <div id="{{.name}}_cards" class="row flexbox {{if (eq .card_layout "carousel")}}carousel_responsive{{end}}">
+            <div id="{{.name}}_cards" class="{{if (eq .card_layout "cards")}}flex{{end}} {{if (eq .card_layout "carousel")}}carousel_responsive{{end}}">
                 {{   $.Scratch.Set "num_featured" .num_featured }}
                 {{   $.Scratch.Set "overlay" .clickable_card_overlay_on_hover }}
                 {{   $.Scratch.Set "box_toggle" .box_toggle}}
                 {{   $.Scratch.Set "show_image" .card_include_image}}
                 {{   $.Scratch.Set "other_fields" .fields}}
 
-
-
-                {{ if (eq .card_layout "cards") }}
-                    {{   $.Scratch.Set "card_layout" "cards" }}
-                    {{   $.Scratch.Set "nrow_large_screen" .number_in_row_large_screen }}
-                    {{   $.Scratch.Set "nrow_medium_screen" .number_in_row_normal_screen }}
-                    {{   $.Scratch.Set "nrow_small_screen" .number_in_row_small_screen }}
-                {{end}}
-
                 {{ range first .num_featured (sort  (where (where $.Data.Pages "Section" .name) "Params.featured" true) .sort_field .sort_order)}}
-                    <div class ="details_cards
-                        {{if (eq ($.Scratch.Get "card_layout") "cards")}}
-                            col-lg-{{div 12 ($.Scratch.Get "nrow_large_screen")}} col-md-{{div 12 ($.Scratch.Get "nrow_medium_screen")}} col-sm-{{div 12 ($.Scratch.Get "nrow_small_screen")}}
-                        {{end}}
-                    ">
+                    <div class ="details_cards">
                     {{if eq ($.Scratch.Get "overlay") true}}
                     <div class="border_box">
                     {{end}}

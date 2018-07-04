@@ -898,45 +898,45 @@ fixed_sharer_active = true
         type = "div"
 
     # ---------------------------------
-    [about_us.left_part]
-        left_logo_image = "portrait.jpg"
-        left_name_title = "Rahul Madhavan"
-        left_name_subtitle = "Founder, CodeFRA"
+    [about_us.descriptor]
+        logo_image = "portrait.jpg"
+        name_title = "Rahul Madhavan"
+        name_subtitle = "Founder, CodeFRA"
 
         # ---------------------------------
-        [[about_us.left_part.affiliations]]
+        [[about_us.descriptor.affiliations]]
             name = "Atidiv, Cuemath"
             url = ""
-        [[about_us.left_part.affiliations]]
+        [[about_us.descriptor.affiliations]]
             name = "Barclays, Nomura, Lehman Brothers"
             url = ""
 
-        [[about_us.left_part.affiliations]]
+        [[about_us.descriptor.affiliations]]
             name = "IIM Ahmedabad, IIT Madras"
             url = ""
         # ---------------------------------
-        [[about_us.left_part.social]]
+        [[about_us.descriptor.social]]
             icon = "fa-envelope"
             icon_pack = "fa"
             link = "mailto:rahul.maddy@gmail"
-        [[about_us.left_part.social]]
+        [[about_us.descriptor.social]]
             icon = "fa-linkedin"
             icon_pack = "fa"
             link = "//linkedin.com/in/rahul-madhavan/"
 
-        [[about_us.left_part.social]]
+        [[about_us.descriptor.social]]
             icon = "fa-facebook"
             icon_pack = "fa"
             link = "//facebook.com/rahul.maddy"
 
-        [[about_us.left_part.social]]
+        [[about_us.descriptor.social]]
             icon = "fa-github"
             icon_pack = "fa"
             link = "//github.com/p10rahulm"
 
 
     # ---------------------------------
-    [about_us.right_part]
+    [about_us.detail]
         title = "Biography"
 
         # ---------------------------------
@@ -955,41 +955,41 @@ fixed_sharer_active = true
                 Prior to that he was a trader on Wall Street trading currency options. During his time at Barclays he helped setup an automated option price trading/monitoring system. On the research side, he worked on single currency fx pricing and eurchf floor failure models. At Nomura he worked on Equity Exotic Options with a specific focus on RFP pricing and generating client ideas. At Lehman Brothers, he risk managed an exotics trading book. He distinctly remembers being non-plussed at the fuss over the Lehman Brothers collapse, having predicted it a year before (Ref: IIT Madras placement talk - 2007). :rocket:'''
 
         # ---------------------------------
-        [about_us.right_part.bottom_left]
+        [about_us.detail.bottom_left]
                 title = "Education"
 
             # Choose fa (font-awesome) icons below
-            [[about_us.right_part.bottom_left.list]]
+            [[about_us.detail.bottom_left.list]]
                 title = "Artificial Intelligence"
                 subtitle = ""
                 icon = "fa-rocket"
-            [[about_us.right_part.bottom_left.list]]
+            [[about_us.detail.bottom_left.list]]
                 title = "Networks"
                 subtitle = ""
                 icon = "fa-rocket"
-            [[about_us.right_part.bottom_left.list]]
+            [[about_us.detail.bottom_left.list]]
                 title = "Topology"
                 subtitle = ""
                 icon = "fa-rocket"
-            [[about_us.right_part.bottom_left.list]]
+            [[about_us.detail.bottom_left.list]]
                 title = "Language"
                 subtitle = ""
                 icon = "fa-rocket"
-            [[about_us.right_part.bottom_left.list]]
+            [[about_us.detail.bottom_left.list]]
                 title = "Modelling"
                 subtitle = ""
                 icon = "fa-rocket"
 
         # ---------------------------------
-        [about_us.right_part.bottom_right]
+        [about_us.detail.bottom_right]
             title = "Education"
         # ---------------------------------
-            [[about_us.right_part.bottom_right.list]]
+            [[about_us.detail.bottom_right.list]]
                 title = "Master of Business Administration, 2012"
                 subtitle = "IIM Ahmedabad"
                 icon = "fa-graduation-cap"
 
-            [[about_us.right_part.bottom_right.list]]
+            [[about_us.detail.bottom_right.list]]
                 title = "Bachelor of Technology, 2007"
                 subtitle = "Indian Institute of Technology, Madras"
                 icon = "fa-graduation-cap"
@@ -1103,9 +1103,7 @@ fixed_sharer_active = true
             overlay_opacity = 0.5  #choose from 0 to 1 (ideally less than 0.8)
         card_layout = "list" # chooose between 1) "cards" 2) "carousel" 3) "list"
         # If layout is cards
-            number_in_row_large_screen = 3
-            number_in_row_normal_screen = 3
-            number_in_row_small_screen = 2
+            card_min_width = "300px"
 
         # if layout is carousel
             left_right_arrow_colors = "#a22"
@@ -1203,9 +1201,7 @@ fixed_sharer_active = true
             overlay_opacity = 0.5  #choose from 0 to 1 (ideally less than 0.8)
         card_layout = "list" # chooose between 1) "cards" 2) "carousel" 3) "list"
         # If layout is cards
-            number_in_row_large_screen = 3
-            number_in_row_normal_screen = 3
-            number_in_row_small_screen = 2
+            card_min_width = "300px"
 
         # if layout is carousel
             left_right_arrow_colors = "#a22"
@@ -1268,9 +1264,7 @@ fixed_sharer_active = true
             overlay_opacity = 0.5  #choose from 0 to 1 (ideally less than 0.8)
         card_layout = "cards" # chooose between 1) "cards" 2) "carousel" 3) "list"
         # If layout is cards
-            number_in_row_large_screen = 3
-            number_in_row_normal_screen = 3
-            number_in_row_small_screen = 2
+            card_min_width = "300px"
 
         # if layout is carousel
             left_right_arrow_colors = "#a22"
@@ -1334,9 +1328,7 @@ fixed_sharer_active = true
             overlay_opacity = 0.5  #choose from 0 to 1 (ideally less than 0.8)
         card_layout = "carousel" # chooose between 1) "cards" 2) "carousel" 3) "list"
         # If layout is cards
-            number_in_row_large_screen = 3
-            number_in_row_normal_screen = 3
-            number_in_row_small_screen = 2
+            card_min_width = "300px"
 
         # if layout is carousel
             left_right_arrow_colors = "#a22"

@@ -10,24 +10,24 @@
 
         <div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
             <div id="profile">
-                {{ if isset $.Params.about_us.left_part "left_logo_image" }}
-                    <div class="portrait" style="background-image: url('{{ ($.Params.about_us.left_part.left_logo_image) | relURL }}');"></div>
-                    <meta itemprop="image" content="{{ ($.Params.about_us.left_part.left_logo_image) | relURL }}">
+                {{ if isset $.Params.about_us.descriptor "logo_image" }}
+                    <div class="portrait" style="background-image: url('{{ ($.Params.about_us.descriptor.logo_image) | relURL }}');"></div>
+                    <meta itemprop="image" content="{{ ($.Params.about_us.descriptor.logo_image) | relURL }}">
                 {{ end }}
 
                 <div class="portrait-title">
-                    {{ if isset $.Params.about_us.left_part "left_name_title" }}
-                        <h2 itemprop="left_name_title">
-                            {{ $.Params.about_us.left_part.left_name_title }}
+                    {{ if isset $.Params.about_us.descriptor "name_title" }}
+                        <h2 itemprop="name_title">
+                            {{ $.Params.about_us.descriptor.name_title }}
                         </h2>
                     {{ end }}
-                    {{ if isset $.Params.about_us.left_part "left_name_subtitle" }}
-                        <h3 itemprop="left_name_subtitle">
-                            {{ $.Params.about_us.left_part.left_name_subtitle }}
+                    {{ if isset $.Params.about_us.descriptor "name_subtitle" }}
+                        <h3 itemprop="name_subtitle">
+                            {{ $.Params.about_us.descriptor.name_subtitle }}
                         </h3>
                     {{ end }}
 
-                    {{ range $.Params.about_us.left_part.affiliations }}
+                    {{ range $.Params.about_us.descriptor.affiliations }}
                         <h3 itemprop="affiliations" itemscope itemtype="http://schema.org/Organization">
                             {{ with .url }}<a href="{{ . }}" target="_blank" itemprop="url" rel="noopener">{{ end }}
                             <span itemprop="name">{{ .name }}</span>
@@ -36,7 +36,7 @@
                     {{ end }}
                 </div>
                 <ul class="network-icon" aria-hidden="true">
-                    {{ range $.Params.about_us.left_part.social }}
+                    {{ range $.Params.about_us.descriptor.social }}
                         <li>
                             <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">
                                 <i class="{{ .icon_pack }} {{ .icon }} big-icon"></i>
@@ -45,25 +45,25 @@
                     {{ end }}
                 </ul>
             </div>
-            {{if isset $.Params.about_us.right_part "title" }}
+            {{if isset $.Params.about_us.detail "title" }}
                 <h1 id="title">
-                    {{ $.Params.about_us.right_part.title }}
+                    {{ $.Params.about_us.detail.title }}
                 </h1>
             {{ end }}
-            {{if isset $.Params.about_us.right_part "content" }}
+            {{if isset $.Params.about_us.detail "content" }}
                 <div class = "content">
-                    {{ replace $.Params.about_us.right_part.content "                " "" | markdownify | emojify }}
+                    {{ replace $.Params.about_us.detail.content "                " "" | markdownify | emojify }}
                 </div>
             {{ end }}
 
         <div class="flex">
             <div id="about_us_left_list">
-                {{if isset $.Params.about_us.right_part.bottom_left "title" }}
-                    <h3>{{ $.Params.about_us.right_part.bottom_left.title }}</h3>
+                {{if isset $.Params.about_us.detail.bottom_left "title" }}
+                    <h3>{{ $.Params.about_us.detail.bottom_left.title }}</h3>
                 {{ end }}
-                {{if isset $.Params.about_us.right_part.bottom_left "list" }}
+                {{if isset $.Params.about_us.detail.bottom_left "list" }}
                     <ul class="ul-about_us_left_list">
-                        {{ range $.Params.about_us.right_part.bottom_left.list }}
+                        {{ range $.Params.about_us.detail.bottom_left.list }}
                             <li>
                                 <i class="fa-li fa {{ .icon }}"></i>
                                 <div class="description">
@@ -77,12 +77,12 @@
             </div>
 
             <div id="about_us_right_list">
-                {{if isset $.Params.about_us.right_part.bottom_right "title" }}
-                    <h3>{{ $.Params.about_us.right_part.bottom_right.title }}</h3>
+                {{if isset $.Params.about_us.detail.bottom_right "title" }}
+                    <h3>{{ $.Params.about_us.detail.bottom_right.title }}</h3>
                 {{ end }}
-                {{if isset $.Params.about_us.right_part.bottom_right "list" }}
+                {{if isset $.Params.about_us.detail.bottom_right "list" }}
                     <ul class="ul-about_us_right_list">
-                        {{ range $.Params.about_us.right_part.bottom_right.list }}
+                        {{ range $.Params.about_us.detail.bottom_right.list }}
                             <li>
                                 <i class="fa-li fa {{ .icon }}"></i>
                                 <div class="description">
