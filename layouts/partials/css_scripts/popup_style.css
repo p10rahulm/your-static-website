@@ -31,10 +31,12 @@
     background-color: white;
     min-width: 280px;
     max-width: 1080px;
-    margin-top: 91px;
+    margin-top: 20vh;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: 1px solid rgba(0, 0, 0, 0.3);
 }
 #subscription_popup .popup_header{
     display: flex;
@@ -57,6 +59,7 @@
     flex-grow: 1;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 15px;
 }
 #subscription_popup .popup_body #popup_content{
     padding: 10px 10px 10px 10px;
@@ -66,8 +69,9 @@
     flex-grow: 1;
 }
 #subscription_popup .popup_image {
+    width: 360px;
+    max-width: 90%;
     max-height: 50vh;
-    max-width: 100%;
     margin: auto;
 }
 #subscription_popup input {
@@ -107,24 +111,18 @@
 
 #popup_submit_btn {
     margin: 0 auto;
-    border-radius: 4px;
-    box-shadow:
-            0px 3px rgba(128,128,128,1), /* gradient effects */
-            0px 4px rgba(118,118,118,1),
-            0px 5px rgba(108,108,108,1),
-            0px 6px rgba(98,98,98,1),
-            0px 7px rgba(88,88,88,1),
-            0px 8px rgba(78,78,78,1),
-            0px 14px 6px -1px rgba(128,128,128,1); /* shadow */
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: none;
+    padding: 5px;
 }
-
+#popup_submit_btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
 #popup_submit_btn span {
     padding: 10px 40px 10px 40px;
-    color: #3A474D;
+    color: #444;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 20px;
-}
-#popup_submit_btn:hover {
-    background-color: #fafafa;
 }
