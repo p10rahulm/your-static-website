@@ -1,0 +1,74 @@
+{{range $index, $element := $.Params.featured_pages.sections}}
+    <style>
+        {{partial "css_scripts/list_layouts/carousel_4card.css" . | safeCSS}}
+    </style>
+
+
+    {{partial "functions/load_external_js.html" (dict "external_url" "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" "scratch" .Scratch "async" false "defer" false)}}
+    {{partial "functions/load_external_css.html" (dict "external_url" "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" "scratch" .Scratch)}}
+    {{partial "functions/load_external_css.html" (dict "external_url" "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css" "scratch" .Scratch)}}
+    <script type="text/javascript">
+        {{partial "js_scripts/list_layouts/carousel_4card.js" . | safeJS}}
+    </script>
+
+
+<section id="featured_{{.name}}" class="home-section">
+    <div class="container">
+        <!-- Contact widget -->
+        <div class="section-heading">
+            {{.title | humanize}}
+        </div>
+        <div class="section-subheading">
+            {{.subtitle}}
+        </div>
+        <div id="{{.name}}_cards" class="carousel_responsive">
+        {{   $.Scratch.Set "overlay" .clickable_card_overlay_on_hover }}
+        {{   $.Scratch.Set "box_toggle" .box_toggle}}
+        {{   $.Scratch.Set "show_image" .card_include_image}}
+        {{   $.Scratch.Set "other_fields" .fields}}
+
+        {{ range first .num_featured (sort  (where (where $.Data.Pages "Section" .name) "Params.featured" true) .sort_field .sort_order)}}
+        <div class ="details_cards">
+            {{if eq ($.Scratch.Get "overlay") true}}
+            <div class="border_box">
+            {{end}}
+                {{if eq ($.Scratch.Get "overlay") true}}
+                <a href="{{.Permalink}}">
+                    <div class="overlay">
+                    </div>
+                </a>
+                {{ end }}
+                {{if $.Scratch.Get "show_image" |default true}}
+                <a href="{{.Permalink}}">
+                    <img src="/img/{{.Params.caption_image}}" class="img-responsive img-centered" alt="{{.Title}}">
+                </a>
+                {{end}}
+                {{if eq ($.Scratch.Get "overlay") false}}
+                <a href="{{.Permalink}}">
+                    {{end}}
+                    <h4 class="card_title">{{.Params.title}}</h4>
+                    <!--<p class="card_summary">{{ (.Params.summary_content | default .Summary) | markdownify}}</p>-->
+                    {{$.Scratch.Set "page_params" .Params}}
+                    {{$.Scratch.Set "page_summary" .Summary}}
+                    {{range $.Scratch.Get "other_fields"  }}
+                    <p class="card_{{.field_name}}" style="{{ .additional_css_styles | safeCSS }}">
+                        {{if eq .field_name "summary"}}
+                        {{.prefix | markdownify }}{{($.Scratch.Get "page_summary") | markdownify}}
+                        {{else}}
+                        {{.prefix | markdownify }}{{(index ($.Scratch.Get "page_params") .field_name) | markdownify}}
+                        {{end}}
+                    </p>
+                    {{ end }}
+                    {{if eq ($.Scratch.Get "overlay") false}}
+                </a>
+                {{end}}
+                {{if eq ($.Scratch.Get "overlay") true}}
+            </div>
+            {{end}}
+        </div>
+        {{end}}
+    </div>
+
+    </div>
+</section>
+{{end}}

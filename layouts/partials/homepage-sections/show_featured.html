@@ -1,8 +1,7 @@
-    <header>
+<header>
     <style>
         {{partial "css_scripts/home-section_show_featured.css" . | safeCSS}}
     </style>
-
 
     {{if (eq ($.Scratch.Get "any_carousel_card_layout") "true")}}
 
@@ -16,6 +15,9 @@
 
 </header>
 {{range $index, $element := $.Params.featured_pages.sections}}
+    {{if eq .layout "carousel_4_card"}}
+        {{partial "list_layouts/carousel_4card.html" . | safeHTML}}
+    {{end}}
     <section id="featured_{{.name}}" class="home-section">
         <div class="container">
             <!-- Contact widget -->
