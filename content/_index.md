@@ -793,37 +793,7 @@ fixed_sharer_active = true
         has_parent = true
             parent = "showcase-title-row"
         type = "div"
-        [[showcase.headline_elements.styles]]
-            container = ""
-            target = ".section-heading"
-            media_type = ""
-            [[showcase.headline_elements.styles.style_value]]
-                field = "text-align"
-                value = "center"
-            [[showcase.headline_elements.styles.style_value]]
-                field = "font-weight"
-                value = "700"
-            [[showcase.headline_elements.styles.style_value]]
-                field = "font-size"
-                value = "2.25rem"
-            [[showcase.headline_elements.styles.style_value]]
-                field = "margin-top"
-                value = "0px"
-            [[showcase.headline_elements.styles.style_value]]
-                field = "margin-bottom"
-                value = "0.5rem"
-            [[showcase.headline_elements.styles.style_value]]
-                field = "text-transform"
-                value = "uppercase"
-            [[showcase.headline_elements.styles.style_value]]
-                field = "line-height"
-                value = "1.25"
-            [[showcase.headline_elements.styles.style_value]]
-                field = "letter-spacing"
-                value = "5px"
-            [[showcase.headline_elements.styles.style_value]]
-                field = "color"
-                value = "#333"
+
 
     [[showcase.headline_elements]]
         name = "showcase-subheading"
@@ -833,35 +803,7 @@ fixed_sharer_active = true
         has_parent = true
             parent = "showcase-title-row"
         type = "div"
-        [[showcase.headline_elements.styles]]
-            container = ""
-            target = ".section-subheading"
-            media_type = ""
-            [[showcase.headline_elements.styles.style_value]]
-                field = "text-align"
-                value = "center"
-            [[showcase.headline_elements.styles.style_value]]
-                field = "font-weight"
-                value = "200"
-            [[showcase.headline_elements.styles.style_value]]
-                field = "font-size"
-                value = "1.25rem"
-            [[showcase.headline_elements.styles.style_value]]
-                field = "margin-top"
-                value = "1.5rem"
-            [[showcase.headline_elements.styles.style_value]]
-                field = "margin-bottom"
-                value = "2.5rem"
 
-            [[showcase.headline_elements.styles.style_value]]
-                field = "line-height"
-                value = "1.25"
-            [[showcase.headline_elements.styles.style_value]]
-                field = "letter-spacing"
-                value = "1px"
-            [[showcase.headline_elements.styles.style_value]]
-                field = "color"
-                value = "#aaa"
 
 
 # ----------------------------------
@@ -1121,47 +1063,88 @@ fixed_sharer_active = true
         [[featured_pages.sections.fields]]
             field_name = "authors" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             prefix = "Authors: "
-            font_weight = "900"
-            field_font_color = "#a00"
-            text_align = "left"
-            margin_bottom = "0px"
-            margin_top = "3px"
-            font_style = "italic"
-            font_size = "0.6rem"
-            additional_css_styles = "color:#a00;text-align:left"
+            [[featured_pages.sections.fields.styles]]
+                style = "font-weight"
+                value = 900
+            [[featured_pages.sections.fields.styles]]
+                style = "margin"
+                value = "3px 0 0 0"
+            [[featured_pages.sections.fields.styles]]
+                style = "color"
+                value = "#a22"
+            [[featured_pages.sections.fields.styles]]
+                style = "text-align"
+                value = "left"
+            [[featured_pages.sections.fields.styles]]
+                style = "font-style"
+                value = "italic"
+            [[featured_pages.sections.fields.styles]]
+                style = "font-size"
+                value = "0.9rem"
+
         [[featured_pages.sections.fields]]
             field_name = "tagline" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             prefix = ""
-            font_weight = "900"
-            field_font_color = "#aaa"
-            text_align = "left"
-            margin_bottom = "0px"
-            margin_top = "3px"
-            font_style = "italic"
-            font_size = "0.6rem"
-            additional_css_styles = ""
+            [[featured_pages.sections.fields.styles]]
+                style = "font-weight"
+                value = 900
+            [[featured_pages.sections.fields.styles]]
+                style = "margin"
+                value = "3px 0 0 0"
+            [[featured_pages.sections.fields.styles]]
+                style = "color"
+                value = "#aaa"
+            [[featured_pages.sections.fields.styles]]
+                style = "text-align"
+                value = "left"
+            [[featured_pages.sections.fields.styles]]
+                style = "font-style"
+                value = "italic"
+            [[featured_pages.sections.fields.styles]]
+                style = "font-size"
+                value = "0.75rem"
         [[featured_pages.sections.fields]]
             field_name = "abstract" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             prefix = "Abstract: "
-            font_weight = "900"
-            field_font_color = "#333"
-            text_align = "left"
-            margin_bottom = "0px"
-            margin_top = "3px"
-            font_style = "normal"
-            font_size = "0.6rem"
-            additional_css_styles = ""
+            [[featured_pages.sections.fields.styles]]
+                style = "font-weight"
+                value = 900
+            [[featured_pages.sections.fields.styles]]
+                style = "margin"
+                value = "3px 0 0 0"
+            [[featured_pages.sections.fields.styles]]
+                style = "color"
+                value = "#333"
+            [[featured_pages.sections.fields.styles]]
+                style = "text-align"
+                value = "left"
+            [[featured_pages.sections.fields.styles]]
+                style = "font-style"
+                value = "italic"
+            [[featured_pages.sections.fields.styles]]
+                style = "font-size"
+                value = "0.75rem"
         [[featured_pages.sections.fields]]
             field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             prefix = ""
-            font_weight = "200"
-            field_font_color = "#468"
-            text_align = "left"
-            margin_bottom = "3px"
-            margin_top = "3px"
-            font_style = "normal"
-            font_size = "0.75rem"
-            additional_css_styles = ""
+            [[featured_pages.sections.fields.styles]]
+                style = "font-weight"
+                value = 200
+            [[featured_pages.sections.fields.styles]]
+                style = "margin"
+                value = "3px 0 3px 0"
+            [[featured_pages.sections.fields.styles]]
+                style = "color"
+                value = "#456"
+            [[featured_pages.sections.fields.styles]]
+                style = "text-align"
+                value = "left"
+            [[featured_pages.sections.fields.styles]]
+                style = "font-style"
+                value = "italic"
+            [[featured_pages.sections.fields.styles]]
+                style = "font-size"
+                value = "0.75rem"
 
 
     [[featured_pages.sections]]
@@ -1294,65 +1277,34 @@ fixed_sharer_active = true
     [[featured_pages.sections]]
         name = "thoughts"
         title = "Thoughts"
-        title_color = "#333"
-        title_alignment = "center" #use "center", "left" or "right"
         subtitle = "The thoughts are precious. Handle with care!"
-        subtitle_color = "#999"
-        subtitle_alignment = "center" #use "center", "left" or "right"
-        num_featured = 6
+        num_featured = 8
         sort_field = ".Params.title"
         sort_order = "asc"
-        card_alignment = "center"
-        card_padding = "1rem" # use this to set the padding between cards
-        card_include_image = false #should image be shown or not?
-        card_image_height = "200px" # this will be used to set height of all the cards
-        card_image_width = "200px"  # this will be used only in case of card_layout ="list" else it will be 100% of container
-        card_title_font_color = "#a22"
-        card_title_font_size = "1rem"
-        card_title_font_weight = "700" #choose whole numbers between 100 and 900
-        card_title_padding = "3px"
-        card_title_text_alignment = "left" # choose between left, center or right
-        card_title_top_margin = "1rem"
-        card_title_bottom_margin = "0.5rem"
-
-        box_toggle = false #should the boxes have shadows?
-            box_padding = "0px"
-            box_border_size = "1px"
-            box_border_color = "#333"
-            box_shadow_color = "#aaa" # if so what color
-            box_shadow_horizontal_offset = "10px" # if so what color
-            box_shadow_vertical_offset = "10px" # if so what color
-            box_shadow_blur = "2px" # if so what color
-        clickable_card_overlay_on_hover = false
-            overlay_color = "#246"
-            overlay_opacity = 0.5  #choose from 0 to 1 (ideally less than 0.8)
-        card_layout = "carousel" # chooose between 1) "cards" 2) "carousel" 3) "list"
-        # If layout is cards
-            card_min_width = "300px"
-
-        # if layout is carousel
-            left_right_arrow_colors = "#a22"
-            arrow_size = "20px"
-            # You may use any left and right arrows: These should help: http://xahlee.info/comp/unicode_arrows.html
-            left_right_arrow_font_family = "Helvetica"
-            left_arrow_content = "⟵"
-            right_arrow_content = "⟶"
-        # if layout is list
-            show_image_on_left = true
-            padding_image_right = "1rem"
+        card_layout = "carousel_4card" # chooose between 1) "cards" 2) "carousel" 3) "list"
 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
             field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             prefix = ""
-            font_weight = "200"
-            field_font_color = "#468"
-            text_align = "left"
-            margin_bottom = "3px"
-            margin_top = "3px"
-            font_style = "normal"
-            font_size = "0.75rem"
-            additional_css_styles = ""
+            [[featured_pages.sections.fields.styles]]
+                style = "font-weight"
+                value = "200"
+            [[featured_pages.sections.fields.styles]]
+                style = "color"
+                value = "#468"
+            [[featured_pages.sections.fields.styles]]
+                style = "text-align"
+                value = "left"
+            [[featured_pages.sections.fields.styles]]
+                style = "margin"
+                value = "3px 0 3px 0"
+            [[featured_pages.sections.fields.styles]]
+                style = "font-style"
+                value = "normal"
+            [[featured_pages.sections.fields.styles]]
+                style = "font-size"
+                value = "0.75rem"
 
 # ----------------------------------
 # Call to Action section

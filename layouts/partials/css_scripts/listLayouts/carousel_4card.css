@@ -1,0 +1,52 @@
+/* initialize variable check on any card_layout being carousel. Using string boolean as that gives more stable behaviour*/
+
+
+
+#{{.name}}_cards .details_cards {
+    text-align: center;
+    padding: 1rem 0 1rem 0;
+    overflow:auto;
+}
+
+#{{.name}}_cards .details_cards .card_title{
+    margin-top:1rem;
+    margin-bottom:0.5rem;
+    color: #a22;
+    font-size:1rem;
+    font-weight:700;
+    padding:3px;
+    text-align:left;
+}
+
+#{{.name}}_cards .details_cards a:hover{
+    text-decoration: none;
+}
+
+#{{.name}}_cards .details_cards a .card_title:hover{
+    text-decoration: underline;
+}
+
+{{$section_name := .name}}
+{{range .fields}}
+#{{$section_name}}_cards .details_cards .card_{{.field_name}} {
+    {{range .styles}}
+    {{.style}}: {{.value | safeCSS}};
+    {{end}}
+}
+{{end}}
+
+
+
+#{{.name}}_cards .slick-prev:before {
+    content: "⟵";
+    color: #a22;
+    font-size: 20px;
+    margin-left: -20px;
+}
+
+#{{.name}}_cards .slick-next:before {
+    content: "⟶";
+    color: #a22;
+    font-size: 20px;
+    margin-right: -20px;
+}

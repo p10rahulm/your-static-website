@@ -1,0 +1,51 @@
+{{$pages := $.pages}}
+{{$context := $.context}}
+{{$scratch := $.scratch}}
+{{$fields := $.context.fields}}
+<p>{{$fields}}</p>
+<header>
+    <style>
+        {{partial "css_scripts/listLayouts/carousel_4card.css" $.context | safeCSS}}
+    </style>
+    {{partial "functions/load_external_js.html" (dict "external_url" "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" "scratch" .Scratch "async" false "defer" false)}}
+    {{partial "functions/load_external_css.html" (dict "external_url" "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" "scratch" .Scratch)}}
+    {{partial "functions/load_external_css.html" (dict "external_url" "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css" "scratch" .Scratch)}}
+    <script type="text/javascript">
+        {{partial "js_scripts/listLayouts/carousel_4card.js" $.context | safeJS}}
+    </script>
+</header>
+
+<section id="featured_{{$.context.name}}" class="home-section">
+    <div class="container">
+        <div class="section-heading">
+            {{$.context.title | humanize}}
+        </div>
+        <div class="section-subheading">
+            {{$.context.subtitle | humanize}}
+        </div>
+        <div id="{{$.context.name}}_cards" class="carousel_responsive">
+            {{ range first $.context.num_featured (sort  (where ($pages) "Params.featured" true) $.context.sort_field $.context.sort_order)}}
+            <div class ="details_cards">
+                <a href="{{.Permalink}}">
+                    <h4 class="card_title">{{.Params.title}}</h4>
+                    {{$page_summary := .Summary}}
+                    {{$page_params := .Params}}
+                    {{range $fields }}
+                    <p class="card_{{.field_name}}">
+                        {{if eq .field_name "summary"}}
+                        {{.prefix | markdownify }}{{$page_summary | markdownify}}
+                        {{else}}
+                        {{.prefix | markdownify }}{{(index $page_params .field_name) | markdownify}}
+                        {{end}}
+                    </p>
+
+                    {{ end }}
+                </a>
+            </div>
+            {{end}}
+
+
+        </div>
+
+    </div>
+</section>

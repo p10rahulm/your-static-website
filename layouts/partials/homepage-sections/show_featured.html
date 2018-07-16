@@ -15,73 +15,75 @@
 
 </header>
 {{range $index, $element := $.Params.featured_pages.sections}}
-    {{if eq .layout "carousel_4_card"}}
-        {{partial "list_layouts/carousel_4card.html" . | safeHTML}}
-    {{end}}
-    <section id="featured_{{.name}}" class="home-section">
-        <div class="container">
-            <!-- Contact widget -->
-            <div class="row">
-                {{if isset (index $.Params.featured_pages.sections $index) "title"}}
-                <div class="section-heading">
-                    {{.title | humanize}}
-                </div>
-                {{ end }}
-                {{if isset (index $.Params.featured_pages.sections $index) "subtitle"}}
-                <div class="section-subheading">
-                    {{.subtitle}}
-                </div>
-                {{ end }}
-            </div>
-            <div id="{{.name}}_cards" class="{{if (eq .card_layout "cards")}}flex{{end}} {{if (eq .card_layout "carousel")}}carousel_responsive{{end}}">
-                {{   $.Scratch.Set "num_featured" .num_featured }}
-                {{   $.Scratch.Set "overlay" .clickable_card_overlay_on_hover }}
-                {{   $.Scratch.Set "box_toggle" .box_toggle}}
-                {{   $.Scratch.Set "show_image" .card_include_image}}
-                {{   $.Scratch.Set "other_fields" .fields}}
-
-                {{ range first .num_featured (sort  (where (where $.Data.Pages "Section" .name) "Params.featured" true) .sort_field .sort_order)}}
-                    <div class ="details_cards">
-                    {{if eq ($.Scratch.Get "overlay") true}}
-                    <div class="border_box">
-                    {{end}}
-                    {{if eq ($.Scratch.Get "overlay") true}}
-                        <a href="{{.Permalink}}">
-                            <div class="overlay">
-                            </div>
-                        </a>
+    {{if eq .card_layout "carousel_4card"}}
+        {{$pages := (where $.Data.Pages "Section" .name)}}
+        {{partial "listLayouts/carousel_4card.html" (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
+    {{else}}
+        <section id="featured_{{.name}}" class="home-section">
+            <div class="container">
+                <!-- Contact widget -->
+                <div class="row">
+                    {{if isset (index $.Params.featured_pages.sections $index) "title"}}
+                    <div class="section-heading">
+                        {{.title | humanize}}
+                    </div>
                     {{ end }}
-                        {{if $.Scratch.Get "show_image" |default true}}
-                        <a href="{{.Permalink}}">
-                            <img src="/img/{{.Params.caption_image}}" class="img-responsive img-centered" alt="{{.Title}}">
-                        </a>
-                        {{end}}
-                        {{if eq ($.Scratch.Get "overlay") false}}
-                        <a href="{{.Permalink}}">
-                        {{end}}
-                            <h4 class="card_title">{{.Params.title}}</h4>
-                            <!--<p class="card_summary">{{ (.Params.summary_content | default .Summary) | markdownify}}</p>-->
-                            {{$.Scratch.Set "page_params" .Params}}
-                            {{$.Scratch.Set "page_summary" .Summary}}
-                            {{range $.Scratch.Get "other_fields"  }}
-                                <p class="card_{{.field_name}}" style="{{ .additional_css_styles | safeCSS }}">
-                                    {{if eq .field_name "summary"}}
-                                        {{.prefix | markdownify }}{{($.Scratch.Get "page_summary") | markdownify}}
-                                    {{else}}
-                                        {{.prefix | markdownify }}{{(index ($.Scratch.Get "page_params") .field_name) | markdownify}}
-                                    {{end}}
-                                </p>
-                            {{ end }}
-                        {{if eq ($.Scratch.Get "overlay") false}}
-                        </a>
-                        {{end}}
-                    {{if eq ($.Scratch.Get "overlay") true}}
+                    {{if isset (index $.Params.featured_pages.sections $index) "subtitle"}}
+                    <div class="section-subheading">
+                        {{.subtitle}}
                     </div>
-                    {{end}}
-                    </div>
-                {{end}}
-            </div>
+                    {{ end }}
+                </div>
+                <div id="{{.name}}_cards" class="{{if (eq .card_layout "cards")}}flex{{end}} {{if (eq .card_layout "carousel")}}carousel_responsive{{end}}">
+                    {{   $.Scratch.Set "num_featured" .num_featured }}
+                    {{   $.Scratch.Set "overlay" .clickable_card_overlay_on_hover }}
+                    {{   $.Scratch.Set "box_toggle" .box_toggle}}
+                    {{   $.Scratch.Set "show_image" .card_include_image}}
+                    {{   $.Scratch.Set "other_fields" .fields}}
 
-        </div>
-    </section>
+                    {{ range first .num_featured (sort  (where (where $.Data.Pages "Section" .name) "Params.featured" true) .sort_field .sort_order)}}
+                        <div class ="details_cards">
+                        {{if eq ($.Scratch.Get "overlay") true}}
+                        <div class="border_box">
+                        {{end}}
+                        {{if eq ($.Scratch.Get "overlay") true}}
+                            <a href="{{.Permalink}}">
+                                <div class="overlay">
+                                </div>
+                            </a>
+                        {{ end }}
+                            {{if $.Scratch.Get "show_image" |default true}}
+                            <a href="{{.Permalink}}">
+                                <img src="/img/{{.Params.caption_image}}" class="img-responsive img-centered" alt="{{.Title}}">
+                            </a>
+                            {{end}}
+                            {{if eq ($.Scratch.Get "overlay") false}}
+                            <a href="{{.Permalink}}">
+                            {{end}}
+                                <h4 class="card_title">{{.Params.title}}</h4>
+                                <!--<p class="card_summary">{{ (.Params.summary_content | default .Summary) | markdownify}}</p>-->
+                                {{$.Scratch.Set "page_params" .Params}}
+                                {{$.Scratch.Set "page_summary" .Summary}}
+                                {{range $.Scratch.Get "other_fields"  }}
+                                    <p class="card_{{.field_name}}" >
+                                        {{if eq .field_name "summary"}}
+                                            {{.prefix | markdownify }}{{($.Scratch.Get "page_summary") | markdownify}}
+                                        {{else}}
+                                            {{.prefix | markdownify }}{{(index ($.Scratch.Get "page_params") .field_name) | markdownify}}
+                                        {{end}}
+                                    </p>
+                                {{ end }}
+                            {{if eq ($.Scratch.Get "overlay") false}}
+                            </a>
+                            {{end}}
+                        {{if eq ($.Scratch.Get "overlay") true}}
+                        </div>
+                        {{end}}
+                        </div>
+                    {{end}}
+                </div>
+
+            </div>
+        </section>
+    {{end}}
 {{end}}
