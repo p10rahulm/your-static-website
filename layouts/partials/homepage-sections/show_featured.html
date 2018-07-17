@@ -33,6 +33,9 @@
     {{else if eq .card_layout "list_of_large_cards_no_overlay"}}
         {{$pages := (where $.Data.Pages "Section" .name)}}
         {{partial "listLayouts/list_of_large_cards_no_overlay.html" (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
+    {{else if eq .card_layout "large_cards_leftimage_centertext_box_nooverlay"}}
+        {{$pages := (where $.Data.Pages "Section" .name)}}
+        {{partial "listLayouts/large_cards_leftimage_centertext_box_nooverlay.html" (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
     {{else}}
         <section id="featured_{{.name}}" class="home-section">
             <div class="container">

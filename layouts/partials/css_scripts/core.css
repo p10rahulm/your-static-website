@@ -327,7 +327,7 @@ small,
     font-family: 'EB Garamond', serif;
 }
 .card_details {
-    color: #0095eb;
+    color: #0079bf;
     font-size: 0.8rem;
     font-weight: 600;
     padding-left: 3px;
@@ -337,6 +337,16 @@ small,
 .details_cards a {
     color: inherit;
 }
+.card_icon_links {
+    font-size: 1rem;
+    padding: 10px 0 10px 0;
+    color: #0079bf;
+    letter-spacing: 4px;
+    line-height: 1.25;
+}
 .left_align {
     text-align: left;
+}
+.center_align {
+    text-align: center;
 }

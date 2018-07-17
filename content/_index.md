@@ -1108,65 +1108,38 @@ fixed_sharer_active = true
     [[featured_pages.sections]]
         name = "publications"
         title = "Publications"
-        title_color = "#333"
-        title_alignment = "center" #use "center", "left" or "right"
         subtitle = "Who has published me, why don't you see?"
-        subtitle_color = "#999"
-        subtitle_alignment = "center" #use "center", "left" or "right"
         num_featured = 1
         sort_field = ".Params.title"
         sort_order = "desc"
         card_alignment = "center"
-        card_padding = "1rem" # use this to set the padding between cards
-        card_include_image = true #should image be shown or not?
-        card_image_height = "400px" # this will be used to set height of all the cards
-        card_image_width = "auto"  # this will be used only in case of card_layout ="list" else it will be 100% of container
-        card_title_font_color = "#a22"
-        card_title_font_size = "1rem"
-        card_title_font_weight = "700" #choose whole numbers between 100 and 900
-        card_title_padding = "3px"
-        card_title_text_alignment = "center" # choose between left, center or right
-        card_title_top_margin = "1rem"
-        card_title_bottom_margin = "0.5rem"
+        card_layout = "large_cards_leftimage_centertext_box_nooverlay" # chooose between 1) "cards" 2) "carousel" 3) "list"
 
-        box_toggle = true #should the boxes have shadows?
-            box_padding = "0px"
-            box_border_size = "1px"
-            box_border_color = "#333"
-            box_shadow_color = "#aaa" # if so what color
-            box_shadow_horizontal_offset = "10px" # if so what color
-            box_shadow_vertical_offset = "10px" # if so what color
-            box_shadow_blur = "2px" # if so what color
-        clickable_card_overlay_on_hover = true
-            overlay_color = "#246"
-            overlay_opacity = 0.5  #choose from 0 to 1 (ideally less than 0.8)
-        card_layout = "list" # chooose between 1) "cards" 2) "carousel" 3) "list"
-        # If layout is cards
-            card_min_width = "300px"
-
-        # if layout is carousel
-            left_right_arrow_colors = "#a22"
-            arrow_size = "20px"
-            # You may use any left and right arrows: These should help: http://xahlee.info/comp/unicode_arrows.html
-            left_right_arrow_font_family = "Helvetica"
-            left_arrow_content = "⟵"
-            right_arrow_content = "⟶"
-        # if layout is list
-            show_image_on_left = true
-            padding_image_right = "1rem"
 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
-            field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            css_class = "card_title center_align"
             prefix = ""
-            font_weight = "200"
-            field_font_color = "#468"
-            text_align = "center"
-            margin_bottom = "3px"
-            margin_top = "3px"
-            font_style = "normal"
-            font_size = "0.75rem"
-            additional_css_styles = ""
+            postfix = ""
+        [[featured_pages.sections.fields]]
+            field_name = "authors" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            css_class = "card_authors center_align"
+            prefix = ""
+            type = "list_of_links"
+            postfix = "<hr>"
+        [[featured_pages.sections.fields]]
+            field_name = "abstract" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = ""
+            css_class = "card_summary"
+            postfix = ""
+
+        [[featured_pages.sections.fields]]
+            field_name = "links" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            css_class = "card_icon_links"
+            prefix = ""
+            type = "icon_links"
+            postfix = ""
 
     [[featured_pages.sections]]
         name = "courses"

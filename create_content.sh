@@ -1,6 +1,6 @@
 #!/bin/bash
 
-find content/workshops/ -type f -regextype sed ! -regex '.*/_.*.md' | xargs rm
+find content/publications/ -type f -regextype sed ! -regex '.*/_.*.md' | xargs rm
 
 if [ $# -eq 0 ]
     then
