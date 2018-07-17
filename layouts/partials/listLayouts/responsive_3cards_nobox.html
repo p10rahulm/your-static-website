@@ -26,7 +26,7 @@
                     {{$page_summary := .Summary}}
                     {{$page_params := .Params}}
                     {{range $fields }}
-                    <p class="card_{{.field_name}}">
+                    <p class="card_{{.field_name}} {{.class}}">
                         {{if eq .field_name "summary"}}
                         {{.prefix | markdownify }}{{$page_summary | markdownify}}
                         {{else}}

@@ -1273,27 +1273,23 @@ fixed_sharer_active = true
         [[featured_pages.sections.fields]]
             field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             prefix = ""
-            [[featured_pages.sections.fields.styles]]
-                style = "font-weight"
-                value = "200"
-            [[featured_pages.sections.fields.styles]]
-                style = "color"
-                value = "#468"
-            [[featured_pages.sections.fields.styles]]
-                style = "text-align"
-                value = "left"
-            [[featured_pages.sections.fields.styles]]
-                style = "margin"
-                value = "3px 0 3px 0"
-            [[featured_pages.sections.fields.styles]]
-                style = "font-style"
-                value = "normal"
-            [[featured_pages.sections.fields.styles]]
-                style = "font-size"
-                value = "0.9rem"
-            [[featured_pages.sections.fields.styles]]
-                style = "padding"
-                value = "0 10px 10px 10px"
+            class = "card_summary left_align"
+
+    [[featured_pages.sections]]
+        name = "notes"
+        title = "Short Notes"
+        subtitle = "Thoughts I plant as seeds so they may flower someday"
+        num_featured = 6
+        sort_field = ".Params.title"
+        sort_order = "asc"
+        card_layout = "responsive_3cards_nobox"
+        card_min_width = "300px"
+
+        [[featured_pages.sections.fields]]
+            field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = ""
+            class = "left_align"
+
 
 
     [[featured_pages.sections]]

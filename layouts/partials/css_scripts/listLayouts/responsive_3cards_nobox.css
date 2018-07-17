@@ -3,6 +3,7 @@
     flex-grow: 1;
     flex-shrink: 1;
     justify-content:space-evenly;
+
 }
 
 #{{.name}}_cards img {
@@ -15,6 +16,7 @@
     padding: 1rem;
     overflow:auto;
     flex-basis: {{.card_min_width}};
+    margin: 10px auto;
 }
 
 #{{.name}}_cards .details_cards .card_title{

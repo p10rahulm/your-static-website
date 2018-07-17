@@ -1,6 +1,6 @@
 +++
 title = "Note4"
-date = 2018-06-08T19:44:39+05:30
+date = 2018-07-18T00:59:08+05:30
 draft = false
 author = "Rahul Madhavan"
 
@@ -14,7 +14,8 @@ fixed_sharer_active = true
 content_sharer_active= true
 
 # Should this be listed in front page
-featured = false
+featured = true
+
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
@@ -30,5 +31,4 @@ categories = []
 # The note goes below.
 +++
 
-# Random and quick notes here. Expected length 140 characters - 300 words
-Hi how are you?
+The minds mission is to organize oneself and to improve continually.
