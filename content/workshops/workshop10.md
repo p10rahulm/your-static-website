@@ -1,6 +1,6 @@
 +++
 title = "Workshop10"
-date = 2018-06-08T19:44:46+05:30
+date = 2018-07-17T20:40:55+05:30
 draft = false
 author = "Rahul Madhavan"
 
@@ -25,25 +25,25 @@ categories = []
 subject = []
 
 # Specific Template Meta
-[workshop]
-        title= ""
-        topic= ""
-        client= ""
-        location = "Bangalore Gymkhana"
-        date = "17th Dec 2018"
-        duration = "17th Dec 2018"
+workshop_title= "A comprehensive workshop on 5S Management"
+topic= "Japanese Management"
+client = "Bharat Heavy Electricals Ltd"
+location = "Bangalore Gymkhana"
+workshop_date = "17th Dec 2018"
+duration = "3 days"
 
-        # Optional workshop URL.
-        event_url = ""
+# Optional workshop URL.
+event_url = ""
 
-        # Short version
-        abstract = ""
+# Short version
+tagline = "Coverage for senior management on 5S principles"
 
-        speakers =      [
-                                { name = "K S Madhavan", url = "" },
-                                { name = "ABC", url = "" },
-                                { name = "XYZ", url = "" }
-                        ]
+presenters =  [
+                { name = "K S Madhavan", url = "/persons/ksmadhavan" },
+                { name = "Kesavan", url = "/persons/kesavan" },
+                { name = "Prabhakaran", url = "/persons/prabhakaran" },
+                { name = "Muthukumaran", url = "/persons/muthukumaran" }
+            ]
 
 # Place your files in the `static/files/` folder and reference its filename below, e.g. `image = "filename.pdf"`. Leave below empty if no files requried
         file_locations =[
@@ -61,5 +61,5 @@ subject = []
 # full description of event below
 +++
 
-# Hi welcome to our events
-The workshop on TPM was conducted by Shingo institute at xyz
+# The comprehensive 5S workshop
+The workshop on 5S was conducted by Shingo institute.

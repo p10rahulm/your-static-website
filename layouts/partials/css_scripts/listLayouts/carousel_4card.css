@@ -4,7 +4,7 @@
 
 #{{.name}}_cards .details_cards {
     text-align: center;
-    padding: 1rem 0 1rem 0;
+    padding: 1rem 1rem 1rem 0;
     overflow:auto;
 }
 

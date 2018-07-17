@@ -1011,53 +1011,11 @@ fixed_sharer_active = true
     [[featured_pages.sections]]
         name = "books"
         title = "Books"
-        title_color = "#333"
-        title_alignment = "center" #use "center", "left" or "right"
         subtitle = "The latest and greatest books"
-        subtitle_color = "#999"
-        subtitle_alignment = "center" #use "center", "left" or "right"
         num_featured = 6
         sort_field = ".Params.title" #add the .Params at the start before sort field
         sort_order = "asc"
-        card_alignment = "center"
-        card_padding = "1rem" # use this to set the padding between cards
-        card_include_image = true #should image be shown or not?
-        card_image_height = "200px" # this will be used to set height of all the cards
-        card_image_width = "200px"  # this will be used only in case of card_layout ="list" else it will be 100% of container
-        card_title_font_color = "#a22"
-        card_title_font_size = "1rem"
-        card_title_font_weight = "700" #choose whole numbers between 100 and 900
-        card_title_padding = "3px"
-        card_title_text_alignment = "left" # choose between left, center or right
-        card_title_top_margin = "1rem"
-        card_title_bottom_margin = "0.5rem"
-
-        box_toggle = false #should the boxes have shadows?
-            box_padding = "0px"
-            box_border_size = "1px"
-            box_border_color = "#333"
-            box_shadow_color = "#aaa" # if so what color
-            box_shadow_horizontal_offset = "10px" # if so what color
-            box_shadow_vertical_offset = "10px" # if so what color
-            box_shadow_blur = "2px" # if so what color
-        clickable_card_overlay_on_hover = false
-            overlay_color = "#246"
-            overlay_opacity = 0.5  #choose from 0 to 1 (ideally less than 0.8)
-        card_layout = "list" # chooose between 1) "cards" 2) "carousel" 3) "list"
-        # If layout is cards
-            card_min_width = "300px"
-
-        # if layout is carousel
-            left_right_arrow_colors = "#a22"
-            arrow_size = "20px"
-            # You may use any left and right arrows: These should help: http://xahlee.info/comp/unicode_arrows.html
-            left_right_arrow_font_family = "Helvetica"
-            left_arrow_content = "⟵"
-            right_arrow_content = "⟶"
-
-        # if layout is list
-            show_image_on_left = true
-            padding_image_right = "1rem"
+        card_layout = "long_list_with_image" # chooose between 1) "cards" 2) "carousel" 3) "list"
 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
@@ -1077,7 +1035,7 @@ fixed_sharer_active = true
                 value = "left"
             [[featured_pages.sections.fields.styles]]
                 style = "font-style"
-                value = "italic"
+                value = "normal"
             [[featured_pages.sections.fields.styles]]
                 style = "font-size"
                 value = "0.9rem"
@@ -1099,7 +1057,7 @@ fixed_sharer_active = true
                 value = "left"
             [[featured_pages.sections.fields.styles]]
                 style = "font-style"
-                value = "italic"
+                value = "normal"
             [[featured_pages.sections.fields.styles]]
                 style = "font-size"
                 value = "0.75rem"
@@ -1120,7 +1078,7 @@ fixed_sharer_active = true
                 value = "left"
             [[featured_pages.sections.fields.styles]]
                 style = "font-style"
-                value = "italic"
+                value = "normal"
             [[featured_pages.sections.fields.styles]]
                 style = "font-size"
                 value = "0.75rem"
@@ -1211,77 +1169,96 @@ fixed_sharer_active = true
             additional_css_styles = ""
 
     [[featured_pages.sections]]
-        name = "posts"
-        title = "Posts"
-        title_color = "#333"
-        title_alignment = "center" #use "center", "left" or "right"
-        subtitle = "The posts are precocious. Use as you feel good!"
-        subtitle_color = "#999"
-        subtitle_alignment = "center" #use "center", "left" or "right"
-        num_featured = 6
+        name = "courses"
+        title = "Courses"
+        subtitle = "We take courses for all to enjoy"
+        num_featured = 4
         sort_field = ".Params.title"
         sort_order = "asc"
-        card_alignment = "center"
-        card_padding = "1rem" # use this to set the padding between cards
-        card_include_image = true #should image be shown or not?
-        card_image_height = "250px" # this will be used to set height of all the cards
-        card_image_width = "auto"  # this will be used only in case of card_layout ="list" else it will be 100% of container
-        card_title_font_color = "#a22"
-        card_title_font_size = "1rem"
-        card_title_font_weight = "700" #choose whole numbers between 100 and 900
-        card_title_padding = "3px"
-        card_title_text_alignment = "center" # choose between left, center or right
-        card_title_top_margin = "1rem"
-        card_title_bottom_margin = "0.5rem"
-
-        box_toggle = false #should the boxes have shadows?
-            box_padding = "0px"
-            box_border_size = "1px"
-            box_border_color = "#333"
-            box_shadow_color = "#aaa" # if so what color
-            box_shadow_horizontal_offset = "10px" # if so what color
-            box_shadow_vertical_offset = "10px" # if so what color
-            box_shadow_blur = "2px" # if so what color
-        clickable_card_overlay_on_hover = false
-            overlay_color = "#246"
-            overlay_opacity = 0.5  #choose from 0 to 1 (ideally less than 0.8)
-        card_layout = "cards" # chooose between 1) "cards" 2) "carousel" 3) "list"
-        # If layout is cards
-            card_min_width = "300px"
-
-        # if layout is carousel
-            left_right_arrow_colors = "#a22"
-            arrow_size = "20px"
-            # You may use any left and right arrows: These should help: http://xahlee.info/comp/unicode_arrows.html
-            left_right_arrow_font_family = "Helvetica"
-            left_arrow_content = "⟵"
-            right_arrow_content = "⟶"
-        # if layout is list
-            show_image_on_left = true
-            padding_image_right = "1rem"
-
+        card_layout = "list_of_large_cards" # chooose between 1) "cards" 2) "carousel" 3) "list"
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
-            field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            prefix = ""
-            font_weight = "200"
-            field_font_color = "#468"
-            text_align = "center"
-            margin_bottom = "3px"
-            margin_top = "3px"
-            font_style = "normal"
-            font_size = "0.75rem"
-            additional_css_styles = ""
+            field_name = "course_title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            css_class = "card_title left_align"
+            prefix = "Title: "
 
+        [[featured_pages.sections.fields]]
+            field_name = "faculty" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            css_class = "card_authors left_align"
+            prefix = "Authors: "
+
+        [[featured_pages.sections.fields]]
+            field_name = "duration" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            css_class = "card_details left_align"
+            prefix = "Duration: "
+
+        [[featured_pages.sections.fields]]
+            field_name = "delivery" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            css_class = "card_details left_align"
+            prefix = "Delivery Method: "
+
+        [[featured_pages.sections.fields]]
+            field_name = "who_should_attend" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            css_class = "card_details left_align"
+            prefix = "Who should Attend: "
+
+        [[featured_pages.sections.fields]]
+            field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            css_class = "card_summary left_align"
+            prefix = "Details: "
 
     [[featured_pages.sections]]
-        name = "thoughts"
-        title = "Thoughts"
-        subtitle = "The thoughts are precious. Handle with care!"
-        num_featured = 8
+        name = "workshops"
+        title = "Workshops"
+        subtitle = "We have conducted workshops in all major companies in India in the power sector"
+        num_featured = 3
         sort_field = ".Params.title"
         sort_order = "asc"
-        card_layout = "carousel_4card" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        card_layout = "list_of_large_cards_no_overlay" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+        [[featured_pages.sections.fields]]
+            field_name = "workshop_title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            css_class = "card_title left_align"
+            prefix = "Title: "
+
+
+        [[featured_pages.sections.fields]]
+            field_name = "presenters" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            type = "list_of_links"
+            css_class = "card_authors left_align"
+            prefix = "Authors: "
+
+        [[featured_pages.sections.fields]]
+            field_name = "topic" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            css_class = "card_details left_align"
+            prefix = "Topic: "
+
+        [[featured_pages.sections.fields]]
+            field_name = "tagline" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            css_class = "card_details left_align"
+            prefix = "Description: "
+
+        [[featured_pages.sections.fields]]
+            field_name = "client" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            css_class = "card_details left_align"
+            prefix = "Client: "
+
+
+
+        [[featured_pages.sections.fields]]
+            field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            css_class = "card_summary left_align"
+            prefix = "Details: "
+
+    [[featured_pages.sections]]
+        name = "reviews"
+        title = "Reviews"
+        subtitle = "I review, everything i do!"
+        num_featured = 25
+        sort_field = ".Params.title"
+        sort_order = "asc"
+        card_layout = "responsive_3cards_wbox" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        card_min_width = "300px"
 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
@@ -1304,7 +1281,82 @@ fixed_sharer_active = true
                 value = "normal"
             [[featured_pages.sections.fields.styles]]
                 style = "font-size"
-                value = "0.75rem"
+                value = "0.9rem"
+            [[featured_pages.sections.fields.styles]]
+                style = "padding"
+                value = "0 10px 10px 10px"
+
+    [[featured_pages.sections]]
+        name = "posts"
+        title = "Posts"
+        subtitle = "The posts are precocious. Use as you feel good!"
+        num_featured = 6
+        sort_field = ".Params.title"
+        sort_order = "asc"
+        card_layout = "responsive_3cards_nobox" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        card_min_width = "300px"
+
+        #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+        [[featured_pages.sections.fields]]
+            field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = ""
+            [[featured_pages.sections.fields.styles]]
+                style = "font-weight"
+                value = "200"
+            [[featured_pages.sections.fields.styles]]
+                style = "color"
+                value = "#468"
+            [[featured_pages.sections.fields.styles]]
+                style = "text-align"
+                value = "left"
+            [[featured_pages.sections.fields.styles]]
+                style = "margin"
+                value = "3px 0 3px 0"
+            [[featured_pages.sections.fields.styles]]
+                style = "font-style"
+                value = "normal"
+            [[featured_pages.sections.fields.styles]]
+                style = "font-size"
+                value = "0.9rem"
+            [[featured_pages.sections.fields.styles]]
+                style = "padding"
+                value = "0 10px 10px 10px"
+
+
+    [[featured_pages.sections]]
+        name = "thoughts"
+        title = "Thoughts"
+        subtitle = "The thoughts are precious. Handle with care!"
+        num_featured = 8
+        sort_field = ".Params.title"
+        sort_order = "asc"
+        card_layout = "carousel_4card" # chooose between 1) "cards" 2) "carousel" 3) "list"
+
+        #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+        [[featured_pages.sections.fields]]
+            field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = ""
+            [[featured_pages.sections.fields.styles]]
+                style = "font-weight"
+                value = "200"
+            [[featured_pages.sections.fields.styles]]
+                style = "color"
+                value = "#0095eb"
+            [[featured_pages.sections.fields.styles]]
+                style = "text-align"
+                value = "left"
+            [[featured_pages.sections.fields.styles]]
+                style = "margin"
+                value = "3px 0 3px 0"
+            [[featured_pages.sections.fields.styles]]
+                style = "font-style"
+                value = "normal"
+            [[featured_pages.sections.fields.styles]]
+                style = "font-size"
+                value = "0.8rem"
+            [[featured_pages.sections.fields.styles]]
+                style = "padding-right"
+                value = "10px"
 
 # ----------------------------------
 # Call to Action section

@@ -42,4 +42,4 @@ review_category = []
 +++
 
 # What a beautiful catch that was!
-One word. Awesome.
+One word. Awesome. The great sarika from the mountain view bay had the best seat in the house. We all review for the view. Then the next word is for the mountain to the top. Today we will be reviewing

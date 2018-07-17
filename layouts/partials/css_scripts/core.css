@@ -298,4 +298,45 @@ small,
     display: none;
 }
 
+/*Some Stuff for the list cards*/
 
+.card_title {
+    margin: 1rem 0 0.5rem 0;
+    color: #a22;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 3px;
+    font-family: 'Lora', serif;
+}
+.card_summary {
+    margin: 1rem 0 3px 0;
+    color: #468;
+    font-size: 0.9rem;
+    font-weight: 200;
+    padding: 0 10px 10px 10px;
+    font-style:normal;
+    font-family: 'EB Garamond', serif;
+}
+.card_authors {
+    margin: 3px 0 10px 0;
+    color: #a22;
+    font-size: 0.9rem;
+    font-weight: 900;
+    padding-left: 3px;
+    font-style:normal;
+    font-family: 'EB Garamond', serif;
+}
+.card_details {
+    color: #0095eb;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding-left: 3px;
+    font-style:italic;
+    font-family: 'EB Garamond', serif;
+}
+.details_cards a {
+    color: inherit;
+}
+.left_align {
+    text-align: left;
+}

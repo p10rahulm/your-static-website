@@ -1,0 +1,58 @@
+
+#{{.name}}_cards .card_img {
+    height:200px;
+    width:200px;
+    float: left;
+    padding-right:1rem;
+}
+
+#{{.name}}_cards .details_cards {
+    text-align: left;
+    padding: 1rem;
+    overflow:auto;
+}
+
+
+
+#{{.name}}_cards .details_cards a:hover{
+    text-decoration: none;
+}
+#{{.name}}_cards .details_cards a .card_title:hover{
+    text-decoration: underline;
+}
+#{{.name}}_cards .border_box {
+    padding:0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #333;
+    box-shadow: 10px 10px 2px #aaa;
+    position: relative;
+    overflow:auto;
+}
+#{{.name}}_cards .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #468;
+}
+
+#{{.name}}_cards .overlay:hover  {
+    opacity: 0.25;
+}
+
+
+{{$section_name := .name}}
+{{range .fields}}
+#{{$section_name}}_cards .details_cards .card_{{.field_name}} {
+    {{range .styles}}
+    {{.style}}: {{.value | safeCSS}};
+    {{end}}
+}
+{{end}}
+

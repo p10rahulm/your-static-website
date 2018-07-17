@@ -22,20 +22,19 @@ tags = []
 categories = []
 genre = []
 # Specific Template Meta
-[event]
-        title= ""
-        topic= ""
-        location = "Bangalore Gymkhana"
-        event_date = "17th Dec 2018"
+title= "Concert for Peace"
+topic= "Rock"
+location = "Bangalore Gymkhana"
+event_date = "17th Dec 2018"
 
-        # Optional event URL.
-        event_url = ""
+# Optional event URL.
+event_url = ""
 
-        # Short version
-        abstract = ""
+# Short version
+tagline = "The beats are coming to town"
 
 
-        speakers = [ { name = "K S Madhavan", url = "" }, { name = "ABC", url = "" }, { name = "XYZ", url = "" } ]
+speakers = [ { name = "A R Rahman", url = "" }, { name = "Prasanna", url = "" }, { name = "XYZ", url = "" } ]
 
 
 # Featured image
@@ -48,4 +47,4 @@ genre = []
 
 # About the event
 
-The workshop on TPM was conducted by Shingo institute at xyz
+Global rhythms and A R Rahman come together for a night for all nights. A might to remember.

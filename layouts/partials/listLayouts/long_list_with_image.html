@@ -1,0 +1,44 @@
+{{$pages := $.pages}}
+{{$context := $.context}}
+{{$scratch := $.scratch}}
+{{$fields := $.context.fields}}
+<header>
+    <style>
+        {{partial "css_scripts/listLayouts/long_list_with_image.css" $.context | safeCSS}}
+    </style>
+</header>
+<section id="featured_{{$.context.name}}" class="home-section">
+    <div class="container">
+        <div class="section-heading">
+            {{$.context.title | humanize}}
+        </div>
+        <div class="section-subheading">
+            {{$.context.subtitle | humanize}}
+        </div>
+        <div id="{{$.context.name}}_cards" class="cardList">
+        {{ range first $.context.num_featured (sort  (where ($pages) "Params.featured" true) $.context.sort_field $.context.sort_order)}}
+        <div class ="details_cards">
+            <a href="{{.Permalink}}">
+                <img src="/img/{{.Params.caption_image}}" class="card_img" alt="{{.Title}}">
+            </a>
+            <a href="{{.Permalink}}">
+                <h4 class="card_title">{{.Params.title}}</h4>
+                {{$page_summary := .Summary}}
+                {{$page_params := .Params}}
+                {{range $fields }}
+                <p class="card_{{.field_name}}">
+                    {{if eq .field_name "summary"}}
+                    {{.prefix | markdownify }}{{$page_summary | markdownify}}
+                    {{else}}
+                    {{.prefix | markdownify }}{{(index $page_params .field_name) | markdownify}}
+                    {{end}}
+                </p>
+                {{ end }}
+            </a>
+
+        </div>
+        {{end}}
+    </div>
+
+    </div>
+</section>
