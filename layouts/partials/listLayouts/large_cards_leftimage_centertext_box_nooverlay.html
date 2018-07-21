@@ -30,7 +30,7 @@
                     {{range $fields }}
                     {{if eq .type "list_of_links"}}
                     {{$list_of_links_length := (len (index $page_params .field_name))}}
-                    <div class="card_{{.field_name}} {{.css_class}}">
+                    <div class="card_{{.field_name}} {{.class}}">
                         {{.prefix }}
                         {{ range $index, $element := (index $page_params .field_name) }}
                         <a href="{{.url}}"><span>
@@ -43,7 +43,7 @@
                     </div>
 
                     {{else if eq .type "icon_links"}}
-                    <div class="card_{{.field_name}} {{.css_class}}">
+                    <div class="card_{{.field_name}} {{.class}}">
                         {{.prefix }}
                         {{ range $index, $element := (index $page_params .field_name) }}
                         <a href="{{$element.url}}" target="_blank"><span><i class="fa {{$element.icon}}"></i></span></a>
@@ -52,12 +52,12 @@
                     </div>
                     {{else}}
 
-                    <div class="card_{{.field_name}} {{.css_class}}">
+                    <div class="card_{{.field_name}} {{.class}}">
                         {{if eq .field_name "summary"}}
-                        {{.prefix }}{{$page_summary | markdownify}}{{.postfix}}
+                        {{.prefix }}{{$page_summary | markdownify | truncate (.truncate_size | default 300)}}{{.postfix}}
                         {{else}}
                         <a href="{{$page_permalink}}">
-                            {{.prefix }}{{(index $page_params .field_name) | markdownify | truncate 750}}{{.postfix}}
+                            {{.prefix }}{{(index $page_params .field_name) | markdownify | truncate (.truncate_size | default 300)}}{{.postfix}}
                         </a>
                         {{end}}
                     </div>

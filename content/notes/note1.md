@@ -31,4 +31,4 @@ categories = []
 # The note goes below.
 +++
 
-The minds mission is to organize oneself and to improve continually.
+The minds mission is to organize oneself and to improve continually. One day we will achieve this mission. Until then we keep trying

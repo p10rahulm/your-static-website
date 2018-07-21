@@ -4,16 +4,9 @@
 {{$fields := $.context.fields}}
 <header>
     <style>
-        {{partial "css_scripts/listLayouts/carousel_4card.css" $.context | safeCSS}}
+        {{partial "css_scripts/listLayouts/people_cards_list_style1.css" $.context | safeCSS}}
     </style>
-    {{partial "functions/load_external_js.html" (dict "external_url" "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" "scratch" .Scratch "async" false "defer" false)}}
-    {{partial "functions/load_external_css.html" (dict "external_url" "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" "scratch" .Scratch)}}
-    {{partial "functions/load_external_css.html" (dict "external_url" "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css" "scratch" .Scratch)}}
-    <script type="text/javascript">
-        {{partial "js_scripts/listLayouts/carousel_4card.js" $.context | safeJS}}
-    </script>
 </header>
-
 <section id="featured_{{$.context.name}}" class="home-section">
     <div class="container">
         <div class="section-heading">
@@ -22,9 +15,12 @@
         <div class="section-subheading">
             {{$.context.subtitle | humanize}}
         </div>
-        <div id="{{$.context.name}}_cards" class="carousel_responsive">
+        <div id="{{$.context.name}}_cards" class="card_flex">
             {{ range first $.context.num_featured (sort  (where ($pages) "Params.featured" true) $.context.sort_field $.context.sort_order)}}
             <div class ="details_cards">
+                <a href="{{.Permalink}}">
+                    <img src="/img/avatars/{{.Params.avatar_image}}" class="card_avatar_image" alt="{{.Title}}">
+                </a>
                 <a href="{{.Permalink}}">
                     {{$page_summary := .Summary}}
                     {{$page_params := .Params}}
@@ -51,7 +47,7 @@
                         {{ range $index, $element := (index $page_params .field_name) }}
                         <a href="{{$element.url}}" target="_blank"><span><i class="fa {{$element.icon}}"></i></span></a>
                         {{end}}
-                        {{.postfix| markdownify}}
+                        {{.postfix | markdownify}}
                     </div>
                     {{else}}
 
@@ -68,10 +64,9 @@
                     {{ end }}
                     {{ end }}
                 </a>
+
             </div>
             {{end}}
-
-
         </div>
 
     </div>

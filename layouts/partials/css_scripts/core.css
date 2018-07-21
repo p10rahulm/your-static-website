@@ -285,7 +285,7 @@ small,
 .responsive-wrap iframe {
     max-width: 100%;
 }
-.flex {
+.flex, .card_flex {
     display: flex;
     flex-basis: 300px;
     flex-grow: 1;
@@ -308,6 +308,9 @@ small,
     padding: 3px;
     font-family: 'Lora', serif;
 }
+.card_title:hover {
+    text-decoration: underline;
+}
 .card_summary {
     margin: 1rem 0 3px 0;
     color: #468;
@@ -326,6 +329,16 @@ small,
     font-style:normal;
     font-family: 'EB Garamond', serif;
 }
+.card_tagline {
+    margin: 3px 0 0px 0;
+    color: #aaa;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding-left: 3px;
+    font-style:normal;
+    font-family: 'EB Garamond', serif;
+}
+
 .card_details {
     color: #0079bf;
     font-size: 0.8rem;
@@ -344,6 +357,17 @@ small,
     letter-spacing: 4px;
     line-height: 1.25;
 }
+.card_summary_light {
+    font-weight: 200;
+    color: #0095eb;
+    margin: 3px 0 3px 0;
+    font-style: normal;
+    font-size: 0.8rem;
+    padding-right: 10px;
+}
+
+
+
 .left_align {
     text-align: left;
 }

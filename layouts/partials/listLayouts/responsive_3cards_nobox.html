@@ -15,24 +15,53 @@
         <div class="section-subheading">
             {{$.context.subtitle | humanize}}
         </div>
-        <div id="{{$.context.name}}_cards" class="flex">
+        <div id="{{$.context.name}}_cards" class="card_flex">
         {{ range first $.context.num_featured (sort  (where ($pages) "Params.featured" true) $.context.sort_field $.context.sort_order)}}
             <div class ="details_cards">
                 <a href="{{.Permalink}}">
-                    <img src="/img/{{.Params.caption_image}}" class="img-responsive img-centered" alt="{{.Title}}">
+                    <img src="/img/{{.Params.caption_image}}" class="card_img" alt="{{.Title}}">
                 </a>
                 <a href="{{.Permalink}}">
-                    <h4 class="card_title">{{.Params.title}}</h4>
                     {{$page_summary := .Summary}}
                     {{$page_params := .Params}}
+                    {{$page_permalink := .Permalink}}
+
                     {{range $fields }}
-                    <p class="card_{{.field_name}} {{.class}}">
-                        {{if eq .field_name "summary"}}
-                        {{.prefix | markdownify }}{{$page_summary | markdownify}}
-                        {{else}}
-                        {{.prefix | markdownify }}{{(index $page_params .field_name) | markdownify}}
+                    {{if eq .type "list_of_links"}}
+                    {{$list_of_links_length := (len (index $page_params .field_name))}}
+                    <div class="card_{{.field_name}} {{.class}}">
+                        {{.prefix }}
+                        {{ range $index, $element := (index $page_params .field_name) }}
+                        <a href="{{.url}}"><span>
+                            {{ if and (ne $index 0) (eq $index (sub $list_of_links_length 1)) }} and
+                            {{ else if ne $index 0}},
+                            {{ end }}
+                            {{$element.name}}</span></a>
                         {{end}}
-                    </p>
+                        {{.postfix | markdownify}}
+                    </div>
+
+                    {{else if eq .type "icon_links"}}
+                    <div class="card_{{.field_name}} {{.class}}">
+                        {{.prefix }}
+                        {{ range $index, $element := (index $page_params .field_name) }}
+                        <a href="{{$element.url}}" target="_blank"><span><i class="fa {{$element.icon}}"></i></span></a>
+                        {{end}}
+                        {{.postfix| markdownify}}
+                    </div>
+                    {{else}}
+
+                    <div class="card_{{.field_name}} {{.class}}">
+                        {{if eq .field_name "summary"}}
+                        {{.prefix }}{{$page_summary | markdownify | truncate (.truncate_size | default 300)}}{{.postfix}}
+                        {{else}}
+                        <a href="{{$page_permalink}}">
+                            {{.prefix }}{{(index $page_params .field_name) | markdownify | truncate (.truncate_size | default 300)}}{{.postfix}}
+                        </a>
+                        {{end}}
+                    </div>
+
+                    {{ end }}
                     {{ end }}
                 </a>
 

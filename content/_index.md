@@ -1007,6 +1007,48 @@ fixed_sharer_active = true
     # Choose sort order from "asc" or "desc"
     # There are three layouts you can choose from
     # 1) "cards" 2) "carousel" 3) "list"
+    [[featured_pages.sections]]
+        name = "people"
+        title = "Our Strength"
+        subtitle = "Our people are our strength"
+        num_featured = 4
+        sort_field = ".Params.title" #add the .Params at the start before sort field
+        sort_order = "asc"
+        card_layout = "people_cards_list_style1" # chooose between 1) "cards" 2) "carousel" 3) "list"
+
+        #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+        [[featured_pages.sections.fields]]
+            field_name = "name"
+            prefix = ""
+            class = "card_title center_align"
+            postfix = ""
+        [[featured_pages.sections.fields]]
+            field_name = "role"
+            prefix = ""
+            class = "card_summary center_align"
+            postfix = ""
+            [[featured_pages.sections.fields.styles]]
+                style = "padding"
+                value = "10px 3px 0px 3px"
+        [[featured_pages.sections.fields]]
+            field_name = "social"
+            type = "icon_links"
+            prefix = ""
+            class = "card_links center_align"
+            postfix = ""
+            [[featured_pages.sections.fields.styles]]
+                style = "padding"
+                value = "0 3px 10px 3px"
+            [[featured_pages.sections.fields.styles]]
+                style = "letter-spacing"
+                value = "3px"
+        [[featured_pages.sections.fields]]
+            field_name = "summary"
+            prefix = ""
+            class = "card_summary center_align"
+            postfix = ""
+            truncate_size = 115
+
 
     [[featured_pages.sections]]
         name = "books"
@@ -1019,90 +1061,59 @@ fixed_sharer_active = true
 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
+            field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = ""
+            class = "card_title"
+            postfix = ""
+            [[featured_pages.sections.fields.styles]]
+                style = "margin-top"
+                value = "0"
+        [[featured_pages.sections.fields]]
             field_name = "authors" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             prefix = "Authors: "
-            [[featured_pages.sections.fields.styles]]
-                style = "font-weight"
-                value = 900
+            class = "card_authors left_align"
+            postfix = ""
             [[featured_pages.sections.fields.styles]]
                 style = "margin"
-                value = "3px 0 0 0"
-            [[featured_pages.sections.fields.styles]]
-                style = "color"
-                value = "#a22"
-            [[featured_pages.sections.fields.styles]]
-                style = "text-align"
-                value = "left"
-            [[featured_pages.sections.fields.styles]]
-                style = "font-style"
-                value = "normal"
-            [[featured_pages.sections.fields.styles]]
-                style = "font-size"
-                value = "0.9rem"
+                value = "0 3px"
 
         [[featured_pages.sections.fields]]
             field_name = "tagline" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             prefix = ""
-            [[featured_pages.sections.fields.styles]]
-                style = "font-weight"
-                value = 900
+            postfix = ""
+            class = "card_tagline left_align"
             [[featured_pages.sections.fields.styles]]
                 style = "margin"
-                value = "3px 0 0 0"
-            [[featured_pages.sections.fields.styles]]
-                style = "color"
-                value = "#aaa"
-            [[featured_pages.sections.fields.styles]]
-                style = "text-align"
-                value = "left"
-            [[featured_pages.sections.fields.styles]]
-                style = "font-style"
-                value = "normal"
-            [[featured_pages.sections.fields.styles]]
-                style = "font-size"
-                value = "0.75rem"
+                value = "0 3px"
+
         [[featured_pages.sections.fields]]
             field_name = "abstract" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            prefix = "Abstract: "
-            [[featured_pages.sections.fields.styles]]
-                style = "font-weight"
-                value = 900
-            [[featured_pages.sections.fields.styles]]
-                style = "margin"
-                value = "3px 0 0 0"
+            prefix = "About: "
+            postfix = ""
+            truncate_size = 100
+            class = "card_tagline left_align"
             [[featured_pages.sections.fields.styles]]
                 style = "color"
                 value = "#333"
             [[featured_pages.sections.fields.styles]]
-                style = "text-align"
-                value = "left"
-            [[featured_pages.sections.fields.styles]]
-                style = "font-style"
-                value = "normal"
-            [[featured_pages.sections.fields.styles]]
-                style = "font-size"
-                value = "0.75rem"
+                style = "margin"
+                value = "0 3px"
+
         [[featured_pages.sections.fields]]
             field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             prefix = ""
-            [[featured_pages.sections.fields.styles]]
-                style = "font-weight"
-                value = 200
+            postfix = ""
+            truncate_size = 200
+            class = "card_summary left_align"
             [[featured_pages.sections.fields.styles]]
                 style = "margin"
-                value = "3px 0 3px 0"
-            [[featured_pages.sections.fields.styles]]
-                style = "color"
-                value = "#456"
-            [[featured_pages.sections.fields.styles]]
-                style = "text-align"
-                value = "left"
+                value = "1rem 3px"
             [[featured_pages.sections.fields.styles]]
                 style = "font-style"
                 value = "italic"
             [[featured_pages.sections.fields.styles]]
-                style = "font-size"
-                value = "0.75rem"
+                style = "line-height"
+                value = "1.25"
 
 
     [[featured_pages.sections]]
@@ -1119,24 +1130,25 @@ fixed_sharer_active = true
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
             field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            css_class = "card_title center_align"
+            class = "card_title center_align"
             prefix = ""
             postfix = ""
         [[featured_pages.sections.fields]]
             field_name = "authors" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            css_class = "card_authors center_align"
+            class = "card_authors center_align"
             prefix = ""
             type = "list_of_links"
             postfix = "<hr>"
         [[featured_pages.sections.fields]]
             field_name = "abstract" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             prefix = ""
-            css_class = "card_summary"
+            class = "card_summary"
+            truncate_size = 750
             postfix = ""
 
         [[featured_pages.sections.fields]]
             field_name = "links" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            css_class = "card_icon_links"
+            class = "card_icon_links"
             prefix = ""
             type = "icon_links"
             postfix = ""
@@ -1152,33 +1164,39 @@ fixed_sharer_active = true
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
             field_name = "course_title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            css_class = "card_title left_align"
+            class = "card_title left_align"
             prefix = "Title: "
+            postfix = ""
 
         [[featured_pages.sections.fields]]
             field_name = "faculty" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            css_class = "card_authors left_align"
+            class = "card_authors left_align"
             prefix = "Authors: "
+            postfix = ""
 
         [[featured_pages.sections.fields]]
             field_name = "duration" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            css_class = "card_details left_align"
+            class = "card_details left_align"
             prefix = "Duration: "
+            postfix = ""
 
         [[featured_pages.sections.fields]]
             field_name = "delivery" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            css_class = "card_details left_align"
+            class = "card_details left_align"
             prefix = "Delivery Method: "
+            postfix = ""
 
         [[featured_pages.sections.fields]]
             field_name = "who_should_attend" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            css_class = "card_details left_align"
+            class = "card_details left_align"
             prefix = "Who should Attend: "
+            postfix = ""
 
         [[featured_pages.sections.fields]]
             field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            css_class = "card_summary left_align"
+            class = "card_summary left_align"
             prefix = "Details: "
+            postfix = ""
 
     [[featured_pages.sections]]
         name = "workshops"
@@ -1191,37 +1209,43 @@ fixed_sharer_active = true
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
             field_name = "workshop_title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            css_class = "card_title left_align"
+            class = "card_title left_align"
             prefix = "Title: "
+            postfix = ""
 
 
         [[featured_pages.sections.fields]]
             field_name = "presenters" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             type = "list_of_links"
-            css_class = "card_authors left_align"
+            class = "card_authors left_align"
             prefix = "Authors: "
+            postfix = ""
 
         [[featured_pages.sections.fields]]
             field_name = "topic" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            css_class = "card_details left_align"
+            class = "card_details left_align"
             prefix = "Topic: "
+            postfix = ""
 
         [[featured_pages.sections.fields]]
             field_name = "tagline" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            css_class = "card_details left_align"
+            class = "card_details left_align"
             prefix = "Description: "
+            postfix = ""
 
         [[featured_pages.sections.fields]]
             field_name = "client" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            css_class = "card_details left_align"
+            class = "card_details left_align"
             prefix = "Client: "
+            postfix = ""
 
 
 
         [[featured_pages.sections.fields]]
             field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-            css_class = "card_summary left_align"
+            class = "card_summary left_align"
             prefix = "Details: "
+            postfix = ""
 
     [[featured_pages.sections]]
         name = "reviews"
@@ -1232,48 +1256,44 @@ fixed_sharer_active = true
         sort_order = "asc"
         card_layout = "responsive_3cards_wbox" # chooose between 1) "cards" 2) "carousel" 3) "list"
         card_min_width = "300px"
+        [[featured_pages.sections.fields]]
+            field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            class = "cards_title center_align"
+            prefix = ""
+            postfix = ""
+            [[featured_pages.sections.fields.styles]]
+                style = "margin"
+                value = "5px auto"
 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
             field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            class = "card_summary left_align"
             prefix = ""
-            [[featured_pages.sections.fields.styles]]
-                style = "font-weight"
-                value = "200"
-            [[featured_pages.sections.fields.styles]]
-                style = "color"
-                value = "#468"
-            [[featured_pages.sections.fields.styles]]
-                style = "text-align"
-                value = "left"
-            [[featured_pages.sections.fields.styles]]
-                style = "margin"
-                value = "3px 0 3px 0"
-            [[featured_pages.sections.fields.styles]]
-                style = "font-style"
-                value = "normal"
-            [[featured_pages.sections.fields.styles]]
-                style = "font-size"
-                value = "0.9rem"
-            [[featured_pages.sections.fields.styles]]
-                style = "padding"
-                value = "0 10px 10px 10px"
+            postfix = ""
+
 
     [[featured_pages.sections]]
         name = "posts"
         title = "Posts"
         subtitle = "The posts are precocious. Use as you feel good!"
-        num_featured = 6
+        num_featured = 4
         sort_field = ".Params.title"
         sort_order = "asc"
-        card_layout = "responsive_3cards_nobox" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        card_layout = "cards_alternating_grid" # chooose between 1) "cards" 2) "carousel" 3) "list"
         card_min_width = "300px"
 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
+            field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = ""
+            class = "card_title center_align"
+            postfix = ""
+        [[featured_pages.sections.fields]]
             field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             prefix = ""
             class = "card_summary left_align"
+            postfix = ""
 
     [[featured_pages.sections]]
         name = "notes"
@@ -1286,9 +1306,22 @@ fixed_sharer_active = true
         card_min_width = "300px"
 
         [[featured_pages.sections.fields]]
+            field_name = "title"
+            prefix = ""
+            class = "card_title center_align"
+            postfix = ""
+            [[featured_pages.sections.fields.styles]]
+                style = "margin"
+                value = "5px auto 5px auto"
+        [[featured_pages.sections.fields]]
             field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             prefix = ""
-            class = "left_align"
+            class = "card_summary left_align"
+            truncate_size = 100
+            postfix = ""
+            [[featured_pages.sections.fields.styles]]
+                style = "margin"
+                value = "0px 0 5px auto"
 
 
 
@@ -1301,31 +1334,16 @@ fixed_sharer_active = true
         sort_order = "asc"
         card_layout = "carousel_4card" # chooose between 1) "cards" 2) "carousel" 3) "list"
 
-        #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+        [[featured_pages.sections.fields]]
+            field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = ""
+            class = "card_title"
+            postfix = ""
         [[featured_pages.sections.fields]]
             field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             prefix = ""
-            [[featured_pages.sections.fields.styles]]
-                style = "font-weight"
-                value = "200"
-            [[featured_pages.sections.fields.styles]]
-                style = "color"
-                value = "#0095eb"
-            [[featured_pages.sections.fields.styles]]
-                style = "text-align"
-                value = "left"
-            [[featured_pages.sections.fields.styles]]
-                style = "margin"
-                value = "3px 0 3px 0"
-            [[featured_pages.sections.fields.styles]]
-                style = "font-style"
-                value = "normal"
-            [[featured_pages.sections.fields.styles]]
-                style = "font-size"
-                value = "0.8rem"
-            [[featured_pages.sections.fields.styles]]
-                style = "padding-right"
-                value = "10px"
+            class = "card_summary_light left_align"
+            postfix = ""
 
 # ----------------------------------
 # Call to Action section

@@ -26,27 +26,38 @@
                     {{$page_summary := .Summary}}
                     {{$page_params := .Params}}
                     {{$page_permalink := .Permalink}}
+
                     {{range $fields }}
                     {{if eq .type "list_of_links"}}
                     {{$list_of_links_length := (len (index $page_params .field_name))}}
-                    <div class="card_{{.field_name}} {{.css_class}}">
+                    <div class="card_{{.field_name}} {{.class}}">
                         {{.prefix }}
                         {{ range $index, $element := (index $page_params .field_name) }}
                         <a href="{{.url}}"><span>
-                            {{ if eq $index (sub $list_of_links_length 1) }} and
+                            {{ if and (ne $index 0) (eq $index (sub $list_of_links_length 1)) }} and
                             {{ else if ne $index 0}},
                             {{ end }}
                             {{$element.name}}</span></a>
                         {{end}}
+                        {{.postfix | markdownify}}
+                    </div>
+
+                    {{else if eq .type "icon_links"}}
+                    <div class="card_{{.field_name}} {{.class}}">
+                        {{.prefix }}
+                        {{ range $index, $element := (index $page_params .field_name) }}
+                        <a href="{{$element.url}}" target="_blank"><span><i class="fa {{$element.icon}}"></i></span></a>
+                        {{end}}
+                        {{.postfix| markdownify}}
                     </div>
                     {{else}}
 
-                    <div class="card_{{.field_name}} {{.css_class}}">
+                    <div class="card_{{.field_name}} {{.class}}">
                         {{if eq .field_name "summary"}}
-                        {{.prefix }}{{$page_summary | markdownify}}
+                        {{.prefix }}{{$page_summary | markdownify | truncate (.truncate_size | default 300)}}{{.postfix}}
                         {{else}}
                         <a href="{{$page_permalink}}">
-                        {{.prefix }}{{(index $page_params .field_name) | markdownify}}
+                            {{.prefix }}{{(index $page_params .field_name) | markdownify | truncate (.truncate_size | default 300)}}{{.postfix}}
                         </a>
                         {{end}}
                     </div>

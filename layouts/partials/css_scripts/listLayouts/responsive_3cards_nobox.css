@@ -19,14 +19,6 @@
     margin: 10px auto;
 }
 
-#{{.name}}_cards .details_cards .card_title{
-    margin: 1rem 0 0.5rem 0;
-    color: #a22;
-    font-size:1rem;
-    font-weight:700;
-    padding:3px;
-    text-align:center;
-}
 
 #{{.name}}_cards .details_cards a:hover{
   text-decoration: none;

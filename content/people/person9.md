@@ -1,7 +1,7 @@
 +++
 
 title = "Person9"
-date = 2018-06-08T19:44:45+05:30
+date = 2018-07-19T01:01:55+05:30
 draft = false
 author = "Rahul Madhavan"
 
@@ -26,88 +26,70 @@ divisions = []
 teams = []
 
 
-[person]
-        # Person image
-        name = "K S Madhavan"
-        role = "Founder, CodeFRA"
+name = "K S Madhavan"
+role = "Founder, CodeFRA"
 
-        # Organizations/Affiliations.
-        #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-        organizations = [
-                                { name = "Atidiv, Cuemath", url = "" },
-                                { name = "Barclays, Nomura, Lehman Brothers", url = "" },
-                                { name = "IIM Ahmedabad, IIT Madras", url = "" }
-                        ]
-        summary_one_liner = ""
+# Organizations/Affiliations.
+#   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
+organizations = [
+                        { name = "Atidiv, Cuemath", url = "" },
+                        { name = "Barclays, Nomura, Lehman Brothers", url = "" },
+                        { name = "IIM Ahmedabad, IIT Madras", url = "" }
+                ]
+summary_one_liner = ""
 
-        # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
-        avatar_image = "avatar.jpg"
+# Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+avatar_image = "obama.jpg"
 
 
-        interests =     [
-                            "Artificial Intelligence",
-                            "Networks",
-                            "Topology",
-                            "Language",
-                            "Modelling"
-                        ]
+interests =     [
+                    "Artificial Intelligence",
+                    "Networks",
+                    "Topology",
+                    "Language",
+                    "Modelling"
+                ]
 
 
 # Featured image
 # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
 [header]
-        image = ""
-        caption = ""
+    image = ""
+    caption = ""
 
 # Talk about education below. Can include multiple stuff
-[[education.courses]]
-          course = "Master of Business Administration"
-          institution = "IIM Ahmedabad"
-          year = 2012
+[[education_courses]]
+      course = "Master of Business Administration"
+      institution = "IIM Ahmedabad"
+      year = 2012
 
-[[education.courses]]
-          course = "Bachelor of Technology"
-          institution = "Indian Institute of Technology, Madras"
-          year = 2007
+[[education_courses]]
+      course = "Bachelor of Technology"
+      institution = "Indian Institute of Technology, Madras"
+      year = 2007
 
 
 # Social/Academic Networking
 #
-# Icon pack "fa" includes the following social network icons:
-#
-#   twitter, weibo, linkedin, github, facebook, pinterest, google-plus,
-#   youtube, instagram, soundcloud
-#
-#   For email icon, use "fa" icon pack, "envelope" icon, and
-#   "mailto:your@email.com" as the link.
-#
-#   Full list: https://fortawesome.github.io/Font-Awesome/icons/
-#
-# Icon pack "ai" includes the following academic network icons:
-#
-#   google-scholar, arxiv, orcid, researchgate, mendeley
-#
-#   Full list: https://jpswalsh.github.io/academicons/
+# Icon pack "fa" includes the following social network icons: twitter, weibo, linkedin, github, facebook, pinterest, google-plus, youtube, instagram, soundcloud
+#   For email icon, use "fa" icon pack, "envelope" icon, and "mailto:your@email.com" as the link.
 
-[[params.social]]
-        icon = "envelope"
-        icon_pack = "fa"
-        link = "mailto:rahul.maddy@gmail"
 
-[[params.social]]
-        icon = "linkedin"
-        icon_pack = "fa"
-        link = "//linkedin.com/in/rahul-madhavan/"
+[[social]]
+    icon = "fa-envelope"
+    url = "mailto:rahul.maddy@gmail"
 
-[[params.social]]
-        icon = "facebook"
-        icon_pack = "fa"
-        link = "//facebook.com/rahul.maddy"
+[[social]]
+    icon = "fa-linkedin"
+    url = "//linkedin.com/in/rahul-madhavan/"
 
-[[params.social]]
-        icon = "github"
-        icon_pack = "fa"
-        link = "//github.com/p10rahulm"
+[[social]]
+    icon = "fa-facebook"
+    url = "//facebook.com/rahul.maddy"
+
+[[social]]
+    icon = "fa-github"
+    url = "//github.com/p10rahulm"
 
 +++
 # Biography
