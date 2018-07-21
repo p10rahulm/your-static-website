@@ -1277,7 +1277,7 @@ fixed_sharer_active = true
         name = "posts"
         title = "Posts"
         subtitle = "The posts are precocious. Use as you feel good!"
-        num_featured = 4
+        num_featured = 10
         sort_field = ".Params.title"
         sort_order = "asc"
         card_layout = "cards_alternating_grid" # chooose between 1) "cards" 2) "carousel" 3) "list"
@@ -1292,7 +1292,7 @@ fixed_sharer_active = true
         [[featured_pages.sections.fields]]
             field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             prefix = ""
-            class = "card_summary left_align"
+            class = "card_summary center_align"
             postfix = ""
 
     [[featured_pages.sections]]

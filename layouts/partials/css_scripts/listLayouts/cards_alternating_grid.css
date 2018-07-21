@@ -1,0 +1,19 @@
+.cards_grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: row dense;
+    justify-items: center;
+    align-items: stretch;
+    grid-auto-rows: minmax(100px, auto);
+}
+#posts_cards .details_cards:nth-child(even) {
+    background-color: #fafafa;
+}
+#posts_cards .details_cards:nth-child(5n+1) {
+    grid-column-end: span 2;
+}
+#posts_cards .card_img {
+    width: 100%;
+    height: minmax(75px, 300px);
+}
