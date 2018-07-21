@@ -1289,11 +1289,18 @@ fixed_sharer_active = true
             prefix = ""
             class = "card_title center_align"
             postfix = ""
+            [[featured_pages.sections.fields.styles]]
+                style = "margin"
+                value = "5px auto 3px auto"
         [[featured_pages.sections.fields]]
             field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             prefix = ""
             class = "card_summary center_align"
             postfix = ""
+            truncate_size = 250
+            [[featured_pages.sections.fields.styles]]
+                style = "margin"
+                value = "3px auto 1.25rem auto"
 
     [[featured_pages.sections]]
         name = "notes"
@@ -1344,6 +1351,7 @@ fixed_sharer_active = true
             prefix = ""
             class = "card_summary_light left_align"
             postfix = ""
+
 
 # ----------------------------------
 # Call to Action section

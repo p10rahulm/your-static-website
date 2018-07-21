@@ -1,19 +1,106 @@
 .cards_grid{
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-flow: row dense;
-    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: row;
+    justify-items: stretch;
     align-items: stretch;
     grid-auto-rows: minmax(100px, auto);
+    grid-gap: 0px;
 }
+#posts_cards .border_box{
+    padding:0px;
+    margin-right: 15px;
+    border: 1px solid rgba(34, 68, 102, 0.25);
+    box-shadow: 8px 8px 2px #aaa;
+    position: relative;
+    overflow:auto;
+}
+#posts_cards .details_cards{
+     width: 100%;
+    height: 560px;
+ }
+#posts_cards .card_summary {
+    height: 56px;
+}
+#posts_cards .card_title {
+    height: 25px;
+}
+
 #posts_cards .details_cards:nth-child(even) {
-    background-color: #fafafa;
+    background-color: inherit;
 }
 #posts_cards .details_cards:nth-child(5n+1) {
     grid-column-end: span 2;
 }
 #posts_cards .card_img {
     width: 100%;
-    height: minmax(75px, 300px);
+    height: 400px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+#{{.name}}_cards .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #468;
+}
+
+#{{.name}}_cards .overlay:hover  {
+    opacity: 0.25;
+
+}
+@media only screen and (max-width: 1200px) {
+    .cards_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #posts_cards .details_cards:nth-child(5n+1) .card_summary {
+        height: auto;
+    }
+    #posts_cards .details_cards:nth-child(5n+1) .card_title {
+        height: auto;
+    }
+
+    #posts_cards .card_summary {
+        font-size: 16px;
+    }
+    #posts_cards .card_title {
+        font-size: 18px;
+    }
+
+}
+@media only screen and (max-width: 768px) {
+    .cards_grid {
+        grid-template-columns: 1fr;
+        width: 450px;
+        margin: 10px auto;
+    }
+    #posts_cards .border_box{
+        box-shadow: 10px 10px 2px #aaa;
+        margin-right: 10px;
+    }
+    #posts_cards .details_cards:nth-child(5n+1) {
+        grid-column-end: span 1;
+    }
+    #posts_cards .card_summary {
+        height: auto;
+    }
+    #posts_cards .card_title {
+        height: auto;
+    }
+
+}
+@media only screen and (max-width: 500px) {
+    .cards_grid {
+        grid-template-columns: 1fr;
+        width: 300px;
+        max-width: 98%;
+        margin: 10px auto;
+    }
 }

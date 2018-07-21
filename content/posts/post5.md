@@ -5,7 +5,7 @@ draft = false
 author = "Rahul Madhavan"
 
 # The below image will be shown in all the cards pointing to this article
-caption_image = "dog_transparency1.png"
+caption_image = "orange-fractal.jpg"
 
 show_popup = true
 show_sharer = true

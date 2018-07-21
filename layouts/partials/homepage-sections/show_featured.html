@@ -15,31 +15,7 @@
 
 </header>
 {{range $index, $element := $.Params.featured_pages.sections}}
-    {{if eq .card_layout "carousel_4card"}}
-        {{$pages := (where $.Data.Pages "Section" .name)}}
-        {{partial "listLayouts/carousel_4card.html" (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
-    {{else if eq .card_layout "long_list_with_image"}}
-        {{$pages := (where $.Data.Pages "Section" .name)}}
-        {{partial "listLayouts/long_list_with_image.html" (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
-    {{else if eq .card_layout "responsive_3cards_nobox"}}
-        {{$pages := (where $.Data.Pages "Section" .name)}}
-        {{partial "listLayouts/responsive_3cards_nobox.html" (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
-    {{else if eq .card_layout "responsive_3cards_wbox"}}
-        {{$pages := (where $.Data.Pages "Section" .name)}}
-        {{partial "listLayouts/responsive_3cards_wbox.html" (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
-    {{else if eq .card_layout "list_of_large_cards"}}
-        {{$pages := (where $.Data.Pages "Section" .name)}}
-        {{partial "listLayouts/list_of_large_cards.html" (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
-    {{else if eq .card_layout "list_of_large_cards_no_overlay"}}
-        {{$pages := (where $.Data.Pages "Section" .name)}}
-        {{partial "listLayouts/list_of_large_cards_no_overlay.html" (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
-    {{else if eq .card_layout "large_cards_leftimage_centertext_box_nooverlay"}}
-        {{$pages := (where $.Data.Pages "Section" .name)}}
-        {{partial "listLayouts/large_cards_leftimage_centertext_box_nooverlay.html" (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
-    {{else if eq .card_layout "people_cards_list_style1"}}
-        {{$pages := (where $.Data.Pages "Section" .name)}}
-        {{partial "listLayouts/people_cards_list_style1.html" (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
-    {{else if (or (ne .card_layout "") (ne .card_layout "default")) }}
+    {{if (or (ne .card_layout "") (ne .card_layout "default")) }}
         {{$pages := (where $.Data.Pages "Section" .name)}}
         {{partial (print "listLayouts/" .card_layout ".html") (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
     {{else}}
