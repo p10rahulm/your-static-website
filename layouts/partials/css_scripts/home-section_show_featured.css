@@ -1,7 +1,6 @@
 /* initialize variable check on any card_layout being carousel. Using string boolean as that gives more stable behaviour*/
 {{   $.Scratch.Set "any_carousel_card_layout" "false" }}
 
-{{range $.Params.featured_pages.sections}}
     #featured_{{.name}} .heading {
         color: {{.title_color}};
         text-align: {{.title_alignment}};
@@ -21,7 +20,6 @@
             {{if .clickable_card_overlay_on_hover}}
                 position: relative;
             {{end}}
-
             overflow:auto;
         }
     {{end}}
@@ -122,4 +120,3 @@
             font-size: {{.arrow_size}};
         }
     {{end}}
-{{end}}

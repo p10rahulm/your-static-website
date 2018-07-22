@@ -39,7 +39,7 @@ organizations = [
 summary_one_liner = ""
 
 # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
-avatar_image = "jfk.jpg"
+avatar_image = "people/jfk.jpg"
 
 
 interests =     [

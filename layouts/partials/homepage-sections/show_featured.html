@@ -1,24 +1,34 @@
 <header>
-    <style>
-        {{partial "css_scripts/home-section_show_featured.css" . | safeCSS}}
-    </style>
 
-    {{if (eq ($.Scratch.Get "any_carousel_card_layout") "true")}}
-
-    {{partial "functions/load_external_js.html" (dict "external_url" "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" "scratch" .Scratch "async" false "defer" false)}}
-    {{partial "functions/load_external_css.html" (dict "external_url" "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" "scratch" .Scratch)}}
-    {{partial "functions/load_external_css.html" (dict "external_url" "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css" "scratch" .Scratch)}}
     <script type="text/javascript">
-        {{partial "js_scripts/home-section_show_featured.js" . | safeJS}}
+        {{partial "js_scripts/lazy_load.js" . | safeJS }}
     </script>
-    {{end}}
 
 </header>
+
+
+
 {{range $index, $element := $.Params.featured_pages.sections}}
     {{if (or (ne .card_layout "") (ne .card_layout "default")) }}
         {{$pages := (where $.Data.Pages "Section" .name)}}
         {{partial (print "listLayouts/" .card_layout ".html") (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
     {{else}}
+        <header>
+            <style>
+                {{partial "css_scripts/home-section_show_featured.css" . | safeCSS}}
+            </style>
+
+            {{if (eq ($.Scratch.Get "any_carousel_card_layout") "true")}}
+
+            {{partial "functions/load_external_js.html" (dict "external_url" "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" "scratch" .Scratch "async" false "defer" false)}}
+            {{partial "functions/load_external_css.html" (dict "external_url" "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" "scratch" .Scratch)}}
+            {{partial "functions/load_external_css.html" (dict "external_url" "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css" "scratch" .Scratch)}}
+            <script type="text/javascript">
+                {{partial "js_scripts/featured_sections-carousel.js" . | safeJS}}
+            </script>
+            {{end}}
+
+        </header>
         <section id="featured_{{.name}}" class="home-section">
             <div class="container">
                 <!-- Contact widget -->
@@ -54,7 +64,7 @@
                         {{ end }}
                             {{if $.Scratch.Get "show_image" |default true}}
                             <a href="{{.Permalink}}">
-                                <img src="/img/{{.Params.caption_image}}" class="img-responsive img-centered" alt="{{.Title}}">
+                                <img src="placeholder.jpg" data-src="/img/{{.Params.caption_image}}" class="card_img lazy" alt="{{.Title}}">
                             </a>
                             {{end}}
                             {{if eq ($.Scratch.Get "overlay") false}}

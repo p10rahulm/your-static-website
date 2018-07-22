@@ -1,6 +1,5 @@
 <aside class = "popup">
     <header>
-        {{partial "functions/load_external_js.html" (dict "external_url" "https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.j" "scratch" .Scratch "async" false "defer" false)}}
         <script type="text/javascript">
              {{ partial "js_scripts/popup.js" . | safeJS }}
         </script>

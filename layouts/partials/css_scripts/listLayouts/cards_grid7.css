@@ -6,6 +6,7 @@
 #{{.name}}_cards .details_cards{
     grid-column-end: span 2;
     background-color: #fff;
+    width: 100%;
 }
 
 #{{.name}}_cards .details_cards:nth-child(7n+4),#{{.name}}_cards .details_cards:nth-child(7n+5) {

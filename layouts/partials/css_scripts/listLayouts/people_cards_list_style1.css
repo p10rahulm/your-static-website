@@ -5,7 +5,7 @@
   justify-content:space-evenly;
 }
 
-#{{.name}}_cards .card_avatar_image {
+#{{.name}}_cards .card_img {
     height:250px;
     width:auto;
     border-radius: 50%;

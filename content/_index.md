@@ -1014,7 +1014,7 @@ fixed_sharer_active = true
         num_featured = 4
         sort_field = ".Params.title" #add the .Params at the start before sort field
         sort_order = "asc"
-        card_layout = "people_cards_list_style1" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        card_layout = "people_cards_list_style1" 
 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
@@ -1057,7 +1057,7 @@ fixed_sharer_active = true
         num_featured = 6
         sort_field = ".Params.title" #add the .Params at the start before sort field
         sort_order = "asc"
-        card_layout = "long_list_with_image" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        card_layout = "long_list_with_image" 
 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
@@ -1124,7 +1124,7 @@ fixed_sharer_active = true
         sort_field = ".Params.title"
         sort_order = "desc"
         card_alignment = "center"
-        card_layout = "large_cards_leftimage_centertext_box_nooverlay" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        card_layout = "large_cards_leftimage_centertext_box_nooverlay" 
 
 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
@@ -1160,7 +1160,7 @@ fixed_sharer_active = true
         num_featured = 4
         sort_field = ".Params.title"
         sort_order = "asc"
-        card_layout = "list_of_large_cards" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        card_layout = "list_of_large_cards" 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
             field_name = "course_title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
@@ -1205,7 +1205,7 @@ fixed_sharer_active = true
         num_featured = 3
         sort_field = ".Params.title"
         sort_order = "asc"
-        card_layout = "list_of_large_cards_no_overlay" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        card_layout = "list_of_large_cards_no_overlay" 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
             field_name = "workshop_title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
@@ -1254,7 +1254,7 @@ fixed_sharer_active = true
         num_featured = 25
         sort_field = ".Params.title"
         sort_order = "asc"
-        card_layout = "responsive_3cards_wbox" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        card_layout = "responsive_3cards_wbox" 
 
         [[featured_pages.sections.fields]]
             field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
@@ -1280,7 +1280,7 @@ fixed_sharer_active = true
         num_featured = 7
         sort_field = ".Params.title"
         sort_order = "asc"
-        card_layout = "cards_grid3" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        card_layout = "cards_grid7"
 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
@@ -1315,7 +1315,7 @@ fixed_sharer_active = true
         num_featured = 10
         sort_field = ".Params.title"
         sort_order = "asc"
-        card_layout = "cards_alternating_grid" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        card_layout = "cards_grid5"
 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
@@ -1372,7 +1372,7 @@ fixed_sharer_active = true
         num_featured = 8
         sort_field = ".Params.title"
         sort_order = "asc"
-        card_layout = "carousel_4card" # chooose between 1) "cards" 2) "carousel" 3) "list"
+        card_layout = "carousel_4card" 
 
         [[featured_pages.sections.fields]]
             field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
