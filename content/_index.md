@@ -1289,24 +1289,7 @@ fixed_sharer_active = true
             class = "card_title left_align"
             postfix = ""
             truncate_size = 300
-            [[featured_pages.sections.fields.styles]]
-                style = "margin-top"
-                value = "-20px"
-            [[featured_pages.sections.fields.styles]]
-                style = "height"
-                value = "1.5rem"
-            [[featured_pages.sections.fields.styles]]
-                style = "width"
-                value = "85%"
-            [[featured_pages.sections.fields.styles]]
-                style = "white-space"
-                value = "nowrap"
-            [[featured_pages.sections.fields.styles]]
-                style = "overflow"
-                value = "hidden"
-            [[featured_pages.sections.fields.styles]]
-                style = "text-overflow"
-                value = "ellipsis"
+
 
 
 

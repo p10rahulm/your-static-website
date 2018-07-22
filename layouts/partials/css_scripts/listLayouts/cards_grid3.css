@@ -26,6 +26,14 @@
     transition: transform .75s;
     transform: translateY(-10px);
 }
+#{{.name}}_cards .details_cards .card_title {
+          margin-top:-20px;
+          height: 1.5rem;
+          width:85%;
+          white-space:nowrap;
+          overflow: hidden;
+          text-overflow:ellipsis;
+}
 @media only screen and (max-width: 1200px) {
     #{{.name}}_cards {
         grid-gap: 25px;
