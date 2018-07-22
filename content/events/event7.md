@@ -1,11 +1,11 @@
 +++
 title = "Event7"
-date = 2018-06-08T19:44:42+05:30
+date = 2018-07-22T11:43:35+05:30
 draft = false
 author = "Rahul Madhavan"
 
 # The below image will be shown in all the cards pointing to this article
-caption_image = "bubbles.jpg"
+
 
 show_popup = true
 show_sharer = true
@@ -22,21 +22,18 @@ tags = []
 categories = []
 genre = []
 # Specific Template Meta
-[event]
-        title= ""
-        topic= ""
-        location = "Bangalore Gymkhana"
-        event_date = "17th Dec 2018"
+event_title= "Concert for Peace"
+tagline = "The beats are coming to town"
+topic= "Rock"
+who = "Kailash Kher"
+caption_image = "bubbles.jpg"
+where = "Asilomar, Aranyaka, India"
+when = "17th Dec 2018"
 
-        # Optional event URL.
-        event_url = ""
+# Optional event URL.
+event_url = ""
 
-        # Short version
-        abstract = ""
-
-
-        speakers = [ { name = "K S Madhavan", url = "" }, { name = "ABC", url = "" }, { name = "XYZ", url = "" } ]
-
+# Short version
 
 # Featured image
 # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
@@ -48,4 +45,4 @@ genre = []
 
 # About the event
 
-The workshop on TPM was conducted by Shingo institute at xyz
+Global rhythms and A R Rahman come together for a night for all nights. A might to remember.

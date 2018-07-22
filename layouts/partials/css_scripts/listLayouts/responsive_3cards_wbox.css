@@ -24,7 +24,7 @@
     text-align: center;
     padding: 0.5rem;
     overflow:auto;
-    flex-basis: {{.card_min_width}};
+    flex-basis: 300px;
 }
 
 #{{.name}}_cards .details_cards .card_title{

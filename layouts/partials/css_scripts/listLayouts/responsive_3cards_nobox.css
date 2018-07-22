@@ -15,7 +15,7 @@
     text-align: center;
     padding: 1rem;
     overflow:auto;
-    flex-basis: {{.card_min_width}};
+    flex-basis: 300px;
     margin: 10px auto;
 }
 

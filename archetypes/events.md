@@ -5,7 +5,7 @@ draft = false
 author = "Rahul Madhavan"
 
 # The below image will be shown in all the cards pointing to this article
-caption_image = "bubbles.jpg"
+
 
 show_popup = true
 show_sharer = true
@@ -23,19 +23,17 @@ categories = []
 genre = []
 # Specific Template Meta
 title= "Concert for Peace"
+tagline = "The beats are coming to town"
 topic= "Rock"
-location = "Bangalore Gymkhana"
-event_date = "17th Dec 2018"
+who = "Kailash Kher"
+caption_image = "bubbles.jpg"
+where = "Asilomar, Aranyaka, India"
+when = "17th Dec 2018"
 
 # Optional event URL.
 event_url = ""
 
 # Short version
-tagline = "The beats are coming to town"
-
-
-speakers = [ { name = "A R Rahman", url = "" }, { name = "Prasanna", url = "" }, { name = "XYZ", url = "" } ]
-
 
 # Featured image
 # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.

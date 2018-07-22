@@ -1255,7 +1255,7 @@ fixed_sharer_active = true
         sort_field = ".Params.title"
         sort_order = "asc"
         card_layout = "responsive_3cards_wbox" # chooose between 1) "cards" 2) "carousel" 3) "list"
-        card_min_width = "300px"
+
         [[featured_pages.sections.fields]]
             field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
             class = "cards_title center_align"
@@ -1274,6 +1274,58 @@ fixed_sharer_active = true
 
 
     [[featured_pages.sections]]
+        name = "events"
+        title = "Events"
+        subtitle = "We take care of events all over the imagination"
+        num_featured = 7
+        sort_field = ".Params.title"
+        sort_order = "asc"
+        card_layout = "cards_grid3" # chooose between 1) "cards" 2) "carousel" 3) "list"
+
+        #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+        [[featured_pages.sections.fields]]
+            field_name = "event_title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = ""
+            class = "card_title left_align"
+            postfix = ""
+            truncate_size = 300
+            [[featured_pages.sections.fields.styles]]
+                style = "margin-top"
+                value = "-20px"
+            [[featured_pages.sections.fields.styles]]
+                style = "height"
+                value = "1.5rem"
+            [[featured_pages.sections.fields.styles]]
+                style = "width"
+                value = "85%"
+            [[featured_pages.sections.fields.styles]]
+                style = "white-space"
+                value = "nowrap"
+            [[featured_pages.sections.fields.styles]]
+                style = "overflow"
+                value = "hidden"
+            [[featured_pages.sections.fields.styles]]
+                style = "text-overflow"
+                value = "ellipsis"
+
+
+
+        [[featured_pages.sections.fields]]
+            field_name = "when" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = ""
+            class = "card_details left_align"
+            postfix = ""
+            truncate_size = 250
+
+        [[featured_pages.sections.fields]]
+            field_name = "where" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+            prefix = ""
+            class = "card_details left_align"
+            postfix = ""
+            truncate_size = 250
+
+
+    [[featured_pages.sections]]
         name = "posts"
         title = "Posts"
         subtitle = "The posts are precocious. Use as you feel good!"
@@ -1281,7 +1333,6 @@ fixed_sharer_active = true
         sort_field = ".Params.title"
         sort_order = "asc"
         card_layout = "cards_alternating_grid" # chooose between 1) "cards" 2) "carousel" 3) "list"
-        card_min_width = "300px"
 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
         [[featured_pages.sections.fields]]
@@ -1310,7 +1361,6 @@ fixed_sharer_active = true
         sort_field = ".Params.title"
         sort_order = "asc"
         card_layout = "responsive_3cards_nobox"
-        card_min_width = "300px"
 
         [[featured_pages.sections.fields]]
             field_name = "title"

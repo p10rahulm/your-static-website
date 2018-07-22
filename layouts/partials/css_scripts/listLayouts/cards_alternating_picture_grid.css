@@ -1,0 +1,83 @@
+#{{.name}}_cards1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 250px;
+    grid-auto-flow: row dense;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-gap: 0px;
+}
+#{{.name}}_cards1 .border_box{
+    height: 100%;
+}
+
+#{{.name}}_cards1 .details_cards{
+    width: 100%;
+    position: relative;
+}
+#{{.name}}_cards1 .card_summary {
+    display: none;
+}
+#{{.name}}_cards1 .card_title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0px;
+    background-color: rgba(0, 150, 250, 0.25);
+    color: #4e0000;
+    color: #fff;
+    margin: 0;
+}
+
+
+
+#{{.name}}_cards1 .details_cards:nth-child(7n+3),#{{.name}}_cards1 .details_cards:nth-child(7n+6) {
+    grid-column-end: span 2;
+}
+#{{.name}}_cards1 .details_cards:nth-child(7n+4),#{{.name}}_cards1 .details_cards:nth-child(7n+6) {
+    grid-row-end: span 2;
+}
+#{{.name}}_cards1 .card_img {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+@media only screen and (max-width: 1200px) {
+    #{{.name}}_cards1 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #{{.name}}_cards1 .details_cards:nth-child(7n+3),#{{.name}}_cards1 .details_cards:nth-child(7n+6) {
+        grid-column-end: span 1;
+    }
+    #{{.name}}_cards1 .details_cards:nth-child(7n+4),#{{.name}}_cards1 .details_cards:nth-child(7n+6) {
+        grid-row-end: span 1;
+    }
+    #{{.name}}_cards1 .details_cards:nth-child(5n+1) .card_title {
+        height: auto;
+    }
+
+}
+@media only screen and (max-width: 768px) {
+    #{{.name}}_cards1 {
+        grid-template-columns: repeat(1, 1fr);
+        width: 450px;
+        margin: 10px auto;
+    }
+    #{{.name}}_cards1 .details_cards:nth-child(7n+3),#{{.name}}_cards1 .details_cards:nth-child(7n+6) {
+        grid-column-end: span 1;
+    }
+    #{{.name}}_cards1 .details_cards:nth-child(7n+4),#{{.name}}_cards1 .details_cards:nth-child(7n+6) {
+        grid-row-end: span 1;
+    }
+
+}
+@media only screen and (max-width: 500px) {
+    #{{.name}}_cards1 {
+        grid-template-columns: 1fr;
+        width: 300px;
+        max-width: 98%;
+        margin: 10px auto;
+    }
+}

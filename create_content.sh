@@ -1,6 +1,6 @@
 #!/bin/bash
 
-find content/people/ -type f -regextype sed ! -regex '.*/_.*.md' | xargs rm
+find content/events/ -type f -regextype sed ! -regex '.*/_.*.md' | xargs rm
 
 if [ $# -eq 0 ]
     then

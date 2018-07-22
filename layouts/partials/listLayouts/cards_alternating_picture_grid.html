@@ -1,0 +1,76 @@
+{{$pages := $.pages}}
+{{$context := $.context}}
+{{$scratch := $.scratch}}
+{{$fields := $.context.fields}}
+<header>
+    <style>
+        {{partial "css_scripts/listLayouts/cards_alternating_picture_grid.css" $.context | safeCSS}}
+    </style>
+</header>
+<section id="featured_{{$.context.name}}" class="home-section">
+    <div class="container">
+        <div class="section-heading">
+            {{$.context.title | humanize}}
+        </div>
+        <div class="section-subheading">
+            {{$.context.subtitle | humanize}}
+        </div>
+        <div id="{{$.context.name}}_cards1" class="cards_grid">
+            {{ range first $.context.num_featured (sort  (where ($pages) "Params.featured" true) $.context.sort_field $.context.sort_order)}}
+            <div class ="details_cards">
+                <div class="border_box">
+                    <a href="{{.Permalink}}">
+                        <div class="overlay">
+                        </div>
+                    </a>
+                    <a href="{{.Permalink}}">
+                        <img src="/img/{{.Params.caption_image}}" class="card_img" alt="{{.Title}}">
+                    </a>
+                    {{$page_summary := .Summary}}
+                    {{$page_params := .Params}}
+                    {{$page_permalink := .Permalink}}
+
+                    {{range $fields }}
+                    {{if eq .type "list_of_links"}}
+                    {{$list_of_links_length := (len (index $page_params .field_name))}}
+                    <div class="card_{{.field_name}} {{.class}}">
+                        {{.prefix }}
+                        {{ range $index, $element := (index $page_params .field_name) }}
+                        <a href="{{.url}}"><span>
+                            {{ if and (ne $index 0) (eq $index (sub $list_of_links_length 1)) }} and
+                            {{ else if ne $index 0}},
+                            {{ end }}
+                            {{$element.name}}</span></a>
+                        {{end}}
+                        {{.postfix | markdownify}}
+                    </div>
+
+                    {{else if eq .type "icon_links"}}
+                    <div class="card_{{.field_name}} {{.class}}">
+                        {{.prefix }}
+                        {{ range $index, $element := (index $page_params .field_name) }}
+                        <a href="{{$element.url}}" target="_blank"><span><i class="fa {{$element.icon}}"></i></span></a>
+                        {{end}}
+                        {{.postfix| markdownify}}
+                    </div>
+                    {{else}}
+
+                    <div class="card_{{.field_name}} {{.class}}">
+                        {{if eq .field_name "summary"}}
+                        {{.prefix }}{{$page_summary | markdownify | truncate (.truncate_size | default 300)}}{{.postfix}}
+                        {{else}}
+                        <a href="{{$page_permalink}}">
+                            {{.prefix }}{{(index $page_params .field_name) | markdownify | truncate (.truncate_size | default 300)}}{{.postfix}}
+                        </a>
+                        {{end}}
+                    </div>
+
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+            {{end}}
+        </div>
+
+    </div>
+</section>
