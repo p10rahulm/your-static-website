@@ -2,22 +2,21 @@
 /*************************************************
 *  Home page logo wall section
 **************************************************/
-section#logo-wall .heading {
-    margin: 0rem 0rem -0.5rem;
-    font-weight: 700;
-    font-size: 2rem;
-}
-section#logo-wall .subheading {
-    padding: 0rem 0rem 0.5rem;
-    font-weight: 200;
-    font-size: 1.2rem;
-}
-section#logo-wall #flexbox-logo-container {
+
+section#logo-wall .logo-grid {
     padding-top: 1.5rem;
-    display: flex;
-    justify-content: space-around;
-    align-items:top;
-    flex-wrap: wrap;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-flow: row;
+    justify-items: center;
+    align-items: center;
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 30px;
+}
+section#logo-wall .logo-grid img {
+    height: auto;
+    width: 100%;
 }
 section#logo-wall .logo-child{
     flex-basis: {{ .Params.logo_wall.min_width_logo | safeCSS }};

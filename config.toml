@@ -84,10 +84,10 @@ verboseLog =true
     # Tags for twitter cards for sharing
     twitter_site_handle = "@codeFRA"
     twitter_creator_handle = "@rahul_maddy"
-    # The favicon will be used to render the icon in the browser. Save this in the *static/folder*. Please save as png format images of square size.
-    favicon = "favicon.png"
-    # The favicon will be used to render the icon in the browser. Save this in the *static/folder*. Please save as png format images of square size.
-    apple_touch_icon = "favicon.png"
+    # The favicon will be used to render the icon in the browser. Save this in the *static/folder*.
+    favicon = "favicon.jpg"
+    # The favicon will be used to render the icon in the browser. Save this in the *static/folder*.
+    apple_touch_icon = "favicon.jpg"
     # Diplay a logo in navigation bar rather than title (optional).
     #   To enable, place an image in `static/` and reference its filename below. To disable, set the value to "".
     logo = "thinking_tree2.jpg"
@@ -216,7 +216,7 @@ verboseLog =true
         subtitle_color = "#ffaa11"
         # Use img_position = 1 for full image background and use img_position = 2 for image on the right
         img_position = 2
-        img_source = "/img/flowers_line_drawing.png"
+        img_source = "/img/flowers_line_drawing.jpg"
 
         # form
         form_label_color = "#ffaa33"

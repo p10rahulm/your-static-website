@@ -27,9 +27,7 @@
     height: 25px;
 }
 
-#{{.name}}_cards .details_cards:nth-child(even) {
-    background-color: inherit;
-}
+
 #{{.name}}_cards .details_cards:nth-child(5n+1) {
     grid-column-end: span 2;
 }

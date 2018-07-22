@@ -976,24 +976,24 @@ fixed_sharer_active = true
     # List all the logos in the logo wall below.
     # Ensure height to width ratios of the images are all the same.
     [[logo_wall.logos]]
-        source = "https://themes.gohugo.io/theme/agency/img/logos/themeforest.jpg"
+        source = "https://upload.wikimedia.org/wikipedia/commons/3/37/Palantir_company_logo.png"
         link = "/"
-        name = "Bubbles"
+        name = "Palantir"
 
     [[logo_wall.logos]]
-        source = "https://themes.gohugo.io/theme/agency/img/logos/creative-market.jpg"
+        source = "https://media.licdn.com/dms/image/C510BAQHxVXskfQIR-w/company-logo_200_200/0?e=2131920000&v=beta&t=I-Eibuu3JRlpqc2wCpmw--1hp-OAw64YnK8lhO-g-iA"
         link = "/"
-        name = "Creative"
+        name = "Sigmoid"
 
     [[logo_wall.logos]]
-        source = "https://themes.gohugo.io/theme/agency/img/logos/envato.jpg"
+        source = "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Flipkart_logo.svg/250px-Flipkart_logo.svg.png"
         link = "/"
-        name = "Envato"
+        name = "Flipkart"
 
     [[logo_wall.logos]]
-        source = "https://themes.gohugo.io/theme/agency/img/logos/designmodo.jpg"
+        source = "http://www.nanobi.in/wp-content/uploads/2017/09/nb-logo.png"
         link = "/"
-        name = "Design_Modo"
+        name = "Hotstar"
 
 # ----------------------------------
 # featured posts section
@@ -1420,7 +1420,7 @@ fixed_sharer_active = true
 
     [[cta.elements]]
         name = "cta-top-right-image"
-        class = "top-right-image"
+        class = "top-right-image lazy"
         content = ""
         has_children = false
         has_parent = true
@@ -1428,7 +1428,10 @@ fixed_sharer_active = true
         type = "img"
         [[cta.elements.tags]]
             field = "src"
-            value = "img/dog_transparency2.png"
+            value = "placeholder.jpg"
+        [[cta.elements.tags]]
+            field = "data-src"
+            value = "img/dog_transparency2.jpg"
         # use css styles below
         [[cta.elements.styles]]
             container = "#cta"
@@ -1448,7 +1451,7 @@ fixed_sharer_active = true
                 value = "300px"
     [[cta.elements]]
         name = "cta-bottom-left-image"
-        class = "bottom-left-image" # use in case belongs to some class of elements
+        class = "bottom-left-image lazy" # use in case belongs to some class of elements
         content = ""
         has_children = false
         has_parent = true
@@ -1456,7 +1459,10 @@ fixed_sharer_active = true
         type = "img"
         [[cta.elements.tags]]
             field = "src"
-            value = "img/dog_transparency1.png"
+            value = "placeholder.jpg"
+        [[cta.elements.tags]]
+            field = "data-src"
+            value = "img/dog_transparency1.jpg"
         # use css styles below
         [[cta.elements.styles]]
             container = "#cta"

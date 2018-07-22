@@ -7,7 +7,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
     if ("IntersectionObserver" in window) {
-        console.log("in the first");
+        console.log("Intersection Observer Working");
 
         let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
             entries.forEach(function(entry) {
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     } else {
         // Possibly fall back to a more compatible method here
+        console.log("Intersection Observer non-compatible");
         let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
         let active = false;
 

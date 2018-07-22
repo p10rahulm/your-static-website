@@ -4,12 +4,12 @@
   "icons": [
     {
       "src": "/{{$.Site.Params.favicon}}",
-      "type": "image/png",
+      "type": "image/jpeg",
       "sizes": "30x30"
     },
     {
       "src": "/{{$.Site.Params.logo}}",
-      "type": "image/png",
+      "type": "image/jpeg",
       "sizes": "766x627"
     }
   ],
