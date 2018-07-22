@@ -11,7 +11,11 @@
     padding: 1rem;
     overflow:auto;
 }
-
+#{{.name}}_cards .details_cards:hover {
+    box-shadow: 0 5px 12px 2px rgba(0,0,0,.2);
+    transition: transform .5s;
+    transform: translateY(-10px);
+}
 #{{.name}}_cards .details_cards .card_title{
     margin:1rem 0 0.5rem 0;
     color: #a22;

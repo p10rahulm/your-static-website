@@ -18,7 +18,11 @@
     flex-basis: 300px;
     margin: 10px auto;
 }
-
+#{{.name}}_cards .details_cards:hover {
+              box-shadow: 0 5px 12px 2px rgba(0,0,0,.2);
+              transition: transform .75s;
+              transform: translateY(-10px);
+          }
 
 #{{.name}}_cards .details_cards a:hover{
   text-decoration: none;
