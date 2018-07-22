@@ -1,7 +1,8 @@
 
 
 {{range $index, $element := $.Params.featured_pages.sections}}
-    {{if (or (ne .card_layout "") (ne .card_layout "default")) }}
+    {{if   (and   (isset . "card_layout")                              (or (ne .card_layout "") (ne .card_layout "default"))) }}
+
         {{$pages := (where $.Data.Pages "Section" .name)}}
         {{partial (print "listLayouts/" .card_layout ".html") (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
     {{else}}

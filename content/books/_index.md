@@ -3,7 +3,7 @@
 name = "books"
 title = "Books"
 subtitle = "The latest and greatest books"
-num_featured = 6
+num_featured = 100
 sort_field = ".Params.title" #add the .Params at the start before sort field
 sort_order = "asc"
 card_layout = "long_list_with_image"
