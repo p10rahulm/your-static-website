@@ -4,7 +4,7 @@
         {{$layout_file  := (print "listLayouts/" .Params.card_layout ".html")}}
     {{end}}
 
-    {{$paginator := .Paginate  .Pages  (.Params.items_per_page | default 5)}}
+    {{$paginator := .Paginate  (.Pages.ByDate.Reverse)  (.Params.items_per_page | default 10)}}
     {{$pages := $paginator.Pages}}
     {{partial $layout_file (dict "pages" $pages "context" .Params "scratch" $.Scratch "section" .Section ) | safeHTML}}
     {{ partial "pagination.html" . }}
