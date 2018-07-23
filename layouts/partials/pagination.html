@@ -4,10 +4,10 @@
 <div class="container">
 {{ $pag := $.Paginator }}
 {{ if gt $pag.TotalPages 1 }}
-<ul class="paginationed pagination-lg">
+<ul class="paginationed">
     {{ with $pag.First }}
     <li>
-        <a href="{{ .URL }}" aria-label="First"><span aria-hidden="true">«</span></a>
+        <a href="{{ .URL }}"><span >«</span></a>
     </li>
     {{ end }}
     <!-- Use below for previous page
@@ -33,7 +33,7 @@
         {{ if $showNumber }}
         <li {{ if eq . $pag }}class="active"{{ end }}><a href="{{ .URL }}" {{ if eq . $pag }}class="active"{{ end }}>{{ .PageNumber }}</a></li>
         {{ else if ($.Scratch.Get "__paginator.shouldEllipse") }}
-        <li class="disabled"><span aria-hidden="true">&hellip;</span></li>
+        <li class="disabled"><span>&hellip;</span></li>
         {{ end }}
     {{ end }}
     <!-- Use below for next page
@@ -45,7 +45,7 @@
 
     {{ with $pag.Last }}
         <li>
-            <a href="{{ .URL }}" aria-label="Last"><span aria-hidden="true">»</span></a>
+            <a href="{{ .URL }}"><span>»</span></a>
         </li>
     {{ end }}
 

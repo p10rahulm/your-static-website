@@ -1,9 +1,8 @@
 
 
 {{range $index, $element := $.Params.featured_pages.sections}}
-    {{if   (and   (isset . "card_layout")                              (or (ne .card_layout "") (ne .card_layout "default"))) }}
-
-        {{$pages := (where $.Data.Pages "Section" .name)}}
+    {{if (and (isset . "card_layout") (or (ne .card_layout "") (ne .card_layout "default"))) }}
+        {{$pages := (cond (eq .sort_order "desc") ((where (where $.Data.Pages "Section" .name) "Params.featured" true).ByParam .sort_field).Reverse ((where (where $.Data.Pages "Section" .name) "Params.featured" true).ByParam .sort_field)) }}
         {{partial (print "listLayouts/" .card_layout ".html") (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
     {{else}}
         <header>

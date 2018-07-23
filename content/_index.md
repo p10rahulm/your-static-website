@@ -1012,8 +1012,8 @@ fixed_sharer_active = true
         title = "Our Strength"
         subtitle = "Our people are our strength"
         num_featured = 4
-        sort_field = ".Params.title" #add the .Params at the start before sort field
-        sort_order = "asc"
+        sort_field = "title" #add the .Params at the start before sort field
+        sort_order = "desc"
         card_layout = "people_cards_list_style1" 
 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above

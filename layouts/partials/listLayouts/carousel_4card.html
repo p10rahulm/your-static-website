@@ -23,7 +23,7 @@
             {{$.context.subtitle | humanize}}
         </div>
         <div id="{{$.context.name}}_cards" class="carousel_responsive">
-            {{ range first $.context.num_featured (sort  (where ($pages) "Params.featured" true) $.context.sort_field $.context.sort_order)}}
+            {{ range first $.context.num_featured $pages }}
             <div class ="details_cards">
                 <a href="{{.Permalink}}">
                     {{$page_summary := .Summary}}

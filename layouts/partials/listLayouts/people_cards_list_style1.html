@@ -16,7 +16,7 @@
             {{$.context.subtitle | humanize}}
         </div>
         <div id="{{$.context.name}}_cards" class="card_flex">
-            {{ range first $.context.num_featured (sort  (where ($pages) "Params.featured" true) $.context.sort_field $.context.sort_order)}}
+            {{ range first $.context.num_featured $pages }}
             <div class ="details_cards">
                 <a href="{{.Permalink}}">
                     <img src="placeholder.jpg" data-src="/img/{{.Params.avatar_image}}" class="card_img lazy" alt="{{.Title}}">

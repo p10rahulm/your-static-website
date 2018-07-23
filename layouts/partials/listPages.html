@@ -1,13 +1,14 @@
 
-    {{$layout_file  := "listLayouts/default_listLayout.html"}}
-    {{if (and (isset .Params "card_layout") (or (ne .Params.card_layout "") (ne .Params.card_layout "default"))) }}
-        {{$layout_file  := (print "listLayouts/" .Params.card_layout ".html")}}
-    {{end}}
 
-    {{$paginator := .Paginate  (.Pages.ByDate.Reverse)  (.Params.items_per_page | default 10)}}
-    {{$pages := $paginator.Pages}}
-    {{partial $layout_file (dict "pages" $pages "context" .Params "scratch" $.Scratch "section" .Section ) | safeHTML}}
-    {{ partial "pagination.html" . }}
+{{ $layout_file  := (cond (and (isset .Params "card_layout") (or (ne .Params.card_layout "") (ne .Params.card_layout "default"))) (print "listLayouts/" .Params.card_layout ".html") "listLayouts/default_listLayout.html") }}
+{{$paginator := .Paginate  (cond (eq (.Params.sort_order| default "desc") "desc") (.Pages.ByParam (.Params.sort_field| default "date")).Reverse (.Pages.ByParam (.Params.sort_field| default "date")))   (.Params.num_featured | default 10)}}
+
+{{$pages := $paginator.Pages}}
+
+
+{{partial $layout_file (dict "pages" $pages "context" .Params "scratch" $.Scratch "section" .Section ) | safeHTML}}
+
+{{ partial "pagination.html" . }}
 
 
 
