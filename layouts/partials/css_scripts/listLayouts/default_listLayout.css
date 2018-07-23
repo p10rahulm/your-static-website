@@ -41,12 +41,3 @@
     text-decoration: underline;
 }
 
-{{$section_name := .name}}
-{{range .fields}}
-    #{{$section_name}}_cards .details_cards .card_{{.field_name}} {
-        {{range .styles}}
-        {{.style}}: {{.value | safeCSS}};
-        {{end}}
-    }
-{{end}}
-

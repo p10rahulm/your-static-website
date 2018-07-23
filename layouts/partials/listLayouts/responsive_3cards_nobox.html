@@ -16,7 +16,7 @@
             {{$.context.subtitle | humanize}}
         </div>
         <div id="{{$.context.name}}_cards" class="card_flex">
-        {{ range first $.context.num_featured $pages }}
+            {{ range $pages }}
             <div class ="details_cards">
                 <a href="{{.Permalink}}">
                     <img src="placeholder.jpg" data-src="/img/{{.Params.caption_image}}" class="card_img lazy" alt="{{.Title}}">

@@ -1001,19 +1001,13 @@ fixed_sharer_active = true
 [featured_pages]
     active = true
 
-    # Below include the sections like books, courses or people (page types) for which you want the featured sections on the front page
-    # Choose the number of pages per section you want featured on the front page as num_featured
-    # Choose how you want sorted: You can choose any parameter found in the content front matter. Prefix "." before the required field name
-    # Choose sort order from "asc" or "desc"
-    # There are three layouts you can choose from
-    # 1) "cards" 2) "carousel" 3) "list"
     [[featured_pages.sections]]
         name = "people"
         title = "Our Strength"
         subtitle = "Our people are our strength"
         num_featured = 4
         sort_field = "title" #add the .Params at the start before sort field
-        sort_order = "desc"
+        sort_order = "asc"
         card_layout = "people_cards_list_style1" 
 
         #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above

@@ -1,13 +1,15 @@
+{{range where .Site.Data.layouts.sectionwise_list_layouts.sections ".name" .Section }}
+{{$.Scratch.Set "layout_data" .}}
+{{end}}
+{{$layout_data := $.Scratch.Get "layout_data"}}
 
-
-{{ $layout_file  := (cond (and (isset .Params "card_layout") (or (ne .Params.card_layout "") (ne .Params.card_layout "default"))) (print "listLayouts/" .Params.card_layout ".html") "listLayouts/default_listLayout.html") }}
-{{$paginator := .Paginate  (cond (eq (.Params.sort_order| default "desc") "desc") (.Pages.ByParam (.Params.sort_field| default "date")).Reverse (.Pages.ByParam (.Params.sort_field| default "date")))   (.Params.num_featured | default 10)}}
-
+{{ $layout_file  := (cond (and (isset $layout_data "card_layout") (or (ne $layout_data.card_layout "") (ne $layout_data.card_layout "default"))) (print "listLayouts/" $layout_data.card_layout ".html") "listLayouts/default_listLayout.html") }}
+{{$paginator := .Paginate  (cond (eq ($layout_data.sort_order| default "desc") "desc") (.Pages.ByParam ($layout_data.sort_field| default "date")).Reverse (.Pages.ByParam ($layout_data.sort_field| default "date")))   ($layout_data.number_in_list_page | default 10)}}
 {{$pages := $paginator.Pages}}
+{{$section := cond (isset . "Section") .Section "List Page"}}
+<!--We have now set the required variables. The templating begins below-->
 
-
-{{partial $layout_file (dict "pages" $pages "context" .Params "scratch" $.Scratch "section" .Section ) | safeHTML}}
-
+{{partial $layout_file (dict "pages" $pages "context" ($layout_data | default .) "scratch" $.Scratch "section" $section ) | safeHTML}}
 {{ partial "pagination.html" . }}
 
 

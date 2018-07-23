@@ -1,0 +1,388 @@
+[[sections]]
+    name = "people"
+    title = "Our Strength"
+    subtitle = "Our people are our strength"
+    num_featured = 4
+    number_in_list_page = 8
+    sort_field = "title" #add the .Params at the start before sort field
+    sort_order = "desc"
+    card_layout = "people_cards_list_style1" 
+
+    #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+    [[sections.fields]]
+        field_name = "name"
+        prefix = ""
+        class = "card_title center_align"
+        postfix = ""
+    [[sections.fields]]
+        field_name = "role"
+        prefix = ""
+        class = "card_summary center_align"
+        postfix = ""
+        [[sections.fields.styles]]
+            style = "padding"
+            value = "10px 3px 0px 3px"
+    [[sections.fields]]
+        field_name = "social"
+        type = "icon_links"
+        prefix = ""
+        class = "card_links center_align"
+        postfix = ""
+        [[sections.fields.styles]]
+            style = "padding"
+            value = "0 3px 10px 3px"
+        [[sections.fields.styles]]
+            style = "letter-spacing"
+            value = "3px"
+    [[sections.fields]]
+        field_name = "summary"
+        prefix = ""
+        class = "card_summary center_align"
+        postfix = ""
+        truncate_size = 115
+
+
+[[sections]]
+    name = "books"
+    title = "Books"
+    subtitle = "The latest and greatest books"
+    num_featured = 5
+    number_in_list_page = 5
+    sort_field = ".Params.title" #add the .Params at the start before sort field
+    sort_order = "asc"
+    card_layout = "long_list_with_image" 
+
+    #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+    [[sections.fields]]
+        field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = ""
+        class = "card_title"
+        postfix = ""
+        [[sections.fields.styles]]
+            style = "margin-top"
+            value = "0"
+    [[sections.fields]]
+        field_name = "authors" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = "Authors: "
+        class = "card_authors left_align"
+        postfix = ""
+        [[sections.fields.styles]]
+            style = "margin"
+            value = "0 3px"
+
+    [[sections.fields]]
+        field_name = "tagline" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = ""
+        postfix = ""
+        class = "card_tagline left_align"
+        [[sections.fields.styles]]
+            style = "margin"
+            value = "0 3px"
+
+    [[sections.fields]]
+        field_name = "abstract" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = "About: "
+        postfix = ""
+        truncate_size = 100
+        class = "card_tagline left_align"
+        [[sections.fields.styles]]
+            style = "color"
+            value = "#333"
+        [[sections.fields.styles]]
+            style = "margin"
+            value = "0 3px"
+
+    [[sections.fields]]
+        field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = ""
+        postfix = ""
+        truncate_size = 200
+        class = "card_summary left_align"
+        [[sections.fields.styles]]
+            style = "margin"
+            value = "1rem 3px"
+        [[sections.fields.styles]]
+            style = "font-style"
+            value = "italic"
+        [[sections.fields.styles]]
+            style = "line-height"
+            value = "1.25"
+
+
+[[sections]]
+    name = "publications"
+    title = "Publications"
+    subtitle = "Who has published me, why don't you see?"
+    num_featured = 1
+    number_in_list_page = 5
+    sort_field = ".Params.title"
+    sort_order = "desc"
+    card_alignment = "center"
+    card_layout = "large_cards_leftimage_centertext_box_nooverlay" 
+
+
+    #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+    [[sections.fields]]
+        field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "card_title center_align"
+        prefix = ""
+        postfix = ""
+    [[sections.fields]]
+        field_name = "authors" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "card_authors center_align"
+        prefix = ""
+        type = "list_of_links"
+        postfix = "<hr>"
+    [[sections.fields]]
+        field_name = "abstract" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = ""
+        class = "card_summary"
+        truncate_size = 750
+        postfix = ""
+
+    [[sections.fields]]
+        field_name = "links" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "card_icon_links"
+        prefix = ""
+        type = "icon_links"
+        postfix = ""
+
+[[sections]]
+    name = "courses"
+    title = "Courses"
+    subtitle = "We take courses for all to enjoy"
+    num_featured = 4
+    number_in_list_page = 5
+    sort_field = ".Params.title"
+    sort_order = "asc"
+    card_layout = "list_of_large_cards" 
+    #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+    [[sections.fields]]
+        field_name = "course_title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "card_title left_align"
+        prefix = "Title: "
+        postfix = ""
+
+    [[sections.fields]]
+        field_name = "faculty" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "card_authors left_align"
+        prefix = "Authors: "
+        postfix = ""
+
+    [[sections.fields]]
+        field_name = "duration" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "card_details left_align"
+        prefix = "Duration: "
+        postfix = ""
+
+    [[sections.fields]]
+        field_name = "delivery" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "card_details left_align"
+        prefix = "Delivery Method: "
+        postfix = ""
+
+    [[sections.fields]]
+        field_name = "who_should_attend" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "card_details left_align"
+        prefix = "Who should Attend: "
+        postfix = ""
+
+    [[sections.fields]]
+        field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "card_summary left_align"
+        prefix = "Details: "
+        postfix = ""
+
+[[sections]]
+    name = "workshops"
+    title = "Workshops"
+    subtitle = "We have conducted workshops in all major companies in India in the power sector"
+    num_featured = 3
+    number_in_list_page = 10
+    sort_field = ".Params.title"
+    sort_order = "asc"
+    card_layout = "list_of_large_cards_no_overlay" 
+    #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+    [[sections.fields]]
+        field_name = "workshop_title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "card_title left_align"
+        prefix = "Title: "
+        postfix = ""
+
+
+    [[sections.fields]]
+        field_name = "presenters" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        type = "list_of_links"
+        class = "card_authors left_align"
+        prefix = "Authors: "
+        postfix = ""
+
+    [[sections.fields]]
+        field_name = "topic" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "card_details left_align"
+        prefix = "Topic: "
+        postfix = ""
+
+    [[sections.fields]]
+        field_name = "tagline" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "card_details left_align"
+        prefix = "Description: "
+        postfix = ""
+
+    [[sections.fields]]
+        field_name = "client" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "card_details left_align"
+        prefix = "Client: "
+        postfix = ""
+
+
+
+    [[sections.fields]]
+        field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "card_summary left_align"
+        prefix = "Details: "
+        postfix = ""
+
+[[sections]]
+    name = "reviews"
+    title = "Reviews"
+    subtitle = "I review, everything i do!"
+    num_featured = 9
+    number_in_list_page = 12
+    sort_field = ".Params.title"
+    sort_order = "asc"
+    card_layout = "responsive_3cards_wbox" 
+
+    [[sections.fields]]
+        field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "cards_title center_align"
+        prefix = ""
+        postfix = ""
+        [[sections.fields.styles]]
+            style = "margin"
+            value = "5px auto"
+
+    #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+    [[sections.fields]]
+        field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        class = "card_summary left_align"
+        prefix = ""
+        postfix = ""
+
+
+[[sections]]
+    name = "events"
+    title = "Events"
+    subtitle = "We take care of events all over the imagination"
+    num_featured = 7
+    number_in_list_page = 7
+    sort_field = ".Params.title"
+    sort_order = "asc"
+    card_layout = "cards_grid7"
+
+    #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+    [[sections.fields]]
+        field_name = "event_title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = ""
+        class = "card_title left_align"
+        postfix = ""
+        truncate_size = 300
+
+
+
+
+    [[sections.fields]]
+        field_name = "when" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = ""
+        class = "card_details left_align"
+        postfix = ""
+        truncate_size = 250
+
+    [[sections.fields]]
+        field_name = "where" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = ""
+        class = "card_details left_align"
+        postfix = ""
+        truncate_size = 250
+
+
+[[sections]]
+    name = "posts"
+    title = "Posts"
+    subtitle = "The posts are precocious. Use as you feel good!"
+    num_featured = 10
+    number_in_list_page = 10
+    sort_field = ".Params.title"
+    sort_order = "asc"
+    card_layout = "cards_grid5"
+
+    #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+    [[sections.fields]]
+        field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = ""
+        class = "card_title center_align"
+        postfix = ""
+        [[sections.fields.styles]]
+            style = "margin"
+            value = "5px auto 3px auto"
+    [[sections.fields]]
+        field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = ""
+        class = "card_summary center_align"
+        postfix = ""
+        truncate_size = 250
+        [[sections.fields.styles]]
+            style = "margin"
+            value = "3px auto 1.25rem auto"
+
+[[sections]]
+    name = "notes"
+    title = "Short Notes"
+    subtitle = "Thoughts I plant as seeds so they may flower someday"
+    num_featured = 6
+    number_in_list_page = 12
+    sort_field = ".Params.title"
+    sort_order = "asc"
+    card_layout = "responsive_3cards_nobox"
+
+    [[sections.fields]]
+        field_name = "title"
+        prefix = ""
+        class = "card_title center_align"
+        postfix = ""
+        [[sections.fields.styles]]
+            style = "margin"
+            value = "5px auto 5px auto"
+    [[sections.fields]]
+        field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = ""
+        class = "card_summary left_align"
+        truncate_size = 100
+        postfix = ""
+        [[sections.fields.styles]]
+            style = "margin"
+            value = "0px 0 5px auto"
+
+
+
+[[sections]]
+    name = "thoughts"
+    title = "Thoughts"
+    subtitle = "The thoughts are precious. Handle with care!"
+    num_featured = 8
+    number_in_list_page = 8
+    sort_field = ".Params.title"
+    sort_order = "asc"
+    card_layout = "carousel_4card" 
+
+    [[sections.fields]]
+        field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = ""
+        class = "card_title"
+        postfix = ""
+    [[sections.fields]]
+        field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = ""
+        class = "card_summary_light left_align"
+        postfix = ""
+

@@ -17,7 +17,7 @@
             {{$.context.subtitle | humanize}}
         </div>
         <div id="{{$.context.name}}_cards" class="cardList">
-            {{ range first $.context.num_featured $pages }}
+            {{ range $pages }}
             <div class ="details_cards">
                 <div class="border_box">
                     <a href="{{.Permalink}}">
