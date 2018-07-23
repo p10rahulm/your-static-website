@@ -1,25 +1,13 @@
-<div class="container">
-    {{$layout := .Params.card_layout}}
+
+    {{$layout_file  := "listLayouts/default_listLayout.html"}}
     {{if (and (isset .Params "card_layout") (or (ne .Params.card_layout "") (ne .Params.card_layout "default"))) }}
-        {{$pages := (where $.Data.Pages "Section" .Params.name)}}
-        {{partial (print "listLayouts/" $layout ".html") (dict "pages" $pages "context" .Params "scratch" $.Scratch ) | safeHTML}}
-    {{else}}
-    <h1>{{.Params.Title}}</h1>
-
-    {{ $paginator := .Paginate (where .Pages "Type" "post") 5 }}
-
-
-    <ul>
-        <!-- Ranges through content/post/*.md -->
-        {{ range $paginator.Pages}}
-        <li>
-            <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
-            <time>{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
-        </li>
-        {{ end }}
-    </ul>
-    {{ partial "pagination.html" . }}
+        {{$layout_file  := (print "listLayouts/" .Params.card_layout ".html")}}
     {{end}}
 
+    {{$paginator := .Paginate  .Pages  (.Params.items_per_page | default 5)}}
+    {{$pages := $paginator.Pages}}
+    {{partial $layout_file (dict "pages" $pages "context" .Params "scratch" $.Scratch "section" .Section ) | safeHTML}}
+    {{ partial "pagination.html" . }}
 
-</div>
+
+

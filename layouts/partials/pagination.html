@@ -1,6 +1,7 @@
 <style type="text/css">
     {{partial "css_scripts/pagination.css" . | safeCSS}}
 </style>
+<div class="container">
 {{ $pag := $.Paginator }}
 {{ if gt $pag.TotalPages 1 }}
 <ul class="paginationed pagination-lg">
@@ -50,3 +51,4 @@
 
 </ul>
 {{ end }}
+</div>

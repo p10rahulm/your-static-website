@@ -3,6 +3,7 @@
 name = "books"
 title = "Books"
 subtitle = "The latest and greatest books"
+items_per_page = 5
 num_featured = 100
 sort_field = ".Params.title" #add the .Params at the start before sort field
 sort_order = "asc"
