@@ -11,7 +11,7 @@
 <!--Load custom CSS-->
 <style>
     {{range $fields}}
-    {{partial "functions/css_style.html" (dict "name" .name "styles" .styles) | safeCSS}}
+    {{partial "functions/css_style.html" (dict "name" .name "styles" .styles "content" $content) | safeCSS}}
     {{end}}
 </style>
 
@@ -34,7 +34,7 @@
 
 {{range $fields}}
     {{if not .has_parent}}
-        {{printf "<%s " .type | htmlUnescape | safeHTML }} id="{{.name}}" class = "{{.class}}"{{if (isset . "tags")}}{{range .tags}}{{.field}} = {{.value}}{{end}}{{end}}>
+        {{printf "<%s " .type | htmlUnescape | safeHTML }} id="{{.name}}" class = "{{.class}}"{{if (isset . "tags")}}{{range .tags}}{{$page_var.Set "field_value" .value}}{{if (isset . "content_field_name") }}{{if (isset $content .content_field_name) }}{{$page_var.Set "field_value" (index $content .content_field_name)}}{{end}}{{end}}{{.field}} = "{{$page_var.Get "field_value"}}"{{$page_var.Delete "field_value"}}{{end}}{{end}}>
 
             {{$page_var.Set "field_content" .content}}
             {{if (isset . "content_field_name")}}{{if (isset $content .content_field_name)}}{{$page_var.Set "field_content" (index $content .content_field_name)}}{{end}}{{end}}

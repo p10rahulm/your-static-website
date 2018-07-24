@@ -1,6 +1,8 @@
+{{$name := $.name}}
+{{$styles := $.styles}}
+{{$content := $.content}}
+{{$page_var := newScratch}}
 
-{{ $name := $.name }}
-{{ $styles := $.styles }}
 {{range $styles}}
     {{if isset . "media_type"}}
         {{if not (eq .media_type "")}}
@@ -8,9 +10,7 @@
         {{end}}
     {{end}}
         {{if isset . "container"}}{{ .container | safeCSS }}{{end}} {{if isset . "target"}}{{if not (eq .target "")}}{{ .target | safeCSS }}{{else}}#{{ $name | safeCSS }}{{end}}{{else}}#{{ $name | safeCSS }}{{end}} {
-            {{if isset . "style_value"}}{{range .style_value}}
-            {{ .field | safeCSS }}: {{ .value| safeCSS }};
-            {{end}}{{end}}
+            {{if isset . "style_value"}}{{range .style_value}}{{$page_var.Set "style_val" .value}}{{if (isset . "content_field_name")}}{{if (isset $content .content_field_name)}}{{$page_var.Set "style_val" (index $content .content_field_name)}}{{end}}{{end}}{{ .field | safeCSS }}:{{$page_var.Get "style_val" | safeCSS}};{{$page_var.Delete "style_val"}}{{end}}{{end}}
         }
     {{if isset . "media_type"}}{{if not (eq .media_type "")}}
     }

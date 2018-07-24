@@ -243,6 +243,7 @@
     [[slide_elements.tags]]
         field = "href"
         value = "#featured_posts"
+        content_field_name = "link2"
     [[slide_elements.custom_js_partials]]
         partial_location = "js_scripts/smooth_scroll.js"
         speed = 800
@@ -271,6 +272,7 @@
     [[slide_elements.tags]]
         field = "href"
         value = "#featured_thoughts"
+        content_field_name = "link3"
     [[slide_elements.custom_js_partials]]
         partial_location = "js_scripts/smooth_scroll.js"
         speed = 800
@@ -443,6 +445,7 @@
         [[slide_elements.styles.style_value]]
             field = "background-image"
             value = "linear-gradient(to bottom right,rgba(0,0,200,0.2), rgba(200,0,120,0.2)),url(/img/headers/bubbles-wide.jpg)"
+            content_field_name = "slide1_image"
 
     #Below we include particles from particles.js a library that creates randomly moving particles on screen
     [[slide_elements]]
@@ -494,6 +497,7 @@
     [[slide_elements.tags]]
         field = "href"
         value = "/posts"
+        content_field_name = "slide1_link"
     [[slide_elements.styles]]
         media_type = ""
         container = "#top-banner"
@@ -681,6 +685,8 @@
         [[slide_elements.styles.style_value]]
             field = "background-image"
             value = "linear-gradient(to bottom right,rgba(0,0,200,0.2), rgba(200,0,120,0.2)),url(/img/orange-fractal.jpg)"
+            content_field_name = "slide2_image"
+
 
 [[slide_elements]]
     name = "second_slide_particles"
@@ -711,6 +717,7 @@
     [[slide_elements.tags]]
         field = "href"
         value = "/publications"
+        content_field_name = "slide2_link"
 
 [[slide_elements]]
         name = "second_slide_descriptor_wrapper"
