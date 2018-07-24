@@ -1,0 +1,49 @@
+{{$fields := $.fields}}
+{{$content := $.content}}
+{{$scratch := $.scratch}}
+{{ $page_var := newScratch }}
+
+
+<!--Load external CSS sheets-->
+{{range $fields}}{{ range .css_sources }}
+    {{partial "functions/load_external_css.html" (dict "external_url" .url "scratch" $scratch)}}
+{{end}}{{end}}
+<!--Load custom CSS-->
+<style>
+    {{range $fields}}
+    {{partial "functions/css_style.html" (dict "name" .name "styles" .styles) | safeCSS}}
+    {{end}}
+</style>
+
+<!--Load external JS-->
+{{range $fields}}{{ range .js_sources }}
+{{$async:=false}}
+{{$defer:=false}}
+{{if .async}}{{$async:=true}}{{end}}
+{{if .defer}}{{$defer:=true}}{{end}}
+{{partial "functions/load_external_js.html" (dict "external_url" .url "async" $async "defer" $defer)}}
+{{end}}{{end}}
+
+<!--Load custom JS-->
+
+{{range $fields}}{{ range .custom_js_partials }}
+<script type="text/javascript">{{partial .partial_location . | safeJS }}</script>
+{{end}}{{end}}
+
+<!--Create the HTML-->
+
+{{range $fields}}
+    {{if not .has_parent}}
+        {{printf "<%s " .type | htmlUnescape | safeHTML }} id="{{.name}}" class = "{{.class}}"{{if (isset . "tags")}}{{range .tags}}{{.field}} = {{.value}}{{end}}{{end}}>
+
+            {{$page_var.Set "field_content" .content}}
+            {{if (isset . "content_field_name")}}{{if (isset $content .content_field_name)}}{{$page_var.Set "field_content" (index $content .content_field_name)}}{{end}}{{end}}
+            {{$page_var.Get "field_content" | markdownify}}
+            {{$page_var.Delete "field_content"}}
+
+            {{if .has_children}}
+                {{partial "functions/content_layout_field_loop.html" (dict "fields" $fields "current_name" .name "scratch" $scratch "content" $content)}}
+            {{end}}
+        {{ printf "</%s" .type | htmlUnescape | safeHTML }}>
+    {{end}}
+{{end}}

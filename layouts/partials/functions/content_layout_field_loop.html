@@ -1,0 +1,23 @@
+{{$current_name := .current_name}}
+{{$fields := .fields}}
+{{$content := $.content}}
+{{$scratch := $.scratch}}
+{{ $page_var := newScratch }}
+
+{{range .fields}}
+    {{if eq $current_name .parent}}
+        {{printf "<%s " .type | htmlUnescape | safeHTML }} id="{{.name}}" class = "{{.class}}"{{if (isset . "tags")}}{{range .tags}}{{.field}} = "{{.value}}" {{end}}{{end}}>
+
+        {{$page_var.Set "field_content" .content}}
+        {{if (isset . "content_field_name")}}{{if (isset $content .content_field_name)}}{{$page_var.Set "field_content" (index $content .content_field_name)}}{{end}}{{end}}
+        {{$page_var.Get "field_content" | markdownify}}
+        {{$page_var.Delete "field_content"}}
+
+        {{if .has_children}}
+            {{partial "functions/content_layout_field_loop.html" (dict "fields" $fields "current_name" .name "scratch" $scratch "content" $content)}}
+        {{end}}
+        {{ printf "</%s" .type | htmlUnescape | safeHTML }}>
+    {{end}}
+{{end}}
+
+

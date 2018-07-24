@@ -40,6 +40,7 @@
     name = "title"
     class = "" # use in case belongs to some class of elements
     content = "The Thinking Tree"
+    content_field_name = "title"
     has_children = false
     has_parent = true
         parent = "top-banner-container"
@@ -166,6 +167,7 @@
     [[slide_elements.tags]]
         field = "href"
         value = "#featured_books"
+        content_field_name = "link1"
     [[slide_elements.custom_js_partials]]
         partial_location = "js_scripts/smooth_scroll.js"
         speed = 800
@@ -185,6 +187,7 @@
     name = "menu-item1"
     class = "ff-menu-item" # use in case belongs to some class of elements
     content = "Books"
+    content_field_name = "link1_name"
     has_children = false
     has_parent = true
         parent = "menu-item1-link"
@@ -249,6 +252,7 @@
     name = "menu-item2"
     class = "ff-menu-item" # use in case belongs to some class of elements
     content = "Posts"
+    content_field_name = "link2_name"
     has_children = false
     has_parent = true
         parent = "menu-item2-link"
@@ -276,6 +280,7 @@
         name = "menu-item3"
         class = "ff-menu-item" # use in case belongs to some class of elements
         content = "Thoughts"
+        content_field_name = "link3_name"
         has_children = false
         has_parent = true
             parent = "menu-item3-link"
@@ -545,6 +550,7 @@
     name = "primary_slide_subject"
     class = "slide_subject" # use in case belongs to some class of elements
     content = "Posts"
+    content_field_name = "slide1_subject"
     has_children = false
     has_parent = true
         parent = "primary_slide_descriptor_wrapper"
@@ -587,6 +593,7 @@
     name = "primary_slide_title"
     class = "slide_title" # use in case belongs to some class of elements
     content = "Onward and Upward, Like a Dendritic Tree"
+    content_field_name = "slide1_title"
     has_children = false
     has_parent = true
         parent = "primary_slide_descriptor_wrapper"
@@ -624,6 +631,7 @@
     name = "primary_slide_description"
     class = "slide_description" # use in case belongs to some class of elements
     content = "Reducing entropy, one post at a time"
+    content_field_name = "slide1_description"
     has_children = false
     has_parent = true
         parent = "primary_slide_descriptor_wrapper"
@@ -717,6 +725,7 @@
     name = "second_slide_subject"
     class = "slide_subject" # use in case belongs to some class of elements
     content = "Publications"
+    content_field_name = "slide2_subject"
     has_children = false
     has_parent = true
         parent = "second_slide_descriptor_wrapper"
@@ -729,6 +738,7 @@
     name = "second_slide_title"
     class = "slide_title" # use in case belongs to some class of elements
     content = "Every new day, better than the last"
+    content_field_name = "slide2_title"
     has_children = false
     has_parent = true
         parent = "second_slide_descriptor_wrapper"
@@ -739,6 +749,7 @@
     name = "second_slide_description"
     class = "slide_description" # use in case belongs to some class of elements
     content = "Nurturing creativity, like saplings amidst giants"
+    content_field_name = "slide2_description"
     has_children = false
     has_parent = true
         parent = "second_slide_descriptor_wrapper"

@@ -1,5 +1,5 @@
 
 {{$fields:= (index $.Site.Data.layouts .Params.top_banner.layout).slide_elements}}
-{{partial "functions/render_fields.html" (dict "fields" $fields "scratch" .Scratch)}}
+{{partial "functions/render_content_layout_fields.html" (dict "fields" $fields "scratch" .Scratch "content" .Params.top_banner.content)}}
 
 

@@ -13,23 +13,25 @@ fixed_sharer_active = true
 [top_banner]
     active=true
     layout = "top_banner" # choose from single or carousel
+    [top_banner.content]
+        # content from below. Layout from above
+        title = "The Thinking Tree"
 
-    # content from below. Layout from above
-    title = "The Thinking Tree"
-    link1_name = "Posts"
-    link1 = "#featured_posts"
-    link2_name = "Events"
-    link2 = "#featured_events"
-    link3_name = "Thoughts"
-    link3 = "#featured_thoughts"
-    slide1_link "/posts"
-    slide1_subject = "Posts"
-    slide1_title = "Onward and Upward, Like a Dendritic Tree"
-    slide1_description = "Reducing entropy, one post at a time"
-    slide2_link "/publications"
-    slide2_subject = "Publications"
-    slide2_title = "Every new day, better than the last"
-    slide2_description = "Nurturing creativity, like saplings amidst giants"
+        link1_name = "Posts"
+        link1 = "#featured_posts"
+        link2_name = "Events"
+        link2 = "#featured_events"
+        link3_name = "Thoughts"
+        link3 = "#featured_thoughts"
+
+        slide1_link = "/posts"
+        slide1_subject = "Posts"
+        slide1_title = "Onward and Upward, Like a Dendritic Tree"
+        slide1_description = "Reducing entropy, one post at a time"
+        slide2_link = "/publications"
+        slide2_subject = "Publications"
+        slide2_title = "Every new day, better than the last"
+        slide2_description = "Nurturing creativity, like saplings amidst giants"
 
 
 
