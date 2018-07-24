@@ -1,6 +1,5 @@
-<section id="cta" class="home-section" style="padding:0">
+{{$fields:= (index $.Site.Data.layouts .Params.cta.layout).elements}}
 
-    {{partial "functions/render_fields.html" (dict "fields" $.Params.cta.elements "scratch" .Scratch)}}
+{{partial "functions/render_fields.html" (dict "fields" $fields "scratch" .Scratch)}}
 
-</section>
 

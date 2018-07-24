@@ -1,5 +1,5 @@
-<section id = "top-banner">
-    <div class="top_banner_container" style="position:relative">
-        {{partial "functions/render_fields.html" (dict "fields" $.Params.top_banner.slide_elements "scratch" .Scratch)}}
-    </div>
-</section>
+
+{{$fields:= (index $.Site.Data.layouts .Params.top_banner.layout).slide_elements}}
+{{partial "functions/render_fields.html" (dict "fields" $fields "scratch" .Scratch)}}
+
+

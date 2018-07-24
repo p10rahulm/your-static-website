@@ -4,6 +4,7 @@
 {{ .Scratch.SetInMap "layout_data" "sort_field" "date" }}
 {{ .Scratch.SetInMap "layout_data" "sort_order" "desc" }}
 {{ .Scratch.SetInMap "layout_data" "number_in_list_page" 10 }}
+{{ .Scratch.SetInMap "layout_data" "num_featured" 4 }}
 {{range where .Site.Data.layouts.sectionwise_list_layouts.sections ".name" .Section }}
     {{$.Scratch.Set "layout_data" .}}
 {{end}}

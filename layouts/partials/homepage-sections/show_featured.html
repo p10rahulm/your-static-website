@@ -1,7 +1,24 @@
-{{range $index, $element := $.Params.featured_pages.sections}}
-    {{$pages := first .num_featured (cond (eq .sort_order "desc") ((where (where $.Data.Pages "Section" .name) "Params.featured" true).ByParam .sort_field).Reverse ((where (where $.Data.Pages "Section" .name) "Params.featured" true).ByParam .sort_field)) }}
-    {{if (and (isset . "card_layout") (or (ne .card_layout "") (ne .card_layout "default"))) }}
-        {{partial (print "listLayouts/" .card_layout ".html") (dict "pages" $pages "context" . "scratch" $.Scratch ) | safeHTML}}
+{{range $.Params.featured_pages.sections}}
+    {{$name := .}}
+    {{/* Setting the variables */}}
+    {{ $.Scratch.SetInMap "layout_data" "title" "List Page" }}
+    {{ $.Scratch.SetInMap "layout_data" "subtitle" "" }}
+    {{ $.Scratch.SetInMap "layout_data" "card_layout" "default_listLayout" }}
+    {{ $.Scratch.SetInMap "layout_data" "sort_field" "date" }}
+    {{ $.Scratch.SetInMap "layout_data" "sort_order" "desc" }}
+    {{ $.Scratch.SetInMap "layout_data" "number_in_list_page" 10 }}
+    {{ $.Scratch.SetInMap "layout_data" "num_featured" 4 }}
+    {{range where $.Site.Data.layouts.sectionwise_list_layouts.sections ".name" $name }}
+        {{$.Scratch.Set "layout_data" .}}
+    {{end}}
+    {{$layout_data := $.Scratch.Get "layout_data"}}
+    {{$.Scratch.Delete "layout_data" }}
+    {{$section := cond (isset . "name") $name "Posts"}}
+    {{/* Finished setting the variables */}}
+
+    {{$pages := first $layout_data.num_featured (cond (eq $layout_data.sort_order "desc") ((where (where $.Data.Pages "Section" $name) "Params.featured" true).ByParam $layout_data.sort_field).Reverse ((where (where $.Data.Pages "Section" $name) "Params.featured" true).ByParam $layout_data.sort_field)) }}
+    {{if (or (ne $layout_data.card_layout "") (ne $layout_data.card_layout "default")) }}
+        {{partial (print "listLayouts/" $layout_data.card_layout ".html") (dict "pages" $pages "context" $layout_data "scratch" $.Scratch  "section" $section ) | safeHTML}}
     {{else}}
     {{end}}
 {{end}}

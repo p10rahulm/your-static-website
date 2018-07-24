@@ -5,7 +5,7 @@
     num_featured = 4
     number_in_list_page = 8
     sort_field = "title" #add the .Params at the start before sort field
-    sort_order = "desc"
+    sort_order = "asc"
     card_layout = "people_cards_list_style1" 
 
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
@@ -48,7 +48,7 @@
     subtitle = "The latest and greatest books"
     num_featured = 5
     number_in_list_page = 5
-    sort_field = ".Params.title" #add the .Params at the start before sort field
+    sort_field = "title" #add the .Params at the start before sort field
     sort_order = "asc"
     card_layout = "long_list_with_image" 
 
@@ -115,7 +115,7 @@
     subtitle = "Who has published me, why don't you see?"
     num_featured = 1
     number_in_list_page = 5
-    sort_field = ".Params.title"
+    sort_field = "title"
     sort_order = "desc"
     card_alignment = "center"
     card_layout = "large_cards_leftimage_centertext_box_nooverlay" 
@@ -153,7 +153,7 @@
     subtitle = "We take courses for all to enjoy"
     num_featured = 4
     number_in_list_page = 5
-    sort_field = ".Params.title"
+    sort_field = "title"
     sort_order = "asc"
     card_layout = "list_of_large_cards" 
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
@@ -199,7 +199,7 @@
     subtitle = "We have conducted workshops in all major companies in India in the power sector"
     num_featured = 3
     number_in_list_page = 10
-    sort_field = ".Params.title"
+    sort_field = "title"
     sort_order = "asc"
     card_layout = "list_of_large_cards_no_overlay" 
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
@@ -249,7 +249,7 @@
     subtitle = "I review, everything i do!"
     num_featured = 9
     number_in_list_page = 12
-    sort_field = ".Params.title"
+    sort_field = "title"
     sort_order = "asc"
     card_layout = "responsive_3cards_wbox" 
 
@@ -276,7 +276,7 @@
     subtitle = "We take care of events all over the imagination"
     num_featured = 7
     number_in_list_page = 7
-    sort_field = ".Params.title"
+    sort_field = "title"
     sort_order = "asc"
     card_layout = "cards_grid7"
 
@@ -312,7 +312,7 @@
     subtitle = "The posts are precocious. Use as you feel good!"
     num_featured = 10
     number_in_list_page = 10
-    sort_field = ".Params.title"
+    sort_field = "title"
     sort_order = "asc"
     card_layout = "cards_grid5"
 
@@ -341,7 +341,7 @@
     subtitle = "Thoughts I plant as seeds so they may flower someday"
     num_featured = 6
     number_in_list_page = 12
-    sort_field = ".Params.title"
+    sort_field = "title"
     sort_order = "asc"
     card_layout = "responsive_3cards_nobox"
 
@@ -371,7 +371,7 @@
     subtitle = "The thoughts are precious. Handle with care!"
     num_featured = 8
     number_in_list_page = 8
-    sort_field = ".Params.title"
+    sort_field = "title"
     sort_order = "asc"
     card_layout = "carousel_4card" 
 
