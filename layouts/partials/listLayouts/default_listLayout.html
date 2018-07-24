@@ -1,17 +1,15 @@
 {{$pages := $.pages}}
 {{$context := $.context}}
 {{$scratch := $.scratch}}
-{{ printf "%#v" $context }}
 <header>
     <style>
         {{partial "css_scripts/listLayouts/default_listLayout.css" (dict "name" $.section ) | safeCSS}}
     </style>
 </header>
-<section id="featured_{{$.section}}" class="home-section">
+<section id="featured_{{$.section}}">
     <div class="container">
         <div class="section-heading">
-            {{$title := cond (isset $.context "title") ($.context.title) ($.section) }}
-            {{$title}}
+            {{$.context.title | default "List Page"}}
         </div>
         <div class="section-subheading">
             {{$.context.subtitle | default ""}}

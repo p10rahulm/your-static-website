@@ -1,6 +1,6 @@
 +++
 title = "Workshop10"
-date = 2018-07-17T20:40:55+05:30
+date = 2018-07-24T10:01:45+05:30
 draft = false
 author = "Rahul Madhavan"
 
@@ -18,7 +18,7 @@ featured = true
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = []
+tags = ["management"]
 categories = []
 
 # Adding a subject taxonomy for workshops. Ex: subject = ["self-help","management"]
