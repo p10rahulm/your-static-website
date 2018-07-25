@@ -1,3 +1,4 @@
+{{/* Setting the variable defaults */}}
 {{ .Scratch.SetInMap "layout_data" "title" "List Page" }}
 {{ .Scratch.SetInMap "layout_data" "subtitle" "" }}
 {{ .Scratch.SetInMap "layout_data" "card_layout" "default_listLayout" }}
@@ -5,9 +6,21 @@
 {{ .Scratch.SetInMap "layout_data" "sort_order" "desc" }}
 {{ .Scratch.SetInMap "layout_data" "number_in_list_page" 10 }}
 {{ .Scratch.SetInMap "layout_data" "num_featured" 4 }}
+
+{{/* Set from layout data sheet */}}
 {{range where .Site.Data.layouts.sectionwise_list_layouts.sections ".name" .Section }}
     {{$.Scratch.Set "layout_data" .}}
 {{end}}
+
+{{/*Check if the individual layout elements are set in front matter and if so change layout_data*/}}
+{{ $.Scratch.Add "layout_field_ranges" (slice "title" "subtitle" "card_layout" "sort_field" "sort_order" "num_featured" "number_in_list_page") }}
+{{$section_range_context := .Params}}
+{{range ($.Scratch.Get "layout_field_ranges")}}
+{{if isset $section_range_context .}}    {{ $.Scratch.SetInMap "layout_data" . ( index $section_range_context .) }}    {{end}}
+{{end}}
+{{ .Scratch.Delete "layout_field_ranges"}}
+{{/*Finished loading from front matter*/}}
+
 {{$layout_data := $.Scratch.Get "layout_data"}}
 {{$.Scratch.Delete "layout_data" }}
 

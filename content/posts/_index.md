@@ -1,7 +1,12 @@
----
-title: "post"
-date: 2018-05-15T16:24:40+05:30
-draft: false
----
++++
 
-This is post directory
+name = "posts"
+title = "Posts"
+subtitle = "The posts are precocious. Use as you feel good!"
+num_featured = 10
+number_in_list_page = 10
+sort_field = "title"
+sort_order = "asc"
+card_layout = "cards_grid5"
+
++++

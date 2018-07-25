@@ -1,10 +1,12 @@
 +++
-title = "The Thinking Tree Homepage"
-date = 2018-05-15T16:24:40+05:30
-draft =  false
 
-show_popup = true
-show_sharer = true
-rollup_sharer_active = true
-fixed_sharer_active = true
+name = "workshops"
+title = "Workshops"
+subtitle = "We have conducted workshops in all major companies in India in the power sector"
+num_featured = 3
+number_in_list_page = 10
+sort_field = "title"
+sort_order = "asc"
+card_layout = "list_of_large_cards_no_overlay"
+
 +++

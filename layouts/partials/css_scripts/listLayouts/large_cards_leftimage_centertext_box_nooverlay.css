@@ -1,10 +1,12 @@
 
 #{{.name}}_cards .card_img {
-    height:500px;
-    width:auto;
+    height:400px;
+    width:400px;
+    max-width:100%;
     float: left;
-    padding-right:1rem;
+    padding:0.5rem 1rem 0.2rem 0;
 }
+
 
 #{{.name}}_cards .details_cards {
     text-align: left;
@@ -44,3 +46,21 @@
 }
 {{end}}
 
+@media only screen and (max-width: 1200px) {
+    #{{.name}}_cards .card_img {
+        max-width:50%;
+    }
+}
+@media only screen and (max-width: 768px) {
+    #{{.name}}_cards .card_img {
+        height:300px;
+        width:300px;
+        max-width:50%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #{{.name}}_cards .card_img {
+        width:100%;
+        padding:0.5rem 0 0.2rem 0;
+    }
+}

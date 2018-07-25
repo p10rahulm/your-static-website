@@ -219,7 +219,101 @@ fixed_sharer_active = true
 # Below we set attributes for the featured pages on the website front page
 [featured_pages]
     active = true
-    sections = ["people","books","publications","courses","workshops","reviews","events","posts","notes","thoughts"]
+    active_sections = ["people","books","publications","courses","workshops","reviews","events","posts","notes","thoughts"]
+
+[[featured_pages.sections]]
+    name = "people"
+    title = "Our Strength"
+    subtitle = "Our people are our strength"
+    num_featured = 4
+    sort_field = "title" #add the .Params at the start before sort field
+    sort_order = "asc"
+    card_layout = "people_cards_list_style1"
+
+[[featured_pages.sections]]
+    name = "books"
+    title = "Books"
+    subtitle = "The latest and greatest books"
+    num_featured = 5
+    sort_field = "title" #add the .Params at the start before sort field
+    sort_order = "asc"
+    card_layout = "long_list_with_image"
+
+
+[[featured_pages.sections]]
+    name = "publications"
+    title = "Publications"
+    subtitle = "Who has published me, why don't you see?"
+    num_featured = 1
+    sort_field = "date"
+    sort_order = "desc"
+    card_alignment = "center"
+    card_layout = "large_cards_leftimage_centertext_box_nooverlay"
+
+[[featured_pages.sections]]
+    name = "courses"
+    title = "Courses"
+    subtitle = "We take courses for all to enjoy"
+    num_featured = 5
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "list_of_large_cards"
+
+[[featured_pages.sections]]
+    name = "workshops"
+    title = "Workshops"
+    subtitle = "We have conducted workshops in all major companies in India in the power sector"
+    num_featured = 3
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "list_of_large_cards_no_overlay"
+
+[[featured_pages.sections]]
+    name = "reviews"
+    title = "Reviews"
+    subtitle = "I review, everything i do!"
+    num_featured = 9
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "responsive_3cards_wbox"
+
+[[featured_pages.sections]]
+    name = "events"
+    title = "Events"
+    subtitle = "We take care of events all over the imagination"
+    num_featured = 7
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "cards_grid7"
+
+
+[[featured_pages.sections]]
+    name = "posts"
+    title = "Posts"
+    subtitle = "The posts are precocious. Use as you feel good!"
+    num_featured = 10
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "cards_grid5"
+
+[[featured_pages.sections]]
+    name = "notes"
+    title = "Short Notes"
+    subtitle = "Thoughts I plant as seeds so they may flower someday"
+    num_featured = 6
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "responsive_3cards_nobox"
+
+[[featured_pages.sections]]
+    name = "thoughts"
+    title = "Thoughts"
+    subtitle = "The thoughts are precious. Handle with care!"
+    num_featured = 8
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "carousel_4card"
+
 
 
 
