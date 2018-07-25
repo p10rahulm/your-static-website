@@ -1,0 +1,29 @@
+[[headline_elements]]
+    name = "contact-title-row"
+    class = "title-row" # use in case belongs to some class of elements
+    content = ""
+    has_children = true
+    has_parent = false
+        parent = ""
+    type = "div"
+
+[[headline_elements]]
+    name = "contact-heading"
+    class = "section-heading" # use in case belongs to some class of elements
+    content = "Contact Us"
+    content_field_name = "title"
+    has_children = false
+    has_parent = true
+        parent = "contact-title-row"
+    type = "div"
+
+
+[[headline_elements]]
+    name = "contact-subheading"
+    class = "section-subheading" # use in case belongs to some class of elements
+    content = "Always here to help"
+    content_field_name = "subtitle"
+    has_children = false
+    has_parent = true
+        parent = "contact-title-row"
+    type = "div"

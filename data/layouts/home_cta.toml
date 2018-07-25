@@ -64,6 +64,8 @@
     [[elements.tags]]
         field = "data-src"
         value = "img/dog_transparency2.jpg"
+        content_field_name = "top_right_image"
+
     # use css styles below
     [[elements.styles]]
         container = "#cta"
@@ -98,6 +100,8 @@
     [[elements.tags]]
         field = "data-src"
         value = "img/dog_transparency1.jpg"
+        content_field_name = "bottom_left_image"
+
     # use css styles below
     [[elements.styles]]
         container = "#cta"
@@ -151,6 +155,7 @@
     name = "cta-heading"
     class = "section-heading" # use in case belongs to some class of elements
     content = "You can call someone to action"
+    content_field_name = "heading"
     has_children = false
     has_parent = true
         parent = "cta-title-row"
@@ -171,6 +176,7 @@
     name = "cta-subheading"
     class = "section-subheading" # use in case belongs to some class of elements
     content = "And hope that they come and do the action. This is called call to action"
+    content_field_name = "subheading"
     has_children = false
     has_parent = true
         parent = "cta-title-row"
@@ -208,6 +214,7 @@
     name = "cta-first_action_button"
     class = "cta-first-action-button"
     content = "Start a new blog with Raz"
+    content_field_name = "cta_button1_text"
     has_children = false
     has_parent = true
         parent = "cta-action-buttons"
@@ -322,6 +329,7 @@
     name = "cta-second_action_button"
     class = "cta-second-action-button"
     content = "Sign up for our blog"
+    content_field_name = "cta_button2_text"
     has_children = false
     has_parent = true
         parent = "cta-action-buttons"

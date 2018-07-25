@@ -1,10 +1,12 @@
-<!-- Services -->
 <style type="text/css">
-    {{partial "css_scripts/home-section_showcase.css" . | safeCSS}}
+    {{partial "css_scripts/homeSection/showcase.css" . | safeCSS}}
 </style>
 <section id="showcase" class = "home-section">
     <div class="container">
-        {{partial "functions/render_fields.html" (dict "fields" $.Params.showcase.headline_elements "scratch" .Scratch)}}
+        {{$section := "showcase"}}
+        {{$fields:= (index $.Site.Data.layouts (index .Params $section).headline_layout).headline_elements}}
+        {{$content := (index .Params $section).headline}}
+        {{partial "functions/render_content_layout_fields.html" (dict "fields" $fields "content" $content "scratch" .Scratch)}}
 
 
         <div class="showcase-flex-container">

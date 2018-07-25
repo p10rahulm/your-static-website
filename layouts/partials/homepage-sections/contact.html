@@ -1,9 +1,12 @@
 <style type="text/css">
-    {{partial "css_scripts/home-section_contact.css" . | safeCSS}}
+    {{partial "css_scripts/homeSection/contact.css" . | safeCSS}}
 </style>
 <section id="contact-home" class="home-section">
     <div class="container">
-        {{partial "functions/render_fields.html" (dict "fields" $.Params.contact.headline_elements "scratch" .Scratch)}}
+        {{$section := "contact"}}
+        {{$fields:= (index $.Site.Data.layouts (index .Params $section).headline_layout).headline_elements}}
+        {{$content := (index .Params $section).headline}}
+        {{partial "functions/render_content_layout_fields.html" (dict "fields" $fields "content" $content "scratch" .Scratch)}}
         <!-- Contact widget -->
 
         <div >

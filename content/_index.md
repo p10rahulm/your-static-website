@@ -44,8 +44,12 @@ fixed_sharer_active = true
 # Showcase section
 [showcase]
     active=true
-    title = "Greatest ever works"
-    subtitle = "Major Projects and Work Interests"
+    headline_layout = "headline_elements"
+    [showcase.headline]
+        title = "Greatest ever works"
+        subtitle = "Major Projects and Work Interests"
+
+
 
     # These are the cards we will display. Ideally fill three.
     # choose from 2,3,4,6
@@ -68,72 +72,16 @@ fixed_sharer_active = true
         title = "E-Commerce"
         link = "#"
         card_content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-    
-
-
-    [[showcase.headline_elements]]
-        name = "showcase-title-row"
-        class = "row" # use in case belongs to some class of elements
-        content = ""
-        has_children = true
-        has_parent = false
-            parent = ""
-        type = "div"
-
-    [[showcase.headline_elements]]
-        name = "showcase-heading"
-        class = "section-heading" # use in case belongs to some class of elements
-        content = "Greatest Works Ever"
-        has_children = false
-        has_parent = true
-            parent = "showcase-title-row"
-        type = "div"
-
-
-    [[showcase.headline_elements]]
-        name = "showcase-subheading"
-        class = "section-subheading" # use in case belongs to some class of elements
-        content = "Rest assured, i'm all ears"
-        has_children = false
-        has_parent = true
-            parent = "showcase-title-row"
-        type = "div"
-
 
 
 # ----------------------------------
 # About us section
 [about_us]
     active=true
-    
-    [[about_us.headline_elements]]
-        name = "about_us-title-row"
-        class = "row" # use in case belongs to some class of elements
-        content = ""
-        has_children = true
-        has_parent = false
-            parent = ""
-        type = "div"
-
-    [[about_us.headline_elements]]
-        name = "about_us-heading"
-        class = "section-heading" # use in case belongs to some class of elements
-        content = "About Us"
-        has_children = false
-        has_parent = true
-            parent = "about_us-title-row"
-        type = "div"
-
-
-    [[about_us.headline_elements]]
-        name = "about_us-subheading"
-        class = "section-subheading" # use in case belongs to some class of elements
-        content = ""
-        has_children = false
-        has_parent = true
-            parent = "about_us-title-row"
-        type = "div"
-
+    headline_layout = "headline_elements"
+    [about_us.headline]
+        title = "About Us"
+        subtitle = "Serving clients since 1985"
     # ---------------------------------
     [about_us.descriptor]
         logo_image = "portrait.jpg"
@@ -239,34 +187,10 @@ fixed_sharer_active = true
 
     # Count the number of logos you want on a row. Choose from 1,2,3,4,6, 12
     min_width_logo = "200px"
-
-    [[logo_wall.headline_elements]]
-        name = "logo_wall-title-row"
-        class = "row" # use in case belongs to some class of elements
-        content = ""
-        has_children = true
-        has_parent = false
-            parent = ""
-        type = "div"
-
-    [[logo_wall.headline_elements]]
-        name = "logo_wall-heading"
-        class = "section-heading" # use in case belongs to some class of elements
-        content = "Our Clients"
-        has_children = false
-        has_parent = true
-            parent = "logo_wall-title-row"
-        type = "div"
-
-
-    [[logo_wall.headline_elements]]
-        name = "logo_wall-subheading"
-        class = "section-subheading" # use in case belongs to some class of elements
-        content = "Serving You Always"
-        has_children = false
-        has_parent = true
-            parent = "logo_wall-title-row"
-        type = "div"
+    headline_layout = "headline_elements"
+    [logo_wall.headline]
+        title = "Our Clients"
+        subtitle = "Serving You Always"
 
     # List all the logos in the logo wall below.
     # Ensure height to width ratios of the images are all the same.
@@ -304,8 +228,16 @@ fixed_sharer_active = true
 [cta]
     active = true
     # Check the toml file in data/layouts/ to see what is rendered.
-    # The render function is in layouts/functions/render_fields.html and is claled from cta.html in layouts/homepage-sections
-    layout = "call_to_action1"
+    # The render function is in layouts/functions/render_content_layout_fields.html and is claled from cta.html in layouts/homepage-sections
+    layout = "home_cta"
+    [cta.content]
+    top_right_image = "img/dog_transparency2.jpg"
+    bottom_left_image = "img/dog_transparency1.jpg"
+    heading = "You can call someone to action"
+    subheading = "And hope that they come and do the action. This is called call to action"
+    cta_button1_text = "Start a new blog with Raz"
+    cta_button2_text = "Sign up for our blog"
+
 
 
 
@@ -313,35 +245,11 @@ fixed_sharer_active = true
 # Contact us section
 [contact]
     active = true
+    headline_layout = "headline_elements"
+    [contact.headline]
+        title = "Contact Us"
+        subtitle = "Always here to help"
 
-    [[contact.headline_elements]]
-        name = "contact-title-row"
-        class = "row" # use in case belongs to some class of elements
-        content = ""
-        has_children = true
-        has_parent = false
-            parent = ""
-        type = "div"
-
-    [[contact.headline_elements]]
-        name = "contact-heading"
-        class = "section-heading" # use in case belongs to some class of elements
-        content = "Contact Us"
-        has_children = false
-        has_parent = true
-            parent = "contact-title-row"
-        type = "div"
-
-
-    [[contact.headline_elements]]
-        name = "contact-subheading"
-        class = "section-subheading" # use in case belongs to some class of elements
-        content = "Always here to help"
-        has_children = false
-        has_parent = true
-            parent = "contact-title-row"
-        type = "div"
-        
     [[contact.fields]]
         name = "contact_email"
         description = "email"
