@@ -18,7 +18,7 @@ featured = true
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = ["management"]
+tags = ["management","5S","TPM"]
 categories = []
 
 # Adding a subject taxonomy for workshops. Ex: subject = ["self-help","management"]

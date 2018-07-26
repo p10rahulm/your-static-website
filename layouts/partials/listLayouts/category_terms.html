@@ -1,0 +1,25 @@
+{{$terms := $.terms}}
+{{$scratch := $.scratch}}
+<header>
+    <style>
+        {{partial "css_scripts/listLayouts/category_terms.css" (dict "name" $.section ) | safeCSS}}
+    </style>
+</header>
+<section id="featured_{{$.section}}">
+    <div class="container">
+        <div class="section-heading">
+            {{$.title | default "List Page"}}
+        </div>
+
+        <div id="{{$.section}}_cards" class="cardList">
+            {{ range $key, $value := $terms }}
+            <a href="{{ $value.Name | urlize }}">
+            <div class ="details_cards">
+                <span class = "taxonomy_list_number">{{add $key 1}}.</span><span class = "taxonomy_list_term"> {{$value.Name|humanize | markdownify | truncate 100 }}</span>
+            </div>
+            </a>
+            {{end}}
+        </div>
+
+    </div>
+</section>

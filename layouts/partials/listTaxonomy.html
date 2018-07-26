@@ -1,0 +1,6 @@
+{{$terms := (index .Data "Terms").ByCount }}
+{{$title := (printf "List of %s" .Data.Plural) }}
+{{$section := (printf "Taxonomy-%s" .Data.Plural)}}
+
+{{partial "listLayouts/category_terms.html" (dict "terms" $terms "title" $title "scratch" $.Scratch "section" $section ) | safeHTML}}
+
