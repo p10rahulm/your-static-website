@@ -43,3 +43,21 @@ footer a {
 .back_to_top a {
     color: #aaa;
 }
+@media only screen and (max-width: 768px) {
+    #top_level_footer_flex{
+        display:block;
+        padding: 10px 0 20px 0;
+        margin: 0px auto;
+        text-align: center;
+    }
+    .flex-child{
+        padding: 0px 0 20px 0;
+    }
+    footer {
+        margin: 1rem 0 0;
+        padding: 1rem 0;
+    }
+}
+@media only screen and (max-width: 500px) {
+
+}
