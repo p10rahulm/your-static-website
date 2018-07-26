@@ -8,11 +8,11 @@
     {{ $.Scratch.SetInMap "layout_defaults" "number_in_list_page" 5 }}
     {{ $.Scratch.SetInMap "layout_defaults" "num_featured" 4 }}
 
-    {{ $.Scratch.Set "listPage_name" (.Data.Term | humanize) }}
+    {{ $.Scratch.Set "listPage_name" (.Data.Term) }}
     {{ $.Scratch.Set "front_matter_params" .Params }}
     {{ $.Scratch.Set "list_layout_prebuilds" .Site.Data.layouts.sectionwise_list_layouts }}
     {{ $.Scratch.Set "listPages" .Pages }}
 
 
-    {{partial "listTaxonomyTerm.html" .}}
+    {{partial "listPages.html" .}}
 {{end}}

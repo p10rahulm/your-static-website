@@ -1,3 +1,22 @@
 {{define "main"}}
-    {{ partial "listTaxonomy.html" . }}
+
+{{$terms := (index .Data "Terms").ByCount }}
+{{$title := (printf "List of %s" .Data.Plural) }}
+{{$section := (printf "Taxonomy-%s" .Data.Plural)}}
+
+{{ $.Scratch.SetInMap "layout_defaults" "title" (printf "List of %s" (.Data.Plural | humanize)) }}
+{{ $.Scratch.SetInMap "layout_defaults" "subtitle" "" }}
+{{ $.Scratch.SetInMap "layout_defaults" "card_layout" "category_terms" }}
+{{ $.Scratch.SetInMap "layout_defaults" "sort_field" "date" }}
+{{ $.Scratch.SetInMap "layout_defaults" "sort_order" "desc" }}
+{{ $.Scratch.SetInMap "layout_defaults" "number_in_list_page" 5 }}
+{{ $.Scratch.SetInMap "layout_defaults" "num_featured" 4 }}
+
+{{ $.Scratch.Set "listPage_name" (printf "taxonomy-%s" .Data.Singular) }}
+{{ $.Scratch.Set "front_matter_params" .Params }}
+{{ $.Scratch.Set "list_layout_prebuilds" .Site.Data.layouts.sectionwise_list_layouts }}
+{{ $.Scratch.Set "listPages" .Pages }}
+
+
+{{partial "listPages.html" .}}
 {{end}}

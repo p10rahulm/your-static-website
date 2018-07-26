@@ -1,8 +1,11 @@
-{{$terms := $.terms}}
+{{$pages := $.pages}}
+{{$context := $.context}}
 {{$scratch := $.scratch}}
+{{$fields := $.context.fields}}
+
 <header>
     <style>
-        {{partial "css_scripts/listLayouts/category_terms.css" (dict "name" $.section ) | safeCSS}}
+        {{partial "css_scripts/listLayouts/category_terms.css" . | safeCSS}}
     </style>
 </header>
 <section id="featured_{{$.section}}">
@@ -12,7 +15,7 @@
         </div>
 
         <div id="{{$.section}}_cards" class="cardList">
-            {{ range $key, $value := $terms }}
+            {{ range $key, $value := $pages }}
             <a href="{{ $value.Name | urlize }}">
             <div class ="details_cards">
                 <span class = "taxonomy_list_number">{{add $key 1}}.</span><span class = "taxonomy_list_term"> {{$value.Name|humanize | markdownify | truncate 100 }}</span>
