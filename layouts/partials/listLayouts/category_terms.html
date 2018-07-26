@@ -11,7 +11,7 @@
 <section id="featured_{{$.section}}">
     <div class="container">
         <div class="section-heading">
-            {{$.title | default "List Page"}}
+            {{$context.title | default "List Page"}}
         </div>
 
         <div id="{{$.section}}_cards" class="cardList">
