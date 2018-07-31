@@ -8,6 +8,7 @@ number_in_list_page = 5
 sort_field = "title" #add the .Params at the start before sort field
 sort_order = "asc"
 card_layout = "long_list_with_image"
+pagination_layout = "infinite_scroll"
 
 
 +++

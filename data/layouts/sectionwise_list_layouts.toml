@@ -6,7 +6,8 @@
     number_in_list_page = 8
     sort_field = "title" #add the .Params at the start before sort field
     sort_order = "asc"
-    card_layout = "people_cards_list_style1" 
+    card_layout = "people_cards_list_style1"
+    pagination_layout = "pages"
 
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
     [[sections.fields]]
@@ -50,7 +51,8 @@
     number_in_list_page = 5
     sort_field = "title" #add the .Params at the start before sort field
     sort_order = "asc"
-    card_layout = "long_list_with_image" 
+    card_layout = "long_list_with_image"
+    pagination_layout = "pages"
 
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
     [[sections.fields]]
@@ -118,7 +120,8 @@
     sort_field = "title"
     sort_order = "desc"
     card_alignment = "center"
-    card_layout = "large_cards_leftimage_centertext_box_nooverlay" 
+    card_layout = "large_cards_leftimage_centertext_box_nooverlay"
+    pagination_layout = "pages"
 
 
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
@@ -155,7 +158,8 @@
     number_in_list_page = 5
     sort_field = "title"
     sort_order = "asc"
-    card_layout = "list_of_large_cards" 
+    card_layout = "list_of_large_cards"
+    pagination_layout = "pages"
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
     [[sections.fields]]
         field_name = "course_title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
@@ -201,7 +205,8 @@
     number_in_list_page = 10
     sort_field = "title"
     sort_order = "asc"
-    card_layout = "list_of_large_cards_no_overlay" 
+    card_layout = "list_of_large_cards_no_overlay"
+    pagination_layout = "pages"
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
     [[sections.fields]]
         field_name = "workshop_title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
@@ -251,7 +256,8 @@
     number_in_list_page = 12
     sort_field = "title"
     sort_order = "asc"
-    card_layout = "responsive_3cards_wbox" 
+    card_layout = "responsive_3cards_wbox"
+    pagination_layout = "pages"
 
     [[sections.fields]]
         field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
@@ -279,6 +285,7 @@
     sort_field = "title"
     sort_order = "asc"
     card_layout = "cards_grid7"
+    pagination_layout = "pages"
 
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
     [[sections.fields]]
@@ -315,6 +322,7 @@
     sort_field = "title"
     sort_order = "asc"
     card_layout = "cards_grid5"
+    pagination_layout = "pages"
 
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
     [[sections.fields]]
@@ -344,6 +352,7 @@
     sort_field = "title"
     sort_order = "asc"
     card_layout = "responsive_3cards_nobox"
+    pagination_layout = "pages"
 
     [[sections.fields]]
         field_name = "title"
@@ -373,7 +382,8 @@
     number_in_list_page = 8
     sort_field = "title"
     sort_order = "asc"
-    card_layout = "carousel_4card" 
+    card_layout = "carousel_4card"
+    pagination_layout = "pages"
 
     [[sections.fields]]
         field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content

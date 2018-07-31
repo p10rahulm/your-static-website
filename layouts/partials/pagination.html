@@ -1,4 +1,4 @@
-<style type="text/css">
+<style type="text/css" xmlns:display="http://www.w3.org/1999/xhtml">
     {{partial "css_scripts/pagination.css" . | safeCSS}}
 </style>
 <div class="container">
@@ -36,12 +36,12 @@
         <li class="disabled"><span>&hellip;</span></li>
         {{ end }}
     {{ end }}
-    <!-- Use below for next page
+    <!--Use below for next page-->
     <li
             {{ if not $pag.HasNext }}class="disabled"{{ end }}>
-        <a href="{{ if $pag.HasNext }}{{ $pag.Next.URL }}{{ end }}" aria-label="Next"><span aria-hidden="true">Next</span></a>
+        <a class = "pagination_next" href="{{ if $pag.HasNext }}{{ $pag.Next.URL }}{{ end }}" style = "display:none" aria-label="Next"><span aria-hidden="true">Next</span></a>
     </li>
-    -->
+
 
     {{ with $pag.Last }}
         <li>

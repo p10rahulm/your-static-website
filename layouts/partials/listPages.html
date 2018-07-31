@@ -14,7 +14,7 @@
 {{end}}
 
 {{/*Check if the individual layout elements are set in front matter and if so change layout_data*/}}
-{{ $page_var.Add "layout_field_ranges" (slice "title" "subtitle" "card_layout" "sort_field" "sort_order" "num_featured" "number_in_list_page") }}
+{{ $page_var.Add "layout_field_ranges" (slice "title" "subtitle" "card_layout" "sort_field" "sort_order" "num_featured" "number_in_list_page" "pagination_layout") }}
 {{$section_range_context := $front_matter_params}}
 {{range ($page_var.Get "layout_field_ranges")}}
 {{if isset $section_range_context .}}    {{ $page_var.SetInMap "layout_data" . ( index $section_range_context .) }}    {{end}}
@@ -35,7 +35,10 @@
 <!--We have now set the required variables. The templating begins below-->
 
 {{partial $layout_file (dict "pages" $pages "context" ($layout_data | default .) "scratch" $.Scratch "section" $section ) | safeHTML}}
-{{partial "pagination.html" . }}
+{{$.Scratch.Set "layout_data" $layout_data}}
+{{partial (printf "paginationLayouts/%s.html" $layout_data.pagination_layout) . }}
+{{$.Scratch.Delete "layout_data"}}
+
 
 
 

@@ -1,0 +1,54 @@
+<style type="text/css">
+    {{partial "css_scripts/paginationLayouts/pages.css" . | safeCSS}}
+</style>
+<div class="container">
+    {{ $pag := $.Paginator }}
+    {{ if gt $pag.TotalPages 1 }}
+    <ul class="paginationed">
+        {{ with $pag.First }}
+        <li>
+            <a href="{{ .URL }}"><span >«</span></a>
+        </li>
+        {{ end }}
+        <!-- Use below for previous page
+        <li
+                {{ if not $pag.HasPrev }}class="disabled"{{ end }}>
+            <a href="{{ if $pag.HasPrev }}{{ $pag.Prev.URL }}{{ end }}" aria-label="Previous"><span aria-hidden="true">Prev</span></a>
+        </li>
+        -->
+        {{ $.Scratch.Set "__paginator.ellipsed" false }}
+        {{ range $pag.Pagers }}
+        {{ $right := sub .TotalPages .PageNumber }}
+        {{ $showNumber := or (le .PageNumber 3) (eq $right 0) }}
+        {{ $showNumber := or $showNumber (and (gt .PageNumber (sub $pag.PageNumber 2)) (lt .PageNumber (add $pag.PageNumber 2)))  }}
+
+        {{ if $showNumber }}
+        {{ $.Scratch.Set "__paginator.ellipsed" false }}
+        {{ $.Scratch.Set "__paginator.shouldEllipse" false }}
+        {{ else }}
+        {{ $.Scratch.Set "__paginator.shouldEllipse" (not ($.Scratch.Get "__paginator.ellipsed") ) }}
+        {{ $.Scratch.Set "__paginator.ellipsed" true }}
+        {{ end }}
+
+        {{ if $showNumber }}
+        <li {{ if eq . $pag }}class="active"{{ end }}><a href="{{ .URL }}" {{ if eq . $pag }}class="active"{{ end }}>{{ .PageNumber }}</a></li>
+        {{ else if ($.Scratch.Get "__paginator.shouldEllipse") }}
+        <li class="disabled"><span>&hellip;</span></li>
+        {{ end }}
+        {{ end }}
+        <!-- Use below for next page
+        <li
+                {{ if not $pag.HasNext }}class="disabled"{{ end }}>
+            <a href="{{ if $pag.HasNext }}{{ $pag.Next.URL }}{{ end }}" aria-label="Next"><span aria-hidden="true">Next</span></a>
+        </li>
+        -->
+
+        {{ with $pag.Last }}
+        <li>
+            <a href="{{ .URL }}"><span>»</span></a>
+        </li>
+        {{ end }}
+
+    </ul>
+    {{ end }}
+</div>
