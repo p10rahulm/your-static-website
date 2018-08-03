@@ -3,17 +3,12 @@
 <style type="text/css">
     {{partial "css_scripts/paginationLayouts/view_more_scroll.css" . | safeCSS}}
 </style>
-
 <div id="view_more_pagination" class="container">
-
-    <ul class="paginationed">
-        {{ $.Scratch.Set "__paginator.ellipsed" false }}
+    <ul class="paginationed">Pages:
         {{ range $pag.Pagers }}
-            <li {{ if eq . $pag }}class="active"{{ end }}><a href="{{ .URL }}" {{ if eq . $pag }}class="active"{{ end }}>{{ .PageNumber }}</a></li>
+            <li class="paginationed_list{{ if eq . $pag }} active{{ end }}"><a href="{{ .URL }}" {{ if eq . $pag }}class="active"{{ end }}>{{ .PageNumber }}</a></li>
         {{ end }}
-
     </ul>
-
     <div class="page_load_status">
         <div class="loading_dots_container view_more_request">
             <span class="loading_dot"></span>
@@ -21,26 +16,14 @@
             <span class="loading_dot"></span>
             <span class="loading_dot"></span>
         </div>
-        <!--Use below in case you want to add any messages when the last page is reached-->
-        <!--<p class="infinite-scroll-last"></p>-->
-        <!--Use below in case you expect any errors and want an error handler message-->
+        <!--Error message is set from the javascript on error-->
         <p class="view_more_error">No more pages to load</p>
     </div>
-
-
-
-
     <p class = "view_more_button_container">
         <button class="view_more_button">View more</button>
     </p>
-
-
 </div>
-
-
-
 <script type="text/javascript">
     {{partial "js_scripts/paginationLayouts/view_more_scroll.js" . | safeJS }}
 </script>
-
 {{ end }}

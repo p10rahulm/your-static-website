@@ -1,7 +1,13 @@
 #view_more_pagination .paginationed{
     display: none;
 }
-
+#view_more_pagination .paginationed_list{
+    display: inline-block;
+    padding: 5px;
+}
+#view_more_pagination .paginationed .active {
+    color: #aa2222;
+}
 #view_more_pagination .view_more_button_container {
     text-align: center;
 }
