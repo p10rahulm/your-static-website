@@ -8,5 +8,6 @@ number_in_list_page = 10
 sort_field = "title"
 sort_order = "asc"
 card_layout = "list_of_large_cards_no_overlay"
+pagination_layout = "view_more_scroll"
 
 +++

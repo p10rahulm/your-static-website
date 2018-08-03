@@ -8,5 +8,6 @@ number_in_list_page = 8
 sort_field = "title" #add the .Params at the start before sort field
 sort_order = "asc"
 card_layout = "people_cards_list_style1"
+pagination_layout = "pages"
 
 +++

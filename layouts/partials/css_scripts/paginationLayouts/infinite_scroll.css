@@ -1,8 +1,17 @@
-.paginationed{
-    display: none;
+.paginationed {
+    /*display none is set from javascript, so no biggie. This is just in case some interested dev opens firebug/chrome inspector*/
+    font-size: 1.2rem;
+}
+.paginationed li {
+    display: inline-block;
+    padding: 8px 16px;
+}
+.paginationed .active {
+    color: #aa2222;
 }
 .view-more-button-container{
     text-align: center;
+    padding: 1rem 0 1rem 0;
 }
 .view-more-button {
     font-size: 20px;

@@ -8,6 +8,6 @@ number_in_list_page = 5
 sort_field = "title"
 sort_order = "asc"
 card_layout = "cards_grid5"
-pagination_layout = "infinite_scroll"
+pagination_layout = "view_more_scroll"
 
 +++

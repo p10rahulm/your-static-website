@@ -8,6 +8,6 @@ number_in_list_page = 7
 sort_field = "title"
 sort_order = "asc"
 card_layout = "cards_grid7"
-
+pagination_layout = "view_more_scroll"
 
 +++

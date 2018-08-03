@@ -8,5 +8,5 @@ number_in_list_page = 8
 sort_field = "title"
 sort_order = "asc"
 card_layout = "carousel_4card"
-
+pagination_layout = "pages"
 +++

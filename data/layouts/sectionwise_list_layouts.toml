@@ -52,7 +52,7 @@
     sort_field = "title" #add the .Params at the start before sort field
     sort_order = "asc"
     card_layout = "long_list_with_image"
-    pagination_layout = "pages"
+    pagination_layout = "view_more_scroll"
 
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
     [[sections.fields]]
@@ -116,12 +116,12 @@
     title = "Publications"
     subtitle = "Who has published me, why don't you see?"
     num_featured = 1
-    number_in_list_page = 5
+    number_in_list_page = 2
     sort_field = "title"
     sort_order = "desc"
     card_alignment = "center"
     card_layout = "large_cards_leftimage_centertext_box_nooverlay"
-    pagination_layout = "pages"
+    pagination_layout = "view_more_scroll"
 
 
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
@@ -159,7 +159,7 @@
     sort_field = "title"
     sort_order = "asc"
     card_layout = "list_of_large_cards"
-    pagination_layout = "pages"
+    pagination_layout = "view_more_scroll"
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
     [[sections.fields]]
         field_name = "course_title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
@@ -285,7 +285,7 @@
     sort_field = "title"
     sort_order = "asc"
     card_layout = "cards_grid7"
-    pagination_layout = "pages"
+    pagination_layout = "view_more_scroll"
 
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
     [[sections.fields]]
@@ -318,11 +318,11 @@
     title = "Posts"
     subtitle = "The posts are precocious. Use as you feel good!"
     num_featured = 10
-    number_in_list_page = 10
+    number_in_list_page = 5
     sort_field = "title"
     sort_order = "asc"
     card_layout = "cards_grid5"
-    pagination_layout = "pages"
+    pagination_layout = "view_more_scroll"
 
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
     [[sections.fields]]
@@ -348,11 +348,11 @@
     title = "Short Notes"
     subtitle = "Thoughts I plant as seeds so they may flower someday"
     num_featured = 6
-    number_in_list_page = 12
+    number_in_list_page = 6
     sort_field = "title"
     sort_order = "asc"
     card_layout = "responsive_3cards_nobox"
-    pagination_layout = "pages"
+    pagination_layout = "view_more_scroll"
 
     [[sections.fields]]
         field_name = "title"
@@ -379,7 +379,7 @@
     title = "Thoughts"
     subtitle = "The thoughts are precious. Handle with care!"
     num_featured = 8
-    number_in_list_page = 8
+    number_in_list_page = 20
     sort_field = "title"
     sort_order = "asc"
     card_layout = "carousel_4card"
