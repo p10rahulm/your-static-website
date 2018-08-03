@@ -226,7 +226,7 @@ fixed_sharer_active = true
     title = "Our Strength"
     subtitle = "Our people are our strength"
     num_featured = 4
-    sort_field = "title" #add the .Params at the start before sort field
+    sort_field = "title"
     sort_order = "asc"
     card_layout = "people_cards_list_style1"
 
@@ -235,7 +235,7 @@ fixed_sharer_active = true
     title = "Books"
     subtitle = "The latest and greatest books"
     num_featured = 5
-    sort_field = "title" #add the .Params at the start before sort field
+    sort_field = "title"
     sort_order = "asc"
     card_layout = "long_list_with_image"
 

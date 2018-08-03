@@ -60,7 +60,7 @@
     type = "img"
     [[elements.tags]]
         field = "src"
-        value = "placeholder.jpg"
+        value = "/placeholder.jpg"
     [[elements.tags]]
         field = "data-src"
         value = "img/dog_transparency2.jpg"
@@ -96,7 +96,7 @@
     type = "img"
     [[elements.tags]]
         field = "src"
-        value = "placeholder.jpg"
+        value = "/placeholder.jpg"
     [[elements.tags]]
         field = "data-src"
         value = "img/dog_transparency1.jpg"

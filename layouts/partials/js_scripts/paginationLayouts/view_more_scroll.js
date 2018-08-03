@@ -27,8 +27,11 @@ var jquery_request = function() {
                 $(element_container).append(this);
             });
             $(loading_dots_container).css("display","none");
-            if( (total_pages) > current_page_num && base_url != pages[current_page_num]) {
-
+            if( (total_pages) > current_page_num && !(base_url == pages[current_page_num] && (total_pages-1) == current_page_num)) {
+                console.log("(total_pages-1): "+(total_pages-1));
+                console.log("(current_page_num): "+(current_page_num));
+                console.log("base_url: "+(base_url));
+                console.log("pages[current_page_num]: "+(pages[current_page_num]));
                 $(view_more_button_container).css("display","block");
             }
             lazyLoadFunction();
