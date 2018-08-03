@@ -4,50 +4,34 @@
     {{partial "css_scripts/paginationLayouts/view_more_scroll.css" . | safeCSS}}
 </style>
 
-<div class="container">
+<div id="view_more_pagination" class="container">
 
-    <ul class="paginationed" style="display:none">
+    <ul class="paginationed">
         {{ $.Scratch.Set "__paginator.ellipsed" false }}
         {{ range $pag.Pagers }}
-            {{ $right := sub .TotalPages .PageNumber }}
-            {{ $showNumber := (ne $right -1) }}
-            {{ if $showNumber }}
-                {{ $.Scratch.Set "__paginator.ellipsed" false }}
-                {{ $.Scratch.Set "__paginator.shouldEllipse" false }}
-            {{ else }}
-                {{ $.Scratch.Set "__paginator.shouldEllipse" (not ($.Scratch.Get "__paginator.ellipsed") ) }}
-                {{ $.Scratch.Set "__paginator.ellipsed" true }}
-            {{ end }}
-
-            {{ if $showNumber }}
-                <li {{ if eq . $pag }}class="active"{{ end }}><a href="{{ .URL }}" {{ if eq . $pag }}class="active"{{ end }}>{{ .PageNumber }}</a></li>
-            {{ else if ($.Scratch.Get "__paginator.shouldEllipse") }}
-                <li class="disabled"><span>&hellip;</span></li>
-            {{ end }}
+            <li {{ if eq . $pag }}class="active"{{ end }}><a href="{{ .URL }}" {{ if eq . $pag }}class="active"{{ end }}>{{ .PageNumber }}</a></li>
         {{ end }}
-        <!-- Use below for next page-->
-        <li {{ if not $pag.HasNext }}class="disabled"{{ end }}>
-            {{ if $pag.HasNext }}<a class="pagination_next" href="{{ $pag.Next.URL }}" aria-label="Next"><span aria-hidden="true">Next</span></a>{{ end }}
-        </li>
+
     </ul>
 
-    <div class="page-load-status">
-        <div class="loader-ellips infinite-scroll-request">
-            <span class="loader-ellips__dot"></span>
-            <span class="loader-ellips__dot"></span>
-            <span class="loader-ellips__dot"></span>
-            <span class="loader-ellips__dot"></span>
+    <div class="page_load_status">
+        <div class="loading_dots_container view_more_request">
+            <span class="loading_dot"></span>
+            <span class="loading_dot"></span>
+            <span class="loading_dot"></span>
+            <span class="loading_dot"></span>
         </div>
         <!--Use below in case you want to add any messages when the last page is reached-->
         <!--<p class="infinite-scroll-last"></p>-->
         <!--Use below in case you expect any errors and want an error handler message-->
-        <p class="infinite-scroll-error">No more pages to load</p>
+        <p class="view_more_error">No more pages to load</p>
     </div>
 
 
 
-    <p class = "view-more-button-container">
-        <button class="view-more-button">View more</button>
+
+    <p class = "view_more_button_container">
+        <button class="view_more_button">View more</button>
     </p>
 
 
@@ -58,5 +42,5 @@
 <script type="text/javascript">
     {{partial "js_scripts/paginationLayouts/view_more_scroll.js" . | safeJS }}
 </script>
-.
+
 {{ end }}
