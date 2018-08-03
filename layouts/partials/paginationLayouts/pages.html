@@ -1,9 +1,10 @@
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
 <style type="text/css">
     {{partial "css_scripts/paginationLayouts/pages.css" . | safeCSS}}
 </style>
 <div class="container">
-    {{ $pag := $.Paginator }}
-    {{ if gt $pag.TotalPages 1 }}
+
     <ul class="paginationed">
         {{ with $pag.First }}
         <li>
@@ -50,5 +51,6 @@
         {{ end }}
 
     </ul>
-    {{ end }}
+
 </div>
+{{ end }}

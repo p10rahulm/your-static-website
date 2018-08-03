@@ -1,11 +1,12 @@
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
 <!--Please note that this section uses an external javascript script which has a separate commercial license -->
 <style type="text/css">
     {{partial "css_scripts/paginationLayouts/infinite_scroll.css" . | safeCSS}}
 </style>
 
 <div class="container">
-    {{ $pag := $.Paginator }}
-    {{ if gt $pag.TotalPages 1 }}
+
     <ul class="paginationed">
         {{ $.Scratch.Set "__paginator.ellipsed" false }}
         {{ range $pag.Pagers }}
@@ -52,7 +53,7 @@
         <button class="view-more-button">View more</button>
     </p>
 
-    {{ end }}
+
 </div>
 
 
@@ -62,3 +63,4 @@
     {{partial "js_scripts/paginationLayouts/infinite_scroll.js" . | safeJS }}
 </script>
 
+{{ end }}

@@ -1,30 +1,29 @@
-<!--Please note that this section uses an external javascript script which has a separate commercial license -->
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
 <style type="text/css">
     {{partial "css_scripts/paginationLayouts/view_more_scroll.css" . | safeCSS}}
 </style>
 
 <div class="container">
-    {{ $pag := $.Paginator }}
-    {{ if gt $pag.TotalPages 1 }}
-    <ul class="paginationed">
+
+    <ul class="paginationed" style="display:none">
         {{ $.Scratch.Set "__paginator.ellipsed" false }}
         {{ range $pag.Pagers }}
+            {{ $right := sub .TotalPages .PageNumber }}
+            {{ $showNumber := (ne $right -1) }}
+            {{ if $showNumber }}
+                {{ $.Scratch.Set "__paginator.ellipsed" false }}
+                {{ $.Scratch.Set "__paginator.shouldEllipse" false }}
+            {{ else }}
+                {{ $.Scratch.Set "__paginator.shouldEllipse" (not ($.Scratch.Get "__paginator.ellipsed") ) }}
+                {{ $.Scratch.Set "__paginator.ellipsed" true }}
+            {{ end }}
 
-        {{ $right := sub .TotalPages .PageNumber }}
-        {{ $showNumber := (ne $right -1) }}
-        {{ if $showNumber }}
-        {{ $.Scratch.Set "__paginator.ellipsed" false }}
-        {{ $.Scratch.Set "__paginator.shouldEllipse" false }}
-        {{ else }}
-        {{ $.Scratch.Set "__paginator.shouldEllipse" (not ($.Scratch.Get "__paginator.ellipsed") ) }}
-        {{ $.Scratch.Set "__paginator.ellipsed" true }}
-        {{ end }}
-
-        {{ if $showNumber }}
-        <li {{ if eq . $pag }}class="active"{{ end }}><a href="{{ .URL }}" {{ if eq . $pag }}class="active"{{ end }}>{{ .PageNumber }}</a></li>
-        {{ else if ($.Scratch.Get "__paginator.shouldEllipse") }}
-        <li class="disabled"><span>&hellip;</span></li>
-        {{ end }}
+            {{ if $showNumber }}
+                <li {{ if eq . $pag }}class="active"{{ end }}><a href="{{ .URL }}" {{ if eq . $pag }}class="active"{{ end }}>{{ .PageNumber }}</a></li>
+            {{ else if ($.Scratch.Get "__paginator.shouldEllipse") }}
+                <li class="disabled"><span>&hellip;</span></li>
+            {{ end }}
         {{ end }}
         <!-- Use below for next page-->
         <li {{ if not $pag.HasNext }}class="disabled"{{ end }}>
@@ -51,7 +50,7 @@
         <button class="view-more-button">View more</button>
     </p>
 
-    {{ end }}
+
 </div>
 
 
@@ -59,4 +58,5 @@
 <script type="text/javascript">
     {{partial "js_scripts/paginationLayouts/view_more_scroll.js" . | safeJS }}
 </script>
-
+.
+{{ end }}
