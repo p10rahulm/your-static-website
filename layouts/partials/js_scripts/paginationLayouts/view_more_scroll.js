@@ -4,29 +4,31 @@ var view_more_button_container = document.querySelector('.view_more_button_conta
 var loading_dots_container = document.querySelector('.loading_dots_container');
 var error_message_div = document.querySelector('.view_more_error');
 
-var total_pages = {{$.Paginator.TotalPages}} -1; //we subtract 1 so that it is in the format of 0,1,2...
-var current_page_num = 0;
+var total_pages = {{$.Paginator.TotalPages}};
+var current_page_num = 1;
 var num_errors = 0;
 
-var base_url = "{{.URL}}";
+var base_url = window.location.href;
 var pages = [];
-{{range $index, $element := $.Paginator.Pagers}}{{if not (eq $index 0)}}
+{{range $index, $element := $.Paginator.Pagers}}
     pages.push("{{ $element.URL |absURL}}");
-{{end}}{{end}}
-
+{{end}}
+// console.log(pages);
 var jquery_request = function() {
+    if(window.location.href == pages[current_page_num-1]) {current_page_num++;}
     $(loading_dots_container).css("display","block");
     $(view_more_button_container).css("display","none");
     $(error_message_div).css("display","none");
     $.ajax({
-        url: pages[current_page_num],
+        url: pages[current_page_num-1],
         context: document.body,
         success: function (response) {
             $(response).find('.details_cards').each(function( index ) {
                 $(element_container).append(this);
             });
             $(loading_dots_container).css("display","none");
-            if( (total_pages-1) > current_page_num) {
+            if( (total_pages) > current_page_num && base_url != pages[current_page_num]) {
+
                 $(view_more_button_container).css("display","block");
             }
             lazyLoadFunction();
