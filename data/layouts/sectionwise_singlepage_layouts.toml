@@ -1,0 +1,16 @@
+[[sections]]
+    name = "books"
+    title = "The greatest Book in the world"
+    author = "Rahul Madhavan"
+    caption_image = "dog_popup_thanks3.jpg"
+
+    allow_comments = true
+    enable_comments = true
+        comment_count = true
+    show_popup = true
+    show_sharer = true
+    rollup_sharer_active= true
+    fixed_sharer_active = true
+    content_sharer_active= true
+
+

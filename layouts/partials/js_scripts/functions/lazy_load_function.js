@@ -2,7 +2,7 @@ let lazyLoadFunction = function() {
     var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
 
     if ("IntersectionObserver" in window) {
-        console.log("Intersection Observer Working");
+        console.log("Lazy Load working. Intersection Observer Section");
 
         let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
             entries.forEach(function(entry) {

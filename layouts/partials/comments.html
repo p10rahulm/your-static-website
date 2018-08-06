@@ -1,10 +1,5 @@
 <!--https://gohugo.io/templates/internal/-->
 {{$comments_enabled := and $.Site.DisqusShortname (or ($.Site.Params.enable_comments | default false) ($.Params.enable_comments | default false))}}
 {{ if $comments_enabled }}
-    <style type="text/css">
-        {{partial "css_scripts/comments.css" . | safeCSS }}
-    </style>
-    <section id="comments">
         {{ partial "disqus" . }}
-    </section>
 {{ end }}

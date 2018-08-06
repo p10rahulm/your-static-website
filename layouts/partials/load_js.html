@@ -1,21 +1,7 @@
-{{$comments_enabled := and $.Site.DisqusShortname (or ($.Site.Params.enable_comments | default false) ($.Params.enable_comments | default false))}}
-
-{{partial "load_highlight_math_js" .}}
 
 {{partial "functions/load_external_js.html" (dict "external_url" "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" "scratch" .Scratch "async" false "defer" false)}}
-
-
-
-<!--Load local js. This comes after external because jquery is required for some local scripts-->
-<script src="{{ "/js/static_javascripts.js" | relURL }}"></script>
-
 <!--// Load any custom js files mentioned in config.toml-->
 {{ range .Site.Params.custom_js }}
 <script src="{{ "/js/" | relURL }}{{ . }}"></script>
 {{ end }}
 
-<!--Load js required for comment counting-->
-{{ if and $comments_enabled (and ($.Site.Params.comment_count | default true) ($.Params.comment_count | default true)) }}
-{{$link := printf "//%s.disqus.com/count.js" .Site.DisqusShortname }}
-{{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" .Scratch "async" true "defer" false)}}
-{{ end }}

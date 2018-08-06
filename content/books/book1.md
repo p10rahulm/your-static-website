@@ -3,9 +3,6 @@ title = "Book1"
 date = 2018-06-08T19:44:35+05:30
 draft = false
 author = "Rahul Madhavan"
-allow_comments = false
-show_title_date_author = false
-
 # The below image will be shown in all the cards pointing to this article
 caption_image = "dog_popup_thanks3.jpg"
 
@@ -15,24 +12,8 @@ summary_content = '''
 The book is very very good. It needs to be read by one and all.
 Generally I don't say much. But know this is true'''
 
-show_popup = true
-show_sharer = true
-rollup_sharer_active= true
-fixed_sharer_active = true
-content_sharer_active= true
-
 # Should this be listed in front page
 featured = true
-enable_comments = true
-comment_count = true
-
-# Does the content use math formatting?
-math = false
-
-# Highlight.js options, View this demo and choose: https://highlightjs.org/static/demo/
-highlight = false
-highlight_languages = []
-highlight_style = "ocean"
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
@@ -58,7 +39,7 @@ language = "English"
 [book-images]
         # Featured image
         featured_image = ""
-        # Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
+        # Place your image in the 'static/img/' folder and reference its filename below, e.g. 'image = "example.jpg"'.
         images = ["img.jpg","img1.jpg"]
 [SEO]
         # Page description for Search Engines and Social Media shares. No longer than 155 characters.

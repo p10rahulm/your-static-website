@@ -1,4 +1,8 @@
 {{ $scratch := .Scratch }}
+{{$link := (printf "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/%s.min.css" ($.Params.highlight_style | default "github-gist")) }}
+{{partial "functions/load_external_css.html" (dict "external_url" $link "scratch" .Scratch)}}
+<!--highlight_style = "ocean"-->
+
 <!--Code highlighting render. Note that highlight.min.js covers all common languages and the languages need to be mentioned only if uncommon-->
 {{if or (isset $.Params "highlight") (isset $.Site.Params "highlight") }}
 {{if or ($.Params.highlight) ($.Site.Params.highlight) }}

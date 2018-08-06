@@ -1,3 +1,4 @@
+{{$layout = }}
 {{ define "main" }}
     <section>
         <div class="container">
@@ -17,10 +18,12 @@
         </div>
     </section>
 {{ end }}
+{{define "sharer"}}
+    {{ partial "comments" . }}
+{{end}}
+{{define "popup"}}
+    {{ partial "comments" . }}
+{{end}}
 {{define "comments"}}
-    {{if isset .Params "allow_comments"}}
-        {{if .Params.allow_comments}}
-            {{ partial "comments" . }}
-        {{ end }}
-    {{ end }}
+    {{ partial "comments" . }}
 {{end}}
