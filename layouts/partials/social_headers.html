@@ -10,7 +10,7 @@
 <meta name="twitter:site" content={{if (isset .Site.Params "twitter_site_handle") }}"{{ .Site.Params.twitter_site_handle }}"{{else}}""{{ end }}>
 <meta name="twitter:title" content={{ if eq .Title .Site.Title }}"{{ .Title }}"{{ else }}"{{ .Title }} - {{ .Site.Title }}"{{ end }}>
 <meta name="twitter:description" content={{ if (isset .Params.seo "description") }}"{{.Params.seo.description}}"{{else}}"{{ .Site.Params.default_description }}"{{ end }}>
-<meta name="twitter:creator" content={{if (isset .Site.Params "twitter_creator_handle") }}"{{ .Site.Params.twitter_creator_handle }}"{{ end }}>
+{{if (isset .Site.Params "twitter_creator_handle") }} <meta name="twitter:creator" content="{{ .Site.Params.twitter_creator_handle }}" >{{ end }}
 <!--Twitter Summary card images must be at least 120x120px-->
 <meta name="twitter:image" content={{ if (isset .Params "caption_image") }}"{{.Params.caption_image | absURL}}"{{else}}"{{ (printf "%s" $.Site.Params.logo) | absURL }}"{{ end }}>
 

@@ -1,0 +1,68 @@
+
+
+{{ define "main" }}
+    {{ $.Scratch.SetInMap "layout_defaults" "feature_image" "img/headers/bubbles-wide.jpg" }}
+    {{ $.Scratch.SetInMap "layout_defaults" "title" ("Post Page" | humanize) }}
+    {{ $.Scratch.SetInMap "layout_defaults" "author" ($.Site.Params.site_author_name | humanize) }}
+    {{ $.Scratch.SetInMap "layout_defaults" "created_date" now }}
+    {{ $.Scratch.SetInMap "layout_defaults" "content" `Loremipsum dolor sit amet, consectetur adipiscing elit. In vel lectus vel enim posuere convallis et eu dolor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed mollis venenatis nisl. Fusce luctus eleifend libero in lobortis. Nulla cursus tempus orci, nec venenatis est. In gravida augue vitae dictum tempor. Vivamus dapibus tempor mi a elementum.
+
+Aliquam nec ornare lectus. Integer ante purus, pulvinar sit amet quam at, blandit aliquam magna. Quisque massa nunc, eleifend at augue ac, elementum iaculis tellus. Sed ipsum ex, ultricies quis massa sed, malesuada imperdiet eros. Nullam rhoncus lacinia rhoncus. Nam et congue purus, et sagittis purus. Aliquam viverra ultrices semper. Integer pharetra in ante a aliquam. Mauris rhoncus, nisi nec condimentum suscipit, leo sapien aliquam ipsum, sit amet tincidunt velit risus facilisis augue.
+
+Sed a pellentesque lacus. Fusce feugiat sodales dolor et vulputate. Mauris ut scelerisque risus, sit amet congue ante. Nunc lectus quam, faucibus a interdum eu, ullamcorper in lorem. Praesent convallis eros sit amet porttitor pellentesque. Maecenas a commodo velit. Nunc at magna est. Praesent sit amet massa eu risus semper dapibus sit amet a magna. Sed viverra fringilla tellus, ut tincidunt leo pretium vitae. Nullam rhoncus nisl orci. Vestibulum dignissim rhoncus lacus laoreet eleifend. Proin sit amet iaculis nulla, sit amet commodo sapien. Cras malesuada ornare facilisis. Pellentesque id pellentesque enim, sed porta lacus.
+
+Curabitur eleifend faucibus turpis, sit amet lacinia erat iaculis id. Nunc accumsan quam nisl, sed vestibulum nisi lobortis id. Donec lacinia tortor erat, sit amet faucibus felis tempus molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec erat sit amet justo rhoncus accumsan. Vestibulum semper orci quis arcu eleifend, quis interdum tortor tincidunt. Nunc scelerisque mauris id blandit vulputate. Pellentesque a imperdiet metus, feugiat feugiat ante.
+
+Morbi tincidunt nisi sit amet risus lacinia ornare. Duis mattis diam urna, a sollicitudin ante cursus at. Nunc ultrices ligula feugiat rhoncus blandit. Nam eget dui enim. Sed id ante sed sem finibus maximus. Curabitur sit amet tincidunt magna. Maecenas ac congue urna, nec placerat purus. Praesent tincidunt consectetur mi, et vehicula felis porta eu. Pellentesque quis ligula a metus iaculis aliquam. Aenean mollis ullamcorper varius. Nullam mollis mauris vel vulputate ornare. Suspendisse sed sollicitudin diam, a vehicula libero. Suspendisse quis metus mauris.
+` }}
+    <section>
+
+        <div class="container">
+            <p>{{($.Scratch.Get "layout_defaults").content | markdownify}}</p>
+            <p>{{($.Scratch.Get "layout_defaults").created_date.Format "January 2006"}}</p>
+            <div class="row">
+                {{if isset .Params "show_title_date_author"}}
+                    {{if .Params.show_title_date_author}}
+                        <h1>{{.Title}}</h1>
+                        <br>
+                        <div style="color:black; font-size:16px;">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
+                        <div style="color:black; font-size:16px;">{{if .Params.author}}Author: {{.Params.Author}}{{end}}</div>
+                        <br>
+                        <hr>
+                    {{ end }}
+                {{ end }}
+                <div style="color:black; font-size:18px;">{{ .Content | markdownify}}</div>
+            </div>
+        </div>
+    </section>
+{{ end }}
+    allow_comments = false
+
+    # The below summary message will be shown in all the cards pointing to this article.
+    # If not available, it would be generated from the content of the page.
+    summary_content = '''
+    The book is very very good. It needs to be read by one and all.
+    Generally I don't say much. But know this is true'''
+
+
+    # Should this be listed in front page
+    featured = true
+    enable_comments = true
+    comment_count = true
+
+{{define "sharer"}}
+    {{ $.Scratch.SetInMap "layout_defaults" "show_sharer" true }}
+    {{ $.Scratch.SetInMap "layout_defaults" "rollup_sharer_active" true }}
+    {{ $.Scratch.SetInMap "layout_defaults" "fixed_sharer_active" true }}
+    {{ $.Scratch.SetInMap "layout_defaults" "content_sharer_active" true }}
+    {{ partial "sides/sharer.html" . }}
+{{end}}
+{{define "popup"}}
+    {{ $.Scratch.SetInMap "layout_defaults" "show_popup" true }}
+    {{ partial "sides/popup.html" . }}
+{{end}}
+{{define "comments"}}
+    {{ $.Scratch.SetInMap "layout_defaults" "enable_comments" true }}
+    {{ $.Scratch.SetInMap "layout_defaults" "comment_count" false }}
+    {{ partial "comments" . }}
+{{end}}
