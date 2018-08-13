@@ -1,7 +1,7 @@
 <aside class = "popup">
     <header>
         <script type="text/javascript">
-             {{ partial "js_scripts/popup/default.js" . | safeJS }}
+             {{ partial "js_scripts/popup/defaults.js" . | safeJS }}
         </script>
         {{if ($.Scratch.Get "layout_defaults").popup_activation_button}}
         <script type="text/javascript">
@@ -24,14 +24,15 @@
         </script>
         {{end}}
 
+        <style type="text/css">
+            {{ partial "css_scripts/popup/floating_popup.css" . | safeCSS }}
+        </style>
         {{if ($.Scratch.Get "layout_defaults").popup_activation_button}}
         <style type="text/css">
             {{ partial "css_scripts/popup/popup_activation_button.css" . | safeCSS }}
         </style>
         {{end}}
-        <style type="text/css">
-            {{ partial "css_scripts/popup/floating_popup.css" . | safeCSS }}
-        </style>
+
 
     </header>
     {{if ($.Scratch.Get "layout_defaults").popup_activation_button}}
