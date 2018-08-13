@@ -1,8 +1,28 @@
 <aside class = "popup">
     <header>
         <script type="text/javascript">
-             {{ partial "js_scripts/popup.js" . | safeJS }}
+             {{ partial "js_scripts/popup/default.js" . | safeJS }}
         </script>
+        {{if ($.Scratch.Get "layout_defaults").popup_activation_button}}
+        <script type="text/javascript">
+            {{ partial "js_scripts/popup/activation_button.js" . | safeJS }}
+        </script>
+        {{end}}
+        {{if ($.Scratch.Get "layout_defaults").activate_popup_on_delay}}
+        <script type="text/javascript">
+            {{ partial "js_scripts/popup/delay_activation.js" . | safeJS }}
+        </script>
+        {{end}}
+        {{if ($.Scratch.Get "layout_defaults").activate_popup_on_exit_intent}}
+        <script type="text/javascript">
+            {{ partial "js_scripts/popup/exit_intent_activation.js" . | safeJS }}
+        </script>
+        {{end}}
+        {{if ($.Scratch.Get "layout_defaults").activate_popup_on_scroll}}
+        <script type="text/javascript">
+            {{ partial "js_scripts/popup/scroll_activation.js" . | safeJS }}
+        </script>
+        {{end}}
 
         {{if ($.Scratch.Get "layout_defaults").popup_activation_button}}
         <style type="text/css">
