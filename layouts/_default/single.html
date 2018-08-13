@@ -51,15 +51,25 @@ Morbi tincidunt nisi sit amet risus lacinia ornare. Duis mattis diam urna, a sol
     comment_count = true
 
 {{define "sharer"}}
-    {{ $.Scratch.SetInMap "layout_defaults" "show_sharer" true }}
-    {{ $.Scratch.SetInMap "layout_defaults" "rollup_sharer_active" true }}
-    {{ $.Scratch.SetInMap "layout_defaults" "fixed_sharer_active" true }}
-    {{ $.Scratch.SetInMap "layout_defaults" "content_sharer_active" true }}
-    {{ partial "sides/sharer.html" . }}
+    {{ $.Scratch.SetInMap "layout_defaults" "show_sharer" ($.Site.Params.sharer.sharer_active | default true) }}
+    {{ $.Scratch.SetInMap "layout_defaults" "rollup_sharer_active" ($.Site.Params.sharer.sharer_rollup_button_active | default true) }}
+    {{ $.Scratch.SetInMap "layout_defaults" "fixed_sharer_active" ($.Site.Params.sharer.sharer_fixed_menu_active | default true) }}
+    {{ $.Scratch.SetInMap "layout_defaults" "show_fixed_sharer_on_scroll" ($.Site.Params.sharer.show_fixed_sharer_on_scroll | default true) }}
+    {{if ($.Scratch.Get "layout_defaults").show_sharer}}
+        {{ partial "sides/sharer.html" . }}
+    {{end}}
 {{end}}
 {{define "popup"}}
-    {{ $.Scratch.SetInMap "layout_defaults" "show_popup" true }}
-    {{ partial "sides/popup.html" . }}
+    {{ $.Scratch.SetInMap "layout_defaults" "show_popup" ($.Site.Params.popup.popup_active | default true) }}
+
+    {{ $.Scratch.SetInMap "layout_defaults" "popup_activation_button" ($.Site.Params.popup.popup_show_button_on_bottom_right | default true) }}
+    {{ $.Scratch.SetInMap "layout_defaults" "activate_popup_on_delay" ($.Site.Params.popup.activate_popup_on_delay | default true) }}
+    {{ $.Scratch.SetInMap "layout_defaults" "activate_popup_on_exit_intent" ($.Site.Params.popup.activate_popup_on_exit_intent | default true) }}
+    {{ $.Scratch.SetInMap "layout_defaults" "activate_popup_on_scroll" ($.Site.Params.popup.activate_popup_on_scroll | default true) }}
+
+    {{if ($.Scratch.Get "layout_defaults").show_popup}}
+        {{partial "sides/popup.html" .}}
+    {{end}}
 {{end}}
 {{define "comments"}}
     {{ $.Scratch.SetInMap "layout_defaults" "enable_comments" true }}

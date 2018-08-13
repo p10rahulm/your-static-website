@@ -1,0 +1,20 @@
+.popup-float{
+    position:fixed;
+    width:45px;
+    height:45px;
+    bottom:40px;
+    right:25px;
+    background-color:#0C9;
+    color:#FFF;
+    border-radius:30px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+    background: {{$.Site.Params.popup.popup_button_color}};
+    border-color: {{$.Site.Params.popup.popup_button_color}};
+}
+
+.popup-float-button{
+    margin:auto;
+    font-size:1.3rem;
+    color:{{$.Site.Params.popup.pullup_button_icon_color}};
+}

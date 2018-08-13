@@ -1,0 +1,28 @@
+
+/*************************************************
+*  Sharer
+**************************************************/
+.facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.googleplus {
+    background: #dd4b39;
+    color: white;
+}
+
+.linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.mailto {
+    background: #bb0000;
+    color: white;
+}

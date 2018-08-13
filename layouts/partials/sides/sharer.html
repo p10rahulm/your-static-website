@@ -1,17 +1,35 @@
 <aside class="sharer">
     <header>
+
+        {{if and ((index ($.Scratch.Get "layout_defaults") "fixed_sharer_active") (index ($.Scratch.Get "layout_defaults") "show_fixed_sharer_on_scroll"))}}
         <script type="text/javascript">
-            {{ partial "js_scripts/sharer.js" . | safeJS }}
+            {{ partial "js_scripts/sharer/sharer_showOnScroll.js" . | safeJS }}
         </script>
+        {{end}}
+        {{if ($.Scratch.Get "layout_defaults").rollup_sharer_active}}
+        <script type="text/javascript">
+            {{ partial "js_scripts/sharer/sharer_rollup.js" . | safeJS }}
+        </script>
+        {{end}}
 
         <style type="text/css">
-            {{ partial "css_scripts/sharer_styles.css" . | safeCSS }}
+            {{ partial "css_scripts/sharer/default.css" . | safeCSS }}
         </style>
+        {{if ($.Scratch.Get "layout_defaults").rollup_sharer_active}}
+        <style type="text/css">
+            {{ partial "css_scripts/sharer/sharer_popup_button.css" . | safeCSS }}
+        </style>
+        {{end}}
+        {{if ($.Scratch.Get "layout_defaults").fixed_sharer_active}}
+        <style type="text/css">
+            {{ partial "css_scripts/sharer/fixed_share_bar.css" . | safeCSS }}
+        </style>
+        {{end}}
 
     </header>
-    {{if and $.Site.Params.sharer.sharer_rollup_button_active $.Params.rollup_sharer_active}}
+    {{if ($.Scratch.Get "layout_defaults").rollup_sharer_active}}
         <div id="floating_sharer">
-            <button class="sharer-opener" id="share_menu_activation_button" style = "background: {{$.Site.Params.sharer.sharer_button_color}}; border-color: {{$.Site.Params.sharer.sharer_button_color}}">
+            <button class="sharer-opener" id="share_menu_activation_button">
                 <i class="fa {{$.Site.Params.sharer.sharer_pullup_button_icon}} sharer-float-button"></i>
             </button>
             <div class="sharer_socials" id="toggled_social_shares">
@@ -43,8 +61,8 @@
         </div>
     {{end}}
 
-    {{if and $.Site.Params.sharer.sharer_fixed_menu_active $.Params.fixed_sharer_active}}
-        <div class="sharer_socials_fixed" id="fixed_social_shares" {{if $.Site.Params.sharer.show_menu_on_scroll}} style="display:none" {{end}}>
+    {{if ($.Scratch.Get "layout_defaults").fixed_sharer_active}}
+        <div class="sharer_socials_fixed" id="fixed_social_shares">
             <a href="https://twitter.com/intent/tweet?text={{ .Title | html }}&amp;url={{ .Permalink | html }}"
                target="_blank" rel="noopener">
                 <div class="twitter">

@@ -1,74 +1,3 @@
-/*************************************************
-*  Sharer
-**************************************************/
-.sharer-opener{
-    position:fixed;
-    width:45px;
-    height:45px;
-    bottom:100px;
-    right:25px;
-    color:#FFF;
-    border-radius:45px;
-    text-align:center;
-    box-shadow: 2px 2px 3px #999;
-}
-
-.sharer-float-button{
-    margin:25%;
-    font-size:1rem;
-}
-
-.sharer_socials{
-    position: fixed;
-    bottom: 140px;
-    right: 25px;
-    display: none;
-}
-
-.sharer_socials a {
-    border-radius:45px;
-    height: 45px;
-    width: 45px;
-    display: block;
-    text-align: center;
-    transition: all 0.3s ease;
-    color: white;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-}
-
-.sharer_socials a:hover {
-    background-color: #333;
-}
-.sharer_socials i {
-    margin:25%;
-}
-
-
-.facebook {
-    background: #3B5998;
-    color: white;
-}
-
-.twitter {
-    background: #55ACEE;
-    color: white;
-}
-
-.googleplus {
-    background: #dd4b39;
-    color: white;
-}
-
-.linkedin {
-    background: #007bb5;
-    color: white;
-}
-
-.mailto {
-    background: #bb0000;
-    color: white;
-}
 @media only screen and (min-width: 1199px) {
     #fixed_social_shares {
         position: fixed;
@@ -100,7 +29,7 @@
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1199px) {
     #fixed_social_shares {
         position: fixed;
         bottom: 0%;
@@ -124,6 +53,5 @@
         margin: 0px;
     }
 }
-
 
 

@@ -1,0 +1,44 @@
+.sharer-opener{
+    position:fixed;
+    width:45px;
+    height:45px;
+    bottom:100px;
+    right:25px;
+    color:#FFF;
+    border-radius:45px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+    background: {{$.Site.Params.sharer.sharer_button_color}};
+    border-color: {{$.Site.Params.sharer.sharer_button_color}};
+}
+
+.sharer-float-button{
+    margin:25%;
+    font-size:1rem;
+}
+
+.sharer_socials{
+    position: fixed;
+    bottom: 140px;
+    right: 25px;
+    display: none;
+}
+
+.sharer_socials a {
+    border-radius:45px;
+    height: 45px;
+    width: 45px;
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.sharer_socials a:hover {
+    background-color: #333;
+}
+.sharer_socials i {
+    margin:25%;
+}

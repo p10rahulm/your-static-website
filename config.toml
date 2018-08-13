@@ -156,7 +156,7 @@ verboseLog =true
         # 2. Fixed menu
         # Note that this changes with screen width. This can be checked by pressing ctrl+shift+i on chrome
         sharer_fixed_menu_active = true
-        show_menu_on_scroll = true
+        show_fixed_sharer_on_scroll = true
         # If show_menu_on_scroll is true, how much to scroll
         scroll_amount_to_activate_sharer = 20
 

@@ -3,15 +3,22 @@
         <script type="text/javascript">
              {{ partial "js_scripts/popup.js" . | safeJS }}
         </script>
+
+        {{if ($.Scratch.Get "layout_defaults").popup_activation_button}}
         <style type="text/css">
-            {{ partial "css_scripts/popup_style.css" . | safeCSS }}
+            {{ partial "css_scripts/popup/popup_activation_button.css" . | safeCSS }}
+        </style>
+        {{end}}
+        <style type="text/css">
+            {{ partial "css_scripts/popup/floating_popup.css" . | safeCSS }}
         </style>
 
     </header>
-
-    <button id="popup_activation_button" class="pull-right popup-float" style = "background: {{$.Site.Params.popup.popup_button_color}}; border-color: {{$.Site.Params.popup.popup_button_color}}">
-        <i class="fa {{.Site.Params.popup.pullup_button_icon}} popup-float-button" style = "color:{{$.Site.Params.popup.pullup_button_icon_color}}"></i>
+    {{if ($.Scratch.Get "layout_defaults").popup_activation_button}}
+    <button id="popup_activation_button" class="pull-right popup-float">
+        <i class="fa {{.Site.Params.popup.pullup_button_icon}} popup-float-button"></i>
     </button>
+    {{end}}
 
     <div id="subscription_popup">
         <div class="popup_container">
@@ -22,7 +29,7 @@
             </div>
             <div class="popup_body flex">
                 <div id="popup_content">
-                    <h3 class="modal-subtitle" style = "color:{{$.Site.Params.popup.subtitle_color}}; padding: 1rem 0rem 2rem">{{$.Site.Params.popup.subtitle}}</h3>
+                    <h3 class="popup_subheading">{{$.Site.Params.popup.subtitle}}</h3>
                     <form
                             method="POST"
                             name="sentMessage"
