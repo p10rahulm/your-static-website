@@ -55,6 +55,9 @@ Morbi tincidunt nisi sit amet risus lacinia ornare. Duis mattis diam urna, a sol
     {{ $.Scratch.SetInMap "layout_defaults" "rollup_sharer_active" ($.Site.Params.sharer.sharer_rollup_button_active | default true) }}
     {{ $.Scratch.SetInMap "layout_defaults" "fixed_sharer_active" ($.Site.Params.sharer.sharer_fixed_menu_active | default true) }}
     {{ $.Scratch.SetInMap "layout_defaults" "show_fixed_sharer_on_scroll" ($.Site.Params.sharer.show_fixed_sharer_on_scroll | default true) }}
+
+    {{ $.Scratch.Set "single_layout_prebuilds" $.Site.Data.layouts.sectionwise_singlepage_layouts }}
+
     {{if ($.Scratch.Get "layout_defaults").show_sharer}}
         {{ partial "sides/sharer.html" . }}
     {{end}}
