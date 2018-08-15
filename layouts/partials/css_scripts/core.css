@@ -59,18 +59,28 @@ body {
     line-height: inherit;
     color: inherit;
     background-color: #fff;
-    margin-top: 71px; /* Offset body content by navbar height. */
+    margin: 71px 0 15px 0; /* Offset body content by navbar height. */
     padding-top: 0;
     counter-reset: captions;
+
 }
 
 @media screen and (max-width: 1200px) {
     /* Match max-width of .nav-bar query. */
     body {
-        margin-top: 51px; /* Offset body content by navbar height. */
+        margin-top: 80px; /* Offset body content by navbar height. */
     }
 }
 
+.home-section {
+    background-color: #fff;
+    padding: 70px 0 70px 0;
+}
+@media screen and (max-width: 768px) {
+    .home-section {
+        padding: 2.5rem 0 60px 0;
+    }
+}
 .section-heading {
     text-align: center;
     font-weight: 700;

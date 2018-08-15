@@ -5,7 +5,7 @@
 
 section#contact {
     background-color: #222;
-    background-image: url(../img/map-image.jpg);
+    background-image: url(/img/map-image.png);
     background-position: center;
     background-repeat: no-repeat;
     padding: 4rem 1rem 6rem 1rem;
@@ -27,7 +27,36 @@ section#contact .section-subheading {
     font-size: 0.9rem;
     font-weight: 200;
 }
-
+.questions_container{
+    border: none;
+}
+.submit_button{
+    background-color: transparent;
+    z-index: 2;
+    box-shadow: 0 0 1px transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    font-weight: 100;
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding: 15px 55px;
+    color: #959595;
+    border: 1px solid #aaa;
+    transition-timing-function: cubic-bezier(0,0,.58,1);
+    transition-property: transform,background,background-color,color,box-shadow;
+}
+.submit_button:hover{
+    text-decoration: none;
+    box-shadow: 0 10px 20px -10px rgba(0,0,0,.7);
+    transform: scale(1.05) translateY(-3px);
+    transition: transform 0.5s ease-in-out 0.1s,box-shadow 0.5s ease-in-out 0.1s;
+}
 section#contact  .flex-children{
     width: 45%;
 }

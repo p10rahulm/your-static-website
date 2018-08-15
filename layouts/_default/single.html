@@ -1,7 +1,8 @@
 
 
 {{ define "main" }}
-    {{ $.Scratch.SetInMap "page_layout" "feature_image" "img/headers/bubbles-wide.jpg" }}
+    {{ $.Scratch.SetInMap "page_layout" "layout" "default"}}
+    {{ $.Scratch.SetInMap "page_layout" "banner_image" "headers/bubbles-wide.jpg" }}
     {{ $.Scratch.SetInMap "page_layout" "title" ("Post Page" | humanize) }}
     {{ $.Scratch.SetInMap "page_layout" "author" ($.Site.Params.site_author_name | humanize) }}
     {{ $.Scratch.SetInMap "page_layout" "created_date" now }}
@@ -15,26 +16,8 @@ Curabitur eleifend faucibus turpis, sit amet lacinia erat iaculis id. Nunc accum
 
 Morbi tincidunt nisi sit amet risus lacinia ornare. Duis mattis diam urna, a sollicitudin ante cursus at. Nunc ultrices ligula feugiat rhoncus blandit. Nam eget dui enim. Sed id ante sed sem finibus maximus. Curabitur sit amet tincidunt magna. Maecenas ac congue urna, nec placerat purus. Praesent tincidunt consectetur mi, et vehicula felis porta eu. Pellentesque quis ligula a metus iaculis aliquam. Aenean mollis ullamcorper varius. Nullam mollis mauris vel vulputate ornare. Suspendisse sed sollicitudin diam, a vehicula libero. Suspendisse quis metus mauris.
 ` }}
-    <section>
-
-        <div class="container">
-            <p>{{($.Scratch.Get "page_layout").content | markdownify}}</p>
-            <p>{{($.Scratch.Get "page_layout").created_date.Format "January 2006"}}</p>
-            <div class="row">
-                {{if isset .Params "show_title_date_author"}}
-                    {{if .Params.show_title_date_author}}
-                        <h1>{{.Title}}</h1>
-                        <br>
-                        <div style="color:black; font-size:16px;">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
-                        <div style="color:black; font-size:16px;">{{if .Params.author}}Author: {{.Params.Author}}{{end}}</div>
-                        <br>
-                        <hr>
-                    {{ end }}
-                {{ end }}
-                <div style="color:black; font-size:18px;">{{ .Content | markdownify}}</div>
-            </div>
-        </div>
-    </section>
+    {{partial (printf "singlePageLayouts/%s.html" (index ($.Scratch.Get "page_layout") "layout") ) . }}
+    {{$.Scratch.Delete "page_layout"}}
 {{ end }}
 
 
@@ -63,6 +46,7 @@ Morbi tincidunt nisi sit amet risus lacinia ornare. Duis mattis diam urna, a sol
     {{end}}
     {{$.Scratch.Delete "page_layout"}}
 {{end}}
+
 {{define "popup"}}
     {{$section_var := newScratch}}
     {{ $.Scratch.SetInMap "page_layout" "show_popup" ($.Site.Params.popup.popup_active | default true) }}
@@ -95,4 +79,5 @@ Morbi tincidunt nisi sit amet risus lacinia ornare. Duis mattis diam urna, a sol
     {{ $.Scratch.SetInMap "page_layout" "enable_comments" true }}
     {{ $.Scratch.SetInMap "page_layout" "comment_count" false }}
     {{ partial "comments" . }}
+    {{$.Scratch.Delete "page_layout"}}
 {{end}}

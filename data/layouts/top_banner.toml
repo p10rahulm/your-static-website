@@ -22,6 +22,11 @@
         [[slide_elements.styles.style_value]]
             field = "position"
             value = "relative"
+        [[slide_elements.styles.style_value]]
+            field = "margin-top"
+            value = "-30px"
+    [[slide_elements.custom_js_partials]]
+        partial_location = "js_scripts/homepage/top_banner_sizing.js"
 
 #-----------------This is container for the top banner we will be using---------------------------
 # each slide is going to have below fields
@@ -391,7 +396,7 @@
         async = false
         defer = false
     [[slide_elements.custom_js_partials]]
-        partial_location = "js_scripts/banner_carousel.js"
+        partial_location = "js_scripts/homepage/banner_carousel.js"
         # You can add any custom fields here
 #-----------------End of container---------------------------
 
@@ -417,10 +422,10 @@
             value = "relative"
         [[slide_elements.styles.style_value]]
             field = "height"
-            value = "750px"
+            value = "90vh"
         [[slide_elements.styles.style_value]]
-            field = "max-height"
-            value = "100vh"
+            field = "min-height"
+            value = "650px"
         [[slide_elements.styles.style_value]]
             field = "background-size"
             value = "cover"
@@ -447,6 +452,7 @@
             value = "linear-gradient(to bottom right,rgba(0,0,200,0.2), rgba(200,0,120,0.2)),url(/img/headers/bubbles-wide.jpg)"
             content_field_name = "slide1_image"
 
+
     #Below we include particles from particles.js a library that creates randomly moving particles on screen
     [[slide_elements]]
         name = "primary_slide_particles"
@@ -461,7 +467,7 @@
             url = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
             defer = true
         [[slide_elements.custom_js_partials]]
-            partial_location = "js_scripts/particle_fields.js"
+            partial_location = "js_scripts/homepage/particle_fields.js"
             caller_id = "primary_slide_particles"
             num_particles = 50
             colors = ["#B8D500", "#21AEC0", "#795CED", "#FF5B00", "#FE9300", "#AB004A"]
@@ -700,7 +706,7 @@
     [[slide_elements.js_sources]]
         url = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"
     [[slide_elements.custom_js_partials]]
-        partial_location = "js_scripts/particle_fields.js"
+        partial_location = "js_scripts/homepage/particle_fields.js"
         caller_id = "second_slide_particles"
         num_particles = 50
         colors = ["#B8D500", "#21AEC0", "#795CED", "#FF5B00", "#FE9300", "#AB004A"]

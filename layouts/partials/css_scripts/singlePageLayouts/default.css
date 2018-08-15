@@ -1,0 +1,61 @@
+.top_container{
+    display: grid;
+}
+#page_header{
+    padding: 1.75rem 0px 10px;
+    border-bottom: 1px solid rgba(200,200,200,0.5);
+}
+.banner_image{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background-image: linear-gradient(to bottom right,rgba(0,0,200,0.2), rgba(200,0,120,0.3)), url('/img/{{.Params.banner_image | default (index ($.Scratch.Get "page_layout") "banner_image")}}');
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: purple;
+    background-position: center;
+}
+.page_title {
+    font-family: "Lora", "EB Garamond", serif;
+    text-align: center;
+    margin: 0 0 .875rem;
+    color: #1a1a1a;
+    font-weight: 700;
+    line-height: 1.15;
+    font-size: 2rem;
+    min-font-size: 20px;
+}
+.page_title::selection {
+    background: rgba(255, 134, 0, 0.4);
+}
+.page_title::-moz-selection {
+    background: rgba(255, 134, 0, 0.4);
+}
+.page_created_date{
+    font-family: "EB Garamond", "Lora", serif;
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+    font-weight: 300;
+    margin: 0.4rem 0px 0.4rem;
+}
+.page_author{
+    color: #aa2222;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0 0 0.875rem;
+
+}
+
+.page_content{
+    padding: 0.25rem 0 2.5rem;
+}
+@media only screen and (max-height: 600px) {
+    .banner_image {
+        height: 50vh;
+    }
+}

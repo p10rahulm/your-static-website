@@ -15,65 +15,63 @@
 
             <h3 class="section-subheading text-muted" style="color: {{ .Params.subtitle_color }} ">{{ with .Params.subtitle }}{{ . | markdownify }}{{ end }}</h3>
         </div>
-        <div class="row">
-            <div>
-                <form
-                        method="POST"
-                        name="sentMessage"
-                        id="contactForm" action="{{- .Params.postURL | default (printf "//formspree.io/%s" (or .Params.email .Site.Params.email)) -}}"
-                >
+        <div>
+            <form
+                    method="POST"
+                    name="sentMessage"
+                    id="contactForm" action="{{- .Params.postURL | default (printf "//formspree.io/%s" (or .Params.email .Site.Params.email)) -}}"
+            >
 
 
-                <fieldset>
-                    <div class="flex">
-                        <div id="contact_page-left_half" class="flex-children">
-                            {{ with .Params.form.name }}
-                                <div class="form-group">
-                                    <input class="form-control" id="name" required="required" type="text" name="name"
-                                           placeholder="{{ with .text }}{{ .  | markdownify }}{{ end }}">
-                                </div>
-                            {{ end }}
-                            {{ with .Params.form.email }}
-                                <div class="form-group">
-                                    <input class="form-control" id="email" required="required" type="email" name="email"
-                                           placeholder="{{ with .text }}{{ . | markdownify }}{{ end }}">
-                                </div>
-                            {{ end }}
+            <fieldset class="questions_container">
+                <div class="flex">
+                    <div id="contact_page-left_half" class="flex-children">
+                        {{ with .Params.form.name }}
+                            <div class="form-group">
+                                <input class="form-control" id="name" required="required" type="text" name="name"
+                                       placeholder="{{ with .text }}{{ .  | markdownify }}{{ end }}">
+                            </div>
+                        {{ end }}
+                        {{ with .Params.form.email }}
+                            <div class="form-group">
+                                <input class="form-control" id="email" required="required" type="email" name="email"
+                                       placeholder="{{ with .text }}{{ . | markdownify }}{{ end }}">
+                            </div>
+                        {{ end }}
 
-                            {{ with .Params.form.phone }}
-                                <div class="form-group">
-                                    <input class="form-control" id="phone" required="required" type="number" name="phone"
-                                           placeholder="{{ with .text }}{{ . | markdownify }}{{ end }}"></textarea>
-                                </div>
-                            {{ end }}
-                        </div>
-                        <div id="contact_page-right_half"  class="flex-children">
-                            {{ with .Params.form.message }}
-                                <div class="form-group">
-                                    <textarea class="form-control" id="message" required="required" name="message"
-                                              placeholder="{{ with .text }}{{ . | markdownify }}{{ end }}"></textarea>
-                                </div>
-                            {{ end }}
-                        </div>
+                        {{ with .Params.form.phone }}
+                            <div class="form-group">
+                                <input class="form-control" id="phone" required="required" type="tel" name="phone"
+                                       placeholder="{{ with .text }}{{ . | markdownify }}{{ end }}"></textarea>
+                            </div>
+                        {{ end }}
                     </div>
-                    <div class="text-center">
-                        <br>
-                        <input type="hidden" name="_next" value="{{.Params.onSubmit_link}}">
-                        <input type="hidden" name="_subject" value="New submission on {{.Site.Title}}!">
-                        <!--Below is a honeypot field-->
-                        <input type="text" name="_gotcha" style="display:none">
-                        {{if isset .Params "contact_secondary_email"}}
-                        {{range .Params.contact_secondary_email}}
-                        <input type="hidden" name="_cc" value="{{- . -}}">
-                        {{end}}
-                        {{end}}
-                        <button type="submit" value="Submit" class="btn btn-xl">
-                            {{ .Params.buttontext }}
-                        </button>
+                    <div id="contact_page-right_half"  class="flex-children">
+                        {{ with .Params.form.message }}
+                            <div class="form-group">
+                                <textarea class="form-control" id="message" required="required" name="message"
+                                          placeholder="{{ with .text }}{{ . | markdownify }}{{ end }}"></textarea>
+                            </div>
+                        {{ end }}
                     </div>
-                </fieldset>
-                </form>
-            </div>
+                </div>
+                <div class="text-center">
+                    <br>
+                    <input type="hidden" name="_next" value="{{.Params.onSubmit_link}}">
+                    <input type="hidden" name="_subject" value="New submission on {{.Site.Title}}!">
+                    <!--Below is a honeypot field-->
+                    <input type="text" name="_gotcha" style="display:none">
+                    {{if isset .Params "contact_secondary_email"}}
+                    {{range .Params.contact_secondary_email}}
+                    <input type="hidden" name="_cc" value="{{- . -}}">
+                    {{end}}
+                    {{end}}
+                    <button type="submit" value="Submit" class="btn submit_button">
+                        {{ .Params.buttontext }}
+                    </button>
+                </div>
+            </fieldset>
+            </form>
         </div>
     </div>
 </section>
