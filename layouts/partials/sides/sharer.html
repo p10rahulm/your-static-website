@@ -1,12 +1,12 @@
 <aside class="sharer">
     <header>
 
-        {{if and ((index ($.Scratch.Get "layout_defaults") "fixed_sharer_active") (index ($.Scratch.Get "layout_defaults") "show_fixed_sharer_on_scroll"))}}
+        {{if and ((index ($.Scratch.Get "page_layout") "fixed_sharer_active") (index ($.Scratch.Get "page_layout") "show_fixed_sharer_on_scroll"))}}
         <script type="text/javascript">
             {{ partial "js_scripts/sharer/sharer_showOnScroll.js" . | safeJS }}
         </script>
         {{end}}
-        {{if ($.Scratch.Get "layout_defaults").rollup_sharer_active}}
+        {{if ($.Scratch.Get "page_layout").rollup_sharer_active}}
         <script type="text/javascript">
             {{ partial "js_scripts/sharer/sharer_rollup.js" . | safeJS }}
         </script>
@@ -15,19 +15,19 @@
         <style type="text/css">
             {{ partial "css_scripts/sharer/default.css" . | safeCSS }}
         </style>
-        {{if ($.Scratch.Get "layout_defaults").rollup_sharer_active}}
+        {{if ($.Scratch.Get "page_layout").rollup_sharer_active}}
         <style type="text/css">
             {{ partial "css_scripts/sharer/sharer_popup_button.css" . | safeCSS }}
         </style>
         {{end}}
-        {{if ($.Scratch.Get "layout_defaults").fixed_sharer_active}}
+        {{if ($.Scratch.Get "page_layout").fixed_sharer_active}}
         <style type="text/css">
             {{ partial "css_scripts/sharer/fixed_share_bar.css" . | safeCSS }}
         </style>
         {{end}}
 
     </header>
-    {{if ($.Scratch.Get "layout_defaults").rollup_sharer_active}}
+    {{if ($.Scratch.Get "page_layout").rollup_sharer_active}}
         <div id="floating_sharer">
             <button class="sharer-opener" id="share_menu_activation_button">
                 <i class="fa {{$.Site.Params.sharer.sharer_pullup_button_icon}} sharer-float-button"></i>
@@ -61,7 +61,7 @@
         </div>
     {{end}}
 
-    {{if ($.Scratch.Get "layout_defaults").fixed_sharer_active}}
+    {{if ($.Scratch.Get "page_layout").fixed_sharer_active}}
         <div class="sharer_socials_fixed" id="fixed_social_shares">
             <a href="https://twitter.com/intent/tweet?text={{ .Title | html }}&amp;url={{ .Permalink | html }}"
                target="_blank" rel="noopener">

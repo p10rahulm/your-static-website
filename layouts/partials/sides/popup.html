@@ -3,22 +3,22 @@
         <script type="text/javascript">
              {{ partial "js_scripts/popup/defaults.js" . | safeJS }}
         </script>
-        {{if ($.Scratch.Get "layout_defaults").popup_activation_button}}
+        {{if ($.Scratch.Get "page_layout").popup_activation_button}}
         <script type="text/javascript">
             {{ partial "js_scripts/popup/activation_button.js" . | safeJS }}
         </script>
         {{end}}
-        {{if ($.Scratch.Get "layout_defaults").activate_popup_on_delay}}
+        {{if ($.Scratch.Get "page_layout").activate_popup_on_delay}}
         <script type="text/javascript">
             {{ partial "js_scripts/popup/delay_activation.js" . | safeJS }}
         </script>
         {{end}}
-        {{if ($.Scratch.Get "layout_defaults").activate_popup_on_exit_intent}}
+        {{if ($.Scratch.Get "page_layout").activate_popup_on_exit_intent}}
         <script type="text/javascript">
             {{ partial "js_scripts/popup/exit_intent_activation.js" . | safeJS }}
         </script>
         {{end}}
-        {{if ($.Scratch.Get "layout_defaults").activate_popup_on_scroll}}
+        {{if ($.Scratch.Get "page_layout").activate_popup_on_scroll}}
         <script type="text/javascript">
             {{ partial "js_scripts/popup/scroll_activation.js" . | safeJS }}
         </script>
@@ -27,7 +27,7 @@
         <style type="text/css">
             {{ partial "css_scripts/popup/floating_popup.css" . | safeCSS }}
         </style>
-        {{if ($.Scratch.Get "layout_defaults").popup_activation_button}}
+        {{if ($.Scratch.Get "page_layout").popup_activation_button}}
         <style type="text/css">
             {{ partial "css_scripts/popup/popup_activation_button.css" . | safeCSS }}
         </style>
@@ -35,7 +35,7 @@
 
 
     </header>
-    {{if ($.Scratch.Get "layout_defaults").popup_activation_button}}
+    {{if ($.Scratch.Get "page_layout").popup_activation_button}}
     <button id="popup_activation_button" class="pull-right popup-float">
         <i class="fa {{.Site.Params.popup.pullup_button_icon}} popup-float-button"></i>
     </button>
