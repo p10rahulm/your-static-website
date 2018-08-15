@@ -15,7 +15,7 @@ var scrollPixelsforActivation = {{ $.Site.Params.popup.scroll_percentage_before_
 
 $(document).scroll(function() {
     var scrolly = $(this).scrollTop();
-    console.log("scrolly ="+scrolly );
+    // console.log("scrolly ="+scrolly );
     if (scrolly > scrollPixelsforActivation) {
         if(popup_opened_so_far == "unopened"){
             // console.log("inside scroll popup");
