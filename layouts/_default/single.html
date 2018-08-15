@@ -60,7 +60,7 @@ Morbi tincidunt nisi sit amet risus lacinia ornare. Duis mattis diam urna, a sol
     {{ $.Scratch.Set "single_layout_prebuilds" $.Site.Data.layouts.sectionwise_singlepage_layouts }}
     {{range where (index ($.Scratch.Get "single_layout_prebuilds") "sections") ".name" .Section }}
         {{$prebuild_layout := .}}
-        {{ $section_var.Add "layout_field_ranges" (slice "show_sharer" "rollup_sharer_active" "fixed_sharer_active" "show_fixed_sharer_on_scroll") }}
+        {{ $section_var.Add "layout_field_ranges" (slice "show_popup" "popup_activation_button" "activate_popup_on_delay" "activate_popup_on_exit_intent" "activate_popup_on_scroll") }}
         {{range ($section_var.Get "layout_field_ranges")}}
             {{if isset $prebuild_layout .}}
                 {{ $.Scratch.SetInMap "page_layout" . ( index $prebuild_layout .) }}
@@ -75,9 +75,26 @@ Morbi tincidunt nisi sit amet risus lacinia ornare. Duis mattis diam urna, a sol
     {{end}}
     {{$.Scratch.Delete "page_layout"}}
 {{end}}
+
 {{define "comments"}}
-    {{ $.Scratch.SetInMap "page_layout" "enable_comments" true }}
+    {{ $.Scratch.SetInMap "page_layout" "enable_comments" (and $.Site.DisqusShortname (or ($.Site.Params.enable_comments | default false) ($.Params.enable_comments | default true)) | default false) }}
     {{ $.Scratch.SetInMap "page_layout" "comment_count" false }}
-    {{ partial "comments" . }}
+
+    {{/* Set layout from prebuilt layouts data sheet if exists*/}}
+    {{ $.Scratch.Set "single_layout_prebuilds" $.Site.Data.layouts.sectionwise_singlepage_layouts }}
+    {{range where (index ($.Scratch.Get "single_layout_prebuilds") "sections") ".name" .Section }}
+        {{$prebuild_layout := .}}
+        {{ $section_var.Add "layout_field_ranges" (slice "enable_comments") }}
+        {{range ($section_var.Get "layout_field_ranges")}}
+            {{if isset $prebuild_layout .}}
+                {{ $.Scratch.SetInMap "page_layout" . ( index $prebuild_layout .) }}
+            {{end}}
+        {{end}}
+    {{end}}
+    {{$.Scratch.Delete "single_layout_prebuilds"}}
+
+    {{ if ($.Scratch.Get "page_layout").enable_comments }}
+        {{ partial "comments" . }}
+    {{ end }}
     {{$.Scratch.Delete "page_layout"}}
 {{end}}

@@ -6,7 +6,7 @@ author = "Rahul Madhavan"
 # The below image will be shown in all the cards pointing to this article
 caption_image = "dog_popup_thanks3.jpg"
 banner_image = "dog_popup_thanks3.jpg"
-
+enable_comments = true
 # The below summary message will be shown in all the cards pointing to this article.
 # If not available, it would be generated from the content of the page.
 summary_content = '''

@@ -35,7 +35,15 @@
     {{end}}
 {{ end }}
 
-{{ block "comments" .}}{{ end }}
+{{ block "comments" .}}
+    {{ $.Scratch.SetInMap "page_layout" "enable_comments" (and $.Site.DisqusShortname (or ($.Site.Params.enable_comments | default false) ($.Params.enable_comments | default false)) | default false) }}
+    {{ $.Scratch.SetInMap "page_layout" "comment_count" false }}
+
+    {{ if ($.Scratch.Get "page_layout").enable_comments }}
+        {{ partial "comments" . }}
+    {{ end }}
+    {{$.Scratch.Delete "page_layout"}}
+{{ end }}
 
 {{ block "footr" .}}
     {{ partial "cookie_consent" . }}
