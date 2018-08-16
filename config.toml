@@ -98,7 +98,7 @@ verboseLog =true
     custom_js = []
     # Below will be the active menu items for the navbar (navigation menu) at the top of the page
     # Please only include the names as given in the menu.main section below
-    navbar_active = ["Home","Book Reviews","Projects","Publications","Posts","Contact"]
+    navbar_active = ["Home","Posts","Thoughts","Publications","Reviews","Notes","Contact"]
 
     # You can set a map in the front page in the contact section from google maps.
     # Get key here: https://developers.google.com/maps/documentation/javascript/get-api-key
@@ -279,35 +279,97 @@ verboseLog =true
 # Menus
 [menu]
     [[menu.main]]
+        identifier = "home"
         name = "Home"
-        url = "./#about"
-        weight = 1
-
+        pre = ""
+        url = "./#about_us"
+        weight = -1
 
     [[menu.main]]
+        identifier = "posts"
         name = "Posts"
+        pre = ""
         url = "./posts/"
+        weight = 0
+
+    [[menu.main]]
+        identifier = "books"
+        name = "Books"
+        pre = ""
+        url = "./books/"
+        weight = 1
+
+    [[menu.main]]
+        identifier = "code"
+        name = "Code"
+        pre = ""
+        url = "./code-snippets/"
         weight = 2
 
     [[menu.main]]
-        name = "Book Reviews"
-        url = "#projects"
+        identifier = "courses"
+        name = "Cooks"
+        pre = ""
+        url = "./courses/"
         weight = 3
 
     [[menu.main]]
-        name = "Publications"
-        url = "./publication/"
-        weight = 5
-
-    [[menu.main]]
-        name = "Projects"
-        url = "./project/"
+        identifier = "events"
+        name = "Events"
+        pre = ""
+        url = "./events/"
         weight = 4
 
     [[menu.main]]
-        name = "Contact"
-        url = "/contact"
+        identifier = "notes"
+        name = "Notes"
+        pre = ""
+        url = "./notes/"
+        weight = 5
+
+    [[menu.main]]
+        identifier = "people"
+        name = "People"
+        pre = ""
+        url = "./people/"
         weight = 6
+
+    [[menu.main]]
+        identifier = "publications"
+        name = "Publications"
+        pre = ""
+        url = "./publications/"
+        weight = 7
+
+    [[menu.main]]
+        identifier = "reviews"
+        name = "Reviews"
+        pre = ""
+        url = "./reviews/"
+        weight = 8
+
+    [[menu.main]]
+        identifier = "thoughts"
+        name = "Thoughts"
+        pre = ""
+        url = "./#featured_thoughts"
+        weight = 9
+
+    [[menu.main]]
+        identifier = "workshops"
+        name = "Workshops"
+        pre = ""
+        url = "./workshops/"
+        weight = 10
+
+
+
+    [[menu.main]]
+        identifier = "contact"
+        name = "Contact"
+        pre = ""
+        url = "/contact"
+        weight = 100
 
 # Here we choose the taxonomies. Various types of pages use various taxonomies
 [taxonomies]

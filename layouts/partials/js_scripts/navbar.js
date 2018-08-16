@@ -10,4 +10,7 @@ $(document).ready(function(){
     $("#collapsible_menu_icon").click(function(){
         toggle_collapsible_navbar();
     });
+    $('.nav-item-link').click(function(){
+        toggle_collapsible_navbar();
+    });
 });

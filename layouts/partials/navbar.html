@@ -27,52 +27,22 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div id="navbar-right">
                 <!-- Left Nav Bar -->
-                    {{ range .Site.Menus.main }}
-                        {{if in $.Site.Params.navbar_active .Name }}
-                            {{ $page_scratch.Set "haschild" false }}
-                            {{ if .HasChildren }}
-                                {{ range .Children }}
-                                    {{if in $.Site.Params.navbar_active .Name }}
-                                        {{ $page_scratch.Set "haschild" true }}
-                                    {{end}}
-                                {{end}}
-                            {{end}}
-                            {{if ($page_scratch.Get "haschild")}}
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-                                        {{ .Pre }}
-                                        <span>{{ .Name }}</span>
-                                        {{ .Post }}
-                                        <span class="caret"></span>
-                                    </a>
-
-
-                                    <ul class="dropdown-menu">
-                                        {{ range .Children }}
-                                            {{if in $.Site.Params.navbar_active .Name }}
-                                                <li class="nav-item">
-                                                    <a href="{{ .URL | relLangURL }}">
-                                                        {{ .Pre }}
-                                                            <span>{{ .Name }}</span>
-                                                        {{ .Post }}
-                                                    </a>
-                                                </li>
-                                            {{end}}
-                                        {{ end }}
-                                    </ul>
-                                </li>
-                            {{ else }}
-                                <div class="nav-item">
-                                    <a href="{{ .URL | relLangURL }}" {{ if gt (len .URL) 4 }}{{ if eq "http" (slicestr .URL 0 4) }} target="_blank" rel="noopener"{{ end }}{{ end }}>
-                                        {{ .Pre }}
-                                        <span>{{ .Name }}</span>
-                                        {{ .Post }}
-                                    </a>
-                                </div>
-                            {{ end }}
-                        {{ end }}
+                {{$main_menu := $.Site.Menus.main}}
+                {{$menu_items := $.Site.Params.navbar_active}}
+                {{range $menu_items}}
+                    {{$current_item := . }}
+                    {{ range $main_menu }}
+                        {{if eq .Name $current_item}}
+                            <div class="nav-item">
+                                <a class="nav-item-link" href="{{ .URL | relLangURL }}" {{ if gt (len .URL) 4 }}{{ if eq "http" (slicestr .URL 0 4) }} target="_blank" rel="noopener"{{ end }}{{ end }}>
+                                    {{ .Pre }}
+                                    <span>{{ .Name }}</span>
+                                    {{ .Post }}
+                                </a>
+                            </div>
+                        {{end}}
                     {{ end }}
-
+                {{ end }}
             </div><!-- /.navbar-collapse -->
 
         </div>

@@ -47,7 +47,7 @@ html {
     line-height: 1.65;
 }
 
-@media screen and (min-width: 58em) {
+@media screen and (min-width: 1068px) {
     html {
         font-size: 20px;
     }

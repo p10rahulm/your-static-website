@@ -1,0 +1,82 @@
+<section id="navigator">
+    <script type="text/javascript">
+        {{ partial "js_scripts/navbar.js" . | safeJS }}
+    </script>
+    <style type="text/css">
+        {{partial "css_scripts/navbar.css" . |safeCSS}}
+    </style>
+    <nav class="navbar-default" id="navbar-main">
+        <div class="navbar-container container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div id="navbar-left">
+                <div id="nav_logo">
+                    <a class="navbar-logo-link" href="{{ "/" | relURL }}">
+                    {{ if .Site.Params.logo }}
+                    <img class = "logo_image" src="/{{.Site.Params.logo}}" alt="{{ .Site.Title }}">
+                    {{ end }}
+                    </a>
+                </div>
+                <div class="site_title">{{ .Site.Title }}</div>
+            </div>
+            <div id="collapsible_menu_icon">
+                <i class="fa fa-bars"></i>
+            </div>
+
+            <!--Go templates suck. See: https://github.com/golang/go/issues/10608-->
+            {{ $page_scratch := $.Page.Scratch }}
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="navbar-right">
+                <!-- Left Nav Bar -->
+                {{$main_menu := $.Site.Menus.main}}
+                {{$menu_items := $.Site.Params.navbar_active}}
+                {{ range $main_menu }}
+                {{if in $menu_items .Name }}
+                {{ $page_scratch.Set "haschild" false }}
+                {{ if .HasChildren }}
+                {{ range .Children }}
+                {{if in $.Site.Params.navbar_active .Name }}
+                {{ $page_scratch.Set "haschild" true }}
+                {{end}}
+                {{end}}
+                {{end}}
+                {{if ($page_scratch.Get "haschild")}}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        {{ .Pre }}
+                        <span>{{ .Name }}</span>
+                        {{ .Post }}
+                        <span class="caret"></span>
+                    </a>
+
+
+                    <ul class="dropdown-menu">
+                        {{ range .Children }}
+                        {{if in $.Site.Params.navbar_active .Name }}
+                        <li class="nav-item">
+                            <a href="{{ .URL | relLangURL }}">
+                                {{ .Pre }}
+                                <span>{{ .Name }}</span>
+                                {{ .Post }}
+                            </a>
+                        </li>
+                        {{end}}
+                        {{ end }}
+                    </ul>
+                </li>
+                {{ else }}
+                <div class="nav-item">
+                    <a href="{{ .URL | relLangURL }}" {{ if gt (len .URL) 4 }}{{ if eq "http" (slicestr .URL 0 4) }} target="_blank" rel="noopener"{{ end }}{{ end }}>
+                    {{ .Pre }}
+                    <span>{{ .Name }}</span>
+                    {{ .Post }}
+                    </a>
+                </div>
+                {{ end }}
+                {{ end }}
+                {{ end }}
+
+            </div><!-- /.navbar-collapse -->
+
+        </div>
+    </nav><!-- /.container -->
+</section>

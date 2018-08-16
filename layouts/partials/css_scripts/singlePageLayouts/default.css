@@ -8,7 +8,7 @@
 .banner_image{
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: calc(100vh - 71px - 197px - 10px);
     background-image: linear-gradient(to bottom right,rgba(0,0,200,0.2), rgba(200,0,120,0.3)), url('/img/{{.Params.banner_image | default (index ($.Scratch.Get "page_layout") "banner_image")}}');
 
     /* Position and center the image to scale nicely on all screens */
@@ -18,6 +18,18 @@
     background-color: purple;
     background-position: center;
 }
+@media only screen and (max-width: 1200px){
+    .banner_image{
+        height: calc(100vh - 80px - 197px - 10px);
+    }
+}
+/*Below is where font sizes change due to some html base sizing reset*/
+@media only screen and (max-width: 957px){
+    .banner_image{
+        height: calc(100vh - 80px - 160.5px - 10px);
+    }
+}
+
 .page_title {
     font-family: "Lora", "EB Garamond", serif;
     text-align: center;
@@ -26,7 +38,6 @@
     font-weight: 700;
     line-height: 1.15;
     font-size: 2rem;
-    min-font-size: 20px;
 }
 .page_title::selection {
     background: rgba(255, 134, 0, 0.4);
@@ -54,8 +65,4 @@
 .page_content{
     padding: 0.25rem 0 2.5rem;
 }
-@media only screen and (max-height: 600px) {
-    .banner_image {
-        height: 50vh;
-    }
-}
+
