@@ -424,8 +424,11 @@
             field = "height"
             value = "90vh"
         [[slide_elements.styles.style_value]]
+            field = "max-height"
+            value = "750px"
+        [[slide_elements.styles.style_value]]
             field = "min-height"
-            value = "650px"
+            value = "550px"
         [[slide_elements.styles.style_value]]
             field = "background-size"
             value = "cover"
@@ -513,13 +516,13 @@
             value = "relative"
         [[slide_elements.styles.style_value]]
             field = "top"
-            value = "65%"
+            value = "60%"
         [[slide_elements.styles.style_value]]
             field = "min-width"
             value = "50%"
         [[slide_elements.styles.style_value]]
             field = "max-width"
-            value = "400px"
+            value = "700px"
         [[slide_elements.styles.style_value]]
             field = "display"
             value = "block"
@@ -533,12 +536,12 @@
             field = "color"
             value = "#eef"
     [[slide_elements.styles]]
-        media_type = "@media screen and (max-height: 800px)"
+        media_type = "@media screen and (max-height: 700px)"
         container = "#top-banner"
         target = ".slide_descriptors_link"
         [[slide_elements.styles.style_value]]
                 field = "top"
-                value = "55%"
+                value = "52.5%"
     [[slide_elements.styles]]
         media_type = ""
         container = "#top-banner"
@@ -546,6 +549,8 @@
         [[slide_elements.styles.style_value]]
             field = "text-decoration"
             value = "none"
+
+
 
 [[slide_elements]]
         name = "primary_slide_descriptor_wrapper"

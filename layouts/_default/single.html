@@ -77,6 +77,7 @@ Morbi tincidunt nisi sit amet risus lacinia ornare. Duis mattis diam urna, a sol
 {{end}}
 
 {{define "comments"}}
+    {{$section_var := newScratch}}
     {{ $.Scratch.SetInMap "page_layout" "enable_comments" (and $.Site.DisqusShortname (or ($.Site.Params.enable_comments | default false) ($.Params.enable_comments | default true)) | default false) }}
     {{ $.Scratch.SetInMap "page_layout" "comment_count" false }}
 
