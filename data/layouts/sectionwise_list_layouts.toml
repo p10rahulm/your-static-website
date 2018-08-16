@@ -64,7 +64,7 @@
             style = "margin-top"
             value = "0"
     [[sections.fields]]
-        field_name = "authors" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        field_name = "author" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
         prefix = "Authors: "
         class = "card_authors left_align"
         postfix = ""

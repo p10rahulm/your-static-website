@@ -1,31 +1,9 @@
 +++
-title = "Book1"
+title = "5S Organizational Principles"
 date = 2018-06-08T19:44:35+05:30
-draft = false
-author = "Rahul Madhavan"
-# The below image will be shown in all the cards pointing to this article
-caption_image = "dog_popup_thanks3.jpg"
-banner_image = "dog_popup_thanks3.jpg"
-enable_comments = true
-# The below summary message will be shown in all the cards pointing to this article.
-# If not available, it would be generated from the content of the page.
-summary_content = '''
-The book is very very good. It needs to be read by one and all.
-Generally I don't say much. But know this is true'''
+author = "K S Madhavan and Goody Two Shoes"
 
-# Should this be listed in front page
-featured = true
-
-# Tags and categories
-# For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = []
-categories = []
-
-
-# Specific Template Meta
-book_title = "5S Organizational Principles"
 tagline = "The last book you'll ever need"
-authors = "K S Madhavan and Goody Two Shoes"
 abstract = "A small snippet about the book is good enough"
 price = 100
 size = "17.8 x 2.5 x 22.9 cm"
@@ -37,19 +15,42 @@ publisher = "MIT Press"
 date_of_publication = "3 January 2017"
 language = "English"
 
-[book-images]
-        # Featured image
-        featured_image = ""
-        # Place your image in the 'static/img/' folder and reference its filename below, e.g. 'image = "example.jpg"'.
-        images = ["img.jpg","img1.jpg"]
-[SEO]
-        # Page description for Search Engines and Social Media shares. No longer than 155 characters.
-        description = "This is the page description. Tis is an amazing awesome book."
-        # The image below will be used in the SEO (the sharing buttons). Please place the image in the static/img folder.
-        image = "bubbles.jpg"
-        author_twitter_handle= "@rahulm"
+# -----------------------------------------
+# Image section
+# -----------------------------------------
 
-# The book details go below
+banner_image = "dog_popup_thanks3.jpg"
+# Featured image
+featured_image = "dog_popup_thanks3"
+# Place your image in the 'static/img/' folder and reference its filename below, e.g. 'image = "example.jpg"'.
+images = ["dog_popup_thanks3.jpg","img1.jpg"]
+
+# -----------------------------------------
+# Summary section
+# -----------------------------------------
+
+# The below image will be shown in all the cards pointing to this article
+caption_image = "dog_popup_thanks3.jpg"
+# The below summary message will be shown in all the cards pointing to this article. If not available, it would be generated from the content of the page.
+summary_content = '''
+The book is very very good. It needs to be read by one and all.
+Generally I don't say much. But know this is true'''
+
+
+# -----------------------------------------
+# Meta
+# -----------------------------------------
+
+layout = "books"
+featured = true
+enable_comments = true
+
+# Tags and categories
+# For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
+tags = []
+categories = []
+
+# Writeup goes below
 +++
 
 The book is a comprehensive book on everything under the sun.

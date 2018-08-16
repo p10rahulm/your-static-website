@@ -1,0 +1,19 @@
+<header>
+    <style type="text/css">
+        {{ partial "css_scripts/singlePageLayouts/default.css" . | safeCSS }}
+    </style>
+    <script type="text/javascript">
+    </script>
+</header>
+<section class="books single_page_layout">
+    <div class = "banner_image" >
+    </div>
+    <div id="page_header">
+        <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
+        <div class="page_created_date">{{ dateFormat "Monday, Jan 2, 2006" (.Date| default ($.Scratch.Get "page_layout").created_date) }}</div>
+        <div class="page_author">Author: {{.Params.Author | default ($.Scratch.Get "page_layout").author}}</div>
+    </div>
+    <div class="container">
+        <div class="page_content">{{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}</div>
+    </div>
+</section>

@@ -422,10 +422,8 @@
             value = "relative"
         [[slide_elements.styles.style_value]]
             field = "height"
-            value = "90vh"
-        [[slide_elements.styles.style_value]]
-            field = "max-height"
-            value = "750px"
+            value = "calc(100vh - 41px - 70px - 117.5px - 15px)"
+
         [[slide_elements.styles.style_value]]
             field = "min-height"
             value = "550px"
@@ -444,6 +442,14 @@
         [[slide_elements.styles.style_value]]
             field = "animation-delay"
             value = "0.25s"
+
+        [[slide_elements.styles]]
+            media_type = "@media only screen and (max-width:1200px)"
+            container = "#top-banner"
+            target = ".banner_slide"
+            [[slide_elements.styles.style_value]]
+                field = "height"
+                value = "calc(100vh - 51px - 15px)"
 
 
     [[slide_elements.styles]]

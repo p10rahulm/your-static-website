@@ -19,7 +19,7 @@
     {{ .Title }} &middot; {{ .Site.Title }}
     {{ end }}
 </title>
-<meta name="description" content={{ if (isset .Params.seo "description") }}"{{.Params.seo.description}}"{{else}}"{{ .Site.Params.default_description }}"{{ end }}>
+<meta name="description" content={{ if (isset .Params "summary_content") }}"{{.Params.summary_content}}"{{else}}"{{ .Site.Params.default_description }}"{{ end }}>
 <!--Get the site author. Not a required tag, but a good to have-->
 {{ if isset .Params "author" }}
     <meta name="author" content="{{ .Params.author }}">
