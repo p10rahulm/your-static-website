@@ -5,8 +5,9 @@
     <script type="text/javascript">
         {{partial "js_scripts/singlePageLayouts/books.js" . | safeJS }}
     </script>
-    <!--HTML Layouts for the photoswipe javascript plugin-->
+
     {{partial "singlePageLayouts/books_photoswipe.html" . }}
+    {{partial "singlePageLayouts/photo_zoom.html" . }}
 
 
 
@@ -20,6 +21,7 @@
         <div class="featured_image_container">
             <img id = "featured_image" src='/img/{{ index (.Params.images) 0 | default ($.Scratch.Get "page_layout").banner_image}}'>
         </div>
+
         <div class="other_images_container">
             {{range .Params.images}}
                 <img class = "other_images" src="/img/{{.}}">

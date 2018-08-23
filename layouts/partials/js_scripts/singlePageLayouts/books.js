@@ -24,7 +24,7 @@ var initialize_popup = function(index_clicked,imageHeights,imageWidths){
             {id:'facebook', label:'Share on Facebook', url:'https://www.facebook.com/sharer/sharer.php?u={{"{{url}}"}}'},
             {id:'twitter', label:'Tweet', url:'https://twitter.com/intent/tweet?text={{"{{text}}"}}&url={{"{{url}}"}}'},
             {id:'pinterest', label:'Pin it', url:'http://www.pinterest.com/pin/create/button/?url={{"{{url}}"}}&media={{"{{image_url}}"}}&description={{"{{text}}"}}'},
-            {id:'linkedin', label:'Share it on LinkedIn', url:'https://www.linkedin.com/shareArticle?mini=true&amp;url={{"{{url}}"}}&amp;title={{"{{text}}"}}'},
+            {id:'linkedin', label:'Share on LinkedIn', url:'https://www.linkedin.com/shareArticle?mini=true&amp;url={{"{{url}}"}}&amp;title={{"{{text}}"}}'},
             {id:'download', label:'Download image', url:'{{"{{raw_image_url}}"}}', download:true}
         ],
     };

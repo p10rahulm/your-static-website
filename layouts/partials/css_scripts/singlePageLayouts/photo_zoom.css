@@ -1,0 +1,16 @@
+#zoomed_image{
+    display: none;
+}
+@media screen and (min-width: 1200px){
+    #zoomed_result{
+        display: block;
+        position: absolute;
+        top: 100px;
+        height: calc(100% - 100px - 50px);
+        right: 100px;
+        width: calc(50% - 100px);
+        max-width: calc(50% - 100px);
+        /*background-color: rgba(0,0,0,0.1);*/
+        border: 1px solid #d4d4d4;
+    }
+}

@@ -4,11 +4,17 @@
     width: 300px;
     justify-content: center;
     align-items: flex-start;
+    padding-bottom: 1.5rem;
+    padding-top: 0.5rem;
 }
+
 .other_images{
     width:100px;
     height: 100px;
     float: left;
+}
+.featured_image_container{
+    position: relative;
 }
 #featured_image{
     width: 300px;
@@ -92,4 +98,31 @@
     .table_element{
         font-size: 18px;
     }
+}
+@media screen and (max-width: 600px) {
+    .images_section{
+        width: 100%;
+    }
+
+    #featured_image{
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: auto;
+        height: auto;
+        max-height: 450px;
+    }
+    .other_images_container{
+        width: 100%;
+    }
+    .other_images{
+        max-height: 100px;
+        max-width: 100px;
+        width: 50px;
+        height: 50px;
+        border: 2px solid rgba(0,0,0,0.25);
+        border-radius: 50px;
+        margin: 5px 10px;
+    }
+
 }
