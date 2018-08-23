@@ -2,14 +2,12 @@
         {{ partial "css_scripts/singlePageLayouts/books.css" . | safeCSS }}
     </style>
 
-
-
-
-
-    {{partial "singlePageLayouts/books_photoswipe.html" . }}
     <script type="text/javascript">
         {{partial "js_scripts/singlePageLayouts/books.js" . | safeJS }}
     </script>
+    <!--HTML Layouts for the photoswipe javascript plugin-->
+    {{partial "singlePageLayouts/books_photoswipe.html" . }}
+
 
 
 <section class="books single_page_layout container">
