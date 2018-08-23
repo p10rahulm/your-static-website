@@ -5,11 +5,13 @@ author = "K S Madhavan and Goody Two Shoes"
 
 tagline = "The last book you'll ever need"
 abstract = "A small snippet about the book is good enough"
+
 price = 100
 size = "17.8 x 2.5 x 22.9 cm"
 num_pages = 280
 isbn = "978-0262035613"
 reading_level = "18+ years"
+recommended_audience = "MBAs,Management Professionals"
 format = "Hardcover"
 publisher = "MIT Press"
 date_of_publication = "3 January 2017"
@@ -19,11 +21,9 @@ language = "English"
 # Image section
 # -----------------------------------------
 
-banner_image = "dog_popup_thanks3.jpg"
-# Featured image
-featured_image = "dog_popup_thanks3"
 # Place your image in the 'static/img/' folder and reference its filename below, e.g. 'image = "example.jpg"'.
-images = ["dog_popup_thanks3.jpg","img1.jpg"]
+# Featured image The featured image will be the first from the following list
+images = ["dog_popup_thanks3.jpg","dog_transparency1.jpg","orange-fractal.jpg","bubbles.jpg"]
 
 # -----------------------------------------
 # Summary section

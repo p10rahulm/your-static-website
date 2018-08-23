@@ -2,7 +2,6 @@
 
 {{ define "main" }}
     {{ $.Scratch.SetInMap "page_layout" "layout" ( .Params.layout | default "default")}}
-    <p>{{(printf "singlePageLayouts/%s.html" (index ($.Scratch.Get "page_layout") "layout") )}}</p>
     {{ $.Scratch.SetInMap "page_layout" "banner_image" "headers/bubbles-wide.jpg" }}
     {{ $.Scratch.SetInMap "page_layout" "title" ("Post Page" | humanize) }}
     {{ $.Scratch.SetInMap "page_layout" "author" ($.Site.Params.site_author_name | humanize) }}

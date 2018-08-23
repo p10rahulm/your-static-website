@@ -1,0 +1,87 @@
+.other_images{
+    width:100px;
+    height: 100px;
+    float: left;
+}
+.featured_image{
+    width: 300px;
+    height: 300px;
+    padding: 0.875rem 1rem 0 0;
+}
+.images_section{
+    float: left;
+}
+.books_title{
+    font-size: 36px;
+    font-weight: 800;
+    font-family: "Lora", "EB Garamond", serif;
+    padding: 2rem 0 0 0;
+}
+.books_author{
+    padding: 0.5rem 0 0 0;
+    font-size: 16px;
+    font-weight: 800;
+    color: #aa2222;
+    font-family: "EB Garamond", "Lora", serif;
+}
+.books_tagline{
+    font-style: italic;
+    font-weight: 200;
+    font-size: 16px;
+    font-family: "EB Garamond", "Lora", serif;
+}
+.books_main_section, .books_main_section p{
+    line-height: 1.5;
+    font-size: 18px;
+    font-family: "EB Garamond", "Lora", serif;
+}
+.books_main_section {
+    padding: 0.875rem 0 0 0;
+}
+.books_abstract{
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid rgba(100,100,100,0.1);
+    font-style: italic;
+}
+.books_content{
+    padding: 10px 0 20px 0;
+}
+.books_abstract_identifier{
+    color: #a22;
+    padding: 0 5px 0 0;
+}
+.books_details {
+    font-family: "EB Garamond", "Lora", serif;
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    border: 1px solid #333333;
+    max-width: 40rem;
+}
+.book_details_identifier{
+    border-top: 1px solid rgba(0,0,0,0.1);
+    color: #a22;
+    padding: 15px 5px 10px 0;
+    font-family: "Lora", "EB Garamond", serif;
+    font-weight: 800;
+}
+
+.table_line{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    font-family: "EB Garamond", serif;
+    border-bottom: 1px solid rgba(200,200,200,0.2);
+    line-height: 1.5;
+    padding: 3px 0;
+
+}
+.table_field{
+    flex-basis: 30%;
+    font-weight: 500;
+    flex-shrink: 0;
+    flex-grow: 0;
+    padding: 0 5px 0 0;
+}
+.table_value{
+    flex-grow: 2;
+}

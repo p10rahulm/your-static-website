@@ -1,0 +1,46 @@
+<header>
+    <style type="text/css">
+        {{ partial "css_scripts/singlePageLayouts/books.css" . | safeCSS }}
+    </style>
+    <script type="text/javascript">
+    </script>
+</header>
+<section class="books single_page_layout container">
+    <div class ="books_header_section">
+        <div class="books_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
+        <div class="books_author">Author: {{.Params.Author | default ($.Scratch.Get "page_layout").author}}</div>
+        <div class="books_tagline">{{(.Params.tagline)}}</div>
+    </div>
+    <div class = "images_section" >
+        <div class="featured_image_container">
+            <img class = "featured_image" src='/img/{{.Params.featured_image | default ($.Scratch.Get "page_layout").banner_image}}'>
+        </div>
+        <div class="other_images_container">
+            {{range .Params.images}}
+                <img class = "other_images" src="/img/{{.}}">
+            {{end}}
+        </div>
+    </div>
+
+    <div class = "books_main_section">
+        <div class="books_abstract"><span class="books_abstract_identifier">Short Summary: </span>{{(.Params.abstract)}}</div>
+        <div class="books_content">
+        {{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}
+        </div>
+    </div>
+    <div class ="books_detail_container">
+        <div class="book_details_identifier">Details</div>
+        <div class="books_details">
+        {{if isset .Params "price"}}<div class="table_line"><div class="table_field">Price</div><div class="table_value">{{.Params.price}}</div></div>{{end}}
+        {{if isset .Params "size"}}<div class="table_line"><div class="table_field">Size</div><div class="table_value">{{.Params.size}}</div></div>{{end}}
+        {{if isset .Params "num_pages"}}<div class="table_line"><div class="table_field">Number of Pages</div><div class="table_value">{{.Params.num_pages}}</div></div>{{end}}
+        {{if isset .Params "isbn"}}<div class="table_line"><div class="table_field">ISBN Number</div><div class="table_value">{{.Params.isbn}}</div></div>{{end}}
+        {{if isset .Params "reading_level"}}<div class="table_line"><div class="table_field">Reading Level</div><div class="table_value">{{.Params.reading_level}}</div></div>{{end}}
+        {{if isset .Params "recommended_audience"}}<div class="table_line"><div class="table_field">Recommended Audience</div><div class="table_value">{{.Params.recommended_audience}}</div></div>{{end}}
+        {{if isset .Params "format"}}<div class="table_line"><div class="table_field">Format</div><div class="table_value">{{.Params.format}}</div></div>{{end}}
+        {{if isset .Params "publisher"}}<div class="table_line"><div class="table_field">Publisher</div><div class="table_value">{{.Params.publisher}}</div></div>{{end}}
+        {{if isset .Params "date_of_publication"}}<div class="table_line"><div class="table_field">Publication Date</div><div class="table_value">{{.Params.date_of_publication}}</div></div>{{end}}
+        {{if isset .Params "language"}}<div class="table_line"><div class="table_field">Language</div><div class="table_value">{{.Params.language}}</div></div>{{end}}
+        </div>
+    </div>
+</section>
