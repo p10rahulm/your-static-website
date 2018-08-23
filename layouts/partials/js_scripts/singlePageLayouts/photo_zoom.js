@@ -1,11 +1,12 @@
 function imageZoom(imgID, resultID) {
-    console.log("hi");
     var img, lens, result, cx, cy;
     img = document.getElementById(imgID);
     result = document.getElementById(resultID);
     /*create lens:*/
     lens = document.createElement("DIV");
     lens.setAttribute("class", "img-zoom-lens");
+    lens.setAttribute("id", "img_zoom_lens");
+
     /*insert lens:*/
     img.parentElement.insertBefore(lens, img);
     /*calculate the ratio between result DIV and lens:*/
@@ -20,10 +21,11 @@ function imageZoom(imgID, resultID) {
     /*and also for touch screens:*/
     lens.addEventListener("touchmove", moveLens);
     img.addEventListener("touchmove", moveLens);
+
     function moveLens(e) {
         var pos, x, y;
         /*prevent any other actions that may occur when moving over the image*/
-        e.preventDefault();
+        // e.preventDefault();
         /*get the cursor's x and y positions:*/
         pos = getCursorPos(e);
         /*calculate the position of the lens:*/
@@ -38,7 +40,11 @@ function imageZoom(imgID, resultID) {
         lens.style.left = x + "px";
         lens.style.top = y + "px";
         /*display what the lens "sees":*/
-        result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+        result.style['background-position-x']= "-" + (x * cx) + "px";
+        result.style['background-position-y']= "-" + (y * cy) + "px";
+        // result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+        // console.log("x = "+x + " y = " + y + " cx = "+ cx+" cy ="+cy + " lens.offsetHeight = "+lens.offsetHeight);
+        // console.log("result.css(backgroundPosition) = " + result.style.backgroundPosition);
     }
     function getCursorPos(e) {
         var a, x = 0, y = 0;
@@ -55,7 +61,26 @@ function imageZoom(imgID, resultID) {
     }
 }
 
+
 $(document).ready(function() {
     imageZoom("featured_image", "zoomed_result");
-    imageZoom("featured_image", "myresult");
+    $('.other_images').click(function() {
+        document.getElementById("zoomed_result").style.backgroundImage = "url('" + document.getElementById("featured_image").src + "')";
+    });
+    img = document.getElementById("featured_image");
+    result = document.getElementById("zoomed_result");
+    lens = document.getElementById("img_zoom_lens");
+    result.style.display = "none";
+
+    document.getElementById("featured_image_container").addEventListener("mouseenter", switchOn);
+    document.getElementById("featured_image_container").addEventListener("mouseleave", switchOff);
+    function switchOn(){
+        result.style.display = "block";
+        lens.style.border = "2px solid rgba(200,200,200,0.4)";
+    }
+    function switchOff(){
+        result.style.display = "none";
+        lens.style.border = "none";
+    }
+
 });

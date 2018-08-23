@@ -4,7 +4,7 @@
 @media screen and (min-width: 1200px){
     #zoomed_result{
         display: block;
-        position: absolute;
+        position: fixed;
         top: 100px;
         height: calc(100% - 100px - 50px);
         right: 100px;
@@ -12,5 +12,12 @@
         max-width: calc(50% - 100px);
         /*background-color: rgba(0,0,0,0.1);*/
         border: 1px solid #d4d4d4;
+    }
+    .img-zoom-lens {
+        position: absolute;
+        border: 2px solid rgba(200,200,200,0.4);
+        border: none;
+        width: 140px;
+        height: 140px;
     }
 }

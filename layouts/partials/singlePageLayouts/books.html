@@ -18,7 +18,7 @@
         <div class="books_tagline">{{(.Params.tagline)}}</div>
     </div>
     <div class = "images_section" >
-        <div class="featured_image_container">
+        <div id="featured_image_container">
             <img id = "featured_image" src='/img/{{ index (.Params.images) 0 | default ($.Scratch.Get "page_layout").banner_image}}'>
         </div>
 
