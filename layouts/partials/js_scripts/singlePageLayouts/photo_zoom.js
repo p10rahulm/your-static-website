@@ -3,12 +3,28 @@ function imageZoom(imgID, resultID) {
     img = document.getElementById(imgID);
     result = document.getElementById(resultID);
     /*create lens:*/
+    var zoomed_result = document.getElementById("zoomed_result");
+
+    var container = document.getElementsByClassName("container")[0];
+    var container_style = container.currentStyle || window.getComputedStyle(container);
+
+
+    var calced_width = (document.body.clientWidth - container.offsetLeft - parseInt(container_style.paddingLeft,10)  - 20 - 20 - 300);
+    zoomed_result.style.width = calced_width + "px";
+    // console.log("calced_width = "+ calced_width + "; document.body.clientWidth = "+document.body.clientWidth + "; container.offsetLeft = " + container.offsetLeft + "; parseInt(container_style.paddingLeft,10) = " + parseInt(container_style.paddingLeft,10) );
+
+    /*create lens:*/
     lens = document.createElement("DIV");
     lens.setAttribute("class", "img-zoom-lens");
     lens.setAttribute("id", "img_zoom_lens");
 
     /*insert lens:*/
     img.parentElement.insertBefore(lens, img);
+    /*set width of lens:*/
+    lens.style.width = Math.min(lens.offsetHeight * zoomed_result.offsetWidth/zoomed_result.offsetHeight,300) + "px";
+    // console.log("zoomed_result.innerWidth/zoomed_result.innerHeight = "+zoomed_result.offsetWidth/zoomed_result.offsetHeight);
+    // console.log("lens.offsetHeight = " + lens.offsetHeight);
+    // console.log("lens.offsetWidth = " + lens.offsetWidth);
     /*calculate the ratio between result DIV and lens:*/
     cx = result.offsetWidth / lens.offsetWidth;
     cy = result.offsetHeight / lens.offsetHeight;
@@ -18,9 +34,6 @@ function imageZoom(imgID, resultID) {
     /*execute a function when someone moves the cursor over the image, or the lens:*/
     lens.addEventListener("mousemove", moveLens);
     img.addEventListener("mousemove", moveLens);
-    /*and also for touch screens:*/
-    lens.addEventListener("touchmove", moveLens);
-    img.addEventListener("touchmove", moveLens);
 
     function moveLens(e) {
         var pos, x, y;
@@ -67,19 +80,17 @@ $(document).ready(function() {
     $('.other_images').click(function() {
         document.getElementById("zoomed_result").style.backgroundImage = "url('" + document.getElementById("featured_image").src + "')";
     });
-    img = document.getElementById("featured_image");
-    result = document.getElementById("zoomed_result");
-    lens = document.getElementById("img_zoom_lens");
-    result.style.display = "none";
-
+    var zoomed_result = document.getElementById("zoomed_result");
+    zoomed_result.style.display = "none";
     document.getElementById("featured_image_container").addEventListener("mouseenter", switchOn);
     document.getElementById("featured_image_container").addEventListener("mouseleave", switchOff);
+    var lens = document.getElementById("img_zoom_lens");
     function switchOn(){
-        result.style.display = "block";
+        zoomed_result.style.display = "block";
         lens.style.border = "2px solid rgba(200,200,200,0.4)";
     }
     function switchOff(){
-        result.style.display = "none";
+        zoomed_result.style.display = "none";
         lens.style.border = "none";
     }
 
