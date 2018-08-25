@@ -1,0 +1,36 @@
+<header>
+    {{$link := (printf "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/%s.min.css" ($.Params.highlight_style | default "github-gist")) }}
+    {{partial "functions/load_external_css.html" (dict "external_url" $link "scratch" .Scratch)}}
+
+
+    {{if not (eq (len (union $.Site.Params.highlight_languages $.Params.highlight_languages)) 0)}}
+    {{$link := "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"}}
+    {{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" .Scratch "async" true "defer" false)}}
+    {{range union $.Site.Params.highlight_languages $.Params.highlight_languages}}
+    {{$link := (printf "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/%s.min.js" .) }}
+    {{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" $.Scratch "async" true "defer" false)}}
+    {{end}}
+    {{end}}
+
+    {{if .Params.math}}
+    {{$link := "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"}}
+    {{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" .Scratch "async" true "defer" false)}}
+    {{end}}
+
+    <style type="text/css">
+        {{ partial "css_scripts/singlePageLayouts/codePage.css" . | safeCSS }}
+    </style>
+    <script type="text/javascript" async defer>
+        {{partial "js_scripts/singlePageLayouts/codePage.js" . | safeJS }}
+    </script>
+</header>
+<section class="default single_page_layout">
+    <div id="page_header">
+        <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
+        <div class="page_created_date">{{ dateFormat "Monday, Jan 2, 2006" (.Date| default ($.Scratch.Get "page_layout").created_date) }}</div>
+        <div class="page_author">Author: {{.Params.Author | default ($.Scratch.Get "page_layout").author}}</div>
+    </div>
+    <div class="container">
+        <div class="page_content">{{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}</div>
+    </div>
+</section>
