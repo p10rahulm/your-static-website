@@ -1,6 +1,6 @@
 +++
 # General
-title = "Snip6"
+title = "che by chefs rule"
 date = 2018-06-08T19:44:41+05:30
 draft = false
 author = "Rahul Madhavan"

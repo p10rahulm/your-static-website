@@ -1,6 +1,6 @@
 +++
 # General
-title = "Snip9"
+title = "Nou veau Riche"
 date = 2018-06-08T19:44:44+05:30
 draft = false
 author = "Rahul Madhavan"
