@@ -34,8 +34,8 @@ highlight_style = "ocean"
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = []
-categories = []
+tags = ["html","programming","drivel","type","counting","show time"]
+categories = ["programming"]
 
 
 +++

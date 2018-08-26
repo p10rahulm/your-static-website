@@ -25,12 +25,29 @@
     </script>
 </header>
 <section class="default single_page_layout">
-    <div id="page_header">
+    <div id="page_header" class="container">
         <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
-        <div class="page_created_date">{{ dateFormat "Monday, Jan 2, 2006" (.Date| default ($.Scratch.Get "page_layout").created_date) }}</div>
-        <div class="page_author">Author: {{.Params.Author | default ($.Scratch.Get "page_layout").author}}</div>
+        <div class="page_created_date">{{ dateFormat "Jan 2, 2006" (.Date| default ($.Scratch.Get "page_layout").created_date) }}</div>
+        <div class="page_author">{{.Params.Author | default ($.Scratch.Get "page_layout").author}}</div>
+
     </div>
-    <div class="container">
+    <div id="page_content " class="container">
         <div class="page_content">{{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}</div>
+    </div>
+    <div id="page_footer" class="container">
+        {{if .Params.categories}}
+        <div class="page_categories"><span class = "page_meta_descriptor">Categories:</span>
+            {{range .Params.Categories}}
+            <a class="page_categories_links" href = "/categories/{{. | urlize}}"><span class = "page_categories_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+        {{if .Params.tags}}
+        <div class="page_tags"><span class = "page_meta_descriptor">Tags:</span>
+            {{range .Params.tags}}
+            <a class="page_tags_links" href = "/tags/{{. | urlize}}"><span class = "page_tags_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
     </div>
 </section>
