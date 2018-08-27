@@ -1,34 +1,14 @@
 +++
-title = "Course1"
-date = 2018-07-16T23:38:39+05:30
-draft = false
-author = "Rahul Madhavan"
+title = "A review on Management topics"
+date = 2018-06-08T19:44:35+05:30
+faculty = "K S Madhavan and Goody Two Shoes"
 
-# The below image will be shown in all the cards pointing to this article
-caption_image = "bubbles.jpg"
+short_intro = "An in-depth look at management with a specific view on Marketing"
 
-show_popup = true
-show_sharer = true
-rollup_sharer_active= true
-fixed_sharer_active = true
-content_sharer_active= true
 
-# Should this be listed in front page
-featured = true
-
-# Tags and categories
-# For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = []
-categories = []
-subjects = []
-
-# Specific Template Meta
-course_title = "A review on Management topics"
 topic = "Management"
-faculty= "K S Madhavan and Seethapati Rao"
 who_should_attend = "Management Professionals and Final Year Students"
 pre-requisites= "Knowledge in Marketing"
-
 course_date = "Anytime"
 duration = "4 weeks"
 delivery = "In Person/Online"
@@ -36,8 +16,49 @@ location = "Bangalore Gymkhana/Online"
 fees = "Rs. 1000"
 certification = "Rs. 1000"
 
-# Short version
-abstract = ""
+# -----------------------------------------
+# Image section
+# -----------------------------------------
+
+# Place your image in the 'static/img/' folder and reference its filename below, e.g. 'image = "example.jpg"'.
+# Featured image The featured image will be the first from the following list
+posters = ["dog_popup_thanks3.jpg","dog_transparency1.jpg","orange-fractal.jpg","bubbles.jpg"]
+
+# -----------------------------------------
+# Summary section
+# -----------------------------------------
+
+# The below image will be shown in all the cards pointing to this article
+caption_image = "dog_popup_thanks3.jpg"
+# The below summary message will be shown in all the cards pointing to this article. If not available, it would be generated from the content of the page.
+summary_content = '''
+The book is very very good. It needs to be read by one and all.
+Generally I don't say much. But know this is true'''
+
+
+# -----------------------------------------
+# Meta
+# -----------------------------------------
+
+layout = "courses"
+featured = true
+enable_comments = true
+
+# Tags and categories
+# For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
+tags = []
+categories = []
+subjects = []
+
+# Writeup goes below
+
+
+
+
+
+
+
+
 
 # Optional video
 video_url = ""
@@ -56,13 +77,6 @@ brochure_name_url =     [
     email = "myname@gmail.com"
     phone = "911533t"
 
-
-# Featured image
-
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-[header]
-        image = ""
-        caption = ""
 +++
 
 # About the course
