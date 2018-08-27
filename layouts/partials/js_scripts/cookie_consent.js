@@ -1,4 +1,4 @@
-window.addEventListener("load", function(){
+document.addEventListener('DOMContentLoaded', function(){
     window.cookieconsent.initialise({
         "content": {
             "message": "{{ $.Site.Params.cookie_message }}",
@@ -11,4 +11,4 @@ window.addEventListener("load", function(){
             highlight: {background: 'red', border: 'red', text: '#000000'},
         }
     })
-});
+}, false);

@@ -17,26 +17,28 @@
         <div class="page_author">Author: {{.Params.Author | default ($.Scratch.Get "page_layout").author}}</div>
         <div class="page_tagline">{{(.Params.tagline)}}</div>
     </div>
-    <div class = "images_section" >
-        <div id="featured_image_container">
-            <img id = "featured_image" src='/img/{{ index (.Params.images) 0 | default ($.Scratch.Get "page_layout").banner_image}}'>
+    <div class="mid_section">
+        <div class = "images_section" >
+            <div id="featured_image_container">
+                <img id = "featured_image" src='/img/{{ index (.Params.images) 0 | default ($.Scratch.Get "page_layout").banner_image}}'>
+            </div>
+
+            <div class="other_images_container">
+                {{range .Params.images}}
+                    <img class = "other_images" src="/img/{{.}}">
+                {{end}}
+            </div>
         </div>
 
-        <div class="other_images_container">
-            {{range .Params.images}}
-                <img class = "other_images" src="/img/{{.}}">
-            {{end}}
-        </div>
-    </div>
-
-    <div class = "page_main_section">
-        <div class="page_abstract"><span class="page_abstract_identifier">Short Summary: </span>{{(.Params.abstract)}}</div>
-        <div class="page_content">
-        {{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}
+        <div class = "page_main_section">
+            <div class="page_abstract"><span class="page_abstract_identifier">Short Summary: </span>{{(.Params.abstract)}}</div>
+            <div class="page_content">
+            {{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}
+            </div>
         </div>
     </div>
     <div class ="page_detail_container">
-        <div class="book_details_identifier">Details</div>
+        <div class="page_details_identifier">Details</div>
         <div class="page_details">
         {{if isset .Params "price"}}<div class="table_field table_element">Price</div><div class="table_value table_element">{{.Params.price}}</div>{{end}}
         {{if isset .Params "size"}}<div class="table_field table_element">Size</div><div class="table_value table_element">{{.Params.size}}</div>{{end}}

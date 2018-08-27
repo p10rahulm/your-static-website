@@ -1,3 +1,6 @@
+{{$link := "https://www.youtube.com/iframe_api"}}
+{{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" .Scratch "async" false "defer" false)}}
+
 <style type="text/css">
     {{ partial "css_scripts/singlePageLayouts/courses.css" . | safeCSS }}
 </style>
@@ -7,45 +10,59 @@
 </script>
 
 
-<object><embed width="850" height="850" src="/files/Brochure_for_5S_books.pdf" type="application/pdf"></object>
+{{partial "singlePageLayouts/page_photoswipe.html" . }}
 
 <section class="books single_page_layout container">
     <div class ="page_header_section">
         <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
-        <div class="page_author">Faculty: {{.Params.Author | default ($.Scratch.Get "page_layout").author}}</div>
-        <div class="page_tagline">{{(.Params.tagline)}}</div>
+        <div class="page_author">Faculty: {{.Params.faculty | default ($.Scratch.Get "page_layout").author}}</div>
+        <div class="page_tagline">{{(.Params.short_intro)}}</div>
     </div>
-    <div class = "images_section" >
-        <div id="featured_image_container">
-            <img id = "featured_image" src='/img/{{ index (.Params.posters) 0 | default ($.Scratch.Get "page_layout").banner_image}}'>
+    <div class = "mid_section">
+        <div class = "images_section" >
+            <div id="featured_image_container">
+                <img id = "featured_image" src='/img/{{ index (.Params.posters) 0 | default ($.Scratch.Get "page_layout").banner_image}}'>
+                <iframe id="ytplayer" type="text/html" width="350" height="300" src="https://www.youtube.com/embed/{{ index (.Params.youtube_ids) 0 | default ($.Scratch.Get "page_layout").youtube_id}}?autoplay=0&enablejsapi=1&controls=1&fs=1" frameborder="0" allowfullscreen controls></iframe>
+                <!--<iframe id="ytplayer" type="text/html" width="300" height="300" src="https://www.youtube.com/embed/{{ index (.Params.youtube_ids) 0 | default ($.Scratch.Get "page_layout").youtube_id}}?autoplay=0&enablejsapi=1&controls=1&fs=1" frameborder="0" allowfullscreen controls></iframe>-->
+            </div>
+
+            <div class="other_images_container">
+                {{range .Params.posters}}
+                <img class = "other_images image_thumbs" src="/img/{{.}}">
+                {{end}}
+                {{if isset .Params "youtube_ids"}}
+                {{range .Params.youtube_ids}}
+                <img class = "other_images video_thumbs" src="https://img.youtube.com/vi/{{.}}/1.jpg">
+                {{end}}{{end}}
+            </div>
         </div>
 
-        <div class="other_images_container">
-            {{range .Params.posters}}
-            <img class = "other_images" src="/img/{{.}}">
-            {{end}}
-        </div>
-    </div>
-
-    <div class = "page_main_section">
-        <div class="page_abstract"><span class="page_abstract_identifier">Short Summary: </span>{{(.Params.abstract)}}</div>
-        <div class="page_content">
-            {{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}
+        <div class = "page_main_section">
+            <div class="page_content">
+                {{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}
+            </div>
         </div>
     </div>
     <div class ="page_detail_container">
-        <div class="book_details_identifier">Details</div>
+        <div class="page_details_identifier">Details</div>
         <div class="page_details">
-            {{if isset .Params "price"}}<div class="table_field table_element">Price</div><div class="table_value table_element">{{.Params.price}}</div>{{end}}
-            {{if isset .Params "size"}}<div class="table_field table_element">Size</div><div class="table_value table_element">{{.Params.size}}</div>{{end}}
-            {{if isset .Params "num_pages"}}<div class="table_field table_element">Number of Pages</div><div class="table_value table_element">{{.Params.num_pages}}</div>{{end}}
-            {{if isset .Params "isbn"}}<div class="table_field table_element">ISBN Number</div><div class="table_value table_element">{{.Params.isbn}}</div>{{end}}
-            {{if isset .Params "reading_level"}}<div class="table_field table_element">Reading Level</div><div class="table_value table_element">{{.Params.reading_level}}</div>{{end}}
-            {{if isset .Params "recommended_audience"}}<div class="table_field table_element">Recommended Audience</div><div class="table_value table_element">{{.Params.recommended_audience}}</div>{{end}}
-            {{if isset .Params "format"}}<div class="table_field table_element">Format</div><div class="table_value table_element">{{.Params.format}}</div>{{end}}
-            {{if isset .Params "publisher"}}<div class="table_field table_element">Publisher</div><div class="table_value table_element">{{.Params.publisher}}</div>{{end}}
-            {{if isset .Params "date_of_publication"}}<div class="table_field table_element">Publication Date</div><div class="table_value table_element">{{.Params.date_of_publication}}</div>{{end}}
-            {{if isset .Params "language"}}<div class="table_field table_element">Language</div><div class="table_value table_element">{{.Params.language}}</div>{{end}}
+            {{if isset .Params "who_should_attend"}}<div class="table_field table_element">Who should Attend</div><div class="table_value table_element">{{.Params.who_should_attend}}</div>{{end}}
+            {{if isset .Params "pre_requisites"}}<div class="table_field table_element">Pre-requisites</div><div class="table_value table_element">{{.Params.pre_requisites}}</div>{{end}}
+            {{if isset .Params "course_date"}}<div class="table_field table_element">Course Date</div><div class="table_value table_element">{{.Params.course_date}}</div>{{end}}
+            {{if isset .Params "duration"}}<div class="table_field table_element">Duration</div><div class="table_value table_element">{{.Params.duration}}</div>{{end}}
+            {{if isset .Params "location"}}<div class="table_field table_element">Location</div><div class="table_value table_element">{{.Params.location}}</div>{{end}}
+            {{if isset .Params "fees"}}<div class="table_field table_element">Fees</div><div class="table_value table_element">{{.Params.fees}}</div>{{end}}
+            {{if isset .Params "certification"}}<div class="table_field table_element">Certification</div><div class="table_value table_element">{{.Params.certification}}</div>{{end}}
         </div>
+    </div>
+    <div class ="page_files_container">
+        {{if isset .Params "files"}}
+        {{range .Params.files}}
+        <div class="page_details_identifier">{{.name}}</div>
+        <object>
+            <embed class = "page_pdf_embed" src="/files/{{.pdf_file}}" type="application/pdf">
+        </object>
+        {{end}}
+        {{end}}
     </div>
 </section>
