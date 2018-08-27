@@ -22,7 +22,7 @@
                 <img src="/placeholder.jpg" data-src="/img/{{.Params.caption_image}}" class="card_img lazy" alt="{{.Title}}">
             </a>
             <a href="{{.Permalink}}">
-                {{$page_summary := .Summary}}
+                {{$page_summary := .Params.summary_content | default .Summary}}
                 {{$page_params := .Params}}
                 {{$page_permalink := .Permalink}}
 

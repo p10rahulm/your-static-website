@@ -26,7 +26,7 @@
             {{ range $pages }}
             <div class ="details_cards">
                 <a href="{{.Permalink}}">
-                    {{$page_summary := .Summary}}
+                    {{$page_summary := .Params.summary_content | default .Summary}}
                     {{$page_params := .Params}}
                     {{$page_permalink := .Permalink}}
 

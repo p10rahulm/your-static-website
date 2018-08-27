@@ -58,7 +58,7 @@
                     <h4 class="card_title">{{.Params.title}}</h4>
                     <!--<p class="card_summary">{{ (.Params.summary_content | default .Summary) | markdownify}}</p>-->
                     {{$.Scratch.Set "page_params" .Params}}
-                    {{$.Scratch.Set "page_summary" .Summary}}
+                    {{$.Scratch.Set "page_summary" (.Params.summary_content | default .Summary)}}
                     {{range $.Scratch.Get "other_fields"  }}
                     <p class="card_{{.field_name}}" >
                         {{if eq .field_name "summary"}}
