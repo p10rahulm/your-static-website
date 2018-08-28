@@ -56,7 +56,7 @@
             {{if isset .Params "certification"}}<div class="table_field table_element">Certification</div><div class="table_value table_element">{{.Params.certification}}</div>{{end}}
         </div>
     </div>
-    <div class ="page_files_container container">
+    <div class ="page_files_container">
         <div class="page_details_identifier">Documentation</div>
         {{if isset .Params "files"}}
         {{range $indx,$elmt := .Params.files}}
@@ -75,7 +75,7 @@
         {{end}}
 
     </div>
-    <div id="page_footer" class="container">
+    <div id="page_footer">
         {{if .Params.categories}}
         <div class="page_meta"><span class = "page_meta_descriptor">Categories:</span>
             {{range .Params.Categories}}
