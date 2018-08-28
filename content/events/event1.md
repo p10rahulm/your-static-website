@@ -32,7 +32,7 @@ Concert for Peace in the middle east with the trombones'''
 # Meta
 # -----------------------------------------
 
-layout = "courses"
+layout = "events"
 featured = true
 enable_comments = true
 
