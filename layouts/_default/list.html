@@ -1,5 +1,6 @@
 {{define "main"}}
 
+    {{ $.Scratch.SetInMap "layout_defaults" "name" (.Section | lower) }}
     {{ $.Scratch.SetInMap "layout_defaults" "title" (.Section | humanize) }}
     {{ $.Scratch.SetInMap "layout_defaults" "subtitle" "" }}
     {{ $.Scratch.SetInMap "layout_defaults" "card_layout" "default_listLayout" }}

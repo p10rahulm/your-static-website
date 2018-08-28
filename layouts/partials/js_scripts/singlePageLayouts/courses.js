@@ -32,7 +32,9 @@ function onPlayerReady(event) {
         image_heights.push(otherimages[i].naturalHeight);
         image_widths.push(otherimages[i].naturalWidth);
     }
+    {{if isset .Params "youtube_ids"}}
     var playlist = ['{{ delimit .Params.youtube_ids "','" }}'];
+    {{end}}
     //    console.log(playlist);
     for (var i = 0; othervideos.length > i; i++) {
         othervideos[i].addEventListener('click', videos_array_clicked, false);

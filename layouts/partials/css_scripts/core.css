@@ -384,3 +384,34 @@ small,
 .center_align {
     text-align: center;
 }
+
+
+#page_footer{
+    padding-top: 1rem;
+    padding-bottom:1.5rem;
+    border-top: 1px solid #eaeaea;
+    font-size:15px;
+    font-family: "EB Garamond", "Lora", serif;
+}
+
+.page_meta{
+    margin: 0.4rem 0px 0.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+.page_meta_links{
+    color: #333;
+    padding-right:10px;
+}
+
+.page_meta_links:hover{
+    color: #aa2222;
+}
+
+.page_meta_descriptor{
+    font-size: 16px;
+    padding-right: 10px;
+    color: #a22;
+}

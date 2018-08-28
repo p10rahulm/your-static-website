@@ -1,46 +1,41 @@
 +++
-# General
 title = "che by chefs rule"
-date = 2018-06-08T19:44:41+05:30
-draft = false
-author = "Rahul Madhavan"
-allow_comments = false
-show_title_date_author = false
+date = 2018-06-08T19:44:35+05:30
+author = "K S Madhavan and Goody Two Shoes"
+
+
+
+# -----------------------------------------
+# Summary section
+# -----------------------------------------
 
 # The below image will be shown in all the cards pointing to this article
-caption_image = "bubbles.jpg"
+caption_image = "dog_popup_thanks3.jpg"
+# The below summary message will be shown in all the cards pointing to this article. If not available, it would be generated from the content of the page.
+summary_content = '''
+The book is very very good. It needs to be read by one and all.
+Generally I don't say much. But know this is true'''
 
-show_popup = true
-show_sharer = true
-rollup_sharer_active= true
-fixed_sharer_active = true
-content_sharer_active= true
 
-# Should this be listed in front page
+# -----------------------------------------
+# Meta
+# -----------------------------------------
+
+layout = "codePage"
 featured = true
+enable_comments = true
 
+
+# Highlight.js: https://highlightjs.org/static/demo/
+math = false
+highlight = false
+highlight_languages = []
+highlight_style = "ocean"
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
 tags = ["html","programming","drivel","type","counting","show time"]
 categories = ["programming"]
-
-# Specific Template Meta
-
-# Does the content use math formatting?
-math = false
-
-# Highlight.js options, View this demo and choose: https://highlightjs.org/static/demo/
-highlight = false
-highlight_languages = []
-highlight_style = "ocean"
-
-
-# Featured image
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-[header]
-        image = "img1.jpg"
-        caption = "This is good"
 
 
 +++

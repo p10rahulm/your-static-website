@@ -18,7 +18,7 @@
             {{ range $key, $value := $pages }}
             <a href="{{ $value.Name | urlize }}">
             <div class ="details_cards">
-                <span class = "taxonomy_list_number">{{add $key 1}}.</span><span class = "taxonomy_list_term"> {{$value.Name|humanize | markdownify | truncate 100 }}</span>
+                <span class = "taxonomy_list_number">&#9658;</span><span class = "taxonomy_list_term"> {{$value.Name|humanize | markdownify | truncate 100 }}</span>
             </div>
             </a>
             {{end}}

@@ -1,48 +1,51 @@
 +++
-title = "Event1"
+title = "Concert for Peace in the middle east with the trombones"
 date = 2018-07-22T11:43:28+05:30
-draft = false
-author = "Rahul Madhavan"
+who = "Kailash Kher"
+
+tagline = "The beats are coming to town"
+topic= "Rock"
+
+where = "Asilomar, Aranyaka, India"
+when = "17th Dec 2018"
+
+# -----------------------------------------
+# Image section
+# -----------------------------------------
+
+# Media will be from below list
+# Featured image The featured image will be the first from the following list
+posters = ["events/bw_crowd.jpg","orange-fractal.jpg","dog_popup_thanks3.jpg","dog_transparency1.jpg", ]
+
+# -----------------------------------------
+# Summary section
+# -----------------------------------------
 
 # The below image will be shown in all the cards pointing to this article
+caption_image = "events/bw_crowd.jpg"
+# The below summary message will be shown in all the cards pointing to this article. If not available, it would be generated from the content of the page.
+summary_content = '''
+Concert for Peace in the middle east with the trombones'''
 
 
-show_popup = true
-show_sharer = true
-rollup_sharer_active= true
-fixed_sharer_active = true
-content_sharer_active= true
+# -----------------------------------------
+# Meta
+# -----------------------------------------
 
-# Should this be listed in front page
+layout = "courses"
 featured = true
+enable_comments = true
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
 tags = []
 categories = []
-genre = []
-# Specific Template Meta
-event_title = "Concert for Peace in the middle east with the trombones"
-tagline = "The beats are coming to town"
-topic= "Rock"
-who = "Kailash Kher"
-caption_image = "events/bw_crowd.jpg"
-where = "Asilomar, Aranyaka, India"
-when = "17th Dec 2018"
+genres = []
 
-# Optional event URL.
-event_url = ""
 
-# Short version
-
-# Featured image
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-[header]
-        image = ""
-        caption = ""
-# The actual content about the event goes below
+# Writeup goes below
 +++
-
 # About the event
 
 Global rhythms and A R Rahman come together for a night for all nights. A might to remember.
+

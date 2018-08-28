@@ -13,9 +13,9 @@ var pages = [];
 {{range $index, $element := $.Paginator.Pagers}}
     pages.push("{{ $element.URL |absURL}}");
 {{end}}
-// console.log(pages);
+ console.log("pages = " + pages);
 var jquery_request = function() {
-    if(window.location.href == pages[current_page_num-1]) {current_page_num++;}
+    if(window.location.href == pages[current_page_num-1]) {    current_page_num++;    }
     $(loading_dots_container).css("display","block");
     $(view_more_button_container).css("display","none");
     $(error_message_div).css("display","none");
@@ -34,7 +34,6 @@ var jquery_request = function() {
             // Use below if you want to change the URL of the page
             // history.pushState(null, null, pages[current_page_num]);
             current_page_num++;
-
         },
         error: function (jqXHR, exception) {
             var msg = '';
@@ -53,6 +52,7 @@ var jquery_request = function() {
             } else {
                 msg = 'Uncaught Error.\n' + jqXHR.responseText;
             }
+            console.log("Error! message = " + msg);
             $(error_message_div).html(msg );
             $(error_message_div).css("display","block");
             $(loading_dots_container).css("display","none");

@@ -22,8 +22,9 @@
         <div class = "images_section" >
             <div id="featured_image_container">
                 <img id = "featured_image" src='/img/{{ index (.Params.posters) 0 | default ($.Scratch.Get "page_layout").banner_image}}'>
+                {{if isset .Params "youtube_ids"}}
                 <iframe id="ytplayer" type="text/html" width="350" height="300" src="https://www.youtube.com/embed/{{ index (.Params.youtube_ids) 0 | default ($.Scratch.Get "page_layout").youtube_id}}?autoplay=0&enablejsapi=1&controls=1&fs=1" frameborder="0" allowfullscreen controls></iframe>
-                <!--<iframe id="ytplayer" type="text/html" width="300" height="300" src="https://www.youtube.com/embed/{{ index (.Params.youtube_ids) 0 | default ($.Scratch.Get "page_layout").youtube_id}}?autoplay=0&enablejsapi=1&controls=1&fs=1" frameborder="0" allowfullscreen controls></iframe>-->
+                {{end}}
             </div>
 
             <div class="other_images_container">
@@ -55,14 +56,14 @@
             {{if isset .Params "certification"}}<div class="table_field table_element">Certification</div><div class="table_value table_element">{{.Params.certification}}</div>{{end}}
         </div>
     </div>
-    <div class ="page_files_container">
+    <div class ="page_files_container container">
         <div class="page_details_identifier">Documentation</div>
         {{if isset .Params "files"}}
         {{range $indx,$elmt := .Params.files}}
         <div class="page_filename">{{add $indx 1}}. {{$elmt.name}}</div>
         {{end}}
         {{end}}
-
+        {{if isset .Params "files"}}
         <div id="page_pdf_viewer_container" class="hide_it_off_screen">
             <div class="close_container_box">
                 Close
@@ -71,6 +72,30 @@
             <embed id = "featured_file" class = "page_pdf_embed" src="/files/{{(index .Params.files 0).pdf_file}}" type="application/pdf">
         </object>
         </div>
+        {{end}}
 
+    </div>
+    <div id="page_footer" class="container">
+        {{if .Params.categories}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Categories:</span>
+            {{range .Params.Categories}}
+            <a class="page_meta_links" href = "/categories/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+        {{if .Params.tags}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Tags:</span>
+            {{range .Params.tags}}
+            <a class="page_meta_links" href = "/tags/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+        {{if .Params.subjects}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Subjects:</span>
+            {{range .Params.subjects}}
+            <a class="page_meta_links" href = "/subjects/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
     </div>
 </section>

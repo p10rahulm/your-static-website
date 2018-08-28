@@ -289,7 +289,7 @@
 
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
     [[sections.fields]]
-        field_name = "event_title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
         prefix = ""
         class = "card_title left_align"
         postfix = ""

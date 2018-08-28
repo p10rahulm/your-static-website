@@ -1,5 +1,5 @@
 +++
-title = "5S Organizational Principles"
+title = "ondho"
 date = 2018-06-08T19:44:35+05:30
 author = "K S Madhavan and Goody Two Shoes"
 

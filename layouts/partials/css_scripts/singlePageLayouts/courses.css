@@ -166,6 +166,7 @@
     left: -10000px;
     top: -10000px;
 }
+
 @media screen and (max-width: 1200px) {
     .page_pdf_embed {
         height: calc(100vh - 81px - 33px - 30px);
@@ -203,3 +204,4 @@
     }
 
 }
+
