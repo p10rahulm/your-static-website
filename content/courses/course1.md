@@ -30,6 +30,7 @@ youtube_ids = ["lk60ObnbIOk","9hHq2lYof4U"]
 # Place the pdfs below in the "files" folder inside static folder:
 files = [
     { name = "Brochure for 5S Course", pdf_file = "Brochure_for_5S_books.pdf" },
+    { name = "Business and Ethics", pdf_file = "B_E_Brochure.pdf" },
 ]
 # -----------------------------------------
 # Summary section
