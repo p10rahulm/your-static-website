@@ -56,13 +56,21 @@
         </div>
     </div>
     <div class ="page_files_container">
+        <div class="page_details_identifier">Documentation</div>
         {{if isset .Params "files"}}
-        {{range .Params.files}}
-        <div class="page_details_identifier">{{.name}}</div>
+        {{range $indx,$elmt := .Params.files}}
+        <div class="page_filename">{{add $indx 1}}. {{$elmt.name}}</div>
+        {{end}}
+        {{end}}
+
+        <div id="page_pdf_viewer_container" class="hide_it_off_screen">
+            <div class="close_container_box">
+                Close
+            </div>
         <object>
-            <embed class = "page_pdf_embed" src="/files/{{.pdf_file}}" type="application/pdf">
+            <embed id = "featured_file" class = "page_pdf_embed" src="/files/{{(index .Params.files 0).pdf_file}}" type="application/pdf">
         </object>
-        {{end}}
-        {{end}}
+        </div>
+
     </div>
 </section>

@@ -100,8 +100,13 @@
     font-family: "Lora", "EB Garamond", serif;
     font-weight: 500;
     font-size: 1.25rem;
+    text-align: left;
 }
-
+.page_filename{
+    text-align: left;
+    cursor: pointer;
+    font-family: "EB Garamond", "Lora", serif;
+}
 
 .table_field{
     padding-right: 1rem;
@@ -129,11 +134,37 @@
     margin:1.75rem auto 1.75rem auto;
     text-align: center;
 }
+.close_container_box{
+    background-color: #ddd;
+    text-align: center;
+    width: 75px;
+    height: 30px;
+    line-height: 20px;
+    font-size: 0.75rem;
+    font-family: "EB Garamond", "Lora", serif;
+    font-style: italic;
+    margin-left: auto;
+    margin-right: 2.5%;
+    margin-bottom: -10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.close_container_box:hover{
+    background-color: #ccc;
+    transition-duration: 0.3s;
+    transition-property:background-color;
+    transition-timing-function: ease-in-out;
+}
 .page_pdf_embed{
     height: calc(100vh - 71px - 30px);
     width: 95%;
-    padding-top: 10px;
     margin: 0 auto;
+}
+.hide_it_off_screen {
+    position: absolute;
+    left: -10000px;
+    top: -10000px;
 }
 @media screen and (max-width: 1200px) {
     .page_pdf_embed {
