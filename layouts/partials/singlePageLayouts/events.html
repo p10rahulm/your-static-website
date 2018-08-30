@@ -11,11 +11,22 @@
 
 
 {{partial "singlePageLayouts/page_photoswipe.html" . }}
+<div class="banner_image_container">
+    <img id = "banner_image" src="/img/{{.Params.banner_image}}">
+</div>
+<section id = "events" class="single_page_layout container">
 
-<section class="books single_page_layout container">
     <div class ="page_header_section">
         <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
-        <div class="page_author">Faculty: {{.Params.faculty | default ($.Scratch.Get "page_layout").author}}</div>
+        <div class="page_author">
+            Artist: {{.Params.who | default ($.Scratch.Get "page_layout").author}}
+        </div>
+        <div class="page_date page_author">
+            Date: {{.Params.when | default ($.Scratch.Get "page_layout").author}}
+        </div>
+        <div class="page_location page_author">
+            Location: {{.Params.where | default ($.Scratch.Get "page_layout").author}}
+        </div>
         <div class="page_tagline">{{(.Params.short_intro)}}</div>
     </div>
     <div class = "mid_section">

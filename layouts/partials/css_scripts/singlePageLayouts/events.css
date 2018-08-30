@@ -1,3 +1,18 @@
+section#events{
+    margin-top: -1vh;
+
+}
+#banner_image{
+    width: 100vw;
+    height: auto;
+
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.banner_image_container{
+    max-height: calc(50vh - 70px + 112.5px);
+    overflow: hidden;
+}
 .other_images_container{
     display: flex;
     flex-wrap: wrap;

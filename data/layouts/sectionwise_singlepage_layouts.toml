@@ -59,3 +59,26 @@
     fixed_sharer_active = true
     content_sharer_active= true
 
+[[sections]]
+    name = "events"
+    title = "The concert for alltime"
+    author = "I, Me and Myself"
+    date = 2018-09-25T11:43:28+05:30
+    location = "Asilomar"
+
+    caption_image = "dog_popup_thanks3.jpg"
+    layout = "courses"
+    youtube_id = "lk60ObnbIOk"
+    # Sharer Stuff
+    enable_comments = true
+    # Popup Stuff
+    show_popup = true
+    popup_activation_button = true
+    activate_popup_on_delay = true
+    activate_popup_on_exit_intent = true
+    activate_popup_on_scroll = true
+    # Sharer Stuff
+    show_sharer = true
+    rollup_sharer_active= true
+    fixed_sharer_active = true
+    content_sharer_active= true

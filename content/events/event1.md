@@ -12,7 +12,7 @@ when = "17th Dec 2018"
 # -----------------------------------------
 # Image section
 # -----------------------------------------
-
+banner_image = "events/bw_crowd.jpg"
 # Media will be from below list
 # Featured image The featured image will be the first from the following list
 posters = ["events/bw_crowd.jpg","orange-fractal.jpg","dog_popup_thanks3.jpg","dog_transparency1.jpg", ]
