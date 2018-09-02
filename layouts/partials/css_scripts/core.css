@@ -395,11 +395,12 @@ small,
 }
 
 .page_meta{
-    margin: 0.25rem 0 0.25rem 0;
+    margin: 0.4rem 0 0.25rem 0;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: flex-start;
+    line-height: 1;
 }
 .page_meta_links{
     color: #333;
