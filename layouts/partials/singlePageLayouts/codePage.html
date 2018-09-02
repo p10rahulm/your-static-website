@@ -24,7 +24,7 @@
         {{partial "js_scripts/singlePageLayouts/codePage.js" . | safeJS }}
     </script>
 </header>
-<section class="default single_page_layout container">
+<section id="codepage" class="single_page_layout container">
     <div id="page_header">
         <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
         <div class="page_created_date">{{ dateFormat "Jan 2, 2006" (.Date| default ($.Scratch.Get "page_layout").created_date) }}</div>

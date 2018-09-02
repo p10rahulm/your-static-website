@@ -1,22 +1,25 @@
-<header>
-    <style type="text/css">
-        {{ partial "css_scripts/singlePageLayouts/default.css" . | safeCSS }}
-    </style>
-    <script type="text/javascript">
-    </script>
-</header>
-<section id="default" class="single_page_layout">
-    <div class = "banner_image" >
-    </div>
-    <div id="page_header">
+<style type="text/css">
+    {{ partial "css_scripts/singlePageLayouts/thoughts.css" . | safeCSS }}
+</style>
+
+<script type="text/javascript">
+    {{partial "js_scripts/singlePageLayouts/thoughts.js" . | safeJS }}
+</script>
+
+<section id="thoughts" class="single_page_layout container">
+    <div class ="page_header_section">
         <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
-        <div class="page_created_date">{{ dateFormat "Monday, Jan 2, 2006" (.Date| default ($.Scratch.Get "page_layout").created_date) }}</div>
         <div class="page_author">Author: {{.Params.Author | default ($.Scratch.Get "page_layout").author}}</div>
+        <div class="page_created_date">{{ dateFormat "Monday, Jan 2, 2006" (.Date| default ($.Scratch.Get "page_layout").date) }}</div>
     </div>
-    <div class="container">
-        <div class="page_content">{{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}</div>
+    <div class="mid_section">
+        <div class = "page_main_section">
+            <div class="page_content">
+                {{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}
+            </div>
+        </div>
     </div>
-    <div id="page_footer" class="container">
+    <div id="page_footer">
         {{if .Params.categories}}
         <div class="page_meta"><span class = "page_meta_descriptor">Categories:</span>
             {{range .Params.Categories}}

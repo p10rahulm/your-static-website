@@ -395,7 +395,7 @@ small,
 }
 
 .page_meta{
-    margin: 0.4rem 0px 0.6rem;
+    margin: 0.25rem 0 0.25rem 0;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
