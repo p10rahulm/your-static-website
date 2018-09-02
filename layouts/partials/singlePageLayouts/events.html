@@ -26,12 +26,12 @@
                 {{end}}
                 {{if isset .Params "who"}}
                 <div class="page_author">
-                    Artist: {{.Params.who | default ($.Scratch.Get "page_layout").author}}
+                    Artist: {{.Params.who | default ($.Scratch.Get "page_layout").who}}
                 </div>
                 {{end}}
                 {{if isset .Params "when"}}
                 <div class="page_date">
-                    Date: {{.Params.when | default ($.Scratch.Get "page_layout").date}}
+                    Date: {{.Params.when | default ($.Scratch.Get "page_layout").when}}
                 </div>
                 {{end}}
                 {{if isset .Params "where"}}

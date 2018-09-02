@@ -62,10 +62,12 @@
 [[sections]]
     name = "events"
     title = "The concert for alltime"
-    author = "I, Me and Myself"
-    date = 2018-09-25T11:43:28+05:30
+    tagline = "Automatic transmission"
+    who = "I, Me and Myself"
+    when = "17th Dec 2017"
     location = "Asilomar"
 
+    banner_image = "events/clean_bandit.jpg"
     caption_image = "dog_popup_thanks3.jpg"
     layout = "courses"
     youtube_id = "lk60ObnbIOk"
