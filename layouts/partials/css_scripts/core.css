@@ -416,3 +416,69 @@ small,
     padding-right: 10px;
     color: #a22;
 }
+
+
+
+.page_title{
+    font-size: 36px;
+    font-weight: 800;
+    font-family: "Lora", "EB Garamond", serif;
+}
+.page_tagline{
+    font-style: italic;
+    font-weight: 200;
+    font-size: 18px;
+    font-family: "EB Garamond", "Lora", serif;
+}
+.page_author{
+    font-size: 25px;
+    font-weight: 800;
+    font-family: "Lora", "EB Garamond", serif;
+}
+ .page_date ,  .page_location{
+    font-size: 18px;
+    font-family: "Lora", "EB Garamond", serif;
+    font-weight: 500;
+}
+
+
+@media (max-width: 1200px) {
+    .page_title{
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+     .page_author{
+        font-size: 23px;
+        font-weight: 600;
+    }
+     .page_date ,  .page_location{
+        font-size: 17px;
+        font-weight: 500;
+    }
+}
+@media (max-width: 768px) {
+     .page_title{
+        font-size: 1.75rem;
+        font-weight: 600;
+    }
+     .page_tagline {
+        font-size: 1.1rem;
+    }
+
+     .page_author{
+        font-size: 1.25rem;
+    }
+     .page_date ,  .page_location{
+        font-size: 1rem;
+    }
+}
+@media (max-width: 500px) {
+     .page_title{
+        font-size: 1.5rem;
+    }
+
+     .page_date ,  .page_location{
+        font-size: 0.9rem;
+    }
+}

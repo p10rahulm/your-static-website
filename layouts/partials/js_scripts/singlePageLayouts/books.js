@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function(){
     featured_image.addEventListener("mousedown", featured_image_clicked);
     featured_image.addEventListener("touchstart", featured_image_clicked);
     var featured_image_container = document.getElementById("featured_image_container");
-    featured_image_container.addEventListener("mousedown", featured_image_clicked);
+//    featured_image_container.addEventListener("mousedown", featured_image_clicked);
 
     function featured_image_clicked() {
         // console.log("featured_image_clicked");
