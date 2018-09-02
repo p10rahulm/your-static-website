@@ -11,82 +11,66 @@
 
 
 {{partial "singlePageLayouts/page_photoswipe.html" . }}
-<div class="banner_image_container">
-    <img id = "banner_image" src="/img/{{.Params.banner_image}}">
-</div>
-<section id = "events" class="single_page_layout container">
 
-    <div class ="page_header_section">
-        <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
-        <div class="page_author">
-            Artist: {{.Params.who | default ($.Scratch.Get "page_layout").author}}
-        </div>
-        <div class="page_date page_author">
-            Date: {{.Params.when | default ($.Scratch.Get "page_layout").author}}
-        </div>
-        <div class="page_location page_author">
-            Location: {{.Params.where | default ($.Scratch.Get "page_layout").author}}
-        </div>
-        <div class="page_tagline">{{(.Params.short_intro)}}</div>
-    </div>
-    <div class = "mid_section">
-        <div class = "images_section" >
-            <div id="featured_image_container">
-                <img id = "featured_image" src='/img/{{ index (.Params.posters) 0 | default ($.Scratch.Get "page_layout").banner_image}}'>
-                {{if isset .Params "youtube_ids"}}
-                <iframe id="ytplayer" type="text/html" width="350" height="300" src="https://www.youtube.com/embed/{{ index (.Params.youtube_ids) 0 | default ($.Scratch.Get "page_layout").youtube_id}}?autoplay=0&enablejsapi=1&controls=1&fs=1" frameborder="0" allowfullscreen controls></iframe>
+<section id = "events" class="single_page_layout">
+
+    <div class ="overall_container">
+        <div class="banner_image_container"></div>
+        <div class="event_background container">
+            <div class="page_header_section">
+                <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
+                {{if isset .Params "tagline"}}
+                <div class="page_tagline">
+                    {{.Params.tagline | default ($.Scratch.Get "page_layout").tagline}}
+                </div>
+                {{end}}
+                {{if isset .Params "who"}}
+                <div class="page_author">
+                    Artist: {{.Params.who | default ($.Scratch.Get "page_layout").author}}
+                </div>
+                {{end}}
+                {{if isset .Params "when"}}
+                <div class="page_date">
+                    Date: {{.Params.when | default ($.Scratch.Get "page_layout").date}}
+                </div>
+                {{end}}
+                {{if isset .Params "where"}}
+                <div class="page_location">
+                    Location: {{.Params.where | default ($.Scratch.Get "page_layout").location}}
+                </div>
                 {{end}}
             </div>
 
-            <div class="other_images_container">
-                {{range .Params.posters}}
-                <img class = "other_images image_thumbs" src="/img/{{.}}">
-                {{end}}
-                {{if isset .Params "youtube_ids"}}
-                {{range .Params.youtube_ids}}
-                <img class = "other_images video_thumbs" src="https://img.youtube.com/vi/{{.}}/1.jpg">
-                {{end}}{{end}}
-            </div>
-        </div>
+            <div class = "mid_section">
+                <div class = "page_main_section">
+                    <div class="page_content">
+                        {{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}
+                    </div>
+                </div>
+                <div class = "images_section" >
+                    <div id="featured_image_container">
+                        <img id = "featured_image" src='/img/{{ index (.Params.posters) 0 | default ($.Scratch.Get "page_layout").banner_image}}'>
+                        {{if isset .Params "youtube_ids"}}
+                        <iframe id="ytplayer" type="text/html" width="350" height="300" src="https://www.youtube.com/embed/{{ index (.Params.youtube_ids) 0 | default ($.Scratch.Get "page_layout").youtube_id}}?autoplay=0&enablejsapi=1&controls=1&fs=1" frameborder="0" allowfullscreen controls></iframe>
+                        {{end}}
+                    </div>
 
-        <div class = "page_main_section">
-            <div class="page_content">
-                {{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}
-            </div>
-        </div>
-    </div>
-    <div class ="page_detail_container">
-        <div class="page_details_identifier">Details</div>
-        <div class="page_details">
-            {{if isset .Params "who_should_attend"}}<div class="table_field table_element">Who should Attend</div><div class="table_value table_element">{{.Params.who_should_attend}}</div>{{end}}
-            {{if isset .Params "pre_requisites"}}<div class="table_field table_element">Pre-requisites</div><div class="table_value table_element">{{.Params.pre_requisites}}</div>{{end}}
-            {{if isset .Params "course_date"}}<div class="table_field table_element">Course Date</div><div class="table_value table_element">{{.Params.course_date}}</div>{{end}}
-            {{if isset .Params "duration"}}<div class="table_field table_element">Duration</div><div class="table_value table_element">{{.Params.duration}}</div>{{end}}
-            {{if isset .Params "location"}}<div class="table_field table_element">Location</div><div class="table_value table_element">{{.Params.location}}</div>{{end}}
-            {{if isset .Params "fees"}}<div class="table_field table_element">Fees</div><div class="table_value table_element">{{.Params.fees}}</div>{{end}}
-            {{if isset .Params "certification"}}<div class="table_field table_element">Certification</div><div class="table_value table_element">{{.Params.certification}}</div>{{end}}
-        </div>
-    </div>
-    <div class ="page_files_container">
-        <div class="page_details_identifier">Documentation</div>
-        {{if isset .Params "files"}}
-        {{range $indx,$elmt := .Params.files}}
-        <div class="page_filename">{{add $indx 1}}. {{$elmt.name}}</div>
-        {{end}}
-        {{end}}
-        {{if isset .Params "files"}}
-        <div id="page_pdf_viewer_container" class="hide_it_off_screen">
-            <div class="close_container_box">
-                Close
-            </div>
-        <object>
-            <embed id = "featured_file" class = "page_pdf_embed" src="/files/{{(index .Params.files 0).pdf_file}}" type="application/pdf">
-        </object>
-        </div>
-        {{end}}
+                    <div class="other_images_container">
+                        {{range .Params.posters}}
+                        <img class = "other_images image_thumbs" src="/img/{{.}}">
+                        {{end}}
+                        {{if isset .Params "youtube_ids"}}
+                        {{range .Params.youtube_ids}}
+                        <img class = "other_images video_thumbs" src="https://img.youtube.com/vi/{{.}}/1.jpg">
+                        {{end}}{{end}}
+                    </div>
+                </div>
 
+            </div>
+        </div>
     </div>
-    <div id="page_footer">
+
+    <div id="page_footer" class="container">
         {{if .Params.categories}}
         <div class="page_meta"><span class = "page_meta_descriptor">Categories:</span>
             {{range .Params.Categories}}
@@ -101,10 +85,10 @@
             {{end}}
         </div>
         {{end}}
-        {{if .Params.subjects}}
-        <div class="page_meta"><span class = "page_meta_descriptor">Subjects:</span>
-            {{range .Params.subjects}}
-            <a class="page_meta_links" href = "/subjects/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+        {{if .Params.genres}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Genres:</span>
+            {{range .Params.genres}}
+            <a class="page_meta_links" href = "/genres/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
             {{end}}
         </div>
         {{end}}

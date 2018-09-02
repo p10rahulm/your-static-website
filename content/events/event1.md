@@ -1,10 +1,7 @@
 +++
 title = "Concert for Peace in the middle east with the trombones"
-date = 2018-07-22T11:43:28+05:30
-who = "Kailash Kher"
-
 tagline = "The beats are coming to town"
-topic= "Rock"
+who = "Kailash Kher"
 
 where = "Asilomar, Aranyaka, India"
 when = "17th Dec 2018"
@@ -12,10 +9,12 @@ when = "17th Dec 2018"
 # -----------------------------------------
 # Image section
 # -----------------------------------------
-banner_image = "events/bw_crowd.jpg"
+banner_image = "events/clean_bandit.jpg"
 # Media will be from below list
 # Featured image The featured image will be the first from the following list
 posters = ["events/bw_crowd.jpg","orange-fractal.jpg","dog_popup_thanks3.jpg","dog_transparency1.jpg", ]
+# Currently only youtube is supported. Please enter only the id. For example if the video url is "https://www.youtube.com/watch?v=lk60ObnbIOk", please enter "lk60ObnbIOk"
+youtube_ids = ["lk60ObnbIOk","9hHq2lYof4U"]
 
 # -----------------------------------------
 # Summary section
@@ -38,9 +37,9 @@ enable_comments = true
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = []
-categories = []
-genres = []
+tags = ["trombones","proper music"]
+categories = ["Music"]
+genres = ["Rock","Paper","Scissors"]
 
 
 # Writeup goes below
