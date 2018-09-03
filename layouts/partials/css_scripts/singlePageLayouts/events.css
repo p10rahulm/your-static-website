@@ -58,9 +58,10 @@ section#events .page_tagline{
     border-bottom: 1px solid rgba(0,0,0,0.25);
     padding-bottom: 1rem;
 }
-section#events .page_author{
+section#events .page_artist{
     padding: 1rem 0 0 0;
     color: #555;
+    font-size: 25px;
 }
 section#events  .page_date , section#events  .page_location{
     color: #333;
@@ -74,6 +75,7 @@ section#events  .page_date , section#events  .page_location{
     section#events  .page_date , section#events  .page_location{
         color: #444;
     }
+
 }
 @media (max-width: 768px) {
     section#events  .page_date , section#events  .page_location{

@@ -27,8 +27,8 @@
 }
 
 .mid_section{
-    border-top: 2px double #aa222222;
-    border-bottom: 2px double #aa222222;
+    border-top: 1px solid #008bffb3;
+    border-bottom: 1px solid #008bffb3;
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
 

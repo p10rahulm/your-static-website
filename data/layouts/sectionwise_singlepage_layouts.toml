@@ -77,7 +77,7 @@
 
     banner_image = "events/clean_bandit.jpg"
     caption_image = "dog_popup_thanks3.jpg"
-    layout = "courses"
+    layout = "events"
     # Sharer Stuff
     enable_comments = true
     # Popup Stuff
@@ -119,7 +119,28 @@
     date = 2018-06-08T19:44:35+05:30
 
     caption_image = "dog_popup_thanks3.jpg"
-    layout = "notes"
+    layout = "thoughts"
+    # Sharer Stuff
+    enable_comments = true
+    # Popup Stuff
+    show_popup = true
+    popup_activation_button = true
+    activate_popup_on_delay = true
+    activate_popup_on_exit_intent = true
+    activate_popup_on_scroll = true
+    # Sharer Stuff
+    show_sharer = true
+    rollup_sharer_active= true
+    fixed_sharer_active = true
+    content_sharer_active= true
+[[sections]]
+    name = "presentations"
+    title = "These are the days when the sun never sets"
+    author = "Llama"
+    date = 2018-12-08T19:44:35+05:30
+
+    caption_image = "dog_popup_thanks3.jpg"
+    layout = "presentations"
     # Sharer Stuff
     enable_comments = true
     # Popup Stuff

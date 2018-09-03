@@ -25,7 +25,7 @@
                 </div>
                 {{end}}
                 {{if isset .Params "who"}}
-                <div class="page_author">
+                <div class="page_artist">
                     Artist: {{.Params.who | default ($.Scratch.Get "page_layout").who}}
                 </div>
                 {{end}}

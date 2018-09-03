@@ -1,0 +1,143 @@
+.page_title{
+    padding: 1.5rem 0 0 0;
+}
+
+
+.page_author{
+    padding: 0.5rem 0 0 0;
+}
+.page_tagline{
+    font-style: italic;
+    font-weight: 200;
+    font-size: 16px;
+    font-family: "EB Garamond", "Lora", serif;
+}
+.page_main_section, .page_main_section p, .page_main_section li{
+    line-height: 1.5;
+    font-size: 18px;
+    font-family: "EB Garamond", "Lora", serif;
+}
+.page_main_section li,.page_files_container li{
+    line-height: 2;
+    padding-left: 1.5rem;
+}
+.page_main_section {
+    padding: 0.75rem 0 0 0;
+}
+
+
+.page_content{
+    padding: 0 0 20px 0;
+}
+.page_content *:first-of-type{
+    margin-top: 0px;
+}
+.page_abstract_identifier{
+    color: #a22;
+    padding: 0 5px 0 0;
+}
+.page_details {
+    font-family: "EB Garamond", "Lora", serif;
+    padding: 0rem 0.5rem 0rem 0.5rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-auto-rows: minmax(2rem, auto);
+}
+.page_details_identifier{
+    color: #a22;
+    padding: 15px 5px 10px 0;
+    font-family: "Lora", "EB Garamond", serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    text-align: left;
+}
+.page_filename{
+    text-align: left;
+    cursor: pointer;
+    font-family: "EB Garamond", "Lora", serif;
+}
+
+.table_field{
+    padding-right: 1rem;
+    font-weight: 800;
+}
+
+.page_header_section{
+    padding-bottom: 1rem;
+}
+.mid_section{
+    overflow: auto;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+.table_value{
+
+}
+.table_element{
+    border-bottom: 1px solid rgba(150,150,150,0.1);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.page_files_container{
+    margin:1.00rem auto 1.00rem auto;
+    border-bottom: 1px solid rgba(200,200,200,0.5);
+}
+.close_container_box{
+    background-color: #ddd;
+    text-align: center;
+    width: 75px;
+    height: 30px;
+    line-height: 20px;
+    font-size: 0.75rem;
+    font-family: "EB Garamond", "Lora", serif;
+    font-style: italic;
+    margin-left: auto;
+    margin-right: 0%;
+    margin-bottom: -10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.close_container_box:hover{
+    background-color: #ccc;
+    transition-duration: 0.3s;
+    transition-property:background-color;
+    transition-timing-function: ease-in-out;
+}
+
+@media only screen and (min-width: 1200px){
+    .table_element{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .images_section{
+        width: 100%;
+    }
+
+    #featured_image,#ytplayer {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: auto;
+        height: calc(100vh - 81px - 33px - 96px);
+        max-height: calc(1.25 * 100vw);
+    }
+    .other_images_container{
+        width: 100%;
+    }
+    .other_images{
+        max-height: 100px;
+        max-width: 100px;
+        width: 50px;
+        height: 50px;
+        border: 2px solid rgba(0,0,0,0.25);
+        border-radius: 50px;
+        margin: 5px 10px;
+    }
+
+}
+

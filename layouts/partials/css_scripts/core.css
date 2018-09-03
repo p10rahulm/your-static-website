@@ -431,20 +431,27 @@ small,
     font-family: "EB Garamond", "Lora", serif;
 }
 .page_author{
+    font-size: 18px;
+    font-weight: 800;
+    color: #aa2222;
+    font-family: "EB Garamond", "Lora", serif;
+}
+.page_artist{
     font-size: 25px;
     font-weight: 800;
+    color: #aa2222;
     font-family: "Lora", "EB Garamond", serif;
 }
  .page_date ,  .page_location{
     font-size: 18px;
-    font-family: "Lora", "EB Garamond", serif;
+    font-family: "EB Garamond", "Lora", serif;
     font-weight: 500;
 }
 
-.page_title::selection,.page_tagline::selection,.page_author::selection,.page_date::selection,.page_location::selection {
+.page_title::selection,.page_tagline::selection,.page_author::selection,.page_date::selection,.page_location::selection,.page_artist::selection {
     background: rgba(255, 134, 0, 0.4);
 }
-.page_title::-moz-selection,.page_tagline::-moz-selection,.page_author::-moz-selection,.page_date::-moz-selection,.page_location::-moz-selection {
+.page_title::-moz-selection,.page_tagline::-moz-selection,.page_author::-moz-selection,.page_date::-moz-selection,.page_location::-moz-selection,.page_artist::-moz-selection {
     background: rgba(255, 134, 0, 0.4);
 }
 
@@ -454,11 +461,15 @@ small,
         font-weight: 700;
     }
 
-     .page_author{
+    .page_artist{
         font-size: 23px;
         font-weight: 600;
     }
-     .page_date ,  .page_location{
+    .page_author{
+        font-size: 17px;
+        font-weight: 700;
+    }
+     .page_date ,  .page_location {
         font-size: 17px;
         font-weight: 500;
     }
@@ -472,10 +483,10 @@ small,
         font-size: 1.1rem;
     }
 
-     .page_author{
+     .page_artist{
         font-size: 1.25rem;
     }
-     .page_date ,  .page_location{
+     .page_date ,  .page_location,.page_author{
         font-size: 1rem;
     }
 }
@@ -484,7 +495,36 @@ small,
         font-size: 1.5rem;
     }
 
-     .page_date ,  .page_location{
+     .page_date ,  .page_location,.page_author{
         font-size: 0.9rem;
+    }
+}
+.hide_it_off_screen {
+    position: absolute;
+    left: -10000px;
+    top: -10000px;
+}
+.page_content {
+    font-family: "EB Garamond", "Lora", serif;
+}
+.page_content li{
+    padding-left: 1.5rem;
+}
+.page_inline_identifier{
+    color: #a22;
+    padding: 0 5px 0 0;
+}
+
+.page_pdf_embed{
+    height: calc(100vh - 71px - 40px);
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+@media screen and (max-width: 1200px) {
+    .page_pdf_embed {
+        height: calc(100vh - 81px - 33px - 40px);
     }
 }
