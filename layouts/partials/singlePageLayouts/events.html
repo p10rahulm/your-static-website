@@ -47,24 +47,28 @@
                         {{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}
                     </div>
                 </div>
+                {{if or (isset .Params "posters") (isset .Params "youtube_ids")}}
                 <div class = "images_section" >
                     <div id="featured_image_container">
+                        {{if isset .Params "posters"}}
                         <img id = "featured_image" src='/img/{{ index (.Params.posters) 0 | default ($.Scratch.Get "page_layout").banner_image}}'>
+                        {{end}}
                         {{if isset .Params "youtube_ids"}}
-                        <iframe id="ytplayer" type="text/html" width="350" height="300" src="https://www.youtube.com/embed/{{ index (.Params.youtube_ids) 0 | default ($.Scratch.Get "page_layout").youtube_id}}?autoplay=0&enablejsapi=1&controls=1&fs=1" frameborder="0" allowfullscreen controls></iframe>
+                        <iframe id="ytplayer" type="text/html" width="350" height="300" src="https://www.youtube.com/embed/{{ index (.Params.youtube_ids) 0 }}?autoplay=0&enablejsapi=1&controls=1&fs=1" frameborder="0" allowfullscreen controls></iframe>
                         {{end}}
                     </div>
 
                     <div class="other_images_container">
-                        {{range .Params.posters}}
+                        {{if isset .Params "posters"}}{{range .Params.posters}}
                         <img class = "other_images image_thumbs" src="/img/{{.}}">
-                        {{end}}
+                        {{end}}{{end}}
                         {{if isset .Params "youtube_ids"}}
                         {{range .Params.youtube_ids}}
                         <img class = "other_images video_thumbs" src="https://img.youtube.com/vi/{{.}}/1.jpg">
                         {{end}}{{end}}
                     </div>
                 </div>
+                {{end}}
 
             </div>
         </div>

@@ -23,7 +23,7 @@ Morbi tincidunt nisi sit amet risus lacinia ornare. Duis mattis diam urna, a sol
     {{ $.Scratch.Set "single_layout_prebuilds" $.Site.Data.layouts.sectionwise_singlepage_layouts }}
     {{range where (index ($.Scratch.Get "single_layout_prebuilds") "sections") ".name" .Section }}
         {{$prebuild_layout := .}}
-        {{ $section_var.Add "layout_field_ranges" (slice "title" "author" "caption_image" "layout" "youtube_id" "tagline" "who" "when" "location" "banner_image" "date" "has_math" "highlight_style" "highlight_languages") }}
+        {{ $section_var.Add "layout_field_ranges" (slice "title" "author" "caption_image" "layout" "tagline" "who" "when" "location" "banner_image" "date" "has_math" "highlight_style" "highlight_languages") }}
         {{range ($section_var.Get "layout_field_ranges")}}
             {{if isset $prebuild_layout .}}
                 {{ $.Scratch.SetInMap "page_layout" . ( index $prebuild_layout .) }}

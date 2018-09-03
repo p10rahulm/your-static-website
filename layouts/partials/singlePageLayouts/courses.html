@@ -26,7 +26,7 @@
                 <img id = "featured_image" src='/img/{{ index (.Params.posters) 0 }}'>
                 {{end}}
                 {{if isset .Params "youtube_ids"}}
-                <iframe id="ytplayer" type="text/html" width="350" height="300" src="https://www.youtube.com/embed/{{ index (.Params.youtube_ids) 0 | default ($.Scratch.Get "page_layout").youtube_id}}?autoplay=0&enablejsapi=1&controls=1&fs=1" frameborder="0" allowfullscreen controls></iframe>
+                <iframe id="ytplayer" type="text/html" width="350" height="300" src="https://www.youtube.com/embed/{{ index (.Params.youtube_ids) 0}}?autoplay=0&enablejsapi=1&controls=1&fs=1" frameborder="0" allowfullscreen controls></iframe>
                 {{end}}
             </div>
 

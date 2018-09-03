@@ -53,7 +53,6 @@
     caption_image = "dog_popup_thanks3.jpg"
     layout = "courses"
     banner_image = "dog_popup_thanks3.jpg"
-    youtube_id = "lk60ObnbIOk"
     # Sharer Stuff
     enable_comments = true
     # Popup Stuff
@@ -79,7 +78,6 @@
     banner_image = "events/clean_bandit.jpg"
     caption_image = "dog_popup_thanks3.jpg"
     layout = "courses"
-    youtube_id = "lk60ObnbIOk"
     # Sharer Stuff
     enable_comments = true
     # Popup Stuff
