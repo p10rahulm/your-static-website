@@ -39,6 +39,7 @@
             </div>
         </div>
     </div>
+    {{if or (isset .Params "price") (isset .Params "size") (isset .Params "num_pages") (isset .Params "isbn") (isset .Params "reading_level") (isset .Params "recommended_audience") (isset .Params "format") (isset .Params "publisher") (isset .Params "date_of_publication") (isset .Params "language")}}
     <div class ="page_detail_container">
         <div class="page_details_identifier">Details</div>
         <div class="page_details">
@@ -54,6 +55,7 @@
         {{if isset .Params "language"}}<div class="table_field table_element">Language</div><div class="table_value table_element">{{.Params.language}}</div>{{end}}
         </div>
     </div>
+    {{end}}
     <div id="page_footer">
         {{if .Params.categories}}
         <div class="page_meta"><span class = "page_meta_descriptor">Categories:</span>

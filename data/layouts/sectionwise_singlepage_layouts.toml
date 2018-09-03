@@ -48,9 +48,11 @@
 [[sections]]
     name = "courses"
     title = "We all learn about learning it all"
+    tagline = "Come ye come all, to learn with us"
     author = "He or She"
     caption_image = "dog_popup_thanks3.jpg"
     layout = "courses"
+    banner_image = "dog_popup_thanks3.jpg"
     youtube_id = "lk60ObnbIOk"
     # Sharer Stuff
     enable_comments = true
