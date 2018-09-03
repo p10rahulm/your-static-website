@@ -24,6 +24,13 @@
     author = "Rahul Madhavan"
     caption_image = "dog_popup_thanks3.jpg"
     layout = "codePage"
+    has_math = true
+    # Highlight.js global options, View this demo and choose: https://highlightjs.org/static/demo/
+    # Global settings are default. You can override on individual pages. Only if the highlight option is true on page and global level, highlight is used.
+    #   For the list of supported languages and styles, see:
+    #   https://cdnjs.com/libraries/highlight.js/
+    highlight_style = "github-gist"
+    highlight_languages = ["htmlbars","bash"]
     # Sharer Stuff
     enable_comments = true
     # Popup Stuff

@@ -18,7 +18,7 @@ section#events{
     background-size:100vw calc(50vh - 71px);
 }
 .event_background{
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0.75), rgba(255,255,255,0.85) 45%, rgba(255,255,255,0.55) 65%,rgba(200,200,200,0.15));
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.75), rgba(252,252,254,0.85) 45%, rgba(255,255,255,0.55) 65%,rgba(200,200,200,0.15));
     border-bottom-right-radius: 20%;
     border-bottom-left-radius: 20%;
     border-top-left-radius: 25%;
@@ -45,85 +45,42 @@ section#events{
 .page_header_section{
     position: relative;
     margin: 0 auto;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1.0rem;
 }
 
 section#events .page_title{
-    font-size: 36px;
-    font-weight: 800;
-    font-family: "Lora", "EB Garamond", serif;
     padding: 1.5rem 0 0 0;
     width: 90%;
     margin: 0 auto;
     color: #555;
 }
 section#events .page_tagline{
-    font-style: italic;
-    font-weight: 200;
-    font-size: 18px;
-    font-family: "EB Garamond", "Lora", serif;
     border-bottom: 1px solid rgba(0,0,0,0.25);
     padding-bottom: 1rem;
 }
 section#events .page_author{
-    padding: 0.5rem 0 0 0;
-    font-size: 25px;
-    font-weight: 800;
+    padding: 1rem 0 0 0;
     color: #555;
-    font-family: "Lora", "EB Garamond", serif;
 }
 section#events  .page_date , section#events  .page_location{
-    font-size: 18px;
-    font-family: "Lora", "EB Garamond", serif;
-    font-weight: 500;
     color: #333;
 }
 
 @media (max-width: 1200px) {
-    section#events .page_title{
-        font-size: 30px;
-        font-weight: 700;
-    }
     section#events .page_tagline {
         color: #333;
     }
 
-    section#events  .page_author{
-        font-size: 23px;
-        font-weight: 600;
-    }
     section#events  .page_date , section#events  .page_location{
-        font-size: 17px;
-        font-weight: 500;
         color: #444;
     }
 }
 @media (max-width: 768px) {
-    section#events  .page_title{
-        font-size: 1.75rem;
-        font-weight: 600;
-    }
-    section#events  .page_tagline {
-        font-size: 1.1rem;
-    }
-
-    section#events  .page_author{
-        font-size: 1.25rem;
-    }
     section#events  .page_date , section#events  .page_location{
-        font-size: 1rem;
         color: #555;
     }
 }
-@media (max-width: 500px) {
-    section#events  .page_title{
-        font-size: 1.5rem;
-    }
 
-    section#events  .page_date , section#events  .page_location{
-        font-size: 0.9rem;
-    }
-}
 #featured_image_container{
     position: relative;
     margin-top: 0.5rem;

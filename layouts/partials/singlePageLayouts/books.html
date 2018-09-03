@@ -15,9 +15,10 @@
     <div class ="page_header_section">
         <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
         <div class="page_author">Author: {{.Params.Author | default ($.Scratch.Get "page_layout").author}}</div>
-        <div class="page_tagline">{{(.Params.tagline)}}</div>
+        {{if isset .Params "tagline"}}<div class="page_tagline">{{(.Params.tagline)}}</div>{{end}}
     </div>
     <div class="mid_section">
+        {{if isset .Params "images"}}
         <div class = "images_section" >
             <div id="featured_image_container">
                 <img id = "featured_image" src='/img/{{ index (.Params.images) 0 | default ($.Scratch.Get "page_layout").banner_image}}'>
@@ -29,9 +30,10 @@
                 {{end}}
             </div>
         </div>
+        {{end}}
 
         <div class = "page_main_section">
-            <div class="page_abstract"><span class="page_abstract_identifier">Short Summary: </span>{{(.Params.abstract)}}</div>
+            {{if isset .Params "abstract"}}<div class="page_abstract"><span class="page_abstract_identifier">Short Summary: </span>{{(.Params.abstract)}}</div>{{end}}
             <div class="page_content">
             {{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}
             </div>

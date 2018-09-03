@@ -114,16 +114,6 @@ verboseLog =true
     # Will load the appropriate module only if above two are present
     comment_count = true
 
-
-    # Highlight.js global options, View this demo and choose: https://highlightjs.org/static/demo/
-    # Global settings are default. You can override on individual pages. Only if the highlight option is true on page and global level, highlight is used.
-    #   For the list of supported languages and styles, see:
-    #   https://cdnjs.com/libraries/highlight.js/
-    highlight = false
-    highlight_languages = ["htmlbars","bash"]
-    # highlight_languages = []
-    highlight_style = "ocean"
-
     # The following go on the footer.
     show_back_to_top = true
 

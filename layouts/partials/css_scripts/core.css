@@ -387,7 +387,7 @@ small,
 
 
 #page_footer{
-    padding-top: 1rem;
+    padding-top: 1.5rem;
     padding-bottom:1.5rem;
     border-top: 1px solid #eaeaea;
     font-size:15px;
@@ -441,6 +441,12 @@ small,
     font-weight: 500;
 }
 
+.page_title::selection,.page_tagline::selection,.page_author::selection,.page_date::selection,.page_location::selection {
+    background: rgba(255, 134, 0, 0.4);
+}
+.page_title::-moz-selection,.page_tagline::-moz-selection,.page_author::-moz-selection,.page_date::-moz-selection,.page_location::-moz-selection {
+    background: rgba(255, 134, 0, 0.4);
+}
 
 @media (max-width: 1200px) {
     .page_title{
