@@ -7,7 +7,7 @@ num_featured = 5
 number_in_list_page = 5
 sort_field = "title"
 sort_order = "asc"
-card_layout = "long_list_with_image"
+card_layout = "responsive_3cards_wbox"
 pagination_layout = "view_more_scroll"
 
 

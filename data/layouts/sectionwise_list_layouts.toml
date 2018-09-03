@@ -376,23 +376,20 @@
     name = "presentations"
     title = "Presentations"
     subtitle = "Presented with pride"
-    num_featured = 4
+    num_featured = 5
     number_in_list_page = 5
     sort_field = "title"
     sort_order = "asc"
-    card_layout = "long_list_with_image"
+    card_layout = "responsive_3cards_wbox"
     pagination_layout = "view_more_scroll"
 
     [[sections.fields]]
         field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
         prefix = ""
         class = "card_title"
+        truncate_size = 50
         postfix = ""
-    [[sections.fields]]
-        field_name = "introduction" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-        prefix = "Introduction: "
-        class = "card_details left_align"
-        postfix = ""
+
     [[sections.fields]]
         field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
         prefix = ""

@@ -66,6 +66,8 @@
 
 .page_header_section{
     padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(200,200,200,0.5);
+
 }
 .mid_section{
     overflow: auto;
@@ -83,7 +85,6 @@
 
 .page_files_container{
     margin:1.00rem auto 1.00rem auto;
-    border-bottom: 1px solid rgba(200,200,200,0.5);
 }
 .close_container_box{
     background-color: #ddd;

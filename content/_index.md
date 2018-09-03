@@ -278,6 +278,15 @@ fixed_sharer_active = true
     card_layout = "responsive_3cards_wbox"
 
 [[featured_pages.sections]]
+    name = "presentations"
+    title = "Presentations"
+    subtitle = "I present only the very uber"
+    num_featured = 5
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "responsive_3cards_wbox"
+
+[[featured_pages.sections]]
     name = "events"
     title = "Events"
     subtitle = "We take care of events all over the imagination"

@@ -6,10 +6,6 @@ date = 2018-06-08T19:44:35+05:30
 tagline = "An in-depth look at management with a specific view on Marketing"
 
 # Place the pdfs below in the "files" folder inside static folder:
-files = [
-    { name = "Brochure for 5S Course", pdf_file = "Brochure_for_5S_books.pdf" },
-    { name = "Business and Ethics", pdf_file = "B_E_Brochure.pdf" },
-]
 pdf_file = "Brochure_for_5S_books.pdf"
 # -----------------------------------------
 # Summary section
@@ -41,7 +37,7 @@ topics = ["management"]
 # Writeup below presentation
 # -----------------------------------------
 
-writeup_title = "Footnotes"
+writeup_title = "Presentation Notes"
 # Writeup content below
 +++
 1. This presentation was made at IIT Madras in 2004
