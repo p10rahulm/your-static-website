@@ -1,5 +1,5 @@
 +++
-title = "A review on Management topics"
+title = "Difficulties are unimaginable possibilities"
 author = "K S Madhavan and Goody Two Shoes"
 date = 2018-06-08T19:44:35+05:30
 

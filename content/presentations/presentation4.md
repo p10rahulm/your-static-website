@@ -1,16 +1,17 @@
 +++
-title = "A review on Management topics"
+title = "Dragon warrior Crouching Rajni"
 author = "K S Madhavan and Goody Two Shoes"
 date = 2018-06-08T19:44:35+05:30
 
-tagline = "An in-depth look at management with a specific view on Marketing"
+introduction_title = ""
+introduction = '''
+An in-depth look at management with a specific view on Marketing'''
 
 # Place the pdfs below in the "files" folder inside static folder:
 files = [
     { name = "Brochure for 5S Course", pdf_file = "Brochure_for_5S_books.pdf" },
     { name = "Business and Ethics", pdf_file = "B_E_Brochure.pdf" },
 ]
-pdf_file = "Brochure_for_5S_books.pdf"
 # -----------------------------------------
 # Summary section
 # -----------------------------------------

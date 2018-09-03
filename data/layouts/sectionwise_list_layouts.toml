@@ -372,7 +372,32 @@
             style = "margin"
             value = "0px 0 5px auto"
 
+[[sections]]
+    name = "presentations"
+    title = "Presentations"
+    subtitle = "Presented with pride"
+    num_featured = 4
+    number_in_list_page = 5
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "long_list_with_image"
+    pagination_layout = "view_more_scroll"
 
+    [[sections.fields]]
+        field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = ""
+        class = "card_title"
+        postfix = ""
+    [[sections.fields]]
+        field_name = "introduction" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = "Introduction: "
+        class = "card_details left_align"
+        postfix = ""
+    [[sections.fields]]
+        field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        prefix = ""
+        class = "card_summary left_align"
+        postfix = ""
 
 [[sections]]
     name = "thoughts"

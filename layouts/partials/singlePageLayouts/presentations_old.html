@@ -12,9 +12,8 @@
 
 
 <section id="presentations" class="single_page_layout container">
-    <div class ="page_header_section center_align">
+    <div class ="page_header_section">
         <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
-        {{if isset .Params "tagline"}}<div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>{{end}}
         <div class="page_author">Author: {{.Params.faculty | default ($.Scratch.Get "page_layout").author}}</div>
         <div class="page_date">{{ dateFormat "Monday, Jan 2, 2006" (.Date| default ($.Scratch.Get "page_layout").date) }}</div>
     </div>
@@ -31,16 +30,25 @@
         </div>
     </div>
     {{end}}
-    {{if isset .Params "pdf_file"}}
+    {{if isset .Params "files"}}
     <div class ="page_files_container">
         <div id="page_pdf_viewer_container" >
             <div class="close_container_box">
                 Close
             </div>
             <object>
-                <embed id = "featured_file" class = "page_pdf_embed" src="/files/{{.Params.pdf_file}}" type="application/pdf">
+                <embed id = "featured_file" class = "page_pdf_embed" src="/files/{{(index .Params.files 0).pdf_file}}" type="application/pdf">
             </object>
         </div>
+        <div class="page_details_identifier">Files</div>
+        <div class="page_main_section page_content">
+        <ol class="page_files">
+        {{range $indx,$elmt := .Params.files}}
+        <li class="page_filename">{{$elmt.name}}</li>
+        {{end}}
+        </ol>
+        </div>
+
     </div>
     {{end}}
     {{if .Content}}
