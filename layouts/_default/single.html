@@ -36,7 +36,6 @@ Morbi tincidunt nisi sit amet risus lacinia ornare. Duis mattis diam urna, a sol
     {{/* Set layout from prebuilt layouts data sheet if exists */}}
     {{range ($section_var.Get "layout_field_ranges")}}
         {{if isset $.Params .}}
-            <script>console.log("Hi" + "{{.}}");</script>
             {{ $.Scratch.SetInMap "page_layout" . ( index $.Params .) }}
         {{end}}
     {{end}}

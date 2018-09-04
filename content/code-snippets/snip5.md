@@ -29,7 +29,7 @@ enable_comments = true
 # Highlight.js: https://highlightjs.org/static/demo/
 math = false
 highlight = false
-highlight_languages = []
+highlight_languages = ["bash","html"]
 highlight_style = "ocean"
 
 # Tags and categories
