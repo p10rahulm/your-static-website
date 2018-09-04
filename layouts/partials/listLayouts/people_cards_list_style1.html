@@ -19,7 +19,7 @@
             {{ range $pages }}
             <div class ="details_cards">
                 <a href="{{.Permalink}}">
-                    <img src="/placeholder.jpg" data-src="/img/{{.Params.avatar_image}}" class="card_img lazy" alt="{{.Title}}">
+                    <img src="/placeholder.jpg" data-src="/img/{{.Params.portrait}}" class="card_img lazy" alt="{{.Title}}">
                 </a>
                 <a href="{{.Permalink}}">
                     {{$page_summary := .Params.summary_content | default .Summary}}
@@ -45,7 +45,7 @@
                     <div class="card_{{.field_name}} {{.class}}">
                         {{.prefix }}
                         {{ range $index, $element := (index $page_params .field_name) }}
-                        <a href="{{$element.url}}" target="_blank"><span><i class="fa {{$element.icon}}"></i></span></a>
+                        <a href="{{$element.url}}" target="_blank"><span><i class="{{$element.icon_pack}} {{$element.icon}}"></i></span></a>
                         {{end}}
                         {{.postfix | markdownify}}
                     </div>

@@ -141,7 +141,7 @@ fixed_sharer_active = true
 
         # ---------------------------------
         [about_us.detail.bottom_left]
-                title = "Interests"
+            title = "Interests"
 
             # Choose fa (font-awesome) icons below
             [[about_us.detail.bottom_left.list]]

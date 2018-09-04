@@ -214,7 +214,6 @@
         prefix = ""
         postfix = ""
 
-
     [[sections.fields]]
         field_name = "presenters" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
         class = "card_authors left_align"
