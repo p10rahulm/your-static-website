@@ -8,86 +8,98 @@
 
 
 <section id="people" class="single_page_layout container">
-            <div id="profile">
-                {{ if isset .Params "portrait" }}
-                <div class="portrait" style="background-image: url('/img/{{ ($.Params.portrait) }}');"></div>
+    <div id="profile">
+        {{ if isset .Params "portrait" }}
+        <div class="portrait" style="background-image: url('/img/{{ ($.Params.portrait) }}');"></div>
+        {{ end }}
+
+        <div class="portrait-title">
+            <h2 itemprop="name_title">
+                {{ $.Params.name | default ($.Scratch.Get "page_layout").title}}
+            </h2>
+            {{ if isset $.Params "role" }}
+            <h3 itemprop="name_subtitle">
+                {{ $.Params.role }}
+            </h3>
+            {{ end }}
+            {{ if isset $.Params "affiliations" }}{{ range $.Params.affiliations }}
+            <h3 itemprop="affiliations" itemscope itemtype="http://schema.org/Organization">
+                {{ with .url }}<a href="{{ . }}" target="_blank" itemprop="url" rel="noopener">{{ end }}
+                <span itemprop="name">{{ .name }}</span>
+                {{ if .url }}</a>{{ end }}
+            </h3>
+            {{ end }}{{ end }}
+        </div>
+        {{ if isset $.Params "social" }}
+        <ul class="network-icon" aria-hidden="true">
+            {{ range $.Params.social }}
+            <li>
+                <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">
+                    <i class="{{ .icon_pack }} {{ .icon }} big-icon"></i>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </div>
+
+    <div class = "content">
+        {{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify | emojify }}
+    </div>
+
+    <div class="flex">
+        <div id="about_us_left_list">
+            {{if isset $.Params.interests "title" }}
+            <h3>{{ $.Params.interests.title }}</h3>
+            {{ end }}
+            {{if isset $.Params.interests "list" }}
+            <ul class="ul-about_us_left_list">
+                {{ range $.Params.interests.list }}
+                <li>
+                    <i class="fa-li fa {{ .icon }}"></i>
+                    <div class="description">
+                        <p class="title">{{ .title }}</p>
+                        <p class="subtitle">{{ .subtitle }}</p>
+                    </div>
+                </li>
                 {{ end }}
+            </ul>
+            {{ end }}
+        </div>
 
-                <div class="portrait-title">
-                    <h2 itemprop="name_title">
-                        {{ $.Params.name | default ($.Scratch.Get "page_layout").title}}
-                    </h2>
-                    {{ if isset $.Params "role" }}
-                    <h3 itemprop="name_subtitle">
-                        {{ $.Params.role }}
-                    </h3>
-                    {{ end }}
-                    {{ if isset $.Params "affiliations" }}{{ range $.Params.affiliations }}
-                    <h3 itemprop="affiliations" itemscope itemtype="http://schema.org/Organization">
-                        {{ with .url }}<a href="{{ . }}" target="_blank" itemprop="url" rel="noopener">{{ end }}
-                        <span itemprop="name">{{ .name }}</span>
-                        {{ if .url }}</a>{{ end }}
-                    </h3>
-                    {{ end }}{{ end }}
-                </div>
-                {{ if isset $.Params "social" }}
-                <ul class="network-icon" aria-hidden="true">
-                    {{ range $.Params.social }}
-                    <li>
-                        <a href="{{ .link | safeURL }}" target="_blank" rel="noopener">
-                            <i class="{{ .icon_pack }} {{ .icon }} big-icon"></i>
-                        </a>
-                    </li>
-                    {{ end }}
-                </ul>
+        <div id="about_us_right_list">
+            {{if isset $.Params.education "title" }}
+            <h3>{{ $.Params.education.title }}</h3>
+            {{ end }}
+            {{if isset $.Params.education "list" }}
+            <ul class="ul-about_us_right_list">
+                {{ range $.Params.education.list }}
+                <li>
+                    <i class="fa-li fa {{ .icon }}"></i>
+                    <div class="description">
+                        <p class="title">{{ .title }}</p>
+                        <p class="subtitle">{{ .subtitle }}</p>
+                    </div>
+                </li>
                 {{ end }}
-            </div>
-            <!--{{if isset $.Params.about_us.detail "title" }}-->
-            <!--<h1 id="title">-->
-                <!--{{ $.Params.about_us.detail.title }}-->
-            <!--</h1>-->
-            <!--{{ end }}-->
-            <div class = "content">
-                {{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify | emojify }}
-            </div>
-
-            <div class="flex">
-                <div id="about_us_left_list">
-                    {{if isset $.Params.interests "title" }}
-                    <h3>{{ $.Params.interests.title }}</h3>
-                    {{ end }}
-                    {{if isset $.Params.interests "list" }}
-                    <ul class="ul-about_us_left_list">
-                        {{ range $.Params.interests.list }}
-                        <li>
-                            <i class="fa-li fa {{ .icon }}"></i>
-                            <div class="description">
-                                <p class="title">{{ .title }}</p>
-                                <p class="subtitle">{{ .subtitle }}</p>
-                            </div>
-                        </li>
-                        {{ end }}
-                    </ul>
-                    {{ end }}
-                </div>
-
-                <div id="about_us_right_list">
-                    {{if isset $.Params.education "title" }}
-                    <h3>{{ $.Params.education.title }}</h3>
-                    {{ end }}
-                    {{if isset $.Params.education "list" }}
-                    <ul class="ul-about_us_right_list">
-                        {{ range $.Params.education.list }}
-                        <li>
-                            <i class="fa-li fa {{ .icon }}"></i>
-                            <div class="description">
-                                <p class="title">{{ .title }}</p>
-                                <p class="subtitle">{{ .subtitle }}</p>
-                            </div>
-                        </li>
-                        {{ end }}
-                    </ul>
-                    {{ end }}
-                </div>
-            </div>
+            </ul>
+            {{ end }}
+        </div>
+    </div>
+    <div id="page_footer">
+        {{if .Params.divisions}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Divisions:</span>
+            {{range .Params.divisions}}
+            <a class="page_meta_links" href = "/divisions/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+        {{if .Params.teams}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Teams:</span>
+            {{range .Params.teams}}
+            <a class="page_meta_links" href = "/teams/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+    </div>
 </section>
