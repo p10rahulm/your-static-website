@@ -19,8 +19,9 @@ Comments = "Published in the foremost literary publication"
 caption_image = "dog_popup_thanks3.jpg"
 # The below summary message will be shown in all the cards pointing to this article. If not available, it would be generated from the content of the page.
 summary_content = '''
-The book is very very good. It needs to be read by one and all.
-Generally I don't say much. But know this is true'''
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae laoreet est.
+
+Nulla diam quam, ultrices vel ex sit amet, scelerisque mattis sapien. Nunc ex orci, bibendum non leo congue, efficitur suscipit sapien. Cras sodales neque venenatis, faucibus velit eu, mattis elit. Sed sed lobortis arcu. Cras vel ipsum vel velit blandit hendrerit in quis elit. Aenean consequat sem et mi ornare, vel fringilla ante aliquam. Sed in ultrices justo. Aliquam ac neque eu lectus suscipit euismod ut at felis. '''
 
 
 # -----------------------------------------

@@ -140,7 +140,7 @@
         field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
         prefix = ""
         class = "card_summary"
-        truncate_size = 750
+        truncate_size = 500
         postfix = ""
 
     [[sections.fields]]

@@ -18,7 +18,9 @@
     transition: transform .75s;
     transform: translateY(-10px);
 }
-
+#{{.name}}_cards .details_cards p {
+    font-size: 1rem;
+}
 #{{.name}}_cards .details_cards a:hover{
     text-decoration: none;
 }
@@ -35,7 +37,9 @@
     overflow:auto;
 }
 
-
+#{{.name}}_cards .card_icon_links {
+    padding-left: 1rem;
+}
 
 {{$section_name := .name}}
 {{range .fields}}
