@@ -67,7 +67,10 @@
         <div class="page_details_identifier">Documentation</div>
 
         {{range $indx,$elmt := .Params.files}}
-        <div class="page_filename">{{add $indx 1}}. {{$elmt.name}}</div>
+        <div class="page_filename_container">
+            <span class="page_filename"><span class="page_filename_numbers">{{add $indx 1}}. </span>{{$elmt.name}}</span>
+            <a href="/files/{{.pdf_file}}" target="_blank"><span class="download_button"><i class="fa fa-download"></i></span></a>
+        </div>
         {{end}}
 
         <div id="page_pdf_viewer_container" class="hide_it_off_screen">

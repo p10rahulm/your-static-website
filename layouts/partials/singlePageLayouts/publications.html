@@ -1,0 +1,125 @@
+{{$link := (printf "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/%s.min.css" ($.Params.highlight_style | default ($.Scratch.Get "page_layout").highlight_style)) }}
+{{partial "functions/load_external_css.html" (dict "external_url" $link "scratch" .Scratch)}}
+
+{{if not (eq (len ($.Params.highlight_languages | default ($.Scratch.Get "page_layout").highlight_languages)) 0)}}
+    {{$link := "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"}}
+    {{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" .Scratch "async" false "defer" false)}}
+    {{range ($.Params.highlight_languages | default ($.Scratch.Get "page_layout").highlight_languages)}}
+        {{$link := (printf "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/%s.min.js" .) }}
+        {{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" $.Scratch "async" false "defer" false)}}
+    {{end}}
+{{end}}
+
+{{if .Params.math | default ($.Scratch.Get "page_layout").has_math}}
+    {{$link := "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"}}
+    {{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" .Scratch "async" true "defer" false)}}
+{{end}}
+
+<style type="text/css">
+    {{ partial "css_scripts/singlePageLayouts/publications.css" . | safeCSS }}
+</style>
+
+<script type="text/javascript">
+    {{partial "js_scripts/singlePageLayouts/publications.js" . | safeJS }}
+</script>
+
+
+<section id="courses" class="single_page_layout container">
+    <div class ="page_header_section">
+        <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
+        <div class="page_date">{{dateFormat "Monday, Jan 2, 2006" (.Date | default ($.Scratch.Get "page_layout").date)}}</div>
+        {{if isset .Params "authors"}}
+        <div class="page_author">
+            {{$num_authors:= len .Params.authors}}
+            {{range $index,$element := .Params.authors}}{{ if eq $index (sub $num_authors 1)}} and {{else if $index }}, {{ end }}
+            <a class="author_links" href = "{{$element.url}}"><span class="author_names">{{$element.name}}</span></a>{{end}}
+        </div>
+        {{end}}
+        {{if isset .Params "short_intro"}}<div class="page_tagline">{{(.Params.short_intro)}}</div>{{end}}
+    </div>
+    <div class = "mid_section">
+
+        <div class = "page_main_section">
+            <div class="page_content">
+                {{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}
+            </div>
+        </div>
+        {{if isset .Params "comments"}}
+        <div class = "page_comments">
+            <span class = "comments_identifier">Comments: </span>{{.Params.comments}}
+        </div>
+        {{end}}
+        {{if isset .Params "links"}}
+        <div class = "page_links_container">
+            {{range .Params.links}}
+            <a class = "page_links" href="{{.url}}" target="_blank">
+                <i class="fa {{.icon}} page_link_icons"></i> {{.name}}
+            </a>
+            {{end}}
+        </div>
+        {{end}}
+    </div>
+
+    {{if isset .Params "files"}}
+    <div class ="page_files_container">
+        <div class="page_details_identifier">Documentation</div>
+
+        {{range $indx,$elmt := .Params.files}}
+        <div class="page_filename_container">
+            <span class="page_filename"><span class="page_filename_numbers">{{add $indx 1}}. </span>{{$elmt.name}}</span>
+            <a href="/files/{{.pdf_file}}" target="_blank"><span class="download_button"><i class="fa fa-download"></i></span></a>
+        </div>
+
+        {{end}}
+
+        <div id="page_pdf_viewer_container" class="hide_it_off_screen">
+            <div class="close_container_box">
+                Close
+            </div>
+        <object>
+            <embed id = "featured_file" class = "page_pdf_embed" src="/files/{{(index .Params.files 0).pdf_file}}" type="application/pdf">
+        </object>
+        </div>
+    </div>
+    {{end}}
+
+    <div id="page_footer">
+        {{if .Params.publication_types}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Publication Type:</span>
+            {{range .Params.publication_types}}
+            <a class="page_meta_links" href = "/publication_types/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+        {{if .Params.subjects}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Subjects:</span>
+            {{range .Params.subjects}}
+            <a class="page_meta_links" href = "/subjects/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+        {{if .Params.projects}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Projects:</span>
+            {{range .Params.projects}}
+            <a class="page_meta_links" href = "/projects/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+
+        {{if .Params.categories}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Categories:</span>
+            {{range .Params.Categories}}
+            <a class="page_meta_links" href = "/categories/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+        {{if .Params.tags}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Tags:</span>
+            {{range .Params.tags}}
+            <a class="page_meta_links" href = "/tags/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+
+    </div>
+</section>

@@ -137,7 +137,7 @@
         type = "list_of_links"
         postfix = "<hr>"
     [[sections.fields]]
-        field_name = "abstract" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
         prefix = ""
         class = "card_summary"
         truncate_size = 750
