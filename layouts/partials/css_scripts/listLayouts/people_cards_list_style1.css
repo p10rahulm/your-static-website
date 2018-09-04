@@ -8,6 +8,7 @@
 #{{.name}}_cards .card_img {
     height:250px;
     width:auto;
+    min-width: 250px;
     border-radius: 50%;
     text-align: center;
 }

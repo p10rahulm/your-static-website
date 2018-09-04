@@ -2,6 +2,8 @@
 
 {{ define "main" }}
     {{$section_var := newScratch}}
+    {{ $section_var.Add "layout_field_ranges" (slice "title" "author" "caption_image" "layout" "tagline" "who" "when" "location" "banner_image" "date" "has_math" "highlight_style" "highlight_languages") }}
+    {{/* Set main defaults */}}
     {{ $.Scratch.SetInMap "page_layout" "layout" ( .Params.layout | default "default")}}
     {{ $.Scratch.SetInMap "page_layout" "banner_image" "headers/bubbles-wide.jpg" }}
     {{ $.Scratch.SetInMap "page_layout" "title" ("Post Page" | humanize) }}
@@ -19,17 +21,26 @@ Morbi tincidunt nisi sit amet risus lacinia ornare. Duis mattis diam urna, a sol
 ` }}
 
 
-    {{/* Set layout from prebuilt layouts data sheet if exists*/}}
+    {{/* Set layout from prebuilt layouts data sheet if exists */}}
     {{ $.Scratch.Set "single_layout_prebuilds" $.Site.Data.layouts.sectionwise_singlepage_layouts }}
     {{range where (index ($.Scratch.Get "single_layout_prebuilds") "sections") ".name" .Section }}
         {{$prebuild_layout := .}}
-        {{ $section_var.Add "layout_field_ranges" (slice "title" "author" "caption_image" "layout" "tagline" "who" "when" "location" "banner_image" "date" "has_math" "highlight_style" "highlight_languages") }}
+
         {{range ($section_var.Get "layout_field_ranges")}}
             {{if isset $prebuild_layout .}}
                 {{ $.Scratch.SetInMap "page_layout" . ( index $prebuild_layout .) }}
             {{end}}
         {{end}}
     {{end}}
+
+    {{/* Set layout from prebuilt layouts data sheet if exists */}}
+    {{range ($section_var.Get "layout_field_ranges")}}
+        {{if isset $.Params .}}
+            <script>console.log("Hi" + "{{.}}");</script>
+            {{ $.Scratch.SetInMap "page_layout" . ( index $.Params .) }}
+        {{end}}
+    {{end}}
+
     {{partial (printf "singlePageLayouts/%s.html" (index ($.Scratch.Get "page_layout") "layout") ) . }}
     {{$.Scratch.Delete "page_layout"}}
 {{ end }}
