@@ -1,73 +1,77 @@
 +++
-title = "Pub9"
-date = 2018-07-17T23:40:15+05:30
-draft = false
-author = "Rahul Madhavan"
+title = "One giant leap for mankind? A cost-utility analysis of abolishing the law of gravity."
+date = 2018-07-17T23:40:05+05:30
+
+authors =  [
+                { name = "Rahul Madhavan", url = "/people/person1" },
+                { name = "Ankit Baraskar", url = "/people/person2" },
+                { name = "Sailesh Mukhopadhyay", url = "/people/person3" }
+            ]
+
+
+Comments = "Published in the foremost literary publication"
+
+# -----------------------------------------
+# Summary section
+# -----------------------------------------
 
 # The below image will be shown in all the cards pointing to this article
 caption_image = "dog_popup_thanks3.jpg"
+# The below summary message will be shown in all the cards pointing to this article. If not available, it would be generated from the content of the page.
+summary_content = '''
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae laoreet est.
 
-show_popup = true
-show_sharer = true
-rollup_sharer_active= true
-fixed_sharer_active = true
-content_sharer_active= true
+Nulla diam quam, ultrices vel ex sit amet, scelerisque mattis sapien. Nunc ex orci, bibendum non leo congue, efficitur suscipit sapien. Cras sodales neque venenatis, faucibus velit eu, mattis elit. Sed sed lobortis arcu. Cras vel ipsum vel velit blandit hendrerit in quis elit. Aenean consequat sem et mi ornare, vel fringilla ante aliquam. Sed in ultrices justo. Aliquam ac neque eu lectus suscipit euismod ut at felis. '''
 
-# Should this be listed in front page
+
+# -----------------------------------------
+# Meta
+# -----------------------------------------
+
+layout = "publications"
 featured = true
+enable_comments = false
+
+
+# Highlight.js: https://highlightjs.org/static/demo/
+math = true
+highlight = false
+highlight_languages = []
+highlight_style = "ocean"
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = []
-categories = []
-subjects = []
-# Project taxonomy (optional).
-#   Associate this publication with one or more of your projects.
-projects = []
-# Publication type taxonomy (optional).
-# Associate this publication with one or more types like
-# Uncategorized, Conference paper, Journal article, Manuscript, Report, Book, Book section
 publication_types = ["Journal article"]
-
-# Does this page contain LaTeX math? (true/false)
-math = true
-
-# Does this page require source code highlighting? (true/false)
-highlight = true
-highlight_languages = ["html","bash"]
-highlight_style = "ocean"
+subjects = ["programming"]
+projects = ["programming"]
+tags = ["html","programming","drivel","type","counting","show time"]
+categories = ["programming"]
 
 
-# Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-
-# Publication name and optional abbreviated version.
-name = "IEEE"
-
-# Abstract and optional shortened version.
-abstract = "We have created a framework for analyzing subscription based businesses in terms of a unified metric which we call SCV (single customer value). The major advance in this paper is to model customer churn as an exponential decay variable, which directly follows from experimental data relating to subscription based businesses. This Bayesian probabilistic model was used to compute an expected value for the revenue contribution of a single user. We obtain an exact closed-form solution for the constant churn model, and an approximate closed-form solution for the exponential decay model. In addition, we define a general methodology for decision making processes using sensitivity analysis of the model equation, which we illustrate with a real-life case study for a food based subscription business."
-
-# Featured image thumbnail (optional)
-image_preview = ""
 
 
-authors =  [
-                { name = "Rahul Madhavan", url = "/persons/rahulmadhavan" },
-                { name = "Ankit Baraskar", url = "/persons/ankitbaraskar" }
-            ]
+# Place the pdfs below in the "files" folder inside static folder:
+files = [
+    { name = "Brochure for 5S Course", pdf_file = "Brochure_for_5S_books.pdf" },
+    { name = "Business and Ethics", pdf_file = "B_E_Brochure.pdf" },
+]
+
+
+
+
 # Links (optional).
 [[links]]
-    icon = "fa-star"
-    url = "https://arxiv.org/pdf/1704.05729.pdf"
-[[links]]
     icon = "fa-tag"
+    name = "Arxiv Abstract"
     url = "https://arxiv.org/abs/1704.05729"
+[[links]]
+    icon = "fa-star"
+    name = "Arxiv Paper"
+    url = "https://arxiv.org/pdf/1704.05729.pdf"
 
 
-# Featured image
-# Place your image in the `static/img/` folder and reference its filename below, e.g. `image = "example.jpg"`.
-[header]
-        image = ""
-        caption = ""
-
+# Abstract goes below
 +++
-{{< figure src="/media/spf13.jpg" title="Steve Francia" >}}
+
+We have created a framework for analyzing subscription based businesses in terms of a unified metric which we call SCV (single customer value). The major advance in this paper is to model customer churn as an exponential decay variable, which directly follows from experimental data relating to subscription based businesses. This Bayesian probabilistic model was used to compute an expected value for the revenue contribution of a single user. We obtain an exact closed-form solution for the constant churn model, and an approximate closed-form solution for the exponential decay model. In addition, we define a general methodology for decision making processes using sensitivity analysis of the model equation, which we illustrate with a real-life case study for a food based subscription business.
+
