@@ -1,0 +1,207 @@
+.other_images_container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 350px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 1.5rem;
+    padding-top: 0.5rem;
+}
+
+.other_images{
+    width:100px;
+    height: 100px;
+    float: left;
+}
+.other_images{
+    max-height: 100px;
+    max-width: 100px;
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(0,0,0,0.25);
+    border-radius: 50px;
+    margin: 5px 5px;
+}
+#featured_image_container{
+    position: relative;
+    margin-top: 0.5rem;
+}
+#featured_image{
+    width: 350px;
+    height: 300px;
+    margin: 0rem 1rem 0 0;
+}
+#ytplayer{
+    display: none;
+    width: 350px;
+    height: 300px;
+    margin: 0rem 1rem 0 0;
+}
+.images_section{
+    float: left;
+    padding-top: 0.75rem;
+}
+.page_title{
+    font-size: 36px;
+    font-weight: 800;
+    font-family: "Lora", "EB Garamond", serif;
+    padding: 1.5rem 0 0 0;
+}
+.page_author{
+    padding: 0.5rem 0 0 0;
+    font-size: 16px;
+    font-weight: 800;
+    color: #aa2222;
+    font-family: "EB Garamond", "Lora", serif;
+}
+.page_tagline{
+    font-style: italic;
+    font-weight: 200;
+    font-size: 16px;
+    font-family: "EB Garamond", "Lora", serif;
+}
+.page_main_section, .page_main_section p{
+    line-height: 1.5;
+    font-size: 18px;
+    font-family: "EB Garamond", "Lora", serif;
+}
+.page_main_section {
+    padding: 0.75rem 0 0 0;
+}
+
+.page_abstract{
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid rgba(100,100,100,0.1);
+    font-style: italic;
+}
+.page_content{
+    padding: 0 0 20px 0;
+}
+.page_content *:first-of-type{
+    margin-top: 0px;
+}
+.page_abstract_identifier{
+    color: #a22;
+    padding: 0 5px 0 0;
+}
+.page_details {
+    font-family: "EB Garamond", "Lora", serif;
+    padding: 0rem 0.5rem 0rem 0.5rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-auto-rows: minmax(2rem, auto);
+}
+.page_details_identifier{
+    border-top: 1px solid rgba(0,0,0,0.1);
+    color: #a22;
+    padding: 15px 5px 10px 0;
+    font-family: "Lora", "EB Garamond", serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    text-align: left;
+}
+.page_filename{
+    text-align: left;
+    cursor: pointer;
+    font-family: "EB Garamond", "Lora", serif;
+}
+
+.table_field{
+    padding-right: 1rem;
+    font-weight: 800;
+}
+
+.page_header_section{
+    padding-bottom: 1rem;
+}
+.mid_section{
+    overflow: auto;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+.table_value{
+
+}
+.table_element{
+    border-bottom: 1px solid rgba(150,150,150,0.1);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.page_files_container{
+    margin:1.75rem auto 1.75rem auto;
+    text-align: center;
+}
+.close_container_box{
+    background-color: #ddd;
+    text-align: center;
+    width: 75px;
+    height: 30px;
+    line-height: 20px;
+    font-size: 0.75rem;
+    font-family: "EB Garamond", "Lora", serif;
+    font-style: italic;
+    margin-left: auto;
+    margin-right: 2.5%;
+    margin-bottom: -10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.close_container_box:hover{
+    background-color: #ccc;
+    transition-duration: 0.3s;
+    transition-property:background-color;
+    transition-timing-function: ease-in-out;
+}
+.page_pdf_embed{
+    height: calc(100vh - 71px - 30px);
+    width: 95%;
+    margin: 0 auto;
+}
+.hide_it_off_screen {
+    position: absolute;
+    left: -10000px;
+    top: -10000px;
+}
+
+@media screen and (max-width: 1200px) {
+    .page_pdf_embed {
+        height: calc(100vh - 81px - 33px - 30px);
+    }
+}
+@media only screen and (min-width: 1200px){
+    .table_element{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .images_section{
+        width: 100%;
+    }
+
+    #featured_image,#ytplayer {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: auto;
+        height: calc(100vh - 81px - 33px - 96px);
+        max-height: calc(1.25 * 100vw);
+    }
+    .other_images_container{
+        width: 100%;
+    }
+    .other_images{
+        max-height: 100px;
+        max-width: 100px;
+        width: 50px;
+        height: 50px;
+        border: 2px solid rgba(0,0,0,0.25);
+        border-radius: 50px;
+        margin: 5px 10px;
+    }
+
+}
+

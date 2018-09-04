@@ -202,45 +202,42 @@
     title = "Workshops"
     subtitle = "We have conducted workshops in all major companies in India in the power sector"
     num_featured = 3
-    number_in_list_page = 10
+    number_in_list_page = 5
     sort_field = "title"
     sort_order = "asc"
     card_layout = "list_of_large_cards_no_overlay"
     pagination_layout = "pages"
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
     [[sections.fields]]
-        field_name = "workshop_title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
         class = "card_title left_align"
-        prefix = "Title: "
+        prefix = ""
         postfix = ""
 
 
     [[sections.fields]]
         field_name = "presenters" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
-        type = "list_of_links"
         class = "card_authors left_align"
-        prefix = "Authors: "
+        prefix = "Presenters: "
         postfix = ""
 
     [[sections.fields]]
-        field_name = "topic" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        field_name = "workshop_date" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
         class = "card_details left_align"
-        prefix = "Topic: "
+        prefix = "Date: "
         postfix = ""
 
     [[sections.fields]]
-        field_name = "tagline" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        field_name = "short_intro" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
         class = "card_details left_align"
         prefix = "Description: "
         postfix = ""
 
     [[sections.fields]]
-        field_name = "client" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        field_name = "location" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
         class = "card_details left_align"
-        prefix = "Client: "
+        prefix = "Location: "
         postfix = ""
-
-
 
     [[sections.fields]]
         field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content

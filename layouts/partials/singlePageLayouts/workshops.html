@@ -1,0 +1,107 @@
+{{$link := "https://www.youtube.com/iframe_api"}}
+{{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" .Scratch "async" false "defer" false)}}
+
+<style type="text/css">
+    {{ partial "css_scripts/singlePageLayouts/workshops.css" . | safeCSS }}
+</style>
+
+<script type="text/javascript">
+    {{partial "js_scripts/singlePageLayouts/workshops.js" . | safeJS }}
+</script>
+
+
+{{partial "singlePageLayouts/page_photoswipe.html" . }}
+
+<section id="workshops" class="single_page_layout container">
+    <div class ="page_header_section">
+        <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
+        <div class="page_author">Faculty: {{.Params.faculty | default ($.Scratch.Get "page_layout").author}}</div>
+        {{if isset .Params "short_intro"}}<div class="page_tagline">{{(.Params.short_intro)}}</div>{{end}}
+    </div>
+    <div class = "mid_section">
+        {{if or (isset .Params "posters") (isset .Params "youtube_ids")}}
+        <div class = "images_section" >
+            <div id="featured_image_container">
+                {{if isset .Params "posters"}}
+                <img id = "featured_image" src='/img/{{ index (.Params.posters) 0 }}'>
+                {{end}}
+                {{if isset .Params "youtube_ids"}}
+                <iframe id="ytplayer" type="text/html" width="350" height="300" src="https://www.youtube.com/embed/{{ index (.Params.youtube_ids) 0}}?autoplay=0&enablejsapi=1&controls=1&fs=1" frameborder="0" allowfullscreen controls></iframe>
+                {{end}}
+            </div>
+
+            <div class="other_images_container">
+                {{if isset .Params "posters"}}{{range .Params.posters}}
+                <img class = "other_images image_thumbs" src="/img/{{.}}">
+                {{end}}{{end}}
+                {{if isset .Params "youtube_ids"}}{{range .Params.youtube_ids}}
+                <img class = "other_images video_thumbs" src="https://img.youtube.com/vi/{{.}}/1.jpg">
+                {{end}}{{end}}
+            </div>
+        </div>
+        {{end}}
+
+        <div class = "page_main_section">
+            <div class="page_content">
+                {{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}
+            </div>
+        </div>
+    </div>
+    {{if or (isset .Params "who_should_attend") (isset .Params "pre_requisites") (isset .Params "workshop_date") (isset .Params "duration") (isset .Params "delivery") (isset .Params "location") (isset .Params "fees") (isset .Params "certification")}}
+    <div class ="page_detail_container">
+        <div class="page_details_identifier">Details</div>
+        <div class="page_details">
+            {{if isset .Params "who_should_attend"}}<div class="table_field table_element">Who should Attend</div><div class="table_value table_element">{{.Params.who_should_attend}}</div>{{end}}
+            {{if isset .Params "pre_requisites"}}<div class="table_field table_element">Pre-requisites</div><div class="table_value table_element">{{.Params.pre_requisites}}</div>{{end}}
+            {{if isset .Params "workshop_date"}}<div class="table_field table_element">Workshop Date</div><div class="table_value table_element">{{.Params.workshop_date}}</div>{{end}}
+            {{if isset .Params "duration"}}<div class="table_field table_element">Duration</div><div class="table_value table_element">{{.Params.duration}}</div>{{end}}
+            {{if isset .Params "delivery"}}<div class="table_field table_element">Delivery</div><div class="table_value table_element">{{.Params.delivery}}</div>{{end}}
+            {{if isset .Params "location"}}<div class="table_field table_element">Location</div><div class="table_value table_element">{{.Params.location}}</div>{{end}}
+            {{if isset .Params "fees"}}<div class="table_field table_element">Fees</div><div class="table_value table_element">{{.Params.fees}}</div>{{end}}
+            {{if isset .Params "certification"}}<div class="table_field table_element">Certification</div><div class="table_value table_element">{{.Params.certification}}</div>{{end}}
+        </div>
+    </div>
+    {{end}}
+    {{if isset .Params "files"}}
+    <div class ="page_files_container">
+        <div class="page_details_identifier">Documentation</div>
+
+        {{range $indx,$elmt := .Params.files}}
+        <div class="page_filename">{{add $indx 1}}. {{$elmt.name}}</div>
+        {{end}}
+
+        <div id="page_pdf_viewer_container" class="hide_it_off_screen">
+            <div class="close_container_box">
+                Close
+            </div>
+        <object>
+            <embed id = "featured_file" class = "page_pdf_embed" src="/files/{{(index .Params.files 0).pdf_file}}" type="application/pdf">
+        </object>
+        </div>
+    </div>
+    {{end}}
+
+    <div id="page_footer">
+        {{if .Params.categories}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Categories:</span>
+            {{range .Params.Categories}}
+            <a class="page_meta_links" href = "/categories/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+        {{if .Params.tags}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Tags:</span>
+            {{range .Params.tags}}
+            <a class="page_meta_links" href = "/tags/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+        {{if .Params.subjects}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Subjects:</span>
+            {{range .Params.subjects}}
+            <a class="page_meta_links" href = "/subjects/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+    </div>
+</section>
