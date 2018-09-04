@@ -400,7 +400,7 @@ small,
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: flex-start;
-    line-height: 1;
+    line-height: 1.5;
 }
 .page_meta_links{
     color: #333;
