@@ -1,23 +1,23 @@
 +++
-title = "I'm only human after all"
+title = "Simmering pot-holes"
 date = 2018-06-08T19:44:36+05:30
 author = "Rahul Madhavan"
 
 # -----------------------------------------
 # Formatting
 # -----------------------------------------
-header_image = ""
-background_image = "backgrounds/heart.jpg"
-background_color = "rgba(255,255,255,0.05)"
+header_image = "backgrounds/floral.png"
+background_image = "backgrounds/marguerite.jpg"
+background_color = "rgba(255,255,255,0.25)"
 foreground_color = "rgba(255,255,255,0.7)"
 text_padding = "10% 5%"
-text_color = "#472"
+text_color = "#164"
 text_size = "1.35rem"
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
 # The below image will be shown in all the cards pointing to this article
-caption_image = "backgrounds/heart.jpg"
+caption_image = "dog_popup_thanks3.jpg"
 # The below summary message will be shown in all the cards pointing to this article. If not available, it would be generated from the content of the page.
 summary_content = ""
 # -----------------------------------------

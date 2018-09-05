@@ -117,6 +117,13 @@
     title = "My thoughts are dark and deep. Miles to go before I sleep"
     author = "Rahul Madhavan"
     date = 2018-06-08T19:44:35+05:30
+    header_image = ""
+    background_image = "backgrounds/scroll.jpg"
+    background_color = "rgba(255,255,255,0.15)"
+    foreground_color = "rgba(255,255,255,0.5)"
+    text_padding = "150px 150px 2rem 150px"
+    text_color = "#0095eb"
+    text_size = "25px"
 
     caption_image = "dog_popup_thanks3.jpg"
     layout = "thoughts"

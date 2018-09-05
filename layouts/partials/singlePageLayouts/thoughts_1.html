@@ -3,18 +3,15 @@
 </style>
 
 <script type="text/javascript">
-    {{partial "js_scripts/singlePageLayouts/thoughts.js" . | safeJS }}
+    {{partial "js_scripts/singlePageLayouts/thoughts1.js" . | safeJS }}
 </script>
 
 <section id="thoughts" class="single_page_layout container">
     <div class ="page_header_section">
         <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
         <div class="page_author">Author: {{.Params.Author | default ($.Scratch.Get "page_layout").author}}</div>
-        <div class="page_date">{{ dateFormat "Monday, Jan 2, 2006" (.Date| default ($.Scratch.Get "page_layout").date) }}</div>
+        <div class="page_created_date">{{ dateFormat "Monday, Jan 2, 2006" (.Date| default ($.Scratch.Get "page_layout").date) }}</div>
     </div>
-    {{if isset .Params "header_image"}}{{if ne .Params.header_image ""}}
-    <img class="page_header_image" src="/img/{{.Params.header_image}}">
-    {{end}}{{end}}
     <div class="mid_section">
         <div class = "page_main_section">
             <div class="page_content">

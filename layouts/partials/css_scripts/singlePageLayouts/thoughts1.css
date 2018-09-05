@@ -1,0 +1,37 @@
+
+.page_header_section{
+    padding-bottom: 1rem;
+}
+.page_title{
+    font-size: 1.75rem;
+    font-weight: 800;
+    font-family: "Lora", "EB Garamond", serif;
+    padding: 2rem 0 0 0;
+}
+.page_author{
+    padding: 0.5rem 0 0 0;
+    font-size: 16px;
+    font-weight: 800;
+    color: #aa2222;
+    font-family: "EB Garamond", "Lora", serif;
+}
+.page_main_section, .page_main_section p{
+    line-height: 1.5;
+    font-size: 18px;
+    font-family: "EB Garamond", "Lora", serif;
+}
+.page_main_section {
+    padding: 0.875rem 0 0 0;
+}
+.page_content{
+    padding: 10px 0 20px 0;
+
+}
+
+.mid_section{
+    border-top: 1px solid #008bffb3;
+    border-bottom: 1px solid #008bffb3;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+
+}

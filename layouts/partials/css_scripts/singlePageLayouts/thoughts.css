@@ -1,5 +1,60 @@
+.mid_section,.mid_section p{
+    line-height: 1.5;
+    font-family: "EB Garamond", "Lora", serif;
+    font-size: {{.Params.text_size | default ($.Scratch.Get "page_layout").text_size}};
+    color:{{.Params.text_color | default ($.Scratch.Get "page_layout").text_color}};
+}
+
+
+{{if isset .Params "background_image"}}{{if ne .Params.background_image ""}}
+.mid_section{
+    background-image: url(/img/{{.Params.background_image |  default ($.Scratch.Get "page_layout").background_image}});
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.mid_section,.mid_section p{
+    font-size: {{.Params.text_size | default ($.Scratch.Get "page_layout").text_size}};
+    color: {{.Params.text_color | default ($.Scratch.Get "page_layout").text_color}};
+}
+.page_main_section{
+    padding:{{.Params.text_padding | default ($.Scratch.Get "page_layout").text_padding}};
+    background-color: {{.Params.background_color | default ($.Scratch.Get "page_layout").background_color}};
+}
+.page_content{
+    background-color: {{.Params.foreground_color | default ($.Scratch.Get "page_layout").foreground_color}};
+}
+{{end}}{{end}}
+
+
+{{if isset .Params "header_image"}}
+    {{if ne .Params.header_image ""}}
+    .page_header_image{
+        padding-bottom: 2rem;
+    }
+    {{else}}
+    .page_header_section{
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+        margin-bottom: 2rem;
+    }
+    {{end}}
+{{else}}
+    .page_header_section{
+        border-bottom: 1px solid rgba(0,0,0,0.15);
+        margin-bottom: 2rem;
+    }
+{{end}}
+
+#page_footer{
+    margin-top: 2rem;
+}
+
+.page_header_section, .mid_section{
+    text-align: center;
+
+}
 .page_header_section{
     padding-bottom: 1rem;
+
 }
 .page_title{
     font-size: 1.75rem;
@@ -14,22 +69,8 @@
     color: #aa2222;
     font-family: "EB Garamond", "Lora", serif;
 }
-.page_main_section, .page_main_section p{
-    line-height: 1.5;
-    font-size: 18px;
+.page_date{
+    font-size: 16px;
     font-family: "EB Garamond", "Lora", serif;
 }
-.page_main_section {
-    padding: 0.875rem 0 0 0;
-}
-.page_content{
-    padding: 10px 0 20px 0;
-}
 
-.mid_section{
-    border-top: 1px solid #008bffb3;
-    border-bottom: 1px solid #008bffb3;
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
-
-}
