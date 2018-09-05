@@ -2,7 +2,7 @@
 title = "{{ replace .TranslationBaseName "-" " " | title }}"
 date = {{ .Date }}
 draft = false
-author = "Rahul Madhavan"
+author = "{{ .Site.Params.site_author_name }}"
 allow_comments = false
 show_title_date_author = false
 

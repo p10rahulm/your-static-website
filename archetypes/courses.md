@@ -1,7 +1,7 @@
 +++
 title = "{{ replace .TranslationBaseName "-" " " | title }}"
 date = {{ .Date }}
-faculty = "K S Madhavan and Goody Two Shoes"
+faculty = "{{ .Site.Params.site_author_name }}"
 
 short_intro = "An in-depth look at management with a specific view on Marketing"
 

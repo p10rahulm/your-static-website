@@ -1,7 +1,7 @@
 +++
 title = "{{ replace .TranslationBaseName "-" " " | title }}"
 date = {{ .Date }}
-presenters = "K S Madhavan and Goody Two Shoes"
+presenters = "{{ .Site.Params.site_author_name }}"
 
 short_intro = "Sustainable practices for creating a new you"
 

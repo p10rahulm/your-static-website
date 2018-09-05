@@ -1,5 +1,5 @@
 +++
-title = "Undoing damages"
+title = "Paying for damages"
 date = 2018-06-08T19:44:36+05:30
 author = "Rahul Madhavan"
 

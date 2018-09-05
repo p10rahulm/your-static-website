@@ -2,7 +2,7 @@
 title = "{{ replace .TranslationBaseName "-" " " | title }}"
 date = {{ .Date }}
 draft = false
-author = "Rahul Madhavan"
+author = "{{ .Site.Params.site_author_name }}"
 
 # The below image will be shown in all the cards pointing to this article
 caption_image = "bubbles.jpg"
