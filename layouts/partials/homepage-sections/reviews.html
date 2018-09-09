@@ -1,8 +1,7 @@
 <style type="text/css">
     {{ partial "css_scripts/homeSection/reviews.css"  . | safeCSS}}
 </style>
-{{$link := "https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"}}
-{{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" $.Scratch "async" false "defer" false)}}
+<!--Based on https://medium.com/@andybarefoot/a-masonry-style-layout-using-css-grid-8c663d355ebb-->
 
 <script type="text/javascript">
     {{partial "js_scripts/homepage/reviews.js" . | safeJS }}

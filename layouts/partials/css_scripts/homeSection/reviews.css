@@ -8,7 +8,7 @@
 .review_grid_element {
     font-family: "EB Garamond", "Lora", serif;
     padding: 7px;
-    box-shadow: 4px 4px 9px 2px rgba(0,70,50,0.12), 6px 6px 20px 0px rgba(10,70,70,0.08);
+    box-shadow: 4px 4px 9px 2px rgba(20,70,50,0.12), 6px 6px 20px 0px rgba(10,70,70,0.08);
 }
 .content{
     padding-bottom: 5px;
