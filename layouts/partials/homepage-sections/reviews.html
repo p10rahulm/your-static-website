@@ -1,0 +1,27 @@
+<style type="text/css">
+    {{ partial "css_scripts/homeSection/reviews.css"  . | safeCSS}}
+</style>
+<!-- Container for Clients?-->
+<section id="reviews" class="home-section">
+    <div class="container">
+        {{$section := "reviews"}}
+        {{$fields:= (index $.Site.Data.layouts (index .Params $section).headline_layout).headline_elements}}
+        {{$content := (index .Params $section).headline}}
+        {{partial "functions/render_content_layout_fields.html" (dict "fields" $fields "content" $content "scratch" .Scratch)}}
+
+        {{/*partial "functions/render_fields.html" (dict "fields" $.Params.logo_wall.headline_elements "scratch" .Scratch)*/}}
+
+        <div class="logo-grid">
+            {{if isset .Params.logo_wall "logos"}}
+            {{range .Params.logo_wall.logos}}
+            <div class="logo-child"
+                 style = "padding-top: 1rem;">
+                <a href="{{.link | relURL}}">
+                    <img src="/placeholder.jpg" data-src="{{.source}}" class="lazy" alt="{{.name}}">
+                </a>
+            </div>
+            {{end}}
+            {{end}}
+        </div>
+    </div>
+</section>

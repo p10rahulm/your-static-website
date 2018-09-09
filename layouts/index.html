@@ -18,6 +18,9 @@
     {{if .Params.cta.active}}
     {{partial "homepage-sections/cta.html" .}}
     {{end}}
+    {{if .Params.reviews.active}}
+        {{partial "homepage-sections/reviews.html" .}}
+    {{end}}
     {{if .Params.contact.active}}
         {{partial "homepage-sections/contact.html" .}}
     {{end}}

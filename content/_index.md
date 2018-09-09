@@ -330,6 +330,10 @@ fixed_sharer_active = true
 # Call to Action section
 [cta]
     active = true
+    headline_layout = "headline_elements"
+    [showcase.headline]
+        title = "Greatest ever works"
+        subtitle = "Major Projects and Work Interests"
     # Check the toml file in data/layouts/ to see what is rendered.
     # The render function is in layouts/functions/render_content_layout_fields.html and is claled from cta.html in layouts/homepage-sections
     layout = "home_cta"
@@ -341,6 +345,62 @@ fixed_sharer_active = true
     cta_button1_text = "Start a new blog with Raz"
     cta_button2_text = "Sign up for our blog"
 
+
+# ----------------------------------
+# Call to Action section
+[reviews]
+    active = true
+    # Check the toml file in data/layouts/ to see what is rendered.
+    headline_layout = "headline_elements"
+    [showcase.headline]
+        title = "Only the most relevant"
+        subtitle = "Major Projects and Work Interests"
+    # The render function is in layouts/functions/render_content_layout_fields.html and is called from cta.html in layouts/homepage-sections
+    layout = "home_reviews"
+    [reviews.review]
+    reviewer_name = "Mighty Thor"
+    reviewer_location = "Asgard"
+    reviewer_review = "My strength through all these years of thick and thin has been sustained by this beautiful blog"
+    [reviews.review]
+    reviewer_name = "Cabaret Dancer"
+    reviewer_location = "Moulin Rouge, Paris"
+    reviewer_review = "I could use a lot of practice in my line of work. But no need for any practice as long as I have this blog. It teaches me everything!"
+    [reviews.review]
+    reviewer_name = "Drama Queen"
+    reviewer_location = "College, India"
+    reviewer_review = "I wanted to get the attention of all boys in our college. I tried make up and coy smiles, but now I don't need any as this blog has taught me drama and style!"
+    [reviews.review]
+    reviewer_name = "Geoffrey Boycott"
+    reviewer_location = "Yorkshire, UK"
+    reviewer_review = "Even my mom wouldn't get out to Jummpy Anderson once she read these beautiful tricks on how to bat"
+    [reviews.review]
+    reviewer_name = "A Dolphin"
+    reviewer_location = "Sea"
+    reviewer_review = "Dear earthling. I hope you can still save the world. I was told you should read this blog everyday, for an article a day keeps the darkness away"
+    [reviews.review]
+    reviewer_name = "Kabuliwala"
+    reviewer_location = "Afghanistan"
+    reviewer_review = "I have a single image of my child. Memories are mostly etched inside my forehear and the past is at its glorious best in my dreams than in reality. Yet when i see this blog, it revives a sense of belonging. Taschakor, khuda hafiz"
+    [reviews.review]
+    reviewer_name = "Spock"
+    reviewer_location = "Vulcan"
+    reviewer_review = "There are moments in their lives where men see exactly what they wish to see. I wish to see and appreciate this blog. It's only logical. May this blog live long and prosper"
+    [reviews.review]
+    reviewer_name = "Muldrer"
+    reviewer_location = "Place X"
+    reviewer_review = "I've searched all my life for the missing multitudes of evidence against government coverups of unidentified beings amongst ourselves. This blog revealed the whole truth to me"
+    [reviews.review]
+    reviewer_name = "Paul McCartney"
+    reviewer_location = "Yellow Submarine"
+    reviewer_review = "All my life I was trying to make Jude Happy, But what I got in my old age was all too rappy. Maybe my songs, they sail away into bliss, as I hope the same for a blog like this!"
+    [reviews.review]
+    reviewer_name = "Adam Smith"
+    reviewer_location = "Capitol Country"
+    reviewer_review = "Help as little as you must and see earn as much as you lust. These foundational principles of my economics are being questioned through this blog by an agent provocateur. All dialogue is good except that which is built on deception. down with this blog!"
+    [reviews.review]
+    reviewer_name = "Madame Bovine"
+    reviewer_location = "Sl House"
+    reviewer_review = "You can call me madam bovine, never in the spotlight did i much shine. But this much believe me i can assure you, what this blog says about you eating me is true"
 
 
 
