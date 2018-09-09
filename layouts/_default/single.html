@@ -1,4 +1,16 @@
+{{ define "headr"}}
+    {{ $.Scratch.Set "single_layout_prebuilds" $.Site.Data.layouts.sectionwise_singlepage_layouts }}
+    {{range where (index ($.Scratch.Get "single_layout_prebuilds") "sections") ".name" .Section }}
+        {{$prebuild_layout := .}}
+        {{if isset $prebuild_layout "title_field"}}
+            {{$.Scratch.Set "title" ( index $.Params (index $prebuild_layout "title_field")) }}
+        {{end}}
+    {{end}}
 
+    {{ partial "header" . }}
+    {{$.Scratch.Delete "title"}}
+    {{$.Scratch.Delete "single_layout_prebuilds"}}
+{{ end }}
 
 {{ define "main" }}
     {{$section_var := newScratch}}
