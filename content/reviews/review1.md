@@ -1,8 +1,8 @@
++++
 # TODO
 # Masonry Reviews for front page
 # add reviews pages
 # add soundcast pages, faqs pages. Thats it.
-+++
 title = "Review1"
 date = 2018-06-08T19:44:36+05:30
 draft = false

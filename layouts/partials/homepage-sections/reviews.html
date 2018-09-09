@@ -1,6 +1,13 @@
 <style type="text/css">
     {{ partial "css_scripts/homeSection/reviews.css"  . | safeCSS}}
 </style>
+{{$link := "https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"}}
+{{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" $.Scratch "async" false "defer" false)}}
+
+<script type="text/javascript">
+    {{partial "js_scripts/homepage/reviews.js" . | safeJS }}
+</script>
+
 <!-- Container for Clients?-->
 <section id="reviews" class="home-section">
     <div class="container">
@@ -9,16 +16,16 @@
         {{$content := (index .Params $section).headline}}
         {{partial "functions/render_content_layout_fields.html" (dict "fields" $fields "content" $content "scratch" .Scratch)}}
 
-        {{/*partial "functions/render_fields.html" (dict "fields" $.Params.logo_wall.headline_elements "scratch" .Scratch)*/}}
 
-        <div class="logo-grid">
-            {{if isset .Params.logo_wall "logos"}}
-            {{range .Params.logo_wall.logos}}
-            <div class="logo-child"
-                 style = "padding-top: 1rem;">
-                <a href="{{.link | relURL}}">
-                    <img src="/placeholder.jpg" data-src="{{.source}}" class="lazy" alt="{{.name}}">
-                </a>
+        <div class="reviews_grid">
+            {{if isset .Params.reviews "review"}}
+            {{range .Params.reviews.review}}
+            <div class="review_grid_element">
+                <div class="content">
+                    <div class="review_card_review">{{.reviewer_review}}</div>
+                    <div class="review_card_reviewer">{{.reviewer_name}}</div>
+                    <div class="review_card_location">{{.reviewer_location}}</div>
+                </div>
             </div>
             {{end}}
             {{end}}
