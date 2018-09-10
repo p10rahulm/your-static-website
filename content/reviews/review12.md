@@ -1,11 +1,11 @@
 +++
-reviewed_item = "Keys"
-reviewed_item_creator = "Keymaker"
-reviewed_item_categories = ["Security"]
-reviewed_item_link = "https://en.wikipedia.org/wiki/Key_(cryptography)"
+reviewed_item = "Amrut"
+reviewed_item_creator = "N.R. Jagdale"
+reviewed_item_categories = ["Gourmet"]
+reviewed_item_link = "http://www.amrutdistilleries.com/"
 stars = 4.5
 
-headline = "A key a day can keep the hacker away"
+headline = "The third best in the world"
 date = 2018-06-08T19:44:35+05:30
 author = "Rahul Madhavan"
 
@@ -15,18 +15,17 @@ author = "Rahul Madhavan"
 # -----------------------------------------
 
 # Featured image The featured image will be the first from the following list
-images = ["reviews/keys.jpg",]
+images = ["reviews/amrut.jpg",]
 
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
 
 # The below image will be shown in all the cards pointing to this article
-caption_image = "reviews/keys.jpg"
+caption_image = "reviews/amrut.jpg"
 # The below summary message will be shown in all the cards pointing to this article. If not available, it would be generated from the content of the page.
 summary_content = '''
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean lobortis dignissim feugiat. Cras quis venenatis urna. Aenean
-Generally I don't say much. But know this is true'''
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.'''
 
 
 # -----------------------------------------

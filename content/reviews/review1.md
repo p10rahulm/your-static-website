@@ -25,7 +25,7 @@ images = ["reviews/opel1.png","reviews/opel2.jpg"]
 caption_image = "reviews/opel1.png"
 # The below summary message will be shown in all the cards pointing to this article. If not available, it would be generated from the content of the page.
 summary_content = '''
-The course is very very good. It needs to be read by one and all.
+Donec scelerisque ullamcorper nibh, ac eleifend leo viverra non. Vestibulum accumsan lacus non luctu
 Generally I don't say much. But know this is true'''
 
 

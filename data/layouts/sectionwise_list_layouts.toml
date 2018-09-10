@@ -248,29 +248,39 @@
     name = "reviews"
     title = "Reviews"
     subtitle = "I review, everything i do!"
-    num_featured = 9
+    num_featured = 12
     number_in_list_page = 12
-    sort_field = "reviewed_item"
-    sort_order = "asc"
-    card_layout = "responsive_3cards_wbox"
+    sort_field = "name"
+    sort_order = "desc"
+    card_layout = "masonry_grid_cards"
     pagination_layout = "pages"
 
     [[sections.fields]]
-        field_name = "reviewed_item" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        field_name = "reviewed_item_categories"
+        type = "simple_list"
         class = "cards_title center_align"
+        truncate_size = 15
         prefix = ""
         postfix = ""
-        [[sections.fields.styles]]
-            style = "margin"
-            value = "5px auto"
 
-    #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
+
     [[sections.fields]]
-        field_name = "headline" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        field_name = "reviewed_item"
+        class = "cards_tagline center_align"
+        prefix = ""
+        postfix = ""
+
+
+    [[sections.fields]]
+        field_name = "headline"
         class = "card_summary left_align"
         prefix = ""
         postfix = ""
-
+    [[sections.fields]]
+        field_name = "summary"
+        class = "card_summary left_align"
+        prefix = ""
+        postfix = ""
 
 [[sections]]
     name = "events"

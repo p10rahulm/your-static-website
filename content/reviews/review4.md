@@ -5,7 +5,7 @@ reviewed_item_categories = ["Health"]
 reviewed_item_link = "https://greatist.com/health/healthy-fast-breakfast-recipes"
 stars = 4.5
 
-headline = "Heartbeat on wheels"
+headline = "My morning dose"
 date = 2018-06-08T19:44:35+05:30
 author = "Rahul Madhavan"
 
@@ -15,17 +15,17 @@ author = "Rahul Madhavan"
 # -----------------------------------------
 
 # Featured image The featured image will be the first from the following list
-images = ["reviews/milk.jpg"]
+images = ["reviews/breakfast.jpg","reviews/milk.jpg"]
 
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
 
 # The below image will be shown in all the cards pointing to this article
-caption_image = "reviews/milk.jpg"
+caption_image = "reviews/breakfast.jpg"
 # The below summary message will be shown in all the cards pointing to this article. If not available, it would be generated from the content of the page.
 summary_content = '''
-The course is very very good. It needs to be read by one and all.
+Donec scelerisque ullamcorper nibh, ac eleifend leo viverra non. Vestibulum accumsan lacus non luctus mattis. Sed a varius arcu. Etiam in justo quis urna mollis blandit i
 Generally I don't say much. But know this is true'''
 
 

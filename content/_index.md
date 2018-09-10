@@ -272,10 +272,10 @@ fixed_sharer_active = true
     name = "reviews"
     title = "Reviews"
     subtitle = "I review, everything i do!"
-    num_featured = 9
-    sort_field = "title"
-    sort_order = "asc"
-    card_layout = "responsive_3cards_wbox"
+    num_featured = 12
+    sort_field = "name"
+    sort_order = "desc"
+    card_layout = "masonry_grid_cards"
 
 [[featured_pages.sections]]
     name = "presentations"

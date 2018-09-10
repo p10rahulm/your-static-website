@@ -1,0 +1,87 @@
+{{$pages := $.pages}}
+{{$context := $.context}}
+{{$scratch := $.scratch}}
+{{$fields := $.context.fields}}
+<header>
+    <style>
+        {{partial "css_scripts/listLayouts/masonry_grid_cards.css" $.context | safeCSS}}
+    </style>
+    <script type="text/javascript">
+        {{partial "js_scripts/listLayouts/masonry_grid_cards.js" $.context | safeJS}}
+    </script>
+</header>
+<section id="featured_{{$.context.name}}" class="home-section">
+    <div class="container">
+        <div class="section-heading">
+            {{$.context.title | humanize}}
+        </div>
+        <div class="section-subheading">
+            {{$.context.subtitle | humanize}}
+        </div>
+        <div id="{{$.context.name}}_cards" class="cardList">
+            {{ range $pages }}
+            <div class ="details_cards">
+                <div id="{{.Params.reviewed_item}}" class="content">
+                    <a href="{{.Permalink}}">
+                        <img src="/img/{{.Params.caption_image}}" class="card_img" alt="{{.Params.reviewed_item}}">
+                    </a>
+                    <a href="{{.Permalink}}">
+                        {{$page_summary := .Params.summary_content | default .Summary}}
+                        {{$page_params := .Params}}
+                        {{$page_permalink := .Permalink}}
+
+                        {{range $fields }}
+                        {{if eq .type "list_of_links"}}
+                        {{$list_of_links_length := (len (index $page_params .field_name))}}
+                        <div class="card_{{.field_name}} {{.class}}">
+                            {{.prefix }}
+                            {{ range $index, $element := (index $page_params .field_name) }}
+                            <a href="{{.url}}"><span>
+                                {{ if and (ne $index 0) (eq $index (sub $list_of_links_length 1)) }} and
+                                {{ else if ne $index 0}},
+                                {{ end }}
+                                {{$element.name}}</span></a>
+                            {{end}}
+                            {{.postfix | markdownify}}
+                        </div>
+
+                        {{else if eq .type "icon_links"}}
+                        <div class="card_{{.field_name}} {{.class}}">
+                            {{.prefix }}
+                            {{ range $index, $element := (index $page_params .field_name) }}
+                            <a href="{{$element.url}}" target="_blank"><span><i class="fa {{$element.icon}}"></i></span></a>
+                            {{end}}
+                            {{.postfix| markdownify}}
+                        </div>
+                        {{else if eq .type "simple_list"}}
+                        <div class="card_{{.field_name}} {{.class}}">
+                            {{.prefix }}
+                            {{$truncate_size := .truncate_size}}
+                            {{ range $index, $element := (index $page_params .field_name) }}
+                                {{ $element | markdownify | truncate ($truncate_size | default 300)}}
+                            {{end}}
+                            {{.postfix| markdownify}}
+                        </div>
+                        {{else}}
+
+                        <div class="card_{{.field_name}} {{.class}}">
+                            {{if eq .field_name "summary"}}
+                            {{.prefix }}{{$page_summary | markdownify | truncate (.truncate_size | default 300)}}{{.postfix}}
+                            {{else}}
+                            <a href="{{$page_permalink}}">
+                                {{.prefix }}{{(index $page_params .field_name) | markdownify | truncate (.truncate_size | default 300)}}{{.postfix}}
+                            </a>
+                            {{end}}
+                        </div>
+
+                        {{ end }}
+                        {{ end }}
+                    </a>
+                </div>
+
+            </div>
+            {{end}}
+        </div>
+
+    </div>
+</section>

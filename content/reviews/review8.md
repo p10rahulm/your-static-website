@@ -25,8 +25,8 @@ images = ["reviews/phone.jpg",]
 caption_image = "reviews/phone.jpg"
 # The below summary message will be shown in all the cards pointing to this article. If not available, it would be generated from the content of the page.
 summary_content = '''
-The course is very very good. It needs to be read by one and all.
-Generally I don't say much. But know this is true'''
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do'''
 
 
 # -----------------------------------------
