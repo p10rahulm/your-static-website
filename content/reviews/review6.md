@@ -1,7 +1,7 @@
 +++
 reviewed_item = "Maldives"
 reviewed_item_creator = ""
-reviewed_item_categories = ["Travel"]
+reviewed_item_categories = ["Lifestyle"]
 reviewed_item_link = "https://visitmaldives.com"
 stars = 4.5
 

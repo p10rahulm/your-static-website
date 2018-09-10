@@ -1,7 +1,7 @@
 +++
 reviewed_item = "Amrut"
 reviewed_item_creator = "N.R. Jagdale"
-reviewed_item_categories = ["Gourmet"]
+reviewed_item_categories = ["Lifestyle"]
 reviewed_item_link = "http://www.amrutdistilleries.com/"
 stars = 4.5
 

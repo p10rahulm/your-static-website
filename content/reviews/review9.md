@@ -1,7 +1,7 @@
 +++
 reviewed_item = "Bear"
 reviewed_item_creator = "Pessimists"
-reviewed_item_categories = ["Toys","Children"]
+reviewed_item_categories = ["Products"]
 reviewed_item_link = "https://en.wikipedia.org/wiki/Bear"
 stars = 4.5
 

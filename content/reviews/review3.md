@@ -1,7 +1,7 @@
 +++
 reviewed_item = "Deewar"
 reviewed_item_creator = "Yash Chopra"
-reviewed_item_categories = ["Movies"]
+reviewed_item_categories = ["Lifestyle"]
 reviewed_item_link = "https://www.imdb.com/title/tt0072860/"
 stars = 4.5
 

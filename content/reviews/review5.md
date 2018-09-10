@@ -1,7 +1,7 @@
 +++
 reviewed_item = "Keys"
 reviewed_item_creator = "Keymaker"
-reviewed_item_categories = ["Security"]
+reviewed_item_categories = ["Technology"]
 reviewed_item_link = "https://en.wikipedia.org/wiki/Key_(cryptography)"
 stars = 4.5
 

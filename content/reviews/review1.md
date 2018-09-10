@@ -1,7 +1,7 @@
 +++
 reviewed_item = "Opel Astra Car"
-reviewed_item_creator = "General Motors"
-reviewed_item_categories = ["Cars"]
+reviewed_item_maker = "General Motors"
+reviewed_item_categories = ["Products"]
 reviewed_item_link = "https://en.wikipedia.org/wiki/Opel_Astra"
 stars = 4.5
 
@@ -15,7 +15,7 @@ author = "Rahul Madhavan"
 # -----------------------------------------
 
 # Featured image The featured image will be the first from the following list
-images = ["reviews/opel1.png","reviews/opel2.jpg"]
+images = ["reviews/opel1.png","reviews/opel2.png"]
 
 # -----------------------------------------
 # Summary section

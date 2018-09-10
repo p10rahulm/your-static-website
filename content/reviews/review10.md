@@ -1,7 +1,7 @@
 +++
 reviewed_item = "Yoga Bar"
 reviewed_item_creator = ""
-reviewed_item_categories = ["Health"]
+reviewed_item_categories = ["Lifestyle"]
 reviewed_item_link = "https://www.yogabars.in/"
 stars = 4.5
 

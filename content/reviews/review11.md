@@ -1,7 +1,7 @@
 +++
 reviewed_item = "C++"
 reviewed_item_creator = ""
-reviewed_item_categories = ["Computer Languages"]
+reviewed_item_categories = ["Technology"]
 reviewed_item_link = "https://www.geeksforgeeks.org/c-plus-plus/"
 stars = 4.5
 

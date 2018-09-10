@@ -250,6 +250,7 @@
     subtitle = "I review, everything i do!"
     num_featured = 12
     number_in_list_page = 12
+    num_distinct_categories = 4
     sort_field = "name"
     sort_order = "desc"
     card_layout = "masonry_grid_cards"
@@ -259,7 +260,7 @@
         field_name = "reviewed_item_categories"
         type = "simple_list"
         class = "cards_title center_align"
-        truncate_size = 15
+        truncate_size = 25
         prefix = ""
         postfix = ""
 

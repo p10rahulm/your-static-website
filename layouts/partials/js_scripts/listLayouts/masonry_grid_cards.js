@@ -35,7 +35,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     parentNode = document.getElementById('{{.name}}_cards');
-    review_categories = parentNode.getElementsByClassName("card_reviewed_item_categories")[0].innerHTML;
-    console.log("")
+    allItems = parentNode.getElementsByClassName("card_reviewed_item_categories")
+    //    review_categories = parentNode.getElementsByClassName("card_reviewed_item_categories")[0].innerHTML.replace(/\s/g,'');
+    review_categories = [];
+    for(x = 0; allItems.length > x;x++){
+            review_categories.push(allItems[x].innerHTML.replace(/\s/g,''));
+    }
+    sorted_categories = getSortedByCount(review_categories);
+    sorted_main_categories = sorted_categories.slice(0,{{.num_distinct_categories}});
+    for(x = 0; allItems.length > x;x++){
+        var current_cat = allItems[x].innerHTML.replace(/\s/g,'');
+        if(sorted_main_categories.includes(current_cat)){
+            allItems[x].classList.add("category_" + sorted_main_categories.indexOf(current_cat));
+        } else {
+            allItems[x].classList.add("category_other");
+        }
+    }
+
+
+    function getSortedByCount(){
+        var category_counts = {}; //Get frequency table: https://stackoverflow.com/questions/5667888/counting-the-occurrences-frequency-of-array-elements
+        for (var i = 0; review_categories.length > i; i++) {
+          var cat = review_categories[i];
+          category_counts[cat] = category_counts[cat] ? category_counts[cat] + 1 : 1;
+        }
+        keysSorted = Object.keys(category_counts).sort(function(a,b){return category_counts[a]-category_counts[b]}).reverse(); //https://stackoverflow.com/questions/1069666/sorting-javascript-object-by-property-value
+        return(keysSorted);
+    }
+
+
+
 },false);
 

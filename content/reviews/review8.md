@@ -1,7 +1,7 @@
 +++
 reviewed_item = "IPhone"
 reviewed_item_creator = "Apple"
-reviewed_item_categories = ["Technology", "Phones"]
+reviewed_item_categories = ["Technology"]
 reviewed_item_link = "https://www.apple.com/in/iphone/"
 stars = 4.5
 

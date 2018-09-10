@@ -18,12 +18,28 @@
 #{{.name}}_cards .card_reviewed_item_categories {
     position: absolute;
     top: 0;
-    background-color: rgba(256,256,256,0.45);
-    left: 50%;
-    width: 40%;
-    margin-left:-20%;
+    width: 100%;
+    color: #fafafa;
+    font-family: "EB Garamond", serif;
+    font-size: 19px;
 }
+
 #{{.name}}_cards .card_headline {
     font-weight: 700;
     color: #aa2222;
+}
+#{{.name}}_cards .category_0{
+    background-color: rgba(0, 96, 167, 0.62);
+}
+#{{.name}}_cards .category_1{
+    background-color: #d70909b3;
+}
+#{{.name}}_cards .category_2{
+    background-color: #00ba44b3;
+}
+#{{.name}}_cards .category_3{
+    background-color: #b3005f80;
+}
+#{{.name}}_cards .category_other{
+    background-color: rgba(0, 14, 32, 0.5);
 }
