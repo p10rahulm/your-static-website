@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     parentNode = document.getElementById('{{.name}}_cards');
-    review_categories = parentNode.getElementsByClassName("card_reviewed_item_categories")[0];
+    review_categories = parentNode.getElementsByClassName("card_reviewed_item_categories")[0].innerHTML;
     console.log("")
 },false);
 
