@@ -15,14 +15,14 @@ author = "Rahul Madhavan"
 # -----------------------------------------
 
 # Featured image The featured image will be the first from the following list
-images = ["reviews/opel1.jpg","reviews/opel2.jpg"]
+images = ["reviews/opel1.png","reviews/opel2.jpg"]
 
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
 
 # The below image will be shown in all the cards pointing to this article
-caption_image = "reviews/opel1.jpg"
+caption_image = "reviews/opel1.png"
 # The below summary message will be shown in all the cards pointing to this article. If not available, it would be generated from the content of the page.
 summary_content = '''
 The course is very very good. It needs to be read by one and all.

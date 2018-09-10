@@ -256,7 +256,7 @@
     pagination_layout = "pages"
 
     [[sections.fields]]
-        field_name = "title" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        field_name = "reviewed_item" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
         class = "cards_title center_align"
         prefix = ""
         postfix = ""
@@ -266,7 +266,7 @@
 
     #if field name is summary below, we will summarize the full content of page in number of words given by summaryLength above
     [[sections.fields]]
-        field_name = "summary" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
+        field_name = "headline" #choose a field from the ones in the front matter for the section, or choose "summary" to summarize content
         class = "card_summary left_align"
         prefix = ""
         postfix = ""
