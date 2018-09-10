@@ -1,18 +1,13 @@
 +++
-# TODO: add sound-cast pages, faqs pages. That's it.
+reviewed_item = "Opel Astra Car"
+reviewed_item_creator = "General Motors"
+reviewed_item_categories = ["Cars"]
+reviewed_item_link = "https://en.wikipedia.org/wiki/Opel_Astra"
+stars = 4.5
 
-
-reviewed_item = "Apple Iphone"
-reviewed_item_creator = "Steven Spielberg"
-reviewed_item_category = ["Books"]
-reviewed_item_link = ""
-stars = 5
-
-headline = "A review on Management topics" # This is the headline for the review
+headline = "Heartbeat on wheels"
 date = 2018-06-08T19:44:35+05:30
-author = "K S Madhavan and Goody Two Shoes"
-
-
+author = "Rahul Madhavan"
 
 
 # -----------------------------------------
@@ -20,14 +15,14 @@ author = "K S Madhavan and Goody Two Shoes"
 # -----------------------------------------
 
 # Featured image The featured image will be the first from the following list
-images = ["orange-fractal.jpg","dog_popup_thanks3.jpg","dog_transparency1.jpg", ]
+images = ["reviews/opel1.jpg","reviews/opel2.jpg"]
 
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
 
 # The below image will be shown in all the cards pointing to this article
-caption_image = "dog_popup_thanks3.jpg"
+caption_image = "reviews/opel1.jpg"
 # The below summary message will be shown in all the cards pointing to this article. If not available, it would be generated from the content of the page.
 summary_content = '''
 The course is very very good. It needs to be read by one and all.
@@ -38,7 +33,7 @@ Generally I don't say much. But know this is true'''
 # Meta
 # -----------------------------------------
 
-layout = "courses"
+layout = "reviews"
 featured = true
 enable_comments = true
 
@@ -50,14 +45,12 @@ categories = []
 
 # Writeup goes below
 +++
-# About the course
+# Lorem Ipsum
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-This is an awesome course. Get there or be square.
+Donec scelerisque ullamcorper nibh, ac eleifend leo viverra non. Vestibulum accumsan lacus non luctus mattis. Sed a varius arcu. Etiam in justo quis urna mollis blandit in et est. Cras eleifend facilisis arcu, eu aliquet urna faucibus a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur eget mauris faucibus, lobortis odio eu, malesuada elit. Praesent orci orci, feugiat a euismod fermentum, fermentum sit amet lacus. Fusce id justo erat. Nam faucibus dui neque, in mattis dolor sodales eu. Donec et nisl nec metus condimentum finibus. Etiam sed purus eget arcu sagittis ullamcorper vitae ac quam.
 
-Bachelor of Arts popularly known as B.A. Course is an undergraduate program in liberal arts, the sciences. The Arts course is considered to be a flexible course that permits the student to choose a course which is the best match for their career interest.The learning options for the graduates are not limited to any specific areas and the scope of specialization is large for the BA holder.
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean lobortis dignissim feugiat. Cras quis venenatis urna. Aenean accumsan tortor vel eleifend volutpat. Duis nec elit eget lacus mollis egestas non nec quam. Maecenas rutrum eget nisl quis porta. Nullam porttitor nibh erat, sit amet varius tellus pretium ac. Vestibulum in mauris eros. Cras vitae malesuada lorem. Aliquam erat volutpat. Etiam luctus nulla nunc, a facilisis nisl hendrerit in. Sed aliquet vitae sapien eleifend aliquet. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-A few institutes also conduct entrance exams for admission to the course.The general procedure for admission to the course is merit- based.The merit is obtained by the candidate at the 10+2 level with the aggregate of 55%.
-
-The minimum age to join this course is 18 years. There is no upper age limit for the course specification. The Students who have cleared their S.S.C program and Intermediate as  (10+2) with more than 55 percent marks.
 
 

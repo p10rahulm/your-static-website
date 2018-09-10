@@ -371,7 +371,7 @@ verboseLog =true
     genre = "genres"
     subject = "subjects"
     topic = "topics"
-    review_category = "review_categories"
+    review_item_category = "review_item_categories"
     publication_type = "publication_types"
 
 
