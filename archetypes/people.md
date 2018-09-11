@@ -1,6 +1,6 @@
 +++
-title = "{{ replace .TranslationBaseName "-" " " | title }}"
-name = "{{ .Site.Params.site_author_name }}"
+
+name = "{{ replace .TranslationBaseName "-" " " | title }}"
 role = "Founder, CodeFRA"
 
 # Place portrait in img folder
