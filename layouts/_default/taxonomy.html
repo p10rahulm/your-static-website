@@ -10,7 +10,7 @@
     {{ $.Scratch.SetInMap "layout_defaults" "num_featured" 4 }}
     {{ $.Scratch.SetInMap "layout_defaults" "pagination_layout" "view_more_scroll" }}
 
-{{ $.Scratch.Set "listPage_name" (.Data.Term) }}
+    {{ $.Scratch.Set "listPage_name" (printf "taxonomy-%s" .Data.Term) }}
     {{ $.Scratch.Set "front_matter_params" .Params }}
     {{ $.Scratch.Set "list_layout_prebuilds" .Site.Data.layouts.sectionwise_list_layouts }}
     {{ $.Scratch.Set "listPages" .Pages }}
