@@ -70,6 +70,13 @@
     </div>
 
     <div id="page_footer">
+        {{if .Params.reviewed_item_categories}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Review Category:</span>
+            {{range .Params.reviewed_item_categories}}
+            <a class="page_meta_links" href = "/reviewed_item_categories/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
         {{if .Params.categories}}
         <div class="page_meta"><span class = "page_meta_descriptor">Categories:</span>
             {{range .Params.Categories}}

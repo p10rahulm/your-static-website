@@ -371,8 +371,10 @@ verboseLog =true
     genre = "genres"
     subject = "subjects"
     topic = "topics"
-    review_item_category = "review_item_categories"
+    reviewed_item_category = "reviewed_item_categories"
     publication_type = "publication_types"
+    artist = "artists"
+    album = "albums"
 
 
 # Configure the English version of the website.
