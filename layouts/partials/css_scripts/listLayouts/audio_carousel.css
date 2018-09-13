@@ -15,8 +15,11 @@
 #{{.name}}_cards .details_cards .card_title{
     position:   absolute;
     top: 0;
+    left:50%;
     width: 90%;
-    margin: 0 auto;
+    margin-left: -45%;
+    margin-top: 0;
+    padding: 0;
     background-color: rgba(255,255,255,0.75);
     color: #24ab;
     /*color: #0095eb;*/
