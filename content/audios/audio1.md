@@ -1,6 +1,6 @@
 +++
-title = "A review on Management topics"
-artist = "K S Madhavan and Goody Two Shoes"
+title = "Kannadify Introduction"
+artist = "Madhav Ajjampur"
 date = 2018-06-08T19:44:35+05:30
 
 

@@ -1,9 +1,10 @@
+//https://aplayer.js.org/#/home
 document.addEventListener('DOMContentLoaded', function(){
     const ap = new APlayer({
         container: document.getElementById('aplayer'),
         mini: false,
         autoplay: true,
-        theme: '#FADFA3',
+        theme: '#fadfa3',
         loop: 'all',
         order: 'random',
         preload: 'auto',

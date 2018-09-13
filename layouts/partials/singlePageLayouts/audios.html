@@ -15,12 +15,11 @@
 <section id="presentations" class="single_page_layout container">
     <div class ="page_header_section center_align">
         <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
-        {{if isset .Params "tagline"}}<div class="page_tagline">{{(.Title | default ($.Scratch.Get "page_layout").tagline)}}</div>{{end}}
-        <div class="page_author">Author: {{.Params.faculty | default ($.Scratch.Get "page_layout").author}}</div>
-        <div class="page_date">{{ dateFormat "Monday, Jan 2, 2006" (.Date| default ($.Scratch.Get "page_layout").date) }}</div>
+        {{if isset .Params "artist" }}<div class="page_author">{{.Params.artist| default ($.Scratch.Get "page_layout").artist}}</div>{{end}}
+        {{if isset .Params "date" }}<div class="page_date">{{ dateFormat "Monday, Jan 2, 2006" (.Date ) }}</div>{{end}}
     </div>
     {{if isset .Params "audios"}}
-    {{partial "singlePageLayouts/audio_player.html" . }}
+    <div id="aplayer"></div>
     {{end}}
     {{if .Content}}
     <div class = "page_notes page_main_section">
