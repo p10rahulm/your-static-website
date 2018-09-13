@@ -3,11 +3,11 @@
 name = "audios"
 title = "Audio Clips and Podcasts"
 subtitle = "Thus spake Zarathustra"
-num_featured = 3
-number_in_list_page = 5
+num_featured = 12
+number_in_list_page = 8
 sort_field = "title"
 sort_order = "asc"
-card_layout = "responsive_3cards_wbox"
+card_layout = "audio_carousel"
 pagination_layout = "view_more_scroll"
 
 

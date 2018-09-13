@@ -4,8 +4,14 @@
 {{$fields := $.context.fields}}
 <header>
     <style>
-        {{partial "css_scripts/listLayouts/large_cards_leftimage_centertext_box_nooverlay.css" $.context | safeCSS}}
+        {{partial "css_scripts/listLayouts/audio_carousel.css" $.context | safeCSS}}
     </style>
+    {{partial "functions/load_external_js.html" (dict "external_url" "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js" "scratch" .Scratch "async" false "defer" false)}}
+    {{partial "functions/load_external_css.html" (dict "external_url" "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css" "scratch" .Scratch)}}
+    {{partial "functions/load_external_css.html" (dict "external_url" "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.min.css" "scratch" .Scratch)}}
+    <script type="text/javascript">
+        {{partial "js_scripts/listLayouts/audio_carousel.js" $.context | safeJS}}
+    </script>
 </header>
 
 <section id="featured_{{$.context.name}}" class="home-section">
@@ -16,13 +22,14 @@
         <div class="section-subheading">
             {{$.context.subtitle | humanize}}
         </div>
-        <div id="{{$.context.name}}_cards" class="cardList">
+        <div id="{{$.context.name}}_cards" class="carousel_responsive">
             {{ range $pages }}
             <div class ="details_cards">
-                <div class="border_box">
-                    <a href="{{.Permalink}}">
-                        <img src="/placeholder.jpg" data-src="/img/{{.Params.caption_image}}" class="card_img lazy" alt="{{.Title}}">
-                    </a>
+                <a href="{{.Permalink}}">
+                    <img src="/placeholder.jpg" data-src="/img/{{.Params.caption_image}}" class="card_img lazy" alt="{{.Title}}">
+                </a>
+                <a href="{{.Permalink}}">
+
                     {{$page_summary := .Params.summary_content | default .Summary}}
                     {{$page_params := .Params}}
                     {{$page_permalink := .Permalink}}
@@ -77,9 +84,11 @@
 
                     {{ end }}
                     {{ end }}
-                </div>
+                </a>
             </div>
             {{end}}
+
+
         </div>
 
     </div>

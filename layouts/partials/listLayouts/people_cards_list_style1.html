@@ -49,6 +49,19 @@
                         {{end}}
                         {{.postfix | markdownify}}
                     </div>
+                    {{else if eq .type "simple_list"}}
+                    <div class="card_{{.field_name}} {{.class}}">
+                        {{.prefix }}
+                        {{$truncate_size := .truncate_size}}
+                        {{$simple_list_length := (len (index $page_params .field_name))}}
+                        {{ range $index, $element := (index $page_params .field_name) }}
+                        {{ if and (ne $index 0) (eq $index (sub $simple_list_length 1)) }} and
+                        {{ else if ne $index 0}},
+                        {{ end }}
+                        {{ $element | markdownify | truncate ($truncate_size | default 300)}}
+                        {{end}}
+                        {{.postfix| markdownify}}
+                    </div>
                     {{else}}
 
                     <div class="card_{{.field_name}} {{.class}}">

@@ -10,7 +10,7 @@ date = 2018-06-08T19:44:35+05:30
 # -----------------------------------------
 
 # The below image will be shown in all the cards pointing to this article
-caption_image = "dog_popup_thanks3.jpg"
+caption_image = "dog_transparency1.jpg"
 # The below summary message will be shown in all the cards pointing to this article. If not available, it would be generated from the content of the page.
 summary_content = '''
 The course is very very good. It needs to be read by one and all.
@@ -30,9 +30,9 @@ enable_comments = true
 tags = []
 categories = []
 albums = ["Kannada","Language"]
-artists = ["K S Madhavan"]
+artists = ["K S Madhavan","Madhav Ajjampur"]
 
-
+# It's important that below section is placed at the bottom just before content. Changing the order means the toml does not work as expected. Blame the toml specification!
 [[audios]]
 name = "Kannadify Introduction"
 filename = "KL1.wav" # Place the file below in the "audios" folder inside static folder
