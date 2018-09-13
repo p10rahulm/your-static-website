@@ -1,7 +1,7 @@
 +++
-title = "How many roads must a man walk down"
-artist = "Madhav Ajjampur"
-date = 2018-06-08T11:44:35+05:30
+title = "How many seas must a white dove sail"
+artist = "Drama King"
+date = 2018-06-08T13:44:35+05:30
 
 
 
@@ -10,7 +10,7 @@ date = 2018-06-08T11:44:35+05:30
 # -----------------------------------------
 
 # The below image will be shown in all the cards pointing to this article
-caption_image = "audios/d.jpg"
+caption_image = "audios/a2.jpg"
 # The below summary message will be shown in all the cards pointing to this article. If not available, it would be generated from the content of the page.
 summary_content = '''
 The course is very very good. It needs to be read by one and all.
@@ -34,15 +34,11 @@ artists = ["K S Madhavan","Madhav Ajjampur"]
 
 # It's important that below section is placed at the bottom just before content. Changing the order means the toml does not work as expected. Blame the toml specification!
 [[audios]]
-name = "Kannadify Introduction"
-filename = "KL1.wav" # Place the file below in the "audios" folder inside static folder
+name = "Kannadify Faster"
+filename = "KL3.wav" # Place the file below in the "audios" folder inside static folder
 artist = "Madhav Ajjampur"
 cover = "k.jpg" # Place the file below in the "audios" folder inside img folder in static folder
-[[audios]]
-name = "Moving On"
-filename = "KL2.wav" # Place the file below in the "audios" folder inside static folder
-artist = "Madhav Ajjampur"
-cover = "k.jpg" # Place the file below in the "audios" folder inside img folder in static folder
+
 # Writeup content below
 +++
 

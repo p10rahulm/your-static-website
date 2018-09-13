@@ -323,7 +323,14 @@ fixed_sharer_active = true
     sort_order = "asc"
     card_layout = "carousel_4card"
 
-
+[[featured_pages.sections]]
+    name = "audios"
+    title = "Podcasts and Music"
+    subtitle = "Stirring but not rare"
+    num_featured = 8
+    sort_field = "date"
+    sort_order = "asc"
+    card_layout = "audio_carousel"
 
 
 # ----------------------------------
