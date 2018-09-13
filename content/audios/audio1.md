@@ -4,8 +4,7 @@ artist = "K S Madhavan and Goody Two Shoes"
 date = 2018-06-08T19:44:35+05:30
 
 
-# Place the file below in the "audio" folder inside static folder:
-audio_filename = "Brochure_for_5S_books.pdf"
+
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
@@ -22,7 +21,7 @@ Generally I don't say much. But know this is true'''
 # Meta
 # -----------------------------------------
 
-layout = "presentations"
+layout = "audios"
 featured = true
 enable_comments = true
 
@@ -33,16 +32,23 @@ categories = []
 albums = ["Kannada","Language"]
 artists = ["K S Madhavan"]
 
-# -----------------------------------------
-# Writeup below presentation
-# -----------------------------------------
 
-writeup_title = "Presentation Notes"
+[[audios]]
+name = "Kannadify Introduction"
+filename = "KL1.wav" # Place the file below in the "audios" folder inside static folder
+artist = "Madhav Ajjampur"
+cover = "K.jpg" # Place the file below in the "audios" folder inside img folder in static folder
+[[audios]]
+name = "Moving On"
+filename = "KL2.wav" # Place the file below in the "audios" folder inside static folder
+artist = "Madhav Ajjampur"
+cover = "K.jpg" # Place the file below in the "audios" folder inside img folder in static folder
 # Writeup content below
 +++
-1. This presentation was made at IIT Madras in 2004
-2. All rights reserved. Contact author before reusing material as is.
-3. Ideas beget ideas. If you want to incorporate this material into your own feel free, and if possible leave a trail or backlink to this site
 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas velit ante, accumsan mattis sollicitudin eget, dignissim suscipit nisi. Morbi scelerisque lectus sed neque facilisis egestas. Quisque sodales at libero ut semper. Vestibulum lorem magna, tempor at sapien eget, dignissim iaculis felis. Donec porta nisi vel tempus vulputate. Sed sed tortor nec felis feugiat venenatis ut vel felis. Suspendisse auctor id metus non aliquet.
+
+Curabitur tortor tortor, auctor a sapien ornare, dignissim facilisis lacus. Etiam dignissim dui quis velit pulvinar pharetra. In tristique eros eros. Mauris id rutrum diam, nec fringilla lectus. Vestibulum eleifend ipsum tortor, suscipit efficitur tortor fringilla non. Morbi purus mi, viverra eu vehicula a, congue ut ex. Nulla placerat imperdiet nibh eu convallis. Nulla tempus ultricies nulla, at semper sapien feugiat ac. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus ac luctus erat. Sed semper, quam eu hendrerit cursus, augue nisl convallis massa, eu tincidunt mauris eros sit amet magna. Nunc et nisi eget ipsum fringilla faucibus. Nam justo ante, iaculis ac nunc id, pulvinar blandit ante.
 
 
