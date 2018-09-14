@@ -1,7 +1,8 @@
 # Creating your own static website from scratch at 2 cents a month (plus cost of domain)
 
-https://cloud.google.com/storage/docs/hosting-static-website
-https://cloud.google.com/storage/docs/domain-name-verification
+# References:
+- https://cloud.google.com/storage/docs/hosting-static-website
+- https://cloud.google.com/storage/docs/domain-name-verification
 
 ## Go buy the domain
 1. Go to godaddy.com
