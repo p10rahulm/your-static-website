@@ -1,9 +1,9 @@
 # Creating your own static website from scratch at 2 cents a month (plus cost of domain)
 
-# References:
-- [Google Reference: Hosting Static Website](https://cloud.google.com/storage/docs/hosting-static-website)
 
-
+----------------
+Section 1: Setting up the online bits
+----------------
 ## Go buy the domain
 1. Go to godaddy.com
 2. Search for preferred domain name
@@ -27,7 +27,7 @@
 
 
 
-
+--------------------
 
 ## Verify yourself on google and get your cloud storage setup
 [Google Reference: Domain Name Verification](https://cloud.google.com/storage/docs/domain-name-verification)
@@ -64,16 +64,15 @@ if it does not, then you would have to add TXT record. Let's look at how to do t
 10. Go back to the google TXT verification page and click on verify. You should be verified and get a success message.
 
 
-
+--------------------
 
 ## Get yourself on the google cloud console.
-1. Go to console.cloud.google.com and login.
+1. Go to [Cloud Console Home Page](https://console.cloud.google.com) and login.
 2. If this is the first time you are logging in, you should see some questions regarding your country, email preferences and agreement to their terms and conditions. 
 3. Just choose the usual stuff here and agree to the conditions and click ok
 4. At the outset you should see the main console page, which has a number of products. Let's call this the Cloud Console Home Page. 
 5. At the center of the screen a list of their main products should include "Cloud Storage".
-    - At the top of the screen you should see a small message which basically says you get free cloud credits, but is actually asking you to setup billing. You can do this at this stage or come back here in a few steps. But this is required
-    - If you don't see this button,
+    1. At the top of the screen you should see a small message which basically says you get free cloud credits, but is actually asking you to setup billing. You can do this at this stage or come back here in a few steps. But this is required
 
 ### Setting up billing.
 
@@ -81,12 +80,21 @@ if it does not, then you would have to add TXT record. Let's look at how to do t
 2. You will be offered a free trial for $300 which lasts only for 12 months. Much more likely that you would use only $5 of this, but hey, whats free is free! Complete the payment. 
 3. This should setup your billing (not to worry you won't be charged for the next year through this method).
     1. Sometimes if you don't complete payment, you can complete it later. The billing is still setup but is marked incomplete. You may keep receiving emails to complete billing setup and your console in such cases would remain active for a couple of days or weeks before they close it. This method is not recommended.
-4. After you complete billing setup you should go back to Cloud Console Home Page.
+4. After you complete billing setup you should go back to [Cloud Console Home Page](https://console.cloud.google.com).
+
+#### Alternative Method
+1. If you didn't see the button, go to [Cloud Console Billing](https://console.cloud.google.com/billing)
+2. You will be able to see two sections: My Billing Accounts and My Projects.
+3. Under My Billing Accounts, you will be able to see a button called "create account". Click on this
+4. It will ask you for a name and currency
+5. Here again you can fill your personal details and also add a payment method.
+6. The end result of this should be the same as the last method, you will land up back at the [Cloud Console Home Page](https://console.cloud.google.com)
 
 ### Setup Cloud Storage
+[Google Reference: Hosting Static Website](https://cloud.google.com/storage/docs/hosting-static-website)
 1. On the home page at the center you would see Cloud Storage in their list of main products. If you dont see this here, If you click the menu on the top left, there is a list of products, which should include "Cloud Storage". Click on this.
 2. In the Cloud storage page, you should see browser, transfer, transfer appliance and settings. Only browser is relevant to us. 
-    1. Lets call this the Cloud Storage Browser Page
+    1. Lets call this the [Cloud Storage Browser Page](https://console.cloud.google.com/storage/browser)
 3. If you landed on the browser page and do not have any storage buckets, you should see a large button asking you to create bucket. Other users would see an option to create bucket on the top of their screen above existing buckets.
 4. Click on create bucket. If this is the first use, you may be asked for some project name and organization name. This is to enable good organization of your assets. You can choose any relevant names for project and organization. You can create organization later if necessary.
     1. Older users would straight away go to the next page
