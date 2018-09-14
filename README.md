@@ -34,14 +34,14 @@
 1. You can verify your domain here: https://www.google.com/webmasters/tools/
 2. If you are on the new console, you should see a list of websites you own on the top left. If you click on this button, then at the bottom you can see a link to add new property.
     * If you are on the old console, you should see a bright red button to "Add a Property" on the top right of your screen.
--- Click on add property (new search console is worse than old!)
--- type the name like so : http://mywebsite.com
+3. Click on add property (new search console is worse than old!)
+    - type the name like so : http://mywebsite.com
 
-3. There are many methods of verification. The most convenient at this stage is to use domain name provider (the last option)
--- This will lead you back to the old console.
--- It should auto detect that you are on godaddy.
--- Click on verify on the bright red button
--- It should open a window where it asks you to login to godaddy. It does its own thing and takes 60 seconds.
+4. There are many methods of verification. The most convenient at this stage is to use domain name provider (the last option)
+    - This will lead you back to the old console.
+    - It should auto detect that you are on godaddy.
+    - Click on verify on the bright red button
+    - It should open a window where it asks you to login to godaddy. It does its own thing and takes 60 seconds.
 5.  If it works, great, you have been verified by google as owner of your website
 
 if it does not, then you would have to add TXT record. Let's look at how to do that.
