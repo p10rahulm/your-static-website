@@ -1,8 +1,8 @@
 # Creating your own static website from scratch at 2 cents a month (plus cost of domain)
 
 # References:
-- https://cloud.google.com/storage/docs/hosting-static-website
-- https://cloud.google.com/storage/docs/domain-name-verification
+- [Google Reference: Hosting Static Website](https://cloud.google.com/storage/docs/hosting-static-website)
+
 
 ## Go buy the domain
 1. Go to godaddy.com
@@ -19,21 +19,21 @@
 1. On Your DNS page, if you scroll fown, you should see a Forwarding section.
 2. You are presently going to create a DNS forwarding from the yourdomain.com into the www.yourdomain.com
 3. Click on the button next to domain. The options to be input are as follows:
--- In the Forward to option, in the blank space next to http:// type "www.your-domain.com". This means that it is going to forward from http://your-domain.com to http://www.your-domain.com
--- In options use forward type: Permanent (301)
--- In options use settings: Forward only
--- click on save	
-Leave this browser window open as we will have to come back here.
+    1.  In the Forward to option, in the blank space next to http:// type "www.your-domain.com". This means that it is going to forward from http://your-domain.com to http://www.your-domain.com
+    2. In options use forward type: Permanent (301)
+    3.  In options use settings: Forward only
+1. click on save
+1. Leave this browser window open as we will have to come back here.
 
 
 
 
 
 ## Verify yourself on google and get your cloud storage setup
-
+[Google Reference: Domain Name Verification](https://cloud.google.com/storage/docs/domain-name-verification)
 1. You can verify your domain here: https://www.google.com/webmasters/tools/
 2. If you are on the new console, you should see a list of websites you own on the top left. If you click on this button, then at the bottom you can see a link to add new property.
-2a. If you are on the old console, you should see a bright red button to "Add a Property" on the top right of your screen. 
+    * If you are on the old console, you should see a bright red button to "Add a Property" on the top right of your screen.
 -- Click on add property (new search console is worse than old!)
 -- type the name like so : http://mywebsite.com
 
@@ -46,7 +46,7 @@ Leave this browser window open as we will have to come back here.
 
 if it does not, then you would have to add TXT record. Let's look at how to do that.
 
-Alternative Method.
+### Alternative Method.
 -----------
 1. If DNS verification did not go as planned. On the page with the big red verify button, you should find a link to "Add a TXT record"
 2. When you click on this, it should take you to a page with lots of instructions.
