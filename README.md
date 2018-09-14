@@ -33,15 +33,15 @@
 [Google Reference: Domain Name Verification](https://cloud.google.com/storage/docs/domain-name-verification)
 1. You can verify your domain here: https://www.google.com/webmasters/tools/
 2. If you are on the new console, you should see a list of websites you own on the top left. If you click on this button, then at the bottom you can see a link to add new property.
-    - If you are on the old console, you should see a bright red button to "Add a Property" on the top right of your screen.
+    1. If you are on the old console, you should see a bright red button to "Add a Property" on the top right of your screen.
 3. Click on add property (new search console is worse than old!)
-    - Type the name like so : http://mywebsite.com
+    1. Type the name like so : http://mywebsite.com
 
 4. There are many methods of verification. The most convenient at this stage is to use domain name provider (the last option)
-    - This will lead you back to the old console.
-    - It should auto detect that you are on godaddy.
-    - Click on verify on the bright red button
-    - It should open a window where it asks you to login to godaddy. It does its own thing and takes 60 seconds.
+    1. This will lead you back to the old console.
+    2. It should auto detect that you are on godaddy.
+    3. Click on verify on the bright red button
+    4. It should open a window where it asks you to login to godaddy. It does its own thing and takes 60 seconds.
 5.  If it works, great, you have been verified by google as owner of your website
 
 if it does not, then you would have to add TXT record. Let's look at how to do that.
@@ -55,10 +55,10 @@ if it does not, then you would have to add TXT record. Let's look at how to do t
 5. At the top you should see a records section. At the bottom of this section is a button for add.
 6. Select type TXT.
 7. The options are as follows.
-    - Choose "Type" as TXT
-    - Choose "Host" as "@"
-    - Choose "Value" as the copied value from the google verification page
-    - Choose "TTL" as "1-Hour" (though it doesn't really matter)
+    1. Choose "Type" as TXT
+    2. Choose "Host" as "@"
+    3. Choose "Value" as the copied value from the google verification page
+    4. Choose "TTL" as "1-Hour" (though it doesn't really matter)
 8 Click on save
 9 See that this TXT record is in the list of records on Your DNS page. Sometimes you see an error, even if you do, if you see the TXT record there, it's good enough.
 10. Go back to the google TXT verification page and click on verify. You should be verified and get a success message.
