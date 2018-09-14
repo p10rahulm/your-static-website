@@ -114,9 +114,16 @@ As described [here](https://git-scm.com/book/en/v2/Getting-Started-About-Version
 4. You will be taken to a page that looks like `https://github.com/yourusername/yourblogname`. Bookmark this page
 5. Note down the link to the git repository which should look like: `https://github.com/yourusername/yourblogname.git`
 
-### Get a good text editor -
-- I recommend Atom as it's good for '.md' files that we'll be using, in case you like a dark themed editor.
--
+### Get a good text editor
+- I recommend Atom as
+    1. it's good for '.md' files that we'll be using,
+    2. It has a good color scheme and highlighting in case you like a dark themed editor
+    3. It is made by github, is open source and is well maintained.
+    4. It is extendable through plugins.
+- I also like VS Code and notepad++.
+    - NP++ is lightest and comes in light theme without code highlighting.
+    - VS Code is super good and it would be on top of the list if it weren't for Microsoft bad rap of the 2000s.
+- You can any of these of your choice from here: [Atom](https://atom.io/), [VSCode](https://code.visualstudio.com/) and [Notepad++](https://notepad-plus-plus.org/download)
 
 
 ----------------
