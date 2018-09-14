@@ -1,15 +1,71 @@
 # Creating your own static website from scratch at 2 cents a month (plus cost of domain)
 
+----------------
+Section 1: Creating your Website Content
+----------------
+
+## Get the right software
+There are three main softwares needed for the setup
+    1. Git Bash
+    2. Hugo
+    3. Google Cloud SDK
+
+### Getting git bash
+1. Go to [Git Download Website](https://git-scm.com/downloads)
+2. At the top, you would find a few operating systems. Click on your operating system, ex: windows or mac, etc
+3. You will be lead to a site which auto triggers the download. If there is no download triggered you can choose 64 bit for most computers today.
+4. Once it is downloaded into your directory, run it.
+5. You can use the following options
+    1. Agree to their terms
+    2. Use the default installation folder. **Note this down**
+    3. In the "Select components", choose all checkbox options
+    4. In "Select start menu folder": Choose the appropriate start menu folder
+    5. In "Adjusting your Path Environment": Choose "Use Git from Windows Command Prompt" **Please note that this step is important**
+    6. In "Choose HTTPS transport backend": Choose OpenSSL
+    7. In "configuring line ending conversions": Choose the default (checkout windows style commit linux style)
+    8. 
+2. This is an excellent resource to visually check against in case you get stuck at any steps: [Install Git Bash Instructions](http://www.techoism.com/how-to-install-git-bash-on-windows/)
+
+### Getting Google Cloud SDK
+1. Go to [Google Cloud SDK Docs](https://cloud.google.com/sdk/docs/)
+2. This should enable you to install google cloud SDK.
+    1. Though the cloud SDK consists of cloud gsutil and gq command line tools, we will only be using gsutil.
+3. Don't worry if you don't understand all of this yet. We will be using only one command on command line.
+4. If you are unable to access the download button on that page, you can probably access it directly [here](https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe). Please check as this link may not update with versions.
+5. In the installer, you will be asked for some options
+    - In the install type, choose single user
+    - Leave the default destination folder as is. *Note this down*.
+    - In the select commands to install. Make sure all options, including "Beta Commands" are checked
+    - It will begin the downloading, extract and install in the folder you noted down.
+    - It should tell you that installation is done.
+    - When you click next here, it will ask you to open the cloud console and says it will run the command "gcloud init". Make sure all the options are checked and click next to finish installation.
+6. On the new terminal window that opens it will take you through a bunch of questions as it initializes the gcloud engine.
+    1. If you are an existing user it may detect old google cloud sdk settings
+7. Please use the following answers where relevant (and just use defaults for others)
+    1. "Choose the account for which you want to create configuration": Choose a gmail/google login that you will be using to host the website. If this does not work, we will have to use gcloud auth login in the next step.
+    2. "Enter project ID that you would like to use": We will be setting this default at a later time, as of now just leave blank and press enter
+8. Once gcloud init has run, in case authentication was not successful (likely as you didn't provide password), type on the console "gcloud auth login".
+9. This should open a browser window asking you to login to your google account. Once you do this, you should be redirected to a page where you see the message (on the browser) "You are now authenticated with the Google Cloud SDK!". You can now close the browser window and head back to the console window.
+10. Note this command down - "gcloud auth login", you may have to do this several times.
+11. Also note the command - "gcloud config set project YOUR_PROJECT_ID". We will be using it later.
+12. You will need this software handy. So make sure you pin it/bookmark it or some such. In windows, you will find it in the start menu under Google Cloud SDK > Google Cloud SDK Shell
+
+
+
+
+
+
 
 ----------------
-Section 1: Setting up the online bits
+Section 2: Setting up the online scaffolding
 ----------------
+
 ## Go buy the domain
 1. Go to godaddy.com
 2. Search for preferred domain name
 3. Add to cart and buy. Just choose one domain for now, you can always add more later. Let's call this domain as "your-domain.com". Of course note that ".com" could be any other suffix like ".org" or some such.
 4. Go to https://account.godaddy.com/products/
-5. You should be able to see your domain. 
+5. You should be able to see your domain.
 6. Typically you may see three buttons here next to your domain: Privacy DNS and Manage.
 7. Click on the DNS button. It should open up another window with the domain you are managing. We will call this Your DNS page from now. Bookmark it if necessary or leave open.
 
@@ -68,16 +124,17 @@ if it does not, then you would have to add TXT record. Let's look at how to do t
 
 ## Get yourself on the google cloud console.
 1. Go to [Cloud Console Home Page](https://console.cloud.google.com) and login.
-2. If this is the first time you are logging in, you should see some questions regarding your country, email preferences and agreement to their terms and conditions. 
+2. If this is the first time you are logging in, you should see some questions regarding your country, email preferences and agreement to their terms and conditions.
 3. Just choose the usual stuff here and agree to the conditions and click ok
-4. At the outset you should see the main console page, which has a number of products. Let's call this the Cloud Console Home Page. 
+4. At the outset you should see the main console page, which has a number of products.  
+    - Let's call this the [Cloud Console Home Page](https://console.cloud.google.com).
 5. At the center of the screen a list of their main products should include "Cloud Storage".
-    1. At the top of the screen you should see a small message which basically says you get free cloud credits, but is actually asking you to setup billing. You can do this at this stage or come back here in a few steps. But this is required
+6. At the top of the screen you should see a small message which basically says you get free cloud credits, but is actually asking you to setup billing. This is required for the setup
 
 ### Setting up billing.
 
 1. When you click on the button on the top of the Cloud Console Home Page passing you free credits you will be taken to a page to setup your billing. It would ask you again to agree to Terms and Conditions. Agree to all this.
-2. You will be offered a free trial for $300 which lasts only for 12 months. Much more likely that you would use only $5 of this, but hey, whats free is free! Complete the payment. 
+2. You will be offered a free trial for $300 which lasts only for 12 months. Much more likely that you would use only $5 of this, but hey, whats free is free. Complete the payment.
 3. This should setup your billing (not to worry you won't be charged for the next year through this method).
     1. Sometimes if you don't complete payment, you can complete it later. The billing is still setup but is marked incomplete. You may keep receiving emails to complete billing setup and your console in such cases would remain active for a couple of days or weeks before they close it. This method is not recommended.
 4. After you complete billing setup you should go back to [Cloud Console Home Page](https://console.cloud.google.com).
@@ -93,7 +150,7 @@ if it does not, then you would have to add TXT record. Let's look at how to do t
 ### Setup Cloud Storage
 [Google Reference: Hosting Static Website](https://cloud.google.com/storage/docs/hosting-static-website)
 1. On the home page at the center you would see Cloud Storage in their list of main products. If you dont see this here, If you click the menu on the top left, there is a list of products, which should include "Cloud Storage". Click on this.
-2. In the Cloud storage page, you should see browser, transfer, transfer appliance and settings. Only browser is relevant to us. 
+2. In the Cloud storage page, you should see browser, transfer, transfer appliance and settings. Only browser is relevant to us.
     1. Lets call this the [Cloud Storage Browser Page](https://console.cloud.google.com/storage/browser)
 3. If you landed on the browser page and do not have any storage buckets, you should see a large button asking you to create bucket. Other users would see an option to create bucket on the top of their screen above existing buckets.
 4. Click on create bucket. If this is the first use, you may be asked for some project name and organization name. This is to enable good organization of your assets. You can choose any relevant names for project and organization. You can create organization later if necessary.
@@ -104,11 +161,11 @@ if it does not, then you would have to add TXT record. Let's look at how to do t
     1. If you open out the advanced settings, you should see Labels and encryption, neither of these need to be touched.
 8. Click on create.
 9. You would be back on the Cloud Storage Browser Page. You should be able to see your bucket by the name of "www.your-domain.com"
-10. You now have your very own bucket. Now it is empty, we will fill it with your website shortly. At this point we will go back to godaddy to create a record to live update the website when the bucket is changed. 
+10. You now have your very own bucket. Now it is empty, we will fill it with your website shortly. At this point we will go back to godaddy to create a record to live update the website when the bucket is changed.
 
 ## Create CNAME record on godaddy
 1. Go back to Your DNS Page on godaddy.
-2. You should see the records section on top. 
+2. You should see the records section on top.
 3. If you see existing unnecessary CNAME records, they ought to be removed. This can be done by clicking the pencil next to the record on the right (edit) and then the trash button on the right.
 4. Click on Add record in the records section.
 5. Choose type CNAME
@@ -120,7 +177,7 @@ if it does not, then you would have to add TXT record. Let's look at how to do t
 
 ## Create public permissions for your storage bucket
 1. Go back to Cloud Storage Browser page
-2. You should see the bucket name as "www.your-domain.com" along with location, public access level, lifecycle, labels and requester pays. At this point we are interested in making the bucket public. 
+2. You should see the bucket name as "www.your-domain.com" along with location, public access level, lifecycle, labels and requester pays. At this point we are interested in making the bucket public.
 3. At the right end of the row with the bucket you should be able to see 3 dots. Click this for settings. You will see (a) Edit bucket permissions (b) Edit labels (c) Edit website configuration and (d) edit default storage class.
 4. Of these the most important to us are (a) Edit bucket permissions and (c) edit website configuration
 5. Click on edit bucket permissions. You will see an option to add members. Use the following options:
@@ -135,3 +192,5 @@ if it does not, then you would have to add TXT record. Let's look at how to do t
     2. Choose 404 page "404.html". The 404 page is where all hits to pages which don't exist in your site are redirected to.
 9. The storage bucket is good to go.
 10. Now all that is remaining is for you to fill the storage bucket.
+
+--------------
