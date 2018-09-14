@@ -1,4 +1,7 @@
 # Creating your own static website from scratch at 2 cents a month (plus cost of domain)
+We are today going to look at how to setup a website from scratch. The expectation is that while the initial setup is going to take something like 3-4 hours, any changes to the website should be a matter of seconds or minutes.
+
+
 
 ----------------
 Section 1: Creating your Website Content
@@ -93,9 +96,27 @@ There are three main softwares needed for the setup
 12. [This video is an excellent resource for installing hugo on windows](https://www.youtube.com/watch?v=G7umPCU-8xc) and [this video for installing hugo on mac](https://www.youtube.com/watch?v=WvhCGlLcrF8). In general that series of videos are an excellent introduction to hugo, which I recommend you look at when you have the time.
 
 
-## Getting the right  tools
+### Getting a version control system OR login to github
+As described [here](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control), a version control system (or VCS) is a system that records changes to a file or set of files over time so that you can recall specific versions later. This basically ensures that you don't lose files or even content of files. It is a good to have when creating a website, especially one that you expect to update frequently. It is a must have if you intend to update your static site from multiple computers.
+1. Go to [github.com](https://github.com/). Unless you are already signed in, it will ask you to sign up. github is super user friendly so easy enough.
+    1. Pick a username, email and password. Needless to say, note these down
+    2. It will ask you in the next step to verify your account. Click ok
+    3. In the next step, choose the free plan.
+    4. In the section 'tailor your experience' choose appropriate answers
+2. Github is based on repositories. Think of these as version controlled directories you have on the cloud. To start off, we will be creating a repository.
+    1. If you haven't yet verified your email id, now would be a good time to do so. Once you get click verify on the email, head back to [your main github page](https://github.com/dashboard)
+3. After the previous step, you will be taken to [your main github page](https://github.com/dashboard). If you are new to github, you will see a big green button on the left saying 'new repository'. If you don't see this, you can click the '+' button on the top right menu and click on 'new repository'
+    1. Choose a repository name. This doesn't have to be unique across github, just unique to your username. Therefore choose something descriptive. Simple ones like `yourblogname` should be good enough.
+    2. Choose public, it should be ok as your site is static and everyone can view all files anyway.
+    3. Uncheck the box for "Initialize repository with a README"
+    4. Add .gitignore should be None for now
+    5. Add a license should be None for now. You can add these later if you feel like
+4. You will be taken to a page that looks like `https://github.com/yourusername/yourblogname`. Bookmark this page
+5. Note down the link to the git repository which should look like: `https://github.com/yourusername/yourblogname.git`
 
-There are some main tools that you are going to need in creating a *good website*. These are not necessary, but are definitely 
+### Get a good text editor -
+- I recommend Atom as it's good for '.md' files that we'll be using, in case you like a dark themed editor.
+-
 
 
 ----------------
@@ -236,3 +257,8 @@ if it does not, then you would have to add TXT record. Let's look at how to do t
 10. Now all that is remaining is for you to fill the storage bucket.
 
 --------------
+The motivation behind having your own website is for you to have your own space on the internet. You shouldn't have to put your thoughts in facebook where they get lost or your articles in hosted blogs like wordpress.com. Wordpress self hosted sites come with the promise of ease of use, but use case wise, it is often static content which gets hosted dynamically which is inefficient, not to mention expensive.
+
+One of the main reasons people choose to host their thoughts and ideas in places like facebook is that it is hard and perhaps costly to create websites. Neither of which should be the case. One should only use networks to spread ideas, not to host them.
+
+This article is therefore aimed at people who don't have their own websites currently and not at existing developers (and so it aims to be free of technical jargon as much as possible). If you find improvements to code or to docs, do send in.
