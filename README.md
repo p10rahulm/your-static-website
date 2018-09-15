@@ -92,7 +92,7 @@ The following are going to be needed for the setup
     - If it works you should get an output like `Error: Unable to locate Config file. Perhaps you need to create a new site.`
     - If it doesn't work, you should just see `'hugo' is not recognized as an internal or external command`. In this case revisit instructions for adding to PATH.
 
-11. You can go to this site as a reference: https://gohugo.io/getting-started/installing/
+11. You can go to this site as a reference: [Hugo: Getting Started](https://gohugo.io/getting-started/installing/)
 12. [This video is an excellent resource for installing hugo on windows](https://www.youtube.com/watch?v=G7umPCU-8xc) and [this video for installing hugo on mac](https://www.youtube.com/watch?v=WvhCGlLcrF8). In general that series of videos are an excellent introduction to hugo, which I recommend you look at when you have the time.
 
 
@@ -130,6 +130,10 @@ As described [here](https://git-scm.com/book/en/v2/Getting-Started-About-Version
 Section 2: Creating your Website Content
 ----------------
 This is probably the most involved part of creating your website. What do you write, what images to use become creative questions that take time for all of us. While the site building itself takes time, you can start with something prebuilt, check that it works and when you do get time, modify it into something you want or need.
+
+Broadly the following steps are involved in creating the website
+1. Download the template files.
+2. 
 
 ----------------
 Section 3: Setting up the online scaffolding
