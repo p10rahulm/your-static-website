@@ -4,7 +4,7 @@
 
 
 # Basic Options
-baseurl = "https://thinkingtree.codefra.in/"
+baseurl = "http://www.thinkingtree.me/"
 title = "The Thinking Tree"
 # theme = "blank"
 

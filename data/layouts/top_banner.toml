@@ -24,7 +24,7 @@
             value = "relative"
         [[slide_elements.styles.style_value]]
             field = "margin-top"
-            value = "-30px"
+            value = "-3px"
     [[slide_elements.custom_js_partials]]
         partial_location = "js_scripts/homepage/top_banner_sizing.js"
 
