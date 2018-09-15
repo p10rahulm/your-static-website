@@ -9,11 +9,11 @@ Section 1: Getting Started
 
 ## Get the right software
 The following are going to be needed for the setup
-    1. Git Bash
-    2. Google Cloud SDK
-    3. Hugo
-    4. Github Account
-    5. Text Editor
+1. Git Bash
+2. Google Cloud SDK
+3. Hugo
+4. Github Account
+5. Text Editor
 
 ### Step 1: Getting git bash
 1. Go to [Git Download Website](https://git-scm.com/downloads)
