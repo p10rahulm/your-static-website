@@ -64,12 +64,12 @@ The following are going to be needed for the setup
 
 ### Step 3: Getting Hugo
 1. [Hugo](https://gohugo.io/) is an amazing framework for generating static websites. It is fast, well maintained and has excellent support. I'm going to list the main pros and cons of hugo here
-    - Pros:
+    1. Pros:
         1. It is the fastest website generator. My template which has 1000+ files gets generated in 1 second flat.
         2. It is well supported and constantly improving.
         3. It is getting used on major platforms by major companies.
         4. It's main competitor is Jekyll which is built on ruby.
-    - Cons:
+    2. Cons:
         1. If any, the only con is that it is built on GO, and Go Templates has the minor flaw of variable scope. There are workarounds due to Hugo's amazing developer 'bep'. (I'm told this issue has gone away with hugo version 0.48)
 2. Go to the [Hugo downloads page](https://github.com/gohugoio/hugo/releases).
 3. Choose the latest and greatest version. For example: For windows this would be 'hugo_0.45_Windows-64bit.zip', where the version 0.45 may be different.
@@ -134,12 +134,54 @@ This is probably the most involved part of creating your website. What do you wr
 
 Broadly the following steps are involved in creating the website
 
-0. Understand Hugo
-1. Download the template files.
-2. Preview the site
-3. Modify basic template files.
-4. Modify the content and preview
-5. Move from template to deployment
+1. Understand Hugo
+2. Download the template files.
+3. Preview the site
+4. Modify basic template files.
+5. Modify the content and preview
+6. Learn to create new templates if required
+7. Move from template to deployment
+
+### Step 1: Understanding Hugo
+
+This document is aimed at someone who has not built a website before, so if this is too simple, then bear with me, or skim through this section. This section will not require you to do anything, but just read.
+
+These [set of videos](https://www.youtube.com/watch?v=qtIqKaDlqXo&list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3) on Hugo are an excellent resource to start your understanding of Hugo. I found it took me a few hours to go through, but it saved me many more hours later. Do this when you get the time. After this attempt to go through the [Hugo docs](https://gohugo.io/getting-started/). This is a good reference, but i didn't find it to be a good read through. Both of these are required for templating, but hopefully we can make it through to creating a website without modifying the templates without use of these.
+
+We will attempt an understanding of what is Hugo through a few sub-sections. 
+- What goes into building a website
+- What is a static website and when it is ok to build your website statically
+- What is a static website generator
+- What are the parts of a typical website
+- What is Hugo
+
+#### What goes into building a website
+There are three basic parts to every website as you see it on your browser. The content, the styling and the logic. These are described by three parts, *html*, *css* and *javascript*.
+
+1. HTML: 
+    - This forms the main content of the website. 
+    - The actual content of the website is surrounded by a start tag and an end tag that describe the content. 
+    - While there are many types of [element tags](https://www.w3schools.com/html/html_elements.asp), the main ones that we will see over and over are [div](https://www.w3schools.com/tags/tag_div.asp), [span](https://www.w3schools.com/tags/tag_span.asp), [a](https://www.w3schools.com/tags/tag_a.asp), [img](https://www.w3schools.com/tags/tag_img.asp), [p](https://www.w3schools.com/tags/tag_p.asp) and the [heading](https://www.w3schools.com/tags/tag_hn.asp) tags
+    - Each of these element tags optionally has an `id` and can belong to a `class`. These identifiers can be used in the css and javascript to identify the element to style it or perform some other login on it.
+    - All the content along with the html elements for these go into the [html body](https://www.w3schools.com/tags/tag_body.asp). 
+    - There could also be meta data about the webpage itself. These typically go at the top of the webpage into the [head](https://www.w3schools.com/tags/tag_head.asp) of the document
+    - There are also file types that browsers know how to interpret. These could be music which could be placed in the [audio tag](https://www.w3schools.com/Tags/tag_audio.asp), or videos in the [video tag](https://www.w3schools.com/html/html5_video.asp) and pdfs in the [object tag](https://www.w3schools.com/TAGS/tag_object.asp). Apart from these file types, [images](https://www.w3schools.com/html/html_images.asp) are a basic part of html standards.
+    - If you want to learn HTML from scratch [tutorials-point](https://www.tutorialspoint.com/html/index.htm), [code-academy](https://www.codecademy.com/learn/learn-html) and [W3Schools](https://www.w3schools.com/html/) are good places to start.
+2. CSS: 
+    - Cascading Style Sheets are the main method to styling a website.
+    - CSS specifications decide the syntax by which you can specify the style. 
+    - CSS targetting a particular div can be [placed at the div](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_css_inline) in the html, within [style tag in the html](https://www.w3schools.com/tags/tag_style.asp) or in a [separate css file](https://www.w3schools.com/css/css_howto.asp).
+    - Typical things decided by css are font styles, position and spacing of elements, color or image of background and color of foreground
+    - CSS3 can be used to create simple animated objects in a webpage, through transforms.
+
+From this section you might understand that the content you write typically forms a small part of the webpage only. There is a lot more scaffolding that would be wasteful to write each time you want to 
+
+#### What is a static website and when it is ok to build your website statically
+#### What is a static website generator
+#### What are the parts of a typical website
+#### What is Hugo
+
+
 
 
 ----------------
