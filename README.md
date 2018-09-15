@@ -1,17 +1,19 @@
-# Creating your own static website from scratch at 2 cents a month (plus cost of domain)
+# How to create an updateable static website from scratch at 2 cents a month (plus cost of domain) using godaddy, Google Cloud and Hugo
 We are today going to look at how to setup a website from scratch. The expectation is that while the initial setup is going to take something like 3-4 hours, any changes to the website should be a matter of seconds or minutes.
 
 
 
 ----------------
-Section 1: Creating your Website Content
+Section 1: Getting Started
 ----------------
 
 ## Get the right software
-There are three main softwares needed for the setup
+The following are going to be needed for the setup
     1. Git Bash
     2. Google Cloud SDK
     3. Hugo
+    4. Github Account
+    5. Text Editor
 
 ### Getting git bash
 1. Go to [Git Download Website](https://git-scm.com/downloads)
@@ -90,8 +92,6 @@ There are three main softwares needed for the setup
     - If it works you should get an output like `Error: Unable to locate Config file. Perhaps you need to create a new site.`
     - If it doesn't work, you should just see `'hugo' is not recognized as an internal or external command`. In this case revisit instructions for adding to PATH.
 
-
-
 11. You can go to this site as a reference: https://gohugo.io/getting-started/installing/
 12. [This video is an excellent resource for installing hugo on windows](https://www.youtube.com/watch?v=G7umPCU-8xc) and [this video for installing hugo on mac](https://www.youtube.com/watch?v=WvhCGlLcrF8). In general that series of videos are an excellent introduction to hugo, which I recommend you look at when you have the time.
 
@@ -127,7 +127,12 @@ As described [here](https://git-scm.com/book/en/v2/Getting-Started-About-Version
 
 
 ----------------
-Section 2: Setting up the online scaffolding
+Section 2: Creating your Website Content
+----------------
+This is probably the most involved part of creating your website. What do you write, what images to use become creative questions that take time for all of us. While the site building itself takes time, you can start with something prebuilt, check that it works and when you do get time, modify it into something you want or need.
+
+----------------
+Section 3: Setting up the online scaffolding
 ----------------
 
 ## Go buy the domain
