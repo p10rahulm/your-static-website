@@ -15,7 +15,7 @@ The following are going to be needed for the setup
     4. Github Account
     5. Text Editor
 
-### Getting git bash
+### Step 1: Getting git bash
 1. Go to [Git Download Website](https://git-scm.com/downloads)
 2. At the top, you would find a few operating systems. Click on your operating system, ex: windows or mac, etc
 3. You will be lead to a site which auto triggers the download. If there is no download triggered you can choose 64 bit for most computers today.
@@ -33,7 +33,7 @@ The following are going to be needed for the setup
 6. This completes your setup of git. Now you are ready to code like a pro!
 7. This is an excellent resource to visually check against in case you get stuck at any steps: [Install Git Bash Instructions](http://www.techoism.com/how-to-install-git-bash-on-windows/)
 
-### Getting Google Cloud SDK
+### Step 2: Getting Google Cloud SDK
 1. Go to [Google Cloud SDK Docs](https://cloud.google.com/sdk/docs/)
 2. This should enable you to install google cloud SDK.
     1. Though the cloud SDK consists of cloud gsutil and gq command line tools, we will only be using gsutil.
@@ -62,7 +62,7 @@ The following are going to be needed for the setup
     2. This [stackoverflow question](https://stackoverflow.com/questions/31167181/adding-git-to-path-variable-cant-find-github-under-appdata-local) mentions which folder you need to add to PATH
 
 
-### Getting Hugo
+### Step 3: Getting Hugo
 1. [Hugo](https://gohugo.io/) is an amazing framework for generating static websites. It is fast, well maintained and has excellent support. I'm going to list the main pros and cons of hugo here
     - Pros:
         1. It is the fastest website generator. My template which has 1000+ files gets generated in 1 second flat.
@@ -96,7 +96,7 @@ The following are going to be needed for the setup
 12. [This video is an excellent resource for installing hugo on windows](https://www.youtube.com/watch?v=G7umPCU-8xc) and [this video for installing hugo on mac](https://www.youtube.com/watch?v=WvhCGlLcrF8). In general that series of videos are an excellent introduction to hugo, which I recommend you look at when you have the time.
 
 
-### Getting a version control system OR login to github
+### Step 4: Getting a version control system OR login to github
 As described [here](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control), a version control system (or VCS) is a system that records changes to a file or set of files over time so that you can recall specific versions later. This basically ensures that you don't lose files or even content of files. It is a good to have when creating a website, especially one that you expect to update frequently. It is a must have if you intend to update your static site from multiple computers.
 1. Go to [github.com](https://github.com/). Unless you are already signed in, it will ask you to sign up. github is super user friendly so easy enough.
     1. Pick a username, email and password. Needless to say, note these down
@@ -114,7 +114,7 @@ As described [here](https://git-scm.com/book/en/v2/Getting-Started-About-Version
 4. You will be taken to a page that looks like `https://github.com/yourusername/yourblogname`. Bookmark this page
 5. Note down the link to the git repository which should look like: `https://github.com/yourusername/yourblogname.git`
 
-### Get a good text editor
+### Step 5: Get a good text editor
 - I recommend Atom as
     1. it's good for '.md' files that we'll be using,
     2. It has a good color scheme and highlighting in case you like a dark themed editor
