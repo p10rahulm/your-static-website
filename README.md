@@ -123,7 +123,8 @@ As described [here](https://git-scm.com/book/en/v2/Getting-Started-About-Version
 - I also like VS Code and notepad++.
     - NP++ is lightest and comes in light theme without code highlighting.
     - VS Code is super good and it would be on top of the list if it weren't for Microsoft bad rap of the 2000s.
-- You can any of these of your choice from here: [Atom](https://atom.io/), [VSCode](https://code.visualstudio.com/) and [Notepad++](https://notepad-plus-plus.org/download)
+    - If you want to have a full featured IDE, you can download Webstorm from intellij. This is good if you have large projects.
+- You can any of these of your choice from here: [Atom](https://atom.io/), [VSCode](https://code.visualstudio.com/), [Notepad++](https://notepad-plus-plus.org/download) and [Webstorm](https://www.jetbrains.com/webstorm/)
 
 
 ----------------
@@ -132,8 +133,14 @@ Section 2: Creating your Website Content
 This is probably the most involved part of creating your website. What do you write, what images to use become creative questions that take time for all of us. While the site building itself takes time, you can start with something prebuilt, check that it works and when you do get time, modify it into something you want or need.
 
 Broadly the following steps are involved in creating the website
+
+0. Understand Hugo
 1. Download the template files.
-2. 
+2. Preview the site
+3. Modify basic template files.
+4. Modify the content and preview
+5. Move from template to deployment
+
 
 ----------------
 Section 3: Setting up the online scaffolding
