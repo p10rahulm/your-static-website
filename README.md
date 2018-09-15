@@ -203,9 +203,31 @@ Notes:
 2. This section might also seem like a lot of input to digest. The happy part is that the whole reason to use Hugo is that you don't *have to* write any of HTML, CSS or javascript.
 
 #### What is a static website and when it is ok to build your website statically
+We mentioned in the last section that a site can be made dynamic by adding javascript. But most sites (including static sites) contain javascript. So whats going on? This is a confusion thats caused due to terminology. So let's define whats a static website nicely.
+
+***Definition:***  A static site is one that stores no information about the visitor on the server that is serving the website.
+
+**Implications:**
+1. The first implication of this is that every visitor is served the same web page. 
+2. This webpage might appear differently for each visitor due to differently configured client side logic, or even simply due to different CSS for different browser window sizes.
+3. The static site may contain components which are served from different servers that are dynamic. A good example is how many static sites use comments that are powered by third party providers (like [Disqus](https://disqus.com/))
+4. Static sites may use visitor information passed through [forms](https://www.w3schools.com/html/html_form_elements.asp) or [cookies](https://www.w3schools.com/js/js_cookies.asp) and send this to third party servers, or even email. This can be used to setup [contact forms](https://www.w3schools.com/howto/howto_css_contact_form.asp)
+5. Static sites can store information about the site on the client side, but may not store information about the client on their own servers. Yet, they can defer this function to a third party server. This for example may be used to serve ads from third parties [like Google Adsense](https://support.google.com/adsense/answer/181950?hl=en) (even personalized ads) from static sites
+6. You may use similar third party applications to enable analytics, [ex: google analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/), about the customer. These analytics can include things like what are the parts and pages of the website your visitor spent time on, how they arrived at your site, what geography they are from and sometimes even the demographics of the customer. 
+7. You can even use static sites to receive payments. Typically this is again through third party payment gateways [like paypal](https://developer.paypal.com/demo/checkout/#/pattern/client)
+
+**So where's the catch?**
+1. A lot of your customer data exists with third party providers. Note that even a majority of dynamic sites use the third party providers anyway.
+2. Your logic is computed at the customer side, and you don't have control over the amount of computation power at their end. It may for example be a slow mobile from which the customer is accessing your site.
+3. Static sites are an ideal use case for websites where the core objective is to display content. For websites where there is some other objective, like bank websites or search websites this is not ideal.
+4. For even simple use cases like allowing customer logins (where they bookmark their favorite pages from your website for instance), or for sites wanting to implement carts static sites are not the solution
+5. For any dynamic content based on who the customer is, or based on their history and preferences, static sites are not the solution.
 
 #### What is a static website generator
+
+
 #### What are the parts of a typical website
+
 #### What is Hugo
 
 
