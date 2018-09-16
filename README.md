@@ -205,16 +205,18 @@ Notes:
 #### What is a static website and when it is ok to build your website statically
 We mentioned in the last section that a site can be made dynamic by adding javascript. But most sites (including static sites) contain javascript. So whats going on? This is a confusion thats caused due to terminology. So let's define whats a static website nicely.
 
-***Definition:***  A static site is one that stores no information about the visitor on the server that is serving the website.
+***Definition:***  A `static site` is a website that stores no information about the visitor on the server that is serving the website.
 
 **Implications:**
 1. The first implication of this is that every visitor is served the same web page. 
 2. This webpage might appear differently for each visitor due to differently configured client side logic, or even simply due to different CSS for different devices.
-3. The static site may contain components which are served from different servers that are dynamic. A good example is how many static sites use comments that are powered by third party providers (like [Disqus](https://disqus.com/))
-4. Static sites may use visitor information passed through [forms](https://www.w3schools.com/html/html_form_elements.asp) or [cookies](https://www.w3schools.com/js/js_cookies.asp) and send this to third party servers, or even email. This can be used to setup [contact forms](https://www.w3schools.com/howto/howto_css_contact_form.asp)
-5. Static sites can store information about the site on the client side, but may not store information about the client on their own servers. Yet, they can defer this function to a third party server. This for example may be used to serve ads from third parties [like Google Adsense](https://support.google.com/adsense/answer/181950?hl=en) (even personalized ads) from static sites
-6. You may use similar third party applications to enable analytics, [ex: google analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/), about the customer. These analytics can include things like what are the parts and pages of the website your visitor spent time on, how they arrived at your site, what geography they are from and sometimes even the demographics of the customer. 
-7. You can even use static sites to receive payments. Typically this is again through third party payment gateways [like paypal](https://developer.paypal.com/demo/checkout/#/pattern/client)
+3. Static sites may use visitor information passed through [forms](https://www.w3schools.com/html/html_form_elements.asp) or [cookies](https://www.w3schools.com/js/js_cookies.asp) and send this to third party servers, or even email. This can be used to setup [contact forms](https://www.w3schools.com/howto/howto_css_contact_form.asp)
+4. The static site may contain components which are served from different servers that are dynamic. Further, while they may not store information about the client on their own servers, they can defer this function to a third party server. Good examples of third party applications that are often integrated into static sites are:
+    1. Many static sites use comments that are powered by third party providers (like [Disqus](https://disqus.com/))
+    2. Static sites can be used to serve ads from third parties [like Google Adsense](https://support.google.com/adsense/answer/181950?hl=en) (even personalized ads) from static sites
+    3. Static sites may use similar third party applications to enable analytics, [ex: google analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/), about the customer. These analytics can include things like what are the parts and pages of the website your visitor spent time on, how they arrived at your site, what geography they are from and sometimes even the demographics of the customer. 
+    4. Static sites may even be used to receive payments. Typically this is again through third party payment gateways [like paypal](https://developer.paypal.com/demo/checkout/#/pattern/client)
+5. Static sites are cheaper to host as all one needs is storage space on one of the cloud providers (typically free for one website per username on [github pages](https://pages.github.com/) or 2 cents a month for a gigabyte of storage on [Google Cloud](https://cloud.google.com/storage/)
 
 **So where's the catch?**
 1. A lot of your customer data exists with third party providers. Note that even a majority of dynamic sites use the third party providers anyway.
@@ -224,6 +226,23 @@ We mentioned in the last section that a site can be made dynamic by adding javas
 5. For any dynamic content based on who the customer is, or based on their history and preferences, static sites are not the solution.
 
 #### What is a static website generator
+
+**The need for a webpage Generator**
+1. We noted during the discussion of websites above that *while the actual text content of a webpage may be small, there is a large amount of html, css and javascript* that goes into making a webpage out of this content. 
+2. Most times, this html, css and javascript is repeated across different webpages within a website. Therefore the website creator shouldn't have to repeat this code
+3. Even when the entire html, css or javascript is not repeated, there are certainly large chunks of these which are repeated across the pages of a website
+
+***Definition:*** Let us call the text and images and any other parameters that a user inputs in creating a website the `content matter`. A `static site generator` is a program that generates a full web page from the content matter that a user inputs.  
+
+Let us first understand the stages of static site generation:
+1. User chooses styles and logic (template)
+2. User inputs content and parameters if any
+3. Website (or webpage) is generated by the static site generator
+4. Website is checked for correctness
+5. Website is uploaded to storage host
+
+During generation of the webpage there is any amount of logic that can go into generating the webpage from the `content matter`. Since the content matter can include parameters for generating the website
+
 
 
 #### What are the parts of a typical website
