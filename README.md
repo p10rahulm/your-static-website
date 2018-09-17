@@ -89,7 +89,6 @@ The following are going to be needed for the setup
 10. Now Hugo should be added to path. You can confirm this by going to the Google Cloud SDK shell and then typing `hugo` into the command line.
     - If it works you should get an output like `Error: Unable to locate Config file. Perhaps you need to create a new site.`
     - If it doesn't work, you should just see `'hugo' is not recognized as an internal or external command`. In this case revisit instructions for adding to PATH.
-
 11. You can go to this site as a reference: [Hugo: Getting Started](https://gohugo.io/getting-started/installing/)
 12. [This video is an excellent resource for installing hugo on windows](https://www.youtube.com/watch?v=G7umPCU-8xc) and [this video for installing hugo on mac](https://www.youtube.com/watch?v=WvhCGlLcrF8). In general that series of videos are an excellent introduction to hugo, which I recommend you look at when you have the time.
 
@@ -212,11 +211,39 @@ Notes:
 4. So if the browser has to send a request (to send back a webpage) to the server it has to find its address.
 5. This process is called the DNS lookup. Given the number of users requesting so many sites on the internet every second, this lookup (something like a telephone directory lookup) has to be super fast and is implemented using datastructures called [hash maps](https://www.geeksforgeeks.org/implement-forward-dns-look-cache/).
 6. The browser typically checks it's own cache, then the Internet service providers cache and then goes to internet wide DNS providers.
-7. 45
+7. Once the browser knows an address, how does it send a request to that address? This is handled at the equipment level itself through something called [routing tables]()
+8. These two articles (a) [DNS Guide](https://webhostinggeeks.com/guides/dns/) and (b)[
+How Does the Internet Work](https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm) are excellent resources to understand the DNS
 
-5. [This](https://webhostinggeeks.com/guides/dns/) is an excellent resource to understand the DNS
+**Requests**
+1. Once the server is found by the browser, it needs to send a request to send back a webpage.
+2. This request happens over a [http protocol](https://www.tutorialspoint.com/http/http_requests.htm). In fact http and https are the standard method of communication over the internet. [Other protocols](https://www.concise-courses.com/11-protocols/) that are common include ssh, pop3 and smtp.
+3. These are actually the topmost layer on the internet, called application protocols. These sit above the internet layer and communication layer in the [TCP/IP model](https://www.geeksforgeeks.org/computer-network-tcpip-model/). 
+4. Data transmission over the internet happens over units of data called [packets](https://en.wikipedia.org/wiki/Network_packet). These packets contain headers which contains necessary meta data for transmission and the payload which is the actual data to be transmitted.
+5. TCP is a [reliable form of communication](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Reliable_transmission) that ensures that through this extensive network of middlemen between you and the server, there is no data loss. It ensures this by checking for errors (through checksums) and for lost packets and resending these packets.
+6. Once an http request (or https) request is sent over tcp/ip, the server has to send back a response.
+7. [This](https://www.garykessler.net/library/tcpip.html) is a good resource to look at an overview of tcp/ip. [This article from Cisco](https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13769-5.html) is a fairly detailed look at TCP and [this excerpt from the tcp/ip network administration book](https://www.oreilly.com/library/view/tcpip-network-administration/0596002971/ch01.html) gives a good overview.
 
-the browser has to search for the server. It does this by first checking its own cache in case it has visited the site before, or else it visits certain 
+**Responding to requests**
+1. Behing the IP address in the [web server](https://en.wikipedia.org/wiki/Web_server) computer sits a program like Apache or Nginx for handling requests.
+2. Hi
+5. Sometimes instead of a single computer, there is something called a [load balancer](https://www.f5.com/services/resources/glossary/load-balancer) that sits at the IP.
+    - Say there is a website with 100s of concurrent users, a single server may not be able to handle it
+    - Then one needs multiple servers handling requests to the IP address of the website.
+    - This task is done by a [load balancer](https://en.wikipedia.org/wiki/Load_balancing_(computing)) which takes a requests, and sends it onwards to one of the servers that sits behind it.
+    - There are [several methods](https://www.citrix.com/glossary/load-balancing.html) of choosing which server to send the user request to. For example:
+        - round robin
+        - least response time
+        - least bandwidth
+        - fewest active connections
+    - Once the server and client establish a connection, the load balancer steps out of the way and there is [persistence](https://www.citrix.com/blogs/2010/09/09/load-balancing-persistence/) between that server and the user.
+6. Also common is a [CDN (content delivery network)](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/). 
+    - A [CDN](https://www.incapsula.com/cdn-guide/what-is-cdn-how-it-works.html) typically takes content at a particular timestamp, caches it and then distributes it across its servers. 
+    - When a visitor requests a particular url, it is served from one of the distributed server locations closest to the requestor. 
+    - CDNs typically serve static content, ie content that is the same irrespective of who requests it. 
+    - This could be the entire webpage or only certain assets from the webpage that are cacheable/static like images.
+
+
 
 the server registers a request. Once the request is registered, the server has to decide what is shown to the visitor. This is the logic that goes into the website. Let us call this area which controls the logic as the controller. The logic on what to show may be based on what the typical
 
