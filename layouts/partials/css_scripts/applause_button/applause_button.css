@@ -2,18 +2,13 @@
     width: 45px;
     height: 45px;
     position: fixed;
-    top: 50vh;
-    margin-top: -25px;
-    right: 25px;
+    bottom: 50vh;
     color: #0095eb;
 }
 #applause_button .count {
     margin-top: -8px;
     font-family: "Lora", serif;
-    color: #0095eb;
-}
-#applause_button .style-root {
-    fill: #0095eb;
-    stroke: #0095eb;
-    color: #0095eb;
+    color: #248;
+    font-size: 1.1rem;
+    background-color: rgba(250,250,250,0.5);
 }

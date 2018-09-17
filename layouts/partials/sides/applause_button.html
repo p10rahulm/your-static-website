@@ -3,8 +3,11 @@
 {{$link := "https://unpkg.com/applause-button/dist/applause-button.js"}}
 {{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" .Scratch "async" false "defer" false)}}
 <style type="text/css">
-    {{partial "css_scripts/applause_button.css" . | safeCSS}}
+    {{partial "css_scripts/applause_button/applause_button.css" . | safeCSS}}
 </style>
+<script type="text/javascript">
+    {{partial "js_scripts/applause_button/applause_button.js" . | safeJS }}
+</script>
 <div class="applause_button_container">
     <applause-button id="applause_button" multiclap="true" color="#0095eb" >
     </applause-button>
