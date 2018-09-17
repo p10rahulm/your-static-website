@@ -7,12 +7,14 @@ document.addEventListener('DOMContentLoaded', function(){
         applause_button.style.top = "100px";
         applause_button.style.width = "55px";
         applause_button.style.height = "55px";
+        applause_button.getElementsByClassName("count")[0].style.fontSize = "20px";
     } else {
         applause_button.style.bottom = "38px";
         applause_button.style.left = "5px";
         applause_button.style.width = "45px";
         applause_button.style.height = "45px";
         applause_button.style.marginBottom = "0";
+        applause_button.getElementsByClassName("count")[0].style.fontSize = "18px";
     }
 
 }, false);
