@@ -288,7 +288,7 @@ How Does the Internet Work](https://web.stanford.edu/class/msande91si/www-spr04/
 #### What is a static website and when it is ok to build your website statically
 In the first section we mentioned how a site can be made dynamic by adding javascript on the client side. From the last section we understood a site can be statically served or dynamically served on the server side. Yet what must be noted that there there are many dynamically writted sites that are serving static content (for example many content based websites written in [wordpress](https://digital.com/blog/wordpress-stats/), which serves about 25% of internet content). So what constitutes a static site cannot simply be based on how it is programmed on the server side.
 
-***Definition:***  A `static page` is a webpage that neither requires nor can accept any user interactions other than the url to *serve* the webpage, though these can be added through third party modules. 
+***Definition:***  A `static site` consists of webpages where the output (html, css, javascript and any other assets) of the *site server* only depends on the url of the webpages.  
 
 **Implications:**
 1. The first implication of this is that every visitor is served the same web page. 
@@ -310,7 +310,7 @@ In the first section we mentioned how a site can be made dynamic by adding javas
 6. Sites that have to output something computed live, or computed per user request also would not be suitable for static sites. For example search sites.
 7. Many internet sites operate on user data or other data under a logic of CRUD or in other words Create Read Update and Delete. These refer to what is done to a [record](https://www.cengage.com/school/corpview/RegularFeatures/DatabaseTutorial/db_elements/db_elements2.htm) in a [table](https://en.wikipedia.org/wiki/Table_(database)). Most things that act on data, when that data is not input by the webpage creator, is not suitable for static sites.
 
-Having said all of this, a majority of content on the internet is static, including that which is displayed by so called dynamic sites like wordpress.
+Yet, as mentioned previously, a majority of content on the internet is static, including that which is displayed by so called dynamic sites like wordpress.
 
 #### What is a static website generator
 
