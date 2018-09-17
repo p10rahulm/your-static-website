@@ -44,6 +44,13 @@
     {{ end }}
     {{$.Scratch.Delete "page_layout"}}
 {{ end }}
+{{ block "applause_button" .}}
+    {{ $.Scratch.SetInMap "page_layout" "enable_applause_button" false }}
+    {{ if ($.Scratch.Get "page_layout").enable_applause_button }}
+        {{ partial "sides/applause_button" . }}
+    {{ end }}
+    {{$.Scratch.Delete "page_layout"}}
+{{ end }}
 
 {{ block "footr" .}}
     {{ partial "cookie_consent" . }}
