@@ -225,9 +225,46 @@ How Does the Internet Work](https://web.stanford.edu/class/msande91si/www-spr04/
 7. [This](https://www.garykessler.net/library/tcpip.html) is a good resource to look at an overview of tcp/ip. [This article from Cisco](https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13769-5.html) is a fairly detailed look at TCP and [this excerpt from the tcp/ip network administration book](https://www.oreilly.com/library/view/tcpip-network-administration/0596002971/ch01.html) gives a good overview.
 
 **Responding to requests**
-1. Behing the IP address in the [web server](https://en.wikipedia.org/wiki/Web_server) computer sits a program like Apache or Nginx for handling requests.
-2. Hi
-5. Sometimes instead of a single computer, there is something called a [load balancer](https://www.f5.com/services/resources/glossary/load-balancer) that sits at the IP.
+1. Behing the IP address in the [web server](https://en.wikipedia.org/wiki/Web_server) computer sits a program like [Apache](https://httpd.apache.org/), [IIS](https://www.pcwdld.com/what-is-iis) or [Nginx](https://www.nginx.com/) for handling requests.
+2. This server program then passes the request to a request handler that reads the http request and generates a response. 
+3. This request handling is done for each user request. ie each time the site is viewed, there is a request handled by the server
+4. There are different types of user requests
+    1. The response may simply need the html, css and javascript and images sent back to the user. With regards to the server these are `static` text objects.
+    2. Sometimes this request may need to pass through some logic or may need [server side programming](https://developer.mozilla.org/en-US/docs/Learn/Server-side) to generate a response. This is called a `dynamic` response.
+        - Note that this is distinguished from the programming that goes into the javascript executed by the user's browser also called as [client side programming]((https://www.geeksforgeeks.org/server-side-client-side-programming/))
+    3. In some cases, like in [simple PHP](https://eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design/) [design patterns](https://sourcemaking.com/design_patterns), that are closely linked to static design, you can modify the content (html,css and javascript) through [inline php](https://www.w3schools.com/php/php_syntax.asp)
+    4. Other language frameworks use a design pattern like [MVC](http://heim.ifi.uio.no/~trygver/2007/MVC_Originals.pdf), which stands for Model View Controller
+        1. **[View:](https://www.martinfowler.com/eaaDev/uiArchs.html)** 
+            - This sits straight on top of the document that the user sees. It's responsibility is to update the document in case anything in the controller changes. It is generally passive in the sense it doesn't do any processing work.
+            - [For example](https://www.tutorialspoint.com/ruby-on-rails/rails-views.htm), let's say we are creating a list view for books in a library. This might be as simple as:
+            ```
+            <% if @books.blank? %>
+                <p>There are not any books currently in the system.</p>
+            <% else %>
+                <p>These are the current books in our system</p>
+
+                <ul id = "books">
+                    <% @books.each do |book| %>
+                        <li><%= link_to book.title -%></li>
+                    <% end %>
+                </ul>
+            <% end %>
+            ```
+        1. **[Controller:](https://stackoverflow.com/questions/1931335/what-is-mvc-in-ruby-on-rails)** 
+            - This handles the logic of the webpage. The request goes to the controller which queries the model and provides the data to the View to display.
+        2. **[Model:](https://www.tomdalling.com/blog/software-design/model-view-controller-explained/)**  
+            - This is where the relevant data is accessed and retrieved for that particular use case.
+                - For example, one may want to retrieve the name and emails of a customer in the home page of an email App. In the same email App, when a particular email is clicked, the contents of that particular email may need to be retrieved. 
+            - This is understood best as retrieval of information from a database. The database itself may be made up of several tables that are relevant. 
+                - Examples of tables may include customer table where the name, customer id and purchases of a customer might be stored(in case of an ecommerce site).
+                - In some architectures like wordpress, entire documents might just be a single cell in a table containing documents.
+            
+        
+    
+    5. Such requests are handled by programs like [Django](https://djangobook.com/model-view-controller-design-pattern/) which is built on  Python or [Ruby on Rails](http://www.tutorialspoint.com/ruby-on-rails/rails-framework.htm) built on Ruby or [several javascript frameworks](https://blog.scottlogic.com/2013/12/06/JavaScript-MVC-frameworks.html) built on javascript.
+    5. 
+    
+3. Sometimes instead of a single computer, there is something called a [load balancer](https://www.f5.com/services/resources/glossary/load-balancer) that sits at the IP.
     - Say there is a website with 100s of concurrent users, a single server may not be able to handle it
     - Then one needs multiple servers handling requests to the IP address of the website.
     - This task is done by a [load balancer](https://en.wikipedia.org/wiki/Load_balancing_(computing)) which takes a requests, and sends it onwards to one of the servers that sits behind it.
