@@ -148,6 +148,7 @@ These [set of videos](https://www.youtube.com/watch?v=qtIqKaDlqXo&list=PLLAZ4kZ9
 
 We will attempt an understanding of what is Hugo through a few sub-sections. 
 - What goes into building a website
+- How does a website work
 - What is a static website and when it is ok to build your website statically
 - What is a static website generator
 - What are the parts of a typical website
@@ -202,6 +203,25 @@ Notes:
 1. From this section you might come to understand that the visible content you write typically forms a small part of the webpage only. The rest is all the supporting html css and javascript scaffolding. It would be hugely wasteful to write all of this scaffolding each time you want to note down a small thought.
 2. This section might also seem like a lot of input to digest. The happy part is that the whole reason to use Hugo is that you don't *have to* write any of HTML, CSS or javascript.
 
+#### How does a website work
+
+**DNS**
+1. When a [user types an url](https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a) on the browser, the user expects to see a webpage represented by the url. 
+2. Each webpage is hosted by a server (or more than one server). 
+3. Each of these servers have a certain address associated with it. 
+4. So if the browser has to send a request (to send back a webpage) to the server it has to find its address.
+5. This process is called the DNS lookup. Given the number of users requesting so many sites on the internet every second, this lookup (something like a telephone directory lookup) has to be super fast and is implemented using datastructures called [hash maps](https://www.geeksforgeeks.org/implement-forward-dns-look-cache/).
+6. The browser typically checks it's own cache, then the Internet service providers cache and then goes to internet wide DNS providers.
+7. 45
+
+5. [This](https://webhostinggeeks.com/guides/dns/) is an excellent resource to understand the DNS
+
+the browser has to search for the server. It does this by first checking its own cache in case it has visited the site before, or else it visits certain 
+
+the server registers a request. Once the request is registered, the server has to decide what is shown to the visitor. This is the logic that goes into the website. Let us call this area which controls the logic as the controller. The logic on what to show may be based on what the typical
+
+
+
 #### What is a static website and when it is ok to build your website statically
 We mentioned in the last section that a site can be made dynamic by adding javascript. But most sites (including static sites) contain javascript. So whats going on? This is a confusion thats caused due to terminology. So let's define whats a static website nicely.
 
@@ -223,7 +243,11 @@ We mentioned in the last section that a site can be made dynamic by adding javas
 2. Your logic is computed at the customer side, and you don't have control over the amount of computation power at their end. It may for example be a slow mobile from which the customer is accessing your site.
 3. Static sites are an ideal use case for websites where the core objective is to display content. For websites where there is some other objective, like bank websites or search websites this is not ideal.
 4. For even simple use cases like allowing customer logins (where they bookmark their favorite pages from your website for instance), or for sites wanting to implement carts static sites are not the solution
-5. For any dynamic content based on who the customer is, or based on their history and preferences, static sites are not the solution.
+5. For any dynamic content based on who the customer is, or based on their history and preferences, static sites are not the solution. Most of what we know as `user applications` come under this category For example: mail, banking sites. 
+6. Sites that have to output something computed live, or computed per user request also would not be suitable for static sites. For example search sites.
+7. Many internet sites operate on user data or other data under a logic of CRUD or in other words Create Read Update and Delete. These refer to what is done to a [record](https://www.cengage.com/school/corpview/RegularFeatures/DatabaseTutorial/db_elements/db_elements2.htm) in a [table](https://en.wikipedia.org/wiki/Table_(database)). Most things that act on data, when that data is not input by the webpage creator, is not suitable for static sites.
+
+Having said all of this, a majority of content on the internet is static, including that which is displayed by so called dynamic sites like wordpress.
 
 #### What is a static website generator
 
