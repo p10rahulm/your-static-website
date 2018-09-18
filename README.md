@@ -146,11 +146,12 @@ This document is aimed at someone who has not built a website before, so if this
 These [set of videos](https://www.youtube.com/watch?v=qtIqKaDlqXo&list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3) on Hugo are an excellent resource to start your understanding of Hugo. I found it took me a few hours to go through, but it saved me many more hours later. Do this when you get the time. After this attempt to go through the [Hugo docs](https://gohugo.io/getting-started/). This is a good reference, but i didn't find it to be a good read through. Both of these are required for templating, but hopefully we can make it through to creating a website without modifying the templates without use of these.
 
 We will attempt an understanding of what is Hugo through a few sub-sections. 
+
 - What goes into building a website
 - How does a website work
-- What is a static website and when it is ok to build your website statically
-- What is a static website generator
-- What are the parts of a typical website
+- What is a static website
+- What are Templates
+- How does a static website generator work?
 - What is Hugo
 
 #### What goes into building a website
@@ -285,7 +286,7 @@ How Does the Internet Work](https://web.stanford.edu/class/msande91si/www-spr04/
     - CDNs typically serve static content, ie content that is the same irrespective of who requests it. 
     - This could be the entire webpage or only certain assets from the webpage that are cacheable/static like images.
 
-#### What is a static website and when it is ok to build your website statically
+#### What is a static website (and when it is ok to build your website statically)
 In the first section we mentioned how a site can be made dynamic by adding javascript on the client side. From the last section we understood a site can be statically served or dynamically served on the server side. Yet what must be noted that there there are many dynamically writted sites that are serving static content (for example many content based websites written in [wordpress](https://digital.com/blog/wordpress-stats/), which serves about 25% of internet content). So what constitutes a static site cannot simply be based on how it is programmed on the server side.
 
 ***Definition:***  A `static site` consists of webpages where the output (html, css, javascript and any other assets) of the *site server* only depends on the url of the webpages.  
@@ -312,27 +313,104 @@ In the first section we mentioned how a site can be made dynamic by adding javas
 
 Yet, as mentioned previously, a majority of content on the internet is static, including that which is displayed by so called dynamic sites like wordpress.
 
-#### What is a static website generator
+#### What are Templates?
 
 **The need for a webpage Generator**
-1. We noted during the discussion of websites above that *while the actual text content of a webpage may be small, there is a large amount of html, css and javascript* that goes into making a webpage out of this content. 
-2. Most times, this html, css and javascript is repeated across different webpages within a website. Therefore the website creator shouldn't have to repeat this code
-3. Even when the entire html, css or javascript is not repeated, there are certainly large chunks of these which are repeated across the pages of a website
 
-***Definition:*** Let us call the text and images and any other parameters that a user inputs in creating a website the `content matter`. A `static site generator` is a program that generates a full web page from the content matter that a user inputs.  
+1. We noted during the discussion of websites above that *while the actual content of a webpage may be small, there is a large amount of html, css and javascript* that goes into making a webpage out of this content.
+2. When the website has more than one page, a good amount of this html, css and javascript is repeated across pages of the website. 
+3. Repeating this code for the website creator is unnecessary and prone to errors
+4. Therefore *the same* parts must be reused in different pages of the website
+5. Further extending this analogy, different websites that provide similar functionality often have a good degree of repetition of the html, css and javaascript.
+6. Yet most websites are not exactly similar in look and feel, though the underlying functionality may be the same.
+7. Further, most websites completely differ in content, even if their functionality, look and feel are similar.
+8. This brings in the use of template pieces, which are standard pieces of code (html, css and javascript) which are **modifiable** and perhaps **extendible**. In these template pieces, a *certain functionality may be provided, the look and feel can be modified and content can be replaced*.
+    - the same concept of templates can be extended even beyond web templates to all manner of code. Functions are a form of such templating.
+9. A collection of such template pieces that can be used to form a full website is called a *template for the static website generator*.
 
-Let us first understand the stages of static site generation:
+**What does a template provide**
+The template should provide the *scaffolding* (the html, css and javascript) needed to generate the website:
+
+1. A good way to think about a static generator is that it assembles a website from different parts. These parts are provided by the template
+2. Some of these parts may be substituted for others and others may be modified
+3. Many of these parts may be just the outline with segments to be filled in by the user, like the actual textual content of the website, or the site title, or the logo of the website.
+4. Sometimes, when these parts are not filled in by the user, they may have some default options so that the website looks complete
+5. The template may provide options of different sub-parts for a user to choose from.
+    - For example, it may provide different types of navigation bars
+    - It may provide different forms of site footers
+    - It may provide different options for product pages
+6. Templates may provide options to modify various parts.
+    - For example, colour themes are often modifiable within templates
+    - When templates come with images in some parts, these are often modifiable
+    - Templates come with some default text in some parts. It may be filler text like '[Lorem Ipsum](https://www.lipsum.com/)'. These are modifiable
+7. Templates are not specific to static websites. They are used in all manner of websites as a form of code re-use
+    - For example, the product template on amazon.com is common across all products (atleast within the same category of products). While the template is the same, it leaves space for the product name, product images, pricing, etc to be changed.
+
+**Different types of templates**
+
+Websites of all kinds exist on the internet, yet we can distill a few kinds of pages that exist across many of these sites. Let us look at some of these:
+1. The [front page or index page](https://html5up.net/)*
+2. Single content page*
+3. List of single pages*
+5. The 404 Page*
+5. The login page
+6. The dashboard or personal application page
+7. Network Feed page
+8. Search results page
+9. The settings page
+10. Cart and Address pages (or follow ups to single pages)
+11. Contact Us Page*
+12. Comments page*
+13. Reviews page
+14. Help or FAQs page*
+15. Thank you or sign out page*
+
+One should recognise that while the content for these across each website may vary the functionality is mainly the same. We have marked in (*) the pages that are often found on static pages as well.
+
+The names for the above are fairly self explanatory, and we may have come across all of these in our lifetimes on the internet, some more often than others. The first three are worth going into a little more detail
+
+1. The front page
+    - This is the page that a viewer visits when they arrive at http://www.your-domain.com
+    - This base website url is a necessary presence for almost every website. It is typically a descriptive page with some [call to action](https://blog.hubspot.com/marketing/call-to-action-examples)
+    - This page if often the first point of contact with an incoming visitor to the webpage and therefore [conversion](https://optinmonster.com/11-web-design-principles-that-will-boost-your-conversion-rate/) happens in the first few seconds here
+    - While some may follow a minimalistic design, most websites may want to spend some time on the design of this page
+    - For some websites, especially the established ones, the base url substitutes for some functional page, like the login page (in case of facebook and gmail), or the search page (in case of google)
+2. The Single content page
+    - The single content page is ubiquitous though we don't recognize it as such
+    - The single content page is the *main template page* of the website
+    - For a website like amazon, this is the product page, whereas for a website like facebook it is the individual user page. For a website like youtube, it is a video page, and for new york times, this is a single news story. For gmail it is a single email that you click on and for a blog, it is a single post. Nearly every website has one of these.
+    - While these may contain dynamically generated content, they can also be static as seen in the examples above
+3. The list page
+    - Once we define the single page for a website it is easy enough to understand the list page for the same website
+    - It is the template which shows a list of the single content pieces of the website.
+    - The lists can be sliced, diced and categorized in any manner necessary such that different posts may appear on different list pages, but the template for these remains the same
+    - This is quite related to the search results page which also shows a list of results. The only difference may be that the search has to be generated live and is necessarily dynamic on the server side
+    - examples of list pages are lists of friends on facebook, or list of posts on a blog or list of videos created by an author in youtube.
+
+Now that we have understood these aspects of templates, let us look at static website generators
+
+#### How does a static website generator work?
+
+
+***Definition:*** A `static site generator` is a program that *assembles* the text of a full web page from the `user input` and a prebuilt templates.  The user input can include any text, images and other parameters needed to assemble the webpage.
+
+
+
+Let us first understand the stages of static site generation from the user point of view:
 1. User chooses styles and logic (template)
-2. User inputs content and parameters if any
+2. User inputs content and changes parameters as neecessary
 3. Website (or webpage) is generated by the static site generator
 4. Website is checked for correctness
 5. Website is uploaded to storage host
 
-During generation of the webpage there is any amount of logic that can go into generating the webpage from the `content matter`. Since the content matter can include parameters for generating the website
+From the perspective of the static generator there are the following stages in *assembling* a webpage.
+1. Load all the site level configuration defaults from the template
+2. Load all the site level configuration that are input by the user overriding template defaults if necessary
+3. Load all the page level configuration defaults from the template
+4. Load all the page level configuration input by the user overriding template defaults if necessary
+5. Load the user content for that webpage in a simplified format like [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) or text.
 
 
-
-#### What are the parts of a typical website
 
 #### What is Hugo
 
