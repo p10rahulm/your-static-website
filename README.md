@@ -405,7 +405,11 @@ Let us first understand the stages of static site generation from the user point
 7. User adds pages to website and maintains as needed.
 
 **Information storage:**
+
+##### How is information stored
+
 Dynamic websites use databases to store information. This is not possible with static sites. But every site has a lot of information or data in it. How are these stored?
+
 1. All information in a static site is stored in the form of text
 2. This text might contain both the displayed text (content) of the website and also parameters(configuration)
 3. The configuration is encoded into text in a few different ways. These are called markup languages
@@ -448,18 +452,142 @@ Dynamic websites use databases to store information. This is not possible with s
                 "can_visitors_comment":true,
             }
         ```
-    - Another widely used markup is called [XML(Extensible Markup Language)](https://www.w3schools.com/xml/), w
-4. The above markup languages are used for encoding the configuration. There is another simplified language that is used for converting the content into html. This encoding goes by the name *markdown*. This is often how the content of the page is encoded by the creator of the static site
-    - [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) typically can take 6 different headline styles from H1-H6
-    
+    - Another widely used data markup is called [XML(Extensible Markup Language)](https://www.w3schools.com/xml/). In fact the html specification and XML specification are [closely related](https://www.lifewire.com/relationship-between-sgml-html-xml-3469454).
+    - The last markup language that we look at is [HTML(hypertext markup language)](https://www.w3schools.com/html/html_intro.asp). Unlike the other markup languages, it is not extendible in the sense the tags (like div, head, body, p, h1-6 etc) are prespecified in html.
+4. While above markup methods are used for encoding the configuration, there is another simplified markup that is used for the content. This encoding goes by the name *markdown*. 
+    - [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) typically can take 6 different headline styles from H1-H6. It can format text as emphasis, italics, strikethroughs. It can specify ordered and unordered lists. There are specific ways of specifying links, images, code elements and tables.
 
-From the perspective of the static generator there are the following stages in *assembling* a webpage.
+        ```markdown
+        Headline styles
+        # Headline 1
+        ## Headline 2
+        ### Headline 3
+        #### Headline 4
+        ##### Headline 5
+        ###### Headline 6
+
+        *italic text* 
+        **bold text**
+        ~~strikethrough text~~
+
+        - Unordered list item 1
+        - Unordered list item 2
+        - Unordered list item 3
+
+        1. Ordered list item 1
+        2. Ordered list item 2
+        3. Ordered list item 3
+
+        [This is a link](https://www.google.com)
+
+        | This          | is a          |Table          |
+        | ----          | :----------:  | -----:        |
+        | left-align    | centered      | right-aligned |
+
+        ```
+
+5. We have looked at configuration files (which contain parameters and data) specified as markup. Then we looked at content files, which is html encoded as markdown. But there are other files called template files which are mixtures of code, which is to be processed and content, which is simply passed through in output. For example take the below template taken from [django girls blog](https://tutorial.djangogirls.org/en/django_templates/)
+    ```html
+    <div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text }}</p>
+        </div>
+    {% endfor %}
+    ```
+    1. This template code carries some text information that is to be passed as is into the output html
+    2. It also contains several lines of code contained within the brackets that look like `{{ some code }}` or `{% some other code %}`
+    3. The brackets are very important because thats what tells the static generator that it needs to pass whatever is within the brackets to the coding language
+    4. Whatever the coding language outputs for those lines are substituted for the brackets
+    5. There is a need for cleanup of whitespace (new lines and spaces) after the language returns the output, because for several code pieces there would be no output. 
+    6. The pieces of code may contain variables which in the above case is `posts`. Any variables needed in the template should be available from the following places (in increasing order of importance)
+        1. The template default variables
+        2. The site level configuration files input by the user
+        3. Any data pages that have been loaded
+        4. The page level configuration files
+    7. After parsing through the template engine of the static generator, the output of the template given at the start of this section may be simple html text which looks as follows
+    ```html
+    <div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+
+        <div>
+            <p>published: 2018-09-16</p>
+            <h1><a href="">My Post Heading</a></h1>
+            <p>This is an awesome post</p>
+        </div>
+
+    ```
+
+
+Thus we can store all kinds of information in text files
+
+##### Where is information stored
+We learnt how the information is stored within a text file, but where are the text files stored? Each static generator specifies a method of where these files are stored. This is called the directory structure.
+1. The content level directories are the most important directory structure as the pages are generated according to the files in the content directories
+    1. There may be a root content directory which may contain the domain root level content like index page, 404 page etc.
+    2. Under the root content directory, there may be various directories like products, posts, people, etc. These represent the template single pages.
+2. The layout directories are the next most important areas for static site generation.
+    1. **Default Layouts**: First thing to look at inside the layout directories are the default layout pages
+        - When a content page is encountered, the static site generator has to find which html to put it into. The first point of search is going to be the default layout pages
+        - The default layout may specify certain blocks of the output. For example
+            - The header
+            - The body
+            - The footer
+            - The popups
+            - The page meta data
+            - The sidebars or advertising areas
+        - For each of these blocks, there may be a default template piece. Typically, the template may allow these template pieces in each block to be overriden by other template pieces based on the specific page configuration.
+        - Each of these template pieces spoken about in the previous section would be contained in its own folder
+        - Since for each webpage there are **three formats of content to be created** (html, css and javascript), the directory structures may be similarly defined for these output formats and also the same configuration parameters and default pages may be used. Only the output file would change
+        - There are other page output formats also used. These are RSS, and sometimes AMP
+
+    2. **Template pieces**: We mentioned earlier that there are template pieces that are called from the default layouts. These do not need any specified directory structure. 
+        - If the various formats are all be generated according to the same configuration (which is likely), in that case the static generator may require that all files for the various output formats all have the same directory structure (with different files in them). This would minimize replication of code
+    3. **Shortcodes**: We mentioned earlier that the content of the webpage is specified by the user not directly as html but by something called markdown. This is sometimes restrictive and the user may want greater control of the content. The template maker may provide **shortcode pieces** that the user can simply *insert* into their content to perform the specified function
+        - For example, there may be shortcodes to insert a specific size image into the content. Another common use case is to insert youtube videos into the content
+        - The shortcodes may be able to accept parameters themselves and each shortcode may have a short description provided by the template maker.
+        - A large number of shortcodes are inbuilt into a content management system like [in wordpress](https://en.support.wordpress.com/shortcodes/) to make the life of a content maker much easier.
+3. There may be a directory where all assets like images, sound files and pdfs are stored
+4. There may be another directory where site level configurations are stored
+5. There may be lastly be a data directory where data may be dumped into various files (which are encoded as TOML, YAML or JSON) and are available to call from any of the template pages
+    - The difference between the data directory and assets directory or the site level configuration directory is that the data directory is optionally called, whereas the other two have all the files are loaded
+    - The data directory, when called, has it's files processed and stored in memory. The text file containing the json, toml or yaml is parsed into variables that are available to the template coder.
+
+These are the main directories used by the static site generator. Specific generators might need other directory formats.
+
+
+Note: As an interesting aside, one can make an analogy between a [database row](https://en.wikipedia.org/wiki/Row_(database)) and a single text file. In this analogy, the [columns of the database](http://www.gmod.org/wiki/Databases:_Tables,_Rows,_and_Columns) are similar to the fields in the text file. Lastly there is a set of rows in the database table. Similarly, there is a set of files in the directory. Thus the directory is analogous to the database table.
+
+##### Assembling a website
+
+From the perspective of the static generator there are the following stages in *assembling* a website.
 
 1. Site level configuration
     1. Load all the site level configuration defaults from the template
-    2. Load all the site level configuration that are input by the user overriding template defaults if necessary
-2. Load all content and configuration (in order) pages
-    1. Each content page must have an associated webpage.
+    2. Load all the site level configuration specified as markup (json, yaml or toml) that are input by the user overriding template defaults if necessary 
+        - This is done through standard markup parsers available in the templating engine of the static website generator
+2. Create html for each content page in the content directory
+    1. Load page level configuration by parsing the input markup (json, yaml or toml)
+    2. Load page level content into memory by parsing the markdown into html
+        - If there are any shortcodes in the content markdown
+            1. Go to the shortcodes directory and search for the shortcode
+            2. If found pass the content to the shortcode
+            3. The shortcode layout contents should output some html (and/or css, javascript)
+            4. This is substituted back into the main content instead of the shortcode
+            5. Note that shortcodes have to be within specified start and end characters to distinguish them from regular writing
+    4. For each output type (for example html, css and javascript)
+        1. Go to default layout
+        2. Depending on the parameters and default options, load the template pieces required for each block of the default layout
+        3. Load any data from the Data folder if required by the template by parsing the data markup (json, yaml or toml)
+
+    1. Go to the default layout associated with that page
+
     2. Each content page has an associated configuration/parameters and separately content
     3. 
     3. Load all the page level configuration defaults from the template
