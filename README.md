@@ -532,6 +532,7 @@ We learnt how the information is stored within a text file, but where are the te
 1. The content level directories are the most important directory structure as the pages are generated according to the files in the content directories
     1. There may be a root content directory which may contain the domain root level content like index page, 404 page etc.
     2. Under the root content directory, there may be various directories like products, posts, people, etc. These represent the template single pages.
+    3. We list all single pages of a single kind under the same directory so that they share their template structure and also so that **list pages are automatically created** for the pages under a single directory
 2. The layout directories are the next most important areas for static site generation.
     1. **Default Layouts**: First thing to look at inside the layout directories are the default layout pages
         - When a content page is encountered, the static site generator has to find which html to put it into. The first point of search is going to be the default layout pages
@@ -574,30 +575,48 @@ From the perspective of the static generator there are the following stages in *
         - This is done through standard markup parsers available in the templating engine of the static website generator
 2. Create html for each content page in the content directory
     1. Load page level configuration by parsing the input markup (json, yaml or toml)
-    2. Load page level content into memory by parsing the markdown into html
-        - If there are any shortcodes in the content markdown
-            1. Go to the shortcodes directory and search for the shortcode
-            2. If found pass the content to the shortcode
-            3. The shortcode layout contents should output some html (and/or css, javascript)
-            4. This is substituted back into the main content instead of the shortcode
-            5. Note that shortcodes have to be within specified start and end characters to distinguish them from regular writing
-    4. For each output type (for example html, css and javascript)
+    2. Load page level content into memory by parsing the markdown into html. If there are any shortcodes in the content markdown
+        1. Go to the shortcodes directory and search for the shortcode
+        2. If found pass the content to the shortcode
+        3. The shortcode layout contents should output some html (and/or css, javascript)
+        4. This is substituted back into the main content instead of the shortcode
+        5. Note that shortcodes have to be within specified start and end characters to distinguish them from regular writing
+    3. For each output type (for example html, css and javascript)
         1. Go to default layout
         2. Depending on the parameters and default options, load the template pieces required for each block of the default layout
-        3. Load any data from the Data folder if required by the template by parsing the data markup (json, yaml or toml)
+        3. Load any data from the Data folder, if called for by the template, by parsing the data markup (json, yaml or toml)
+        4. Parse the template piece through the template engine providing the variables of site level configuration, page level configuration, external data from data folder and content for the page
+        5. Substitute the content and other variables into the template piece to generate the html, css or javascript text.
+    
+3. Create list pages for each single page directory
+    1. Let us say that apart from the base content files like index and 404, our site has content files for a number of articles, a number of notes and a few presentations. 
+        - The articles are contained in the main content directory under another directory called articles
+        - The notes files are placed in the main content directory under another directory called notes
+        - The presentations are placed in the main content directory under another directory called presentations
+    2. Just like single pages contain a default configuration, list pages too contain a default layout.
+    2. These default list layout pages contain blocks.
+    3. Each of these blocks can be substituted by a template piece. 
+    4. The difference in generating these pages are the single pages is that in the layouts for the list pages, we have access to not just the single configuration and content file
+4. Create taxonomy pages for each single page created
+    1. Similar to the creation of list pages specified above, one may want list pages for various categories and taxonomies that each of the pages fall into.
+    2. In the case of tags for instance, if we are discussing posts on a news website, 
+        - Post 1 may be tagged under football and Indian Sports
+        - Post 2 might be tagged under football and English Sports
+        - Post 3 might be tagged under cricket and Indian Sports 
 
-    1. Go to the default layout associated with that page
+        In such a case we would want
+        - a list page for football containing Post 1 and Post 2 
+        - a list page for Indian Sports containing Post 1 and Post 3
+        - a list page for English Sports containing Post 2
+        - a list page for cricket containing Post 3
+    3. We can hold any number of taxonomies like 'tags', for which list pages could be created. For instance if we were to create a movies listings website:
+        - We could have a taxonomy for actors, one for directors, one for movie genre and so on. 
+        - Each of these taxonomies like actors would have multiple tags. For example, the taxonomy actors could have tags like 'Bruce Willis','Tom Cruise' and so on.
+        = Each of these taxonomies would come with a list page like so *`http://www.yourdomain.com/actors`* which lists out all the actors catalogued
+        - Each of the actors would contain a list page like so *`http://www.yourdomain.com/actors/bruce_willis`* which lists out all the movies associated with the actor being catalogued.
 
-    2. Each content page has an associated configuration/parameters and separately content
-    3. 
-    3. Load all the page level configuration defaults from the template
-    4. Load all the page level configuration input by the user overriding template defaults if necessary
-2. Content
-    1. Load the user content for that webpage in a simplified format like [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) or text.
-    2. Go through the template configuration and get paths (addresses) for those template parts that need to be loaded
-    3. Go through in order loading template pieces
-3. Processing
-    1. Each template piece is not just going to have content, but a lot of code. This means that a single template piece might invoke any
+5. Place each content output in the appropriate directory
+6. Copy all the assets from the input assets directory into an assets directory in the output
 
 
 
