@@ -752,11 +752,45 @@ From the perspective of the static generator there are the following stages in *
     - This may contain things like the [robots.txt](https://moz.com/learn/seo/robotstxt)
     - Sometimes the static generator by itself creates a sitemap. Otherwise this has to be created in the static directory from where it is copied over
 
+#### Hugo as a static website generator
+
+##### Why Hugo
+1. It is the fastest static website generator
+2. It is opensource and constantly under developement
+3. It has a decent amount of documentation (though this can be improved)
+4. It has a good number of templates (though as of this writing other static websites generators like Jekyll have more and better templates)
+5. There are minimal errors during content writing, and when they do occur while creating templates, the error messages are very good. 
+    - Note: This may come from the fact that it is written in [Go Templates](https://golang.org/pkg/text/template/) which is written in [GoLang](https://golang.org/), supposedly a language supported by Google. 
+    - Note 2: You don't need any of these to create with Hugo.
+
+For me the biggest factors are 1 and 5.
+
+##### Why not Hugo
+
+1. There is a steep learning curve in case you are planning to build your own templates. This is very different from Wordpress which felt at the time I was much more of a novice as very plug and play.
+    - If you have gone through and understood the above contents, you have already gone through much of this learning curve
+2. The biggest fear with adopting a framework for very large companies is will it last for 5 or 10 years. Hugo has about 30k stars on github and is actively developed. I can only hope that it will remain active even if other frameworks start being faster, or better than hugo
+3. The list of functions available in Go Templates is ok to good, but is not amazing. If you intend to extend Hugo a bit of coding may be required in an unfamiliar language (GoLang, though good is note widely adopted). You can attempt workarounds through basic functions currently available in Go Templates.
+4. Hugo attempts to be minimal and not maximal. Templates in Hugo on the other hand are monolithic. You either take all or leave it. Wordpress excels in this where you have options to extend just a small part of wordpress through plugins.
+5. Since templates are monolithic, you cannot assemble websites from smaller parts that you like (at present). Therefore one may decide to code in templates oneself. This leads to the website development taking time (for the first time hugo developer). If you like any template, and adopt it, this does not apply and development is very fast.
+
+##### Important files in hugo for a website creator
+1. Site-level configurations
+2. 
 
 
-#### What is Hugo
+##### How do i create my own website with this template
+1. Download 
 
 
+We are (almost) ready at this stage to ask the question -  So how do I implement a static website with Hugo.
+
+### Download the template files.
+### Preview the site
+### Modify basic template files.
+### Modify the content and preview
+### Learn to create new templates if required
+### Move from template to deployment
 
 
 ----------------
