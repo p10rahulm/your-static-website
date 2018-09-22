@@ -905,21 +905,28 @@ title = "Your Website Name"
 # 3. disqus is the third party application we will be using for comments. Get your own disqus shortname here: https://disqus.com/admin/create/ and fill it below
 disqusShortname = "codefra"
 
-# 4. Enabling Google Analytics on your site enables you to track site usage, referrers and various other statistics. Get your google analytics url here: 
-googleAnalytics = "UA-119166503-1"
+# 4. Enabling Google Analytics on your site enables you to track site usage, referrers and various other statistics. See how to get your google analytics ID here: https://support.google.com/analytics/answer/1042508?hl=en
+
+## 4.1 The file where google analytics is implemented is /layouts/partials/js_scripts/ga.js
+
+googleAnalytics = "UA-123456789-1"
 
 # 5. uglyURLs decide how your pages are saved. When enabled, creates URL of the form /filename.html instead of /filename/.
 uglyURLs = false 
 
-# 6. Summaries in lists - number of words
+# 6. Summaries in lists - number of words used in the Hugo summary function
 summaryLength = 25  
 
-# Pagination Options
+# 7. Pagination Options
+# 7.1 How many pages by default in any list page
 paginate = 10
+
+# 7.2 What are the pagination list pages called. 
+# For example http://www.mydomain.com/posts/{{paginatePath}}/2
 paginatePath = "page"
 
 
-# Directories to change. Keep defaults unless you want to change something
+# 8. Directories names in the theme. Keep defaults here
 themesDir = "themes"
 archetypeDir = "archetypes"
 contentDir ="content"
@@ -930,383 +937,383 @@ layoutDir ="layouts"
 
 
 
-# Your copyright notice - appears in site footer.
-# To display a copyright symbol, type `&copy;`.
+# 9. Your copyright notice - appears in site footer and in RSS. Note: To display a copyright symbol, type `&copy;`.
 copyright = "&copy; 2018 CodeFRA"
 
-
-# Generate Robots.txt
+# 10. If enableRobotsTXT is true, a simple robots.txt is created allowing all agents to crawl everything. If you want to create your own robots.txt, then place a robots.txt in the static folder.
 enableRobotsTXT =true
 
 
 
-# Get last modified date for content from Git?
+# 11. If enableGitInfo is true, then last modified date is obtained from git logs. It may be slow. so better false.
 enableGitInfo = false
 
-# Language - use some form of english
+# 12. Language - use some form of english
 languageCode = "en-us"
 
-# For debugging while testing only
-log=true
+# 13. For debugging while testing only, you can turn this to true. When you type `hugo` then the log file will be generated at below location. Server anyway generates errors, so turning false
+log = false
 logFile ="public/log.txt"
 
 
-# Enable verbose logging.
+# 14. Enable verbose logging for hugo server on the command `hugo server -D`.
 verbose =true
 verboseLog =true
 
-# SEO Stuff
+# Below the theme creator can create their own site wide variables
 
-# Some parameters for the internal theme use
 [params]
-    open_at_top = false
-    google_fonts = ["EB Garamond","Lora","Roboto Mono"]
-    # Site Author details.
-    site_author_name = "Rahul Madhavan"
-    role = "Founder, CodeFRA"
-    email = "rahul.maddy@gmail.com"
-    # SEO Section
-    # When pages don't have description
-    default_description = "-273.15K. So Cool."
-    # FB admin site handler
-    facebook_admin_handle = "rahul.maddy"
+# 15. Site Author name
+site_author_name = "Rahul Madhavan"
 
-    # Tags for twitter cards for sharing
-    twitter_site_handle = "@codeFRA"
-    twitter_creator_handle = "@rahul_maddy"
-    # The favicon will be used to render the icon in the browser. Save this in the *static/folder*.
-    favicon = "favicon.jpg"
-    # The favicon will be used to render the icon in the browser. Save this in the *static/folder*.
-    apple_touch_icon = "favicon.jpg"
-    # Diplay a logo in navigation bar rather than title (optional).
-    #   To enable, place an image in `static/` and reference its filename below. To disable, set the value to "".
-    logo = "thinking_tree2.jpg"
+# 15. Site creator role. This will be 
+role = "Founder, CodeFRA"
+email = "rahul.maddy@gmail.com"
+# SEO Section
+# When pages don't have description
+default_description = "-273.15K. So Cool."
+# FB admin site handler
+facebook_admin_handle = "rahul.maddy"
 
-    # In case you want to add custom css and custom js, place them in (i) /static/css/ folder and (ii) /static/js/ folders
-    # Add the filenames in the following two arrays
-    custom_css = []
-    custom_js = []
-    # Below will be the active menu items for the navbar (navigation menu) at the top of the page
-    # Please only include the names as given in the menu.main section below
-    navbar_active = ["Home","Posts","Thoughts","Publications","Reviews","Notes","Contact"]
+# Tags for twitter cards for sharing
+twitter_site_handle = "@codeFRA"
+twitter_creator_handle = "@rahul_maddy"
+# The favicon will be used to render the icon in the browser. Save this in the *static/folder*.
+favicon = "favicon.jpg"
+# The favicon will be used to render the icon in the browser. Save this in the *static/folder*.
+apple_touch_icon = "favicon.jpg"
+# Diplay a logo in navigation bar rather than title (optional).
+#   To enable, place an image in `static/` and reference its filename below. To disable, set the value to "".
+logo = "thinking_tree2.jpg"
 
-    # You can set a map in the front page in the contact section from google maps.
-    # Get key here: https://developers.google.com/maps/documentation/javascript/get-api-key
-    # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
-    map = true
-    map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
-    latitude = "12.932376"
-    longitude = "77.630389"
-    zoom = 15
+open_at_top = false
+google_fonts = ["EB Garamond","Lora","Roboto Mono"]
 
-    # You can enable comments on a page by page basis
-    enable_comments = false
-    # Will load the appropriate module only if above two are present
-    comment_count = true
+# In case you want to add custom css and custom js, place them in (i) /static/css/ folder and (ii) /static/js/ folders
+# Add the filenames in the following two arrays
+custom_css = []
+custom_js = []
+# Below will be the active menu items for the navbar (navigation menu) at the top of the page
+# Please only include the names as given in the menu.main section below
+navbar_active = ["Home","Posts","Thoughts","Publications","Reviews","Notes","Contact"]
 
-    # The following go on the footer.
-    show_back_to_top = true
+# You can set a map in the front page in the contact section from google maps.
+# Get key here: https://developers.google.com/maps/documentation/javascript/get-api-key
+# To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
+map = true
+map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
+latitude = "12.932376"
+longitude = "77.630389"
+zoom = 15
 
-    # Show cookie consent (required for EU etc)
-    show_cookie_consent = true
-        cookie_button_color = "#fff"
-        cookie_button_text_color = "#0095eb"
-        cookie_button_border_color = "#0095eb"
-        cookie_button_message = "Got it!"
-        cookie_background_color = "#0095eb"
-        cookie_text_color = "#fff"
-        cookie_link_color = "#aaa"
-        cookie_message = "This website uses cookies to ensure you get the best experience on our website."
-        cookie_container_padding_top = "4px"
-        cookie_container_padding_bottom = "4px"
+# You can enable comments on a page by page basis
+enable_comments = false
+# Will load the appropriate module only if above two are present
+comment_count = true
 
-    # Below we set attributes for the sharer
-    [params.sharer]
-        # Global and page settings for sharer has to be true for it to be shown
-        sharer_active = true
-        # There are three ways in which sharers can be included in your site.
-        #        1. Through a fixed button that when clicked rolls up to show sharing buttons (bottom right of screen)
-        #        2. Through a fixed menu on the left. This is active on larger screens. On smaller screens, there would be a fixed menu at bottom of screen
-        #        3. Through a list of icons just before the start of content on content pages
+# The following go on the footer.
+show_back_to_top = true
 
-        # 1. Sharer Rollup button
-        sharer_rollup_button_active = true
-        sharer_button_color = "#0095eb"
-        sharer_pullup_button_icon = "fa-share-alt"
-        # 2. Fixed menu
-        # Note that this changes with screen width. This can be checked by pressing ctrl+shift+i on chrome
-        sharer_fixed_menu_active = true
-        show_fixed_sharer_on_scroll = true
-        # If show_menu_on_scroll is true, how much to scroll
-        scroll_amount_to_activate_sharer = 20
+# Show cookie consent (required for EU etc)
+show_cookie_consent = true
+cookie_button_color = "#fff"
+cookie_button_text_color = "#0095eb"
+cookie_button_border_color = "#0095eb"
+cookie_button_message = "Got it!"
+cookie_background_color = "#0095eb"
+cookie_text_color = "#fff"
+cookie_link_color = "#aaa"
+cookie_message = "This website uses cookies to ensure you get the best experience on our website."
+cookie_container_padding_top = "4px"
+cookie_container_padding_bottom = "4px"
 
+# Below we set attributes for the sharer
+[params.sharer]
+# Global and page settings for sharer has to be true for it to be shown
+sharer_active = true
+# There are three ways in which sharers can be included in your site.
+#        1. Through a fixed button that when clicked rolls up to show sharing buttons (bottom right of screen)
+#        2. Through a fixed menu on the left. This is active on larger screens. On smaller screens, there would be a fixed menu at bottom of screen
+#        3. Through a list of icons just before the start of content on content pages
 
-    # Below we set attributes for the popup
-    [params.popup]
-        # Below is the global popup switch. This has to be true for there to be any popups on the site.
-        # TO activate in a given page, this global switch has to be set to true, and the popup_active has to be true in the
-        # page front matter (in the content folder)
-        popup_active = true
-        # Should popup be shown once per session or persist across browser close? default is persist
-        reload_popup_once_per_session = false
+# 1. Sharer Rollup button
+sharer_rollup_button_active = true
+sharer_button_color = "#0095eb"
+sharer_pullup_button_icon = "fa-share-alt"
+# 2. Fixed menu
+# Note that this changes with screen width. This can be checked by pressing ctrl+shift+i on chrome
+sharer_fixed_menu_active = true
+show_fixed_sharer_on_scroll = true
+# If show_menu_on_scroll is true, how much to scroll
+scroll_amount_to_activate_sharer = 20
 
 
-        # We will allow three types of popups, timed popup, popup on given amount of scroll and exit intent popup
-        # There are three ways of activating a popup.
-        #        1) There is a button on the bottom right which can always be clicked.
-        #        2) There is a delay activation
-        #        3) There is an exit intent activation
-        #        4) There is a scroll amount activation
-        # Of these the button activation is always on. The others can be set here.
-
-        # 1. Show Button at bottom of screen
-        popup_show_button_on_bottom_right = true
-        popup_button_color = "#0095eb"
-        pullup_button_icon = "fa-fire"
-        pullup_button_icon_color = "#fff"
+# Below we set attributes for the popup
+[params.popup]
+# Below is the global popup switch. This has to be true for there to be any popups on the site.
+# TO activate in a given page, this global switch has to be set to true, and the popup_active has to be true in the
+# page front matter (in the content folder)
+popup_active = true
+# Should popup be shown once per session or persist across browser close? default is persist
+reload_popup_once_per_session = false
 
 
+# We will allow three types of popups, timed popup, popup on given amount of scroll and exit intent popup
+# There are three ways of activating a popup.
+#        1) There is a button on the bottom right which can always be clicked.
+#        2) There is a delay activation
+#        3) There is an exit intent activation
+#        4) There is a scroll amount activation
+# Of these the button activation is always on. The others can be set here.
 
-        # 2. Delay activation
-        activate_popup_on_delay = true
-        seconds_before_activation = 10
-
-        # 3. Exit intent activation
-        activate_popup_on_exit_intent = true
-        # The sensitivity is triggered by how fast the user takes the mouse out from top of the window (measured as mouse y coordinate when exit event is triggered)
-        exit_intent_sensitivity = 20
-
-        # 4. Amount of scroll activation
-        activate_popup_on_scroll = true
-        scroll_percentage_before_activation = 0.6
-
-
-        # The popup will have
-        #    a) A title
-        #    b) explanatory text
-        #    c) an image on the right or as a full background
-        #    d) A formspree form for collecting name and email id
-        #    e) A subscribe now button
-
-        # choose from a font-awesome icon for the popup pullup (where applicable)
-
-        title = "Subscribe Now"
-        title_color = "#aaaaaa"
-        subtitle = "Curated selection of articles straight to your inbox"
-        subtitle_color = "#ffaa11"
-        # Use img_position = 1 for full image background and use img_position = 2 for image on the right
-        img_position = 2
-        img_source = "/img/flowers_line_drawing.jpg"
-
-        # form
-        form_label_color = "#ffaa33"
-
-        # form submit text
-        submit_text = "Subscribe"
-        submit_text_color = "#ccaaaa"
-        submit_button_color = "blue"
-
-        # Tries to return to the referrer page, but in case that fails, the option below
-        link_after_submit = "/subscriptionsuccess/"
-
-        popup_submission_mail = "rahul.maddy@gmail.com"
-        popup_submission_subject = "New subscription for your site!"
-        secondary_forwarding_emails = ["rahul.maddy@gmail.com","ksm@ksmadhavan.in"]
-
-        # Close popup by clicking outside the box
-        close_on_click_outside = true
-        # Close popup by pressing escape
-        close_on_escape = true
-
-        [[params.popup.form_inputs]]
-            name="name"
-            required="required"
-            type="text"
-            autocomplete = "name"
-            helper_text = "Your Name *"
-
-        [[params.popup.form_inputs]]
-            name = "Email ID"
-            requried = "required"
-            type= "email"
-            autocomplete = "email"
-            helper_text = "Your Email *"
+# 1. Show Button at bottom of screen
+popup_show_button_on_bottom_right = true
+popup_button_color = "#0095eb"
+pullup_button_icon = "fa-fire"
+pullup_button_icon_color = "#fff"
 
 
 
+# 2. Delay activation
+activate_popup_on_delay = true
+seconds_before_activation = 10
+
+# 3. Exit intent activation
+activate_popup_on_exit_intent = true
+# The sensitivity is triggered by how fast the user takes the mouse out from top of the window (measured as mouse y coordinate when exit event is triggered)
+exit_intent_sensitivity = 20
+
+# 4. Amount of scroll activation
+activate_popup_on_scroll = true
+scroll_percentage_before_activation = 0.6
 
 
+# The popup will have
+#    a) A title
+#    b) explanatory text
+#    c) an image on the right or as a full background
+#    d) A formspree form for collecting name and email id
+#    e) A subscribe now button
+
+# choose from a font-awesome icon for the popup pullup (where applicable)
+
+title = "Subscribe Now"
+title_color = "#aaaaaa"
+subtitle = "Curated selection of articles straight to your inbox"
+subtitle_color = "#ffaa11"
+# Use img_position = 1 for full image background and use img_position = 2 for image on the right
+img_position = 2
+img_source = "/img/flowers_line_drawing.jpg"
+
+# form
+form_label_color = "#ffaa33"
+
+# form submit text
+submit_text = "Subscribe"
+submit_text_color = "#ccaaaa"
+submit_button_color = "blue"
+
+# Tries to return to the referrer page, but in case that fails, the option below
+link_after_submit = "/subscriptionsuccess/"
+
+popup_submission_mail = "rahul.maddy@gmail.com"
+popup_submission_subject = "New subscription for your site!"
+secondary_forwarding_emails = ["rahul.maddy@gmail.com","ksm@ksmadhavan.in"]
+
+# Close popup by clicking outside the box
+close_on_click_outside = true
+# Close popup by pressing escape
+close_on_escape = true
+
+[[params.popup.form_inputs]]
+    name="name"
+    required="required"
+    type="text"
+    autocomplete = "name"
+    helper_text = "Your Name *"
+
+[[params.popup.form_inputs]]
+    name = "Email ID"
+    requried = "required"
+    type= "email"
+    autocomplete = "email"
+    helper_text = "Your Email *"
 
 
 
 
 
-    [[params.footer_network]]
-        url = "https://www.facebook.com/rahul.maddy"
-        iconpack = "fa"
-        icon = "fa-facebook"
 
-    [[params.footer_network]]
-        url = "https://www.linkedin.com/in/rahul-madhavan/"
-        iconpack = "fa"
-        icon = "fa-linkedin"
 
-    [[params.footer_network]]
-        url = "http://github.com/p10rahulm"
-        iconpack = "fa"
-        icon = "fa-github"
+
+
+
+[[params.footer_network]]
+url = "https://www.facebook.com/rahul.maddy"
+iconpack = "fa"
+icon = "fa-facebook"
+
+[[params.footer_network]]
+url = "https://www.linkedin.com/in/rahul-madhavan/"
+iconpack = "fa"
+icon = "fa-linkedin"
+
+[[params.footer_network]]
+url = "http://github.com/p10rahulm"
+iconpack = "fa"
+icon = "fa-github"
 
 # Menus
 [menu]
-    [[menu.main]]
-        identifier = "home"
-        name = "Home"
-        pre = ""
-        url = "./#about_us"
-        weight = -1
+[[menu.main]]
+identifier = "home"
+name = "Home"
+pre = ""
+url = "./#about_us"
+weight = -1
 
-    [[menu.main]]
-        identifier = "posts"
-        name = "Posts"
-        pre = ""
-        url = "./posts/"
-        weight = 0
+[[menu.main]]
+identifier = "posts"
+name = "Posts"
+pre = ""
+url = "./posts/"
+weight = 0
 
-    [[menu.main]]
-        identifier = "books"
-        name = "Books"
-        pre = ""
-        url = "./books/"
-        weight = 1
+[[menu.main]]
+identifier = "books"
+name = "Books"
+pre = ""
+url = "./books/"
+weight = 1
 
-    [[menu.main]]
-        identifier = "code"
-        name = "Code"
-        pre = ""
-        url = "./code-snippets/"
-        weight = 2
+[[menu.main]]
+identifier = "code"
+name = "Code"
+pre = ""
+url = "./code-snippets/"
+weight = 2
 
-    [[menu.main]]
-        identifier = "courses"
-        name = "Cooks"
-        pre = ""
-        url = "./courses/"
-        weight = 3
+[[menu.main]]
+identifier = "courses"
+name = "Cooks"
+pre = ""
+url = "./courses/"
+weight = 3
 
-    [[menu.main]]
-        identifier = "events"
-        name = "Events"
-        pre = ""
-        url = "./events/"
-        weight = 4
+[[menu.main]]
+identifier = "events"
+name = "Events"
+pre = ""
+url = "./events/"
+weight = 4
 
-    [[menu.main]]
-        identifier = "notes"
-        name = "Notes"
-        pre = ""
-        url = "./notes/"
-        weight = 5
+[[menu.main]]
+identifier = "notes"
+name = "Notes"
+pre = ""
+url = "./notes/"
+weight = 5
 
-    [[menu.main]]
-        identifier = "people"
-        name = "People"
-        pre = ""
-        url = "./people/"
-        weight = 6
+[[menu.main]]
+identifier = "people"
+name = "People"
+pre = ""
+url = "./people/"
+weight = 6
 
-    [[menu.main]]
-        identifier = "publications"
-        name = "Publications"
-        pre = ""
-        url = "./publications/"
-        weight = 7
+[[menu.main]]
+identifier = "publications"
+name = "Publications"
+pre = ""
+url = "./publications/"
+weight = 7
 
-    [[menu.main]]
-        identifier = "reviews"
-        name = "Reviews"
-        pre = ""
-        url = "./reviews/"
-        weight = 8
+[[menu.main]]
+identifier = "reviews"
+name = "Reviews"
+pre = ""
+url = "./reviews/"
+weight = 8
 
-    [[menu.main]]
-        identifier = "thoughts"
-        name = "Thoughts"
-        pre = ""
-        url = "./#featured_thoughts"
-        weight = 9
+[[menu.main]]
+identifier = "thoughts"
+name = "Thoughts"
+pre = ""
+url = "./#featured_thoughts"
+weight = 9
 
-    [[menu.main]]
-        identifier = "workshops"
-        name = "Workshops"
-        pre = ""
-        url = "./workshops/"
-        weight = 10
+[[menu.main]]
+identifier = "workshops"
+name = "Workshops"
+pre = ""
+url = "./workshops/"
+weight = 10
 
 
 
-    [[menu.main]]
-        identifier = "contact"
-        name = "Contact"
-        pre = ""
-        url = "/contact"
-        weight = 100
+[[menu.main]]
+identifier = "contact"
+name = "Contact"
+pre = ""
+url = "/contact"
+weight = 100
 
 # Here we choose the taxonomies. Various types of pages use various taxonomies
 [taxonomies]
-    tag = "tags"
-    category = "categories"
-    project = "projects"
-    division = "divisions"
-    team = "teams"
-    genre = "genres"
-    subject = "subjects"
-    topic = "topics"
-    reviewed_item_category = "reviewed_item_categories"
-    publication_type = "publication_types"
-    artist = "artists"
-    album = "albums"
+tag = "tags"
+category = "categories"
+project = "projects"
+division = "divisions"
+team = "teams"
+genre = "genres"
+subject = "subjects"
+topic = "topics"
+reviewed_item_category = "reviewed_item_categories"
+publication_type = "publication_types"
+artist = "artists"
+album = "albums"
 
 
 # Configure the English version of the website.
 # TODO: ADD OTHER LANGUAGE SUPPORT
 [Languages.en]
-  languageCode = "en-in"
+languageCode = "en-in"
 
 [outputs]
-    home = [ "HTML", "CSS", "RSS", "JSON"]
-    section = [ "HTML", "RSS" ]
+home = [ "HTML", "CSS", "RSS", "JSON"]
+section = [ "HTML", "RSS" ]
 
 # Configure BlackFriday Markdown rendering.
 #   See: https://gohugo.io/readfiles/bfconfig/
 [blackfriday]
-  hrefTargetBlank = true  # `true` opens external links in a new tab.
-  fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
-  smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
+hrefTargetBlank = true  # `true` opens external links in a new tab.
+fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
+smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
 
 
 # We are using the below shortcode for image processing in our documents
 [imaging]
-    # Default resample filter used for resizing. Default is Box,
-    # a simple and fast averaging filter appropriate for downscaling.
-    # See https://github.com/disintegration/imaging
-    # and   https://gohugo.io/content-management/image-processing/
-    resampleFilter = "box"
+# Default resample filter used for resizing. Default is Box,
+# a simple and fast averaging filter appropriate for downscaling.
+# See https://github.com/disintegration/imaging
+# and   https://gohugo.io/content-management/image-processing/
+resampleFilter = "box"
 
-    # Defatult JPEG quality setting. Default is 75.
-    quality = 75
+# Defatult JPEG quality setting. Default is 75.
+quality = 75
 
-    # Anchor used when cropping pictures.
-    # Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
-    # Smart Cropping is content aware and tries to find the best crop for each image.
-    # Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
-    anchor = "smart"
+# Anchor used when cropping pictures.
+# Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
+# Smart Cropping is content aware and tries to find the best crop for each image.
+# Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+anchor = "smart"
 
 [outputFormats]
-    [outputFormats.json]
-        baseName = "manifest"
-        isPlainText = true
-    [outputFormats.css]
-        baseName = "styles"
+[outputFormats.json]
+baseName = "manifest"
+isPlainText = true
+[outputFormats.css]
+baseName = "styles"
 
 ```
 

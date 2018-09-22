@@ -38,17 +38,12 @@ publishDir = "public"
 layoutDir ="layouts"
 
 
-
-
 # Your copyright notice - appears in site footer.
 # To display a copyright symbol, type `&copy;`.
 copyright = "&copy; 2018 CodeFRA"
 
-
 # Generate Robots.txt
 enableRobotsTXT =true
-
-
 
 # Get last modified date for content from Git?
 enableGitInfo = false
@@ -57,7 +52,7 @@ enableGitInfo = false
 languageCode = "en-us"
 
 # For debugging while testing only
-log=true
+log=false
 logFile ="public/log.txt"
 
 
@@ -65,12 +60,9 @@ logFile ="public/log.txt"
 verbose =true
 verboseLog =true
 
-# SEO Stuff
-
 # Some parameters for the internal theme use
 [params]
-    open_at_top = false
-    google_fonts = ["EB Garamond","Lora","Roboto Mono"]
+
     # Site Author details.
     site_author_name = "Rahul Madhavan"
     role = "Founder, CodeFRA"
@@ -92,6 +84,8 @@ verboseLog =true
     #   To enable, place an image in `static/` and reference its filename below. To disable, set the value to "".
     logo = "thinking_tree2.jpg"
 
+    open_at_top = false
+    google_fonts = ["EB Garamond","Lora","Roboto Mono"]
     # In case you want to add custom css and custom js, place them in (i) /static/css/ folder and (ii) /static/js/ folders
     # Add the filenames in the following two arrays
     custom_css = []
