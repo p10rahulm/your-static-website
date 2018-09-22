@@ -1124,11 +1124,10 @@ title = "Subscribe Now"
 title_color = "#aaaaaa"
 subtitle = "Curated selection of articles straight to your inbox"
 subtitle_color = "#ffaa11"
-# Use img_position = 1 for full image background and use img_position = 2 for image on the right
-img_position = 2
+
 img_source = "/img/flowers_line_drawing.jpg"
 
-# form
+# form label color
 form_label_color = "#ffaa33"
 
 # form submit text
@@ -1144,12 +1143,13 @@ popup_submission_mail = "rahul.maddy@gmail.com"
 popup_submission_subject = "New subscription for your site!"
 secondary_forwarding_emails = ["rahul.maddy@gmail.com","ksm@ksmadhavan.in"]
 
-
+# 44. Popup close behaviour can be changed below
 # Close popup by clicking outside the box
 close_on_click_outside = true
 # Close popup by pressing escape
 close_on_escape = true
 
+# 45. Popup form text goes below. Leave as is.
 [[params.popup.form_inputs]]
     name="name"
     required="required"
@@ -1165,11 +1165,7 @@ close_on_escape = true
     helper_text = "Your Email *"
 
 
-
-
-
-
-
+#* 46. The site footer will contain three icons. You can choose the icons (from https://fontawesome.com/v4.7.0/icons/) and change links below
 
 [[params.footer_network]]
 url = "https://www.facebook.com/rahul.maddy"
@@ -1186,7 +1182,10 @@ url = "http://github.com/p10rahulm"
 iconpack = "fa"
 icon = "fa-github"
 
-# Menus
+
+
+# 47. This is a superset of all menu options you can choose. The actual menus chosen from this are set from Params.navbar_active above
+
 [menu]
 [[menu.main]]
 identifier = "home"
@@ -1279,7 +1278,8 @@ pre = ""
 url = "/contact"
 weight = 100
 
-# Here we choose the taxonomies. Various types of pages use various taxonomies
+# 48. Here we choose the taxonomies. Various types of pages use various taxonomies. This doesn't have to be changed unless you are adding new page types to the template. default taxonomies in most pages are tags and categories
+
 [taxonomies]
 tag = "tags"
 category = "categories"
@@ -1295,16 +1295,17 @@ artist = "artists"
 album = "albums"
 
 
-# Configure the English version of the website.
+# 49. Configure the English version of the website.
 # TODO: ADD OTHER LANGUAGE SUPPORT
 [Languages.en]
 languageCode = "en-in"
 
+# 50. Choose the output formats you are going to use. The only important one in this case is html
 [outputs]
 home = [ "HTML", "CSS", "RSS", "JSON"]
 section = [ "HTML", "RSS" ]
 
-# Configure BlackFriday Markdown rendering.
+# 51. Markdown is converted to html by an engine called BlackFriday. Configure BlackFriday Markdown rendering below.
 # See: https://gohugo.io/readfiles/bfconfig/
 [blackfriday]
 hrefTargetBlank = true  # `true` opens external links in a new tab.
@@ -1312,7 +1313,7 @@ fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a f
 smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
 
 
-# We are using the below shortcode for image processing in our documents
+# 52. We are using the below shortcode for image processing in our documents. Set the defaults below
 [imaging]
 # Default resample filter used for resizing. Default is Box,
 # a simple and fast averaging filter appropriate for downscaling.
@@ -1320,7 +1321,7 @@ smartypants = true  # `false` disables all smart punctuation substitutions (e.g.
 # and   https://gohugo.io/content-management/image-processing/
 resampleFilter = "box"
 
-# Defatult JPEG quality setting. Default is 75.
+# Default JPEG quality setting. Default is 75.
 quality = 75
 
 # Anchor used when cropping pictures.
@@ -1329,6 +1330,7 @@ quality = 75
 # Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
 anchor = "smart"
 
+# 53. The outputs in various formats are created with a filename. The defaults for this can be set below. Not used as such so not that important
 
 [outputFormats]
 

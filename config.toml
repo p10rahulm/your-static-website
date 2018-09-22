@@ -196,8 +196,7 @@ verboseLog =true
         title_color = "#aaaaaa"
         subtitle = "Curated selection of articles straight to your inbox"
         subtitle_color = "#ffaa11"
-        # Use img_position = 1 for full image background and use img_position = 2 for image on the right
-        img_position = 2
+
         img_source = "/img/flowers_line_drawing.jpg"
 
         # form
