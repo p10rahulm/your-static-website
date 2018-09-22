@@ -13,7 +13,7 @@ title = "The Thinking Tree"
 disqusShortname = "codefra"
 
 # Enable analytics by entering your Google Analytics tracking ID
-googleAnalytics = "UA-119166503-1"
+googleAnalytics = "UA-119166503-2"
 
 # Number in RSS feed
 rssLimit =10
