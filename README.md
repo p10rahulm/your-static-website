@@ -1,12 +1,15 @@
 # How to create an updateable static website from scratch at 2 cents a month (plus cost of domain) using godaddy, Google Cloud and Hugo
+
 We are today going to look at how to setup a website from scratch. The expectation is that while the initial setup is going to take something like 3-4 hours, any changes to the website should be a matter of seconds or minutes.
 
 ----------------
-Section 1: Getting Started
-----------------
 
-## Get the right software
-The following are going to be needed for the setup
+# Section 1: Getting Started
+
+## Get the right setup and software
+
+The following are going to be needed for creating your own site:
+
 1. Git Bash
 2. Google Cloud SDK
 3. Hugo
@@ -14,6 +17,7 @@ The following are going to be needed for the setup
 5. Text Editor
 
 ### Step 1: Getting git bash
+
 1. Go to [Git Download Website](https://git-scm.com/downloads)
 2. At the top, you would find a few operating systems. Click on your operating system, ex: windows or mac, etc
 3. You will be lead to a site which auto triggers the download. If there is no download triggered you can choose 64 bit for most computers today.
@@ -532,7 +536,9 @@ We learnt how the information is stored within a text file, but where are the te
 1. The content level directories are the most important directory structure as the pages are generated according to the files in the content directories
     1. There may be a root content directory which may contain the domain root level content like index page, 404 page etc.
     2. Under the root content directory, there may be various directories like products, posts, people, etc. These represent the template single pages.
-    3. We list all single pages of a single kind under the same directory so that they share their template structure and also so that **list pages are automatically created** for the pages under a single directory
+    3. We list all single pages of a single type under the same directory so that they share their template structure and also so that **list pages are automatically created** for the pages under a single directory. 
+        - For example, a website could have multiple posts, presentations and publications
+        - Each of these would be in their own directory. Therefore the content directory would contain three subdirectories - 'posts','presentations' and 'publications'
     4. There may be a separate directory within the content directory for storing *taxonomy* configurations. Taxonomies are categorizations of the single pages that we mention above. We will discuss this in more detail in a further section
 2. The layout directories are the next most important areas for static site generation.
     1. **Default Layouts**: First thing to look at inside the layout directories are the default layout pages
@@ -556,13 +562,20 @@ We learnt how the information is stored within a text file, but where are the te
         - The shortcodes may be able to accept parameters themselves and each shortcode may have a short description provided by the template maker.
         - A large number of shortcodes are inbuilt into a content management system like [in wordpress](https://en.support.wordpress.com/shortcodes/) to make the life of a content maker much easier.
 3. There may be a directory where all assets like images, sound files and pdfs are stored
-4. There may be another directory where site level configurations are stored
-5. There may be lastly be a data directory where data may be dumped into various files (which are encoded as TOML, YAML or JSON) and are available to call from any of the template pages
+4. There may be another location where site level configurations are stored. This is typically a file in the base directory
+5. There may be be a data directory where data may be dumped into various files (which are encoded as TOML, YAML or JSON) and are available to call from any of the template pages
     - The difference between the data directory and assets directory or the site level configuration directory is that the data directory is optionally called, whereas the other two have all the files are loaded
     - The data directory, when called, has it's files processed and stored in memory. The text file containing the json, toml or yaml is parsed into variables that are available to the template coder.
+6. Lastly there may be an archetypes directory. Archetypes are information used to generate each content type.
+    - Lets say that a website has multiple posts, presentations and publications
+    - Each of these would be in their own directory within the content directory
+    - Each content type will need to have the same configuration fields, even if the values of the configurations differ. For example, if say publications template requires a configuration value called 'journal_name', all the publications content pieces would need to have this configuration field.
+    - It is imposible to remember which fields are required for which content type. So we defer that task to the static generator, by creating an archetype, say `publications`
+        - Once we have an archetype, we give the static generator some command like `generate new publications/mypublication` (this is just an example), which creates an appropriate file in the content folder within the publications directory called mypublication.
+        - The mypublication file then contains all the fields in our preset archetype, *publications*. We can then modify the configuration values and add new content.
+    - These archetypes are stored in the archetypes directory
 
 These are the main directories used by the static site generator. Specific generators might need other directory formats.
-
 
 Note: As an interesting aside, one can make an analogy between a [database row](https://en.wikipedia.org/wiki/Row_(database)) and a single text file. In this analogy, the [columns of the database](http://www.gmod.org/wiki/Databases:_Tables,_Rows,_and_Columns) are similar to the fields in the text file. Lastly there is a set of rows in the database table. Similarly, there is a set of files in the directory. Thus the directory is analogous to the database table.
 
@@ -588,7 +601,7 @@ From the perspective of the static generator there are the following stages in *
         3. Load any data from the Data folder, if called for by the template, by parsing the data markup (json, yaml or toml)
         4. Parse the template piece through the template engine providing the variables of site level configuration, page level configuration, external data from data folder and content for the page
         5. Substitute the content and other variables into the template piece to generate the html, css or javascript text.
-    
+
 3. Create list pages for each single page directory
     1. What are single page directories: Let us say that apart from the base content files like index and 404, our site has content files for a number of articles, a number of notes and a few presentations.
         - The articles are contained in the main content directory under another directory called articles
@@ -752,9 +765,11 @@ From the perspective of the static generator there are the following stages in *
     - This may contain things like the [robots.txt](https://moz.com/learn/seo/robotstxt)
     - Sometimes the static generator by itself creates a sitemap. Otherwise this has to be created in the static directory from where it is copied over
 
-#### Hugo as a static website generator
+#### What is Hugo
+Hugo is a static website generator as good as any other you will see. It is fast and effective, but takes time to learn, if you are creating a template and not using a readymade one.
 
 ##### Why Hugo
+
 1. It is the fastest static website generator
 2. It is opensource and constantly under developement
 3. It has a decent amount of documentation (though this can be improved)
@@ -774,24 +789,547 @@ For me the biggest factors are 1 and 5.
 4. Hugo attempts to be minimal and not maximal. Templates in Hugo on the other hand are monolithic. You either take all or leave it. Wordpress excels in this where you have options to extend just a small part of wordpress through plugins.
 5. Since templates are monolithic, you cannot assemble websites from smaller parts that you like (at present). Therefore one may decide to code in templates oneself. This leads to the website development taking time (for the first time hugo developer). If you like any template, and adopt it, this does not apply and development is very fast.
 
-##### Important files in hugo for a website creator
-1. Site-level configurations
-2. 
+##### How to use hugo to generate your static website generator
 
+The first time you intend to use a static website generator, you need to choose a template. Then you would have some files to modify. When your site is setup, to create a new article, say a post, you need to simply type `hugo new posts/post`. Input the content in the file generated and then save and push it. Let us look at these in further detail
 
-##### How do i create my own website with this template
-1. Download 
+###### First time usage
 
+1. Download [Hugo](https://gohugo.io/getting-started/installing/)
+    1. Place it in [PATH](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
+2. [Choose a theme](https://themes.gohugo.io/)
+    1. Go to the hugo website and choose a template, or stick with this one!
+3. Modify the files that come with the theme
+    1. Site-level configurations:
+        - This is found in the config.toml file
+    2. Front page content
+        - '_index.md' file in the content folder
+    3. All content for website
+        - Content files in each of the directories in the content folder
+    4. Changing look and feel through images and logo
+        = Logo, Favicon, Images, Audios and PDF files in the static folder
+4. Create a local website for checking
+    1. Go to [Terminal](https://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it) or download [git for windows](https://git-scm.com/)
+    2. cd into the directory of the hugo files
+    3. Type `hugo server -D -p 1313`
+    4. This means create a hugo server here which serves all pages including draft pages and serves it on localhost port 1313.
+5. Check the files
+    1. Open a browser window. Type localhost:1313 at the address bar
+    2. Your site should open up
+    3. If it is not fine, then go to your terminal and check for error message. This should be rare in case you have taken care to only modify content files from your chosen theme
+    4. If it is fine proceed to next step
+6. Create the website files
+    1. In the terminal/bash you were using, you can type `Ctrl + c` to close the server. Alternatively open a new terminal/bash and cd into your hugo files directory
+    2. Type `hugo`
+    3. You should see all the website files being created in a directory called public.
+7. Upload the files for Google static storage or whichever static host you are using. Push the files into your github repo for github pages
+    1. Uploading can be automated, but this is discussed later
+    2. Files can be pushed into git the first time by the following commands
+        ```bash
+        git init
+        git add -A
+        git commit -m "First time, creating static site!"
+        git remote add origin https://github.com/user/repo.git
+        git push --set-upstream origin master
+        ```
+
+###### Creation of a new content piece
+
+1. Create a new content piece, say a post.
+    - The types of content pieces you can create are described by the archetypes folder
+    - open a terminal/bash window and cd into the hugo files directory
+    - type `hugo new posts/my_post_name.md` replacing my post name by the title of the article.     - Note that it is recommended to use no spaces. Use underscores '_' instead.
+    - When you type `hugo new posts/my_post_name.md`, the terminal should give some information ending with "`C:\My\hugo\directory\content\posts\my_post_name.md created`"
+2. Add content to the content piece.
+    - Open this file. If you are on windows, you can simply type 'F:\Code\hugo\first_site\content\posts\mypost.md' after pressing the windows button on the bottom left of your screen, the file should open on your default text editor.
+    - Finish editing the post. You can use [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for writing content and any shortcodes provided by the template (or theme) author and save it
+3. Push the content piece
+    - Go back to the terminal window and type `git push`
+    - This should push your content into your github repository.
+4. Check your website
+    - If you have correctly configured your DNS(say godaddy) and github (or any other host), you should immediately see the new post on the website.
 
 We are (almost) ready at this stage to ask the question -  So how do I implement a static website with Hugo.
 
-### Download the template files.
-### Preview the site
-### Modify basic template files.
-### Modify the content and preview
-### Learn to create new templates if required
-### Move from template to deployment
+### Step 2: Download the template files
 
+1. Prerequisites:
+     - Finish the section - "Get the right setup and software"
+2. Open a command prompt
+3. mkdir a folder where you want to keep your website files. For example, type `mkdir c:\users\yourname\mywebsite`. Note that you need to use forward slash if working in mac or linux environments.
+4. Go to that folder `cd c:\users\yourname\mywebsite`
+5. Use git to download the files
+    ```bash
+    git clone git@github.com:p10rahulm/your-static-website.git .
+    ```
+
+### Step 3: Preview the site
+
+1. Check whether the website works as is. For this you need to open a hugo server. 
+2. Type into the terminal that you used for downloading the files
+    ```bash
+    hugo server -D -p 1313
+    ```
+3. This opens a server with all files including those which are in draft
+4. Go to your favorite web browser (preferably Firefox or Chrome, i've not tested on IE)
+5. Open `http://localhost:1313`. Even after checking that everything works, keep this tab open.
+
+### Step 4: Modify basic template files
+
+#### How are template files organized
+1. If you went through the whole section, [Understanding Hugo](#Step-1-Understanding-Hugo), then great we have covered most of this. If not, please go through these sub-sections on [how information is stored](#How-is-information-stored) and [where information is stored](#Where-is-information-stored)
+2. The gist on how information is stored is that configurations are stored in [toml format](https://github.com/toml-lang/toml) and html content is stored in [markdown format](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+3. The gist on where information is stored is that
+    1. Site level configurations are stored in config.toml
+    2. Archetypes are stored in the archetypes directory. When you ask hugo to create a new content piece, it takes information from the archetype as to what text to pre-fill it with
+    3. content directory is where all the content for the pages are stored. This is the most important directory. ***Each file*** here needs to be checked so that the text is what the creator expects
+    4. The data directory is where the template creator can dump data to be used in any of the templates.
+    5. Layouts directory is where all the default templates, template pieces and shortcodes are stored. You will need this when you want to modify templates
+    6. Static Directory is where all the assets like images, pdf files, audio files, etc are stored. These are copied as-is into any output generated by Hugo.
+
+#### What needs to be modified
+
+In this section we will describe all the configurations
+
+#### config.toml file
+
+The first thing you want to look at is the config.toml file. We will describe all the configurations here
+
+```toml
+# 1. baseurl is your domain name
+baseurl = "http://www.yourdomain.com/"
+
+# 2. title is your website name
+title = "Your Website Name"
+
+# 3. disqus is the third party application we will be using for comments. Get your own disqus shortname here: https://disqus.com/admin/create/ and fill it below
+disqusShortname = "codefra"
+
+# 4. Enabling Google Analytics on your site enables you to track site usage, referrers and various other statistics. Get your google analytics url here: 
+googleAnalytics = "UA-119166503-1"
+
+# 5. uglyURLs decide how your pages are saved. When enabled, creates URL of the form /filename.html instead of /filename/.
+uglyURLs = false 
+
+# 6. Summaries in lists - number of words
+summaryLength = 25  
+
+# Pagination Options
+paginate = 10
+paginatePath = "page"
+
+
+# Directories to change. Keep defaults unless you want to change something
+themesDir = "themes"
+archetypeDir = "archetypes"
+contentDir ="content"
+dataDir ="data"
+publishDir = "public"
+layoutDir ="layouts"
+
+
+
+
+# Your copyright notice - appears in site footer.
+# To display a copyright symbol, type `&copy;`.
+copyright = "&copy; 2018 CodeFRA"
+
+
+# Generate Robots.txt
+enableRobotsTXT =true
+
+
+
+# Get last modified date for content from Git?
+enableGitInfo = false
+
+# Language - use some form of english
+languageCode = "en-us"
+
+# For debugging while testing only
+log=true
+logFile ="public/log.txt"
+
+
+# Enable verbose logging.
+verbose =true
+verboseLog =true
+
+# SEO Stuff
+
+# Some parameters for the internal theme use
+[params]
+    open_at_top = false
+    google_fonts = ["EB Garamond","Lora","Roboto Mono"]
+    # Site Author details.
+    site_author_name = "Rahul Madhavan"
+    role = "Founder, CodeFRA"
+    email = "rahul.maddy@gmail.com"
+    # SEO Section
+    # When pages don't have description
+    default_description = "-273.15K. So Cool."
+    # FB admin site handler
+    facebook_admin_handle = "rahul.maddy"
+
+    # Tags for twitter cards for sharing
+    twitter_site_handle = "@codeFRA"
+    twitter_creator_handle = "@rahul_maddy"
+    # The favicon will be used to render the icon in the browser. Save this in the *static/folder*.
+    favicon = "favicon.jpg"
+    # The favicon will be used to render the icon in the browser. Save this in the *static/folder*.
+    apple_touch_icon = "favicon.jpg"
+    # Diplay a logo in navigation bar rather than title (optional).
+    #   To enable, place an image in `static/` and reference its filename below. To disable, set the value to "".
+    logo = "thinking_tree2.jpg"
+
+    # In case you want to add custom css and custom js, place them in (i) /static/css/ folder and (ii) /static/js/ folders
+    # Add the filenames in the following two arrays
+    custom_css = []
+    custom_js = []
+    # Below will be the active menu items for the navbar (navigation menu) at the top of the page
+    # Please only include the names as given in the menu.main section below
+    navbar_active = ["Home","Posts","Thoughts","Publications","Reviews","Notes","Contact"]
+
+    # You can set a map in the front page in the contact section from google maps.
+    # Get key here: https://developers.google.com/maps/documentation/javascript/get-api-key
+    # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
+    map = true
+    map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
+    latitude = "12.932376"
+    longitude = "77.630389"
+    zoom = 15
+
+    # You can enable comments on a page by page basis
+    enable_comments = false
+    # Will load the appropriate module only if above two are present
+    comment_count = true
+
+    # The following go on the footer.
+    show_back_to_top = true
+
+    # Show cookie consent (required for EU etc)
+    show_cookie_consent = true
+        cookie_button_color = "#fff"
+        cookie_button_text_color = "#0095eb"
+        cookie_button_border_color = "#0095eb"
+        cookie_button_message = "Got it!"
+        cookie_background_color = "#0095eb"
+        cookie_text_color = "#fff"
+        cookie_link_color = "#aaa"
+        cookie_message = "This website uses cookies to ensure you get the best experience on our website."
+        cookie_container_padding_top = "4px"
+        cookie_container_padding_bottom = "4px"
+
+    # Below we set attributes for the sharer
+    [params.sharer]
+        # Global and page settings for sharer has to be true for it to be shown
+        sharer_active = true
+        # There are three ways in which sharers can be included in your site.
+        #        1. Through a fixed button that when clicked rolls up to show sharing buttons (bottom right of screen)
+        #        2. Through a fixed menu on the left. This is active on larger screens. On smaller screens, there would be a fixed menu at bottom of screen
+        #        3. Through a list of icons just before the start of content on content pages
+
+        # 1. Sharer Rollup button
+        sharer_rollup_button_active = true
+        sharer_button_color = "#0095eb"
+        sharer_pullup_button_icon = "fa-share-alt"
+        # 2. Fixed menu
+        # Note that this changes with screen width. This can be checked by pressing ctrl+shift+i on chrome
+        sharer_fixed_menu_active = true
+        show_fixed_sharer_on_scroll = true
+        # If show_menu_on_scroll is true, how much to scroll
+        scroll_amount_to_activate_sharer = 20
+
+
+    # Below we set attributes for the popup
+    [params.popup]
+        # Below is the global popup switch. This has to be true for there to be any popups on the site.
+        # TO activate in a given page, this global switch has to be set to true, and the popup_active has to be true in the
+        # page front matter (in the content folder)
+        popup_active = true
+        # Should popup be shown once per session or persist across browser close? default is persist
+        reload_popup_once_per_session = false
+
+
+        # We will allow three types of popups, timed popup, popup on given amount of scroll and exit intent popup
+        # There are three ways of activating a popup.
+        #        1) There is a button on the bottom right which can always be clicked.
+        #        2) There is a delay activation
+        #        3) There is an exit intent activation
+        #        4) There is a scroll amount activation
+        # Of these the button activation is always on. The others can be set here.
+
+        # 1. Show Button at bottom of screen
+        popup_show_button_on_bottom_right = true
+        popup_button_color = "#0095eb"
+        pullup_button_icon = "fa-fire"
+        pullup_button_icon_color = "#fff"
+
+
+
+        # 2. Delay activation
+        activate_popup_on_delay = true
+        seconds_before_activation = 10
+
+        # 3. Exit intent activation
+        activate_popup_on_exit_intent = true
+        # The sensitivity is triggered by how fast the user takes the mouse out from top of the window (measured as mouse y coordinate when exit event is triggered)
+        exit_intent_sensitivity = 20
+
+        # 4. Amount of scroll activation
+        activate_popup_on_scroll = true
+        scroll_percentage_before_activation = 0.6
+
+
+        # The popup will have
+        #    a) A title
+        #    b) explanatory text
+        #    c) an image on the right or as a full background
+        #    d) A formspree form for collecting name and email id
+        #    e) A subscribe now button
+
+        # choose from a font-awesome icon for the popup pullup (where applicable)
+
+        title = "Subscribe Now"
+        title_color = "#aaaaaa"
+        subtitle = "Curated selection of articles straight to your inbox"
+        subtitle_color = "#ffaa11"
+        # Use img_position = 1 for full image background and use img_position = 2 for image on the right
+        img_position = 2
+        img_source = "/img/flowers_line_drawing.jpg"
+
+        # form
+        form_label_color = "#ffaa33"
+
+        # form submit text
+        submit_text = "Subscribe"
+        submit_text_color = "#ccaaaa"
+        submit_button_color = "blue"
+
+        # Tries to return to the referrer page, but in case that fails, the option below
+        link_after_submit = "/subscriptionsuccess/"
+
+        popup_submission_mail = "rahul.maddy@gmail.com"
+        popup_submission_subject = "New subscription for your site!"
+        secondary_forwarding_emails = ["rahul.maddy@gmail.com","ksm@ksmadhavan.in"]
+
+        # Close popup by clicking outside the box
+        close_on_click_outside = true
+        # Close popup by pressing escape
+        close_on_escape = true
+
+        [[params.popup.form_inputs]]
+            name="name"
+            required="required"
+            type="text"
+            autocomplete = "name"
+            helper_text = "Your Name *"
+
+        [[params.popup.form_inputs]]
+            name = "Email ID"
+            requried = "required"
+            type= "email"
+            autocomplete = "email"
+            helper_text = "Your Email *"
+
+
+
+
+
+
+
+
+
+
+    [[params.footer_network]]
+        url = "https://www.facebook.com/rahul.maddy"
+        iconpack = "fa"
+        icon = "fa-facebook"
+
+    [[params.footer_network]]
+        url = "https://www.linkedin.com/in/rahul-madhavan/"
+        iconpack = "fa"
+        icon = "fa-linkedin"
+
+    [[params.footer_network]]
+        url = "http://github.com/p10rahulm"
+        iconpack = "fa"
+        icon = "fa-github"
+
+# Menus
+[menu]
+    [[menu.main]]
+        identifier = "home"
+        name = "Home"
+        pre = ""
+        url = "./#about_us"
+        weight = -1
+
+    [[menu.main]]
+        identifier = "posts"
+        name = "Posts"
+        pre = ""
+        url = "./posts/"
+        weight = 0
+
+    [[menu.main]]
+        identifier = "books"
+        name = "Books"
+        pre = ""
+        url = "./books/"
+        weight = 1
+
+    [[menu.main]]
+        identifier = "code"
+        name = "Code"
+        pre = ""
+        url = "./code-snippets/"
+        weight = 2
+
+    [[menu.main]]
+        identifier = "courses"
+        name = "Cooks"
+        pre = ""
+        url = "./courses/"
+        weight = 3
+
+    [[menu.main]]
+        identifier = "events"
+        name = "Events"
+        pre = ""
+        url = "./events/"
+        weight = 4
+
+    [[menu.main]]
+        identifier = "notes"
+        name = "Notes"
+        pre = ""
+        url = "./notes/"
+        weight = 5
+
+    [[menu.main]]
+        identifier = "people"
+        name = "People"
+        pre = ""
+        url = "./people/"
+        weight = 6
+
+    [[menu.main]]
+        identifier = "publications"
+        name = "Publications"
+        pre = ""
+        url = "./publications/"
+        weight = 7
+
+    [[menu.main]]
+        identifier = "reviews"
+        name = "Reviews"
+        pre = ""
+        url = "./reviews/"
+        weight = 8
+
+    [[menu.main]]
+        identifier = "thoughts"
+        name = "Thoughts"
+        pre = ""
+        url = "./#featured_thoughts"
+        weight = 9
+
+    [[menu.main]]
+        identifier = "workshops"
+        name = "Workshops"
+        pre = ""
+        url = "./workshops/"
+        weight = 10
+
+
+
+    [[menu.main]]
+        identifier = "contact"
+        name = "Contact"
+        pre = ""
+        url = "/contact"
+        weight = 100
+
+# Here we choose the taxonomies. Various types of pages use various taxonomies
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+    project = "projects"
+    division = "divisions"
+    team = "teams"
+    genre = "genres"
+    subject = "subjects"
+    topic = "topics"
+    reviewed_item_category = "reviewed_item_categories"
+    publication_type = "publication_types"
+    artist = "artists"
+    album = "albums"
+
+
+# Configure the English version of the website.
+# TODO: ADD OTHER LANGUAGE SUPPORT
+[Languages.en]
+  languageCode = "en-in"
+
+[outputs]
+    home = [ "HTML", "CSS", "RSS", "JSON"]
+    section = [ "HTML", "RSS" ]
+
+# Configure BlackFriday Markdown rendering.
+#   See: https://gohugo.io/readfiles/bfconfig/
+[blackfriday]
+  hrefTargetBlank = true  # `true` opens external links in a new tab.
+  fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
+  smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
+
+
+# We are using the below shortcode for image processing in our documents
+[imaging]
+    # Default resample filter used for resizing. Default is Box,
+    # a simple and fast averaging filter appropriate for downscaling.
+    # See https://github.com/disintegration/imaging
+    # and   https://gohugo.io/content-management/image-processing/
+    resampleFilter = "box"
+
+    # Defatult JPEG quality setting. Default is 75.
+    quality = 75
+
+    # Anchor used when cropping pictures.
+    # Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
+    # Smart Cropping is content aware and tries to find the best crop for each image.
+    # Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+    anchor = "smart"
+
+[outputFormats]
+    [outputFormats.json]
+        baseName = "manifest"
+        isPlainText = true
+    [outputFormats.css]
+        baseName = "styles"
+
+```
+
+##### _index.md in the content folder
+
+##### contact_success.md in the content folder
+
+##### contact.md in the content folder
+
+##### popup_success.md in the content folder
+
+##### privacy.md in the content folder
+
+##### termsservice.md in the content folder
+
+
+### Step 5: Modify the content and preview
+If you want to modify the contents, there are two ways to go about it:
+1. Delete all files (leave the directories) and start from scratch
+
+### Step 6: Learn to create new templates if required
+
+### Step 7: Move from template to deployment
 
 ----------------
 Section 3: Setting up the online scaffolding
@@ -806,36 +1344,32 @@ Section 3: Setting up the online scaffolding
 6. Typically you may see three buttons here next to your domain: Privacy DNS and Manage.
 7. Click on the DNS button. It should open up another window with the domain you are managing. We will call this Your DNS page from now. Bookmark it if necessary or leave open.
 
-
-### Creating a forward from yourdomain.com into the www.yourdomain.com
+### Create a forward from yourdomain.com into the www.yourdomain.com
 
 1. On Your DNS page, if you scroll fown, you should see a Forwarding section.
 2. You are presently going to create a DNS forwarding from the yourdomain.com into the www.yourdomain.com
 3. Click on the button next to domain. The options to be input are as follows:
-    1.  In the Forward to option, in the blank space next to http:// type "www.your-domain.com". This means that it is going to forward from http://your-domain.com to http://www.your-domain.com
+    1. In the Forward to option, in the blank space next to http:// type "www.your-domain.com". This means that it is going to forward from http://your-domain.com to http://www.your-domain.com
     2. In options use forward type: Permanent (301)
-    3.  In options use settings: Forward only
-1. click on save
-1. Leave this browser window open as we will have to come back here.
-
-
-
---------------------
+    3. In options use settings: Forward only
+4. click on save
+5. Leave this browser window open as we will have to come back here.
 
 ## Verify yourself on google and get your cloud storage setup
+
 [Google Reference: Domain Name Verification](https://cloud.google.com/storage/docs/domain-name-verification)
+
 1. You can verify your domain here: https://www.google.com/webmasters/tools/
 2. If you are on the new console, you should see a list of websites you own on the top left. If you click on this button, then at the bottom you can see a link to add new property.
     1. If you are on the old console, you should see a bright red button to "Add a Property" on the top right of your screen.
 3. Click on add property (new search console is worse than old!)
     1. Type the name like so : http://mywebsite.com
-
 4. There are many methods of verification. The most convenient at this stage is to use domain name provider (the last option)
     1. This will lead you back to the old console.
     2. It should auto detect that you are on godaddy.
     3. Click on verify on the bright red button
     4. It should open a window where it asks you to login to godaddy. It does its own thing and takes 60 seconds.
-5.  If it works, great, you have been verified by google as owner of your website
+5. If it works, great, you have been verified by google as owner of your website
 
 if it does not, then you would have to add TXT record. Let's look at how to do that.
 
