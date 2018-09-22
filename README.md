@@ -896,18 +896,19 @@ In this section we will describe all the configurations
 The first thing you want to look at is the config.toml file. We will describe all the configurations here
 
 ```toml
-# 1. baseurl is your domain name
+# Notes. those options marked with * need to be changed. Rest are optional
+#* 1. baseurl is your domain name
 baseurl = "http://www.yourdomain.com/"
 
-# 2. title is your website name
+#* 2. title is your website name
 title = "Your Website Name"
 
-# 3. disqus is the third party application we will be using for comments. Get your own disqus shortname here: https://disqus.com/admin/create/ and fill it below
+#* 3. disqus is the third party application we will be using for comments. Get your own disqus shortname here: https://disqus.com/admin/create/ and fill it below
 disqusShortname = "codefra"
 
-# 4. Enabling Google Analytics on your site enables you to track site usage, referrers and various other statistics. See how to get your google analytics ID here: https://support.google.com/analytics/answer/1042508?hl=en
-
-## 4.1 The file where google analytics is implemented is /layouts/partials/js_scripts/ga.js
+#* 4. Enabling Google Analytics on your site enables you to track site usage, referrers and various other statistics.
+## - See how to get your google analytics ID here: https://support.google.com/analytics/answer/1042508?hl=en
+## - The file where google analytics is implemented is /layouts/partials/js_scripts/ga.js
 
 googleAnalytics = "UA-123456789-1"
 
@@ -937,7 +938,7 @@ layoutDir ="layouts"
 
 
 
-# 9. Your copyright notice - appears in site footer and in RSS. Note: To display a copyright symbol, type `&copy;`.
+#* 9. Your copyright notice - appears in site footer and in RSS. Note: To display a copyright symbol, type `&copy;`.
 copyright = "&copy; 2018 CodeFRA"
 
 # 10. If enableRobotsTXT is true, a simple robots.txt is created allowing all agents to crawl everything. If you want to create your own robots.txt, then place a robots.txt in the static folder.
@@ -963,55 +964,69 @@ verboseLog =true
 # Below the theme creator can create their own site wide variables
 
 [params]
-# 15. Site Author name
-site_author_name = "Rahul Madhavan"
+#* 15. Site Author name
+site_author_name = "Your Name"
 
-# 15. Site creator role. This will be 
-role = "Founder, CodeFRA"
-email = "rahul.maddy@gmail.com"
+#* 16. Site creator role. This will be used wherever role is required.
+role = "YourRole, YourCompanyName"
+
+#* 17. Site creator email. Again used in a bunch of places like contact
+email = "firstname.lastname@gmail.com"
+
 # SEO Section
-# When pages don't have description
-default_description = "-273.15K. So Cool."
-# FB admin site handler
-facebook_admin_handle = "rahul.maddy"
 
-# Tags for twitter cards for sharing
-twitter_site_handle = "@codeFRA"
-twitter_creator_handle = "@rahul_maddy"
-# The favicon will be used to render the icon in the browser. Save this in the *static/folder*.
+#* 18. This is the default description of the website used for SEO (facebook shares etc)
+default_description = "-273.15K. So Cool."
+
+#* 19. Add your FB admin site handle for facebook cards
+facebook_admin_handle = "yourfirstname.yourlastname"
+
+#* 20. Add your twitter handle for twitter sharing cards
+twitter_creator_handle = "@your_cool_handle"
+
+#* 21. Add your twitter site handle for twitter sharing cards if any, or keep same as twitter_creator_handle
+twitter_site_handle = "@yourwebSite"
+
+
+#* 22. Choose a favicon. Make it really small, and save this in the *static* folder.
 favicon = "favicon.jpg"
-# The favicon will be used to render the icon in the browser. Save this in the *static/folder*.
+
+#* 23. Optionally choose another favicon for apple high resolution. Save this also in static folder
 apple_touch_icon = "favicon.jpg"
-# Diplay a logo in navigation bar rather than title (optional).
-#   To enable, place an image in `static/` and reference its filename below. To disable, set the value to "".
+
+#* 24. Diplay a logo in navigation bar (without the text). Try keeping width to height between 7:5 to 7:7
 logo = "thinking_tree2.jpg"
 
+# 25. When a user refreshes the page, open the page at the top
 open_at_top = false
+
+# 26. This is the default font set for this theme. Try to not change, it's used everywhere!
 google_fonts = ["EB Garamond","Lora","Roboto Mono"]
 
-# In case you want to add custom css and custom js, place them in (i) /static/css/ folder and (ii) /static/js/ folders
+
+# 27. In case you want to add custom css and custom js, place them in (i) /static/css/ folder and (ii) /static/js/ folders
 # Add the filenames in the following two arrays
 custom_css = []
 custom_js = []
-# Below will be the active menu items for the navbar (navigation menu) at the top of the page
+
+# 28. Below will be the active menu items for the navbar (navigation menu) at the top of the page
 # Please only include the names as given in the menu.main section below
 navbar_active = ["Home","Posts","Thoughts","Publications","Reviews","Notes","Contact"]
 
-# You can set a map in the front page in the contact section from google maps.
-# Get key here: https://developers.google.com/maps/documentation/javascript/get-api-key
-# To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
+#* 29. You can set a map in the front page in the contact section from google maps.
+# 1. Get key here: https://developers.google.com/maps/documentation/javascript/get-api-key
+# 2. To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
 map = true
 map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
 latitude = "12.932376"
 longitude = "77.630389"
 zoom = 15
 
-# You can enable comments on a page by page basis
-enable_comments = false
-# Will load the appropriate module only if above two are present
-comment_count = true
 
-# The following go on the footer.
+# 30. Sitewide default for comments. You can enable comments on a page or section basis
+enable_comments = false
+
+# 31. A small "back to top" button will show up at the bottom of the website
 show_back_to_top = true
 
 # Show cookie consent (required for EU etc)
@@ -1146,8 +1161,6 @@ close_on_escape = true
 
 
 
-
-
 [[params.footer_network]]
 url = "https://www.facebook.com/rahul.maddy"
 iconpack = "fa"
@@ -1249,8 +1262,6 @@ pre = ""
 url = "./workshops/"
 weight = 10
 
-
-
 [[menu.main]]
 identifier = "contact"
 name = "Contact"
@@ -1284,7 +1295,7 @@ home = [ "HTML", "CSS", "RSS", "JSON"]
 section = [ "HTML", "RSS" ]
 
 # Configure BlackFriday Markdown rendering.
-#   See: https://gohugo.io/readfiles/bfconfig/
+# See: https://gohugo.io/readfiles/bfconfig/
 [blackfriday]
 hrefTargetBlank = true  # `true` opens external links in a new tab.
 fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
@@ -1308,10 +1319,13 @@ quality = 75
 # Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
 anchor = "smart"
 
+
 [outputFormats]
+
 [outputFormats.json]
 baseName = "manifest"
 isPlainText = true
+
 [outputFormats.css]
 baseName = "styles"
 

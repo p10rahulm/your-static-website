@@ -115,7 +115,6 @@ Morbi tincidunt nisi sit amet risus lacinia ornare. Duis mattis diam urna, a sol
 {{define "comments"}}
     {{$section_var := newScratch}}
     {{ $.Scratch.SetInMap "page_layout" "enable_comments" (and $.Site.DisqusShortname (or ($.Site.Params.enable_comments | default false) ($.Params.enable_comments | default true)) | default false) }}
-    {{ $.Scratch.SetInMap "page_layout" "comment_count" false }}
 
     {{/* Set layout from prebuilt layouts data sheet if exists*/}}
     {{ $.Scratch.Set "single_layout_prebuilds" $.Site.Data.layouts.sectionwise_singlepage_layouts }}

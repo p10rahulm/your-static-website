@@ -105,8 +105,6 @@ verboseLog =true
 
     # You can enable comments on a page by page basis
     enable_comments = false
-    # Will load the appropriate module only if above two are present
-    comment_count = true
 
     # The following go on the footer.
     show_back_to_top = true
