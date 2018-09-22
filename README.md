@@ -1029,7 +1029,7 @@ enable_comments = false
 # 31. A small "back to top" button will show up at the bottom of the website
 show_back_to_top = true
 
-# Show cookie consent (required for EU etc)
+# 32. Change various options related to cookie consent form (required for EU etc)
 show_cookie_consent = true
 cookie_button_color = "#fff"
 cookie_button_text_color = "#0095eb"
@@ -1042,20 +1042,23 @@ cookie_message = "This website uses cookies to ensure you get the best experienc
 cookie_container_padding_top = "4px"
 cookie_container_padding_bottom = "4px"
 
-# Below we set attributes for the sharer
-[params.sharer]
-# Global and page settings for sharer has to be true for it to be shown
-sharer_active = true
-# There are three ways in which sharers can be included in your site.
-#        1. Through a fixed button that when clicked rolls up to show sharing buttons (bottom right of screen)
-#        2. Through a fixed menu on the left. This is active on larger screens. On smaller screens, there would be a fixed menu at bottom of screen
-#        3. Through a list of icons just before the start of content on content pages
 
-# 1. Sharer Rollup button
+# There are various changes that can be made to how the sharer works below
+[params.sharer]
+
+# 33. Global and page settings for sharer has to be true for it to be shown
+sharer_active = true
+
+# There are two ways in which sharers can be included in your site.
+# 1. Through a fixed button that when clicked rolls up to show sharing buttons (bottom right of screen)
+# 2. Through a fixed menu on the left. This is active on larger screens. On smaller screens, there would be a fixed menu at bottom of screen
+
+# 34. Sharer Rollup button
 sharer_rollup_button_active = true
 sharer_button_color = "#0095eb"
 sharer_pullup_button_icon = "fa-share-alt"
-# 2. Fixed menu
+
+# 35. Fixed menu sharer
 # Note that this changes with screen width. This can be checked by pressing ctrl+shift+i on chrome
 sharer_fixed_menu_active = true
 show_fixed_sharer_on_scroll = true
@@ -1063,13 +1066,15 @@ show_fixed_sharer_on_scroll = true
 scroll_amount_to_activate_sharer = 20
 
 
-# Below we set attributes for the popup
+# There are various changes that can be made to how the popup works below
 [params.popup]
-# Below is the global popup switch. This has to be true for there to be any popups on the site.
-# TO activate in a given page, this global switch has to be set to true, and the popup_active has to be true in the
-# page front matter (in the content folder)
+
+
+
+# 36. Below is the global popup default. 
 popup_active = true
-# Should popup be shown once per session or persist across browser close? default is persist
+
+# 37. Should popup be shown once per session or persist across browser close? default is persist. This is done by setting a small cookie on client browser
 reload_popup_once_per_session = false
 
 
@@ -1081,7 +1086,7 @@ reload_popup_once_per_session = false
 #        4) There is a scroll amount activation
 # Of these the button activation is always on. The others can be set here.
 
-# 1. Show Button at bottom of screen
+# 38. Show popup button at bottom of screen
 popup_show_button_on_bottom_right = true
 popup_button_color = "#0095eb"
 pullup_button_icon = "fa-fire"
@@ -1089,20 +1094,23 @@ pullup_button_icon_color = "#fff"
 
 
 
-# 2. Delay activation
+# 39. Delay activation of popup
 activate_popup_on_delay = true
 seconds_before_activation = 10
 
-# 3. Exit intent activation
+# 40. Exit intent activation of popup
 activate_popup_on_exit_intent = true
 # The sensitivity is triggered by how fast the user takes the mouse out from top of the window (measured as mouse y coordinate when exit event is triggered)
 exit_intent_sensitivity = 20
 
-# 4. Amount of scroll activation
+# 41. Amount of scroll activation of popup
 activate_popup_on_scroll = true
 scroll_percentage_before_activation = 0.6
 
+# Basically popup is a call to action, if all above are set to true, surely the visitor is going to see the popup
 
+
+# 42. You can change popup contents below
 # The popup will have
 #    a) A title
 #    b) explanatory text
@@ -1131,9 +1139,11 @@ submit_button_color = "blue"
 # Tries to return to the referrer page, but in case that fails, the option below
 link_after_submit = "/subscriptionsuccess/"
 
+#* 43. Change the mail recipients and subject below
 popup_submission_mail = "rahul.maddy@gmail.com"
 popup_submission_subject = "New subscription for your site!"
 secondary_forwarding_emails = ["rahul.maddy@gmail.com","ksm@ksmadhavan.in"]
+
 
 # Close popup by clicking outside the box
 close_on_click_outside = true
