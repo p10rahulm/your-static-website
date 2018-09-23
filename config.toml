@@ -232,6 +232,7 @@ verboseLog =true
         subtitle = "Curated selection of articles straight to your inbox"
         subtitle_color = "#ffaa11"
 
+        #* 42.1 This is an image that will be opened in the popup. Please use your own image
         img_source = "/img/flowers_line_drawing.jpg"
 
         # form label color

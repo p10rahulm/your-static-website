@@ -893,458 +893,947 @@ In this section we will describe all the configurations
 
 #### config.toml file
 
-The first thing you want to look at is the config.toml file. We will describe all the configurations here
+The first thing you want to look at is the config.toml file. We will describe all the configurations here. But the important ones to be changed are:
+
+- baseurl = "http://www.yourdomain.com/"
+- title = "Your Website Name"
+- disqusShortname = "codefra"
+- googleAnalytics = "UA-123456789-1"
+- copyright = "&copy; 2018 CodeFRA"
+- site_author_name = "Your Name"
+- role = "YourRole, YourCompanyName"
+- email = "firstname.lastname@gmail.com"
+- default_description = "-273.15K. So Cool."
+- facebook_admin_handle = "yourfirstname.yourlastname"
+- twitter_creator_handle = "@your_cool_handle"
+- twitter_site_handle = "@yourwebSite"
+- favicon = "favicon.jpg"
+- apple_touch_icon = "favicon.jpg"
+- logo = "thinking_tree2.jpg"
+- map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
+- latitude = "12.932376"
+- longitude = "77.630389"
+- img_source = "/img/flowers_line_drawing.jpg" # decorative image for popup
+- popup_submission_mail = "rahul.maddy@gmail.com"
+- popup_submission_subject = "New subscription for your site!"
+- secondary_forwarding_emails = ["rahul.maddy@gmail.com","ksm@ksmadhavan.in"]
+- [[params.footer_network]]
+    url = "https://www.facebook.com/rahul.maddy"
+- [[params.footer_network]]
+    url = "https://www.linkedin.com/in/rahul-madhavan/"
+- [[params.footer_network]]
+    url = "http://github.com/p10rahulm"
 
 ```toml
-# Notes. those options marked with * need to be changed. Rest are optional
-#* 1. baseurl is your domain name
-baseurl = "http://www.yourdomain.com/"
+    # Notes. those options marked with * need to be changed. Rest are optional
+    #* 1. baseurl is your domain name
+    baseurl = "http://www.yourdomain.com/"
 
-#* 2. title is your website name
-title = "Your Website Name"
+    #* 2. title is your website name
+    title = "Your Website Name"
 
-#* 3. disqus is the third party application we will be using for comments. Get your own disqus shortname here: https://disqus.com/admin/create/ and fill it below
-disqusShortname = "codefra"
+    #* 3. disqus is the third party application we will be using for comments. Get your own disqus shortname here: https://disqus.com/admin/create/ and fill it below
+    disqusShortname = "codefra"
 
-#* 4. Enabling Google Analytics on your site enables you to track site usage, referrers and various other statistics.
-## - See how to get your google analytics ID here: https://support.google.com/analytics/answer/1042508?hl=en
-## - The file where google analytics is implemented is /layouts/partials/js_scripts/ga.js
+    #* 4. Enabling Google Analytics on your site enables you to track site usage, referrers and various other statistics.
+    ## - See how to get your google analytics ID here: https://support.google.com/analytics/answer/1042508?hl=en
+    ## - The file where google analytics is implemented is /layouts/partials/js_scripts/ga.js
 
-googleAnalytics = "UA-123456789-1"
+    googleAnalytics = "UA-123456789-1"
 
-# 5. uglyURLs decide how your pages are saved. When enabled, creates URL of the form /filename.html instead of /filename/.
-uglyURLs = false 
+    # 5. uglyURLs decide how your pages are saved. When enabled, creates URL of the form /filename.html instead of /filename/.
+    uglyURLs = false 
 
-# 6. Summaries in lists - number of words used in the Hugo summary function
-summaryLength = 25  
+    # 6. Summaries in lists - number of words used in the Hugo summary function
+    summaryLength = 25  
 
-# 7. Pagination Options
-# 7.1 How many pages by default in any list page
-paginate = 10
+    # 7. Pagination Options
+    # 7.1 How many pages by default in any list page
+    paginate = 10
 
-# 7.2 What are the pagination list pages called. 
-# For example http://www.mydomain.com/posts/{{paginatePath}}/2
-paginatePath = "page"
+    # 7.2 What are the pagination list pages called. 
+    # For example http://www.mydomain.com/posts/{{paginatePath}}/2
+    paginatePath = "page"
 
 
-# 8. Directories names in the theme. Keep defaults here
-themesDir = "themes"
-archetypeDir = "archetypes"
-contentDir ="content"
-dataDir ="data"
-publishDir = "public"
-layoutDir ="layouts"
+    # 8. Directories names in the theme. Keep defaults here
+    themesDir = "themes"
+    archetypeDir = "archetypes"
+    contentDir ="content"
+    dataDir ="data"
+    publishDir = "public"
+    layoutDir ="layouts"
 
 
 
 
-#* 9. Your copyright notice - appears in site footer and in RSS. Note: To display a copyright symbol, type `&copy;`.
-copyright = "&copy; 2018 CodeFRA"
+    #* 9. Your copyright notice - appears in site footer and in RSS. Note: To display a copyright symbol, type `&copy;`.
+    copyright = "&copy; 2018 CodeFRA"
 
-# 10. If enableRobotsTXT is true, a simple robots.txt is created allowing all agents to crawl everything. If you want to create your own robots.txt, then place a robots.txt in the static folder.
-enableRobotsTXT =true
+    # 10. If enableRobotsTXT is true, a simple robots.txt is created allowing all agents to crawl everything. If you want to create your own robots.txt, then place a robots.txt in the static folder.
+    enableRobotsTXT =true
 
 
 
-# 11. If enableGitInfo is true, then last modified date is obtained from git logs. It may be slow. so better false.
-enableGitInfo = false
+    # 11. If enableGitInfo is true, then last modified date is obtained from git logs. It may be slow. so better false.
+    enableGitInfo = false
 
-# 12. Language - use some form of english
-languageCode = "en-us"
+    # 12. Language - use some form of english
+    languageCode = "en-us"
 
-# 13. For debugging while testing only, you can turn this to true. When you type `hugo` then the log file will be generated at below location. Server anyway generates errors, so turning false
-log = false
-logFile ="public/log.txt"
+    # 13. For debugging while testing only, you can turn this to true. When you type `hugo` then the log file will be generated at below location. Server anyway generates errors, so turning false
+    log = false
+    logFile ="public/log.txt"
 
 
-# 14. Enable verbose logging for hugo server on the command `hugo server -D`.
-verbose =true
-verboseLog =true
+    # 14. Enable verbose logging for hugo server on the command `hugo server -D`.
+    verbose =true
+    verboseLog =true
 
-# Below the theme creator can create their own site wide variables
+    # Below the theme creator can create their own site wide variables
 
-[params]
-#* 15. Site Author name
-site_author_name = "Your Name"
+    [params]
+    #* 15. Site Author name
+    site_author_name = "Your Name"
 
-#* 16. Site creator role. This will be used wherever role is required.
-role = "YourRole, YourCompanyName"
+    #* 16. Site creator role. This will be used wherever role is required.
+    role = "YourRole, YourCompanyName"
 
-#* 17. Site creator email. Again used in a bunch of places like contact
-email = "firstname.lastname@gmail.com"
+    #* 17. Site creator email. Again used in a bunch of places like contact
+    email = "firstname.lastname@gmail.com"
 
-# SEO Section
+    # SEO Section
 
-#* 18. This is the default description of the website used for SEO (facebook shares etc)
-default_description = "-273.15K. So Cool."
+    #* 18. This is the default description of the website used for SEO (facebook shares etc)
+    default_description = "-273.15K. So Cool."
 
-#* 19. Add your FB admin site handle for facebook cards
-facebook_admin_handle = "yourfirstname.yourlastname"
+    #* 19. Add your FB admin site handle for facebook cards
+    facebook_admin_handle = "yourfirstname.yourlastname"
 
-#* 20. Add your twitter handle for twitter sharing cards
-twitter_creator_handle = "@your_cool_handle"
+    #* 20. Add your twitter handle for twitter sharing cards
+    twitter_creator_handle = "@your_cool_handle"
 
-#* 21. Add your twitter site handle for twitter sharing cards if any, or keep same as twitter_creator_handle
-twitter_site_handle = "@yourwebSite"
+    #* 21. Add your twitter site handle for twitter sharing cards if any, or keep same as twitter_creator_handle
+    twitter_site_handle = "@yourwebSite"
 
 
-#* 22. Choose a favicon. Make it really small, and save this in the *static* folder.
-favicon = "favicon.jpg"
+    #* 22. Choose a favicon. Make it really small, and save this in the *static* folder.
+    favicon = "favicon.jpg"
 
-#* 23. Optionally choose another favicon for apple high resolution. Save this also in static folder
-apple_touch_icon = "favicon.jpg"
+    #* 23. Optionally choose another favicon for apple high resolution. Save this also in static folder
+    apple_touch_icon = "favicon.jpg"
 
-#* 24. Diplay a logo in navigation bar (without the text). Try keeping width to height between 7:5 to 7:7
-logo = "thinking_tree2.jpg"
+    #* 24. Diplay a logo in navigation bar (without the text). Try keeping width to height between 7:5 to 7:7
+    logo = "thinking_tree2.jpg"
 
-# 25. When a user refreshes the page, open the page at the top
-open_at_top = false
+    # 25. When a user refreshes the page, open the page at the top
+    open_at_top = false
 
-# 26. This is the default font set for this theme. Try to not change, it's used everywhere!
-google_fonts = ["EB Garamond","Lora","Roboto Mono"]
+    # 26. This is the default font set for this theme. Try to not change, it's used everywhere!
+    google_fonts = ["EB Garamond","Lora","Roboto Mono"]
 
 
-# 27. In case you want to add custom css and custom js, place them in (i) /static/css/ folder and (ii) /static/js/ folders
-# Add the filenames in the following two arrays
-custom_css = []
-custom_js = []
+    # 27. In case you want to add custom css and custom js, place them in (i) /static/css/ folder and (ii) /static/js/ folders
+    # Add the filenames in the following two arrays
+    custom_css = []
+    custom_js = []
 
-# 28. Below will be the active menu items for the navbar (navigation menu) at the top of the page
-# Please only include the names as given in the menu.main section below
-navbar_active = ["Home","Posts","Thoughts","Publications","Reviews","Notes","Contact"]
+    # 28. Below will be the active menu items for the navbar (navigation menu) at the top of the page
+    # Please only include the names as given in the menu.main section below
+    navbar_active = ["Home","Posts","Thoughts","Publications","Reviews","Notes","Contact"]
 
-#* 29. You can set a map in the front page in the contact section from google maps.
-# 1. Get key here: https://developers.google.com/maps/documentation/javascript/get-api-key
-# 2. To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
-map = true
-map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
-latitude = "12.932376"
-longitude = "77.630389"
-zoom = 15
+    #* 29. You can set a map in the front page in the contact section from google maps.
+    # 1. Get key here: https://developers.google.com/maps/documentation/javascript/get-api-key
+    # 2. To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
+    map = true
+    map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
+    latitude = "12.932376"
+    longitude = "77.630389"
+    zoom = 15
 
 
-# 30. Sitewide default for comments. You can enable comments on a page or section basis
-enable_comments = false
+    # 30. Sitewide default for comments. You can enable comments on a page or section basis
+    enable_comments = false
 
-# 31. A small "back to top" button will show up at the bottom of the website
-show_back_to_top = true
+    # 31. A small "back to top" button will show up at the bottom of the website
+    show_back_to_top = true
 
-# 32. Change various options related to cookie consent form (required for EU etc)
-show_cookie_consent = true
-cookie_button_color = "#fff"
-cookie_button_text_color = "#0095eb"
-cookie_button_border_color = "#0095eb"
-cookie_button_message = "Got it!"
-cookie_background_color = "#0095eb"
-cookie_text_color = "#fff"
-cookie_link_color = "#aaa"
-cookie_message = "This website uses cookies to ensure you get the best experience on our website."
-cookie_container_padding_top = "4px"
-cookie_container_padding_bottom = "4px"
+    # 32. Change various options related to cookie consent form (required for EU etc)
+    show_cookie_consent = true
+    cookie_button_color = "#fff"
+    cookie_button_text_color = "#0095eb"
+    cookie_button_border_color = "#0095eb"
+    cookie_button_message = "Got it!"
+    cookie_background_color = "#0095eb"
+    cookie_text_color = "#fff"
+    cookie_link_color = "#aaa"
+    cookie_message = "This website uses cookies to ensure you get the best experience on our website."
+    cookie_container_padding_top = "4px"
+    cookie_container_padding_bottom = "4px"
 
 
-# There are various changes that can be made to how the sharer works below
-[params.sharer]
+    # There are various changes that can be made to how the sharer works below
+    [params.sharer]
 
-# 33. Global and page settings for sharer has to be true for it to be shown
-sharer_active = true
+    # 33. Global and page settings for sharer has to be true for it to be shown
+    sharer_active = true
 
-# There are two ways in which sharers can be included in your site.
-# 1. Through a fixed button that when clicked rolls up to show sharing buttons (bottom right of screen)
-# 2. Through a fixed menu on the left. This is active on larger screens. On smaller screens, there would be a fixed menu at bottom of screen
+    # There are two ways in which sharers can be included in your site.
+    # 1. Through a fixed button that when clicked rolls up to show sharing buttons (bottom right of screen)
+    # 2. Through a fixed menu on the left. This is active on larger screens. On smaller screens, there would be a fixed menu at bottom of screen
 
-# 34. Sharer Rollup button
-sharer_rollup_button_active = true
-sharer_button_color = "#0095eb"
-sharer_pullup_button_icon = "fa-share-alt"
+    # 34. Sharer Rollup button
+    sharer_rollup_button_active = true
+    sharer_button_color = "#0095eb"
+    sharer_pullup_button_icon = "fa-share-alt"
 
-# 35. Fixed menu sharer
-# Note that this changes with screen width. This can be checked by pressing ctrl+shift+i on chrome
-sharer_fixed_menu_active = true
-show_fixed_sharer_on_scroll = true
-# If show_menu_on_scroll is true, how much to scroll
-scroll_amount_to_activate_sharer = 20
+    # 35. Fixed menu sharer
+    # Note that this changes with screen width. This can be checked by pressing ctrl+shift+i on chrome
+    sharer_fixed_menu_active = true
+    show_fixed_sharer_on_scroll = true
+    # If show_menu_on_scroll is true, how much to scroll
+    scroll_amount_to_activate_sharer = 20
 
 
-# There are various changes that can be made to how the popup works below
-[params.popup]
+    # There are various changes that can be made to how the popup works below
+    [params.popup]
 
 
 
-# 36. Below is the global popup default. 
-popup_active = true
+    # 36. Below is the global popup default. 
+    popup_active = true
 
-# 37. Should popup be shown once per session or persist across browser close? default is persist. This is done by setting a small cookie on client browser
-reload_popup_once_per_session = false
+    # 37. Should popup be shown once per session or persist across browser close? default is persist. This is done by setting a small cookie on client browser
+    reload_popup_once_per_session = false
 
 
-# We will allow three types of popups, timed popup, popup on given amount of scroll and exit intent popup
-# There are three ways of activating a popup.
-#        1) There is a button on the bottom right which can always be clicked.
-#        2) There is a delay activation
-#        3) There is an exit intent activation
-#        4) There is a scroll amount activation
-# Of these the button activation is always on. The others can be set here.
+    # We will allow three types of popups, timed popup, popup on given amount of scroll and exit intent popup
+    # There are three ways of activating a popup.
+    #        1) There is a button on the bottom right which can always be clicked.
+    #        2) There is a delay activation
+    #        3) There is an exit intent activation
+    #        4) There is a scroll amount activation
+    # Of these the button activation is always on. The others can be set here.
 
-# 38. Show popup button at bottom of screen
-popup_show_button_on_bottom_right = true
-popup_button_color = "#0095eb"
-pullup_button_icon = "fa-fire"
-pullup_button_icon_color = "#fff"
+    # 38. Show popup button at bottom of screen
+    popup_show_button_on_bottom_right = true
+    popup_button_color = "#0095eb"
+    pullup_button_icon = "fa-fire"
+    pullup_button_icon_color = "#fff"
 
 
 
-# 39. Delay activation of popup
-activate_popup_on_delay = true
-seconds_before_activation = 10
+    # 39. Delay activation of popup
+    activate_popup_on_delay = true
+    seconds_before_activation = 10
 
-# 40. Exit intent activation of popup
-activate_popup_on_exit_intent = true
-# The sensitivity is triggered by how fast the user takes the mouse out from top of the window (measured as mouse y coordinate when exit event is triggered)
-exit_intent_sensitivity = 20
+    # 40. Exit intent activation of popup
+    activate_popup_on_exit_intent = true
+    # The sensitivity is triggered by how fast the user takes the mouse out from top of the window (measured as mouse y coordinate when exit event is triggered)
+    exit_intent_sensitivity = 20
 
-# 41. Amount of scroll activation of popup
-activate_popup_on_scroll = true
-scroll_percentage_before_activation = 0.6
+    # 41. Amount of scroll activation of popup
+    activate_popup_on_scroll = true
+    scroll_percentage_before_activation = 0.6
 
-# Basically popup is a call to action, if all above are set to true, surely the visitor is going to see the popup
+    # Basically popup is a call to action, if all above are set to true, surely the visitor is going to see the popup
 
 
-# 42. You can change popup contents below
-# The popup will have
-#    a) A title
-#    b) explanatory text
-#    c) an image on the right or as a full background
-#    d) A formspree form for collecting name and email id
-#    e) A subscribe now button
+    # 42. You can change popup contents below
+    # The popup will have
+    #    a) A title
+    #    b) explanatory text
+    #    c) an image on the right or as a full background
+    #    d) A formspree form for collecting name and email id
+    #    e) A subscribe now button
 
-# choose from a font-awesome icon for the popup pullup (where applicable)
+    # choose from a font-awesome icon for the popup pullup (where applicable)
 
-title = "Subscribe Now"
-title_color = "#aaaaaa"
-subtitle = "Curated selection of articles straight to your inbox"
-subtitle_color = "#ffaa11"
+    title = "Subscribe Now"
+    title_color = "#aaaaaa"
+    subtitle = "Curated selection of articles straight to your inbox"
+    subtitle_color = "#ffaa11"
 
-img_source = "/img/flowers_line_drawing.jpg"
-
-# form label color
-form_label_color = "#ffaa33"
-
-# form submit text
-submit_text = "Subscribe"
-submit_text_color = "#ccaaaa"
-submit_button_color = "blue"
-
-# Tries to return to the referrer page, but in case that fails, the option below
-link_after_submit = "/subscriptionsuccess/"
-
-#* 43. Change the mail recipients and subject below
-popup_submission_mail = "rahul.maddy@gmail.com"
-popup_submission_subject = "New subscription for your site!"
-secondary_forwarding_emails = ["rahul.maddy@gmail.com","ksm@ksmadhavan.in"]
-
-# 44. Popup close behaviour can be changed below
-# Close popup by clicking outside the box
-close_on_click_outside = true
-# Close popup by pressing escape
-close_on_escape = true
-
-# 45. Popup form text goes below. Leave as is.
-[[params.popup.form_inputs]]
-    name="name"
-    required="required"
-    type="text"
-    autocomplete = "name"
-    helper_text = "Your Name *"
-
-[[params.popup.form_inputs]]
-    name = "Email ID"
-    requried = "required"
-    type= "email"
-    autocomplete = "email"
-    helper_text = "Your Email *"
-
-
-#* 46. The site footer will contain three icons. You can choose the icons (from https://fontawesome.com/v4.7.0/icons/) and change links below
-
-[[params.footer_network]]
-url = "https://www.facebook.com/rahul.maddy"
-iconpack = "fa"
-icon = "fa-facebook"
-
-[[params.footer_network]]
-url = "https://www.linkedin.com/in/rahul-madhavan/"
-iconpack = "fa"
-icon = "fa-linkedin"
-
-[[params.footer_network]]
-url = "http://github.com/p10rahulm"
-iconpack = "fa"
-icon = "fa-github"
-
-
-
-# 47. This is a superset of all menu options you can choose. The actual menus chosen from this are set from Params.navbar_active above
-
-[menu]
-[[menu.main]]
-identifier = "home"
-name = "Home"
-pre = ""
-url = "./#about_us"
-weight = -1
-
-[[menu.main]]
-identifier = "posts"
-name = "Posts"
-pre = ""
-url = "./posts/"
-weight = 0
-
-[[menu.main]]
-identifier = "books"
-name = "Books"
-pre = ""
-url = "./books/"
-weight = 1
-
-[[menu.main]]
-identifier = "code"
-name = "Code"
-pre = ""
-url = "./code-snippets/"
-weight = 2
-
-[[menu.main]]
-identifier = "courses"
-name = "Cooks"
-pre = ""
-url = "./courses/"
-weight = 3
-
-[[menu.main]]
-identifier = "events"
-name = "Events"
-pre = ""
-url = "./events/"
-weight = 4
-
-[[menu.main]]
-identifier = "notes"
-name = "Notes"
-pre = ""
-url = "./notes/"
-weight = 5
-
-[[menu.main]]
-identifier = "people"
-name = "People"
-pre = ""
-url = "./people/"
-weight = 6
-
-[[menu.main]]
-identifier = "publications"
-name = "Publications"
-pre = ""
-url = "./publications/"
-weight = 7
-
-[[menu.main]]
-identifier = "reviews"
-name = "Reviews"
-pre = ""
-url = "./reviews/"
-weight = 8
-
-[[menu.main]]
-identifier = "thoughts"
-name = "Thoughts"
-pre = ""
-url = "./#featured_thoughts"
-weight = 9
-
-[[menu.main]]
-identifier = "workshops"
-name = "Workshops"
-pre = ""
-url = "./workshops/"
-weight = 10
-
-[[menu.main]]
-identifier = "contact"
-name = "Contact"
-pre = ""
-url = "/contact"
-weight = 100
-
-# 48. Here we choose the taxonomies. Various types of pages use various taxonomies. This doesn't have to be changed unless you are adding new page types to the template. default taxonomies in most pages are tags and categories
-
-[taxonomies]
-tag = "tags"
-category = "categories"
-project = "projects"
-division = "divisions"
-team = "teams"
-genre = "genres"
-subject = "subjects"
-topic = "topics"
-reviewed_item_category = "reviewed_item_categories"
-publication_type = "publication_types"
-artist = "artists"
-album = "albums"
-
-
-# 49. Configure the English version of the website.
-# TODO: ADD OTHER LANGUAGE SUPPORT
-[Languages.en]
-languageCode = "en-in"
-
-# 50. Choose the output formats you are going to use. The only important one in this case is html
-[outputs]
-home = [ "HTML", "CSS", "RSS", "JSON"]
-section = [ "HTML", "RSS" ]
-
-# 51. Markdown is converted to html by an engine called BlackFriday. Configure BlackFriday Markdown rendering below.
-# See: https://gohugo.io/readfiles/bfconfig/
-[blackfriday]
-hrefTargetBlank = true  # `true` opens external links in a new tab.
-fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
-smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
-
-
-# 52. We are using the below shortcode for image processing in our documents. Set the defaults below
-[imaging]
-# Default resample filter used for resizing. Default is Box,
-# a simple and fast averaging filter appropriate for downscaling.
-# See https://github.com/disintegration/imaging
-# and   https://gohugo.io/content-management/image-processing/
-resampleFilter = "box"
-
-# Default JPEG quality setting. Default is 75.
-quality = 75
-
-# Anchor used when cropping pictures.
-# Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
-# Smart Cropping is content aware and tries to find the best crop for each image.
-# Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
-anchor = "smart"
-
-# 53. The outputs in various formats are created with a filename. The defaults for this can be set below. Not used as such so not that important
-
-[outputFormats]
-
-[outputFormats.json]
-baseName = "manifest"
-isPlainText = true
-
-[outputFormats.css]
-baseName = "styles"
+    #* 42.1 This is an image that will be opened in the popup. Please use your own image
+    img_source = "/img/flowers_line_drawing.jpg"
+
+    # form label color
+    form_label_color = "#ffaa33"
+
+    # form submit text
+    submit_text = "Subscribe"
+    submit_text_color = "#ccaaaa"
+    submit_button_color = "blue"
+
+    # Tries to return to the referrer page, but in case that fails, the option below
+    link_after_submit = "/subscriptionsuccess/"
+
+    #* 43. Change the mail recipients and subject below
+    popup_submission_mail = "rahul.maddy@gmail.com"
+    popup_submission_subject = "New subscription for your site!"
+    secondary_forwarding_emails = ["rahul.maddy@gmail.com","ksm@ksmadhavan.in"]
+
+    # 44. Popup close behaviour can be changed below
+    # Close popup by clicking outside the box
+    close_on_click_outside = true
+    # Close popup by pressing escape
+    close_on_escape = true
+
+    # 45. Popup form text goes below. Leave as is.
+    [[params.popup.form_inputs]]
+        name="name"
+        required="required"
+        type="text"
+        autocomplete = "name"
+        helper_text = "Your Name *"
+
+    [[params.popup.form_inputs]]
+        name = "Email ID"
+        requried = "required"
+        type= "email"
+        autocomplete = "email"
+        helper_text = "Your Email *"
+
+
+    #* 46. The site footer will contain three icons. You can choose the icons (from https://fontawesome.com/v4.7.0/icons/) and change links below
+
+    [[params.footer_network]]
+    url = "https://www.facebook.com/rahul.maddy"
+    iconpack = "fa"
+    icon = "fa-facebook"
+
+    [[params.footer_network]]
+    url = "https://www.linkedin.com/in/rahul-madhavan/"
+    iconpack = "fa"
+    icon = "fa-linkedin"
+
+    [[params.footer_network]]
+    url = "http://github.com/p10rahulm"
+    iconpack = "fa"
+    icon = "fa-github"
+
+
+
+    # 47. This is a superset of all menu options you can choose. The actual menus chosen from this are set from Params.navbar_active above
+
+    [menu]
+    [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    pre = ""
+    url = "./#about_us"
+    weight = -1
+
+    [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    pre = ""
+    url = "./posts/"
+    weight = 0
+
+    [[menu.main]]
+    identifier = "books"
+    name = "Books"
+    pre = ""
+    url = "./books/"
+    weight = 1
+
+    [[menu.main]]
+    identifier = "code"
+    name = "Code"
+    pre = ""
+    url = "./code-snippets/"
+    weight = 2
+
+    [[menu.main]]
+    identifier = "courses"
+    name = "Cooks"
+    pre = ""
+    url = "./courses/"
+    weight = 3
+
+    [[menu.main]]
+    identifier = "events"
+    name = "Events"
+    pre = ""
+    url = "./events/"
+    weight = 4
+
+    [[menu.main]]
+    identifier = "notes"
+    name = "Notes"
+    pre = ""
+    url = "./notes/"
+    weight = 5
+
+    [[menu.main]]
+    identifier = "people"
+    name = "People"
+    pre = ""
+    url = "./people/"
+    weight = 6
+
+    [[menu.main]]
+    identifier = "publications"
+    name = "Publications"
+    pre = ""
+    url = "./publications/"
+    weight = 7
+
+    [[menu.main]]
+    identifier = "reviews"
+    name = "Reviews"
+    pre = ""
+    url = "./reviews/"
+    weight = 8
+
+    [[menu.main]]
+    identifier = "thoughts"
+    name = "Thoughts"
+    pre = ""
+    url = "./#featured_thoughts"
+    weight = 9
+
+    [[menu.main]]
+    identifier = "workshops"
+    name = "Workshops"
+    pre = ""
+    url = "./workshops/"
+    weight = 10
+
+    [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    pre = ""
+    url = "/contact"
+    weight = 100
+
+    # 48. Here we choose the taxonomies. Various types of pages use various taxonomies. This doesn't have to be changed unless you are adding new page types to the template. default taxonomies in most pages are tags and categories
+
+    [taxonomies]
+    tag = "tags"
+    category = "categories"
+    project = "projects"
+    division = "divisions"
+    team = "teams"
+    genre = "genres"
+    subject = "subjects"
+    topic = "topics"
+    reviewed_item_category = "reviewed_item_categories"
+    publication_type = "publication_types"
+    artist = "artists"
+    album = "albums"
+
+
+    # 49. Configure the English version of the website.
+    # TODO: ADD OTHER LANGUAGE SUPPORT
+    [Languages.en]
+    languageCode = "en-in"
+
+    # 50. Choose the output formats you are going to use. The only important one in this case is html
+    [outputs]
+    home = [ "HTML", "CSS", "RSS", "JSON"]
+    section = [ "HTML", "RSS" ]
+
+    # 51. Markdown is converted to html by an engine called BlackFriday. Configure BlackFriday Markdown rendering below.
+    # See: https://gohugo.io/readfiles/bfconfig/
+    [blackfriday]
+    hrefTargetBlank = true  # `true` opens external links in a new tab.
+    fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
+    smartypants = true  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
+
+
+    # 52. We are using the below shortcode for image processing in our documents. Set the defaults below
+    [imaging]
+    # Default resample filter used for resizing. Default is Box,
+    # a simple and fast averaging filter appropriate for downscaling.
+    # See https://github.com/disintegration/imaging
+    # and   https://gohugo.io/content-management/image-processing/
+    resampleFilter = "box"
+
+    # Default JPEG quality setting. Default is 75.
+    quality = 75
+
+    # Anchor used when cropping pictures.
+    # Default is "smart" which does Smart Cropping, using https://github.com/muesli/smartcrop
+    # Smart Cropping is content aware and tries to find the best crop for each image.
+    # Valid values are Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+    anchor = "smart"
+
+    # 53. The outputs in various formats are created with a filename. The defaults for this can be set below. Not used as such so not that important
+
+    [outputFormats]
+
+    [outputFormats.json]
+    baseName = "manifest"
+    isPlainText = true
+
+    [outputFormats.css]
+    baseName = "styles"
 
 ```
 
 ##### _index.md in the content folder
+```toml
+# Please use your own images. I provide the code with no implicit or explicit warranties and I am not to be liable for any claim or damages arising from use of this software.
 
+# All options below that are marked with * need to be changed
+# There are eight sections in the front page
+# 1. Top Banner
+# 2. Showcase
+# 3. About Us
+# 4. Logo Wall
+# 5. Featured Pages
+# 6. Call to Action
+# 7. Reviews
+# 8. Contact
+
+# At the outset decide which ones of these you want to use by viewing the preview index page.
+# If you don't need any one of these, just set active to false for that section below
+# Once you decide you want to have a section, you can change the options for the section.
+
+
+
+#* 1. This is the title of the site front page
+title = "The Thinking Tree Homepage"
+
+#* 2. These are the popup and sharer options. They are described in more detail in config.toml
+show_popup = true
+show_sharer = true
+rollup_sharer_active = true
+fixed_sharer_active = true
+
+# ----------------------------------
+# Section 1: Top section
+# ----------------------------------
+[top_banner]
+
+    active=true
+    layout = "top_banner" # choose from single or carousel
+    [top_banner.content]
+        # content from below. Layout from above
+        title = "The Thinking Tree"
+
+        link1_name = "Posts"
+        link1 = "#featured_posts"
+        link2_name = "Events"
+        link2 = "#featured_events"
+        link3_name = "Thoughts"
+        link3 = "#featured_thoughts"
+
+        slide1_image = "linear-gradient(to bottom right,rgba(0,0,200,0.2), rgba(200,0,120,0.2)),url(/img/headers/bubbles-wide.jpg)"
+        slide1_link = "/posts"
+        slide1_subject = "Posts"
+        slide1_title = "Onward and Upward, Like a Dendritic Tree"
+        slide1_description = "Reducing entropy, one post at a time"
+        slide2_image = "linear-gradient(to bottom right,rgba(0,0,200,0.2), rgba(200,0,120,0.2)),url(/img/orange-fractal.jpg)"
+        slide2_link = "/publications"
+        slide2_subject = "Publications"
+        slide2_title = "Every new day, better than the last"
+        slide2_description = "Nurturing creativity, like saplings amidst giants"
+
+
+
+
+
+# ----------------------------------
+# Section 2: Showcase section
+# ----------------------------------
+[showcase]
+    active=true
+    headline_layout = "headline_elements"
+    [showcase.headline]
+        title = "Greatest ever works"
+        subtitle = "Major Projects and Work Interests"
+
+
+
+    # These are the cards we will display. Ideally fill three.
+    # choose from 2,3,4,6
+    numcards = 3
+
+    [[showcase.card]]
+        icon = "fa-laptop"
+        title = "Responsive Design"
+        link = "#"
+        card_content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+
+    [[showcase.card]]
+        icon = "fa-lock"
+        title = "Web"
+        link = "#"
+        card_content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+
+    [[showcase.card]]
+        icon = "fa-shopping-cart"
+        title = "E-Commerce"
+        link = "#"
+        card_content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+
+
+# ----------------------------------
+# Section 3: About us section
+# ----------------------------------
+[about_us]
+    active=true
+    headline_layout = "headline_elements"
+    [about_us.headline]
+        title = "About Us"
+        subtitle = "Serving clients since 1985"
+    # ---------------------------------
+    [about_us.descriptor]
+        logo_image = "portrait.jpg"
+        name_title = "Rahul Madhavan"
+        name_subtitle = "Founder, CodeFRA"
+
+        # ---------------------------------
+        [[about_us.descriptor.affiliations]]
+            name = "Atidiv, Cuemath"
+            url = ""
+        [[about_us.descriptor.affiliations]]
+            name = "Barclays, Nomura, Lehman Brothers"
+            url = ""
+
+        [[about_us.descriptor.affiliations]]
+            name = "IIM Ahmedabad, IIT Madras"
+            url = ""
+        # ---------------------------------
+        [[about_us.descriptor.social]]
+            icon = "fa-envelope"
+            icon_pack = "fa"
+            link = "mailto:rahul.maddy@gmail"
+        [[about_us.descriptor.social]]
+            icon = "fa-linkedin"
+            icon_pack = "fa"
+            link = "//linkedin.com/in/rahul-madhavan/"
+
+        [[about_us.descriptor.social]]
+            icon = "fa-facebook"
+            icon_pack = "fa"
+            link = "//facebook.com/rahul.maddy"
+
+        [[about_us.descriptor.social]]
+            icon = "fa-github"
+            icon_pack = "fa"
+            link = "//github.com/p10rahulm"
+
+
+    # ---------------------------------
+    [about_us.detail]
+        title = "Biography"
+
+        # ---------------------------------
+        # Put the content below between the triple quotes. You may use markdown.
+        # Make sure alignment is ok. I've used replace of '                '
+        # to remove the leading white space
+        content = '''
+                Rahul Madhavan founded CodeFRA as a means to work on problems that take time and are more difficult to address than traditional start-ups would allow. Traditionally the distinction between research and production had been fairly well demarcated with research institutions working on technologies that were forward looking and companies working on production oriented technology (technologies which made money today). That distinction has become blurred, especially in computer science with much of the cutting edge improvements happening within companies.
+
+                CodeFRA is an attempt to work on futuristic technologies covering multidisciplinary domains. We follow problems till their origins, dive into rabbit holes and go deep into the root of problems. Many times this leads us to mathematics, which seems to be the foundation of all else. Sometimes it leads to sociology and behavioural science. Few times it leads to the complexity of Biology. Other times it leads to thought experiments. Most of this rests on a backbone of coding as it is ubiquitous as a tool.
+
+                The research areas we work on here are network topologies, computational structures, self-organization and automata, idea space theory. Apart from this core, there is also ongoing work on pattern finding in market microstructure (high frequency trading), and a few applications of complexity and modelling. If you would like to join us to contribute on any of these problems, you are most welcome. We're sure you would find the journey at least slightly enlightening. If you have a problem that you would like us to work on, please contact us below.
+
+                Rahul Madhavan has been the head of Data Science at Atidiv and Cuemath. At Atidiv, he built a data science division from scratch which worked on Data Science as a Service - the Atidiv data science team acted as the remote data science team for our clients. This meant building tools to solve common problems between companies and building a team to deal with bespoke problems and on demand requests for client companies. At Cuemath he was the head of data science and helped in their Series-B fund-raise round.
+
+                Prior to that he was a trader on Wall Street trading currency options. During his time at Barclays he helped setup an automated option price trading/monitoring system. On the research side, he worked on single currency fx pricing and eurchf floor failure models. At Nomura he worked on Equity Exotic Options with a specific focus on RFP pricing and generating client ideas. At Lehman Brothers, he risk managed an exotics trading book. He distinctly remembers being non-plussed at the fuss over the Lehman Brothers collapse, having predicted it a year before (Ref: IIT Madras placement talk - 2007). :rocket:'''
+
+        # ---------------------------------
+        [about_us.detail.bottom_left]
+            title = "Interests"
+
+            # Choose fa (font-awesome) icons below
+            [[about_us.detail.bottom_left.list]]
+                title = "Artificial Intelligence"
+                subtitle = ""
+                icon = "fa-rocket"
+            [[about_us.detail.bottom_left.list]]
+                title = "Networks"
+                subtitle = ""
+                icon = "fa-rocket"
+            [[about_us.detail.bottom_left.list]]
+                title = "Topology"
+                subtitle = ""
+                icon = "fa-rocket"
+            [[about_us.detail.bottom_left.list]]
+                title = "Language"
+                subtitle = ""
+                icon = "fa-rocket"
+            [[about_us.detail.bottom_left.list]]
+                title = "Modelling"
+                subtitle = ""
+                icon = "fa-rocket"
+
+        # ---------------------------------
+        [about_us.detail.bottom_right]
+            title = "Education"
+        # ---------------------------------
+            [[about_us.detail.bottom_right.list]]
+                title = "Master of Business Administration, 2012"
+                subtitle = "IIM Ahmedabad"
+                icon = "fa-graduation-cap"
+
+            [[about_us.detail.bottom_right.list]]
+                title = "Bachelor of Technology, 2007"
+                subtitle = "Indian Institute of Technology, Madras"
+                icon = "fa-graduation-cap"
+
+# ----------------------------------
+# Section 4: Logo Wall section
+# ----------------------------------
+[logo_wall]
+    active = true
+
+    # Count the number of logos you want on a row. Choose from 1,2,3,4,6, 12
+    min_width_logo = "200px"
+    headline_layout = "headline_elements"
+    [logo_wall.headline]
+        title = "Our Clients"
+        subtitle = "Serving You Always"
+
+    # List all the logos in the logo wall below.
+    # Ensure height to width ratios of the images are all the same.
+    [[logo_wall.logos]]
+        source = "https://upload.wikimedia.org/wikipedia/commons/3/37/Palantir_company_logo.png"
+        link = "/"
+        name = "Palantir"
+
+    [[logo_wall.logos]]
+        source = "https://media.licdn.com/dms/image/C510BAQHxVXskfQIR-w/company-logo_200_200/0?e=2131920000&v=beta&t=I-Eibuu3JRlpqc2wCpmw--1hp-OAw64YnK8lhO-g-iA"
+        link = "/"
+        name = "Sigmoid"
+
+    [[logo_wall.logos]]
+        source = "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Flipkart_logo.svg/250px-Flipkart_logo.svg.png"
+        link = "/"
+        name = "Flipkart"
+
+    [[logo_wall.logos]]
+        source = "http://www.nanobi.in/wp-content/uploads/2017/09/nb-logo.png"
+        link = "/"
+        name = "Hotstar"
+
+# ----------------------------------
+# Section 5: Featured Posts section
+# ----------------------------------
+[featured_pages]
+    active = true
+    active_sections = ["people","books","publications","courses","workshops","reviews","events","posts","notes","thoughts"]
+
+[[featured_pages.sections]]
+    name = "people"
+    title = "Our Strength"
+    subtitle = "Our people are our strength"
+    num_featured = 4
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "people_cards_list_style1"
+
+[[featured_pages.sections]]
+    name = "books"
+    title = "Books"
+    subtitle = "The latest and greatest books"
+    num_featured = 5
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "long_list_with_image"
+
+
+[[featured_pages.sections]]
+    name = "publications"
+    title = "Publications"
+    subtitle = "Who has published me, why don't you see?"
+    num_featured = 1
+    sort_field = "date"
+    sort_order = "desc"
+    card_alignment = "center"
+    card_layout = "large_cards_leftimage_centertext_box_nooverlay"
+
+[[featured_pages.sections]]
+    name = "courses"
+    title = "Courses"
+    subtitle = "We take courses for all to enjoy"
+    num_featured = 5
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "list_of_large_cards"
+
+[[featured_pages.sections]]
+    name = "workshops"
+    title = "Workshops"
+    subtitle = "We have conducted workshops in all major companies in India in the power sector"
+    num_featured = 3
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "list_of_large_cards_no_overlay"
+
+[[featured_pages.sections]]
+    name = "reviews"
+    title = "Reviews"
+    subtitle = "I review, everything i do!"
+    num_featured = 12
+    sort_field = "name"
+    sort_order = "desc"
+    card_layout = "masonry_grid_cards"
+
+[[featured_pages.sections]]
+    name = "presentations"
+    title = "Presentations"
+    subtitle = "I present only the very uber"
+    num_featured = 5
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "responsive_3cards_wbox"
+
+[[featured_pages.sections]]
+    name = "events"
+    title = "Events"
+    subtitle = "We take care of events all over the imagination"
+    num_featured = 7
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "cards_grid7"
+
+
+[[featured_pages.sections]]
+    name = "posts"
+    title = "Posts"
+    subtitle = "The posts are precocious. Use as you feel good!"
+    num_featured = 10
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "cards_grid5"
+
+[[featured_pages.sections]]
+    name = "notes"
+    title = "Short Notes"
+    subtitle = "Thoughts I plant as seeds so they may flower someday"
+    num_featured = 6
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "responsive_3cards_nobox"
+
+[[featured_pages.sections]]
+    name = "thoughts"
+    title = "Thoughts"
+    subtitle = "The thoughts are precious. Handle with care!"
+    num_featured = 8
+    sort_field = "title"
+    sort_order = "asc"
+    card_layout = "carousel_4card"
+
+[[featured_pages.sections]]
+    name = "audios"
+    title = "Podcasts and Music"
+    subtitle = "Stirring but not rare"
+    num_featured = 8
+    sort_field = "date"
+    sort_order = "asc"
+    card_layout = "audio_carousel"
+
+
+# ----------------------------------
+# Section 6: Call to Action section
+# ----------------------------------
+# ----------------------------------
+# 1. This section includes two call to action buttons. In our case it may be to go to
+# #  another page, or to open the subscription popup
+# 2.
+[cta]
+    active = true
+    # Check the toml file in data/layouts/ to see what is rendered.
+    # The render function is in layouts/functions/render_content_layout_fields.html and is claled from cta.html in layouts/homepage-sections
+    layout = "home_cta"
+    [cta.content]
+    top_right_image = "img/dog_transparency2.jpg"
+    bottom_left_image = "img/dog_transparency1.jpg"
+    heading = "You can call someone to action"
+    subheading = "And hope that they come and do the action. This is called call to action"
+    cta_button1_text = "Start a new blog with Raz"
+    cta_button2_text = "Sign up for our blog"
+
+
+# ----------------------------------
+# Section 7: Reviews section
+# ----------------------------------
+[reviews]
+    active = true
+    # Check the toml file in data/layouts/ to see what is rendered.
+    headline_layout = "headline_elements"
+    [reviews.headline]
+        title = "Reviews"
+        subtitle = "We retain relevance to the latest and the greatest from across the galaxy"
+    [[reviews.review]]
+    reviewer_name = "Mighty Thor"
+    reviewer_location = "Asgard"
+    reviewer_review = "My strength through all these years of thick and thin has been sustained by this beautiful blog"
+    [[reviews.review]]
+    reviewer_name = "Cabaret Dancer"
+    reviewer_location = "Moulin Rouge, Paris"
+    reviewer_review = "I could use a lot of practice in my line of work. But no need for any practice as long as I have this blog. It teaches me everything!"
+    [[reviews.review]]
+    reviewer_name = "Drama Queen"
+    reviewer_location = "College, India"
+    reviewer_review = "I wanted to get the attention of all boys in our college. I tried make up and coy smiles, but now I don't need any as this blog has taught me drama and style!"
+    [[reviews.review]]
+    reviewer_name = "Geoffrey Boycott"
+    reviewer_location = "Yorkshire, UK"
+    reviewer_review = "Even my mom wouldn't get out to Jummpy Anderson once she read these beautiful tricks on how to bat"
+    [[reviews.review]]
+    reviewer_name = "A Dolphin"
+    reviewer_location = "Sea"
+    reviewer_review = "Dear earthling. I hope you can still save the world. I was told you should read this blog everyday, for an article a day keeps the darkness away"
+    [[reviews.review]]
+    reviewer_name = "Kabuliwala"
+    reviewer_location = "Afghanistan"
+    reviewer_review = "I have a single image of my child. Memories are mostly etched inside my forehear and the past is at its glorious best in my dreams than in reality. Yet when i see this blog, it revives a sense of belonging. Taschakor, khuda hafiz"
+    [[reviews.review]]
+    reviewer_name = "Spock"
+    reviewer_location = "Vulcan"
+    reviewer_review = "There are moments in their lives where men see exactly what they wish to see. I wish to see and appreciate this blog. It's only logical. May this blog live long and prosper"
+    [[reviews.review]]
+    reviewer_name = "Muldrer"
+    reviewer_location = "Place X"
+    reviewer_review = "I've searched all my life for the missing multitudes of evidence against government coverups of unidentified beings amongst ourselves. This blog revealed the whole truth to me"
+    [[reviews.review]]
+    reviewer_name = "Paul McCartney"
+    reviewer_location = "Yellow Submarine"
+    reviewer_review = "All my life I was trying to make Jude Happy, But what I got in my old age was all too rappy. Maybe my songs, they sail away into bliss, as I hope the same for a blog like this!"
+    [[reviews.review]]
+    reviewer_name = "Adam Smith"
+    reviewer_location = "Capitol Country"
+    reviewer_review = "Help as little as you must and earn as much as you lust. These foundational principles of my economics are being questioned through this blog by an agent provocateur. All dialogue is good except that which is built on deception. down with this blog!"
+    [[reviews.review]]
+    reviewer_name = "Madame Bovine"
+    reviewer_location = "Sl House"
+    reviewer_review = "You can call me madam bovine, never in the spotlight did i much shine. But this much believe me i can assure you, what this blog says about you eating me is true"
+    [[reviews.review]]
+    reviewer_name = "Pretty Woman"
+    reviewer_location = "Down the street"
+    reviewer_review = "Say what you will, but I have fallen for this blog"
+
+
+# ----------------------------------
+# Section 7: Contact Us section
+# ----------------------------------
+[contact]
+    active = true
+    headline_layout = "headline_elements"
+    [contact.headline]
+        title = "Contact Us"
+        subtitle = "Always here to help"
+
+    [[contact.fields]]
+        name = "contact_email"
+        description = "email"
+        font_awesome_icon = "fa-envelope"
+        link = "mailto:{{ . }}"
+        text = "rahul.maddy@gmail.com"
+        style = "color:#333; margin-bottom: 30px; display:block;"
+
+
+
+
+```
 ##### contact_success.md in the content folder
 
 ##### contact.md in the content folder
