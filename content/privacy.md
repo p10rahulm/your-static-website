@@ -1,23 +1,13 @@
 +++
-title = "Privacy Policy"
-date = 2018-05-30T15:02:05+05:30
-draft = false
-author = "FirstName LastName"
-allow_comments = false
-
-# Should this be listed in front page
-featured = false
-
-# Tags and categories
-# For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
-tags = []
-categories = []
+# We are not setting the below optional fields of title date and author. Note the TOML date format is YYYY-MM-DD
+layout = "terms_conditions"
 
 
 # Your content goes below
 +++
-<br>
 # Privacy Policy
+_Last updated: May 31, 2018_
+<hr>
 <br>
 YourCompany built the yourdomain website as a Free use website. This SERVICE is provided by YourCompany at no cost and is intended for use as is and without warranty or liability.
 

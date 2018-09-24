@@ -1,0 +1,44 @@
+.top_container{
+    display: grid;
+}
+#page_header{
+    padding: 1.75rem 0px 10px;
+    border-bottom: 1px solid rgba(200,200,200,0.5);
+}
+
+.page_title {
+    font-family: "Lora", "EB Garamond", serif;
+    text-align: center;
+    margin: 0 0 .875rem;
+    color: #1a1a1a;
+    font-weight: 700;
+    line-height: 1.15;
+    font-size: 2rem;
+}
+.page_title::selection {
+    background: rgba(255, 134, 0, 0.4);
+}
+.page_title::-moz-selection {
+    background: rgba(255, 134, 0, 0.4);
+}
+.page_created_date{
+    font-family: "EB Garamond", "Lora", serif;
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+    font-weight: 300;
+    margin: 0.4rem 0px 0.4rem;
+}
+.page_author{
+    color: #aa2222;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0 0 0.875rem;
+
+}
+
+.page_content{
+    padding: 0.25rem 0 2.5rem;
+}
+

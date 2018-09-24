@@ -1,0 +1,34 @@
+<header>
+    <style type="text/css">
+        {{ partial "css_scripts/singlePageLayouts/default_no_banner.css" . | safeCSS }}
+    </style>
+    <script type="text/javascript">
+    </script>
+</header>
+<section id="default" class="single_page_layout">
+    <div id="page_header">
+        {{if isset .Params "title"}}<div class="page_title">{{(.Title )}}</div>{{end}}
+        {{if isset .Params "date"}}<div class="page_created_date">{{ dateFormat "Monday, Jan 2, 2006" (.Date) }}</div>{{end}}
+        {{if isset .Params "author"}}<div class="page_author">Author: {{.Params.Author }}</div>{{end}}
+    </div>
+    <div class="container">
+        <div class="page_content">{{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}</div>
+    </div>
+    <div id="page_footer" class="container">
+        {{if .Params.categories}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Categories:</span>
+            {{range .Params.Categories}}
+            <a class="page_meta_links" href = "/categories/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+        {{if .Params.tags}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Tags:</span>
+            {{range .Params.tags}}
+            <a class="page_meta_links" href = "/tags/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+
+    </div>
+</section>

@@ -1,0 +1,25 @@
+
+{{ define "main" }}
+    {{partial "singlePageLayouts/default_no_banner" .}}
+{{end}}
+
+{{ define "sharer" }}
+    {{ $.Scratch.SetInMap "page_layout" "show_sharer" ($.Site.Params.sharer.sharer_active | default true) }}
+    {{ $.Scratch.SetInMap "page_layout" "rollup_sharer_active" ($.Site.Params.sharer.sharer_rollup_button_active | default false) }}
+    {{ $.Scratch.SetInMap "page_layout" "fixed_sharer_active" ($.Site.Params.sharer.sharer_fixed_menu_active | default true) }}
+    {{ $.Scratch.SetInMap "page_layout" "show_fixed_sharer_on_scroll" ($.Site.Params.sharer.show_fixed_sharer_on_scroll | default false) }}
+    {{if ($.Scratch.Get "page_layout").show_sharer}}
+        {{ partial "sides/sharer.html" . }}
+    {{end}}
+{{ end }}
+
+{{ define "popup" }}
+{{ end }}
+
+
+{{ define "comments" }}
+{{ end }}
+
+{{ define "applause_button" }}
+{{ end }}
+
