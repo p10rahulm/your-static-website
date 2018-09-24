@@ -1,7 +1,7 @@
 +++
 title = "Mogambo khush hua"
 date = 2018-06-08T19:44:35+05:30
-presenters = "K S Madhavan and Goody Two Shoes"
+presenters = "FirstName LastName and Goody Two Shoes"
 
 short_intro = "Sustainable practices for creating a new you"
 

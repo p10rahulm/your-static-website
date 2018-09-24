@@ -1,7 +1,7 @@
 +++
 title = "nine gems. navratna"
 date = 2018-06-08T19:44:35+05:30
-author = "K S Madhavan and Goody Two Shoes"
+author = "FirstName LastName and Goody Two Shoes"
 
 tagline = "The last book you'll ever need"
 abstract = "A small snippet about the book is good enough"

@@ -2,7 +2,7 @@
 title = "Post2"
 date = 2018-06-08T19:44:37+05:30
 draft = false
-author = "Rahul Madhavan"
+author = "FirstName LastName"
 
 # The below image will be shown in all the cards pointing to this article
 caption_image = "dog_popup_thanks3.jpg"

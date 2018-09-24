@@ -30,13 +30,13 @@ enable_comments = true
 tags = []
 categories = []
 albums = ["Kannada","Language"]
-artists = ["K S Madhavan","Madhav Ajjampur"]
+artists = ["FirstName LastName","Madhav theBard"]
 
 # It's important that below section is placed at the bottom just before content. Changing the order means the toml does not work as expected. Blame the toml specification!
 [[audios]]
 name = "Kannadify Faster"
 filename = "KL3.wav" # Place the file below in the "audios" folder inside static folder
-artist = "Madhav Ajjampur"
+artist = "Madhav theBard"
 cover = "k.jpg" # Place the file below in the "audios" folder inside img folder in static folder
 
 # Writeup content below

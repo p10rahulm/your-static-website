@@ -7,7 +7,7 @@ stars = 4.5
 
 headline = "The fastest way to free your heart"
 date = 2018-06-08T19:44:35+05:30
-author = "Rahul Madhavan"
+author = "FirstName LastName"
 
 
 # -----------------------------------------

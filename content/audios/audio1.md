@@ -1,6 +1,6 @@
 +++
 title = "How many roads must a man walk down"
-artist = "Madhav Ajjampur"
+artist = "Madhav theBard"
 date = 2018-06-08T11:44:35+05:30
 
 
@@ -30,18 +30,18 @@ enable_comments = true
 tags = []
 categories = []
 albums = ["Kannada","Language"]
-artists = ["K S Madhavan","Madhav Ajjampur"]
+artists = ["FirstName LastName","Madhav theBard"]
 
 # It's important that below section is placed at the bottom just before content. Changing the order means the toml does not work as expected. Blame the toml specification!
 [[audios]]
 name = "Kannadify Introduction"
 filename = "KL1.wav" # Place the file below in the "audios" folder inside static folder
-artist = "Madhav Ajjampur"
+artist = "Madhav theBard"
 cover = "k.jpg" # Place the file below in the "audios" folder inside img folder in static folder
 [[audios]]
 name = "Moving On"
 filename = "KL2.wav" # Place the file below in the "audios" folder inside static folder
-artist = "Madhav Ajjampur"
+artist = "Madhav theBard"
 cover = "k.jpg" # Place the file below in the "audios" folder inside img folder in static folder
 # Writeup content below
 +++

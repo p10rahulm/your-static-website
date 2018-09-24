@@ -914,9 +914,9 @@ The first thing you want to look at is the config.toml file. We will describe al
 - latitude = "12.932376"
 - longitude = "77.630389"
 - img_source = "/img/flowers_line_drawing.jpg" # decorative image for popup
-- popup_submission_mail = "rahul.maddy@gmail.com"
+- popup_submission_mail = "first_name.last_name@gmail.com"
 - popup_submission_subject = "New subscription for your site!"
-- secondary_forwarding_emails = ["rahul.maddy@gmail.com","ksm@ksmadhavan.in"]
+- secondary_forwarding_emails = ["first_name.last_name@gmail.com","another_name@gmail.com"]
 - [[params.footer_network]]
     url = "https://www.facebook.com/rahul.maddy"
 - [[params.footer_network]]
@@ -1169,9 +1169,9 @@ The first thing you want to look at is the config.toml file. We will describe al
     link_after_submit = "/subscriptionsuccess/"
 
     #* 43. Change the mail recipients and subject below
-    popup_submission_mail = "rahul.maddy@gmail.com"
+    popup_submission_mail = "first_name.last_name@gmail.com"
     popup_submission_subject = "New subscription for your site!"
-    secondary_forwarding_emails = ["rahul.maddy@gmail.com","ksm@ksmadhavan.in"]
+    secondary_forwarding_emails = ["first_name.last_name@gmail.com","another_name@gmail.com"]
 
     # 44. Popup close behaviour can be changed below
     # Close popup by clicking outside the box
@@ -1374,6 +1374,7 @@ The first thing you want to look at is the config.toml file. We will describe al
 ```
 
 ##### _index.md in the content folder
+The descriptions are given below within the toml. use this reference to change the file.
 ```toml
 # Please use your own images. I provide the code with no implicit or explicit warranties and I am not to be liable for any claim or damages arising from use of this software.
 
@@ -1554,7 +1555,7 @@ fixed_sharer_active = true
     # ---------------------------------
     [about_us.descriptor]
         logo_image = "portrait.jpg"
-        name_title = "Rahul Madhavan"
+        name_title = "FirstName LastName"
         name_subtitle = "Founder, CodeFRA"
 
         # ---------------------------------
@@ -1572,7 +1573,7 @@ fixed_sharer_active = true
         [[about_us.descriptor.social]]
             icon = "fa-envelope"
             icon_pack = "fa"
-            link = "mailto:rahul.maddy@gmail"
+            link = "mailto:first_name.last_name@gmail.com"
         [[about_us.descriptor.social]]
             icon = "fa-linkedin"
             icon_pack = "fa"
@@ -1598,13 +1599,13 @@ fixed_sharer_active = true
         # Make sure alignment is ok. I've used replace of '                '
         # to remove the leading white space
         content = '''
-                Rahul Madhavan founded CodeFRA as a means to work on problems that take time and are more difficult to address than traditional start-ups would allow. Traditionally the distinction between research and production had been fairly well demarcated with research institutions working on technologies that were forward looking and companies working on production oriented technology (technologies which made money today). That distinction has become blurred, especially in computer science with much of the cutting edge improvements happening within companies.
+                FirstName LastName founded CodeFRA as a means to work on problems that take time and are more difficult to address than traditional start-ups would allow. Traditionally the distinction between research and production had been fairly well demarcated with research institutions working on technologies that were forward looking and companies working on production oriented technology (technologies which made money today). That distinction has become blurred, especially in computer science with much of the cutting edge improvements happening within companies.
 
                 CodeFRA is an attempt to work on futuristic technologies covering multidisciplinary domains. We follow problems till their origins, dive into rabbit holes and go deep into the root of problems. Many times this leads us to mathematics, which seems to be the foundation of all else. Sometimes it leads to sociology and behavioural science. Few times it leads to the complexity of Biology. Other times it leads to thought experiments. Most of this rests on a backbone of coding as it is ubiquitous as a tool.
 
                 The research areas we work on here are network topologies, computational structures, self-organization and automata, idea space theory. Apart from this core, there is also ongoing work on pattern finding in market microstructure (high frequency trading), and a few applications of complexity and modelling. If you would like to join us to contribute on any of these problems, you are most welcome. We're sure you would find the journey at least slightly enlightening. If you have a problem that you would like us to work on, please contact us below.
 
-                Rahul Madhavan has been the head of Data Science at Atidiv and Cuemath. At Atidiv, he built a data science division from scratch which worked on Data Science as a Service - the Atidiv data science team acted as the remote data science team for our clients. This meant building tools to solve common problems between companies and building a team to deal with bespoke problems and on demand requests for client companies. At Cuemath he was the head of data science and helped in their Series-B fund-raise round.
+                FirstName LastName has been the head of Data Science at Atidiv and Cuemath. At Atidiv, he built a data science division from scratch which worked on Data Science as a Service - the Atidiv data science team acted as the remote data science team for our clients. This meant building tools to solve common problems between companies and building a team to deal with bespoke problems and on demand requests for client companies. At Cuemath he was the head of data science and helped in their Series-B fund-raise round.
 
                 Prior to that he was a trader on Wall Street trading currency options. During his time at Barclays he helped setup an automated option price trading/monitoring system. On the research side, he worked on single currency fx pricing and eurchf floor failure models. At Nomura he worked on Equity Exotic Options with a specific focus on RFP pricing and generating client ideas. At Lehman Brothers, he risk managed an exotics trading book. He distinctly remembers being non-plussed at the fuss over the Lehman Brothers collapse, having predicted it a year before (Ref: IIT Madras placement talk - 2007). :rocket:'''
 
@@ -1728,97 +1729,6 @@ fixed_sharer_active = true
     card_layout = "long_list_with_image"
 
 
-[[featured_pages.sections]]
-    name = "publications"
-    title = "Publications"
-    subtitle = "Who has published me, why don't you see?"
-    num_featured = 1
-    sort_field = "date"
-    sort_order = "desc"
-    card_alignment = "center"
-    card_layout = "large_cards_leftimage_centertext_box_nooverlay"
-
-[[featured_pages.sections]]
-    name = "courses"
-    title = "Courses"
-    subtitle = "We take courses for all to enjoy"
-    num_featured = 5
-    sort_field = "title"
-    sort_order = "asc"
-    card_layout = "list_of_large_cards"
-
-[[featured_pages.sections]]
-    name = "workshops"
-    title = "Workshops"
-    subtitle = "We have conducted workshops in all major companies in India in the power sector"
-    num_featured = 3
-    sort_field = "title"
-    sort_order = "asc"
-    card_layout = "list_of_large_cards_no_overlay"
-
-[[featured_pages.sections]]
-    name = "reviews"
-    title = "Reviews"
-    subtitle = "I review, everything i do!"
-    num_featured = 12
-    sort_field = "name"
-    sort_order = "desc"
-    card_layout = "masonry_grid_cards"
-
-[[featured_pages.sections]]
-    name = "presentations"
-    title = "Presentations"
-    subtitle = "I present only the very uber"
-    num_featured = 5
-    sort_field = "title"
-    sort_order = "asc"
-    card_layout = "responsive_3cards_wbox"
-
-[[featured_pages.sections]]
-    name = "events"
-    title = "Events"
-    subtitle = "We take care of events all over the imagination"
-    num_featured = 7
-    sort_field = "title"
-    sort_order = "asc"
-    card_layout = "cards_grid7"
-
-
-[[featured_pages.sections]]
-    name = "posts"
-    title = "Posts"
-    subtitle = "The posts are precocious. Use as you feel good!"
-    num_featured = 10
-    sort_field = "title"
-    sort_order = "asc"
-    card_layout = "cards_grid5"
-
-[[featured_pages.sections]]
-    name = "notes"
-    title = "Short Notes"
-    subtitle = "Thoughts I plant as seeds so they may flower someday"
-    num_featured = 6
-    sort_field = "title"
-    sort_order = "asc"
-    card_layout = "responsive_3cards_nobox"
-
-[[featured_pages.sections]]
-    name = "thoughts"
-    title = "Thoughts"
-    subtitle = "The thoughts are precious. Handle with care!"
-    num_featured = 8
-    sort_field = "title"
-    sort_order = "asc"
-    card_layout = "carousel_4card"
-
-[[featured_pages.sections]]
-    name = "audios"
-    title = "Podcasts and Music"
-    subtitle = "Stirring but not rare"
-    num_featured = 8
-    sort_field = "date"
-    sort_order = "asc"
-    card_layout = "audio_carousel"
 
 
 # ----------------------------------
@@ -1877,46 +1787,6 @@ fixed_sharer_active = true
     reviewer_name = "Cabaret Dancer"
     reviewer_location = "Moulin Rouge, Paris"
     reviewer_review = "I could use a lot of practice in my line of work. But no need for any practice as long as I have this blog. It teaches me everything!"
-    [[reviews.review]]
-    reviewer_name = "Drama Queen"
-    reviewer_location = "College, India"
-    reviewer_review = "I wanted to get the attention of all boys in our college. I tried make up and coy smiles, but now I don't need any as this blog has taught me drama and style!"
-    [[reviews.review]]
-    reviewer_name = "Geoffrey Boycott"
-    reviewer_location = "Yorkshire, UK"
-    reviewer_review = "Even my mom wouldn't get out to Jummpy Anderson once she read these beautiful tricks on how to bat"
-    [[reviews.review]]
-    reviewer_name = "A Dolphin"
-    reviewer_location = "Sea"
-    reviewer_review = "Dear earthling. I hope you can still save the world. I was told you should read this blog everyday, for an article a day keeps the darkness away"
-    [[reviews.review]]
-    reviewer_name = "Kabuliwala"
-    reviewer_location = "Afghanistan"
-    reviewer_review = "I have a single image of my child. Memories are mostly etched inside my forehear and the past is at its glorious best in my dreams than in reality. Yet when i see this blog, it revives a sense of belonging. Taschakor, khuda hafiz"
-    [[reviews.review]]
-    reviewer_name = "Spock"
-    reviewer_location = "Vulcan"
-    reviewer_review = "There are moments in their lives where men see exactly what they wish to see. I wish to see and appreciate this blog. It's only logical. May this blog live long and prosper"
-    [[reviews.review]]
-    reviewer_name = "Muldrer"
-    reviewer_location = "Place X"
-    reviewer_review = "I've searched all my life for the missing multitudes of evidence against government coverups of unidentified beings amongst ourselves. This blog revealed the whole truth to me"
-    [[reviews.review]]
-    reviewer_name = "Paul McCartney"
-    reviewer_location = "Yellow Submarine"
-    reviewer_review = "All my life I was trying to make Jude Happy, But what I got in my old age was all too rappy. Maybe my songs, they sail away into bliss, as I hope the same for a blog like this!"
-    [[reviews.review]]
-    reviewer_name = "Adam Smith"
-    reviewer_location = "Capitol Country"
-    reviewer_review = "Help as little as you must and earn as much as you lust. These foundational principles of my economics are being questioned through this blog by an agent provocateur. All dialogue is good except that which is built on deception. down with this blog!"
-    [[reviews.review]]
-    reviewer_name = "Madame Bovine"
-    reviewer_location = "Sl House"
-    reviewer_review = "You can call me madam bovine, never in the spotlight did i much shine. But this much believe me i can assure you, what this blog says about you eating me is true"
-    [[reviews.review]]
-    reviewer_name = "Pretty Woman"
-    reviewer_location = "Down the street"
-    reviewer_review = "Say what you will, but I have fallen for this blog"
 
 
 # ----------------------------------
@@ -1957,7 +1827,83 @@ fixed_sharer_active = true
 ```
 ##### contact_success.md in the content folder
 
+Change these as per your preference. The fields are pretty self explanatory. The layout used is contact_success.html in the layouts/_default folder
+
+```toml
+# This is a template for a simple message to display to users who have contacted you
+title = "Contact Success"
+message = "You have contacted us successfully. Click [here](/) to return to homepage"
+title_color = "azure"
+message_color = "#aaa"
+layout = "contact_success"
+background_color = "#222"
+```
+
 ##### contact.md in the content folder
+A contact form is a good way for users to contact you and introduces some interactivity to the site. Even if the site is static, we use a third party application called [Formspree](https://formspree.io/) to enable you to setup a contact form.
+
+**Make sure you change email and contact_secondary_email addresses below**
+
+```toml
+# (i) The form on this static site is enabled through formspree
+#  1.   Setup: Set email ID and secondary_email below the first time you use the contact form
+#       you will get a mail asking you to confirm email ID
+#
+#  2.   Pricing: Free for first 50 emails a month. At some point if this becomes a pain,
+#       I'll implement the form layout with some other endpoint
+#
+#  3.   The layout used is contact.html in layouts/_default folder
+#
+# Since this template is static, the contact form uses www.formspree.io as a
+# middleware proxy. The form makes a POST request to their servers to send the actual email
+#
+# (ii) Next Steps
+#
+#  1.   Set your email address under 'email' below
+#  2.   You can change the thanks and error messages if you wish
+#  2.   Upload the generated site to your server
+#  3.   Send a dummy email yourself to confirm your account
+#  4.   Click the confirm link in the email from www.formspree.io
+#  5.   You're done. Happy mailing!
+
+layout = "contact"
+title = "CONTACT US"
+subtitle = "_Please leave your message below and we'll get back as soon as we can_"
+title_color = "azure"
+subtitle_color = "#aaa"
+email = "first_name.last_name@gmail.com"
+contact_secondary_email = ["another_name@gmail.com","abc@example.org"]
+
+buttontext = "Send message"
+onSubmit_link = "/contact_success"
+
+
+
+# Success and error message overwrite for async contact form
+thanks = "Thank you for awesomely contacting us."
+error = "Message could not be sent. Please contact us at mail@example.com instead."
+
+[captcha]
+buttontext = "Send Message"
+
+# 'warning' defines error messages for invalid inputs
+[form.name]
+text = "Your Name *"
+warning = "Please enter your name."
+
+[form.email]
+text = "Your Email *"
+warning = "Please enter your email address."
+
+[form.phone]
+text = "Your Phone *"
+warning = "Please enter your phone number."
+
+[form.message]
+text = "Your Message *"
+warning = "Please enter a message."
+
+```
 
 ##### popup_success.md in the content folder
 

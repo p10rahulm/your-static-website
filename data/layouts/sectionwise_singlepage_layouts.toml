@@ -1,7 +1,7 @@
 [[sections]]
     name = "books"
     title = "The greatest Book in the world"
-    author = "Rahul Madhavan"
+    author = "FirstName LastName"
     caption_image = "dog_popup_thanks3.jpg"
     layout = "books"
     # Sharer Stuff
@@ -21,7 +21,7 @@
 [[sections]]
     name = "code-snippets"
     title = "A Code Snip from Knuth"
-    author = "Rahul Madhavan"
+    author = "FirstName LastName"
     caption_image = "dog_popup_thanks3.jpg"
     layout = "codePage"
     has_math = true
@@ -94,7 +94,7 @@
 [[sections]]
     name = "notes"
     title = "My thoughts and quick notes"
-    author = "Rahul Madhavan"
+    author = "FirstName LastName"
     date = 2018-06-08T19:44:35+05:30
 
     caption_image = "dog_popup_thanks3.jpg"
@@ -115,7 +115,7 @@
 [[sections]]
     name = "thoughts"
     title = "My thoughts are dark and deep. Miles to go before I sleep"
-    author = "Rahul Madhavan"
+    author = "FirstName LastName"
     date = 2018-06-08T19:44:35+05:30
     header_image = ""
     background_image = "backgrounds/scroll.jpg"

@@ -1,7 +1,7 @@
 +++
 title = "The shark and the snake won thy soul"
 date = 2018-06-08T19:44:36+05:30
-author = "Rahul Madhavan"
+author = "FirstName LastName"
 
 # -----------------------------------------
 # Formatting

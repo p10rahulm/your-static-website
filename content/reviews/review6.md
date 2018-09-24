@@ -7,7 +7,7 @@ stars = 4.5
 
 headline = "Gods own country"
 date = 2018-06-08T19:44:35+05:30
-author = "Rahul Madhavan"
+author = "FirstName LastName"
 
 
 # -----------------------------------------

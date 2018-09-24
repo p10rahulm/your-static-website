@@ -2,7 +2,7 @@
 title = "Terms of Service"
 date = 2018-05-31T11:30:29+05:30
 draft = false
-author = "Rahul Madhavan"
+author = "FirstName LastName"
 allow_comments = false
 show_title_date_author = false
 

@@ -247,9 +247,9 @@ verboseLog =true
         link_after_submit = "/subscriptionsuccess/"
 
         #* 43. Change the mail recipients and subject below
-        popup_submission_mail = "rahul.maddy@gmail.com"
+        popup_submission_mail = "first_name.last_name@gmail.com"
         popup_submission_subject = "New subscription for your site!"
-        secondary_forwarding_emails = ["rahul.maddy@gmail.com","ksm@ksmadhavan.in"]
+        secondary_forwarding_emails = ["first_name.last_name@gmail.com","another_name@gmail.com"]
 
         # 44. Popup close behaviour can be changed below
         # Close popup by clicking outside the box

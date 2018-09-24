@@ -3,9 +3,9 @@ title = "Effects of direct taxation on our wellbeing"
 date = 2018-07-17T23:40:05+05:30
 
 authors =  [
-                { name = "Rahul Madhavan", url = "/people/person1" },
-                { name = "Ankit Baraskar", url = "/people/person2" },
-                { name = "Sailesh Mukhopadhyay", url = "/people/person3" }
+                { name = "FirstName LastName", url = "/people/person1" },
+                { name = "Ankit Mathgenius", url = "/people/person2" },
+                { name = "Sailesh Tripper", url = "/people/person3" }
             ]
 
 

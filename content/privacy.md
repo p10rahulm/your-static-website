@@ -2,7 +2,7 @@
 title = "Privacy Policy"
 date = 2018-05-30T15:02:05+05:30
 draft = false
-author = "Rahul Madhavan"
+author = "FirstName LastName"
 allow_comments = false
 
 # Should this be listed in front page

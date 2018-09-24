@@ -1,23 +1,31 @@
 +++
+# (i) The form on this static site is enabled through formspree
+#  1.   Setup: Set email ID and secondary_email below the first time you use the contact form
+#       you will get a mail asking you to confirm email ID
+#
+#  2.   Pricing: Free for first 50 emails a month. At some point if this becomes a pain,
+#       I'll implement the form layout with some other endpoint
+#
+#  3.   The layout used is contact.html in layouts/_default folder
+#
 # Since this template is static, the contact form uses www.formspree.io as a
-# proxy. The form makes a POST request to their servers to send the actual
-# email. Visitors can send up to a 1000 emails each month for free.
+# middleware proxy. The form makes a POST request to their servers to send the actual email
 #
-# What you need to do for the setup?
+# (ii) Next Steps
 #
-# - set your email address under 'email' below
-# - upload the generated site to your server
-# - send a dummy email yourself to confirm your account
-# - click the confirm link in the email from www.formspree.io
-# - you're done. Happy mailing!
+#  1.   Set your email address under 'email' below
+#  2.   Upload the generated site to your server
+#  3.   Send a dummy email yourself to confirm your account
+#  4.   Click the confirm link in the email from www.formspree.io
+#  5.   You're done. Happy mailing!
 
 layout = "contact"
 title = "CONTACT US"
 subtitle = "_Please leave your message below and we'll get back as soon as we can_"
 title_color = "azure"
 subtitle_color = "#aaa"
-email = "rahul.maddy@gmail.com"
-contact_secondary_email = ["ksm@ksmadhavan.in","abc@example.org"]
+email = "first_name.last_name@gmail.com"
+contact_secondary_email = ["another_name@gmail.com","abc@example.org"]
 
 buttontext = "Send message"
 onSubmit_link = "/contact_success"
@@ -29,7 +37,6 @@ thanks = "Thank you for awesomely contacting us."
 error = "Message could not be sent. Please contact us at mail@example.com instead."
 
 [captcha]
-sitekey = "6LehhVwUAAAAANDmW_A-7i2mpnA85A1fTKnjU0yR"
 buttontext = "Send Message"
 
 # 'warning' defines error messages for invalid inputs
