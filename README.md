@@ -1406,6 +1406,7 @@ fixed_sharer_active = true
 # ----------------------------------
 # Section 1: Top section
 # ----------------------------------
+
 [top_banner]
 
     active=true
@@ -1580,6 +1581,11 @@ fixed_sharer_active = true
 # ----------------------------------
 # Section 4: Logo Wall section
 # ----------------------------------
+# ----------------------------------
+# 1. You can list all client logos in this section
+# 2. This section uses
+# 3. Change the images and links below to use your own
+# ----------------------------------
 [logo_wall]
     active = true
 
@@ -1615,9 +1621,23 @@ fixed_sharer_active = true
 # ----------------------------------
 # Section 5: Featured Posts section
 # ----------------------------------
+# ----------------------------------
+# 1. The featured Posts section is a collection of featured content pieces from different
+# #  content types
+# 2. For example, it may contain featured featured posts, books, events and thoughts
+# 3. The sections are rendered in the order listed in order below.
+# 4. The card layouts are listed in the listLayouts folder
+# 5. The card layouts may require fields which are specific to the different sections
+# 6. Which cards are displayed:
+# i      The content pieces with `featured = true` setting are ordered by the 'sort_field'
+# ii     in either ascending (asc) or descending order (desc) based on 'sort_order'
+# iii    Then the first 'num_featured' number of cards are displayed.
+# 7. The rendering is done by show_featured.html in the homepage-sections folder
+# 8. The default list layouts for each type of content are at sectionwise_list_layouts.toml
+# #  in the data/layouts folder
+# ----------------------------------
 [featured_pages]
     active = true
-    active_sections = ["people","books","publications","courses","workshops","reviews","events","posts","notes","thoughts"]
 
 [[featured_pages.sections]]
     name = "people"
@@ -1735,25 +1755,40 @@ fixed_sharer_active = true
 # Section 6: Call to Action section
 # ----------------------------------
 # ----------------------------------
-# 1. This section includes two call to action buttons. In our case it may be to go to
-# #  another page, or to open the subscription popup
-# 2.
+# 1. This section includes two call to action buttons
+# 2. This uses render layouts function
+# 3. Change the images and links below to use your own
+# ----------------------------------
 [cta]
     active = true
-    # Check the toml file in data/layouts/ to see what is rendered.
-    # The render function is in layouts/functions/render_content_layout_fields.html and is claled from cta.html in layouts/homepage-sections
+    # Check the home_cta toml file in data/layouts/ to see what is rendered.
+    # If you want you can create a new layout toml file in the same location and change the
+    # layout field below to render that layout
+    # The render function is in layouts/functions/render_content_layout_fields.html and is
+    # called from cta.html in layouts/homepage-sections
     layout = "home_cta"
+    # Below fields are self explanatory once you see the call to action section on front page
     [cta.content]
     top_right_image = "img/dog_transparency2.jpg"
     bottom_left_image = "img/dog_transparency1.jpg"
     heading = "You can call someone to action"
     subheading = "And hope that they come and do the action. This is called call to action"
     cta_button1_text = "Start a new blog with Raz"
-    cta_button2_text = "Sign up for our blog"
+    cta_button2_text = "Visit our blog"
+    cta_button1_link = "//www.github.com/p10rahulm/your-static-website"
+    cta_button2_link = "//www.thinkingtree.me"
+
 
 
 # ----------------------------------
 # Section 7: Reviews section
+# ----------------------------------
+# ----------------------------------
+# 1. Reviews are a necessary part of many types of sites
+# 2. The reviews below use the masonry layout popularized by pinterest
+# 3. Instead of javascript rendering we have done the below through CSS Grid
+# 4. The rendering is done by reviews.html in homepage-sections
+# 5. You can change, add or remove any reviews below. Keep atleast one review
 # ----------------------------------
 [reviews]
     active = true
@@ -1762,6 +1797,8 @@ fixed_sharer_active = true
     [reviews.headline]
         title = "Reviews"
         subtitle = "We retain relevance to the latest and the greatest from across the galaxy"
+
+    # Below are for illustration. Add your reviews below
     [[reviews.review]]
     reviewer_name = "Mighty Thor"
     reviewer_location = "Asgard"
@@ -1815,6 +1852,13 @@ fixed_sharer_active = true
 # ----------------------------------
 # Section 7: Contact Us section
 # ----------------------------------
+# ----------------------------------
+# 1. The main reason for this section is the map. 
+# 2. This is rendered by the contact.html in the homepage section
+# 3. Additional to the map, you may add any number of contact fields
+# 4. The default location for the map may be set in config.toml
+# 5. The maps api needs you to register, details given in config.toml
+# ----------------------------------
 [contact]
     active = true
     headline_layout = "headline_elements"
@@ -1826,10 +1870,17 @@ fixed_sharer_active = true
         name = "contact_email"
         description = "email"
         font_awesome_icon = "fa-envelope"
-        link = "mailto:{{ . }}"
-        text = "rahul.maddy@gmail.com"
-        style = "color:#333; margin-bottom: 30px; display:block;"
+        link = "mailto:firstName.lastName@gmail.com"
+        text = "firstName.lastName@gmail.com"
+        style = "color:#333; margin-bottom: 15px; display:block;"
 
+    [[contact.fields]]
+        name = "contact_phone"
+        description = "phone"
+        font_awesome_icon = "fa-phone"
+        link = "tel:987-654-3210"
+        text = "987-654-3210"
+        style = "color:#333; margin-bottom: 30px; display:block;"
 
 
 

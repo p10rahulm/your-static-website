@@ -9,8 +9,6 @@
         {{$content := (index .Params $section).headline}}
         {{partial "functions/render_content_layout_fields.html" (dict "fields" $fields "content" $content "scratch" .Scratch)}}
 
-        {{/*partial "functions/render_fields.html" (dict "fields" $.Params.logo_wall.headline_elements "scratch" .Scratch)*/}}
-
         <div class="logo-grid">
             {{if isset .Params.logo_wall "logos"}}
                 {{range .Params.logo_wall.logos}}

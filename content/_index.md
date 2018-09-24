@@ -184,7 +184,6 @@ fixed_sharer_active = true
     active = true
 
     # Count the number of logos you want on a row. Choose from 1,2,3,4,6, 12
-    min_width_logo = "200px"
     headline_layout = "headline_elements"
     [logo_wall.headline]
         title = "Our Clients"
@@ -217,7 +216,6 @@ fixed_sharer_active = true
 # Below we set attributes for the featured pages on the website front page
 [featured_pages]
     active = true
-    active_sections = ["people","books","publications","courses","workshops","reviews","events","posts","notes","thoughts"]
 
 [[featured_pages.sections]]
     name = "people"
@@ -381,7 +379,7 @@ fixed_sharer_active = true
     [[reviews.review]]
     reviewer_name = "Kabuliwala"
     reviewer_location = "Afghanistan"
-    reviewer_review = "I have a single image of my child. Memories are mostly etched inside my forehear and the past is at its glorious best in my dreams than in reality. Yet when i see this blog, it revives a sense of belonging. Taschakor, khuda hafiz"
+    reviewer_review = "I have a single image of my child. Memories are mostly etched inside my forehead and the past is at its glorious best in my dreams than in reality. Yet when i see this blog, it revives a sense of belonging. Taschakor, khuda hafiz"
     [[reviews.review]]
     reviewer_name = "Spock"
     reviewer_location = "Vulcan"
@@ -389,7 +387,7 @@ fixed_sharer_active = true
     [[reviews.review]]
     reviewer_name = "Muldrer"
     reviewer_location = "Place X"
-    reviewer_review = "I've searched all my life for the missing multitudes of evidence against government coverups of unidentified beings amongst ourselves. This blog revealed the whole truth to me"
+    reviewer_review = "I've searched all my life for the missing multitudes of evidence against government cover-ups of unidentified beings amongst ourselves. This blog revealed the whole truth to me"
     [[reviews.review]]
     reviewer_name = "Paul McCartney"
     reviewer_location = "Yellow Submarine"
@@ -424,7 +422,7 @@ fixed_sharer_active = true
         font_awesome_icon = "fa-envelope"
         link = "mailto:rahul.maddy@gmail.com"
         text = "rahul.maddy@gmail.com"
-        style = "color:#333; margin-bottom: 30px; display:block;"
+        style = "color:#333; margin-bottom: 15px; display:block;"
 
     [[contact.fields]]
         name = "contact_phone"

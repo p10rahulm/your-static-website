@@ -19,7 +19,7 @@ section#logo-wall .logo-grid img {
     width: 100%;
 }
 section#logo-wall .logo-child{
-    flex-basis: {{ .Params.logo_wall.min_width_logo | safeCSS }};
-    flex-grow: 1;
+
+
 }
 
