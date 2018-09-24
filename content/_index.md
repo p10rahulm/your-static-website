@@ -422,9 +422,18 @@ fixed_sharer_active = true
         name = "contact_email"
         description = "email"
         font_awesome_icon = "fa-envelope"
-        link = "mailto:{{ . }}"
+        link = "mailto:rahul.maddy@gmail.com"
         text = "rahul.maddy@gmail.com"
         style = "color:#333; margin-bottom: 30px; display:block;"
+
+    [[contact.fields]]
+        name = "contact_phone"
+        description = "phone"
+        font_awesome_icon = "fa-phone"
+        link = "tel:987-654-3210"
+        text = "987-654-3210"
+        style = "color:#333; margin-bottom: 30px; display:block;"
+
 
 
 +++

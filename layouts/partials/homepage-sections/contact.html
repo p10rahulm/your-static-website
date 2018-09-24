@@ -15,7 +15,7 @@
                     <li>
                         <i class="fa-li fa {{.font_awesome_icon}} fa-2x" aria-hidden="true"></i>
                         <span id="{{.name}}" itemprop="{{.description}}">
-                                <a href="{{ .link }}" style="{{.style | safeCSS}}">{{ .text }}</a>
+                                <a href="{{ .link | safeURL }}" style="{{.style | safeCSS}}">{{ .text }}</a>
                         </span>
                     </li>
                 {{end}}
