@@ -897,9 +897,9 @@ The first thing you want to look at is the config.toml file. We will describe al
 
 - baseurl = "http://www.yourdomain.com/"
 - title = "Your Website Name"
-- disqusShortname = "codefra"
+- disqusShortname = "yourdisqusShortname"
 - googleAnalytics = "UA-123456789-1"
-- copyright = "&copy; 2018 CodeFRA"
+- copyright = "&copy; 2018 YourCompany"
 - site_author_name = "Your Name"
 - role = "YourRole, YourCompanyName"
 - email = "firstname.lastname@gmail.com"
@@ -933,7 +933,7 @@ The first thing you want to look at is the config.toml file. We will describe al
     title = "Your Website Name"
 
     #* 3. disqus is the third party application we will be using for comments. Get your own disqus shortname here: https://disqus.com/admin/create/ and fill it below
-    disqusShortname = "codefra"
+    disqusShortname = "yourdisqusShortname"
 
     #* 4. Enabling Google Analytics on your site enables you to track site usage, referrers and various other statistics.
     ## - See how to get your google analytics ID here: https://support.google.com/analytics/answer/1042508?hl=en
@@ -968,7 +968,7 @@ The first thing you want to look at is the config.toml file. We will describe al
 
 
     #* 9. Your copyright notice - appears in site footer and in RSS. Note: To display a copyright symbol, type `&copy;`.
-    copyright = "&copy; 2018 CodeFRA"
+    copyright = "&copy; 2018 YourCompany"
 
     # 10. If enableRobotsTXT is true, a simple robots.txt is created allowing all agents to crawl everything. If you want to create your own robots.txt, then place a robots.txt in the static folder.
     enableRobotsTXT =true
@@ -1556,7 +1556,7 @@ fixed_sharer_active = true
     [about_us.descriptor]
         logo_image = "portrait.jpg"
         name_title = "FirstName LastName"
-        name_subtitle = "Founder, CodeFRA"
+        name_subtitle = "Founder, YourCompany"
 
         # ---------------------------------
         [[about_us.descriptor.affiliations]]
@@ -1599,9 +1599,9 @@ fixed_sharer_active = true
         # Make sure alignment is ok. I've used replace of '                '
         # to remove the leading white space
         content = '''
-                FirstName LastName founded CodeFRA as a means to work on problems that take time and are more difficult to address than traditional start-ups would allow. Traditionally the distinction between research and production had been fairly well demarcated with research institutions working on technologies that were forward looking and companies working on production oriented technology (technologies which made money today). That distinction has become blurred, especially in computer science with much of the cutting edge improvements happening within companies.
+                FirstName LastName founded YourCompany as a means to work on problems that take time and are more difficult to address than traditional start-ups would allow. Traditionally the distinction between research and production had been fairly well demarcated with research institutions working on technologies that were forward looking and companies working on production oriented technology (technologies which made money today). That distinction has become blurred, especially in computer science with much of the cutting edge improvements happening within companies.
 
-                CodeFRA is an attempt to work on futuristic technologies covering multidisciplinary domains. We follow problems till their origins, dive into rabbit holes and go deep into the root of problems. Many times this leads us to mathematics, which seems to be the foundation of all else. Sometimes it leads to sociology and behavioural science. Few times it leads to the complexity of Biology. Other times it leads to thought experiments. Most of this rests on a backbone of coding as it is ubiquitous as a tool.
+                YourCompany is an attempt to work on futuristic technologies covering multidisciplinary domains. We follow problems till their origins, dive into rabbit holes and go deep into the root of problems. Many times this leads us to mathematics, which seems to be the foundation of all else. Sometimes it leads to sociology and behavioural science. Few times it leads to the complexity of Biology. Other times it leads to thought experiments. Most of this rests on a backbone of coding as it is ubiquitous as a tool.
 
                 The research areas we work on here are network topologies, computational structures, self-organization and automata, idea space theory. Apart from this core, there is also ongoing work on pattern finding in market microstructure (high frequency trading), and a few applications of complexity and modelling. If you would like to join us to contribute on any of these problems, you are most welcome. We're sure you would find the journey at least slightly enlightening. If you have a problem that you would like us to work on, please contact us below.
 

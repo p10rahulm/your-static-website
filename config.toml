@@ -14,7 +14,7 @@ baseurl = "http://www.yourdomain.com/"
 title = "Your Website Name"
 
 #* 3. disqus is the third party application we will be using for comments. Get your own disqus shortname here: https://disqus.com/admin/create/ and fill it below
-disqusShortname = "codefra"
+disqusShortname = "yourdisqusShortname"
 
 #* 4. Enabling Google Analytics on your site enables you to track site usage, referrers and various other statistics.
 ## - See how to get your google analytics ID here: https://support.google.com/analytics/answer/1042508?hl=en
@@ -49,7 +49,7 @@ layoutDir ="layouts"
 
 
 #* 9. Your copyright notice - appears in site footer and in RSS. Note: To display a copyright symbol, type `&copy;`.
-copyright = "&copy; 2018 CodeFRA"
+copyright = "&copy; 2018 YourCompany"
 
 # 10. If enableRobotsTXT is true, a simple robots.txt is created allowing all agents to crawl everything. If you want to create your own robots.txt, then place a robots.txt in the static folder.
 enableRobotsTXT =true
