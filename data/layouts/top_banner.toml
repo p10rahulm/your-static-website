@@ -167,7 +167,7 @@
     content = ""
     has_children = true
     has_parent = true
-        parent = "mini_menu"
+    parent = "mini_menu"
     type = "a"
     [[slide_elements.tags]]
         field = "href"

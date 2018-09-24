@@ -47,12 +47,6 @@ fixed_sharer_active = true
         title = "Greatest ever works"
         subtitle = "Major Projects and Work Interests"
 
-
-
-    # These are the cards we will display. Ideally fill three.
-    # choose from 2,3,4,6
-    numcards = 3
-
     [[showcase.card]]
         icon = "fa-laptop"
         title = "Responsive Design"

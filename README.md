@@ -1406,7 +1406,52 @@ fixed_sharer_active = true
 # ----------------------------------
 # Section 1: Top section
 # ----------------------------------
-
+# ----------------------------------
+# #
+# 1. This is the heading section. Here we use a sliding banner of two images
+# 2. The content for the layout can be changed below
+# 3. The main fields for rendering the layout are in top_banner.toml in folder 'data/layouts'
+# 4. The fields here are rendered by 'render_content_layout_fields.html' which is called by
+# #  top_banner.html in homepage-sections
+# 5. These fields in 'top_banner.toml' are another (simplified?) way of rendering html.
+# 6. One can list multiple slide elements as '[[slide_elements]]'
+# 7. For each slide element, one can input styles as '[[slide_elements.styles]]'
+# #  with multiple style values as '[[slide_elements.styles.style_value]]'
+# #
+# #
+# 8. We will describe each of the tags in the file top_banner.toml below
+# i    name: This has to be unique. It is an identifier of that element. Doesn't go into html
+# ii   class & id: These are the class & id of item used in the rendered html.
+# iii  content: The actual content for the viewer
+# iv   has_children: Decides whether any other elements are rendered within this one
+# v    has_parent: true if it is the child of any other element, else false.
+# vi   parent: The name of the parent element goes here
+# vii  type: Multiple types are there like div -generic html dividor, 'a' for links, etc
+# viii slide_elements.styles.media_type: what browser screens to target
+# #    https://www.w3schools.com/cssref/css3_pr_mediaquery.asp
+# ix   slide_elements.styles.container: css parent name
+# x    slide_elements.styles.target: css target
+# #    https://www.w3schools.com/css/css_syntax.asp
+# xi   [[slide_elements.styles.style_value]]: field (css properties) and value pairs for css
+# #    https://www.w3schools.com/cssref/
+# xii  [[slide_elements.custom_js_partials]]: Variables for js related to that element
+# xiii slide_elements.custom_js_partials.partial_location: Location of js file to load
+# xiii slide_elements.custom_js_partials.variable_name: Variables can be passed to above file
+# xiv  [[slide_elements.tags]]: Elements of type links ('a') need hrefs passed in the html
+# #    These can be passed within tags, which have field and a value. For example:
+# xv   slide_elements.tags.field: Can take values like 'href'
+# xvi  slide_elements.tags.value: Can take values like 'http://google.com' in example above
+# xvii content_field_name: This can be used to replace either "content" or "tags.value"
+# #    with a value from another file, which contains the field name and value
+# #    For example, one can place 'content_field_name = "link2"' inside 
+# #    [[slide_elements.tags]] in top_banner.toml and 
+# #    pass link2 from [top_banner.content] in _index.html
+# xviiiexternal css sources: One can pass these inside [[slide_elements.css_sources]] 
+# #    with an url field
+# xix  external js sources: One can pass these inside [[slide_elements.js_sources]]
+# #    with an url field, and true/false values for async and defer js sourcing
+# #
+# ----------------------------------
 [top_banner]
 
     active=true
@@ -1440,18 +1485,19 @@ fixed_sharer_active = true
 # ----------------------------------
 # Section 2: Showcase section
 # ----------------------------------
+# ----------------------------------
+# 1. This section can be used to highlight the salient points of your website/product
+# 2. This section uses Flexbox render the cards in showcase.html in homepage-sections folder
+# 3. Each card can contain an icon, a link (even internal link), a title and the content
+# 4. The content can be in markdown
+# 5. The icons can be chosen from here: https://fontawesome.com/v4.7.0/icons/
+# ----------------------------------
 [showcase]
     active=true
     headline_layout = "headline_elements"
     [showcase.headline]
         title = "Greatest ever works"
         subtitle = "Major Projects and Work Interests"
-
-
-
-    # These are the cards we will display. Ideally fill three.
-    # choose from 2,3,4,6
-    numcards = 3
 
     [[showcase.card]]
         icon = "fa-laptop"
@@ -1474,6 +1520,30 @@ fixed_sharer_active = true
 
 # ----------------------------------
 # Section 3: About us section
+# ----------------------------------
+# ----------------------------------
+# 1. This section broadly contains space for
+# i    Heading, sub-heading
+# ii   A photo with title and subtitle
+# iii  A list of affiliations
+# iv   Social Media links
+# v    A long form content piece
+# vi   A left list with icons and text below content piece
+# vii  A mid-right list with icons and text below content piece
+#
+# 2. These subsections can be changed by changing the configurations below respectively
+# i    [about_us.headline]
+# ii   [about_us.descriptor] - logo_image, name_title and name_subtitle
+# iii  [[about_us.descriptor.affiliations]] (add any number with name and url)
+# iv   [[about_us.descriptor.social]] - you can add icon and link. 
+#      Choose icon for above from https://fontawesome.com/v4.7.0/icons/
+# v    [about_us.detail] - title and content
+# vi   [about_us.detail.bottom_left] - title and [[about_us.detail.bottom_left.list]]
+#      Add title, an optional subtitle and icon from font-awesome (link above) in the list
+# vii  [about_us.detail.bottom_right] - title and [[about_us.detail.bottom_right.list]]
+#      Add title, an optional subtitle and icon from font-awesome (link above) in the list
+#
+# 3. The layout is rendered by about_us.html in homepage-sections directory
 # ----------------------------------
 [about_us]
     active=true
@@ -1583,14 +1653,14 @@ fixed_sharer_active = true
 # ----------------------------------
 # ----------------------------------
 # 1. You can list all client logos in this section
-# 2. This section uses
+# 2. This section uses CSS Grid to place the logos, so spacing between logos is dynamic
 # 3. Change the images and links below to use your own
+# 4. The layout is rendered by logo_wall.html in homepage-sections directory
 # ----------------------------------
 [logo_wall]
     active = true
 
     # Count the number of logos you want on a row. Choose from 1,2,3,4,6, 12
-    min_width_logo = "200px"
     headline_layout = "headline_elements"
     [logo_wall.headline]
         title = "Our Clients"
@@ -1600,22 +1670,22 @@ fixed_sharer_active = true
     # Ensure height to width ratios of the images are all the same.
     [[logo_wall.logos]]
         source = "https://upload.wikimedia.org/wikipedia/commons/3/37/Palantir_company_logo.png"
-        link = "/"
+        link = "//www.palantir.com/"
         name = "Palantir"
 
     [[logo_wall.logos]]
         source = "https://media.licdn.com/dms/image/C510BAQHxVXskfQIR-w/company-logo_200_200/0?e=2131920000&v=beta&t=I-Eibuu3JRlpqc2wCpmw--1hp-OAw64YnK8lhO-g-iA"
-        link = "/"
+        link = "//www.sigmoid.com"
         name = "Sigmoid"
 
     [[logo_wall.logos]]
         source = "https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Flipkart_logo.svg/250px-Flipkart_logo.svg.png"
-        link = "/"
+        link = "//www.flipkart.com/"
         name = "Flipkart"
 
     [[logo_wall.logos]]
         source = "http://www.nanobi.in/wp-content/uploads/2017/09/nb-logo.png"
-        link = "/"
+        link = "//www.hotstar.com"
         name = "Hotstar"
 
 # ----------------------------------
