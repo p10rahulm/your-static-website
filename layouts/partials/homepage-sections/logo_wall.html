@@ -12,8 +12,7 @@
         <div class="logo-grid">
             {{if isset .Params.logo_wall "logos"}}
                 {{range .Params.logo_wall.logos}}
-                <div class="logo-child"
-                style = "padding-top: 1rem;">
+                <div class="logo-child">
                     <a href="{{.link | relURL}}">
                         <img src="/placeholder.jpg" data-src="{{.source}}" class="lazy" alt="{{.name}}">
                     </a>
