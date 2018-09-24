@@ -1375,6 +1375,7 @@ The first thing you want to look at is the config.toml file. We will describe al
 
 ##### _index.md in the content folder
 The descriptions are given below within the toml. use this reference to change the file.
+
 ```toml
 # Please use your own images. I provide the code with no implicit or explicit warranties and I am not to be liable for any claim or damages arising from use of this software.
 
@@ -1822,9 +1823,8 @@ fixed_sharer_active = true
         text = "987-654-3210"
         style = "color:#333; margin-bottom: 30px; display:block;"
 
-
-
 ```
+
 ##### contact_success.md in the content folder
 
 Change these as per your preference. The fields are pretty self explanatory. The layout used is contact_success.html in the layouts/_default folder
@@ -1907,13 +1907,38 @@ warning = "Please enter a message."
 
 ##### popup_success.md in the content folder
 
+Change these as per your preference. The fields are pretty self explanatory. The layout used is popup_success.html in the layouts/_default folder
+
+```toml
+title = "You have successfully subscribed<br>"
+message = "Thanks for subscribing to our website. Rest assured we don't spam! <br>Click [here](/) to return to homepage"
+title_color = "azure"
+message_color = "#aaa"
+layout = "popup_success"
+background_color = "#222"
+```
 ##### privacy.md in the content folder
+
+- I have created a generic privacy policy. 
+- In this file, replace YourCompany by your real company name
+- This is rendered by terms_conditions.html layout in the layouts/_default folder
+- You may want to change this as per your legal jurisdiction/needs of your website.
+- You can optionally add title, date and author fields at the top.
 
 ##### termsservice.md in the content folder
 
+- I have created a generic terms and conditions template which may be useful.
+- In this file, replace YourCompany by your real company name
+- Also replace http://www.yourdomain.com with your real domain name
+- This is rendered by terms_conditions.html layout in the layouts/_default folder
+- **In case your legal jurisdiction is different, please use a template that's relevant to your state**
+- All the content is directly taken from the content markdown itself
+- You can optionally add title, date and author fields at the top.
 
 ### Step 5: Modify the content and preview
+
 If you want to modify the contents, there are two ways to go about it:
+
 1. Delete all files (leave the directories) and start from scratch
 
 ### Step 6: Learn to create new templates if required
