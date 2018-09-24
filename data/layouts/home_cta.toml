@@ -222,6 +222,7 @@
     [[elements.tags]]
         field="href"
         value="#"
+        content_field_name = "cta_button1_link"
     [[elements.styles]]
         container = "#cta"
         target = "#cta-first_action_button"
@@ -337,6 +338,7 @@
     [[elements.tags]]
         field="href"
         value="#"
+        content_field_name = "cta_button2_link"
     [[elements.styles]]
         container = "#cta"
         target = "#cta-second_action_button"

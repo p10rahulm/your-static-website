@@ -344,8 +344,9 @@ fixed_sharer_active = true
     heading = "You can call someone to action"
     subheading = "And hope that they come and do the action. This is called call to action"
     cta_button1_text = "Start a new blog with Raz"
-    cta_button2_text = "Sign up for our blog"
-
+    cta_button2_text = "Visit our blog"
+    cta_button1_link = "//www.github.com/p10rahulm/your-static-website"
+    cta_button2_link = "//www.thinkingtree.me"
 
 
 # ----------------------------------
