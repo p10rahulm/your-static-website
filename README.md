@@ -2059,10 +2059,10 @@ Code snippets need a small number of additional settings
 
 ```toml
 
-1. Do you use Math in the Code Page. If so, use math=true below. The math display is based on [mathjax](https://www.mathjax.org/)
+# 1. Do you use Math in the Code Page. If so, use math=true below. The math display is based on [mathjax](https://www.mathjax.org/)
 math = false
 
-2. Do you use code in this page? If so mention highlight=true below. The style "ocean" is a dark themed style. You can choose themes and languages based on this site https://highlightjs.org/static/demo/
+# 2. Do you use code in this page? If so mention highlight=true below. The style "ocean" is a dark themed style. You can choose themes and languages based on this site https://highlightjs.org/static/demo/
 
 highlight = false
 highlight_languages = ["bash","html"]
@@ -2075,13 +2075,13 @@ highlight_style = "ocean"
 Courses, similar to books, have a number of additional optional settings that may be input
 
 ```toml
-1. The "faculty" for the course is a similar option to author name in the regular pages
+# 1. The "faculty" for the course is a similar option to author name in the regular pages
 faculty = "FirstName LastName and Goody Two Shoes"
 
-2. A short intro may be provided which visitors may see for quickly understanding what the course is about. It should be similar to abstract for a book
+# 2. A short intro may be provided which visitors may see for quickly understanding what the course is about. It should be similar to abstract for a book
 short_intro = "An in-depth look at management with a specific view on Marketing"
 
-3. There are several optional course-specific details that you can provide. These are mentioned in a table format in the webpage
+# 3. There are several optional course-specific details that you can provide. These are mentioned in a table format in the webpage
 
 topic = "Management"
 who_should_attend = "Management Professionals and Final Year Students"
@@ -2094,7 +2094,7 @@ fees = "Rs. 1000"
 certification = "Rs. 1000"
 
 
-4. A mixture of poster images and youtube videos may be used in the featured images section. Here the first poster is used as the first image that appears and the visitor can choose to scroll, zoom, or click on thumbnails to view the rest.
+# 4. A mixture of poster images and youtube videos may be used in the featured images section. Here the first poster is used as the first image that appears and the visitor can choose to scroll, zoom, or click on thumbnails to view the rest.
 
 # Media will be from below list
 # Featured image The featured image will be the first from the following list
@@ -2105,7 +2105,7 @@ posters = ["orange-fractal.jpg","dog_popup_thanks3.jpg","dog_transparency1.jpg",
 
 youtube_ids = ["lk60ObnbIOk","9hHq2lYof4U"]
 
-5. Optionally, brochures and other pdf files may be placed in the files section below to enable users to open them within the page (or download)
+# 5. Optionally, brochures and other pdf files may be placed in the files section below to enable users to open them within the page (or download)
 
 # Place the pdfs below in the "files" folder inside static folder:
 files = [
@@ -2114,7 +2114,7 @@ files = [
 ]
 
 
-6. Similar to tags and categories, an additional taxonomy based on subjects is introduced here
+# 6. Similar to tags and categories, an additional taxonomy based on subjects is introduced here
 subjects = ["management"]
 
 ```
@@ -2124,25 +2124,25 @@ subjects = ["management"]
 The events pages contain the regular settings in a few different names and a few additional settings
 
 ```toml
-1. A short description of the event that goes below the title
+# 1. A short description of the event that goes below the title
 tagline = "The beats are coming to town"
 
-2. who, where and when describe the event to have an artist, a location and a time. This is used in list pages as well as the top of the events single page layout
+# 2. who, where and when describe the event to have an artist, a location and a time. This is used in list pages as well as the top of the events single page layout
 who = "Kailash Kher"
 where = "Asilomar, Aranyaka, India"
 when = "17th Dec 2018"
 
-3. The banner_image is an image that is used as a banner for the event page itself. Choose this carefully as it occupies a good amount of space on the webpage
+# 3. The banner_image is an image that is used as a banner for the event page itself. Choose this carefully as it occupies a good amount of space on the webpage
 banner_image = "events/bw_crowd.jpg"
 
-4. Upload posters and youtube videos related to the event below. The first will appear featured and the visitor can scroll, zoom or click to view the images
+# 4. Upload posters and youtube videos related to the event below. The first will appear featured and the visitor can scroll, zoom or click to view the images
 # Media will be from below list
 # Featured image The featured image will be the first from the following list
 posters = ["events/clean_bandit.jpg","orange-fractal.jpg","dog_popup_thanks3.jpg","dog_transparency1.jpg", ]
 # Currently only youtube is supported. Please enter only the id. For example if the video url is "https://www.youtube.com/watch?v=lk60ObnbIOk", please enter "lk60ObnbIOk"
 youtube_ids = ["lk60ObnbIOk","9hHq2lYof4U"]
 
-5. Apart from categories and tags, we provide an additional taxonomy for events called genres
+# 5. Apart from categories and tags, we provide an additional taxonomy for events called genres
 genres = ["Rock","Paper","Scissors"]
 
 ```
@@ -2156,25 +2156,25 @@ Notes pages are fairly straightforward. There are no additional settings apart f
 The people pages have a large number of additional settings over and above the common settings. This is similar to the about section on the front page. These settings are listed below
 
 ```toml
-1. We use the setting "name" instead of title used in other pages to describe who the page is about
+# 1. We use the setting "name" instead of title used in other pages to describe who the page is about
 name = "Wise man"
 
-2. You can input the role the person plays
+# 2. You can input the role the person plays
 role = "Founder, YourCompany"
 
-3. The portrait image mentioned below can be similar to the caption image and be a generic squarish (width = height) photo of the person.
+# 3. The portrait image mentioned below can be similar to the caption image and be a generic squarish (width = height) photo of the person.
 # Place portrait in img folder
 portrait = "people/obama.jpg"
 
 
-4. We categorize people with divisions and teams instead of tags and categories which are the general taxonomies. If you want to add any taxonomy below, make sure to also mention it in the config.toml page
+# 4. We categorize people with divisions and teams instead of tags and categories which are the general taxonomies. If you want to add any taxonomy below, make sure to also mention it in the config.toml page
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
 divisions = ["Technology"]
 teams = ["Leadership"]
 
-5. We can mention multiple affiliations of the person along with a link like below
+# 5. We can mention multiple affiliations of the person along with a link like below
 # ---------------------------------
 [[affiliations]]
     name = "Atidiv, Cuemath"
@@ -2183,7 +2183,7 @@ teams = ["Leadership"]
     name = "Barclays, Nomura, Lehman Brothers"
     url = ""
 
-6. We can also mention social media links of the person. The icons are chosen from here: https://fontawesome.com/v4.7.0/icons/
+# 6. We can also mention social media links of the person. The icons are chosen from here: https://fontawesome.com/v4.7.0/icons/
 
 # ---------------------------------
 # Choose fa (font-awesome) icons below
@@ -2197,7 +2197,7 @@ teams = ["Leadership"]
     icon_pack = "fa"
     link = "//linkedin.com/in/first_name-last_name/"
 
-7. You can list any interests for the person along with a title for the interests section
+# 7. You can list any interests for the person along with a title for the interests section
 [interests]
 title = "Interests"
 
@@ -2212,7 +2212,7 @@ title = "Interests"
     icon = "fa-rocket"
 
 
-8. Lastly you can list education of the person as required below
+# 8. Lastly you can list education of the person as required below
 # ---------------------------------
 [education]
     title = "Education"
@@ -2229,8 +2229,200 @@ title = "Interests"
 
 ```
 
+##### Posts Pages
+
+Posts Pages use only the common settings listed above
+
+##### Presentations Pages
+
+The presentations pages are mainly about the presentation pdf itself. They may optionally contain some writeup below the presentation.
+
+```toml
+
+# 1. The tagline goes below the title and is a brief description of the presentation
+tagline = "An in-depth look at management with a specific view on Marketing"
+
+# 2. The filename of the presentation should be entered below. The pdf should be saved in the "files" folder inside static folder:
+pdf_file = "Brochure_for_5S_books.pdf"
+
+# 3. An additional taxonomy of "topics" has been provided for these pages
+topics = ["management"]
+
+
+# 4. The content in the presentation pages is assumed to be not too long. It may be notes regarding the presentation. We can also list a writeup title below.
+
+writeup_title = "Presentation Notes"
+
+```
+
+##### Publications Pages
+
+The publications pages use a bunch of new parameters including a few categorizations.
+
+```toml
+# 1. We list the authors in these pages with links to their personal pages (which could be outside of the site itself)
+authors =  [
+                { name = "FirstName LastName", url = "/people/person1" },
+                { name = "Ankit Mathgenius", url = "/people/person2" },
+                { name = "Sailesh Tripper", url = "/people/person3" }
+            ]
+
+# 2. Brief comments regarding the paper (arxiv style!)
+Comments = "Published in the foremost literary publication"
+
+
+# 3. In case you are using any math or code, set the below accordingly. These should load the mathjax or highlightjs libraries as described in the "Code Snippets Pages" section
+math = true
+highlight = false
+highlight_languages = []
+highlight_style = "ocean"
+
+#4. We provide a few taxonomies to classify the paper. These are fairly self explanatory. If you want to add any new taxonomies, do so below and also add these to the config.toml page
+publication_types = ["Journal article"]
+subjects = ["programming"]
+projects = ["programming"]
+
+
+
+# 5. Multiple pdf files along with links can be placed below for the paper. These can be viewed or downloaded from the page
+# Place the pdfs below in the "files" folder inside static folder:
+files = [
+    { name = "Brochure for 5S Course", pdf_file = "Brochure_for_5S_books.pdf" },
+    { name = "Business and Ethics", pdf_file = "B_E_Brochure.pdf" },
+]
+
+
+# 6. We can link any external sources or paper links here
+[[links]]
+    icon = "fa-tag"
+    name = "Arxiv Abstract"
+    url = "https://arxiv.org/abs/1704.05729"
+[[links]]
+    icon = "fa-star"
+    name = "Arxiv Paper"
+    url = "https://arxiv.org/pdf/1704.05729.pdf"
+
+
+```
+
+##### Reviews Pages
+
+The reviews pages mostly contain new configurations regarding the product or item being reviewed
+
+```toml
+
+# 1. Firstly enter some basic details about the item being reviewed including the name, the maker, and the item link
+
+reviewed_item = "Opel Astra Car"
+reviewed_item_maker = "General Motors"
+reviewed_item_link = "https://en.wikipedia.org/wiki/Opel_Astra"
+
+# 2. The taxonomies for reviewed items also includes reviewed_item_categories. This can be used to mention the item being reviewed like movies, or books or some such.
+reviewed_item_categories = ["Products"]
+
+# 3. The rating (number of stars) you give the item should be mentioned below. 0.5 being lowest and 5 being the highest number of stars
+stars = 4.5
+
+# 4. The title of the review is known here as headline
+headline = "Heartbeat on wheels"
+
+# 5. A good review may contain images also. The first of the following list will be featured and the rest can be clicked, zoomed, scrolled and shared
+images = ["reviews/opel1.png","reviews/opel2.png"]
+
+```
+
+##### Thoughts Pages
+
+These are the only pages where the configurations include styling elements. The thought  layout would contain some content placed on a background image
+
+```toml
+
+# 1. Please change the image used for the background_image. Images here are taken from Pixabay.
+# -----------------------------------------
+# Formatting
+# -----------------------------------------
+# 2. The header image would be used to place an image used before the content. A good example of usage is in your_domain.com/thoughts/thought2/ in the demo content. Typically outline images are used here
+header_image = ""
+
+# 3. The background image is used to create a background effect for your thought. The rest of the options you can leave as is. The rgba colors can be chosen from here: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Colors/Color_picker_tool
+background_image = "backgrounds/purples.jpg"
+background_color = "rgba(255,255,255,0.05)"
+foreground_color = "rgba(255,255,255,0.7)"
+
+#4. Of the below properties, the only one that you may want to change is text_color. You can choose the color here: https://htmlcolorcodes.com/color-picker/
+text_padding = "10% 5%"
+text_color = "#164"
+text_size = "1.35rem"
+
+```
+
+##### Workshops Pages
+
+Workshops pages contain a good number of new configurations apart from the common ones.We may have come across some of these in different Page Types already
+
+```toml
+# 1. Equivalent to author in various other pages, we have presenters for the workshop pages
+presenters = "FirstName LastName and Goody Two Shoes"
+
+# 2. A short intro of the workshop may be given
+short_intro = "Sustainable practices for creating a new you"
+
+# 3. Workshop details are listed in a tabular format. While optional, they provide a template to the page maker as to what details may be included.
+
+who_should_attend = "Humanity"
+pre_requisites = "Being human"
+workshop_date = "24th December 2016"
+duration = "4 weeks"
+delivery = "In Person/Online"
+location = "Bangalore Gymkhana/Online"
+fees = "Rs. 1000"
+certification = "Rs. 1000"
+
+
+
+# 4. Posters and youtube videos describing the workshop may be included. The first poster is used as a featured image with the rest as thumbnails below that one. Visitors may scroll, zoom into, or share the images
+
+posters = ["orange-fractal.jpg","dog_popup_thanks3.jpg","dog_transparency1.jpg", ]
+youtube_ids = ["lk60ObnbIOk","9hHq2lYof4U"]
+
+# 5. Files describing the workshop may be used by providing the name and location below.
+# Place the pdfs below in the "files" folder inside static folder:
+files = [
+    { name = "Brochure for 5S Course", pdf_file = "Brochure_for_5S_books.pdf" },
+    { name = "Business and Ethics", pdf_file = "B_E_Brochure.pdf" },
+]
+
+# 6. An additional taxonomy called subjects is provided apart from tags and categories
+subjects = ["People Management"]
+
+```
+
+#### Previewing the content
+
+As with the first time you downloaded the content, preview the site after you have finished adding new content
+
+1. Open a bash/terminal and cd into the folder with your website files.
+2. Type into the terminal that you used for downloading the files
+    ```bash
+    hugo server -D -p 1313
+    ```
+3. This opens a server with all files including those which are in draft
+4. Go to your favorite web browser (preferably Firefox or Chrome, i've not tested on IE)
+5. Open `http://localhost:1313`. Even after checking that everything works, keep this tab open.
+
+*NOTE*: When you leave the server and browser open, you will notice that the browser window updates on its own after every file update.
 
 ### Step 6: Learn to create new templates if required
+
+When you are creating new single page templates or list templates, it may be easy to first copy an existing template. These are html files with additional hugo code. You can view these files in the singlePageLayouts and listLayouts section. The homepage-sections contains template pieces used to render individual sections in the home page.
+
+1. Within these files you can hugo code by placing it within curly braces like so: `{{some code}}`
+2. Hugo code can access the parameters from your content files by referencing `.Params.parameter`
+3. Various [hugo functions](https://gohugo.io/functions/) can be used within the code
+4. You can use global variables by setting [Scratch](https://regisphilibert.com/blog/2017/04/hugo-scratch-explained-variable/)
+5. If you change the "layout" parameter in the content file, the name that you set there will be the template piece called to render the layout. For instance if you create a layout called "myLayout.html" and want a content piece you created to be rendered by this layout, use 'layout = "myLayout"' setting
+
+I will be extending this if useful to somebody later, but these [giraffe academy videos](https://www.youtube.com/watch?v=G7umPCU-8xc) and the [hugo docs](https://gohugo.io/documentation/) are good places to start learning how to create templates
 
 ### Step 7: Move from template to deployment
 
