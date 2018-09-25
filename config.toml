@@ -275,17 +275,17 @@ verboseLog =true
 
     #* 46. The site footer will contain three icons. You can choose the icons (from https://fontawesome.com/v4.7.0/icons/) and change links below
     [[params.footer_network]]
-        url = "https://www.facebook.com/rahul.maddy"
+        url = "https://www.facebook.com/first_name.last_name"
         iconpack = "fa"
         icon = "fa-facebook"
 
     [[params.footer_network]]
-        url = "https://www.linkedin.com/in/rahul-madhavan/"
+        url = "https://www.linkedin.com/in/first_name-last_name/"
         iconpack = "fa"
         icon = "fa-linkedin"
 
     [[params.footer_network]]
-        url = "http://github.com/p10rahulm"
+        url = "http://github.com/your_username"
         iconpack = "fa"
         icon = "fa-github"
 

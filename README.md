@@ -860,7 +860,7 @@ We are (almost) ready at this stage to ask the question -  So how do I implement
 4. Go to that folder `cd c:\users\yourname\mywebsite`
 5. Use git to download the files
     ```bash
-    git clone git@github.com:p10rahulm/your-static-website.git .
+    git clone git@github.com:your_username/your-static-website.git .
     ```
 
 ### Step 3: Preview the site
@@ -918,11 +918,11 @@ The first thing you want to look at is the config.toml file. We will describe al
 - popup_submission_subject = "New subscription for your site!"
 - secondary_forwarding_emails = ["first_name.last_name@gmail.com","another_name@gmail.com"]
 - [[params.footer_network]]
-    url = "https://www.facebook.com/rahul.maddy"
+    url = "https://www.facebook.com/first_name.last_name"
 - [[params.footer_network]]
-    url = "https://www.linkedin.com/in/rahul-madhavan/"
+    url = "https://www.linkedin.com/in/first_name-last_name/"
 - [[params.footer_network]]
-    url = "http://github.com/p10rahulm"
+    url = "http://github.com/your_username"
 
 ```toml
     # Notes. those options marked with * need to be changed. Rest are optional
@@ -1198,17 +1198,17 @@ The first thing you want to look at is the config.toml file. We will describe al
     #* 46. The site footer will contain three icons. You can choose the icons (from https://fontawesome.com/v4.7.0/icons/) and change links below
 
     [[params.footer_network]]
-    url = "https://www.facebook.com/rahul.maddy"
+    url = "https://www.facebook.com/first_name.last_name"
     iconpack = "fa"
     icon = "fa-facebook"
 
     [[params.footer_network]]
-    url = "https://www.linkedin.com/in/rahul-madhavan/"
+    url = "https://www.linkedin.com/in/first_name-last_name/"
     iconpack = "fa"
     icon = "fa-linkedin"
 
     [[params.footer_network]]
-    url = "http://github.com/p10rahulm"
+    url = "http://github.com/your_username"
     iconpack = "fa"
     icon = "fa-github"
 
@@ -1578,17 +1578,17 @@ fixed_sharer_active = true
         [[about_us.descriptor.social]]
             icon = "fa-linkedin"
             icon_pack = "fa"
-            link = "//linkedin.com/in/rahul-madhavan/"
+            link = "//linkedin.com/in/first_name-last_name/"
 
         [[about_us.descriptor.social]]
             icon = "fa-facebook"
             icon_pack = "fa"
-            link = "//facebook.com/rahul.maddy"
+            link = "//facebook.com/first_name.last_name"
 
         [[about_us.descriptor.social]]
             icon = "fa-github"
             icon_pack = "fa"
-            link = "//github.com/p10rahulm"
+            link = "//github.com/your_username"
 
 
     # ---------------------------------
@@ -1756,7 +1756,7 @@ fixed_sharer_active = true
     subheading = "And hope that they come and do the action. This is called call to action"
     cta_button1_text = "Start a new blog with Raz"
     cta_button2_text = "Visit our blog"
-    cta_button1_link = "//www.github.com/p10rahulm/your-static-website"
+    cta_button1_link = "//www.github.com/your_username/your-static-website"
     cta_button2_link = "//www.thinkingtree.me"
 
 
@@ -2195,17 +2195,17 @@ teams = ["Leadership"]
 [[social]]
     icon = "fa-linkedin"
     icon_pack = "fa"
-    link = "//linkedin.com/in/rahul-madhavan/"
+    link = "//linkedin.com/in/first_name-last_name/"
 
 [[social]]
     icon = "fa-facebook"
     icon_pack = "fa"
-    link = "//facebook.com/rahul.maddy"
+    link = "//facebook.com/first_name.last_name"
 
 [[social]]
     icon = "fa-github"
     icon_pack = "fa"
-    link = "//github.com/p10rahulm"
+    link = "//github.com/your_username"
 
 
     # ---------------------------------

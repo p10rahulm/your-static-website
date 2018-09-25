@@ -49,17 +49,17 @@ teams = ["Leadership"]
 [[social]]
     icon = "fa-linkedin"
     icon_pack = "fa"
-    link = "//linkedin.com/in/rahul-madhavan/"
+    link = "//linkedin.com/in/first_name-last_name/"
 
 [[social]]
     icon = "fa-facebook"
     icon_pack = "fa"
-    link = "//facebook.com/rahul.maddy"
+    link = "//facebook.com/first_name.last_name"
 
 [[social]]
     icon = "fa-github"
     icon_pack = "fa"
-    link = "//github.com/p10rahulm"
+    link = "//github.com/your_username"
 
 
     # ---------------------------------

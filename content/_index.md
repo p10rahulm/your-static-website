@@ -99,17 +99,17 @@ fixed_sharer_active = true
         [[about_us.descriptor.social]]
             icon = "fa-linkedin"
             icon_pack = "fa"
-            link = "//linkedin.com/in/rahul-madhavan/"
+            link = "//linkedin.com/in/first_name-last_name/"
 
         [[about_us.descriptor.social]]
             icon = "fa-facebook"
             icon_pack = "fa"
-            link = "//facebook.com/rahul.maddy"
+            link = "//facebook.com/first_name.last_name"
 
         [[about_us.descriptor.social]]
             icon = "fa-github"
             icon_pack = "fa"
-            link = "//github.com/p10rahulm"
+            link = "//github.com/your_username"
 
 
     # ---------------------------------
@@ -337,7 +337,7 @@ fixed_sharer_active = true
     subheading = "And hope that they come and do the action. This is called call to action"
     cta_button1_text = "Start a new blog with Raz"
     cta_button2_text = "Visit our blog"
-    cta_button1_link = "//www.github.com/p10rahulm/your-static-website"
+    cta_button1_link = "//www.github.com/your_username/your-static-website"
     cta_button2_link = "//www.thinkingtree.me"
 
 
