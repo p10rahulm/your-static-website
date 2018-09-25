@@ -2197,20 +2197,7 @@ teams = ["Leadership"]
     icon_pack = "fa"
     link = "//linkedin.com/in/first_name-last_name/"
 
-[[social]]
-    icon = "fa-facebook"
-    icon_pack = "fa"
-    link = "//facebook.com/first_name.last_name"
-
-[[social]]
-    icon = "fa-github"
-    icon_pack = "fa"
-    link = "//github.com/your_username"
-
-
-    # ---------------------------------
-
-# ---------------------------------
+7. You can list any interests for the person along with a title for the interests section
 [interests]
 title = "Interests"
 
@@ -2223,19 +2210,9 @@ title = "Interests"
     title = "Networks"
     subtitle = ""
     icon = "fa-rocket"
-[[interests.list]]
-    title = "Topology"
-    subtitle = ""
-    icon = "fa-rocket"
-[[interests.list]]
-    title = "Language"
-    subtitle = ""
-    icon = "fa-rocket"
-[[interests.list]]
-    title = "Modelling"
-    subtitle = ""
-    icon = "fa-rocket"
 
+
+8. Lastly you can list education of the person as required below
 # ---------------------------------
 [education]
     title = "Education"
