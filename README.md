@@ -1842,7 +1842,7 @@ background_color = "#222"
 ##### contact.md in the content folder
 A contact form is a good way for users to contact you and introduces some interactivity to the site. Even if the site is static, we use a third party application called [Formspree](https://formspree.io/) to enable you to setup a contact form.
 
-**Make sure you change email and contact_secondary_email addresses below**
+Make sure **you change email and contact_secondary_email addresses below**
 
 ```toml
 # (i) The form on this static site is enabled through formspree
@@ -1917,6 +1917,7 @@ message_color = "#aaa"
 layout = "popup_success"
 background_color = "#222"
 ```
+
 ##### privacy.md in the content folder
 
 - I have created a generic privacy policy. 
@@ -1937,9 +1938,320 @@ background_color = "#222"
 
 ### Step 5: Modify the content and preview
 
-If you want to modify the contents, there are two ways to go about it:
+Now that we have finished changing the configuration, you can start adding content. The idea for the static site was that you should be able to express any kind of output that you have in real life into a page on the internet. With this in mind, we have created a few kinds of pages.
 
-1. Delete all files (leave the directories) and start from scratch
+#### Types of Pages
+
+We have 14 different types of pages. These are listed below in approximately alphabetical order:
+
+1. Audios: This is for any recordings you might have taken including songs or podcasts
+2. Books: This is meant for any books you have written
+3. Code-Snippet: This is meant for a mix of content and code.
+4. Courses: This is meant to showcase any courses that one has created
+5. Events: This page type can be used for showcasing events like concerts
+6. Notes: This is meant for a short content piece. Comes without a banner image
+7. People: This is for writing about people, possibly in your team or company
+8. Posts: This is meant for long generic content pieces. Comes with a banner image on top
+9. Presentations: This is meant to showcase presentation pdfs that you may have made
+10. Publications: You can link any publications (journals or otherwise) that you have made here
+11. Reviews: You can review any kinds of websites, products, movies etc here.
+12. Thoughts: This is meant for noting down any (profound) thoughts you may have
+13. Workshops: You can showcase any workshops (short courses) in these pages.
+14. Default: This is a default setting that is there.
+
+#### Steps to create a webpage
+
+Each of these page types (except default) goes into its own directory in the content folder. It's easy enough to create any one of these pages. For example if you want to create a presentation page called 'Hyderabad Blues':
+
+1. Open a terminal
+    - On windows, you can do this by typing 'terminal' or 'bash' after clicking the windows button on the bottom left of your screen
+2. Change directory (cd) into the directory with the website files
+    - For example if your website directory is 'C:\users\yourname\yourwebsite', then type `cd c:\users\yourname\yourwebsite`
+3. Type `hugo new presentations/hyderabadblues.md`
+    - If this works, you should get a success message
+4. Open the website page with your favorite text editor
+    - For example, if your website directory is 'C:\users\yourname\yourwebsite' then the website content page would be at `C:\users\yourname\yourwebsite\content\presentations\hyderabadblues.md`
+
+#### Detailed look at page settings
+
+Our templates contain both the contents as well as configurations for the pages we are creating. Some of the configurations are common across the page types and some are specific to the type of page. Let us look at the common configuration types
+
+1. title: This is the most common configuration for the heading of the page
+2. author: This is the creator of the page. Also goes as artist or faculty in some page types
+3. date: This is the date/time of the page creation
+    - It is auto generated during page creation.
+    - To change it, you would want to keep it in YYYY-MM-DDThh:mm:ssTZ format. In other words, for 29th Sep 2018 01:46 pm 23 seconds in India which is in Time Zone (+05:30 hours), the date field would be 2018-09-29T13:46:23+05:30
+4. caption_image: This is the image used in any list layout showcasing that page
+5. summary_content: This is the short description used in describing the page summary in any list layouts containing that page
+6. layout: This is where you can choose between the single page layout used to render the page. As of now each type of page comes with a standard type of layout
+    - *Note that if no layout is specified, in any page, we revert to the default layout*
+7. featured: This is either true or false based on whether you want it to appear on the front page list sections
+    - This is not a guarantee of the page featuring on the front page as the number_featured may be lower than number available to feature.
+8. enable_comments: If this is true, disqus comments is turned on for that page. There is also a default for every type of page if this field is not available
+9. tags: This is used to classify the page so that it may later be retrieved based on those tags.
+    - For example, a page that is tagged as "['cute dog','cool stuff']" will appear in the list pages http://www.your_domain.com/tags/cute-dog/ and http://www.your_domain.com/tags/cool-stuff/
+    - Please don't use special characters in tags to remove confusion
+10. categories: We are using an additional way of classification based on categories. Typically a page may have many tags, but just one category
+    - For example, a page that is categorized as ['Music'] would appear in the list page http://www.your_domain.com/categories/music/
+
+Those are the common settings used across most pages. Additionally, each page may have its own settings. Let's look at these below in order of alphabetical page types
+
+##### Audio pages
+
+Below are the additional settings to be specified for Audio pages
+
+```toml
+# 1. The main artist is mentioned under the field "artist". This plays the same role as artist on other pages
+artist = "Madhav theBard"
+
+# 2. Additional to tags and categories, we also have two additional categorizations for audio pages. These are albums and artists. In artists, we list all additional artists to the main one involved
+albums = ["Kannada","Language"]
+artists = ["FirstName LastName","Madhav theBard"]
+
+# 3. We can add multiple audios to a single page (as in an album). We need to mention the name of the piece, the filename (placed in audios folder), the artist and a cover image
+
+[[audios]]
+name = "Kannadify Introduction"
+filename = "KL1.wav" # Place the file below in the "audios" folder inside static folder
+artist = "Madhav theBard"
+cover = "k.jpg" # Place the file below in the "audios" folder inside img folder in static folder
+
+[[audios]]
+name = "Moving On"
+filename = "KL2.wav" # Place the file below in the "audios" folder inside static folder
+artist = "Madhav theBard"
+cover = "k.jpg" # Place the file below in the "audios" folder inside img folder in static folder
+
+```
+
+##### Books Pages
+
+Some additional settings need to be specified for books pages
+
+```toml
+# 1. tagline is some small snippet about the book that will come just below the title
+tagline = "The last book you'll ever need"
+
+# 2. the abstract should be a brief description of the book.
+abstract = "A small snippet about the book is good enough"
+
+# 3. Book Details: The template mentions optional details that you can mention that are converted to a tableformat to display
+
+price = 100
+size = "17.8 x 2.5 x 22.9 cm"
+num_pages = 280
+isbn = "978-0262035613"
+reading_level = "18+ years"
+recommended_audience = "MBAs,Management Professionals"
+format = "Hardcover"
+publisher = "MIT Press"
+date_of_publication = "3 January 2017"
+language = "English"
+
+# 4. Every book needs a good cover. Similarly every book page needs good images. Please place these in the static/img folder and list the filenames below under "images" field
+images = ["bubbles.jpg", "dog_popup_thanks3.jpg","dog_transparency1.jpg","orange-fractal.jpg","bubbles.jpg"]
+
+```
+
+##### Code Snippets Pages
+
+Code snippets need a small number of additional settings
+
+```toml
+
+1. Do you use Math in the Code Page. If so, use math=true below. The math display is based on [mathjax](https://www.mathjax.org/)
+math = false
+
+2. Do you use code in this page? If so mention highlight=true below. The style "ocean" is a dark themed style. You can choose themes and languages based on this site https://highlightjs.org/static/demo/
+
+highlight = false
+highlight_languages = ["bash","html"]
+highlight_style = "ocean"
+
+```
+
+##### Courses Pages
+
+Courses, similar to books, have a number of additional optional settings that may be input
+
+```toml
+1. The "faculty" for the course is a similar option to author name in the regular pages
+faculty = "FirstName LastName and Goody Two Shoes"
+
+2. A short intro may be provided which visitors may see for quickly understanding what the course is about. It should be similar to abstract for a book
+short_intro = "An in-depth look at management with a specific view on Marketing"
+
+3. There are several optional course-specific details that you can provide. These are mentioned in a table format in the webpage
+
+topic = "Management"
+who_should_attend = "Management Professionals and Final Year Students"
+pre_requisites = "Knowledge in Marketing"
+course_date = "Anytime"
+duration = "4 weeks"
+delivery = "In Person/Online"
+location = "Bangalore Gymkhana/Online"
+fees = "Rs. 1000"
+certification = "Rs. 1000"
+
+
+4. A mixture of poster images and youtube videos may be used in the featured images section. Here the first poster is used as the first image that appears and the visitor can choose to scroll, zoom, or click on thumbnails to view the rest.
+
+# Media will be from below list
+# Featured image The featured image will be the first from the following list
+
+posters = ["orange-fractal.jpg","dog_popup_thanks3.jpg","dog_transparency1.jpg", ]
+
+# Currently only youtube is supported. Please enter only the id. For example if the video url is "https://www.youtube.com/watch?v=lk60ObnbIOk", please enter "lk60ObnbIOk"
+
+youtube_ids = ["lk60ObnbIOk","9hHq2lYof4U"]
+
+5. Optionally, brochures and other pdf files may be placed in the files section below to enable users to open them within the page (or download)
+
+# Place the pdfs below in the "files" folder inside static folder:
+files = [
+    { name = "Brochure for 5S Course", pdf_file = "Brochure_for_5S_books.pdf" },
+    { name = "Business and Ethics", pdf_file = "B_E_Brochure.pdf" },
+]
+
+
+6. Similar to tags and categories, an additional taxonomy based on subjects is introduced here
+subjects = ["management"]
+
+```
+
+##### Events Pages
+
+The events pages contain the regular settings in a few different names and a few additional settings
+
+```toml
+1. A short description of the event that goes below the title
+tagline = "The beats are coming to town"
+
+2. who, where and when describe the event to have an artist, a location and a time. This is used in list pages as well as the top of the events single page layout
+who = "Kailash Kher"
+where = "Asilomar, Aranyaka, India"
+when = "17th Dec 2018"
+
+3. The banner_image is an image that is used as a banner for the event page itself. Choose this carefully as it occupies a good amount of space on the webpage
+banner_image = "events/bw_crowd.jpg"
+
+4. Upload posters and youtube videos related to the event below. The first will appear featured and the visitor can scroll, zoom or click to view the images
+# Media will be from below list
+# Featured image The featured image will be the first from the following list
+posters = ["events/clean_bandit.jpg","orange-fractal.jpg","dog_popup_thanks3.jpg","dog_transparency1.jpg", ]
+# Currently only youtube is supported. Please enter only the id. For example if the video url is "https://www.youtube.com/watch?v=lk60ObnbIOk", please enter "lk60ObnbIOk"
+youtube_ids = ["lk60ObnbIOk","9hHq2lYof4U"]
+
+5. Apart from categories and tags, we provide an additional taxonomy for events called genres
+genres = ["Rock","Paper","Scissors"]
+
+```
+
+##### Notes Pages
+
+Notes pages are fairly straightforward. There are no additional settings apart from the common settings listed above
+
+##### People Pages
+
+The people pages have a large number of additional settings over and above the common settings. This is similar to the about section on the front page. These settings are listed below
+
+```toml
+1. We use the setting "name" instead of title used in other pages to describe who the page is about
+name = "Wise man"
+
+2. You can input the role the person plays
+role = "Founder, YourCompany"
+
+3. The portrait image mentioned below can be similar to the caption image and be a generic squarish (width = height) photo of the person.
+# Place portrait in img folder
+portrait = "people/obama.jpg"
+
+
+4. We categorize people with divisions and teams instead of tags and categories which are the general taxonomies. If you want to add any taxonomy below, make sure to also mention it in the config.toml page
+
+# Tags and categories
+# For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
+divisions = ["Technology"]
+teams = ["Leadership"]
+
+5. We can mention multiple affiliations of the person along with a link like below
+# ---------------------------------
+[[affiliations]]
+    name = "Atidiv, Cuemath"
+    url = ""
+[[affiliations]]
+    name = "Barclays, Nomura, Lehman Brothers"
+    url = ""
+
+6. We can also mention social media links of the person. The icons are chosen from here: https://fontawesome.com/v4.7.0/icons/
+
+# ---------------------------------
+# Choose fa (font-awesome) icons below
+# ---------------------------------
+[[social]]
+    icon = "fa-envelope"
+    icon_pack = "fa"
+    link = "mailto:first_name.last_name@gmail.com"
+[[social]]
+    icon = "fa-linkedin"
+    icon_pack = "fa"
+    link = "//linkedin.com/in/rahul-madhavan/"
+
+[[social]]
+    icon = "fa-facebook"
+    icon_pack = "fa"
+    link = "//facebook.com/rahul.maddy"
+
+[[social]]
+    icon = "fa-github"
+    icon_pack = "fa"
+    link = "//github.com/p10rahulm"
+
+
+    # ---------------------------------
+
+# ---------------------------------
+[interests]
+title = "Interests"
+
+
+[[interests.list]]
+    title = "Artificial Intelligence"
+    subtitle = ""
+    icon = "fa-rocket"
+[[interests.list]]
+    title = "Networks"
+    subtitle = ""
+    icon = "fa-rocket"
+[[interests.list]]
+    title = "Topology"
+    subtitle = ""
+    icon = "fa-rocket"
+[[interests.list]]
+    title = "Language"
+    subtitle = ""
+    icon = "fa-rocket"
+[[interests.list]]
+    title = "Modelling"
+    subtitle = ""
+    icon = "fa-rocket"
+
+# ---------------------------------
+[education]
+    title = "Education"
+# ---------------------------------
+[[education.list]]
+    title = "Master of Business Administration, 2012"
+    subtitle = "IIM Ahmedabad"
+    icon = "fa-graduation-cap"
+
+[[education.list]]
+    title = "Bachelor of Technology, 2007"
+    subtitle = "Indian Institute of Technology, Madras"
+    icon = "fa-graduation-cap"
+
+```
+
 
 ### Step 6: Learn to create new templates if required
 
