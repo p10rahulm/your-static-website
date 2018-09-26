@@ -36,6 +36,7 @@ The following are going to be needed for creating your own site:
 7. This is an excellent resource to visually check against in case you get stuck at any steps: [Install Git Bash Instructions](http://www.techoism.com/how-to-install-git-bash-on-windows/)
 
 ### Step 2: Getting Google Cloud SDK
+
 1. Go to [Google Cloud SDK Docs](https://cloud.google.com/sdk/docs/)
 2. This should enable you to install google cloud SDK.
     1. Though the cloud SDK consists of cloud gsutil and gq command line tools, we will only be using gsutil.
@@ -63,8 +64,8 @@ The following are going to be needed for creating your own site:
     1. [This website](https://www.java.com/en/download/help/path.xml) is a good reference for how to add to PATH
     2. This [stackoverflow question](https://stackoverflow.com/questions/31167181/adding-git-to-path-variable-cant-find-github-under-appdata-local) mentions which folder you need to add to PATH
 
-
 ### Step 3: Getting Hugo
+
 1. [Hugo](https://gohugo.io/) is an amazing framework for generating static websites. It is fast, well maintained and has excellent support. I'm going to list the main pros and cons of hugo here
     1. Pros:
         1. It is the fastest website generator. My template which has 1000+ files gets generated in 1 second flat.
@@ -96,9 +97,10 @@ The following are going to be needed for creating your own site:
 11. You can go to this site as a reference: [Hugo: Getting Started](https://gohugo.io/getting-started/installing/)
 12. [This video is an excellent resource for installing hugo on windows](https://www.youtube.com/watch?v=G7umPCU-8xc) and [this video for installing hugo on mac](https://www.youtube.com/watch?v=WvhCGlLcrF8). In general that series of videos are an excellent introduction to hugo, which I recommend you look at when you have the time.
 
-
 ### Step 4: Getting a version control system OR login to github
+
 As described [here](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control), a version control system (or VCS) is a system that records changes to a file or set of files over time so that you can recall specific versions later. This basically ensures that you don't lose files or even content of files. It is a good to have when creating a website, especially one that you expect to update frequently. It is a must have if you intend to update your static site from multiple computers.
+
 1. Go to [github.com](https://github.com/). Unless you are already signed in, it will ask you to sign up. github is super user friendly so easy enough.
     1. Pick a username, email and password. Needless to say, note these down
     2. It will ask you in the next step to verify your account. Click ok
@@ -106,27 +108,32 @@ As described [here](https://git-scm.com/book/en/v2/Getting-Started-About-Version
     4. In the section 'tailor your experience' choose appropriate answers
 2. Github is based on repositories. Think of these as version controlled directories you have on the cloud. To start off, we will be creating a repository.
     1. If you haven't yet verified your email id, now would be a good time to do so. Once you get click verify on the email, head back to [your main github page](https://github.com/dashboard)
-3. After the previous step, you will be taken to [your main github page](https://github.com/dashboard). If you are new to github, you will see a big green button on the left saying 'new repository'. If you don't see this, you can click the '+' button on the top right menu and click on 'new repository'
+3. You will need to create ***two repositories***. One for the output webpages and one for the input template pages that you will be working on.
+4. After the previous step, you will be taken to [your main github page](https://github.com/dashboard). If you are new to github, you will see a big green button on the left saying 'new repository'. If you don't see this, you can click the '+' button on the top right menu and click on 'new repository'
     1. Choose a repository name. This doesn't have to be unique across github, just unique to your username. Therefore choose something descriptive. Simple ones like `yourblogname` should be good enough.
     2. Choose public, it should be ok as your site is static and everyone can view all files anyway.
     3. Uncheck the box for "Initialize repository with a README"
     4. Add .gitignore should be None for now
     5. Add a license should be None for now. You can add these later if you feel like
-4. You will be taken to a page that looks like `https://github.com/yourusername/yourblogname`. Bookmark this page
-5. Note down the link to the git repository which should look like: `https://github.com/yourusername/yourblogname.git`
+5. You will be taken to a page that looks like `https://github.com/yourusername/yourblogname`. Bookmark this page
+6. Note down the link to the git repository which should look like: `https://github.com/yourusername/yourblogname.git`
+    - This can be the output pages
+7. Follow steps in point 4 to create another repository. This can be of a simple name like `yourblogname-template-files`. Post creating the repo, it should be available at the page `https://github.com/yourusername/yourblogname-template-files` and the git repository would be at `https://github.com/yourusername/yourblogname-template-files.git`
+
+You should have at the end two repositories: (1) yourblogname which will be the repository for your output files and (2) yourblogname-template-files which will be the repository for the input files
 
 ### Step 5: Get a good text editor
+
 - I recommend Atom as
     1. it's good for '.md' files that we'll be using,
     2. It has a good color scheme and highlighting in case you like a dark themed editor
     3. It is made by github, is open source and is well maintained.
     4. It is extendable through plugins.
 - I also like VS Code and notepad++.
-    - NP++ is lightest and comes in light theme without code highlighting.
-    - VS Code is super good and it would be on top of the list if it weren't for Microsoft bad rap of the 2000s.
-    - If you want to have a full featured IDE, you can download Webstorm from intellij. This is good if you have large projects.
+    1. NP++ is lightest and comes in light theme without code highlighting.
+    2. VS Code is super good and it would be on top of the list if it weren't for Microsoft bad rap of the 2000s.
+    3. If you want to have a full featured IDE, you can download Webstorm from intellij. This is good if you have large projects.
 - You can any of these of your choice from here: [Atom](https://atom.io/), [VSCode](https://code.visualstudio.com/), [Notepad++](https://notepad-plus-plus.org/download) and [Webstorm](https://www.jetbrains.com/webstorm/)
-
 
 ----------------
 Section 2: Creating your Website Content
@@ -242,7 +249,7 @@ How Does the Internet Work](https://web.stanford.edu/class/msande91si/www-spr04/
             1. [View:](https://www.martinfowler.com/eaaDev/uiArchs.html)
                 - This sits straight on top of the document that the user sees. It's responsibility is to update the document in case anything in the controller changes. It is generally passive in the sense it doesn't do any processing work.
                 - [For example](https://www.tutorialspoint.com/ruby-on-rails/rails-views.htm), let's say we are creating a list view for books in a library. This might be as simple as:
-                ```
+                ```html
                 <% if @books.blank? %>
                     <p>There are no books in the system.</p>
                 <% else %>
@@ -856,11 +863,27 @@ We are (almost) ready at this stage to ask the question -  So how do I implement
 1. Prerequisites:
      - Finish the section - "Get the right setup and software"
 2. Open a command prompt
-3. mkdir a folder where you want to keep your website files. For example, type `mkdir c:\users\yourname\mywebsite`. Note that you need to use forward slash if working in mac or linux environments.
+3. create (mkdir) a folder where you want to keep your website files. For example, type `mkdir c:\users\yourname\mywebsite`. Note that you need to use forward slash if working in mac or linux environments.
 4. Go to that folder `cd c:\users\yourname\mywebsite`
-5. Use git to download the files
+5. Use git to download the files. Then we will be changing the remote url names to the ones you created in the step where you [setup the version control system](#step-4-getting-a-version-control-system-or-login-to-github)
+
     ```bash
+    # 1. Clone the site into your directory
     git clone git@github.com:your_username/your-static-website.git .
+
+    # 2. Change the remote url (origin) to the template repo you created
+    git remote set-url origin https://github.com/yourusername/yourblogname-template-files.git
+
+    # 3. Listing your existing remote urls should indicate whether the change was successful
+    git remote -v
+
+    # 4. The output files will eventually be created in a directory called 'public'. We will create a submodule to link to your blog repo
+    git submodule add https://github.com/yourusername/yourblogname.git public
+    
+    #5. Do the regular git updates
+    git add -A
+    git commit -m "changed site"
+    git push origin master
     ```
 
 ### Step 3: Preview the site
@@ -2418,7 +2441,6 @@ When you are creating new single page templates or list templates, it may be eas
 
 I will be extending this if useful to somebody later, but these [giraffe academy videos](https://www.youtube.com/watch?v=G7umPCU-8xc) and the [hugo docs](https://gohugo.io/documentation/) are good places to start learning how to create templates
 
-
 #### Some Basics
 
 1. Within these files you can hugo code by placing it within curly braces like so: `{{some code}}`
@@ -2454,10 +2476,13 @@ With these points in mind, and having watched the videos mentioned in the beginn
 
 ### Step 7: Move from template to deployment
 Once your template is ready, all that needs to be done is to deploy it. For this the output files have to be generated. This is easy enough.
-1. Open your terminal/bash and cd into the directory containing the website files.
-2. type `hugo`
-3. You should get a success message after a few seconds. The files have been created in the 'public' folder within your website directory
 
+The steps in this, while simple need to be carefully done.
+1. Open your terminal/bash and cd into the directory containing the website files.
+2. `git submodule add git@github.com:p10rahulm/thinking-tree.git public`
+
+3. type `hugo`
+4. You should get a success message after a few seconds. The files have been created in the 'public' folder within your website directory
 
 ----------------
 Section 3: Setting up the online scaffolding
