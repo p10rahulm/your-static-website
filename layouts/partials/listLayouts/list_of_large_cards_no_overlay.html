@@ -20,12 +20,12 @@
             {{ range $pages }}
             <div class ="details_cards">
                 <div class="border_box">
-                    <a href="{{.Permalink}}">
+                    <a href="{{.RelPermalink}}">
                         <img src="/placeholder.jpg" data-src="/img/{{.Params.caption_image}}" class="card_img lazy" alt="{{.Title}}">
                     </a>
                     {{$page_summary := .Params.summary_content | default .Summary}}
                     {{$page_params := .Params}}
-                    {{$page_permalink := .Permalink}}
+                    {{$page_permalink := .RelPermalink}}
 
                     {{range $fields }}
                     {{if eq .type "list_of_links"}}

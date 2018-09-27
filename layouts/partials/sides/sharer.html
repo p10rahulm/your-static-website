@@ -34,27 +34,27 @@
             </button>
             <div class="sharer_socials" id="toggled_social_shares">
                 <a class="twitter"
-                   href="https://twitter.com/intent/tweet?text={{ .Title | html }}&amp;url={{ .Permalink | html }}"
+                   href="https://twitter.com/intent/tweet?text={{ .Title | html }}&amp;url={{ .RelPermalink | html }}"
                    target="_blank" rel="noopener">
                     <i class="fa fa-twitter"></i>
                 </a>
                 <a class="facebook"
-                   href="https://www.facebook.com/sharer.php?u={{ .Permalink | html }}"
+                   href="https://www.facebook.com/sharer.php?u={{ .RelPermalink | html }}"
                    target="_blank" rel="noopener">
                     <i class="fa fa-facebook"></i>
                 </a>
                 <a class="linkedin"
-                   href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink | html }}&amp;title={{ .Title | html }}"
+                   href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .RelPermalink | html }}&amp;title={{ .Title | html }}"
                    target="_blank" rel="noopener">
                     <i class="fa fa-linkedin"></i>
                 </a>
                 <a class="googleplus"
-                   href="https://plus.google.com/share?url={{ .Permalink | html }}"
+                   href="https://plus.google.com/share?url={{ .RelPermalink | html }}"
                    target="_blank" rel="noopener">
                     <i class="fa fa-google-plus"></i>
                 </a>
                 <a class="mailto"
-                   href="mailto:?subject={{ .Title | html }}&amp;body={{ .Permalink | html }}">
+                   href="mailto:?subject={{ .Title | html }}&amp;body={{ .RelPermalink | html }}">
                     <i class="fa fa-envelope"></i>
                 </a>
             </div>
@@ -63,31 +63,31 @@
 
     {{if ($.Scratch.Get "page_layout").fixed_sharer_active}}
         <div class="sharer_socials_fixed" id="fixed_social_shares">
-            <a href="https://twitter.com/intent/tweet?text={{ .Title | html }}&amp;url={{ .Permalink | html }}"
+            <a href="https://twitter.com/intent/tweet?text={{ .Title | html }}&amp;url={{ .RelPermalink | html }}"
                target="_blank" rel="noopener">
                 <div class="twitter">
                     <i class="fa fa-twitter"></i>
                 </div>
             </a>
-            <a href="https://www.facebook.com/sharer.php?u={{ .Permalink | html }}"
+            <a href="https://www.facebook.com/sharer.php?u={{ .RelPermalink | html }}"
                target="_blank" rel="noopener">
                 <div class="facebook">
                     <i class="fa fa-facebook"></i>
                 </div>
             </a>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink | html }}&amp;title={{ .Title | html }}"
+            <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .RelPermalink | html }}&amp;title={{ .Title | html }}"
                target="_blank" rel="noopener">
                 <div class="linkedin">
                     <i class="fa fa-linkedin"></i>
                 </div>
             </a>
-            <a href="https://plus.google.com/share?url={{ .Permalink | html }}"
+            <a href="https://plus.google.com/share?url={{ .RelPermalink | html }}"
                target="_blank" rel="noopener">
                 <div class="googleplus">
                     <i class="fa fa-google-plus"></i>
                 </div>
             </a>
-            <a href="mailto:?subject={{ .Title | html }}&amp;body={{ .Permalink | html }}">
+            <a href="mailto:?subject={{ .Title | html }}&amp;body={{ .RelPermalink | html }}">
                 <div class="mailto">
                     <i class="fa fa-envelope"></i>
                 </div>

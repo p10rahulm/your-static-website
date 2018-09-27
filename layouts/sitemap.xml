@@ -4,11 +4,11 @@
     {{ if ne .RelPermalink $perm }}
     <url>
         {{ if .IsTranslated }}
-        <xhtml:link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Lang }}"/>{{ range .Translations }}
-        <xhtml:link rel="alternate" href="{{ .Permalink }}" hreflang="{{ .Lang }}"/>{{ end }}
+        <xhtml:link rel="alternate" href="{{ .RelPermalink }}" hreflang="{{ .Lang }}"/>{{ range .Translations }}
+        <xhtml:link rel="alternate" href="{{ .RelPermalink }}" hreflang="{{ .Lang }}"/>{{ end }}
         {{ end }}
         <loc>
-            {{ .Permalink }}
+            {{ .RelPermalink }}
         </loc>
         {{ if not .Lastmod.IsZero }}
             <lastmod>

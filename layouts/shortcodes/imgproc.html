@@ -12,7 +12,7 @@
 {{ end }}
 {{ $image := .Scratch.Get "image" }}
 <figure style="width: {{ add $image.Width 3 }}px; padding: 3px; background-color: #cccc">
-    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+    <img src="{{ $image.Re.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
     <figcaption>
         <small>
             {{ with .Inner }}

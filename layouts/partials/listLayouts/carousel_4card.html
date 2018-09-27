@@ -25,10 +25,10 @@
         <div id="{{$.context.name}}_cards" class="carousel_responsive">
             {{ range $pages }}
             <div class ="details_cards">
-                <a href="{{.Permalink}}">
+                <a href="{{.RelPermalink}}">
                     {{$page_summary := .Params.summary_content | default .Summary}}
                     {{$page_params := .Params}}
-                    {{$page_permalink := .Permalink}}
+                    {{$page_permalink := .RelPermalink}}
 
                     {{range $fields }}
                     {{if eq .type "list_of_links"}}

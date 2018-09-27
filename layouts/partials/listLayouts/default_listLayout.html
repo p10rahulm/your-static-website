@@ -17,10 +17,10 @@
         <div id="{{$.section}}_cards" class="cardList">
             {{ range $pages }}
             <div class ="details_cards">
-                <a href="{{.Permalink}}">
+                <a href="{{.RelPermalink}}">
                     <img src="/placeholder.jpg" data-src="/img/{{.Params.caption_image}}" class="card_img lazy" alt="{{.Title}}">
                 </a>
-                <a href="{{.Permalink}}">
+                <a href="{{.RelPermalink}}">
                     <div class="card_title left_align">
                         {{.Title | markdownify | truncate 100 }}
                     </div>

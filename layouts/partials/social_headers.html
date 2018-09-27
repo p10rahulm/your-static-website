@@ -17,7 +17,7 @@
 <!-- Open Graph data -->
 <meta property="og:title" content={{if (isset .Site.Params "twitter_site_handle") }}"{{ .Site.Params.twitter_site_handle }}"{{else}}""{{ end }} >
 <meta property="og:type" content="article" >
-<meta property="og:url" content="{{ .Permalink }}" >
+<meta property="og:url" content="{{ .RelPermalink }}" >
 <meta property="og:image" content={{ if (isset .Params "caption_image") }}"{{.Params.caption_image | absURL}}"{{else}}"{{ (printf "%s" $.Site.Params.logo) | absURL }}"{{ end }}>
 <meta property="og:description" content={{ if (isset .Params "summary_content") }}"{{.Params.summary_content}}"{{else}}"{{ .Site.Params.default_description }}"{{ end }}>
 <meta property="og:site_name" content="{{.Site.Title}}">

@@ -22,13 +22,13 @@
             {{ range $pages }}
             <div class ="details_cards">
                 <div id="{{.Params.reviewed_item}}" class="content">
-                    <a href="{{.Permalink}}">
+                    <a href="{{.RelPermalink}}">
                         <img src="/img/{{.Params.caption_image}}" class="card_img" alt="{{.Params.reviewed_item}}">
                     </a>
-                    <a href="{{.Permalink}}">
+                    <a href="{{.RelPermalink}}">
                         {{$page_summary := .Params.summary_content | default .Summary}}
                         {{$page_params := .Params}}
-                        {{$page_permalink := .Permalink}}
+                        {{$page_permalink := .RelPermalink}}
 
                         {{range $fields }}
                         {{if eq .type "list_of_links"}}

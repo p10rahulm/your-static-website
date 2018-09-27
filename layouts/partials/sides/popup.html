@@ -64,7 +64,7 @@
                         {{ end }}
                         <br>
                         {{if isset $.Site.Params.popup "link_after_submit"}}
-                        <input type="hidden" name="_next" value="{{ .Permalink | default $.Site.Params.popup.link_after_submit}}">
+                        <input type="hidden" name="_next" value="{{ .RelPermalink | default $.Site.Params.popup.link_after_submit}}">
                         {{end}}
                         {{if isset $.Site.Params.popup "popup_submission_subject"}}
                         <input type="hidden" name="_subject" value="{{$.Site.Params.popup.popup_submission_subject}}">
