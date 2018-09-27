@@ -360,6 +360,7 @@ The template should provide the *scaffolding* (the html, css and javascript) nee
 **Different types of templates**
 
 Websites of all kinds exist on the internet, yet we can distill a few kinds of pages that exist across many of these sites. Let us look at some of these:
+
 1. The [front page or index page](https://html5up.net/)*
 2. Single content page*
 3. List of single pages*
@@ -879,11 +880,18 @@ We are (almost) ready at this stage to ask the question -  So how do I implement
 
     # 4. The output files will eventually be created in a directory called 'public'. We will create a submodule to link to your blog repo
     git submodule add https://github.com/yourusername/yourblogname.git public
-    
+
     #5. Do the regular git updates
     git add -A
     git commit -m "changed site"
     git push origin master
+
+    #6. Ensure deploy function is working
+    ./deploy.sh
+
+    #7. Check your repos to see that everything is in place
+    # Browse to https://github.com/yourusername/yourblogname-template-files/ and https://github.com/yourusername/yourblogname/ to see that everything is updated there
+
     ```
 
 ### Step 3: Preview the site
@@ -2451,6 +2459,7 @@ I will be extending this if useful to somebody later, but these [giraffe academy
 6. When using html, css, javascript or urls in your files, you may want to pipe it to [safeHTML](https://gohugo.io/functions/safehtml/), [safeCSS](https://gohugo.io/functions/safecss), [safeJS](https://gohugo.io/functions/safejs) and [safeURL](https://gohugo.io/functions/safeurl) functions in hugo as otherwise hugo doesn't mark them as secure and outputs gibberish.
 
 #### Template call order
+
 1. When a content piece is encountered, we go to baseof under layouts/_defaults folder.
 2. Based on the type of content one of the other template pieces is called. 
 3. If the page has a layout name matching a file under _defaults section, this template will be used.
@@ -2475,18 +2484,20 @@ I will be extending this if useful to somebody later, but these [giraffe academy
 With these points in mind, and having watched the videos mentioned in the beginning of the file, you should be ready to start creating your own templates. Do keep in mind that this is not necessary. If you decide to do so - goodluck, keep em coming!
 
 ### Step 7: Move from template to deployment
+
 Once your template is ready, all that needs to be done is to deploy it. For this the output files have to be generated. This is easy enough.
 
 The steps in this, while simple need to be carefully done.
+
 1. Open your terminal/bash and cd into the directory containing the website files.
-2. `git submodule add git@github.com:p10rahulm/thinking-tree.git public`
-
-3. type `hugo`
-4. You should get a success message after a few seconds. The files have been created in the 'public' folder within your website directory
+2. type `./deploy.sh`
+3. You should now open a browser and see the update times on your github repository at  `https://github.com/yourusername/yourblogname`
+4. After every change you can also type `./commit.sh` to commit template changes to your templates github repository at `https://github.com/yourusername/yourblogname-template-files`
 
 ----------------
-Section 3: Setting up the online scaffolding
-----------------
+
+# Section 3: Setting up the online scaffolding
+
 
 ## Go buy the domain
 1. Go to godaddy.com
