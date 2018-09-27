@@ -870,7 +870,7 @@ We are (almost) ready at this stage to ask the question -  So how do I implement
 
     ```bash
     # 1. Clone the site into your directory
-    git clone git@github.com:your_username/your-static-website.git .
+    git clone https://github.com/your_username/your-static-website.git .
 
     # 2. Change the remote url (origin) to the template repo you created
     git remote set-url origin https://github.com/yourusername/yourblogname-template-files.git
@@ -2498,7 +2498,6 @@ The steps in this, while simple need to be carefully done.
 
 # Section 3: Setting up the online scaffolding
 
-
 ## Go buy the domain
 1. Go to godaddy.com
 2. Search for preferred domain name
@@ -2519,7 +2518,59 @@ The steps in this, while simple need to be carefully done.
 4. click on save
 5. Leave this browser window open as we will have to come back here.
 
-## Verify yourself on google and get your cloud storage setup
+## Make your github pages viewable
+
+1. Do a deploy before you start
+    1. Open your terminal/bash and cd into the directory containing the website files.
+    2. type `./deploy.sh` into the terminal
+        - Note that on windows machines this may be `.\deplay.sh` or even just `deploy.sh`
+    3. Open a browser and check update times on your github repository at  `https://github.com/yourusername/yourblogname`
+2. Allow github pages
+    1. Go to `https://github.com/yourusername/yourblogname`
+    2. Click on the settings button towards the right side on the menu on top of the page
+    3. Scroll down till you see the Github Pages section. Here you should see a dropdown for 'Source' - which should have a default setting 'None'. **Click this and choose 'master branch'**. Click Save
+    4. **Add a Custom Domain:** Just below the place where you selected the source, there is a text field where you can add a custom domain. Choose `www.your-domain.com`, where your-domain is the domain you purchased from godaddy
+    5. Save your changes: A success message such as 'Custom domain is saved' and 'Your site is ready to be published at http://www.your-domain.com/' should appear
+    6. You can optionally choose 'enforce https'. Sometimes this option works only after some time of the above options being chosen. 
+3. On the DNS page that we saw in the last section, add a CNAME record
+    1. Go to your DNS page (which should be at https://dcc.godaddy.com/manage/your-domain.com/dns)
+    2. You should see the list of records right at the top.
+    3. Click on 'Add' just below this list
+    4. In the options that open up:
+        1. Choose Type: `CNAME`
+        2. Choose Host: `www` (if you want to serve website on www.your-domain.com)
+        3. Choose Points To: `yourusername.github.io`. Of course replacing yourusername with your own github id
+        4. Choose TTL: 1/2 hour or some such. Doesn't make a difference
+4. Use your web browser to go to the site http://www.your-domain.com and you should see the webpage ready
+
+## Making changes to website from multiple locations
+
+If you are making changes to your website from multiple locations, it is important to have them all with the same working files
+
+1. First time setup on a new computer
+    1. Do all setup like downloading [git bash](https://git-scm.com/downloads) and a good text editor like [Atom](https://atom.io/) or [VS Code](https://code.visualstudio.com/)
+    2. Create a directory where you want to host your files, say `c:\users\username\website\`
+    3. Open your git bash and cd to this new directory
+    4. type `git clone  --recurse-submodules -j8 https://github.com/your_username/your-static-website.git .`
+    5. This should download all your files from the remote directory *including the submodule*
+    6. To ensure that everything is in order, you can further type `./pull.sh` and all your files should be synced
+2. Continue to make changes are required in your favorite text editor
+3. When you are done
+    1. Save the files you have created or worked on
+    2. Open the bash/terminal and cd into your website directory
+    3. type `./commit.sh`
+    4. If you further want to your changes to pass to the live website as well, type `./deploy.sh`
+    5. You will find that your website is updated with latest changes
+    6. Note on partial changes: If you have only made partial changes to some site page want to continue working on it without updating the live website then skip `./deploy.sh`
+4. When you want to get changes made on any other computer (and if initial setup has already been done):
+    1. Open the bash/terminal and cd into your website directory
+    2. type `./pull.sh`
+
+## Alternative to Github Pages: Google Cloud Storage
+
+Github Pages is easy to use and free. The only problem could be that it is slow in some countries (especially for large sites) compared to Google Cloud, Microsoft Azure or AWS. For some reason, if github pages doesn't work for you, or is too slow, you can setup our online system on Google Cloud Storage. We outline the steps below
+
+### Verify yourself on google and get your cloud storage setup
 
 [Google Reference: Domain Name Verification](https://cloud.google.com/storage/docs/domain-name-verification)
 
