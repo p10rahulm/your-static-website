@@ -6,7 +6,6 @@ We are today going to look at how to setup a website from scratch. The expectati
 
 # Section 1: Getting Started
 
-## Get the right setup and software
 
 The following are going to be needed for creating your own site:
 
@@ -135,22 +134,7 @@ You should have at the end two repositories: (1) yourblogname which will be the 
     3. If you want to have a full featured IDE, you can download Webstorm from intellij. This is good if you have large projects.
 - You can any of these of your choice from here: [Atom](https://atom.io/), [VSCode](https://code.visualstudio.com/), [Notepad++](https://notepad-plus-plus.org/download) and [Webstorm](https://www.jetbrains.com/webstorm/)
 
-----------------
-Section 2: Creating your Website Content
-----------------
-This is probably the most involved part of creating your website. What do you write, what images to use become creative questions that take time for all of us. While the site building itself takes time, you can start with something prebuilt, check that it works and when you do get time, modify it into something you want or need.
-
-Broadly the following steps are involved in creating the website
-
-1. Understand Hugo
-2. Download the template files.
-3. Preview the site
-4. Modify basic template files.
-5. Modify the content and preview
-6. Learn to create new templates if required
-7. Move from template to deployment
-
-### Step 1: Understanding Hugo
+## Section 2: Understanding Hugo
 
 This document is aimed at someone who has not built a website before, so if this is too simple, then bear with me, or skim through this section. This section will not require you to do anything, but just read.
 
@@ -166,9 +150,10 @@ We will attempt an understanding of what is Hugo through a few sub-sections.
 - What is Hugo
 
 #### What goes into building a website
+
 There are three basic parts to every website as you see it on your browser. The content, the styling and the logic. These are described by three parts, *html*, *css* and *javascript*.
 
-1. HTML: 
+1. HTML:
     - This forms the main content of the website. 
     - The actual content of the website is surrounded by a start tag and an end tag that describe the content. 
     - While there are many types of [element tags](https://www.w3schools.com/html/html_elements.asp), the main ones that we will see over and over are [div](https://www.w3schools.com/tags/tag_div.asp), [span](https://www.w3schools.com/tags/tag_span.asp), [a](https://www.w3schools.com/tags/tag_a.asp), [img](https://www.w3schools.com/tags/tag_img.asp), [p](https://www.w3schools.com/tags/tag_p.asp) and the [heading](https://www.w3schools.com/tags/tag_hn.asp) tags
@@ -179,7 +164,7 @@ There are three basic parts to every website as you see it on your browser. The 
     - Apart from all the above elements which are output type tags, there are tags where user input can be taken. These are called [form tags](https://www.tutorialspoint.com/html/html_form_tag.htm) and [input tags](https://www.w3schools.com/tags/tag_input.asp) within forms.
     - If you want to learn HTML from scratch [tutorials-point](https://www.tutorialspoint.com/html/index.htm), [code-academy](https://www.codecademy.com/learn/learn-html) and [W3Schools](https://www.w3schools.com/html/) are good places to start.
 
-2. CSS: 
+2. CSS:
     - Cascading Style Sheets are the main method to styling a website.
     - CSS specifications decide the syntax by which you can specify the style. 
     - CSS targetting a particular div can be [placed at the div](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_css_inline) in the html, within [style tag in the html](https://www.w3schools.com/tags/tag_style.asp) or in a [separate css file](https://www.w3schools.com/css/css_howto.asp).
@@ -211,6 +196,7 @@ There are three basic parts to every website as you see it on your browser. The 
     - In other words javascript can be used to change a webpage 'dynamically'. We will come back to this statement in the next section.
 
 Notes:
+
 1. From this section you might come to understand that the visible content you write typically forms a small part of the webpage only. The rest is all the supporting html css and javascript scaffolding. It would be hugely wasteful to write all of this scaffolding each time you want to note down a small thought.
 2. This section might also seem like a lot of input to digest. The happy part is that the whole reason to use Hugo is that you don't *have to* write any of HTML, CSS or javascript.
 
@@ -797,11 +783,11 @@ For me the biggest factors are 1 and 5.
 4. Hugo attempts to be minimal and not maximal. Templates in Hugo on the other hand are monolithic. You either take all or leave it. Wordpress excels in this where you have options to extend just a small part of wordpress through plugins.
 5. Since templates are monolithic, you cannot assemble websites from smaller parts that you like (at present). Therefore one may decide to code in templates oneself. This leads to the website development taking time (for the first time hugo developer). If you like any template, and adopt it, this does not apply and development is very fast.
 
-##### How to use hugo to generate your static website generator
+#### FAQ
 
-The first time you intend to use a static website generator, you need to choose a template. Then you would have some files to modify. When your site is setup, to create a new article, say a post, you need to simply type `hugo new posts/post`. Input the content in the file generated and then save and push it. Let us look at these in further detail
+Two important questions before starting is what you need to do to setup and after setup, how much time/effort it will take to generate new content. If you are satisfied with the answers for these two questions you may want to go ahead/not go ahead with Hugo
 
-###### First time usage
+##### A Typical First time usage
 
 1. Download [Hugo](https://gohugo.io/getting-started/installing/)
     1. Place it in [PATH](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
@@ -841,7 +827,7 @@ The first time you intend to use a static website generator, you need to choose 
         git push --set-upstream origin master
         ```
 
-###### Creation of a new content piece
+##### Creation of a new content piece
 
 1. Create a new content piece, say a post.
     - The types of content pieces you can create are described by the archetypes folder
@@ -859,7 +845,25 @@ The first time you intend to use a static website generator, you need to choose 
 
 We are (almost) ready at this stage to ask the question -  So how do I implement a static website with Hugo.
 
-### Step 2: Download the template files
+## Section 3: Creating your Website Content
+
+This is probably the most involved part of creating your website. What do you write, what images to use become creative questions that take time for all of us. While the site building itself takes time, you can start with something prebuilt, check that it works and when you do get time, modify it into something you want or need.
+
+Broadly the following steps are involved in creating the website
+
+1. How to use Hugo
+2. Download the template files.
+3. Preview the site
+4. Modify basic template files.
+5. Modify the content and preview
+6. Learn to create new templates if required
+7. Move from template to deployment
+
+### How to use hugo to generate your static website generator
+
+The first time you intend to use a static website generator, you need to choose a [template](https://themes.gohugo.io/). Then you would have some files to modify. When your site is setup, to create a new article, say a post, you need to simply type `hugo new posts/post`. Input the content in the file generated and then save and push it. Let us look at these in further detail
+
+### Download the template files
 
 1. Prerequisites:
      - Finish the section - "Get the right setup and software"
@@ -867,10 +871,9 @@ We are (almost) ready at this stage to ask the question -  So how do I implement
 3. create (mkdir) a folder where you want to keep your website files. For example, type `mkdir c:\users\yourname\mywebsite`. Note that you need to use forward slash if working in mac or linux environments.
 4. Go to that folder `cd c:\users\yourname\mywebsite`
 5. Use git to download the files. Then we will be changing the remote url names to the ones you created in the step where you [setup the version control system](#step-4-getting-a-version-control-system-or-login-to-github)
-
     ```bash
     # 1. Clone the site into your directory
-    git clone https://github.com/your_username/your-static-website.git .
+    git clone --recurse-submodules -j8 https://github.com/p10rahulm/your-static-website.git .
 
     # 2. Change the remote url (origin) to the template repo you created
     git remote set-url origin https://github.com/yourusername/yourblogname-template-files.git
@@ -894,7 +897,7 @@ We are (almost) ready at this stage to ask the question -  So how do I implement
 
     ```
 
-### Step 3: Preview the site
+### Preview the site
 
 1. Check whether the website works as is. For this you need to open a hugo server. 
 2. Type into the terminal that you used for downloading the files
@@ -2588,7 +2591,7 @@ Github Pages is easy to use and free. The only problem could be that it is slow 
 
 if it does not, then you would have to add TXT record. Let's look at how to do that.
 
-#### Alternative Method.
+#### Alternative Method
 
 1. If DNS verification did not go as planned. On the page with the big red verify button, you should find a link to "Add a TXT record"
 2. When you click on this, it should take you to a page with lots of instructions.
@@ -2601,14 +2604,12 @@ if it does not, then you would have to add TXT record. Let's look at how to do t
     2. Choose "Host" as "@"
     3. Choose "Value" as the copied value from the google verification page
     4. Choose "TTL" as "1-Hour" (though it doesn't really matter)
-8 Click on save
-9 See that this TXT record is in the list of records on Your DNS page. Sometimes you see an error, even if you do, if you see the TXT record there, it's good enough.
+8. Click on save
+9. See that this TXT record is in the list of records on Your DNS page. Sometimes you see an error, even if you do, if you see the TXT record there, it's good enough.
 10. Go back to the google TXT verification page and click on verify. You should be verified and get a success message.
 
+## Get yourself on the google cloud console
 
---------------------
-
-## Get yourself on the google cloud console.
 1. Go to [Cloud Console Home Page](https://console.cloud.google.com) and login.
 2. If this is the first time you are logging in, you should see some questions regarding your country, email preferences and agreement to their terms and conditions.
 3. Just choose the usual stuff here and agree to the conditions and click ok
@@ -2617,7 +2618,7 @@ if it does not, then you would have to add TXT record. Let's look at how to do t
 5. At the center of the screen a list of their main products should include "Cloud Storage".
 6. At the top of the screen you should see a small message which basically says you get free cloud credits, but is actually asking you to setup billing. This is required for the setup
 
-### Setting up billing.
+### Setting up billing
 
 1. When you click on the button on the top of the Cloud Console Home Page passing you free credits you will be taken to a page to setup your billing. It would ask you again to agree to Terms and Conditions. Agree to all this.
 2. You will be offered a free trial for $300 which lasts only for 12 months. Much more likely that you would use only $5 of this, but hey, whats free is free. Complete the payment.
@@ -2625,7 +2626,8 @@ if it does not, then you would have to add TXT record. Let's look at how to do t
     1. Sometimes if you don't complete payment, you can complete it later. The billing is still setup but is marked incomplete. You may keep receiving emails to complete billing setup and your console in such cases would remain active for a couple of days or weeks before they close it. This method is not recommended.
 4. After you complete billing setup you should go back to [Cloud Console Home Page](https://console.cloud.google.com).
 
-#### Alternative Method
+#### Alternative Method for setting up billing
+
 1. If you didn't see the button, go to [Cloud Console Billing](https://console.cloud.google.com/billing)
 2. You will be able to see two sections: My Billing Accounts and My Projects.
 3. Under My Billing Accounts, you will be able to see a button called "create account". Click on this

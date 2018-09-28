@@ -191,7 +191,7 @@ fixed_sharer_active = true
         name = "Palantir"
 
     [[logo_wall.logos]]
-        source = "https://media.licdn.com/dms/image/C510BAQHxVXskfQIR-w/company-logo_200_200/0?e=2131920000&v=beta&t=I-Eibuu3JRlpqc2wCpmw--1hp-OAw64YnK8lhO-g-iA"
+        source = "https://cdn.datafloq.com/cache/vendor/logo/262x132/sigmoid-logo.png"
         link = "/"
         name = "Sigmoid"
 
@@ -201,9 +201,9 @@ fixed_sharer_active = true
         name = "Flipkart"
 
     [[logo_wall.logos]]
-        source = "http://www.nanobi.in/wp-content/uploads/2017/09/nb-logo.png"
+        source = "https://image4.owler.com/logo/nanobi_owler_20160226_190824_original.png"
         link = "/"
-        name = "Hotstar"
+        name = "Nanobi"
 
 # ----------------------------------
 # featured posts section
