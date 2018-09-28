@@ -6,16 +6,15 @@ We are today going to look at how to setup a website from scratch. The expectati
 
 # Section 1: Getting Started
 
-
 The following are going to be needed for creating your own site:
 
 1. Git Bash
-2. Google Cloud SDK
-3. Hugo
-4. Github Account
-5. Text Editor
+2. Hugo
+3. Github Account
+4. Text Editor
+5. Google Cloud SDK (optional)
 
-### Step 1: Getting git bash
+## Get git bash
 
 1. Go to [Git Download Website](https://git-scm.com/downloads)
 2. At the top, you would find a few operating systems. Click on your operating system, ex: windows or mac, etc
@@ -34,36 +33,7 @@ The following are going to be needed for creating your own site:
 6. This completes your setup of git. Now you are ready to code like a pro!
 7. This is an excellent resource to visually check against in case you get stuck at any steps: [Install Git Bash Instructions](http://www.techoism.com/how-to-install-git-bash-on-windows/)
 
-### Step 2: Getting Google Cloud SDK
-
-1. Go to [Google Cloud SDK Docs](https://cloud.google.com/sdk/docs/)
-2. This should enable you to install google cloud SDK.
-    1. Though the cloud SDK consists of cloud gsutil and gq command line tools, we will only be using gsutil.
-3. Don't worry if you don't understand all of this yet. We will be using only one command on command line.
-4. If you are unable to access the download button on that page, you can probably access it directly [here](https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe). Please check as this link may not update with versions.
-5. In the installer, you will be asked for some options
-    - In the install type, choose single user
-    - Leave the default destination folder as is. *Note this down*.
-    - In the select commands to install. Make sure all options, including "Beta Commands" are checked
-    - It will begin the downloading, extract and install in the folder you noted down.
-    - It should tell you that installation is done.
-    - When you click next here, it will ask you to open the cloud console and says it will run the command `gcloud init`. Make sure all the options are checked and click next to finish installation.
-6. On the new terminal window that opens it will take you through a bunch of questions as it initializes the gcloud engine.
-    1. If you are an existing user it may detect old google cloud sdk settings
-7. Please use the following answers where relevant (and just use defaults for others)
-    1. "Choose the account for which you want to create configuration": Choose a gmail/google login that you will be using to host the website. If this does not work, we will have to use `gcloud auth login` in the next step.
-    2. "Enter project ID that you would like to use": We will be setting this default at a later time, as of now just leave blank and press enter
-8. Once `gcloud init` has run, in case authentication was not successful (likely as you didn't provide password), type on the console `gcloud auth login`.
-9. This should open a browser window asking you to login to your google account. Once you do this, you should be redirected to a page where you see the message (on the browser) "You are now authenticated with the Google Cloud SDK!". You can now close the browser window and head back to the console window.
-10. Note this command down - `gcloud auth login`, you may have to do this several times.
-11. Also note the command - `gcloud config set project YOUR_PROJECT_ID`. We will be using it later.
-12. You will need this software handy. So make sure you pin it/bookmark it or some such. In windows, you will find it in the start menu under Google Cloud SDK > Google Cloud SDK Shell
-13. Before closing the software, make sure git runs on it by typing `git` into the command line. If it works it should give you a whole host of options. If it does not work, it should say something like `git is not recognized as an internal or external command`
-14. If it was not recognized, most likely you would have to check the steps of installation of git-scm. Likely that the software may not have been added to PATH environment.
-    1. [This website](https://www.java.com/en/download/help/path.xml) is a good reference for how to add to PATH
-    2. This [stackoverflow question](https://stackoverflow.com/questions/31167181/adding-git-to-path-variable-cant-find-github-under-appdata-local) mentions which folder you need to add to PATH
-
-### Step 3: Getting Hugo
+## Get Hugo
 
 1. [Hugo](https://gohugo.io/) is an amazing framework for generating static websites. It is fast, well maintained and has excellent support. I'm going to list the main pros and cons of hugo here
     1. Pros:
@@ -96,7 +66,7 @@ The following are going to be needed for creating your own site:
 11. You can go to this site as a reference: [Hugo: Getting Started](https://gohugo.io/getting-started/installing/)
 12. [This video is an excellent resource for installing hugo on windows](https://www.youtube.com/watch?v=G7umPCU-8xc) and [this video for installing hugo on mac](https://www.youtube.com/watch?v=WvhCGlLcrF8). In general that series of videos are an excellent introduction to hugo, which I recommend you look at when you have the time.
 
-### Step 4: Getting a version control system OR login to github
+## Signup for github and create two repositories
 
 As described [here](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control), a version control system (or VCS) is a system that records changes to a file or set of files over time so that you can recall specific versions later. This basically ensures that you don't lose files or even content of files. It is a good to have when creating a website, especially one that you expect to update frequently. It is a must have if you intend to update your static site from multiple computers.
 
@@ -121,7 +91,7 @@ As described [here](https://git-scm.com/book/en/v2/Getting-Started-About-Version
 
 You should have at the end two repositories: (1) yourblogname which will be the repository for your output files and (2) yourblogname-template-files which will be the repository for the input files
 
-### Step 5: Get a good text editor
+## Get a good text editor
 
 - I recommend Atom as
     1. it's good for '.md' files that we'll be using,
@@ -134,86 +104,121 @@ You should have at the end two repositories: (1) yourblogname which will be the 
     3. If you want to have a full featured IDE, you can download Webstorm from intellij. This is good if you have large projects.
 - You can any of these of your choice from here: [Atom](https://atom.io/), [VSCode](https://code.visualstudio.com/), [Notepad++](https://notepad-plus-plus.org/download) and [Webstorm](https://www.jetbrains.com/webstorm/)
 
-## Section 2: Understanding Hugo
+## Get Google Cloud SDK (optional)
+
+1. Go to [Google Cloud SDK Docs](https://cloud.google.com/sdk/docs/)
+2. This should enable you to install google cloud SDK.
+    1. Though the cloud SDK consists of cloud gsutil and gq command line tools, we will only be using gsutil.
+3. Don't worry if you don't understand all of this yet. We will be using only one command on command line.
+4. If you are unable to access the download button on that page, you can probably access it directly [here](https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe). Please check as this link may not update with versions.
+5. In the installer, you will be asked for some options
+    - In the install type, choose single user
+    - Leave the default destination folder as is. *Note this down*.
+    - In the select commands to install. Make sure all options, including "Beta Commands" are checked
+    - It will begin the downloading, extract and install in the folder you noted down.
+    - It should tell you that installation is done.
+    - When you click next here, it will ask you to open the cloud console and says it will run the command `gcloud init`. Make sure all the options are checked and click next to finish installation.
+6. On the new terminal window that opens it will take you through a bunch of questions as it initializes the gcloud engine.
+    1. If you are an existing user it may detect old google cloud sdk settings
+7. Please use the following answers where relevant (and just use defaults for others)
+    1. "Choose the account for which you want to create configuration": Choose a gmail/google login that you will be using to host the website. If this does not work, we will have to use `gcloud auth login` in the next step.
+    2. "Enter project ID that you would like to use": We will be setting this default at a later time, as of now just leave blank and press enter
+8. Once `gcloud init` has run, in case authentication was not successful (likely as you didn't provide password), type on the console `gcloud auth login`.
+9. This should open a browser window asking you to login to your google account. Once you do this, you should be redirected to a page where you see the message (on the browser) "You are now authenticated with the Google Cloud SDK!". You can now close the browser window and head back to the console window.
+10. Note this command down - `gcloud auth login`, you may have to do this several times.
+11. Also note the command - `gcloud config set project YOUR_PROJECT_ID`. We will be using it later.
+12. You will need this software handy. So make sure you pin it/bookmark it or some such. In windows, you will find it in the start menu under Google Cloud SDK > Google Cloud SDK Shell
+13. Before closing the software, make sure git runs on it by typing `git` into the command line. If it works it should give you a whole host of options. If it does not work, it should say something like `git is not recognized as an internal or external command`
+14. If it was not recognized, most likely you would have to check the steps of installation of git-scm. Likely that the software may not have been added to PATH environment.
+    1. [This website](https://www.java.com/en/download/help/path.xml) is a good reference for how to add to PATH
+    2. This [stackoverflow question](https://stackoverflow.com/questions/31167181/adding-git-to-path-variable-cant-find-github-under-appdata-local) mentions which folder you need to add to PATH
+
+# Section 2: Understanding Hugo
 
 This document is aimed at someone who has not built a website before, so if this is too simple, then bear with me, or skim through this section. This section will not require you to do anything, but just read.
 
 These [set of videos](https://www.youtube.com/watch?v=qtIqKaDlqXo&list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3) on Hugo are an excellent resource to start your understanding of Hugo. I found it took me a few hours to go through, but it saved me many more hours later. Do this when you get the time. After this attempt to go through the [Hugo docs](https://gohugo.io/getting-started/). This is a good reference, but i didn't find it to be a good read through. Both of these are required for templating, but hopefully we can make it through to creating a website without modifying the templates without use of these.
 
-We will attempt an understanding of what is Hugo through a few sub-sections. 
+We will attempt an understanding of what is Hugo through a few sub-sections:
 
-- What goes into building a website
-- How does a website work
+- Parts of a webpage
+- How does a browser display a website
 - What is a static website
-- What are Templates
+- Website Templates
 - How does a static website generator work?
 - What is Hugo
 
-#### What goes into building a website
+## Parts of a webpage
 
 There are three basic parts to every website as you see it on your browser. The content, the styling and the logic. These are described by three parts, *html*, *css* and *javascript*.
 
-1. HTML:
-    - This forms the main content of the website. 
-    - The actual content of the website is surrounded by a start tag and an end tag that describe the content. 
-    - While there are many types of [element tags](https://www.w3schools.com/html/html_elements.asp), the main ones that we will see over and over are [div](https://www.w3schools.com/tags/tag_div.asp), [span](https://www.w3schools.com/tags/tag_span.asp), [a](https://www.w3schools.com/tags/tag_a.asp), [img](https://www.w3schools.com/tags/tag_img.asp), [p](https://www.w3schools.com/tags/tag_p.asp) and the [heading](https://www.w3schools.com/tags/tag_hn.asp) tags
-    - Each of these element tags optionally has an `id` and can belong to a `class`. These identifiers can be used in the css and javascript to identify the element to style it or perform some other login on it.
-    - All the content along with the html elements for these go into the [html body](https://www.w3schools.com/tags/tag_body.asp). 
-    - There could also be meta data about the webpage itself. These typically go at the top of the webpage into the [head](https://www.w3schools.com/tags/tag_head.asp) of the document
-    - There are also file types that browsers know how to interpret. These could be music which could be placed in the [audio tag](https://www.w3schools.com/Tags/tag_audio.asp), or videos in the [video tag](https://www.w3schools.com/html/html5_video.asp) and pdfs in the [object tag](https://www.w3schools.com/TAGS/tag_object.asp). Apart from these file types, [images](https://www.w3schools.com/html/html_images.asp) are a basic part of html standards.
-    - Apart from all the above elements which are output type tags, there are tags where user input can be taken. These are called [form tags](https://www.tutorialspoint.com/html/html_form_tag.htm) and [input tags](https://www.w3schools.com/tags/tag_input.asp) within forms.
-    - If you want to learn HTML from scratch [tutorials-point](https://www.tutorialspoint.com/html/index.htm), [code-academy](https://www.codecademy.com/learn/learn-html) and [W3Schools](https://www.w3schools.com/html/) are good places to start.
+### HTML
 
-2. CSS:
-    - Cascading Style Sheets are the main method to styling a website.
-    - CSS specifications decide the syntax by which you can specify the style. 
-    - CSS targetting a particular div can be [placed at the div](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_css_inline) in the html, within [style tag in the html](https://www.w3schools.com/tags/tag_style.asp) or in a [separate css file](https://www.w3schools.com/css/css_howto.asp).
-    - Typical things decided by css are font styles, position and spacing of elements, color or image of background and color of foreground. Importantly CSS can also be used to hide elements in a webpage.
-    - Typically CSS is considered static but that statement comes with a few caveats
-        - CSS can be separately set for different browser window sizes through [media queries](https://www.w3schools.com/css/css3_mediaqueries_ex.asp)
-        - CSS can have extremely simple logic (like addition, subtraction) using [calc](https://developers.google.com/web/updates/2012/03/CSS-layout-gets-smarter-with-calc)
-        - CSS has inbuilt layouts called [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and [CSS Grid](https://gridbyexample.com/examples/) which make dynamic decisions in where to position objects
-    - CSS can be used to create simple animated objects in a webpage, through [transitions](https://www.w3schools.com/cssref/css3_pr_transition.asp).
-    - Good resources for learning CSS are [mozilla docs](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS), [tutorials-point](https://www.tutorialspoint.com/css/) and [w3schools references](https://www.w3schools.com/css/)
-    - CSS has been abstracted by languages like [LESS](http://lesscss.org/) and [SASS](https://sass-lang.com/) that compile into ordinary css. These include variables within CSS
+- This forms the main content of the website. 
+- The actual content of the website is surrounded by a start tag and an end tag that describe the content. 
+- While there are many types of [element tags](https://www.w3schools.com/html/html_elements.asp), the main ones that we will see over and over are [div](https://www.w3schools.com/tags/tag_div.asp), [span](https://www.w3schools.com/tags/tag_span.asp), [a](https://www.w3schools.com/tags/tag_a.asp), [img](https://www.w3schools.com/tags/tag_img.asp), [p](https://www.w3schools.com/tags/tag_p.asp) and the [heading](https://www.w3schools.com/tags/tag_hn.asp) tags
+- Each of these element tags optionally has an `id` and can belong to a `class`. These identifiers can be used in the css and javascript to identify the element to style it or perform some other login on it.
+- All the content along with the html elements for these go into the [html body](https://www.w3schools.com/tags/tag_body.asp). 
+- There could also be meta data about the webpage itself. These typically go at the top of the webpage into the [head](https://www.w3schools.com/tags/tag_head.asp) of the document
+- There are also file types that browsers know how to interpret. These could be music which could be placed in the [audio tag](https://www.w3schools.com/Tags/tag_audio.asp), or videos in the [video tag](https://www.w3schools.com/html/html5_video.asp) and pdfs in the [object tag](https://www.w3schools.com/TAGS/tag_object.asp). Apart from these file types, [images](https://www.w3schools.com/html/html_images.asp) are a basic part of html standards.
+- Apart from all the above elements which are output type tags, there are tags where user input can be taken. These are called [form tags](https://www.tutorialspoint.com/html/html_form_tag.htm) and [input tags](https://www.w3schools.com/tags/tag_input.asp) within forms.
+- If you want to learn HTML from scratch [tutorials-point](https://www.tutorialspoint.com/html/index.htm), [code-academy](https://www.codecademy.com/learn/learn-html) and [W3Schools](https://www.w3schools.com/html/) are good places to start.
 
-3. Javascript:
-    - Javascript is a full fledged programming language unlike CSS and HTML. It is the default language understood by the browsers. 
-    - The html with all its elements constitutes what is known as a [document object model (DOM)](https://www.w3schools.com/js/js_htmldom.asp). This is accessible to the Javascript running on the page. The access can be used to change the DOM as well. For all practical purposes one may think of the DOM as the internal representation of the HTML page.
-    - Javascript can therefore be used to compute all kinds of logic and then to change the DOM based on that logic. This can involve
-        - Read DOM elements and their properties
-        - Change content within DOM elements
-        - Create new dom elements
-        - Change styles of elements
-    - So what triggers a particular Javascript function (to change a web page element or some such)? These triggers are called [events](https://www.tutorialspoint.com/javascript/javascript_events.htm). Events are the main way that Javascript functions are called. 
-    - Events can be attached to entire web pages or to particular elements of webpages. 
-    - For example, you can check if someone is typing in a form, or is hovering the mouse over some part of the page, or has just clicked a button. For mobile devices, equivalent triggers for touch exist.
-    - [This](https://developer.mozilla.org/en-US/docs/Web/Events) is a fairly extensive  list. Suffice to say that you may find events for most things that might occur on a webpage. From these events you may construct other events as well. Commonly used event types are
-        - [Page Load](https://www.w3schools.com/jsref/event_onload.asp) to check that all dom elements have finished downloading
-        - [Mouse Events](https://javascript.info/mouse-events-basics) and [touch events](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events) for various elements in the page
-        - [Keyboard events](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent) also exist that can indicate whether the keyboard has been used to type anything.
-    - Javascript can also [speak](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) to servers outside of the present server based on some user input and retrieve components that can be used to update the webpage.
-    - In other words javascript can be used to change a webpage 'dynamically'. We will come back to this statement in the next section.
+### CSS
 
-Notes:
+- Cascading Style Sheets are the main method to styling a website.
+- CSS specifications decide the syntax by which you can specify the style. 
+- CSS targetting a particular div can be [placed at the div](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_css_inline) in the html, within [style tag in the html](https://www.w3schools.com/tags/tag_style.asp) or in a [separate css file](https://www.w3schools.com/css/css_howto.asp).
+- Typical things decided by css are font styles, position and spacing of elements, color or image of background and color of foreground. Importantly CSS can also be used to hide elements in a webpage.
+- Typically CSS is considered static but that statement comes with a few caveats
+    - CSS can be separately set for different browser window sizes through [media queries](https://www.w3schools.com/css/css3_mediaqueries_ex.asp)
+    - CSS can have extremely simple logic (like addition, subtraction) using [calc](https://developers.google.com/web/updates/2012/03/CSS-layout-gets-smarter-with-calc)
+    - CSS has inbuilt layouts called [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and [CSS Grid](https://gridbyexample.com/examples/) which make dynamic decisions in where to position objects
+- CSS can be used to create simple animated objects in a webpage, through [transitions](https://www.w3schools.com/cssref/css3_pr_transition.asp).
+- Good resources for learning CSS are [mozilla docs](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS), [tutorials-point](https://www.tutorialspoint.com/css/) and [w3schools references](https://www.w3schools.com/css/)
+- CSS has been abstracted by languages like [LESS](http://lesscss.org/) and [SASS](https://sass-lang.com/) that compile into ordinary css. These include variables within CSS
+
+### Javascript
+
+- Javascript is a full fledged programming language unlike CSS and HTML. It is the default language understood by the browsers. 
+- The html with all its elements constitutes what is known as a [document object model (DOM)](https://www.w3schools.com/js/js_htmldom.asp). This is accessible to the Javascript running on the page. The access can be used to change the DOM as well. For all practical purposes one may think of the DOM as the internal representation of the HTML page.
+- Javascript can therefore be used to compute all kinds of logic and then to change the DOM based on that logic. This can involve
+    - Read DOM elements and their properties
+    - Change content within DOM elements
+    - Create new dom elements
+    - Change styles of elements
+- So what triggers a particular Javascript function (to change a web page element or some such)? These triggers are called [events](https://www.tutorialspoint.com/javascript/javascript_events.htm). Events are the main way that Javascript functions are called. 
+- Events can be attached to entire web pages or to particular elements of webpages. 
+- For example, you can check if someone is typing in a form, or is hovering the mouse over some part of the page, or has just clicked a button. For mobile devices, equivalent triggers for touch exist.
+- [This](https://developer.mozilla.org/en-US/docs/Web/Events) is a fairly extensive  list. Suffice to say that you may find events for most things that might occur on a webpage. From these events you may construct other events as well. Commonly used event types are
+    - [Page Load](https://www.w3schools.com/jsref/event_onload.asp) to check that all dom elements have finished downloading
+    - [Mouse Events](https://javascript.info/mouse-events-basics) and [touch events](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events) for various elements in the page
+    - [Keyboard events](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent) also exist that can indicate whether the keyboard has been used to type anything.
+- Javascript can also [speak](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) to servers outside of the present server based on some user input and retrieve components that can be used to update the webpage.
+- In other words javascript can be used to change a webpage 'dynamically'. We will come back to this statement in the next section.
+
+#### Notes on HTML Parts
 
 1. From this section you might come to understand that the visible content you write typically forms a small part of the webpage only. The rest is all the supporting html css and javascript scaffolding. It would be hugely wasteful to write all of this scaffolding each time you want to note down a small thought.
 2. This section might also seem like a lot of input to digest. The happy part is that the whole reason to use Hugo is that you don't *have to* write any of HTML, CSS or javascript.
 
-#### How does a website work
+## How does a browser display a website
 
-**DNS**
-1. When a [user types an url](https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a) on the browser, the user expects to see a webpage represented by the url. 
-2. Each webpage is hosted by a server (or more than one server). 
-3. Each of these servers have a certain address associated with it. 
+To understand how a website works, we need to know what happens between you typing an address into your browser and the browser displaying the website
+
+### DNS
+
+1. When a [user types an url](https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a) on the browser, the user expects to see a webpage represented by the url.
+2. Each webpage is hosted by a server (or more than one server).
+3. Each of these servers have a certain address associated with it.
 4. So if the browser has to send a request (to send back a webpage) to the server it has to find its address.
 5. This process is called the DNS lookup. Given the number of users requesting so many sites on the internet every second, this lookup (something like a telephone directory lookup) has to be super fast and is implemented using datastructures called [hash maps](https://www.geeksforgeeks.org/implement-forward-dns-look-cache/).
 6. The browser typically checks it's own cache, then the Internet service providers cache and then goes to internet wide DNS providers.
-7. Once the browser knows an address, how does it send a request to that address? This is handled at the equipment level itself through something called [routing tables]()
-8. These two articles (a) [DNS Guide](https://webhostinggeeks.com/guides/dns/) and (b)[
-How Does the Internet Work](https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm) are excellent resources to understand the DNS
+7. Once the browser knows an address, how does it send a request to that address? This is handled at the equipment level itself through something called [routing tables](https://en.wikipedia.org/wiki/Routing_table)
+8. The articles [DNS Guide](https://webhostinggeeks.com/guides/dns/) and [How Does the Internet Work](https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm) are excellent resources to understand the DNS
 
-**Requests**
+### Requests
+
 1. Once the server is found by the browser, it needs to send a request to send back a webpage.
 2. This request happens over a [http protocol](https://www.tutorialspoint.com/http/http_requests.htm). In fact http and https are the standard method of communication over the internet. [Other protocols](https://www.concise-courses.com/11-protocols/) that are common include ssh, pop3 and smtp.
 3. These are actually the topmost layer on the internet, called application protocols. These sit above the internet layer and communication layer in the [TCP/IP model](https://www.geeksforgeeks.org/computer-network-tcpip-model/). 
@@ -222,84 +227,118 @@ How Does the Internet Work](https://web.stanford.edu/class/msande91si/www-spr04/
 6. Once an http request (or https) request is sent over tcp/ip, the server has to send back a response.
 7. [This](https://www.garykessler.net/library/tcpip.html) is a good resource to look at an overview of tcp/ip. [This article from Cisco](https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13769-5.html) is a fairly detailed look at TCP and [this excerpt from the tcp/ip network administration book](https://www.oreilly.com/library/view/tcpip-network-administration/0596002971/ch01.html) gives a good overview.
 
-**Responding to requests**
+### Responding to requests
+
 1. Behing the IP address in the [web server](https://en.wikipedia.org/wiki/Web_server) computer sits a program like [Apache](https://httpd.apache.org/), [IIS](https://www.pcwdld.com/what-is-iis) or [Nginx](https://www.nginx.com/) for handling requests.
 2. This server program then passes the request to a request handler that reads the http request and generates a response. 
 3. This request handling is done for each user request. ie each time the site is viewed, there is a request handled by the server
-4. There are different ways of handling user requests. These could range in complexity from just sending back static content (pre-created html, css and javascript), to sending back modified content, to having a full fledged framework to deal with the requests. Let us look at these in more detail:
-    - **Static Response**
-        1. The response may simply need the html, css and javascript and images sent back to the user. With regards to the server these are `static` text objects.
-    - **Dynamic Response**: Sometimes this request may need to pass through some logic or may need [server side programming](https://developer.mozilla.org/en-US/docs/Learn/Server-side) to generate a response. This is called a `dynamic` response. Note that this is distinguished from the programming that goes into the javascript executed by the user's browser also called as [client side programming]((https://www.geeksforgeeks.org/server-side-client-side-programming/))
-        1. In some cases, like in [simple PHP](https://eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design/) [design patterns](https://sourcemaking.com/design_patterns), that are closely linked to static design, you can modify the content (html,css and javascript) through [inline php](https://www.w3schools.com/php/php_syntax.asp)
-        2. Other language frameworks use a design pattern like [MVC](http://heim.ifi.uio.no/~trygver/2007/MVC_Originals.pdf), which stands for Model View Controller
-            1. [View:](https://www.martinfowler.com/eaaDev/uiArchs.html)
-                - This sits straight on top of the document that the user sees. It's responsibility is to update the document in case anything in the controller changes. It is generally passive in the sense it doesn't do any processing work.
-                - [For example](https://www.tutorialspoint.com/ruby-on-rails/rails-views.htm), let's say we are creating a list view for books in a library. This might be as simple as:
-                ```html
-                <% if @books.blank? %>
-                    <p>There are no books in the system.</p>
-                <% else %>
-                    <p>These are the current books in the system</p>
+4. There are different ways of handling user requests. These could range in complexity from just sending back static content (pre-created html, css and javascript), to sending back modified content, to having a full fledged framework to deal with the requests. Let us look at these in more detail
 
-                    <ul id = "books">
-                        <% @books.each do |book| %>
-                            <li><%= link_to book.title -%></li>
-                        <% end %>
-                    </ul>
-                <% end %>
-                ```
-                - In the above example, it's upto the model to populate the what books field with their titles.
-            2. [Controller:](https://stackoverflow.com/questions/1931335/what-is-mvc-in-ruby-on-rails)
-                - This handles the logic of the webpage. The request goes to the controller which queries the model and provides the data to the View to display.
-            3. [Model:](https://www.tomdalling.com/blog/software-design/model-view-controller-explained/) 
-                - This is where the relevant data is accessed and retrieved for that particular use case.
-                    - For example, one may want to retrieve the name and emails of a customer in the home page of an email App. In the same email App, when a particular email is clicked, the contents of that particular email may need to be retrieved. 
-                - This is understood best as retrieval of information from a database. The database itself may be made up of several tables that are relevant. 
-                    - Examples of tables may include customer table where the name, customer id and purchases of a customer might be stored(in case of an ecommerce site).
-                    - In some architectures like wordpress, entire documents might just be a single cell in a table containing documents.
-        3. Several full-fledged web-frameworks exist that help one build these `request handler programs` otherwise known as web applications
-            1. They automate several tasks needed to handle requests like communicating with the server application
-            2. They give the programmer a method for organizing the code into the MVC framework or some such.
-            3. They include several helper functions (that are not included in the language itself) which make coding much faster.
-            4. There are examples in each framework for the most common use cases (like ecommerce sites)
-            5. Some popular web frameworks are:
-                - [Django](https://djangobook.com/model-view-controller-design-pattern/) which is built on  Python
-                - [Ruby on Rails](http://www.tutorialspoint.com/ruby-on-rails/rails-framework.htm) built on Ruby
-                - [ASP.net](https://www.asp.net/) built on C#
-                - [Several javascript frameworks](https://blog.scottlogic.com/2013/12/06/JavaScript-MVC-frameworks.html) built on javascript
-5. We discussed above how a single server handles requests from a user. But every website has multiple users. What happens in such cases? In all such cases we have something called a queue. The server queues up requests and processes them as computation time permits. But if there are a large number of concurrent users to a website, there is going to be a large load on the server and this would lead to delays in response. Therefore, sometimes instead of a single computer, there is something called a [load balancer](https://www.f5.com/services/resources/glossary/load-balancer) that sits at the IP.
-    - Say there is a website with 100s of concurrent users, a single server may not be able to handle it
-    - Then one needs multiple servers handling requests to the IP address of the website.
-    - This task is done by a [load balancer](https://en.wikipedia.org/wiki/Load_balancing_(computing)) which takes a requests, and sends it onwards to one of the servers that sits behind it.
-    - There are [several methods](https://www.citrix.com/glossary/load-balancing.html) of choosing which server to send the user request to. For example:
-        - round robin
-        - least response time
-        - least bandwidth
-        - fewest active connections
-    - Once the server and client establish a connection, the load balancer steps out of the way and there is [persistence](https://www.citrix.com/blogs/2010/09/09/load-balancing-persistence/) between that server and the user.
-6. Also common is a [CDN (content delivery network)](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/). 
-    - A [CDN](https://www.incapsula.com/cdn-guide/what-is-cdn-how-it-works.html) typically takes content at a particular timestamp, caches it and then distributes it across its servers. 
-    - When a visitor requests a particular url, it is served from one of the distributed server locations closest to the requestor. 
-    - CDNs typically serve static content, ie content that is the same irrespective of who requests it. 
-    - This could be the entire webpage or only certain assets from the webpage that are cacheable/static like images.
+### Static Response
 
-#### What is a static website (and when it is ok to build your website statically)
+The response to a user request may simply be existing files, or in other words the html, css and javascript and images sent back to the user. With regards to the server these are `static` text objects.
+
+### Dynamic Response
+
+Sometimes this request may need to pass through some logic or may need [server side programming](https://developer.mozilla.org/en-US/docs/Learn/Server-side) to generate a response. This is called a `dynamic` response. Note that this is distinguished from the programming that goes into the javascript executed by the user's browser also called as [client side programming]((https://www.geeksforgeeks.org/server-side-client-side-programming/))
+
+### Simple (inline) Web Frameworks
+
+In some cases, like in [simple PHP](https://eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design/) [design patterns](https://sourcemaking.com/design_patterns), that are closely linked to static design, you can modify the content (html,css and javascript) through [inline php](https://www.w3schools.com/php/php_syntax.asp)
+
+### The MVC Design Pattern
+
+Other language frameworks use a design pattern like [MVC](http://heim.ifi.uio.no/~trygver/2007/MVC_Originals.pdf), which stands for Model View Controller. There are several variants of this like [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel), [MVP](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter)
+
+#### View
+
+[The view](https://www.martinfowler.com/eaaDev/uiArchs.html) sits straight on top of the document that the user sees. It's responsibility is to update the document in case anything in the controller changes. It is generally passive in the sense it doesn't do any processing work.
+
+- [For example](https://www.tutorialspoint.com/ruby-on-rails/rails-views.htm), let's say in a framework like Django Templates, we are creating a list view for books in a library. This might be as simple as:
+    ```html
+    <% if @books.blank? %>
+        <p>There are no books in the system.</p>
+    <% else %>
+        <p>These are the current books in the system</p>
+
+        <ul id = "books">
+            <% @books.each do |book| %>
+                <li><%= link_to book.title -%></li>
+            <% end %>
+        </ul>
+    <% end %>
+    ```
+- In the above example, it's upto the model to populate the what books field with their titles.
+
+#### Controller
+
+[The controller](https://stackoverflow.com/questions/1931335/what-is-mvc-in-ruby-on-rails) handles the logic of the webpage. The request goes to the controller which queries the model and provides the data to the View to display.
+
+#### Model
+
+[The model](https://www.tomdalling.com/blog/software-design/model-view-controller-explained/) is where the relevant data is accessed and retrieved for that particular use case. This is understood best as retrieval of information from a database. The database itself may be made up of several tables that are relevant.
+
+- Examples of tables may include customer table where the name, customer id and purchases of a customer might be stored(in case of an ecommerce site).
+- In some architectures like wordpress, the content of an entire document might just be a single cell in a table containing documents.
+- As another example of a model, one may want to retrieve the name and emails of a customer in the home page of an email App. In the same email App, when a particular email is clicked, the contents of that particular email may need to be retrieved. The retrieval of the email is done by the *model*
+
+### Web Frameworks
+
+Several full-fledged web-frameworks exist that help one build these `request handler programs` otherwise known as web applications
+
+1. They automate several tasks needed to handle requests like communicating with the server application
+2. They give the programmer a method for organizing the code into the MVC framework or some such.
+3. They include several helper functions (that are not included in the language itself) which make coding much faster.
+4. There are examples in each framework for the most common use cases (like ecommerce sites)
+5. Some popular web frameworks are:
+    - [Django](https://djangobook.com/model-view-controller-design-pattern/) which is built on  Python
+    - [Ruby on Rails](http://www.tutorialspoint.com/ruby-on-rails/rails-framework.htm) built on Ruby
+    - [ASP.net](https://www.asp.net/) built on C#
+    - [Several javascript frameworks](https://blog.scottlogic.com/2013/12/06/JavaScript-MVC-frameworks.html) built on javascript
+
+### Handling Multiple Concurrent Requests
+
+We discussed above how a single server handles requests from a user. But every website has multiple users. What happens in such cases? In all such cases we have something called a queue. The server queues up requests and processes them as computation time permits. But if there are a large number of concurrent users to a website, there is going to be a large load on the server and this would lead to delays in response. Therefore, sometimes instead of a single computer, there is something called a [load balancer](https://www.f5.com/services/resources/glossary/load-balancer) that sits at the IP.
+
+- Say there is a website with 100s of concurrent users, a single server may not be able to handle it
+- Then one needs multiple servers handling requests to the IP address of the website.
+- This task is done by a [load balancer](https://en.wikipedia.org/wiki/Load_balancing_(computing)) which takes a requests, and sends it onwards to one of the servers that sits behind it.
+- There are [several methods](https://www.citrix.com/glossary/load-balancing.html) of choosing which server to send the user request to. For example:
+    - round robin
+    - least response time
+    - least bandwidth
+    - fewest active connections
+- Once the server and client establish a connection, the load balancer steps out of the way and there is [persistence](https://www.citrix.com/blogs/2010/09/09/load-balancing-persistence/) between that server and the user.
+
+### Content Delivery Networks
+
+Also common is a [CDN (content delivery network)](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/)
+
+- A [CDN](https://www.incapsula.com/cdn-guide/what-is-cdn-how-it-works.html) typically takes content at a particular timestamp, caches it and then distributes it across its servers. 
+- When a visitor requests a particular url, it is served from one of the distributed server locations closest to the requestor. 
+- CDNs typically serve static content, ie content that is the same irrespective of who requests it
+- This could be the entire webpage or only certain assets from the webpage that are cacheable/static like images.
+
+## What is a static website (and when it is ok to build your website statically)
+
 In the first section we mentioned how a site can be made dynamic by adding javascript on the client side. From the last section we understood a site can be statically served or dynamically served on the server side. Yet what must be noted that there there are many dynamically writted sites that are serving static content (for example many content based websites written in [wordpress](https://digital.com/blog/wordpress-stats/), which serves about 25% of internet content). So what constitutes a static site cannot simply be based on how it is programmed on the server side.
 
 ***Definition:***  A `static site` consists of webpages where the output (html, css, javascript and any other assets) of the *site server* only depends on the url of the webpages.  
 
-**Implications:**
-1. The first implication of this is that every visitor is served the same web page. 
-2. This webpage might appear differently for each visitor due to differently configured client side logic, or even simply due to different CSS for different devices.
-3. Static sites may use visitor information passed through [forms](https://www.w3schools.com/html/html_form_elements.asp) or [cookies](https://www.w3schools.com/js/js_cookies.asp) and send this to third party servers, or even email. This can be used to setup [contact forms](https://www.w3schools.com/howto/howto_css_contact_form.asp)
-4. The static site may contain components which are served from different servers that are dynamic. Further, while they may not store information about the client on their own servers, they can defer this function to a third party server. Good examples of third party applications that are often integrated into static sites are:
+### Implications of having static websites
+
+- The first implication of this is that every visitor is served the same web page
+- This webpage might appear differently for each visitor due to differently configured client side logic, or even simply due to different CSS for different devices.
+- Static sites may use visitor information passed through [forms](https://www.w3schools.com/html/html_form_elements.asp) or [cookies](https://www.w3schools.com/js/js_cookies.asp) and send this to third party servers, or even email. This can be used to setup [contact forms](https://www.w3schools.com/howto/howto_css_contact_form.asp)
+- The static site may contain components which are served from different servers that are dynamic. Further, while they may not store information about the client on their own servers, they can defer this function to a third party server. Good examples of third party applications that are often integrated into static sites are:
     1. Many static sites use comments that are powered by third party providers (like [Disqus](https://disqus.com/))
     2. Static sites can be used to serve ads from third parties [like Google Adsense](https://support.google.com/adsense/answer/181950?hl=en) (even personalized ads) from static sites
     3. Static sites may use similar third party applications to enable analytics, [ex: google analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/), about the customer. These analytics can include things like what are the parts and pages of the website your visitor spent time on, how they arrived at your site, what geography they are from and sometimes even the demographics of the customer. 
     4. Static sites may even be used to receive payments. Typically this is again through third party payment gateways [like paypal](https://developer.paypal.com/demo/checkout/#/pattern/client)
-5. Static sites are cheaper to host as all one needs is storage space on one of the cloud providers (typically free for one website per username on [github pages](https://pages.github.com/) or 2 cents a month for a gigabyte of storage on [Google Cloud](https://cloud.google.com/storage/)
+- Static sites are cheaper to host as all one needs is storage space on one of the cloud providers (typically free for one website per username on [github pages](https://pages.github.com/) or 2 cents a month for a gigabyte of storage on [Google Cloud](https://cloud.google.com/storage/)
 
-**So where's the catch?**
+### What can one not do with static websites
+
 1. A lot of your customer data exists with third party providers. Note that even a majority of dynamic sites use the third party providers anyway.
 2. Your logic is computed at the customer side, and you don't have control over the amount of computation power at their end. It may for example be a slow mobile from which the customer is accessing your site.
 3. Static sites are an ideal use case for websites where the core objective is to display content. For websites where there is some other objective, like bank websites or search websites this is not ideal.
@@ -310,9 +349,9 @@ In the first section we mentioned how a site can be made dynamic by adding javas
 
 Yet, as mentioned previously, a majority of content on the internet is static, including that which is displayed by so called dynamic sites like wordpress.
 
-#### What are Templates?
+## Website Templates
 
-**The need for a webpage Generator**
+### The need for a templates
 
 1. We noted during the discussion of websites above that *while the actual content of a webpage may be small, there is a large amount of html, css and javascript* that goes into making a webpage out of this content.
 2. When the website has more than one page, a good amount of this html, css and javascript is repeated across pages of the website. 
@@ -323,9 +362,10 @@ Yet, as mentioned previously, a majority of content on the internet is static, i
 7. Further, most websites completely differ in content, even if their functionality, look and feel are similar.
 8. This brings in the use of template pieces, which are standard pieces of code (html, css and javascript) which are **modifiable** and perhaps **extendible**. In these template pieces, a *certain functionality may be provided, the look and feel can be modified and content can be replaced*.
     - the same concept of templates can be extended even beyond web templates to all manner of code. Functions are a form of such templating.
-9. A collection of such template pieces that can be used to form a full website is called a *template for the static website generator*.
+9. A collection of such template pieces that can be used to form a full website is called a *theme for the static website generator*.
 
-**What does a template provide**
+### What does a template provide
+
 The template should provide the *scaffolding* (the html, css and javascript) needed to generate the website:
 
 1. A good way to think about a static generator is that it assembles a website from different parts. These parts are provided by the template
@@ -343,14 +383,14 @@ The template should provide the *scaffolding* (the html, css and javascript) nee
 7. Templates are not specific to static websites. They are used in all manner of websites as a form of code re-use
     - For example, the product template on amazon.com is common across all products (atleast within the same category of products). While the template is the same, it leaves space for the product name, product images, pricing, etc to be changed.
 
-**Different types of templates**
+### Different types of templates
 
 Websites of all kinds exist on the internet, yet we can distill a few kinds of pages that exist across many of these sites. Let us look at some of these:
 
 1. The [front page or index page](https://html5up.net/)*
 2. Single content page*
 3. List of single pages*
-5. The 404 Page*
+4. The 404 Page*
 5. The login page
 6. The dashboard or personal application page
 7. Network Feed page
@@ -367,28 +407,37 @@ One should recognise that while the content for these across each website may va
 
 The names for the above are fairly self explanatory, and we may have come across all of these in our lifetimes on the internet, some more often than others. The first three are worth going into a little more detail
 
-1. The front page
-    - This is the page that a viewer visits when they arrive at http://www.your-domain.com
-    - This base website url is a necessary presence for almost every website. It is typically a descriptive page with some [call to action](https://blog.hubspot.com/marketing/call-to-action-examples)
-    - This page if often the first point of contact with an incoming visitor to the webpage and therefore [conversion](https://optinmonster.com/11-web-design-principles-that-will-boost-your-conversion-rate/) happens in the first few seconds here
-    - While some may follow a minimalistic design, most websites may want to spend some time on the design of this page
-    - For some websites, especially the established ones, the base url substitutes for some functional page, like the login page (in case of facebook and gmail), or the search page (in case of google)
-2. The Single content page
-    - The single content page is ubiquitous though we don't recognize it as such
-    - The single content page is the *main template page* of the website
-    - For a website like amazon, this is the product page, whereas for a website like facebook it is the individual user page. For a website like youtube, it is a video page, and for new york times, this is a single news story. For gmail it is a single email that you click on and for a blog, it is a single post. Nearly every website has one of these.
-    - While these may contain dynamically generated content, they can also be static as seen in the examples above
-3. The list page
-    - Once we define the single page for a website it is easy enough to understand the list page for the same website
-    - It is the template which shows a list of the single content pieces of the website.
-    - The lists can be sliced, diced and categorized in any manner necessary such that different posts may appear on different list pages, but the template for these remains the same
-    - This is quite related to the search results page which also shows a list of results. The only difference may be that the search has to be generated live and is necessarily dynamic on the server side
-    - examples of list pages are lists of friends on facebook, or list of posts on a blog or list of videos created by an author in youtube.
+#### The front page
 
-Now that we have understood these aspects of templates, let us look at static website generators
+- This is the page that a viewer visits when they arrive at http://www.your-domain.com
+- This base website url is a necessary presence for almost every website. It is typically a descriptive page with some [call to action](https://blog.hubspot.com/marketing/call-to-action-examples)
+- This page if often the first point of contact with an incoming visitor to the webpage and therefore [conversion](https://optinmonster.com/11-web-design-principles-that-will-boost-your-conversion-rate/) happens in the first few seconds here
+- While some may follow a minimalistic design, most websites may want to spend some time on the design of this page
+- For some websites, especially the established ones, the base url substitutes for some functional page, like the login page (in case of facebook and gmail), or the search page (in case of google)
 
-#### How does a static website generator work?
+#### The Single content page
 
+- The single content page is ubiquitous though we don't recognize it as such
+- The single content page is the *main template page* of the website
+- For a website like amazon, this is the product page, whereas for a website like facebook it is the individual user page. For a website like youtube, it is a video page, and for new york times, this is a single news story. For gmail it is a single email that you click on and for a blog, it is a single post. Nearly every website has one of these.
+- While these may contain dynamically generated content, they can also be static as seen in the examples above
+
+#### The list page
+
+- Once we define the single page for a website it is easy enough to understand the list page for the same website
+- It is the template which shows a list of the single content pieces of the website.
+- The lists can be sliced, diced and categorized in any manner necessary such that different posts may appear on different list pages, but the template for these remains the same
+- This is quite related to the search results page which also shows a list of results. The only difference may be that the search has to be generated live and is necessarily dynamic on the server side
+- examples of list pages are lists of friends on facebook, or list of posts on a blog or list of videos created by an author in youtube.
+
+#### 404 page
+
+- The 404 Page is the page that you are redirected to if you specify a url where no site exists on the site.
+- For example say there is no page called abc.html on the website http://www.mysite.com, then if you type http://www.mysite.com/abc.html on the website you will be redirected to (or shown) the 404 page
+
+We have looked at some common page types above. Now that we have understood these aspects of templates, let us look at static website generators
+
+## Static Website Generators
 
 ***Definition:*** A `static site generator` is a program that *assembles* the text of a full web page from the `user input` and a prebuilt templates.  The user input can include any text, images and other parameters needed to assemble the webpage.
 
@@ -404,129 +453,159 @@ Let us first understand the stages of static site generation from the user point
 
 **Information storage:**
 
-##### How is information stored
+### How is information stored
 
 Dynamic websites use databases to store information. This is not possible with static sites. But every site has a lot of information or data in it. How are these stored?
 
-1. All information in a static site is stored in the form of text
+1. A static site stores the site in the form of various files. Typically, these files are the html, css or javascript that make the browser display the site.
 2. This text might contain both the displayed text (content) of the website and also parameters(configuration)
-3. The configuration is encoded into text in a few different ways. These are called markup languages
-    - [TOML (Tom's obvious minimal language)](https://npf.io/2014/08/intro-to-toml/) is quite easy to learn
-        ```toml
-        # Example for book configuration
-        title = "This is a book"
-        date = 2006-05-27T07:32:00Z # dates are ISO 8601 full zulu form
-        tagline = '''This is a multiline
-        statement about the book'''
+3. The configuration is encoded into text in a few different ways. These are called markup languages.
+4. Typically markup languages are methods to store a mix of data, in what is otherwise known as a [data object](https://www.w3schools.com/js/js_json_objects.asp). Markdown is a schema for converting text in human readable format to html.
 
-        layout = "books"
-        number_of_pages = 300 # integers are just numbers
+Let us look at these in further detail
 
-        can_visitors_comment = true # good old true and false
-        ```
-    - [YAML (YAML Ain't Markup Language)](http://yaml.org/start.html) is also simple enough. Aimed to be easier for humans to read than xml and json
-        ```yaml
-        # Example for book configuration
-        title : This is a book
-        date : 2006-05-27 07:32:00
-        tagline: >
-            This is a multiline
-            statement about the book
+#### Markup Languages
 
-        layout : books
-        number_of_pages : 300
+There are many markup languages. We will look at three of these: TOML, YAML and JSON
 
-        can_visitors_comment : Yes
-        ```
-        - often in yaml there are many ways of [doing the same thing](https://stackoverflow.com/questions/3790454/in-yaml-how-do-i-break-a-string-over-multiple-lines)
-    - [JSON(Javascript Object Notation)](https://www.w3schools.com/js/js_json_objects.asp) is almost ubiquitous on the internet. It is well specified and doesn't depend on indentation, whitespace and order of entry of elements. While being easy for the computer to read, it can get difficult for humans to write.
-        ```json
-            {
-                "title":"This is a book", 
-                "date":"2006-05-27T07:32:00Z",
-                "tagline":"This is a multiline\nstatement about the book",
-                "layout":"books",
-                "number_of_pages":300,
-                "can_visitors_comment":true,
-            }
-        ```
-    - Another widely used data markup is called [XML(Extensible Markup Language)](https://www.w3schools.com/xml/). In fact the html specification and XML specification are [closely related](https://www.lifewire.com/relationship-between-sgml-html-xml-3469454).
-    - The last markup language that we look at is [HTML(hypertext markup language)](https://www.w3schools.com/html/html_intro.asp). Unlike the other markup languages, it is not extendible in the sense the tags (like div, head, body, p, h1-6 etc) are prespecified in html.
-4. While above markup methods are used for encoding the configuration, there is another simplified markup that is used for the content. This encoding goes by the name *markdown*. 
-    - [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) typically can take 6 different headline styles from H1-H6. It can format text as emphasis, italics, strikethroughs. It can specify ordered and unordered lists. There are specific ways of specifying links, images, code elements and tables.
+##### TOML
 
-        ```markdown
-        Headline styles
-        # Headline 1
-        ## Headline 2
-        ### Headline 3
-        #### Headline 4
-        ##### Headline 5
-        ###### Headline 6
+[TOML (Tom's obvious minimal language)](https://npf.io/2014/08/intro-to-toml/) is quite easy to learn
+    ```toml
+    # Example for book configuration
+    title = "This is a book"
+    date = 2006-05-27T07:32:00Z # dates are ISO 8601 full zulu form
+    tagline = '''This is a multiline
+    statement about the book'''
 
-        *italic text* 
-        **bold text**
-        ~~strikethrough text~~
+    layout = "books"
+    number_of_pages = 300 # integers are just numbers
 
-        - Unordered list item 1
-        - Unordered list item 2
-        - Unordered list item 3
-
-        1. Ordered list item 1
-        2. Ordered list item 2
-        3. Ordered list item 3
-
-        [This is a link](https://www.google.com)
-
-        | This          | is a          |Table          |
-        | ----          | :----------:  | -----:        |
-        | left-align    | centered      | right-aligned |
-
-        ```
-
-5. We have looked at configuration files (which contain parameters and data) specified as markup. Then we looked at content files, which is html encoded as markdown. But there are other files called template files which are mixtures of code, which is to be processed and content, which is simply passed through in output. For example take the below template taken from [django girls blog](https://tutorial.djangogirls.org/en/django_templates/)
-    ```html
-    <div>
-        <h1><a href="/">Django Girls Blog</a></h1>
-    </div>
-
-    {% for post in posts %}
-        <div>
-            <p>published: {{ post.published_date }}</p>
-            <h1><a href="">{{ post.title }}</a></h1>
-            <p>{{ post.text }}</p>
-        </div>
-    {% endfor %}
+    can_visitors_comment = true # good old true and false
     ```
-    1. This template code carries some text information that is to be passed as is into the output html
-    2. It also contains several lines of code contained within the brackets that look like `{{ some code }}` or `{% some other code %}`
-    3. The brackets are very important because thats what tells the static generator that it needs to pass whatever is within the brackets to the coding language
-    4. Whatever the coding language outputs for those lines are substituted for the brackets
-    5. There is a need for cleanup of whitespace (new lines and spaces) after the language returns the output, because for several code pieces there would be no output. 
-    6. The pieces of code may contain variables which in the above case is `posts`. Any variables needed in the template should be available from the following places (in increasing order of importance)
-        1. The template default variables
-        2. The site level configuration files input by the user
-        3. Any data pages that have been loaded
-        4. The page level configuration files
-    7. After parsing through the template engine of the static generator, the output of the template given at the start of this section may be simple html text which looks as follows
-    ```html
-    <div>
-        <h1><a href="/">Django Girls Blog</a></h1>
-    </div>
 
-        <div>
-            <p>published: 2018-09-16</p>
-            <h1><a href="">My Post Heading</a></h1>
-            <p>This is an awesome post</p>
-        </div>
+##### YAML
+
+[YAML (YAML Ain't Markup Language)](http://yaml.org/start.html) is also simple enough. Aimed to be easier for humans to read than xml and json
+
+```yaml
+# Example for book configuration
+title : This is a book
+date : 2006-05-27 07:32:00
+tagline: >
+    This is a multiline
+    statement about the book
+
+layout : books
+number_of_pages : 300
+
+can_visitors_comment : Yes
+```
+
+Often, in yaml, there are many ways of [doing the same thing](https://stackoverflow.com/questions/3790454/in-yaml-how-do-i-break-a-string-over-multiple-lines) which is not necessarily good
+
+##### JSON
+
+[JSON(Javascript Object Notation)](https://www.w3schools.com/js/js_json_objects.asp) is almost ubiquitous on the internet. It is well specified and doesn't depend on indentation, whitespace and order of entry of elements. While being easy for the computer to read, it can get difficult for humans to write.
+```json
+    {
+        "title":"This is a book", 
+        "date":"2006-05-27T07:32:00Z",
+        "tagline":"This is a multiline\nstatement about the book",
+        "layout":"books",
+        "number_of_pages":300,
+        "can_visitors_comment":true,
+    }
+```
+
+##### Other Markups
+
+- Another widely used data markup is called [XML(Extensible Markup Language)](https://www.w3schools.com/xml/). In fact the html specification and XML specification are [closely related](https://www.lifewire.com/relationship-between-sgml-html-xml-3469454).
+- The last markup language that we look at is [HTML(hypertext markup language)](https://www.w3schools.com/html/html_intro.asp). Unlike the other markup languages, it is not extendible in the sense the tags (like div, head, body, p, h1-6 etc) are prespecified in html.
+
+#### Markdown
+
+While above markup methods are used for encoding the configuration, there is another simplified markup that is used for the content. This encoding goes by the name *markdown*.
+
+- [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) typically can take 6 different headline styles from H1-H6. It can format text as emphasis, italics, strikethroughs. It can specify ordered and unordered lists. There are specific ways of specifying links, images, code elements and tables.
+
+```markdown
+Headline styles
+# Headline 1
+## Headline 2
+### Headline 3
+#### Headline 4
+##### Headline 5
+###### Headline 6
+
+*italic text* 
+**bold text**
+~~strikethrough text~~
+
+- Unordered list item 1
+- Unordered list item 2
+- Unordered list item 3
+
+1. Ordered list item 1
+2. Ordered list item 2
+3. Ordered list item 3
+
+[This is a link](https://www.google.com)
+
+| This          | is a          |Table          |
+| ----          | :----------:  | -----:        |
+| left-align    | centered      | right-aligned |
 
     ```
 
+#### Template Files - A mix of code and content
+
+We have looked at configuration files (which contain parameters and data) specified as markup. Then we looked at content files, which is html encoded as markdown. But there are other files called template files which are mixtures of code, which is to be processed and content, which is simply passed through in output. For example take the below template taken from [django girls blog](https://tutorial.djangogirls.org/en/django_templates/)
+
+```html
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text }}</p>
+    </div>
+{% endfor %}
+```
+
+1. This template code carries some text information that is to be passed as is into the output html
+2. It also contains several lines of code contained within the brackets that look like `{{ some code }}` or `{% some other code %}`
+3. The brackets are very important because thats what tells the static generator that it needs to pass whatever is within the brackets to the coding language
+4. Whatever the coding language outputs for those lines are substituted for the brackets
+5. There is a need for cleanup of whitespace (new lines and spaces) after the language returns the output, because for several code pieces there would be no output. 
+6. The pieces of code may contain variables which in the above case is `posts`. Any variables needed in the template should be available from the following places (in increasing order of importance)
+    1. The template default variables
+    2. The site level configuration files input by the user
+    3. Any data pages that have been loaded
+    4. The page level configuration files
+7. After parsing through the template engine of the static generator, the output of the template given at the start of this section may be simple html text which looks as follows
+```html
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+    <div>
+        <p>published: 2018-09-16</p>
+        <h1><a href="">My Post Heading</a></h1>
+        <p>This is an awesome post</p>
+    </div>
+
+```
 
 Thus we can store all kinds of information in text files
 
-##### Where is information stored
+#### Where is information stored
+
 We learnt how the information is stored within a text file, but where are the text files stored? Each static generator specifies a method of where these files are stored. This is called the directory structure.
+
 1. The content level directories are the most important directory structure as the pages are generated according to the files in the content directories
     1. There may be a root content directory which may contain the domain root level content like index page, 404 page etc.
     2. Under the root content directory, there may be various directories like products, posts, people, etc. These represent the template single pages.
@@ -851,13 +930,12 @@ This is probably the most involved part of creating your website. What do you wr
 
 Broadly the following steps are involved in creating the website
 
-1. How to use Hugo
-2. Download the template files.
-3. Preview the site
-4. Modify basic template files.
-5. Modify the content and preview
-6. Learn to create new templates if required
-7. Move from template to deployment
+1. Download the template files.
+2. Preview the site
+3. Modify basic template files.
+4. Modify the content and preview
+5. Learn to create new templates if required
+6. Move from template to deployment
 
 ### How to use hugo to generate your static website generator
 
