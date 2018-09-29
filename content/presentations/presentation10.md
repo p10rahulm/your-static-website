@@ -40,7 +40,7 @@ topics = ["management"]
 writeup_title = "Presentation Notes"
 # Writeup content below
 +++
-1. This presentation was made at IIT Madras in 2004
+1. This presentation was made at University2 in 2004
 2. All rights reserved. Contact author before reusing material as is.
 3. Ideas beget ideas. If you want to incorporate this material into your own feel free, and if possible leave a trail or backlink to this site
 

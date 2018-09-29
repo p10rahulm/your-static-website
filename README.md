@@ -1044,9 +1044,11 @@ Broadly the following steps are involved in creating the website
 1. Download the template files.
 2. Preview the site
 3. Modify basic template files.
-4. Modify the content and preview
-5. Learn to create new templates if required
-6. Move from template to deployment
+4. Check and preview the site
+5. Modify the content and preview
+6. Check and preview again
+7. Learn to create new templates if required
+8. Move from template to deployment
 
 ## Step 1: Download the template files
 
@@ -1069,10 +1071,8 @@ Broadly the following steps are involved in creating the website
     # 4. The output files will eventually be created in a directory called 'public'. We will create a submodule to link to your blog repo
     git submodule add https://github.com/yourusername/yourblogname.git public
 
-    #5. Do the regular git updates
-    git add -A
-    git commit -m "changed site"
-    git push origin master
+    #5. Do the regular git updates through script (you may have to use backslash on windows)
+    ./commit.sh
 
     #6. Ensure deploy function is working
     ./deploy.sh
@@ -1133,7 +1133,7 @@ The first thing you want to look at is the config.toml file. We will describe al
 - email = "yourName@gmail.com"
 - default_description = "-273.15K. So Cool."
 - facebook_admin_handle = "yourName"
-- twitter_creator_handle = "@your_username"
+- twitter_creator_handle = "@yourName"
 - twitter_site_handle = "@yourWebsite"
 - favicon = "favicon.jpg"
 - apple_touch_icon = "favicon.jpg"
@@ -1239,7 +1239,7 @@ The first thing you want to look at is the config.toml file. We will describe al
     facebook_admin_handle = "yourName"
 
     #* 20. Add your twitter handle for twitter sharing cards
-    twitter_creator_handle = "@your_username"
+    twitter_creator_handle = "@yourName"
 
     #* 21. Add your twitter site handle for twitter sharing cards if any, or keep same as twitter_creator_handle
     twitter_site_handle = "@yourWebsite"
@@ -1790,14 +1790,14 @@ fixed_sharer_active = true
 
         # ---------------------------------
         [[about_us.descriptor.affiliations]]
-            name = "Atidiv, Cuemath"
+            name = "Company1, Company2"
             url = ""
         [[about_us.descriptor.affiliations]]
-            name = "Barclays, Nomura, Lehman Brothers"
+            name = "Company3, Company4, Company5"
             url = ""
 
         [[about_us.descriptor.affiliations]]
-            name = "IIM Ahmedabad, IIT Madras"
+            name = "University1, University2"
             url = ""
         # ---------------------------------
         [[about_us.descriptor.social]]
@@ -1835,9 +1835,9 @@ fixed_sharer_active = true
 
                 The research areas we work on here are network topologies, computational structures, self-organization and automata, idea space theory. Apart from this core, there is also ongoing work on pattern finding in market microstructure (high frequency trading), and a few applications of complexity and modelling. If you would like to join us to contribute on any of these problems, you are most welcome. We're sure you would find the journey at least slightly enlightening. If you have a problem that you would like us to work on, please contact us below.
 
-                yourName has been the head of Data Science at Atidiv and Cuemath. At Atidiv, he built a data science division from scratch which worked on Data Science as a Service - the Atidiv data science team acted as the remote data science team for our clients. This meant building tools to solve common problems between companies and building a team to deal with bespoke problems and on demand requests for client companies. At Cuemath he was the head of data science and helped in their Series-B fund-raise round.
+                yourName has been the head of Data Science at Company1 and Company2. At Company1, he built a data science division from scratch which worked on Data Science as a Service - the Company1 data science team acted as the remote data science team for our clients. This meant building tools to solve common problems between companies and building a team to deal with bespoke problems and on demand requests for client companies. At Company2 he was the head of data science and helped in their Series-B fund-raise round.
 
-                Prior to that he was a trader on Wall Street trading currency options. During his time at Barclays he helped setup an automated option price trading/monitoring system. On the research side, he worked on single currency fx pricing and eurchf floor failure models. At Nomura he worked on Equity Exotic Options with a specific focus on RFP pricing and generating client ideas. At Lehman Brothers, he risk managed an exotics trading book. He distinctly remembers being non-plussed at the fuss over the Lehman Brothers collapse, having predicted it a year before (Ref: IIT Madras placement talk - 2007). :rocket:'''
+                Prior to that he was a trader on Wall Street trading currency options. During his time at Company3 he helped setup an automated option price trading/monitoring system. On the research side, he worked on single currency fx pricing and eurchf floor failure models. At Company4 he worked on Equity Exotic Options with a specific focus on RFP pricing and generating client ideas. At Company5, he risk managed an exotics trading book. He distinctly remembers being non-plussed at the fuss over the Company5 collapse, having predicted it a year before (Ref: University2 placement talk - 2007). :rocket:'''
 
         # ---------------------------------
         [about_us.detail.bottom_left]
@@ -1871,7 +1871,7 @@ fixed_sharer_active = true
         # ---------------------------------
             [[about_us.detail.bottom_right.list]]
                 title = "Master of Business Administration, 2012"
-                subtitle = "IIM Ahmedabad"
+                subtitle = "University1"
                 icon = "fa-graduation-cap"
 
             [[about_us.detail.bottom_right.list]]
@@ -2167,13 +2167,7 @@ background_color = "#222"
 
 ## Step 4: Check and Preview the site again
 
-1. Good to preview the site again now.
-2. Type into the terminal that you used for downloading the files
-    ```bash
-    hugo server -D -p 1313
-    ```
-3. Open `http://localhost:1313` on your browser. Even after checking that everything works, keep this tab open.
-4. At this stage, you should have modified the following words to your own
+1. At this stage, you should ensure you modify the following words to your own
     - yourdomain
     - Your Website Name
     - your_username
@@ -2183,20 +2177,41 @@ background_color = "#222"
     - yourName
     - anotherName
     - yourdisqusShortname
+    - Company1, Company2, Company3, Company4, Company5
+    - University1, University2
     - thinking_tree2.jpg
     - UA-123456789-1 (google analytics)
-    - map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
+    - map_api_key, latitude, longitude (google maps)
+    - favicon.jpg
 
-5. On a good text editor this can be done by pressing ctrl+shift+F or ctrl+shift+R, where the replace all occurances in project is available. Note that for this you may have to choose your project folder (to enable search in this folder). Depending on your editor you may have to look up google for instructions for Replace All. 
+    Note that the context of usage at each occurance of above words may be different. For example yourName may occur for your email id as *yourName@gmail.com* or even as an author of website. So you may not want a simple replace all function without going through context of usage.
 
+2. On a good text editor this can be done by pressing ctrl+shift+F or ctrl+shift+R, where the replace all occurances in project is available. Note that for this you may have to choose your project folder (to enable search in this folder). Depending on your editor you may have to look up google for instructions for Replace All
 
-## Modify the content and preview
+3. Good to preview the site again now.
+4. Type into the terminal that you used for downloading the files
+    ```bash
+    hugo server -D -p 1313
+    ```
+5. Open `http://localhost:1313` on your browser. Even after checking that everything works, keep this tab open to preview as you change the site.
+
+6. You may have made a lot of changes at this stage, good to get it all into the repository
+    ```bash
+    #1. Do the regular git updates through script (you may have to use backslash on windows)
+    ./commit.sh
+
+    #2. Ensure deploy function is working
+    ./deploy.sh
+    ```
+7. You can (and should) run the commit script above at even more often intervals to ensure you have all the intermediary points saved. You can preview all changes on github
+
+## Step 5: Add or modify Content
 
 Now that we have finished changing the configuration, you can start adding content. The idea for the static site was that you should be able to express any kind of output that you have in real life into a page on the internet. With this in mind, we have created a few kinds of pages.
 
 ### Types of Pages
 
-We have 14 different types of pages. These are listed below in approximately alphabetical order:
+We have 15 different types of pages. These are listed below in approximately alphabetical order:
 
 1. Audios: This is for any recordings you might have taken including songs or podcasts
 2. Books: This is meant for any books you have written
@@ -2213,9 +2228,11 @@ We have 14 different types of pages. These are listed below in approximately alp
 13. Workshops: You can showcase any workshops (short courses) in these pages.
 14. Default: This is a default setting that is there.
 
+TODO: Add Docs
+
 ### Steps to create a webpage
 
-Each of these page types (except default) goes into its own directory in the content folder. It's easy enough to create any one of these pages. For example if you want to create a presentation page called 'Hyderabad Blues':
+Each of these page types (except default) goes into its own directory in the content folder. It's easy enough to create any one of these pages. For example **if you want to create a presentation page called 'Hyderabad Blues'**:
 
 1. Open a terminal
     - On windows, you can do this by typing 'terminal' or 'bash' after clicking the windows button on the bottom left of your screen
@@ -2226,7 +2243,7 @@ Each of these page types (except default) goes into its own directory in the con
 4. Open the website page with your favorite text editor
     - For example, if your website directory is 'C:\users\yourname\yourwebsite' then the website content page would be at `C:\users\yourname\yourwebsite\content\presentations\hyderabadblues.md`
 
-#### Detailed look at page settings
+### Common Page Parameters
 
 Our templates contain both the contents as well as configurations for the pages we are creating. Some of the configurations are common across the page types and some are specific to the type of page. Let us look at the common configuration types
 
@@ -2250,7 +2267,7 @@ Our templates contain both the contents as well as configurations for the pages 
 
 Those are the common settings used across most pages. Additionally, each page may have its own settings. Let's look at these below in order of alphabetical page types
 
-##### Audio pages
+### Audio Page Parameters
 
 Below are the additional settings to be specified for Audio pages
 
@@ -2278,7 +2295,7 @@ cover = "k.jpg" # Place the file below in the "audios" folder inside img folder 
 
 ```
 
-##### Books Pages
+### Books Page Parameters
 
 Some additional settings need to be specified for books pages
 
@@ -2307,7 +2324,7 @@ images = ["bubbles.jpg", "dog_popup_thanks3.jpg","dog_transparency1.jpg","orange
 
 ```
 
-##### Code Snippets Pages
+### Code Snippets Page Parameters
 
 Code snippets need a small number of additional settings
 
@@ -2324,7 +2341,7 @@ highlight_style = "ocean"
 
 ```
 
-##### Courses Pages
+### Courses Page Parameters
 
 Courses, similar to books, have a number of additional optional settings that may be input
 
@@ -2373,7 +2390,7 @@ subjects = ["management"]
 
 ```
 
-##### Events Pages
+### Events Page Parameters
 
 The events pages contain the regular settings in a few different names and a few additional settings
 
@@ -2401,11 +2418,11 @@ genres = ["Rock","Paper","Scissors"]
 
 ```
 
-##### Notes Pages
+### Notes Page Parameters
 
 Notes pages are fairly straightforward. There are no additional settings apart from the common settings listed above
 
-##### People Pages
+### People Page Parameters
 
 The people pages have a large number of additional settings over and above the common settings. This is similar to the about section on the front page. These settings are listed below
 
@@ -2431,10 +2448,10 @@ teams = ["Leadership"]
 # 5. We can mention multiple affiliations of the person along with a link like below
 # ---------------------------------
 [[affiliations]]
-    name = "Atidiv, Cuemath"
+    name = "Company1, Company2"
     url = ""
 [[affiliations]]
-    name = "Barclays, Nomura, Lehman Brothers"
+    name = "Company3, Company4, Company5"
     url = ""
 
 # 6. We can also mention social media links of the person. The icons are chosen from here: https://fontawesome.com/v4.7.0/icons/
@@ -2473,7 +2490,7 @@ title = "Interests"
 # ---------------------------------
 [[education.list]]
     title = "Master of Business Administration, 2012"
-    subtitle = "IIM Ahmedabad"
+    subtitle = "University1"
     icon = "fa-graduation-cap"
 
 [[education.list]]
@@ -2483,11 +2500,11 @@ title = "Interests"
 
 ```
 
-##### Posts Pages
+### Posts Page Parameters
 
 Posts Pages use only the common settings listed above
 
-##### Presentations Pages
+### Presentations Page Parameters
 
 The presentations pages are mainly about the presentation pdf itself. They may optionally contain some writeup below the presentation.
 
@@ -2509,7 +2526,7 @@ writeup_title = "Presentation Notes"
 
 ```
 
-##### Publications Pages
+### Publications Page Parameters
 
 The publications pages use a bunch of new parameters including a few categorizations.
 
@@ -2559,7 +2576,7 @@ files = [
 
 ```
 
-##### Reviews Pages
+### Reviews Page Parameters
 
 The reviews pages mostly contain new configurations regarding the product or item being reviewed
 
@@ -2585,7 +2602,7 @@ images = ["reviews/opel1.png","reviews/opel2.png"]
 
 ```
 
-##### Thoughts Pages
+### Thoughts Page Parameters
 
 These are the only pages where the configurations include styling elements. The thought  layout would contain some content placed on a background image
 
@@ -2610,7 +2627,7 @@ text_size = "1.35rem"
 
 ```
 
-##### Workshops Pages
+### Workshops Page Parameters
 
 Workshops pages contain a good number of new configurations apart from the common ones.We may have come across some of these in different Page Types already
 
@@ -2651,30 +2668,19 @@ subjects = ["People Management"]
 
 ```
 
-#### Previewing the content
+## Step 6: Check and preview again
 
-As with the first time you downloaded the content, preview the site after you have finished adding new content
+At this stage, we are ready to do another [check and preview](#step-4-check-and-preview-the-site-again)
 
-1. Open a bash/terminal and cd into the folder with your website files.
-2. Type into the terminal that you used for downloading the files
-    ```bash
-    hugo server -D -p 1313
-    ```
-3. This opens a server with all files including those which are in draft
-4. Go to your favorite web browser (preferably Firefox or Chrome, i've not tested on IE)
-5. Open `http://localhost:1313`. Even after checking that everything works, keep this tab open.
-
-*NOTE*: When you leave the server and browser open, you will notice that the browser window updates on its own after every file update.
-
-### Learn to create new templates if required
+## Step 7: Learn to create new templates if required
 
 When you are creating new single page templates or list templates, it may be easy to first copy an existing template. These are html files with additional hugo code. You can view these files in the singlePageLayouts and listLayouts section. The homepage-sections contains template pieces used to render individual sections in the home page.
 
 I will be extending this if useful to somebody later, but these [giraffe academy videos](https://www.youtube.com/watch?v=G7umPCU-8xc) and the [hugo docs](https://gohugo.io/documentation/) are good places to start learning how to create templates
 
-#### Some Basics
+### Some Basics
 
-1. Within these files you can hugo code by placing it within curly braces like so: `{{some code}}`
+1. Within template files you can hugo code by placing it within curly braces like so: `{{some code}}`
 2. Hugo code can access the parameters from your content files by referencing `.Params.parameter`
 3. Various [hugo functions](https://gohugo.io/functions/) can be used within the code
 4. You can use global variables by setting [Scratch](https://regisphilibert.com/blog/2017/04/hugo-scratch-explained-variable/)
@@ -2706,7 +2712,7 @@ I will be extending this if useful to somebody later, but these [giraffe academy
 
 With these points in mind, and having watched the videos mentioned in the beginning of the file, you should be ready to start creating your own templates. Do keep in mind that this is not necessary. If you decide to do so - goodluck, keep em coming!
 
-### Move from template to deployment
+## Step 8: Move from template to deployment
 
 Once your template is ready, all that needs to be done is to deploy it. For this the output files have to be generated. This is easy enough.
 
@@ -2722,6 +2728,7 @@ The steps in this, while simple need to be carefully done.
 # Section 4: Setting up the online scaffolding
 
 ## Go buy the domain
+
 1. Go to godaddy.com
 2. Search for preferred domain name
 3. Add to cart and buy. Just choose one domain for now, you can always add more later. Let's call this domain as "your-domain.com". Of course note that ".com" could be any other suffix like ".org" or some such.

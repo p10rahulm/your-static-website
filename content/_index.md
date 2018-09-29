@@ -82,14 +82,14 @@ fixed_sharer_active = true
 
         # ---------------------------------
         [[about_us.descriptor.affiliations]]
-            name = "Atidiv, Cuemath"
+            name = "Company1, Company2"
             url = ""
         [[about_us.descriptor.affiliations]]
-            name = "Barclays, Nomura, Lehman Brothers"
+            name = "Company3, Company4, Company5"
             url = ""
 
         [[about_us.descriptor.affiliations]]
-            name = "IIM Ahmedabad, IIT Madras"
+            name = "University1, University2"
             url = ""
         # ---------------------------------
         [[about_us.descriptor.social]]
@@ -127,9 +127,9 @@ fixed_sharer_active = true
 
                 The research areas we work on here are network topologies, computational structures, self-organization and automata, idea space theory. Apart from this core, there is also ongoing work on pattern finding in market microstructure (high frequency trading), and a few applications of complexity and modelling. If you would like to join us to contribute on any of these problems, you are most welcome. We're sure you would find the journey at least slightly enlightening. If you have a problem that you would like us to work on, please contact us below.
 
-                yourName has been the head of Data Science at Atidiv and Cuemath. At Atidiv, he built a data science division from scratch which worked on Data Science as a Service - the Atidiv data science team acted as the remote data science team for our clients. This meant building tools to solve common problems between companies and building a team to deal with bespoke problems and on demand requests for client companies. At Cuemath he was the head of data science and helped in their Series-B fund-raise round.
+                yourName has been the head of Data Science at Company1 and Company2. At Company1, he built a data science division from scratch which worked on Data Science as a Service - the Company1 data science team acted as the remote data science team for our clients. This meant building tools to solve common problems between companies and building a team to deal with bespoke problems and on demand requests for client companies. At Company2 he was the head of data science and helped in their Series-B fund-raise round.
 
-                Prior to that he was a trader on Wall Street trading currency options. During his time at Barclays he helped setup an automated option price trading/monitoring system. On the research side, he worked on single currency fx pricing and eurchf floor failure models. At Nomura he worked on Equity Exotic Options with a specific focus on RFP pricing and generating client ideas. At Lehman Brothers, he risk managed an exotics trading book. He distinctly remembers being non-plussed at the fuss over the Lehman Brothers collapse, having predicted it a year before (Ref: IIT Madras placement talk - 2007). :rocket:'''
+                Prior to that he was a trader on Wall Street trading currency options. During his time at Company3 he helped setup an automated option price trading/monitoring system. On the research side, he worked on single currency fx pricing and eurchf floor failure models. At Company4 he worked on Equity Exotic Options with a specific focus on RFP pricing and generating client ideas. At Company5, he risk managed an exotics trading book. He distinctly remembers being non-plussed at the fuss over the Company5 collapse, having predicted it a year before (Ref: University2 placement talk - 2007). :rocket:'''
 
         # ---------------------------------
         [about_us.detail.bottom_left]
@@ -163,7 +163,7 @@ fixed_sharer_active = true
         # ---------------------------------
             [[about_us.detail.bottom_right.list]]
                 title = "Master of Business Administration, 2012"
-                subtitle = "IIM Ahmedabad"
+                subtitle = "University1"
                 icon = "fa-graduation-cap"
 
             [[about_us.detail.bottom_right.list]]

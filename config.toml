@@ -92,7 +92,7 @@ verboseLog =true
     facebook_admin_handle = "yourName"
 
     #* 20. Add your twitter handle for twitter sharing cards
-    twitter_creator_handle = "@your_username"
+    twitter_creator_handle = "@yourName"
 
     #* 21. Add your twitter site handle for twitter sharing cards if any, or keep same as twitter_creator_handle
     twitter_site_handle = "@yourWebsite"
