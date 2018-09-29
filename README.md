@@ -1058,7 +1058,7 @@ Broadly the following steps are involved in creating the website
 5. Use git to download the files. Then we will be changing the remote url names to the ones you created in the step where you [setup the version control system](#step-4-getting-a-version-control-system-or-login-to-github)
     ```bash
     # 1. Clone the site into your directory
-    git clone --recurse-submodules -j8 https://github.com/p10rahulm/your-static-website.git .
+    git clone --recurse-submodules -j8 https://github.com/p10rahulm/yourWebsite.git .
 
     # 2. Change the remote url (origin) to the template repo you created
     git remote set-url origin https://github.com/yourusername/yourblogname-template-files.git
@@ -1127,14 +1127,14 @@ The first thing you want to look at is the config.toml file. We will describe al
 - title = "Your Website Name"
 - disqusShortname = "yourdisqusShortname"
 - googleAnalytics = "UA-123456789-1"
-- copyright = "&copy; 2018 YourCompany"
-- site_author_name = "Your Name"
-- role = "YourRole, YourCompanyName"
-- email = "firstname.lastname@gmail.com"
+- copyright = "&copy; 2018 yourCompanyName"
+- site_author_name = "yourName"
+- role = "yourRole, yourCompanyName"
+- email = "yourName@gmail.com"
 - default_description = "-273.15K. So Cool."
-- facebook_admin_handle = "yourfirstname.yourlastname"
-- twitter_creator_handle = "@your_cool_handle"
-- twitter_site_handle = "@yourwebSite"
+- facebook_admin_handle = "yourName"
+- twitter_creator_handle = "@your_username"
+- twitter_site_handle = "@yourWebsite"
 - favicon = "favicon.jpg"
 - apple_touch_icon = "favicon.jpg"
 - logo = "thinking_tree2.jpg"
@@ -1142,13 +1142,13 @@ The first thing you want to look at is the config.toml file. We will describe al
 - latitude = "12.932376"
 - longitude = "77.630389"
 - img_source = "/img/flowers_line_drawing.jpg" # decorative image for popup
-- popup_submission_mail = "first_name.last_name@gmail.com"
+- popup_submission_mail = "yourName@gmail.com"
 - popup_submission_subject = "New subscription for your site!"
-- secondary_forwarding_emails = ["first_name.last_name@gmail.com","another_name@gmail.com"]
+- secondary_forwarding_emails = ["yourName@gmail.com","anotherName@gmail.com"]
 - [[params.footer_network]]
-    url = "https://www.facebook.com/first_name.last_name"
+    url = "https://www.facebook.com/yourName"
 - [[params.footer_network]]
-    url = "https://www.linkedin.com/in/first_name-last_name/"
+    url = "https://www.linkedin.com/in/yourName/"
 - [[params.footer_network]]
     url = "http://github.com/your_username"
 
@@ -1196,7 +1196,7 @@ The first thing you want to look at is the config.toml file. We will describe al
 
 
     #* 9. Your copyright notice - appears in site footer and in RSS. Note: To display a copyright symbol, type `&copy;`.
-    copyright = "&copy; 2018 YourCompany"
+    copyright = "&copy; 2018 yourCompanyName"
 
     # 10. If enableRobotsTXT is true, a simple robots.txt is created allowing all agents to crawl everything. If you want to create your own robots.txt, then place a robots.txt in the static folder.
     enableRobotsTXT =true
@@ -1222,13 +1222,13 @@ The first thing you want to look at is the config.toml file. We will describe al
 
     [params]
     #* 15. Site Author name
-    site_author_name = "Your Name"
+    site_author_name = "yourName"
 
     #* 16. Site creator role. This will be used wherever role is required.
-    role = "YourRole, YourCompanyName"
+    role = "yourRole, yourCompanyName"
 
     #* 17. Site creator email. Again used in a bunch of places like contact
-    email = "firstname.lastname@gmail.com"
+    email = "yourName@gmail.com"
 
     # SEO Section
 
@@ -1236,13 +1236,13 @@ The first thing you want to look at is the config.toml file. We will describe al
     default_description = "-273.15K. So Cool."
 
     #* 19. Add your FB admin site handle for facebook cards
-    facebook_admin_handle = "yourfirstname.yourlastname"
+    facebook_admin_handle = "yourName"
 
     #* 20. Add your twitter handle for twitter sharing cards
-    twitter_creator_handle = "@your_cool_handle"
+    twitter_creator_handle = "@your_username"
 
     #* 21. Add your twitter site handle for twitter sharing cards if any, or keep same as twitter_creator_handle
-    twitter_site_handle = "@yourwebSite"
+    twitter_site_handle = "@yourWebsite"
 
 
     #* 22. Choose a favicon. Make it really small, and save this in the *static* folder.
@@ -1397,9 +1397,9 @@ The first thing you want to look at is the config.toml file. We will describe al
     link_after_submit = "/subscriptionsuccess/"
 
     #* 43. Change the mail recipients and subject below
-    popup_submission_mail = "first_name.last_name@gmail.com"
+    popup_submission_mail = "yourName@gmail.com"
     popup_submission_subject = "New subscription for your site!"
-    secondary_forwarding_emails = ["first_name.last_name@gmail.com","another_name@gmail.com"]
+    secondary_forwarding_emails = ["yourName@gmail.com","anotherName@gmail.com"]
 
     # 44. Popup close behaviour can be changed below
     # Close popup by clicking outside the box
@@ -1426,12 +1426,12 @@ The first thing you want to look at is the config.toml file. We will describe al
     #* 46. The site footer will contain three icons. You can choose the icons (from https://fontawesome.com/v4.7.0/icons/) and change links below
 
     [[params.footer_network]]
-    url = "https://www.facebook.com/first_name.last_name"
+    url = "https://www.facebook.com/yourName"
     iconpack = "fa"
     icon = "fa-facebook"
 
     [[params.footer_network]]
-    url = "https://www.linkedin.com/in/first_name-last_name/"
+    url = "https://www.linkedin.com/in/yourName/"
     iconpack = "fa"
     icon = "fa-linkedin"
 
@@ -1785,8 +1785,8 @@ fixed_sharer_active = true
     # ---------------------------------
     [about_us.descriptor]
         logo_image = "portrait.jpg"
-        name_title = "FirstName LastName"
-        name_subtitle = "Founder, YourCompany"
+        name_title = "yourName"
+        name_subtitle = "yourRole, yourCompanyName"
 
         # ---------------------------------
         [[about_us.descriptor.affiliations]]
@@ -1803,16 +1803,16 @@ fixed_sharer_active = true
         [[about_us.descriptor.social]]
             icon = "fa-envelope"
             icon_pack = "fa"
-            link = "mailto:first_name.last_name@gmail.com"
+            link = "mailto:yourName@gmail.com"
         [[about_us.descriptor.social]]
             icon = "fa-linkedin"
             icon_pack = "fa"
-            link = "//linkedin.com/in/first_name-last_name/"
+            link = "//linkedin.com/in/yourName/"
 
         [[about_us.descriptor.social]]
             icon = "fa-facebook"
             icon_pack = "fa"
-            link = "//facebook.com/first_name.last_name"
+            link = "//facebook.com/yourName"
 
         [[about_us.descriptor.social]]
             icon = "fa-github"
@@ -1829,13 +1829,13 @@ fixed_sharer_active = true
         # Make sure alignment is ok. I've used replace of '                '
         # to remove the leading white space
         content = '''
-                FirstName LastName founded YourCompany as a means to work on problems that take time and are more difficult to address than traditional start-ups would allow. Traditionally the distinction between research and production had been fairly well demarcated with research institutions working on technologies that were forward looking and companies working on production oriented technology (technologies which made money today). That distinction has become blurred, especially in computer science with much of the cutting edge improvements happening within companies.
+                yourName founded yourCompanyName as a means to work on problems that take time and are more difficult to address than traditional start-ups would allow. Traditionally the distinction between research and production had been fairly well demarcated with research institutions working on technologies that were forward looking and companies working on production oriented technology (technologies which made money today). That distinction has become blurred, especially in computer science with much of the cutting edge improvements happening within companies.
 
-                YourCompany is an attempt to work on futuristic technologies covering multidisciplinary domains. We follow problems till their origins, dive into rabbit holes and go deep into the root of problems. Many times this leads us to mathematics, which seems to be the foundation of all else. Sometimes it leads to sociology and behavioural science. Few times it leads to the complexity of Biology. Other times it leads to thought experiments. Most of this rests on a backbone of coding as it is ubiquitous as a tool.
+                yourCompanyName is an attempt to work on futuristic technologies covering multidisciplinary domains. We follow problems till their origins, dive into rabbit holes and go deep into the root of problems. Many times this leads us to mathematics, which seems to be the foundation of all else. Sometimes it leads to sociology and behavioural science. Few times it leads to the complexity of Biology. Other times it leads to thought experiments. Most of this rests on a backbone of coding as it is ubiquitous as a tool.
 
                 The research areas we work on here are network topologies, computational structures, self-organization and automata, idea space theory. Apart from this core, there is also ongoing work on pattern finding in market microstructure (high frequency trading), and a few applications of complexity and modelling. If you would like to join us to contribute on any of these problems, you are most welcome. We're sure you would find the journey at least slightly enlightening. If you have a problem that you would like us to work on, please contact us below.
 
-                FirstName LastName has been the head of Data Science at Atidiv and Cuemath. At Atidiv, he built a data science division from scratch which worked on Data Science as a Service - the Atidiv data science team acted as the remote data science team for our clients. This meant building tools to solve common problems between companies and building a team to deal with bespoke problems and on demand requests for client companies. At Cuemath he was the head of data science and helped in their Series-B fund-raise round.
+                yourName has been the head of Data Science at Atidiv and Cuemath. At Atidiv, he built a data science division from scratch which worked on Data Science as a Service - the Atidiv data science team acted as the remote data science team for our clients. This meant building tools to solve common problems between companies and building a team to deal with bespoke problems and on demand requests for client companies. At Cuemath he was the head of data science and helped in their Series-B fund-raise round.
 
                 Prior to that he was a trader on Wall Street trading currency options. During his time at Barclays he helped setup an automated option price trading/monitoring system. On the research side, he worked on single currency fx pricing and eurchf floor failure models. At Nomura he worked on Equity Exotic Options with a specific focus on RFP pricing and generating client ideas. At Lehman Brothers, he risk managed an exotics trading book. He distinctly remembers being non-plussed at the fuss over the Lehman Brothers collapse, having predicted it a year before (Ref: IIT Madras placement talk - 2007). :rocket:'''
 
@@ -1985,7 +1985,7 @@ fixed_sharer_active = true
     subheading = "And hope that they come and do the action. This is called call to action"
     cta_button1_text = "Start a new blog with Raz"
     cta_button2_text = "Visit our blog"
-    cta_button1_link = "//www.github.com/your_username/your-static-website"
+    cta_button1_link = "//www.github.com/your_username/yourWebsite"
     cta_button2_link = "//www.thinkingtree.me"
 
 
@@ -2040,8 +2040,8 @@ fixed_sharer_active = true
         name = "contact_email"
         description = "email"
         font_awesome_icon = "fa-envelope"
-        link = "mailto:firstName.lastName@gmail.com"
-        text = "firstName.lastName@gmail.com"
+        link = "mailto:yourName@gmail.com"
+        text = "yourName@gmail.com"
         style = "color:#333; margin-bottom: 15px; display:block;"
 
     [[contact.fields]]
@@ -2086,8 +2086,8 @@ title = "CONTACT US"
 subtitle = "_Please leave your message below and we'll get back as soon as we can_"
 title_color = "azure"
 subtitle_color = "#aaa"
-email = "first_name.last_name@gmail.com"
-contact_secondary_email = ["another_name@gmail.com","abc@example.org"]
+email = "yourName@gmail.com"
+contact_secondary_email = ["anotherName@gmail.com","anotherName@gmail.com"]
 
 buttontext = "Send message"
 onSubmit_link = "/contact_success"
@@ -2150,7 +2150,7 @@ background_color = "#222"
 ### privacy.md in the content folder
 
 - I have created a generic privacy policy.
-- In this file, replace YourCompany by your real company name
+- In this file, replace yourCompanyName by your real company name
 - This is rendered by terms_conditions.html layout in the layouts/_default folder
 - You may want to change this as per your legal jurisdiction/needs of your website.
 - You can optionally add title, date and author fields at the top.
@@ -2158,7 +2158,7 @@ background_color = "#222"
 ### termsservice.md in the content folder
 
 - I have created a generic terms and conditions template which may be useful.
-- In this file, replace YourCompany by your real company name
+- In this file, replace yourCompanyName by your real company name
 - Also replace http://www.yourdomain.com with your real domain name
 - This is rendered by terms_conditions.html layout in the layouts/_default folder
 - **In case your legal jurisdiction is different, please use a template that's relevant to your state**
@@ -2174,35 +2174,20 @@ background_color = "#222"
     ```
 3. Open `http://localhost:1313` on your browser. Even after checking that everything works, keep this tab open.
 4. At this stage, you should have modified the following words to your own
-    1. yourdomain
-    
-    3. Your Website Name
-    5. @yourwebSite
-    
-    
-    6. @your_username
-    7. your_username
-    8. your-static-website
-    9. YourCompany
-    13. YourCompanyName
-    12. YourRole
-    
-    14. Your Name
-    10. Firstname Lastname
-    11. firstname-lastname
-    18. first_name.last_name
-    4. yourfirstname.yourlastname
-    19. another_name@gmail.com
-    abc@example.org
+    - yourdomain
+    - Your Website Name
+    - your_username
+    - yourWebsite
+    - yourCompanyName
+    - yourRole
+    - yourName
+    - anotherName
+    - yourdisqusShortname
+    - thinking_tree2.jpg
+    - UA-123456789-1 (google analytics)
+    - map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
 
-    2. yourdisqusShortname
-    15. thinking_tree2.jpg
-    16. UA-123456789-1 (google analytics)
-    17. map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
-    
-    
-    20. 
-5. On a good text editor this can be done by pressing ctrl+shift+F or ctrl+shift+R, where the replace all occurances in project is available. Note that for this you may have to choose your project folder (to enable search in this folder). Depending on your editor you may have to look up instructions for Replace All
+5. On a good text editor this can be done by pressing ctrl+shift+F or ctrl+shift+R, where the replace all occurances in project is available. Note that for this you may have to choose your project folder (to enable search in this folder). Depending on your editor you may have to look up google for instructions for Replace All. 
 
 
 ## Modify the content and preview
@@ -2275,7 +2260,7 @@ artist = "Madhav theBard"
 
 # 2. Additional to tags and categories, we also have two additional categorizations for audio pages. These are albums and artists. In artists, we list all additional artists to the main one involved
 albums = ["Kannada","Language"]
-artists = ["FirstName LastName","Madhav theBard"]
+artists = ["yourName","Madhav theBard"]
 
 # 3. We can add multiple audios to a single page (as in an album). We need to mention the name of the piece, the filename (placed in audios folder), the artist and a cover image
 
@@ -2345,7 +2330,7 @@ Courses, similar to books, have a number of additional optional settings that ma
 
 ```toml
 # 1. The "faculty" for the course is a similar option to author name in the regular pages
-faculty = "FirstName LastName and Goody Two Shoes"
+faculty = "yourName and Goody Two Shoes"
 
 # 2. A short intro may be provided which visitors may see for quickly understanding what the course is about. It should be similar to abstract for a book
 short_intro = "An in-depth look at management with a specific view on Marketing"
@@ -2429,7 +2414,7 @@ The people pages have a large number of additional settings over and above the c
 name = "Wise man"
 
 # 2. You can input the role the person plays
-role = "Founder, YourCompany"
+role = "yourRole, yourCompanyName"
 
 # 3. The portrait image mentioned below can be similar to the caption image and be a generic squarish (width = height) photo of the person.
 # Place portrait in img folder
@@ -2460,11 +2445,11 @@ teams = ["Leadership"]
 [[social]]
     icon = "fa-envelope"
     icon_pack = "fa"
-    link = "mailto:first_name.last_name@gmail.com"
+    link = "mailto:yourName@gmail.com"
 [[social]]
     icon = "fa-linkedin"
     icon_pack = "fa"
-    link = "//linkedin.com/in/first_name-last_name/"
+    link = "//linkedin.com/in/yourName/"
 
 # 7. You can list any interests for the person along with a title for the interests section
 [interests]
@@ -2531,7 +2516,7 @@ The publications pages use a bunch of new parameters including a few categorizat
 ```toml
 # 1. We list the authors in these pages with links to their personal pages (which could be outside of the site itself)
 authors =  [
-                { name = "FirstName LastName", url = "/people/person1" },
+                { name = "yourName", url = "/people/person1" },
                 { name = "Ankit Mathgenius", url = "/people/person2" },
                 { name = "Sailesh Tripper", url = "/people/person3" }
             ]
@@ -2631,7 +2616,7 @@ Workshops pages contain a good number of new configurations apart from the commo
 
 ```toml
 # 1. Equivalent to author in various other pages, we have presenters for the workshop pages
-presenters = "FirstName LastName and Goody Two Shoes"
+presenters = "yourName and Goody Two Shoes"
 
 # 2. A short intro of the workshop may be given
 short_intro = "Sustainable practices for creating a new you"
@@ -2789,7 +2774,7 @@ If you are making changes to your website from multiple locations, it is importa
     1. Do all setup like downloading [git bash](https://git-scm.com/downloads) and a good text editor like [Atom](https://atom.io/) or [VS Code](https://code.visualstudio.com/)
     2. Create a directory where you want to host your files, say `c:\users\username\website\`
     3. Open your git bash and cd to this new directory
-    4. type `git clone  --recurse-submodules -j8 https://github.com/your_username/your-static-website.git .`
+    4. type `git clone  --recurse-submodules -j8 https://github.com/your_username/yourWebsite.git .`
     5. This should download all your files from the remote directory *including the submodule*
     6. To ensure that everything is in order, you can further type `./pull.sh` and all your files should be synced
 2. Continue to make changes are required in your favorite text editor

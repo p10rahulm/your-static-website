@@ -49,7 +49,7 @@ layoutDir ="layouts"
 
 
 #* 9. Your copyright notice - appears in site footer and in RSS. Note: To display a copyright symbol, type `&copy;`.
-copyright = "&copy; 2018 YourCompany"
+copyright = "&copy; 2018 yourCompanyName"
 
 # 10. If enableRobotsTXT is true, a simple robots.txt is created allowing all agents to crawl everything. If you want to create your own robots.txt, then place a robots.txt in the static folder.
 enableRobotsTXT =true
@@ -75,13 +75,13 @@ verboseLog =true
 
 [params]
     #* 15. Site Author name
-    site_author_name = "Your Name"
+    site_author_name = "yourName"
 
     #* 16. Site creator role. This will be used wherever role is required.
-    role = "YourRole, YourCompanyName"
+    role = "yourRole, yourCompanyName"
 
     #* 17. Site creator email. Again used in a bunch of places like contact
-    email = "firstname.lastname@gmail.com"
+    email = "yourName@gmail.com"
 
     # SEO Section
 
@@ -89,13 +89,13 @@ verboseLog =true
     default_description = "-273.15K. So Cool."
 
     #* 19. Add your FB admin site handle for facebook cards
-    facebook_admin_handle = "yourfirstname.yourlastname"
+    facebook_admin_handle = "yourName"
 
     #* 20. Add your twitter handle for twitter sharing cards
     twitter_creator_handle = "@your_username"
 
     #* 21. Add your twitter site handle for twitter sharing cards if any, or keep same as twitter_creator_handle
-    twitter_site_handle = "@yourwebSite"
+    twitter_site_handle = "@yourWebsite"
 
 
     #* 22. Choose a favicon. Make it really small, and save this in the *static* folder.
@@ -247,9 +247,9 @@ verboseLog =true
         link_after_submit = "/subscriptionsuccess/"
 
         #* 43. Change the mail recipients and subject below
-        popup_submission_mail = "first_name.last_name@gmail.com"
+        popup_submission_mail = "yourName@gmail.com"
         popup_submission_subject = "New subscription for your site!"
-        secondary_forwarding_emails = ["first_name.last_name@gmail.com","another_name@gmail.com"]
+        secondary_forwarding_emails = ["yourName@gmail.com","anotherName@gmail.com"]
 
         # 44. Popup close behaviour can be changed below
         # Close popup by clicking outside the box
@@ -275,12 +275,12 @@ verboseLog =true
 
     #* 46. The site footer will contain three icons. You can choose the icons (from https://fontawesome.com/v4.7.0/icons/) and change links below
     [[params.footer_network]]
-        url = "https://www.facebook.com/first_name.last_name"
+        url = "https://www.facebook.com/yourName"
         iconpack = "fa"
         icon = "fa-facebook"
 
     [[params.footer_network]]
-        url = "https://www.linkedin.com/in/first_name-last_name/"
+        url = "https://www.linkedin.com/in/yourName/"
         iconpack = "fa"
         icon = "fa-linkedin"
 

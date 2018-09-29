@@ -7,7 +7,7 @@ stars = 4.5
 
 headline = "One mighty swipe and and the dorks fly away"
 date = 2018-06-08T19:44:35+05:30
-author = "FirstName LastName"
+author = "yourName"
 
 
 # -----------------------------------------

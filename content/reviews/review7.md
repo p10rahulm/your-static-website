@@ -7,7 +7,7 @@ stars = 4.5
 
 headline = "Fruits of labour are hard fought for and won!"
 date = 2018-06-08T19:44:35+05:30
-author = "FirstName LastName"
+author = "yourName"
 
 
 # -----------------------------------------

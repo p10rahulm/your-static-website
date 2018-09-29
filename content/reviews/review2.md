@@ -7,7 +7,7 @@ stars = 5
 
 headline = "The imagination is astounding"
 date = 2018-06-08T19:44:35+05:30
-author = "FirstName LastName"
+author = "yourName"
 
 
 # -----------------------------------------

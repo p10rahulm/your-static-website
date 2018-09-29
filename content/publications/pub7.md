@@ -3,7 +3,7 @@ title = "Carbon Monoxide: To Boldly Go Where NO Has Gone Before."
 date = 2018-07-17T23:40:05+05:30
 
 authors =  [
-                { name = "FirstName LastName", url = "/people/person1" },
+                { name = "yourName", url = "/people/person1" },
                 { name = "Ankit Mathgenius", url = "/people/person2" },
                 { name = "Sailesh Tripper", url = "/people/person3" }
             ]

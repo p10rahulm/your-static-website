@@ -1,7 +1,7 @@
 +++
 title = "Dus ka dum"
 date = 2018-06-08T19:44:35+05:30
-faculty = "FirstName LastName and Goody Two Shoes"
+faculty = "yourName and Goody Two Shoes"
 
 short_intro = "An in-depth look at management with a specific view on Marketing"
 

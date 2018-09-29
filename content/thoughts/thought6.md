@@ -1,7 +1,7 @@
 +++
 title = "I'm only human after all"
 date = 2018-06-08T19:44:36+05:30
-author = "FirstName LastName"
+author = "yourName"
 
 # -----------------------------------------
 # Formatting

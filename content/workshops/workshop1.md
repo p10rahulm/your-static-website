@@ -1,7 +1,7 @@
 +++
 title = "Kahin pe pahunchne ke liye, kahin se nikalna bahut zaroori hai"
 date = 2018-06-08T19:44:35+05:30
-presenters = "FirstName LastName and Goody Two Shoes"
+presenters = "yourName and Goody Two Shoes"
 
 short_intro = "Sustainable practices for creating a new you"
 

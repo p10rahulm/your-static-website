@@ -29,7 +29,7 @@ enable_comments = true
 tags = []
 categories = []
 albums = ["Kannada","Language"]
-artists = ["FirstName LastName","Madhav theBard"]
+artists = ["yourName","Madhav theBard"]
 
 # It's important that below section is placed at the bottom just before content. Changing the order means the toml does not work as expected. Blame the toml specification!
 [[audios]]

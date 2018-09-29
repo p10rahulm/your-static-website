@@ -1,7 +1,7 @@
 +++
 title = "Johann Sebastian Bach"
 date = 2018-06-08T19:44:35+05:30
-author = "FirstName LastName"
+author = "yourName"
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
