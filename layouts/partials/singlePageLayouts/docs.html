@@ -1,0 +1,66 @@
+<style type="text/css">
+    {{ partial "css_scripts/singlePageLayouts/docs.css" . | safeCSS }}
+</style>
+
+<script type="text/javascript">
+    {{partial "js_scripts/singlePageLayouts/docs.js" . | safeJS }}
+</script>
+
+<section id="notes" class="single_page_layout container">
+    {{if .Params.contents}}{{if ne (index .Params.contents 0).text ""}}
+    <div id="docs_top_container">
+        <div id = "docs-menu" class="docs_menu">
+            <div id = "docs-menu-heading" class="docs_menu_heading ">Menu</div>
+            <!--<div id="doc_menu_items_container">-->
+            {{range .Params.contents}}
+            <div class="docs_menu_item"><a href="{{.url}}">{{.text | truncate 50 }}</a></div>
+            {{end}}
+            <!--</div>-->
+        </div>
+    <div class="page_right_section">
+    {{end}}{{end}}
+    <div class ="page_header_section">
+        <div class="page_title">{{(.Title | default ($.Scratch.Get "page_layout").title)}}</div>
+        <div class="page_author">Author: {{.Params.Author | default ($.Scratch.Get "page_layout").author}}</div>
+        <div class="page_created_date">{{ dateFormat "Monday, Jan 2, 2006" (.Date| default ($.Scratch.Get "page_layout").date) }}</div>
+    </div>
+    <div class="mid_section">
+        <div class = "page_main_section">
+            <div class="page_content">
+                {{ (.Content | default ($.Scratch.Get "page_layout").content) | markdownify}}
+            </div>
+        </div>
+    </div>
+    {{if .Params.contents}}{{if ne (index .Params.contents 0).text ""}}
+    </div></div>
+    {{end}}{{end}}
+    <div id="page_footer">
+        <div class="prev_next_page">
+            <div class="previous_page">
+            {{if .Params.previous_page}}{{range .Params.previous_page}}{{if ne .text ""}}
+            <a href="{{.url}}"><i class="fa fa-chevron-left icon_left"></i> {{.text | truncate 50}}</a>
+            {{end}}{{end}}{{end}}
+            </div>
+            {{if .Params.next_page}}{{range .Params.next_page}}{{if ne .text ""}}
+            <div class="next_page"><a href="{{.url}}">{{.text | truncate 50}}<i class="fa fa-chevron-right icon_right"></i></a></div>
+            {{end}}{{end}}{{end}}
+        </div>
+
+
+        {{if .Params.categories}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Categories:</span>
+            {{range .Params.Categories}}
+            <a class="page_meta_links" href = "/categories/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+        {{if .Params.tags}}
+        <div class="page_meta"><span class = "page_meta_descriptor">Tags:</span>
+            {{range .Params.tags}}
+            <a class="page_meta_links" href = "/tags/{{. | urlize}}"><span class = "page_meta_links_text">{{.}}</span></a>
+            {{end}}
+        </div>
+        {{end}}
+
+    </div>
+</section>
