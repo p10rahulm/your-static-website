@@ -14,7 +14,7 @@ baseurl = "http://www.yourdomain.com/"
 title = "Your Website Name"
 
 #* 3. disqus is the third party application we will be using for comments. Get your own disqus shortname here: https://disqus.com/admin/create/ and fill it below
-disqusShortname = "yourdisqusShortname"
+disqusShortname = "thinkingtree-template"
 
 #* 4. Enabling Google Analytics on your site enables you to track site usage, referrers and various other statistics.
 ## - See how to get your google analytics ID here: https://support.google.com/analytics/answer/1042508?hl=en
