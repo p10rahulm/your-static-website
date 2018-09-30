@@ -2,7 +2,7 @@
 title = "Introduction to Hugo"
 date = 2018-06-08T19:44:35+05:30
 
-page_no = 1
+pageNumber = 1
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
@@ -31,13 +31,13 @@ url = "/docs/understanding_hugo/parts_of_webpage/"
 text = ""
 url = ""
 
-[[contents]]
+[[quick_links]]
 text = "Introduction"
 url = "/docs/understanding_hugo/introduction/"
-[[contents]]
+[[quick_links]]
 text = "Parts of a Webpage"
 url = "/docs/understanding_hugo/parts_of_webpage/"
-[[contents]]
+[[quick_links]]
 text = "Assembling a Website"
 url = "/docs/understanding_hugo/assembling_website/"
 

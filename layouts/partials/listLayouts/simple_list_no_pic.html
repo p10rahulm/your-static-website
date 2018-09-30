@@ -1,0 +1,34 @@
+{{$pages := $.pages}}
+{{$context := $.context}}
+{{$scratch := $.scratch}}
+<header>
+    <style>
+        {{partial "css_scripts/listLayouts/simple_list_no_pic.css" (dict "name" $.section ) | safeCSS}}
+    </style>
+</header>
+<section id="featured_{{$.section}}">
+    <div class="container">
+        <div class="section-heading">
+            {{$.context.title | default "List Page"}}
+        </div>
+        <div class="section-subheading">
+            {{$.context.subtitle | default ""}}
+        </div>
+        <div id="{{$.section}}_cards" class="cardList">
+            {{ range $pages }}
+            <div class ="details_cards">
+                <a href="{{.RelPermalink}}">
+                    <div class="card_title left_align">
+                        {{.Title | markdownify | truncate 100 }}
+                    </div>
+                </a>
+                    <div class="card_summary left_align">
+                        {{(.Params.summary_content | default .Summary) | markdownify | truncate 300 }}
+                    </div>
+
+            </div>
+            {{end}}
+        </div>
+
+    </div>
+</section>

@@ -6,13 +6,13 @@
     {{partial "js_scripts/singlePageLayouts/docs.js" . | safeJS }}
 </script>
 
-<section id="notes" class="single_page_layout container">
-    {{if .Params.contents}}{{if ne (index .Params.contents 0).text ""}}
+<section id="docs" class="single_page_layout container">
+    {{if .Params.quick_links}}{{if ne (index .Params.quick_links 0).text ""}}
     <div id="docs_top_container">
         <div id = "docs-menu" class="docs_menu">
             <div id = "docs-menu-heading" class="docs_menu_heading ">Menu</div>
             <!--<div id="doc_menu_items_container">-->
-            {{range .Params.contents}}
+            {{range .Params.quick_links}}
             <div class="docs_menu_item"><a href="{{.url}}">{{.text | truncate 50 }}</a></div>
             {{end}}
             <!--</div>-->
@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    {{if .Params.contents}}{{if ne (index .Params.contents 0).text ""}}
+    {{if .Params.quick_links}}{{if ne (index .Params.quick_links 0).text ""}}
     </div></div>
     {{end}}{{end}}
     <div id="page_footer">

@@ -1,4 +1,4 @@
-{{if .Params.contents}}{{if ne (index .Params.contents 0).text ""}}
+{{if .Params.quick_links}}{{if ne (index .Params.quick_links 0).text ""}}
 document.addEventListener('DOMContentLoaded', function() {
     if(window.innerWidth >= 1000){
         console.log("large_screen");
