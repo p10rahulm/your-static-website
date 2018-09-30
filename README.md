@@ -2347,7 +2347,7 @@ Courses, similar to books, have a number of additional optional settings that ma
 
 ```toml
 # 1. The "faculty" for the course is a similar option to author name in the regular pages
-faculty = "yourName and Goody Two Shoes"
+faculty = "yourName and anotherName"
 
 # 2. A short intro may be provided which visitors may see for quickly understanding what the course is about. It should be similar to abstract for a book
 short_intro = "An in-depth look at management with a specific view on Marketing"
@@ -2633,7 +2633,7 @@ Workshops pages contain a good number of new configurations apart from the commo
 
 ```toml
 # 1. Equivalent to author in various other pages, we have presenters for the workshop pages
-presenters = "yourName and Goody Two Shoes"
+presenters = "yourName and anotherName"
 
 # 2. A short intro of the workshop may be given
 short_intro = "Sustainable practices for creating a new you"

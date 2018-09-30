@@ -1,7 +1,7 @@
 +++
 title = "5-MI"
 date = 2018-06-08T19:44:35+05:30
-author = "yourName and Goody Two Shoes"
+author = "yourName and anotherName"
 
 
 

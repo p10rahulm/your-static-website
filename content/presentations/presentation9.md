@@ -1,6 +1,6 @@
 +++
 title = "She said sheep head on the she sore"
-author = "yourName and Goody Two Shoes"
+author = "yourName and anotherName"
 date = 2018-06-08T19:44:35+05:30
 
 tagline = "An in-depth look at management with a specific view on Marketing"

@@ -1,7 +1,7 @@
 +++
 title = "Kaun kambakht bardaasht karne ko peeta hai?"
 date = 2018-06-08T19:44:35+05:30
-presenters = "yourName and Goody Two Shoes"
+presenters = "yourName and anotherName"
 
 short_intro = "Sustainable practices for creating a new you"
 

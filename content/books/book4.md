@@ -1,7 +1,7 @@
 +++
 title = "4 pillars of marketing"
 date = 2018-06-08T19:44:35+05:30
-author = "yourName and Goody Two Shoes"
+author = "yourName and anotherName"
 
 tagline = "The last book you'll ever need"
 abstract = "A small snippet about the book is good enough"
