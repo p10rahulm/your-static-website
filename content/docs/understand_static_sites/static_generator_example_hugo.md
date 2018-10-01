@@ -2,7 +2,7 @@
 title = "The parts of a regular webpage - HTML, CSS and Javascript"
 date = 2018-06-08T19:44:35+05:30
 
-pageNumber = 1
+pageNumber = 8
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
@@ -30,48 +30,36 @@ tags = ["Static Sites","documentation","Hugo","websites"]
 categories = ["Website"]
 
 [[previous_page]]
-text = "Introduction to Static Sites"
-url = "/docs/understanding_hugo/introduction/"
+text = "Assembling a Website"
+url = "/docs/understand_static_sites/assembling_webpage/"
 
 [[next_page]]
-text = "Retrieving a Webpage from the internet"
-url = "/docs/understanding_hugo/retrieving_a_webpage/"
+text = ""
+url = ""
 
 
-[[quick_links]]
-text = "*HTML*"
-url = "#html"
-[[quick_links]]
-text = "*CSS*"
-url = "#css"
-[[quick_links]]
-text = "*Javascript*"
-url = "#javascript"
+
 [[quick_links]]
 text = "Introduction to Static Sites"
-url = "/docs/understanding_hugo/introduction/"
+url = "/docs/understand_static_sites/introduction/"
 [[quick_links]]
 text = "Parts of a Webpage"
-url = "/docs/understanding_hugo/parts_of_webpage/"
+url = "/docs/understand_static_sites/parts_of_webpage/"
 [[quick_links]]
 text = "Retrieving a Webpage from the internet"
-url = "/docs/understanding_hugo/retrieving_a_webpage/"
+url = "/docs/understand_static_sites/retrieving_a_webpage/"
 [[quick_links]]
-text = "What is a static website"
-url = "/docs/understanding_hugo/static_website/"
+text = "What is a Static Website"
+url = "/docs/understand_static_sites/static_website/"
 [[quick_links]]
 text = "Website Templates"
-url = "/docs/understanding_hugo/website_templates/"
+url = "/docs/understand_static_sites/website_templates/"
 [[quick_links]]
-text = "Static website generator"
-url = "/docs/understanding_hugo/static_website_generators/"
+text = "Static Website Generator"
+url = "/docs/understand_static_sites/static_website_generators/"
 [[quick_links]]
 text = "Assembling a Website"
-url = "/docs/understanding_hugo/assembling_webpage/"
-[[quick_links]]
-text = "What is Hugo"
-url = "/docs/understanding_hugo/hugo/"
-
+url = "/docs/understand_static_sites/assembling_webpage/"
 
 # Writeup goes below
 +++
@@ -80,11 +68,11 @@ There are three basic parts to every website as you see it on your browser. The 
 
 ## HTML
 
-1. This forms the main content of the website. 
-2. The actual content of the website is surrounded by a start tag and an end tag that describe the content. 
+1. This forms the main content of the website.
+2. The actual content of the website is surrounded by a start tag and an end tag that describe the content.
 3. While there are many types of [element tags](https://www.w3schools.com/html/html_elements.asp), the main ones that we will see over and over are [div](https://www.w3schools.com/tags/tag_div.asp), [span](https://www.w3schools.com/tags/tag_span.asp), [a](https://www.w3schools.com/tags/tag_a.asp), [img](https://www.w3schools.com/tags/tag_img.asp), [p](https://www.w3schools.com/tags/tag_p.asp) and the [heading](https://www.w3schools.com/tags/tag_hn.asp) tags
 4. Each of these element tags optionally has an `id` and can belong to a `class`. These identifiers can be used in the css and javascript to identify the element to style it or perform some other login on it.
-5. All the content along with the html elements for these go into the [html body](https://www.w3schools.com/tags/tag_body.asp). 
+5. All the content along with the html elements for these go into the [html body](https://www.w3schools.com/tags/tag_body.asp).
 6. There could also be meta data about the webpage itself. These typically go at the top of the webpage into the [head](https://www.w3schools.com/tags/tag_head.asp) of the document
 7. There are also file types that browsers know how to interpret. These could be music which could be placed in the [audio tag](https://www.w3schools.com/Tags/tag_audio.asp), or videos in the [video tag](https://www.w3schools.com/html/html5_video.asp) and pdfs in the [object tag](https://www.w3schools.com/TAGS/tag_object.asp). Apart from these file types, [images](https://www.w3schools.com/html/html_images.asp) are a basic part of html standards.
 8. Apart from all the above elements which are output type tags, there are tags where user input can be taken. These are called [form tags](https://www.tutorialspoint.com/html/html_form_tag.htm) and [input tags](https://www.w3schools.com/tags/tag_input.asp) within forms.
@@ -94,7 +82,7 @@ There are three basic parts to every website as you see it on your browser. The 
 ## CSS
 
 - Cascading Style Sheets are the main method to styling a website.
-- CSS specifications decide the syntax by which you can specify the style. 
+- CSS specifications decide the syntax by which you can specify the style.
 - CSS targetting a particular div can be [placed at the div](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_css_inline) in the html, within [style tag in the html](https://www.w3schools.com/tags/tag_style.asp) or in a [separate css file](https://www.w3schools.com/css/css_howto.asp).
 - Typical things decided by css are font styles, position and spacing of elements, color or image of background and color of foreground. Importantly CSS can also be used to hide elements in a webpage.
 - Typically CSS is considered static but that statement comes with a few caveats
@@ -107,15 +95,15 @@ There are three basic parts to every website as you see it on your browser. The 
 
 ## Javascript
 
-- Javascript is a full fledged programming language unlike CSS and HTML. It is the default language understood by the browsers. 
+- Javascript is a full fledged programming language unlike CSS and HTML. It is the default language understood by the browsers.
 - The html with all its elements constitutes what is known as a [document object model (DOM)](https://www.w3schools.com/js/js_htmldom.asp). This is accessible to the Javascript running on the page. The access can be used to change the DOM as well. For all practical purposes one may think of the DOM as the internal representation of the HTML page.
 - Javascript can therefore be used to compute all kinds of logic and then to change the DOM based on that logic. This can involve
     - Read DOM elements and their properties
     - Change content within DOM elements
     - Create new dom elements
     - Change styles of elements
-- So what triggers a particular Javascript function (to change a web page element or some such)? These triggers are called [events](https://www.tutorialspoint.com/javascript/javascript_events.htm). Events are the main way that Javascript functions are called. 
-- Events can be attached to entire web pages or to particular elements of webpages. 
+- So what triggers a particular Javascript function (to change a web page element or some such)? These triggers are called [events](https://www.tutorialspoint.com/javascript/javascript_events.htm). Events are the main way that Javascript functions are called.
+- Events can be attached to entire web pages or to particular elements of webpages.
 - For example, you can check if someone is typing in a form, or is hovering the mouse over some part of the page, or has just clicked a button. For mobile devices, equivalent triggers for touch exist.
 - [This](https://developer.mozilla.org/en-US/docs/Web/Events) is a fairly extensive  list. Suffice to say that you may find events for most things that might occur on a webpage. From these events you may construct other events as well. Commonly used event types are
     - [Page Load](https://www.w3schools.com/jsref/event_onload.asp) to check that all dom elements have finished downloading

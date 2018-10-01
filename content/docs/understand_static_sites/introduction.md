@@ -31,7 +31,7 @@ categories = ["Website"]
 
 [[next_page]]
 text = "Parts of a Webpage"
-url = "/docs/understanding_hugo/parts_of_webpage/"
+url = "/docs/understand_static_sites/parts_of_webpage/"
 
 [[previous_page]]
 text = ""
@@ -39,28 +39,28 @@ url = ""
 
 [[quick_links]]
 text = "Introduction to Static Sites"
-url = "/docs/understanding_hugo/introduction/"
+url = "/docs/understand_static_sites/introduction/"
 [[quick_links]]
 text = "Parts of a Webpage"
-url = "/docs/understanding_hugo/parts_of_webpage/"
+url = "/docs/understand_static_sites/parts_of_webpage/"
 [[quick_links]]
 text = "Retrieving a Webpage from the internet"
-url = "/docs/understanding_hugo/retrieving_a_webpage/"
+url = "/docs/understand_static_sites/retrieving_a_webpage/"
 [[quick_links]]
-text = "What is a static website"
-url = "/docs/understanding_hugo/static_website/"
+text = "What is a Static Website"
+url = "/docs/understand_static_sites/static_website/"
 [[quick_links]]
 text = "Website Templates"
-url = "/docs/understanding_hugo/website_templates/"
+url = "/docs/understand_static_sites/website_templates/"
 [[quick_links]]
-text = "Static website generator"
-url = "/docs/understanding_hugo/static_website_generators/"
+text = "Static Website Generator"
+url = "/docs/understand_static_sites/static_website_generators/"
 [[quick_links]]
 text = "Assembling a Website"
-url = "/docs/understanding_hugo/assembling_webpage/"
+url = "/docs/understand_static_sites/assembling_webpage/"
 [[quick_links]]
 text = "What is Hugo"
-url = "/docs/understanding_hugo/hugo/"
+url = "/docs/understand_static_sites/static_generator_example_hugo/"
 
 # Writeup goes below
 +++
