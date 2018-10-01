@@ -2175,7 +2175,7 @@ background_color = "#222"
     - yourRole
     - yourName
     - anotherName
-    - yourdisqusShortname
+    - disqusShortname
     - Company1, Company2, Company3, Company4, Company5
     - University1, University2
     - thinking_tree2.jpg
