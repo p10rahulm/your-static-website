@@ -20,7 +20,7 @@ enable_comments = true
 
 # Highlight.js: https://highlightjs.org/static/demo/
 math = false
-highlight = false
+highlight = true
 highlight_languages = ["bash","html"]
 highlight_style = "ocean"
 
@@ -37,6 +37,27 @@ url = "/docs/understand_static_sites/parts_of_webpage/"
 text = "What is a Static Website"
 url = "/docs/understand_static_sites/static_website/"
 
+[[quick_links]]
+text = "*DNS*"
+url = "#dns"
+[[quick_links]]
+text = "*Requests*"
+url = "#requests"
+[[quick_links]]
+text = "*Responding to Requests*"
+url = "#responding-to-requests"
+[[quick_links]]
+text = "*The MVC Design Pattern*"
+url = "#the-mvc-design-pattern"
+[[quick_links]]
+text = "*Web Frameworks*"
+url = "#web-frameworks"
+[[quick_links]]
+text = "*Handling Multiple Concurrent Requests*"
+url = "#handling-multiple-concurrent-requests"
+[[quick_links]]
+text = "*Content Delivery Networks*"
+url = "#content-delivery-networks"
 
 [[quick_links]]
 text = "Introduction to Static Sites"
@@ -57,61 +78,124 @@ url = "/docs/understand_static_sites/static_website_generators/"
 text = "Assembling a Website"
 url = "/docs/understand_static_sites/assembling_webpage/"
 [[quick_links]]
-text = "What is Hugo"
+text = "Static Website Generator Example: Hugo"
 url = "/docs/understand_static_sites/static_generator_example_hugo/"
 
 # Writeup goes below
 +++
 
-There are three basic parts to every website as you see it on your browser. The content, the styling and the logic. These are described by three parts, *html*, *css* and *javascript*.
+what happens between you typing an address into your browser and the browser displaying the website? This forms the crux of what is the internet, or how something that exists remotely is displayed on your browser. This section is going to be a fast whirlwind tour, so lets get on with it!
 
-## HTML
+## DNS
 
-1. This forms the main content of the website.
-2. The actual content of the website is surrounded by a start tag and an end tag that describe the content.
-3. While there are many types of [element tags](https://www.w3schools.com/html/html_elements.asp), the main ones that we will see over and over are [div](https://www.w3schools.com/tags/tag_div.asp), [span](https://www.w3schools.com/tags/tag_span.asp), [a](https://www.w3schools.com/tags/tag_a.asp), [img](https://www.w3schools.com/tags/tag_img.asp), [p](https://www.w3schools.com/tags/tag_p.asp) and the [heading](https://www.w3schools.com/tags/tag_hn.asp) tags
-4. Each of these element tags optionally has an `id` and can belong to a `class`. These identifiers can be used in the css and javascript to identify the element to style it or perform some other login on it.
-5. All the content along with the html elements for these go into the [html body](https://www.w3schools.com/tags/tag_body.asp).
-6. There could also be meta data about the webpage itself. These typically go at the top of the webpage into the [head](https://www.w3schools.com/tags/tag_head.asp) of the document
-7. There are also file types that browsers know how to interpret. These could be music which could be placed in the [audio tag](https://www.w3schools.com/Tags/tag_audio.asp), or videos in the [video tag](https://www.w3schools.com/html/html5_video.asp) and pdfs in the [object tag](https://www.w3schools.com/TAGS/tag_object.asp). Apart from these file types, [images](https://www.w3schools.com/html/html_images.asp) are a basic part of html standards.
-8. Apart from all the above elements which are output type tags, there are tags where user input can be taken. These are called [form tags](https://www.tutorialspoint.com/html/html_form_tag.htm) and [input tags](https://www.w3schools.com/tags/tag_input.asp) within forms.
-9. One must mention that while websites can live without the other parts - CSS and Javascript, a site cannot live without html. Further, we can include CSS and javascript within the HTML page itself. Therefore one can say HTML is the core format of a webpage.
-10. If you want to learn HTML from scratch [tutorials-point](https://www.tutorialspoint.com/html/index.htm), [code-academy](https://www.codecademy.com/learn/learn-html) and [W3Schools](https://www.w3schools.com/html/) are good places to start.
+1. When a [user types an url](https://medium.com/@maneesha.wijesinghe1/what-happens-when-you-type-an-url-in-the-browser-and-press-enter-bb0aa2449c1a) on the browser, the user expects to see a webpage represented by the url.
+2. Each webpage is hosted by a server (or more than one server).
+3. Each of these servers have a certain address associated with it.
+4. So if the browser has to send a request (to send back a webpage) to the server it has to find its address.
+5. This process is called the DNS lookup. Given the number of users requesting so many sites on the internet every second, this lookup (something like a telephone directory lookup) has to be super fast and is implemented using datastructures called [hash maps](https://www.geeksforgeeks.org/implement-forward-dns-look-cache/).
+6. The browser typically checks it's own cache, then the Internet service providers cache and then goes to internet wide DNS providers.
+7. Once the browser knows an address, how does it send a request to that address? This is handled at the equipment level itself through something called [routing tables](https://en.wikipedia.org/wiki/Routing_table)
+8. The articles [DNS Guide](https://webhostinggeeks.com/guides/dns/) and [How Does the Internet Work](https://web.stanford.edu/class/msande91si/www-spr04/readings/week1/InternetWhitepaper.htm) are excellent resources to understand the DNS
 
-## CSS
+## Requests
 
-- Cascading Style Sheets are the main method to styling a website.
-- CSS specifications decide the syntax by which you can specify the style.
-- CSS targetting a particular div can be [placed at the div](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_css_inline) in the html, within [style tag in the html](https://www.w3schools.com/tags/tag_style.asp) or in a [separate css file](https://www.w3schools.com/css/css_howto.asp).
-- Typical things decided by css are font styles, position and spacing of elements, color or image of background and color of foreground. Importantly CSS can also be used to hide elements in a webpage.
-- Typically CSS is considered static but that statement comes with a few caveats
-    - CSS can be separately set for different browser window sizes through [media queries](https://www.w3schools.com/css/css3_mediaqueries_ex.asp)
-    - CSS can have extremely simple logic (like addition, subtraction) using [calc](https://developers.google.com/web/updates/2012/03/CSS-layout-gets-smarter-with-calc)
-    - CSS has inbuilt layouts called [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and [CSS Grid](https://gridbyexample.com/examples/) which make dynamic decisions in where to position objects
-- CSS can be used to create simple animated objects in a webpage, through [transitions](https://www.w3schools.com/cssref/css3_pr_transition.asp).
-- Good resources for learning CSS are [mozilla docs](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS), [tutorials-point](https://www.tutorialspoint.com/css/) and [w3schools references](https://www.w3schools.com/css/)
-- CSS has been abstracted by languages like [LESS](http://lesscss.org/) and [SASS](https://sass-lang.com/) that compile into ordinary css. These include variables within CSS
+1. Once the server is found by the browser, it needs to send a request to send back a webpage.
+2. This request happens over a [http protocol](https://www.tutorialspoint.com/http/http_requests.htm). In fact http and https are the standard method of communication over the internet. [Other protocols](https://www.concise-courses.com/11-protocols/) that are common include ssh, pop3 and smtp.
+3. These are actually the topmost layer on the internet, called application protocols. These sit above the internet layer and communication layer in the [TCP/IP model](https://www.geeksforgeeks.org/computer-network-tcpip-model/). 
+4. Data transmission over the internet happens over units of data called [packets](https://en.wikipedia.org/wiki/Network_packet). These packets contain headers which contains necessary meta data for transmission and the payload which is the actual data to be transmitted.
+5. TCP is a [reliable form of communication](https://en.wikipedia.org/wiki/Transmission_Control_Protocol#Reliable_transmission) that ensures that through this extensive network of middlemen between you and the server, there is no data loss. It ensures this by checking for errors (through checksums) and for lost packets and resending these packets.
+6. Once an http request (or https) request is sent over tcp/ip, the server has to send back a response.
+7. [This](https://www.garykessler.net/library/tcpip.html) is a good resource to look at an overview of tcp/ip. [This article from Cisco](https://www.cisco.com/c/en/us/support/docs/ip/routing-information-protocol-rip/13769-5.html) is a fairly detailed look at TCP and [this excerpt from the tcp/ip network administration book](https://www.oreilly.com/library/view/tcpip-network-administration/0596002971/ch01.html) gives a good overview.
 
-## Javascript
+## Responding to requests
 
-- Javascript is a full fledged programming language unlike CSS and HTML. It is the default language understood by the browsers.
-- The html with all its elements constitutes what is known as a [document object model (DOM)](https://www.w3schools.com/js/js_htmldom.asp). This is accessible to the Javascript running on the page. The access can be used to change the DOM as well. For all practical purposes one may think of the DOM as the internal representation of the HTML page.
-- Javascript can therefore be used to compute all kinds of logic and then to change the DOM based on that logic. This can involve
-    - Read DOM elements and their properties
-    - Change content within DOM elements
-    - Create new dom elements
-    - Change styles of elements
-- So what triggers a particular Javascript function (to change a web page element or some such)? These triggers are called [events](https://www.tutorialspoint.com/javascript/javascript_events.htm). Events are the main way that Javascript functions are called.
-- Events can be attached to entire web pages or to particular elements of webpages.
-- For example, you can check if someone is typing in a form, or is hovering the mouse over some part of the page, or has just clicked a button. For mobile devices, equivalent triggers for touch exist.
-- [This](https://developer.mozilla.org/en-US/docs/Web/Events) is a fairly extensive  list. Suffice to say that you may find events for most things that might occur on a webpage. From these events you may construct other events as well. Commonly used event types are
-    - [Page Load](https://www.w3schools.com/jsref/event_onload.asp) to check that all dom elements have finished downloading
-    - [Mouse Events](https://javascript.info/mouse-events-basics) and [touch events](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events) for various elements in the page
-    - [Keyboard events](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent) also exist that can indicate whether the keyboard has been used to type anything.
-- Javascript can also [speak](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) to servers outside of the present server based on some user input and retrieve components that can be used to update the webpage.
-- In other words javascript can be used to change a webpage 'dynamically'. We will come back to this statement in the next section.
+1. Behing the IP address in the [web server](https://en.wikipedia.org/wiki/Web_server) computer sits a program like [Apache](https://httpd.apache.org/), [IIS](https://www.pcwdld.com/what-is-iis) or [Nginx](https://www.nginx.com/) for handling requests.
+2. This server program then passes the request to a request handler that reads the http request and generates a response. 
+3. This request handling is done for each user request. ie each time the site is viewed, there is a request handled by the server
+4. There are different ways of handling user requests. These could range in complexity from just sending back static content (pre-created html, css and javascript), to sending back modified content, to having a full fledged framework to deal with the requests. Let us look at these in more detail
 
-### Notes on HTML Parts
+### Static Response
 
-1. From this section you might come to understand that the visible content you write typically forms a small part of the webpage only. The rest is all the supporting html css and javascript scaffolding. It would be hugely wasteful to write all of this scaffolding each time you want to note down a small thought.
-2. This section might also seem like a lot of input to digest. The happy part is that the whole reason to use Hugo is that you don't *have to* write any of HTML, CSS or javascript.
+The response to a user request may simply be existing files, or in other words the html, css and javascript and images sent back to the user. With regards to the server these are `static` text objects.
+
+### Dynamic Response
+
+Sometimes this request may need to pass through some logic or may need [server side programming](https://developer.mozilla.org/en-US/docs/Learn/Server-side) to generate a response. This is called a `dynamic` response. Note that this is distinguished from the programming that goes into the javascript executed by the user's browser also called as [client side programming]((https://www.geeksforgeeks.org/server-side-client-side-programming/))
+
+### Simple (inline) Web Frameworks
+
+In some cases, like in [simple PHP](https://eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design/) [design patterns](https://sourcemaking.com/design_patterns), that are closely linked to static design, you can modify the content (html,css and javascript) through [inline php](https://www.w3schools.com/php/php_syntax.asp)
+
+## The MVC Design Pattern
+
+Other language frameworks use a design pattern like [MVC](http://heim.ifi.uio.no/~trygver/2007/MVC_Originals.pdf), which stands for Model View Controller. There are several variants of this like [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel), [MVP](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter)
+
+### View
+
+[The view](https://www.martinfowler.com/eaaDev/uiArchs.html) sits straight on top of the document that the user sees. It's responsibility is to update the document in case anything in the controller changes. It is generally passive in the sense it doesn't do any processing work.
+
+1. [For example](https://www.tutorialspoint.com/ruby-on-rails/rails-views.htm), let's say in a framework like Django Templates, we are creating a list view for books in a library. This might be as simple as:
+    ```html
+    <% if @books.blank? %>
+        <p>There are no books in the system.</p>
+    <% else %>
+        <p>These are the current books in the system</p>
+
+        <ul id = "books">
+            <% @books.each do |book| %>
+                <li><%= link_to book.title -%></li>
+            <% end %>
+        </ul>
+    <% end %>
+    ```
+2. In the above example, it's upto the model to populate the what books field with their titles.
+
+### Controller
+
+[The controller](https://stackoverflow.com/questions/1931335/what-is-mvc-in-ruby-on-rails) handles the logic of the webpage. The request goes to the controller which queries the model and provides the data to the View to display.
+
+### Model
+
+[The model](https://www.tomdalling.com/blog/software-design/model-view-controller-explained/) is where the relevant data is accessed and retrieved for that particular use case. This is understood best as retrieval of information from a database. The database itself may be made up of several tables that are relevant.
+
+1. Examples of tables may include customer table where the name, customer id and purchases of a customer might be stored(in case of an ecommerce site).
+2. In some architectures like wordpress, the content of an entire document might just be a single cell in a table containing documents.
+3. As another example of a model, one may want to retrieve the name and emails of a customer in the home page of an email App. In the same email App, when a particular email is clicked, the contents of that particular email may need to be retrieved. The retrieval of the email is done by the *model*
+
+## Web Frameworks
+
+Several full-fledged web-frameworks exist that help one build these `request handler programs` otherwise known as web applications
+
+1. They automate several tasks needed to handle requests like communicating with the server application
+2. They give the programmer a method for organizing the code into the MVC framework or some such.
+3. They include several helper functions (that are not included in the language itself) which make coding much faster.
+4. There are examples in each framework for the most common use cases (like ecommerce sites)
+5. Some popular web frameworks are:
+    - [Django](https://djangobook.com/model-view-controller-design-pattern/) which is built on  Python
+    - [Ruby on Rails](http://www.tutorialspoint.com/ruby-on-rails/rails-framework.htm) built on Ruby
+    - [ASP.net](https://www.asp.net/) built on C#
+    - [Several javascript frameworks](https://blog.scottlogic.com/2013/12/06/JavaScript-MVC-frameworks.html) built on javascript
+
+## Handling Multiple Concurrent Requests
+
+We discussed above how a single server handles requests from a user. But every website has multiple users. What happens in such cases? In all such cases we have something called a queue. The server queues up requests and processes them as computation time permits. But if there are a large number of concurrent users to a website, there is going to be a large load on the server and this would lead to delays in response. Therefore, sometimes instead of a single computer, there is something called a [load balancer](https://www.f5.com/services/resources/glossary/load-balancer) that sits at the IP.
+
+1. Say there is a website with 100s of concurrent users, a single server may not be able to handle it
+2. Then one needs multiple servers handling requests to the IP address of the website.
+3. This task is done by a [load balancer](https://en.wikipedia.org/wiki/Load_balancing_(computing)) which takes a requests, and sends it onwards to one of the servers that sits behind it.
+4. There are [several methods](https://www.citrix.com/glossary/load-balancing.html) of choosing which server to send the user request to. For example:
+    - round robin
+    - least response time
+    - least bandwidth
+    - fewest active connections
+5. Once the server and client establish a connection, the load balancer steps out of the way and there is [persistence](https://www.citrix.com/blogs/2010/09/09/load-balancing-persistence/) between that server and the user.
+
+## Content Delivery Networks
+
+Also common is a [CDN (content delivery network)](https://www.cloudflare.com/learning/cdn/what-is-a-cdn/)
+
+1. A [CDN](https://www.incapsula.com/cdn-guide/what-is-cdn-how-it-works.html) typically takes content at a particular timestamp, caches it and then distributes it across its servers.
+2. When a visitor requests a particular url, it is served from one of the distributed server locations closest to the requestor.
+3. CDNs typically serve static content, ie content that is the same irrespective of who requests it. This could be the entire webpage or only certain assets from the webpage that are cacheable/static like images.
+4. The main use of CDNs is speed. The speed mainly happens because they have many servers across the globe, and the serve the website from the closest point to the visitor of the site
+5. CDN helps with speed in another very important way. Many sites have common bits of javascript code otherwise known as libraries. If these are served from CDNs, which are common to many sites, the browser recognizes from the url that it has already retrieved the library (in case it has already retrieved that url in the past) and does not retrieve it. Instead it pulls from its own memory (cache) the file to be used. This speeds up the site

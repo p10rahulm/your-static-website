@@ -40,3 +40,8 @@
 .page_content{
     padding: 0.25rem 0 2.5rem;
 }
+pre, code {
+    font-family: 'Roboto Mono', monospace;
+    color: #7dba25;
+    background-color: #f4f4f4;
+}

@@ -46,7 +46,7 @@ url = "/docs/understand_static_sites/introduction/"
 text = "Parts of a Webpage"
 url = "/docs/understand_static_sites/parts_of_webpage/"
 [[quick_links]]
-text = "Retrieving a Webpage from the internet"
+text = "Retrieving Webpage from the net"
 url = "/docs/understand_static_sites/retrieving_a_webpage/"
 [[quick_links]]
 text = "What is a Static Website"

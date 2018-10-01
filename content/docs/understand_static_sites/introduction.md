@@ -44,7 +44,7 @@ url = "/docs/understand_static_sites/introduction/"
 text = "Parts of a Webpage"
 url = "/docs/understand_static_sites/parts_of_webpage/"
 [[quick_links]]
-text = "Retrieving a Webpage from the internet"
+text = "Retrieving Webpage from the net"
 url = "/docs/understand_static_sites/retrieving_a_webpage/"
 [[quick_links]]
 text = "What is a Static Website"
@@ -59,7 +59,7 @@ url = "/docs/understand_static_sites/static_website_generators/"
 text = "Assembling a Website"
 url = "/docs/understand_static_sites/assembling_webpage/"
 [[quick_links]]
-text = "What is Hugo"
+text = "Static Website Generator Example: Hugo"
 url = "/docs/understand_static_sites/static_generator_example_hugo/"
 
 # Writeup goes below
@@ -70,10 +70,10 @@ To understand Hugo, one needs to understand what are Static Sites. To understand
 
 We will attempt an understanding of what is Hugo through a few sub-sections:
 
-- Parts of a webpage
-- Retrieving a Webpage from the internet
-- What is a static website
-- Website Templates
-- Static website generator
-- Assembling a Website
-- What is Hugo
+- [Parts of a webpage](/docs/understand_static_sites/parts_of_webpage/)
+- [Retrieving a Webpage from the internet](/docs/understand_static_sites/retrieving_a_webpage/)
+- [What is a static website](/docs/understand_static_sites/static_website/)
+- [Website Templates](/docs/understand_static_sites/website_templates/)
+- [Static website generator](/docs/understand_static_sites/static_website_generators/)
+- [Assembling a Website](/docs/understand_static_sites/assembling_webpage/)
+- [Static Website Generator Example: Hugo](/docs/understand_static_sites/static_generator_example_hugo/)

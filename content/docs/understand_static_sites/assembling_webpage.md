@@ -34,7 +34,7 @@ text = "Static Website Generator"
 url = "/docs/understand_static_sites/static_website_generators/"
 
 [[next_page]]
-text = "What is Hugo"
+text = "Static Website Generator Example: Hugo"
 url = "/docs/understand_static_sites/static_generator_example_hugo/"
 
 
@@ -46,7 +46,7 @@ url = "/docs/understand_static_sites/introduction/"
 text = "Parts of a Webpage"
 url = "/docs/understand_static_sites/parts_of_webpage/"
 [[quick_links]]
-text = "Retrieving a Webpage from the internet"
+text = "Retrieving Webpage from the net"
 url = "/docs/understand_static_sites/retrieving_a_webpage/"
 [[quick_links]]
 text = "What is a Static Website"
@@ -58,7 +58,7 @@ url = "/docs/understand_static_sites/website_templates/"
 text = "Static Website Generator"
 url = "/docs/understand_static_sites/static_website_generators/"
 [[quick_links]]
-text = "What is Hugo"
+text = "Static Website Generator Example: Hugo"
 url = "/docs/understand_static_sites/static_generator_example_hugo/"
 
 # Writeup goes below

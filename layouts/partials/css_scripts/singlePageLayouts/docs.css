@@ -111,6 +111,11 @@
 .mid_section{
     grid-area: page_mid_section;
 }
+pre, code {
+    font-family: 'Roboto Mono', monospace;
+    color: #7dba25;
+    background-color: #f4f4f4;
+}
 
 @media screen and (max-width: 1000px) {
     #docs_top_container{

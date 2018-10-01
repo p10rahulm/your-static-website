@@ -30,7 +30,7 @@ tags = ["Static Sites","documentation","Hugo","websites"]
 categories = ["Website"]
 
 [[previous_page]]
-text = "Retrieving a Webpage from the internet"
+text = "Retrieving Webpage from the net"
 url = "/docs/understand_static_sites/retrieving_a_webpage/"
 
 [[next_page]]
@@ -45,7 +45,7 @@ url = "/docs/understand_static_sites/introduction/"
 text = "Parts of a Webpage"
 url = "/docs/understand_static_sites/parts_of_webpage/"
 [[quick_links]]
-text = "Retrieving a Webpage from the internet"
+text = "Retrieving Webpage from the net"
 url = "/docs/understand_static_sites/retrieving_a_webpage/"
 [[quick_links]]
 text = "Website Templates"
@@ -57,7 +57,7 @@ url = "/docs/understand_static_sites/static_website_generators/"
 text = "Assembling a Website"
 url = "/docs/understand_static_sites/assembling_webpage/"
 [[quick_links]]
-text = "What is Hugo"
+text = "Static Website Generator Example: Hugo"
 url = "/docs/understand_static_sites/static_generator_example_hugo/"
 
 # Writeup goes below
