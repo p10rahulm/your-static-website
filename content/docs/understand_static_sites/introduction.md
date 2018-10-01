@@ -37,9 +37,7 @@ url = "/docs/understand_static_sites/parts_of_webpage/"
 text = ""
 url = ""
 
-[[quick_links]]
-text = "Introduction to Static Sites"
-url = "/docs/understand_static_sites/introduction/"
+
 [[quick_links]]
 text = "Parts of a Webpage"
 url = "/docs/understand_static_sites/parts_of_webpage/"

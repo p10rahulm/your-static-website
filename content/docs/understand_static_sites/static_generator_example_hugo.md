@@ -1,5 +1,5 @@
 +++
-title = "The parts of a regular webpage - HTML, CSS and Javascript"
+title = "A Static Website Generator Example: Hugo"
 date = 2018-06-08T19:44:35+05:30
 
 pageNumber = 8
@@ -37,7 +37,18 @@ url = "/docs/understand_static_sites/assembling_webpage/"
 text = ""
 url = ""
 
-
+[[quick_links]]
+text = "*Why Hugo*"
+url = "#why-hugo"
+[[quick_links]]
+text = "*Why not Hugo*"
+url = "#why-not-hugo"
+[[quick_links]]
+text = "*Hugo Setup*"
+url = "#a-typical-setup-in-hugo"
+[[quick_links]]
+text = "*Creation of a new content piece*"
+url = "#creation-of-a-new-content-piece"
 
 [[quick_links]]
 text = "Introduction to Static Sites"
@@ -64,55 +75,87 @@ url = "/docs/understand_static_sites/assembling_webpage/"
 # Writeup goes below
 +++
 
-There are three basic parts to every website as you see it on your browser. The content, the styling and the logic. These are described by three parts, *html*, *css* and *javascript*.
+Hugo is a static website generator as good as any other you will see. It is fast and effective, but takes time to learn, if you are creating a template and not using a readymade one.
 
-## HTML
+### Why Hugo
 
-1. This forms the main content of the website.
-2. The actual content of the website is surrounded by a start tag and an end tag that describe the content.
-3. While there are many types of [element tags](https://www.w3schools.com/html/html_elements.asp), the main ones that we will see over and over are [div](https://www.w3schools.com/tags/tag_div.asp), [span](https://www.w3schools.com/tags/tag_span.asp), [a](https://www.w3schools.com/tags/tag_a.asp), [img](https://www.w3schools.com/tags/tag_img.asp), [p](https://www.w3schools.com/tags/tag_p.asp) and the [heading](https://www.w3schools.com/tags/tag_hn.asp) tags
-4. Each of these element tags optionally has an `id` and can belong to a `class`. These identifiers can be used in the css and javascript to identify the element to style it or perform some other login on it.
-5. All the content along with the html elements for these go into the [html body](https://www.w3schools.com/tags/tag_body.asp).
-6. There could also be meta data about the webpage itself. These typically go at the top of the webpage into the [head](https://www.w3schools.com/tags/tag_head.asp) of the document
-7. There are also file types that browsers know how to interpret. These could be music which could be placed in the [audio tag](https://www.w3schools.com/Tags/tag_audio.asp), or videos in the [video tag](https://www.w3schools.com/html/html5_video.asp) and pdfs in the [object tag](https://www.w3schools.com/TAGS/tag_object.asp). Apart from these file types, [images](https://www.w3schools.com/html/html_images.asp) are a basic part of html standards.
-8. Apart from all the above elements which are output type tags, there are tags where user input can be taken. These are called [form tags](https://www.tutorialspoint.com/html/html_form_tag.htm) and [input tags](https://www.w3schools.com/tags/tag_input.asp) within forms.
-9. One must mention that while websites can live without the other parts - CSS and Javascript, a site cannot live without html. Further, we can include CSS and javascript within the HTML page itself. Therefore one can say HTML is the core format of a webpage.
-10. If you want to learn HTML from scratch [tutorials-point](https://www.tutorialspoint.com/html/index.htm), [code-academy](https://www.codecademy.com/learn/learn-html) and [W3Schools](https://www.w3schools.com/html/) are good places to start.
+1. It is the fastest static website generator
+2. It is opensource and constantly under developement
+3. It has a decent amount of documentation (though this can be improved)
+4. It has a good number of templates (though as of this writing other static websites generators like Jekyll have more and better templates)
+5. There are minimal errors during content writing, and when they do occur while creating templates, the error messages are very good. 
+    - Note: This may come from the fact that it is written in [Go Templates](https://golang.org/pkg/text/template/) which is written in [GoLang](https://golang.org/), supposedly a language supported by Google. 
+    - Note 2: You don't need any of these to create with Hugo.
 
-## CSS
+For me the biggest factors are 1 and 5.
 
-- Cascading Style Sheets are the main method to styling a website.
-- CSS specifications decide the syntax by which you can specify the style.
-- CSS targetting a particular div can be [placed at the div](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_css_inline) in the html, within [style tag in the html](https://www.w3schools.com/tags/tag_style.asp) or in a [separate css file](https://www.w3schools.com/css/css_howto.asp).
-- Typical things decided by css are font styles, position and spacing of elements, color or image of background and color of foreground. Importantly CSS can also be used to hide elements in a webpage.
-- Typically CSS is considered static but that statement comes with a few caveats
-    - CSS can be separately set for different browser window sizes through [media queries](https://www.w3schools.com/css/css3_mediaqueries_ex.asp)
-    - CSS can have extremely simple logic (like addition, subtraction) using [calc](https://developers.google.com/web/updates/2012/03/CSS-layout-gets-smarter-with-calc)
-    - CSS has inbuilt layouts called [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and [CSS Grid](https://gridbyexample.com/examples/) which make dynamic decisions in where to position objects
-- CSS can be used to create simple animated objects in a webpage, through [transitions](https://www.w3schools.com/cssref/css3_pr_transition.asp).
-- Good resources for learning CSS are [mozilla docs](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS), [tutorials-point](https://www.tutorialspoint.com/css/) and [w3schools references](https://www.w3schools.com/css/)
-- CSS has been abstracted by languages like [LESS](http://lesscss.org/) and [SASS](https://sass-lang.com/) that compile into ordinary css. These include variables within CSS
+### Why not Hugo
 
-## Javascript
+1. There is a steep learning curve in case you are planning to build your own templates. This is very different from Wordpress which felt at the time I was much more of a novice as very plug and play.
+    - If you have gone through and understood the above contents, you have already gone through much of this learning curve
+2. The biggest fear with adopting a framework for very large companies is will it last for 5 or 10 years. Hugo has about 30k stars on github and is actively developed. I can only hope that it will remain active even if other frameworks start being faster, or better than hugo
+3. The list of functions available in Go Templates is ok to good, but is not amazing. If you intend to extend Hugo a bit of coding may be required in an unfamiliar language (GoLang, though good is note widely adopted). You can attempt workarounds through basic functions currently available in Go Templates.
+4. Hugo attempts to be minimal and not maximal. Templates in Hugo on the other hand are monolithic. You either take all or leave it. Wordpress excels in this where you have options to extend just a small part of wordpress through plugins.
+5. Since templates are monolithic, you cannot assemble websites from smaller parts that you like (at present). Therefore one may decide to code in templates oneself. This leads to the website development taking time (for the first time hugo developer). If you like any template, and adopt it, this does not apply and development is very fast.
 
-- Javascript is a full fledged programming language unlike CSS and HTML. It is the default language understood by the browsers.
-- The html with all its elements constitutes what is known as a [document object model (DOM)](https://www.w3schools.com/js/js_htmldom.asp). This is accessible to the Javascript running on the page. The access can be used to change the DOM as well. For all practical purposes one may think of the DOM as the internal representation of the HTML page.
-- Javascript can therefore be used to compute all kinds of logic and then to change the DOM based on that logic. This can involve
-    - Read DOM elements and their properties
-    - Change content within DOM elements
-    - Create new dom elements
-    - Change styles of elements
-- So what triggers a particular Javascript function (to change a web page element or some such)? These triggers are called [events](https://www.tutorialspoint.com/javascript/javascript_events.htm). Events are the main way that Javascript functions are called.
-- Events can be attached to entire web pages or to particular elements of webpages.
-- For example, you can check if someone is typing in a form, or is hovering the mouse over some part of the page, or has just clicked a button. For mobile devices, equivalent triggers for touch exist.
-- [This](https://developer.mozilla.org/en-US/docs/Web/Events) is a fairly extensive  list. Suffice to say that you may find events for most things that might occur on a webpage. From these events you may construct other events as well. Commonly used event types are
-    - [Page Load](https://www.w3schools.com/jsref/event_onload.asp) to check that all dom elements have finished downloading
-    - [Mouse Events](https://javascript.info/mouse-events-basics) and [touch events](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events) for various elements in the page
-    - [Keyboard events](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent) also exist that can indicate whether the keyboard has been used to type anything.
-- Javascript can also [speak](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) to servers outside of the present server based on some user input and retrieve components that can be used to update the webpage.
-- In other words javascript can be used to change a webpage 'dynamically'. We will come back to this statement in the next section.
+### FAQ
 
-### Notes on HTML Parts
+Two important questions before starting is what you need to do to setup and after setup, how much time/effort it will take to generate new content. If you are satisfied with the answers for these two questions you may want to go ahead/not go ahead with Hugo
 
-1. From this section you might come to understand that the visible content you write typically forms a small part of the webpage only. The rest is all the supporting html css and javascript scaffolding. It would be hugely wasteful to write all of this scaffolding each time you want to note down a small thought.
-2. This section might also seem like a lot of input to digest. The happy part is that the whole reason to use Hugo is that you don't *have to* write any of HTML, CSS or javascript.
+#### A Typical Setup in Hugo
+
+1. Download [Hugo](https://gohugo.io/getting-started/installing/)
+    1. Place it in [PATH](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
+2. [Choose a theme](https://themes.gohugo.io/)
+    1. Go to the hugo website and choose a template, or stick with this one!
+3. Modify the files that come with the theme
+    1. Site-level configurations:
+        - This is found in the config.toml file
+    2. Front page content
+        - '_index.md' file in the content folder
+    3. All content for website
+        - Content files in each of the directories in the content folder
+    4. Changing look and feel through images and logo
+        = Logo, Favicon, Images, Audios and PDF files in the static folder
+4. Create a local website for checking
+    1. Go to [Terminal](https://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it) or download [git for windows](https://git-scm.com/)
+    2. cd into the directory of the hugo files
+    3. Type `hugo server -D -p 1313`
+    4. This means create a hugo server here which serves all pages including draft pages and serves it on localhost port 1313.
+5. Check the files
+    1. Open a browser window. Type localhost:1313 at the address bar
+    2. Your site should open up
+    3. If it is not fine, then go to your terminal and check for error message. This should be rare in case you have taken care to only modify content files from your chosen theme
+    4. If it is fine proceed to next step
+6. Create the website files
+    1. In the terminal/bash you were using, you can type `Ctrl + c` to close the server. Alternatively open a new terminal/bash and cd into your hugo files directory
+    2. Type `hugo`
+    3. You should see all the website files being created in a directory called public.
+7. Upload the files for Google static storage or whichever static host you are using. Push the files into your github repo for github pages
+    1. Uploading can be automated, but this is discussed later
+    2. Files can be pushed into git the first time by the following commands
+        ```bash
+        git init
+        git add -A
+        git commit -m "First time, creating static site!"
+        git remote add origin https://github.com/user/repo.git
+        git push --set-upstream origin master
+        ```
+
+#### Creation of a new content piece
+
+1. Create a new content piece, say a post.
+    - The types of content pieces you can create are described by the archetypes folder
+    - open a terminal/bash window and cd into the hugo files directory
+    - type `hugo new posts/my_post_name.md` replacing my post name by the title of the article.     - Note that it is recommended to use no spaces. Use underscores '_' instead.
+    - When you type `hugo new posts/my_post_name.md`, the terminal should give some information ending with "`C:\My\hugo\directory\content\posts\my_post_name.md created`"
+2. Add content to the content piece.
+    - Open this file. If you are on windows, you can simply type 'F:\Code\hugo\first_site\content\posts\mypost.md' after pressing the windows button on the bottom left of your screen, the file should open on your default text editor.
+    - Finish editing the post. You can use [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) for writing content and any shortcodes provided by the template (or theme) author and save it
+3. Push the content piece
+    - Go back to the terminal window and type `git push`
+    - This should push your content into your github repository.
+4. Check your website
+    - If you have correctly configured your DNS(say godaddy) and github (or any other host), you should immediately see the new post on the website.
+
+We are (almost) ready at this stage to ask the question -  So how do I implement a static website with Hugo.

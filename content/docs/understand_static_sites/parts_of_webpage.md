@@ -47,6 +47,7 @@ url = "#css"
 [[quick_links]]
 text = "*Javascript*"
 url = "#javascript"
+
 [[quick_links]]
 text = "Introduction to Static Sites"
 url = "/docs/understand_static_sites/introduction/"
