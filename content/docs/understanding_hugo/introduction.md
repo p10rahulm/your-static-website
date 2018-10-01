@@ -24,7 +24,7 @@ tags = ["Static Sites","documentation","Hugo","websites"]
 categories = ["Website"]
 
 [[next_page]]
-text = "We look at different things like Lorem Up"
+text = "Parts of a Webpage"
 url = "/docs/understanding_hugo/parts_of_webpage/"
 
 [[previous_page]]
@@ -32,12 +32,40 @@ text = ""
 url = ""
 
 [[quick_links]]
-text = "- Parts of a Webpage"
+text = "Parts of a Webpage"
+url = "/docs/understanding_hugo/parts_of_webpage/"
+[[quick_links]]
+text = "How does a browser display a website"
+url = "/docs/understanding_hugo/parts_of_webpage/"
+[[quick_links]]
+text = "What is a static website"
+url = "/docs/understanding_hugo/parts_of_webpage/"
+[[quick_links]]
+text = "Website Templates"
+url = "/docs/understanding_hugo/parts_of_webpage/"
+[[quick_links]]
+text = "Static website generator"
 url = "/docs/understanding_hugo/parts_of_webpage/"
 [[quick_links]]
 text = "Assembling a Website"
+url = "/docs/understanding_hugo/parts_of_webpage/"
+[[quick_links]]
+text = "What is Hugo"
 url = "/docs/understanding_hugo/assembling_website/"
 
 
 # Writeup goes below
 +++
+This document is aimed at someone who has not built a website before, so if this is too simple, then bear with me, or skim through this section. If it is too complicated, my apologies, leave a comment on what section you didn't follow and i'll redo to make it simple. This documentation is not hands-on in the sense it will not require you to do anything, but just read.
+
+To understand Hugo, one needs to understand what are Static Sites. To understand Static Sites, one needs to understand what is a server and how websites are served across the internet. Lastly you may want to have an understanding of how your browser displays a website - the content, the styles and any dynamic parts.
+
+We will attempt an understanding of what is Hugo through a few sub-sections:
+
+- Parts of a webpage
+- How does a browser display a website
+- What is a static website
+- Website Templates
+- Static website generator
+- Assembling a Website
+- What is Hugo
