@@ -1875,7 +1875,7 @@ fixed_sharer_active = true
 
             [[about_us.detail.bottom_right.list]]
                 title = "Bachelor of Technology, 2007"
-                subtitle = "Indian Institute of Technology, Madras"
+                subtitle = "University2"
                 icon = "fa-graduation-cap"
 
 # ----------------------------------
@@ -2498,7 +2498,7 @@ title = "Interests"
 
 [[education.list]]
     title = "Bachelor of Technology, 2007"
-    subtitle = "Indian Institute of Technology, Madras"
+    subtitle = "University2"
     icon = "fa-graduation-cap"
 
 ```

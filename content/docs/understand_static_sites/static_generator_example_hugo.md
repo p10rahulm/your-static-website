@@ -20,7 +20,7 @@ enable_comments = true
 
 # Highlight.js: https://highlightjs.org/static/demo/
 math = false
-highlight = false
+highlight = true
 highlight_languages = ["bash","html"]
 highlight_style = "ocean"
 
@@ -34,8 +34,8 @@ text = "Assembling a Website"
 url = "/docs/understand_static_sites/assembling_webpage/"
 
 [[next_page]]
-text = ""
-url = ""
+text = "Create your website"
+url = "/docs/create_your_website/implement_static_website_godaddy_github/"
 
 [[quick_links]]
 text = "*Why Hugo*"
@@ -74,10 +74,11 @@ url = "/docs/understand_static_sites/assembling_webpage/"
 
 # Writeup goes below
 +++
+The last section should have given you a good idea of what a static website generator is. In fact, the directory structure and page creation methods we looked at were that of Hugo. So the question then would be, there are many static website generators (Jekyll, Hugo, Gatsby) - which one should i choose? Or maybe even - I want to create my own website with the least hassle and at the lowest cost, which option should i choose? Or maybe I've heard all my friends go in for wordpress for their sites, why should I go for something static like Hugo. All of these are valid questions. Maybe you'll get a better idea at the end of this section.
 
 Hugo is a static website generator as good as any other you will see. It is fast and effective, but takes time to learn, if you are creating a template and not using a readymade one.
 
-### Why Hugo
+## Why Hugo
 
 1. It is the fastest static website generator
 2. It is opensource and constantly under developement
@@ -89,7 +90,7 @@ Hugo is a static website generator as good as any other you will see. It is fast
 
 For me the biggest factors are 1 and 5.
 
-### Why not Hugo
+## Why not Hugo
 
 1. There is a steep learning curve in case you are planning to build your own templates. This is very different from Wordpress which felt at the time I was much more of a novice as very plug and play.
     - If you have gone through and understood the above contents, you have already gone through much of this learning curve
@@ -98,51 +99,52 @@ For me the biggest factors are 1 and 5.
 4. Hugo attempts to be minimal and not maximal. Templates in Hugo on the other hand are monolithic. You either take all or leave it. Wordpress excels in this where you have options to extend just a small part of wordpress through plugins.
 5. Since templates are monolithic, you cannot assemble websites from smaller parts that you like (at present). Therefore one may decide to code in templates oneself. This leads to the website development taking time (for the first time hugo developer). If you like any template, and adopt it, this does not apply and development is very fast.
 
-### FAQ
+## FAQ
 
 Two important questions before starting is what you need to do to setup and after setup, how much time/effort it will take to generate new content. If you are satisfied with the answers for these two questions you may want to go ahead/not go ahead with Hugo
 
-#### A Typical Setup in Hugo
+## A Typical Setup in Hugo
 
 1. Download [Hugo](https://gohugo.io/getting-started/installing/)
-    1. Place it in [PATH](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
+    - Place it in [PATH](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/)
 2. [Choose a theme](https://themes.gohugo.io/)
-    1. Go to the hugo website and choose a template, or stick with this one!
+    - Go to the hugo website and choose a template, or stick with this one!
 3. Modify the files that come with the theme
-    1. Site-level configurations:
+    - Site-level configurations:
         - This is found in the config.toml file
-    2. Front page content
+    - Front page content
         - '_index.md' file in the content folder
-    3. All content for website
+    - All content for website
         - Content files in each of the directories in the content folder
-    4. Changing look and feel through images and logo
+    - Changing look and feel through images and logo
         = Logo, Favicon, Images, Audios and PDF files in the static folder
 4. Create a local website for checking
-    1. Go to [Terminal](https://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it) or download [git for windows](https://git-scm.com/)
-    2. cd into the directory of the hugo files
-    3. Type `hugo server -D -p 1313`
-    4. This means create a hugo server here which serves all pages including draft pages and serves it on localhost port 1313.
+    - Go to [Terminal](https://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it) or download [git for windows](https://git-scm.com/)
+    - cd into the directory of the hugo files
+    - Type `hugo server -D -p 1313`
+    - This means create a hugo server here which serves all pages including draft pages and serves it on localhost port 1313.
 5. Check the files
-    1. Open a browser window. Type localhost:1313 at the address bar
-    2. Your site should open up
-    3. If it is not fine, then go to your terminal and check for error message. This should be rare in case you have taken care to only modify content files from your chosen theme
-    4. If it is fine proceed to next step
+    - Open a browser window. Type localhost:1313 at the address bar
+    - Your site should open up
+    - If it is not fine, then go to your terminal and check for error message. This should be rare in case you have taken care to only modify content files from your chosen theme
+    - If it is fine proceed to next step
 6. Create the website files
-    1. In the terminal/bash you were using, you can type `Ctrl + c` to close the server. Alternatively open a new terminal/bash and cd into your hugo files directory
-    2. Type `hugo`
-    3. You should see all the website files being created in a directory called public.
+    - In the terminal/bash you were using, you can type `Ctrl + c` to close the server. Alternatively open a new terminal/bash and cd into your hugo files directory
+    - Type `hugo`
+    - You should see all the website files being created in a directory called public.
 7. Upload the files for Google static storage or whichever static host you are using. Push the files into your github repo for github pages
-    1. Uploading can be automated, but this is discussed later
-    2. Files can be pushed into git the first time by the following commands
-        ```bash
-        git init
-        git add -A
-        git commit -m "First time, creating static site!"
-        git remote add origin https://github.com/user/repo.git
-        git push --set-upstream origin master
-        ```
+    - Uploading can be automated, but this is discussed later
+    - Files can be pushed into git the first time by the following commands
 
-#### Creation of a new content piece
+    ```bash
+    git init
+    git add -A
+    git commit -m "First time, creating static site!"
+    git remote add origin https://github.com/user/repo.git
+    git push --set-upstream origin master
+    ```
+
+## Creation of a new content piece
 
 1. Create a new content piece, say a post.
     - The types of content pieces you can create are described by the archetypes folder
@@ -158,4 +160,8 @@ Two important questions before starting is what you need to do to setup and afte
 4. Check your website
     - If you have correctly configured your DNS(say godaddy) and github (or any other host), you should immediately see the new post on the website.
 
-We are (almost) ready at this stage to ask the question -  So how do I implement a static website with Hugo.
+If you need more information on Hugo, these [set of videos](https://www.youtube.com/watch?v=qtIqKaDlqXo&list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3) on Hugo are an excellent resource to start your understanding. I found it took me a few hours to go through, but it saved me many more hours later. Do this when you get the time. 
+
+After this attempt to go through the [Hugo docs](https://gohugo.io/getting-started/). This is a good reference, but i didn't find it to be a good read through. Both of these are required for templating, but hopefully we can make it through to creating a website without modifying the templates without use of these.
+
+So that's that. Are you (almost) ready at this stage to ask the question -  So how do I implement a static website with Hugo? If so, jump right in to the next part of this tutorial:  [How to implement a website in 10 steps](/docs/create_your_website/implement_static_website_godaddy_github/).

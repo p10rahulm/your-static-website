@@ -127,6 +127,15 @@ pre, code {
     font-size: 18px;
     font-style: normal;
 }
+ul{
+    margin-bottom: 0.25rem;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 18px 0 10px 0;
+    font-weight: 600;
+    font-family: "EB Garamond", "Lora", serif;
+}
+
 @media screen and (max-width: 1000px) {
     #docs_top_container{
         display: grid;

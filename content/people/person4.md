@@ -101,7 +101,7 @@ title = "Interests"
 
 [[education.list]]
     title = "Bachelor of Technology, 2007"
-    subtitle = "Indian Institute of Technology, Madras"
+    subtitle = "University2"
     icon = "fa-graduation-cap"
 
 
