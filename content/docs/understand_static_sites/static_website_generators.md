@@ -1,5 +1,5 @@
 +++
-title = "The parts of a regular webpage - HTML, CSS and Javascript"
+title = "Static Website Generators"
 date = 2018-06-08T19:44:35+05:30
 
 pageNumber = 6
@@ -20,8 +20,8 @@ enable_comments = true
 
 # Highlight.js: https://highlightjs.org/static/demo/
 math = false
-highlight = false
-highlight_languages = ["bash","html"]
+highlight = true
+highlight_languages = ["html","markdown","json","yaml","toml"]
 highlight_style = "ocean"
 
 # Tags and categories
@@ -37,7 +37,24 @@ url = "/docs/understand_static_sites/website_templates/"
 text = "Assembling a Website"
 url = "/docs/understand_static_sites/assembling_webpage/"
 
-
+[[quick_links]]
+text = "*How is Information Stored*"
+url = "#how-is-information-stored"
+[[quick_links]]
+text = "*Markup Languages*"
+url = "#markup-languages"
+[[quick_links]]
+text = "*Markdown*"
+url = "#markdown"
+[[quick_links]]
+text = "*Template Files*"
+url = "#template-files-a-mix-of-code-and-content"
+[[quick_links]]
+text = "*Content Level Directories*"
+url = "#content-level-directories"
+[[quick_links]]
+text = "*Layout Directories*"
+url = "#layout-directories"
 
 [[quick_links]]
 text = "Introduction to Static Sites"
@@ -46,7 +63,7 @@ url = "/docs/understand_static_sites/introduction/"
 text = "Parts of a Webpage"
 url = "/docs/understand_static_sites/parts_of_webpage/"
 [[quick_links]]
-text = "Retrieving Webpage from the net"
+text = "Retrieving a webpage from the internet"
 url = "/docs/understand_static_sites/retrieving_a_webpage/"
 [[quick_links]]
 text = "What is a Static Website"
@@ -64,55 +81,247 @@ url = "/docs/understand_static_sites/static_generator_example_hugo/"
 # Writeup goes below
 +++
 
-There are three basic parts to every website as you see it on your browser. The content, the styling and the logic. These are described by three parts, *html*, *css* and *javascript*.
+In this section we get into the details of how a static website generator works. On one side there is a user (website creator) writing content that they want displayed. On the other side, the generator has to output the website that a visitor to the website has to see. It has to be able to handle formatting, linking, layout, amongst other things. This means that the user has to be able to give the formatting information to the static generator in some simplified form. The text to html schema is provided by [markdown](https://daringfireball.net/projects/markdown/) and the configuration and settings are input in the form of [toml](https://github.com/toml-lang/toml), [yaml](http://yaml.org/refcard.html) or [json](https://www.digitalocean.com/community/tutorials/an-introduction-to-json).
 
-## HTML
+Further the website generator has to understand where in the website the particular page goes. The user specifies this by placing the content page at a directory location corresponding to the required output location. Let us look at this and various other things in this section.
 
-1. This forms the main content of the website.
-2. The actual content of the website is surrounded by a start tag and an end tag that describe the content.
-3. While there are many types of [element tags](https://www.w3schools.com/html/html_elements.asp), the main ones that we will see over and over are [div](https://www.w3schools.com/tags/tag_div.asp), [span](https://www.w3schools.com/tags/tag_span.asp), [a](https://www.w3schools.com/tags/tag_a.asp), [img](https://www.w3schools.com/tags/tag_img.asp), [p](https://www.w3schools.com/tags/tag_p.asp) and the [heading](https://www.w3schools.com/tags/tag_hn.asp) tags
-4. Each of these element tags optionally has an `id` and can belong to a `class`. These identifiers can be used in the css and javascript to identify the element to style it or perform some other login on it.
-5. All the content along with the html elements for these go into the [html body](https://www.w3schools.com/tags/tag_body.asp).
-6. There could also be meta data about the webpage itself. These typically go at the top of the webpage into the [head](https://www.w3schools.com/tags/tag_head.asp) of the document
-7. There are also file types that browsers know how to interpret. These could be music which could be placed in the [audio tag](https://www.w3schools.com/Tags/tag_audio.asp), or videos in the [video tag](https://www.w3schools.com/html/html5_video.asp) and pdfs in the [object tag](https://www.w3schools.com/TAGS/tag_object.asp). Apart from these file types, [images](https://www.w3schools.com/html/html_images.asp) are a basic part of html standards.
-8. Apart from all the above elements which are output type tags, there are tags where user input can be taken. These are called [form tags](https://www.tutorialspoint.com/html/html_form_tag.htm) and [input tags](https://www.w3schools.com/tags/tag_input.asp) within forms.
-9. One must mention that while websites can live without the other parts - CSS and Javascript, a site cannot live without html. Further, we can include CSS and javascript within the HTML page itself. Therefore one can say HTML is the core format of a webpage.
-10. If you want to learn HTML from scratch [tutorials-point](https://www.tutorialspoint.com/html/index.htm), [code-academy](https://www.codecademy.com/learn/learn-html) and [W3Schools](https://www.w3schools.com/html/) are good places to start.
+***Definition:*** A `static site generator` is a program that *assembles* the text of a full web page from the `user input` and a prebuilt templates.  The user input can include any text, images and other parameters needed to assemble the webpage.
 
-## CSS
+Let us first understand the stages of static site generation from the user point of view:
 
-- Cascading Style Sheets are the main method to styling a website.
-- CSS specifications decide the syntax by which you can specify the style.
-- CSS targetting a particular div can be [placed at the div](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_css_inline) in the html, within [style tag in the html](https://www.w3schools.com/tags/tag_style.asp) or in a [separate css file](https://www.w3schools.com/css/css_howto.asp).
-- Typical things decided by css are font styles, position and spacing of elements, color or image of background and color of foreground. Importantly CSS can also be used to hide elements in a webpage.
-- Typically CSS is considered static but that statement comes with a few caveats
-    - CSS can be separately set for different browser window sizes through [media queries](https://www.w3schools.com/css/css3_mediaqueries_ex.asp)
-    - CSS can have extremely simple logic (like addition, subtraction) using [calc](https://developers.google.com/web/updates/2012/03/CSS-layout-gets-smarter-with-calc)
-    - CSS has inbuilt layouts called [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) and [CSS Grid](https://gridbyexample.com/examples/) which make dynamic decisions in where to position objects
-- CSS can be used to create simple animated objects in a webpage, through [transitions](https://www.w3schools.com/cssref/css3_pr_transition.asp).
-- Good resources for learning CSS are [mozilla docs](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS), [tutorials-point](https://www.tutorialspoint.com/css/) and [w3schools references](https://www.w3schools.com/css/)
-- CSS has been abstracted by languages like [LESS](http://lesscss.org/) and [SASS](https://sass-lang.com/) that compile into ordinary css. These include variables within CSS
+1. User chooses static website generator
+2. User chooses a template specific to that generator
+3. User inputs content and changes parameters as necessary
+4. Website (or webpage) is generated by the static site generator
+5. Website is checked for correctness
+6. Website is uploaded to storage host to serve on the internet
+7. User adds pages to website and maintains as needed.
 
-## Javascript
+**Information storage:**
 
-- Javascript is a full fledged programming language unlike CSS and HTML. It is the default language understood by the browsers.
-- The html with all its elements constitutes what is known as a [document object model (DOM)](https://www.w3schools.com/js/js_htmldom.asp). This is accessible to the Javascript running on the page. The access can be used to change the DOM as well. For all practical purposes one may think of the DOM as the internal representation of the HTML page.
-- Javascript can therefore be used to compute all kinds of logic and then to change the DOM based on that logic. This can involve
-    - Read DOM elements and their properties
-    - Change content within DOM elements
-    - Create new dom elements
-    - Change styles of elements
-- So what triggers a particular Javascript function (to change a web page element or some such)? These triggers are called [events](https://www.tutorialspoint.com/javascript/javascript_events.htm). Events are the main way that Javascript functions are called.
-- Events can be attached to entire web pages or to particular elements of webpages.
-- For example, you can check if someone is typing in a form, or is hovering the mouse over some part of the page, or has just clicked a button. For mobile devices, equivalent triggers for touch exist.
-- [This](https://developer.mozilla.org/en-US/docs/Web/Events) is a fairly extensive  list. Suffice to say that you may find events for most things that might occur on a webpage. From these events you may construct other events as well. Commonly used event types are
-    - [Page Load](https://www.w3schools.com/jsref/event_onload.asp) to check that all dom elements have finished downloading
-    - [Mouse Events](https://javascript.info/mouse-events-basics) and [touch events](https://developer.mozilla.org/en-US/docs/Web/API/Touch_events) for various elements in the page
-    - [Keyboard events](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent) also exist that can indicate whether the keyboard has been used to type anything.
-- Javascript can also [speak](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) to servers outside of the present server based on some user input and retrieve components that can be used to update the webpage.
-- In other words javascript can be used to change a webpage 'dynamically'. We will come back to this statement in the next section.
+## How is information stored
 
-### Notes on HTML Parts
+Dynamic websites use databases to store information. This is not possible with static sites. But every site has a lot of information or data in it. How are these stored?
 
-1. From this section you might come to understand that the visible content you write typically forms a small part of the webpage only. The rest is all the supporting html css and javascript scaffolding. It would be hugely wasteful to write all of this scaffolding each time you want to note down a small thought.
-2. This section might also seem like a lot of input to digest. The happy part is that the whole reason to use Hugo is that you don't *have to* write any of HTML, CSS or javascript.
+1. A static site stores the site in the form of various files. Typically, these files are the html, css or javascript that make the browser display the site.
+2. This text might contain both the displayed text (content) of the website and also parameters(configuration)
+3. The configuration is encoded into text in a few different ways. These are called markup languages.
+4. Typically markup languages are methods to store a mix of data, in what is otherwise known as a [data object](https://www.w3schools.com/js/js_json_objects.asp). Markdown is a schema for converting text in human readable format to html.
+
+Let us look at these in further detail
+
+### Markup Languages
+
+There are many markup languages. We will look at three of these: TOML, YAML and JSON
+
+#### TOML
+
+[TOML (Tom's obvious minimal language)](https://npf.io/2014/08/intro-to-toml/) is quite easy to learn
+
+```toml
+# Example for book configuration
+title = "This is a book"
+date = 2006-05-27T07:32:00Z # dates are ISO 8601 full zulu form
+tagline = '''This is a multiline
+statement about the book'''
+
+layout = "books"
+number_of_pages = 300 # integers are just numbers
+
+can_visitors_comment = true # good old true and false
+```
+
+#### YAML
+
+[YAML (YAML Ain't Markup Language)](http://yaml.org/start.html) is also simple enough. Aimed to be easier for humans to read than xml and json
+
+```yaml
+# Example for book configuration
+title : This is a book
+date : 2006-05-27 07:32:00
+tagline: >
+    This is a multiline
+    statement about the book
+
+layout : books
+number_of_pages : 300
+
+can_visitors_comment : Yes
+```
+
+Often, in yaml, there are many ways of [doing the same thing](https://stackoverflow.com/questions/3790454/in-yaml-how-do-i-break-a-string-over-multiple-lines) which is not necessarily good
+
+#### JSON
+
+[JSON(Javascript Object Notation)](https://www.w3schools.com/js/js_json_objects.asp) is almost ubiquitous on the internet. It is well specified and doesn't depend on indentation, whitespace and order of entry of elements. While being easy for the computer to read, it can get difficult for humans to write.
+
+```json
+{
+    "title":"This is a book", 
+    "date":"2006-05-27T07:32:00Z",
+    "tagline":"This is a multiline\nstatement about the book",
+    "layout":"books",
+    "number_of_pages":300,
+    "can_visitors_comment":true,
+}
+```
+
+#### Other Markups
+
+- Another widely used data markup is called [XML(Extensible Markup Language)](https://www.w3schools.com/xml/). In fact the html specification and XML specification are [closely related](https://www.lifewire.com/relationship-between-sgml-html-xml-3469454).
+- The last markup language that we look at is [HTML(hypertext markup language)](https://www.w3schools.com/html/html_intro.asp). Unlike the other markup languages, it is not extendible in the sense the tags (like div, head, body, p, h1-6 etc) are prespecified in html.
+
+### Markdown
+
+While above markup methods are used for encoding the configuration, there is another simplified markup that is used for the content. This encoding goes by the name *markdown*.
+
+- [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) typically can take 6 different headline styles from H1-H6. It can format text as emphasis, italics, strikethroughs. It can specify ordered and unordered lists. There are specific ways of specifying links, images, code elements and tables.
+
+```markdown
+Headline styles
+# Headline 1
+## Headline 2
+### Headline 3
+#### Headline 4
+##### Headline 5
+###### Headline 6
+
+*italic text* 
+**bold text**
+~~strikethrough text~~
+
+- Unordered list item 1
+- Unordered list item 2
+- Unordered list item 3
+
+1. Ordered list item 1
+2. Ordered list item 2
+3. Ordered list item 3
+
+[This is a link](https://www.google.com)
+
+| This          | is a          |Table          |
+| ----          | :----------:  | -----:        |
+| left-align    | centered      | right-aligned |
+
+```
+
+### Template Files - A mix of code and content
+
+We have looked at configuration files (which contain parameters and data) specified as markup. Then we looked at content files, which is html encoded as markdown. But there are other files called template files which are mixtures of code, which is to be processed and content, which is simply passed through in output. For example take the below template taken from [django girls blog](https://tutorial.djangogirls.org/en/django_templates/)
+
+```html
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text }}</p>
+    </div>
+{% endfor %}
+```
+
+1. This template code carries some text information that is to be passed as is into the output html
+2. It also contains several lines of code contained within the brackets that look like `{{ some code }}` or `{% some other code %}`
+3. The brackets are very important because thats what tells the static generator that it needs to pass whatever is within the brackets to the coding language
+4. Whatever the coding language outputs for those lines are substituted for the brackets
+5. There is a need for cleanup of whitespace (new lines and spaces) after the language returns the output, because for several code pieces there would be no output. 
+6. The pieces of code may contain variables which in the above case is `posts`. Any variables needed in the template should be available from the following places (in increasing order of importance)
+    1. The template default variables
+    2. The site level configuration files input by the user
+    3. Any data pages that have been loaded
+    4. The page level configuration files
+7. After parsing through the template engine of the static generator, the output of the template given at the start of this section may be simple html text which looks as follows
+
+```html
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+<div>
+    <p>published: 2018-09-16</p>
+    <h1><a href="">My Post Heading</a></h1>
+    <p>This is an awesome post</p>
+</div>
+```
+
+Note: The above example is of Django (Python) Templates. The example we will look at in further detail in a couple of sections is Hugo which provides functions like [these](https://gohugo.io/functions/)
+
+Thus we can store all kinds of information in text files
+
+## Where is information stored
+
+We learnt how the information is stored within a text file, but where are the text files stored? Each static generator specifies a method of where these files are stored. This is called the directory structure. Let us look at the one used in Hugo
+
+### Content Level Directories
+
+The content level directories are the most important directory structure as the pages are generated according to the files in the content directories
+
+1. There may be a root content directory which may contain the domain root level content like index page, 404 page etc.
+2. Under the root content directory, there may be various directories like products, posts, people, etc. These represent the template single pages.
+3. We list all single pages of a single type under the same directory so that they share their template structure and also so that **list pages are automatically created** for the pages under a single directory. 
+    - For example, a website could have multiple posts, presentations and publications
+    - Each of these would be in their own directory. Therefore the content directory would contain three subdirectories - 'posts','presentations' and 'publications'
+4. There may be a separate directory within the content directory for storing *taxonomy* configurations. Taxonomies are categorizations of the single pages that we mention above. We will discuss this in more detail in a further section
+
+### Layout Directories
+
+The layout directories are the next most important areas for static site generation.
+
+1. **Default Layouts**: First thing to look at inside the layout directories are the default layout pages
+    - When a content page is encountered, the static site generator has to find which html to put it into. The first point of search is going to be the default layout pages
+    - The default layout may specify certain blocks of the output. For example
+        - The header
+        - The body
+        - The footer
+        - The popups
+        - The page meta data
+        - The sidebars or advertising areas
+    - For each of these blocks, there may be a default template piece. Typically, the template may allow these template pieces in each block to be overriden by other template pieces based on the specific page configuration.
+    - Each of these template pieces spoken about in the previous section would be contained in its own folder
+    - Since for each webpage there are **three formats of content to be created** (html, css and javascript), the directory structures may be similarly defined for these output formats and also the same configuration parameters and default pages may be used. Only the output file would change
+    - There are other page output formats also used. These are RSS, and sometimes AMP
+
+2. **Template pieces**: We mentioned earlier that there are template pieces that are called from the default layouts. These do not need any specified directory structure. 
+    - If the various formats are all be generated according to the same configuration (which is likely), in that case the static generator may require that all files for the various output formats all have the same directory structure (with different files in them). This would minimize replication of code
+3. **Shortcodes**: We mentioned earlier that the content of the webpage is specified by the user not directly as html but by something called markdown. This is sometimes restrictive and the user may want greater control of the content. The template maker may provide **shortcode pieces** that the user can simply *insert* into their content to perform the specified function
+    - For example, there may be shortcodes to insert a specific size image into the content. Another common use case is to insert youtube videos into the content
+    - The shortcodes may be able to accept parameters themselves and each shortcode may have a short description provided by the template maker.
+    - A large number of shortcodes are inbuilt into a content management system like [in wordpress](https://en.support.wordpress.com/shortcodes/) to make the life of a content maker much easier.
+
+### Assets Directory
+
+There may be a directory where all assets like images, sound files and pdfs are stored. All contents of this are passed into the output as-is, including sub-directories
+
+### Data Directory
+
+There may be be a data directory where data may be dumped into various files (which are encoded as TOML, YAML or JSON) and are available to call from any of the template pages
+
+- The difference between the data directory and assets directory or the site level configuration directory is that the data directory is optionally called, whereas the other two have all the files are loaded
+- The data directory, when called, has it's files processed and stored in memory. The text file containing the json, toml or yaml is parsed into variables that are available to the template coder.
+
+### Archetypes Directory
+
+There may be an archetypes directory. Archetypes are information used to generate each content type.
+
+- Lets say that a website has multiple posts, presentations and publications
+- Each of these would be in their own directory within the content directory
+- Each content type will need to have the same configuration fields, even if the values of the configurations differ. For example, if say publications template requires a configuration value called 'journal_name', all the publications content pieces would need to have this configuration field.
+- It is imposible to remember which fields are required for which content type. So we defer that task to the static generator, by creating an archetype, say `publications`
+    1. Once we have an archetype, we give the static generator some command like `generate new publications/mypublication` (this is just an example), which creates an appropriate file in the content folder within the publications directory called mypublication.
+    2. The mypublication file then contains all the fields in our preset archetype, *publications*. We can then modify the configuration values and add new content.
+- These archetypes are stored in the archetypes directory
+
+### Other important locations
+
+1. Config file: There may be another location where site level configurations are stored. This is typically a file in the base directory
+2. Git directories and files: There may be the directories related to the versioning system .git
+3. Shell Scripts: There may be user created files which simplify some repetetive tasks in shell script files
+4. Readme, licensing and privacy documents: There may be other peripheral document related to the code and to the website
+
+These is a typical directory structure for static site generator. Specific generators might need other directory formats.
+
+Note: As an interesting aside, one can make an analogy between a [database row](https://en.wikipedia.org/wiki/Row_(database)) and a single text file. In this analogy, the [columns of the database](http://www.gmod.org/wiki/Databases:_Tables,_Rows,_and_Columns) are similar to the fields in the text file. Lastly there is a set of rows in the database table. Similarly, there is a set of files in the directory. Thus the directory is analogous to the database table.

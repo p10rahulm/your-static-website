@@ -81,7 +81,7 @@
     justify-content: flex-start;
     border-right: 1px solid #008bff25;
     text-align: center;
-    height: calc(100vh - 71px);
+    height: calc(100vh - 71px - 50px);
     transition: margin-top 0.5s cubic-bezier(0,0,0.58,1) 200ms;
 }
 .docs_menu_heading{
@@ -115,8 +115,18 @@ pre, code {
     font-family: 'Roboto Mono', monospace;
     color: #7dba25;
     background-color: #f4f4f4;
+    font-size: 0.85rem;
 }
-
+.docs_menu em{
+    color: #999;
+    font-size: 18px;
+    font-style: normal;
+}
+.docs_menu_right em{
+    color: #077;
+    font-size: 18px;
+    font-style: normal;
+}
 @media screen and (max-width: 1000px) {
     #docs_top_container{
         display: grid;
@@ -177,6 +187,8 @@ pre, code {
         padding-bottom: 10px;
         border-bottom: 1px solid rgba(200,200,200,0.7);
         box-shadow: 0 5px 12px 2px rgba(0,0,0,.2);
+        max-height: calc(100vh - 100px - 33px);
+        overflow-y: scroll;
     }
     .docs_menu_item_right{
         display: block!important;

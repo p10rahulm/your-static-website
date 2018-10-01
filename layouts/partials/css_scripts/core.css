@@ -188,6 +188,13 @@ video {
     /* Extend Bootstrap declaration with centering. */
     margin: 0 auto;
 }
+:target::before {
+    /* So that internal html anchors are not behind fixed headers */
+    content: "";
+    display: block;
+    height: 80px; /* fixed header height*/
+    margin: -80px 0 0; /* negative fixed header height */
+}
 
 figcaption {
     display: block;
@@ -218,8 +225,9 @@ figcaption h4 {
 pre,
 code {
     font-family: 'Roboto Mono', monospace;
-    color: #c7254e;
-    background-color: #f9f2f4;
+    color: #7dba25;
+    background-color: #f4f4f4;
+    font-size: 0.85rem;
 }
 
 pre {

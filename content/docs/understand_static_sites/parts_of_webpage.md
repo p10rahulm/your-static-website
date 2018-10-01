@@ -34,7 +34,7 @@ text = "Introduction to Static Sites"
 url = "/docs/understand_static_sites/introduction/"
 
 [[next_page]]
-text = "Retrieving Webpage from the net"
+text = "Retrieving a webpage from the internet"
 url = "/docs/understand_static_sites/retrieving_a_webpage/"
 
 
@@ -51,7 +51,7 @@ url = "#javascript"
 text = "Introduction to Static Sites"
 url = "/docs/understand_static_sites/introduction/"
 [[quick_links]]
-text = "Retrieving Webpage from the net"
+text = "Retrieving a webpage from the internet"
 url = "/docs/understand_static_sites/retrieving_a_webpage/"
 [[quick_links]]
 text = "What is a Static Website"
