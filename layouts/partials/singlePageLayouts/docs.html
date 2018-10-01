@@ -1,3 +1,27 @@
+{{if .Params.highlight | default ($.Scratch.Get "page_layout").has_highlighting}}
+    {{$link := (printf "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/%s.min.css" ($.Params.highlight_style | default ($.Scratch.Get "page_layout").highlight_style)) }}
+    {{partial "functions/load_external_css.html" (dict "external_url" $link "scratch" .Scratch)}}
+
+
+
+    {{if not (eq (len ($.Params.highlight_languages | default ($.Scratch.Get "page_layout").highlight_languages)) 0)}}
+        {{$link := "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"}}
+        {{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" .Scratch "async" false "defer" false)}}
+        {{range ($.Params.highlight_languages | default ($.Scratch.Get "page_layout").highlight_languages)}}
+            {{$link := (printf "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/%s.min.js" .) }}
+            {{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" $.Scratch "async" false "defer" false)}}
+        {{end}}
+        <script type="text/javascript" async defer>
+            {{ partial "js_scripts/singlePageLayouts/docs_code.js" . | safeJS }}
+        </script>
+    {{end}}
+{{end}}
+
+{{if .Params.math | default ($.Scratch.Get "page_layout").has_math}}
+{{$link := "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"}}
+{{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" .Scratch "async" true "defer" false)}}
+{{end}}
+
 <style type="text/css">
     {{ partial "css_scripts/singlePageLayouts/docs.css" . | safeCSS }}
 </style>

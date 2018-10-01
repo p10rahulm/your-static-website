@@ -11,6 +11,9 @@
             {{$link := (printf "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/%s.min.js" .) }}
             {{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" $.Scratch "async" false "defer" false)}}
         {{end}}
+        <script type="text/javascript" async defer>
+            {{ partial "js_scripts/singlePageLayouts/codePage.js" . | safeJS }}
+        </script>
     {{end}}
 
     {{if .Params.math | default ($.Scratch.Get "page_layout").has_math}}
@@ -21,9 +24,7 @@
     <style type="text/css">
         {{ partial "css_scripts/singlePageLayouts/codePage.css" . | safeCSS }}
     </style>
-    <script type="text/javascript" async defer>
-        {{ partial "js_scripts/singlePageLayouts/codePage.js" . | safeJS }}
-    </script>
+    
 </header>
 <section id="codepage" class="single_page_layout container">
     <div id="page_header">

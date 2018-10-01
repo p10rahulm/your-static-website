@@ -18,6 +18,12 @@ layout = "docs"
 featured = true
 enable_comments = true
 
+# Highlight.js: https://highlightjs.org/static/demo/
+math = false
+highlight = false
+highlight_languages = ["bash","html"]
+highlight_style = "ocean"
+
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
 tags = ["Static Sites","documentation","Hugo","websites"]
@@ -32,27 +38,29 @@ text = ""
 url = ""
 
 [[quick_links]]
+text = "Introduction to Static Sites"
+url = "/docs/understanding_hugo/introduction/"
+[[quick_links]]
 text = "Parts of a Webpage"
 url = "/docs/understanding_hugo/parts_of_webpage/"
 [[quick_links]]
-text = "How does a browser display a website"
-url = "/docs/understanding_hugo/parts_of_webpage/"
+text = "Retrieving a Webpage from the internet"
+url = "/docs/understanding_hugo/retrieving_a_webpage/"
 [[quick_links]]
 text = "What is a static website"
-url = "/docs/understanding_hugo/parts_of_webpage/"
+url = "/docs/understanding_hugo/static_website/"
 [[quick_links]]
 text = "Website Templates"
-url = "/docs/understanding_hugo/parts_of_webpage/"
+url = "/docs/understanding_hugo/website_templates/"
 [[quick_links]]
 text = "Static website generator"
-url = "/docs/understanding_hugo/parts_of_webpage/"
+url = "/docs/understanding_hugo/static_website_generators/"
 [[quick_links]]
 text = "Assembling a Website"
-url = "/docs/understanding_hugo/parts_of_webpage/"
+url = "/docs/understanding_hugo/assembling_webpage/"
 [[quick_links]]
 text = "What is Hugo"
-url = "/docs/understanding_hugo/assembling_website/"
-
+url = "/docs/understanding_hugo/hugo/"
 
 # Writeup goes below
 +++
@@ -63,7 +71,7 @@ To understand Hugo, one needs to understand what are Static Sites. To understand
 We will attempt an understanding of what is Hugo through a few sub-sections:
 
 - Parts of a webpage
-- How does a browser display a website
+- Retrieving a Webpage from the internet
 - What is a static website
 - Website Templates
 - Static website generator
