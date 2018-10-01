@@ -13,7 +13,7 @@
             <div id = "docs-menu-heading" class="docs_menu_heading ">Menu</div>
             <!--<div id="doc_menu_items_container">-->
             {{range .Params.quick_links}}
-            <div class="docs_menu_item"><a href="{{.url}}">{{.text | truncate 50 }}</a></div>
+            <div class="docs_menu_item"><a href="{{.url}}">{{.text | markdownify | truncate 50 }}</a></div>
             {{end}}
             <!--</div>-->
         </div>
