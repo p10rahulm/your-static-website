@@ -2,7 +2,7 @@
 title = "Modify Settings and site configurations"
 date = 2018-06-08T19:44:35+05:30
 
-pageNumber = 6
+pageNumber = 7
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
@@ -20,9 +20,9 @@ enable_comments = true
 
 # Highlight.js: https://highlightjs.org/static/demo/
 math = false
-highlight = false
-highlight_languages = ["bash","html"]
-highlight_style = "ocean"
+highlight = true
+highlight_languages = ["bash"]
+highlight_style = "railscasts"
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
@@ -47,17 +47,20 @@ url = "/docs/create_your_website/download_essentials/"
 text = "Setup Github"
 url = "/docs/create_your_website/setup_github/"
 [[quick_links]]
+text = "Buy the domain and setup godaddy"
+url = "/docs/create_your_website/setup_godaddy/"
+[[quick_links]]
 text = "Download the template files"
 url = "/docs/create_your_website/download_template/"
 [[quick_links]]
 text = "Preview the site"
 url = "/docs/create_your_website/preview_site/"
 [[quick_links]]
+text = "Modify Site Settings"
+url = "/docs/create_your_website/modify_settings/"
+[[quick_links]]
 text = "Check site and Upload to github"
 url = "/docs/create_your_website/upload_to_github/"
-[[quick_links]]
-text = "Buy the domain and setup godaddy"
-url = "/docs/create_your_website/setup_godaddy/"
 [[quick_links]]
 text = "Connect github and Godaddy"
 url = "/docs/create_your_website/connect_github_godaddy/"
@@ -85,12 +88,16 @@ The main files to be modified are:
 6. [privacy.md](/docs/create_your_website/config_files/privacy_terms/)
 7. [termservice.md](/docs/create_your_website/config_files/terms_of_service/)
 
-## How to modify
+You may want to go through the above links to know what each of the files do and how to modify them. The recommended method for settings modification is to peruse the files above and change them. There are some things that you would want to necessarily modify and some things that you can modify if you want.
 
-1. Before you start modifying the files, you would want to delete the `public` folder. Don't worry we'll get this folder back! (Thank you github!)
+If you are in a hurry though, you should come back to the above later and for now do a find and replace to change settings based on some keywords that must be replaced.
+
+## How to modify quickly
+
+1. Before you start modifying the files, you would want to delete the `public` folder in case you have built your site. Don't worry we'll get this folder back! (Thank you github!)
     - This is because a single config may be used in hundreds of output pages
     - If you are doing a find and replace, then instead of finding every instance in the output page, you might as well just change the config and then rebuild the site
-2. At this stage, you should ensure you modify the following words to your own. You can choose to do a Replace All in your favorite text editor. Instructions in the [next section](#replace-all-instructions-in-different-text-editors) below
+2. At this stage, you should ensure you modify the following words to your own. You can choose to do a Replace All in your favorite text editor. Instructions for some text editors are in the [next section](#replace-all-instructions-in-different-text-editors) below
     - yourdomain.com
     - Your Website Name
     - your_username
@@ -108,9 +115,18 @@ The main files to be modified are:
     - favicon.jpg (to your favicon file in static folder)
 
     Note that the context of usage at each occurance of above words may be different. For example yourName may occur for your email id as *yourName@gmail.com* or even as an author of website. So you may not want a simple replace all function without going through context of usage.
-3. Ensure favicon and logo are changed
+3. Ensure favicon.jpg and logo.jpg are changed to your own
+4. After doing the replacements, you would want to get your public folder back.
+    - Open bash/terminal and cd into your website folder
+    - Run the `rebuild_public.sh` script. In windows you may want to replace the forward slash with backslash
+
+        ```bash
+        ./rebuild_public.sh
+        ```
+    - Check to see that your public folder is back as normal
 
 ### Replace All Instructions in different text editors
+
 On a good text editor this can be done by pressing ctrl+shift+F or ctrl+shift+R, where the replace all occurances in project is available. Note that for this you may have to choose your project folder (to enable search in this folder). Depending on your editor you may have to look up google for instructions for Replace All. We will look at three text editors: Atom, VS Code and Webstorm
 
 #### Atom
@@ -136,7 +152,7 @@ Replace all function is an absolute pleasure in VS Code. If you didn't [download
 
 #### Webstorm
 
-For any project related work, like find and replace across the project, [Jetbrains](https://www.jetbrains.com/webstorm/) is my go to editor. The only drawback is that the Ultimate Edition is available only as a paid option (And no I'm not getting paid for saying this). Also looks-wise it is not top of line.
+For any project related work, like find and replace across the project, [Jetbrains](https://www.jetbrains.com/webstorm/) is my go to editor. The only drawback is that the Ultimate Edition is available only as a paid option. Also looks-wise it is not top of line. But it's good for projects and there is a free version available.
 
 1. Get rid of 'public' folder: Needed so that you don't get overwhelmed with search results. So basically ensure that you have done step 1 [here](#how-to-modify)
 2. Open Project: When you open the editor it asks for the directory to open by default. If not, click > File > Open and choose your folder

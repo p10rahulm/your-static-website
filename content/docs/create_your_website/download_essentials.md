@@ -40,8 +40,14 @@ url = "/docs/create_your_website/setup_github/"
 text = "Implement Static Site with Godaddy & github"
 url = "/docs/create_your_website/implement_static_website_godaddy_github/"
 [[quick_links]]
+text = "Download Essential Software"
+url = "/docs/create_your_website/download_essentials/"
+[[quick_links]]
 text = "Setup Github"
 url = "/docs/create_your_website/setup_github/"
+[[quick_links]]
+text = "Buy the domain and setup godaddy"
+url = "/docs/create_your_website/setup_godaddy/"
 [[quick_links]]
 text = "Download the template files"
 url = "/docs/create_your_website/download_template/"
@@ -55,9 +61,6 @@ url = "/docs/create_your_website/modify_settings/"
 text = "Check site and Upload to github"
 url = "/docs/create_your_website/upload_to_github/"
 [[quick_links]]
-text = "Buy the domain and setup godaddy"
-url = "/docs/create_your_website/setup_godaddy/"
-[[quick_links]]
 text = "Connect github and Godaddy"
 url = "/docs/create_your_website/connect_github_godaddy/"
 [[quick_links]]
@@ -66,6 +69,7 @@ url = "/docs/create_your_website/plan_website/"
 [[quick_links]]
 text = "Add your content to the website"
 url = "/docs/create_your_website/add_content/"
+
 
 # Writeup goes below
 +++

@@ -2,7 +2,7 @@
 title = "Setup local server and preview the site"
 date = 2018-06-08T19:44:35+05:30
 
-pageNumber = 5
+pageNumber = 6
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
@@ -47,17 +47,20 @@ url = "/docs/create_your_website/download_essentials/"
 text = "Setup Github"
 url = "/docs/create_your_website/setup_github/"
 [[quick_links]]
+text = "Buy the domain and setup godaddy"
+url = "/docs/create_your_website/setup_godaddy/"
+[[quick_links]]
 text = "Download the template files"
 url = "/docs/create_your_website/download_template/"
+[[quick_links]]
+text = "Preview the site"
+url = "/docs/create_your_website/preview_site/"
 [[quick_links]]
 text = "Modify Site Settings"
 url = "/docs/create_your_website/modify_settings/"
 [[quick_links]]
 text = "Check site and Upload to github"
 url = "/docs/create_your_website/upload_to_github/"
-[[quick_links]]
-text = "Buy the domain and setup godaddy"
-url = "/docs/create_your_website/setup_godaddy/"
 [[quick_links]]
 text = "Connect github and Godaddy"
 url = "/docs/create_your_website/connect_github_godaddy/"

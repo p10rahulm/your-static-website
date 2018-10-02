@@ -2,7 +2,7 @@
 title = "Check site and Upload to github"
 date = 2018-06-08T19:44:35+05:30
 
-pageNumber = 7
+pageNumber = 8
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
@@ -34,8 +34,8 @@ text = "Modify Site Settings"
 url = "/docs/create_your_website/modify_settings/"
 
 [[next_page]]
-text = "Buy the domain and setup godaddy"
-url = "/docs/create_your_website/setup_godaddy/"
+text = "Connect github and Godaddy"
+url = "/docs/create_your_website/connect_github_godaddy/"
 
 [[quick_links]]
 text = "Implement Static Site with Godaddy & github"
@@ -47,6 +47,9 @@ url = "/docs/create_your_website/download_essentials/"
 text = "Setup Github"
 url = "/docs/create_your_website/setup_github/"
 [[quick_links]]
+text = "Buy the domain and setup godaddy"
+url = "/docs/create_your_website/setup_godaddy/"
+[[quick_links]]
 text = "Download the template files"
 url = "/docs/create_your_website/download_template/"
 [[quick_links]]
@@ -56,8 +59,8 @@ url = "/docs/create_your_website/preview_site/"
 text = "Modify Site Settings"
 url = "/docs/create_your_website/modify_settings/"
 [[quick_links]]
-text = "Buy the domain and setup godaddy"
-url = "/docs/create_your_website/setup_godaddy/"
+text = "Check site and Upload to github"
+url = "/docs/create_your_website/upload_to_github/"
 [[quick_links]]
 text = "Connect github and Godaddy"
 url = "/docs/create_your_website/connect_github_godaddy/"
