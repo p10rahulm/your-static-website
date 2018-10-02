@@ -77,10 +77,35 @@ At this stage, you will want to modify all the settings like the site author nam
 
 The main files to be modified are:
 
-1. config.toml
-2. _index.md
-3. contact.md
-4. contact_success.md
-5. popup_success.md
-6. privacy.md
-7. termservice.md
+1. [config.toml](/docs/create_your_website/config_files/config_toml/)
+2. [_index.md](/docs/create_your_website/config_files/front_page_settings/)
+3. [contact.md](/docs/create_your_website/config_files/contact_page/)
+4. [contact_success.md](/docs/create_your_website/config_files/contact_success_page/)
+5. [popup_success.md](/docs/create_your_website/config_files/popup_success_page/)
+6. [privacy.md](/docs/create_your_website/config_files/privacy_terms/)
+7. [termservice.md](/docs/create_your_website/config_files/terms_of_service/)
+
+## How to modify
+
+1. At this stage, you should ensure you modify the following words to your own
+    - yourdomain
+    - Your Website Name
+    - your_username
+    - yourWebsite
+    - yourCompanyName
+    - yourRole
+    - yourName
+    - anotherName
+    - disqusShortname
+    - Company1, Company2, Company3, Company4, Company5
+    - University1, University2
+    - logo.jpg (to your logo file in static folder)
+    - UA-123456789-1 (google analytics)
+    - map_api_key, latitude, longitude (google maps)
+    - favicon.jpg (to your favicon file in static folder)
+
+    Note that the context of usage at each occurance of above words may be different. For example yourName may occur for your email id as *yourName@gmail.com* or even as an author of website. So you may not want a simple replace all function without going through context of usage.
+
+2. On a good text editor this can be done by pressing ctrl+shift+F or ctrl+shift+R, where the replace all occurances in project is available. Note that for this you may have to choose your project folder (to enable search in this folder). Depending on your editor you may have to look up google for instructions for Replace All
+
+3. Ensure favicon and logo are changed

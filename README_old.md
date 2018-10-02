@@ -1136,7 +1136,7 @@ The first thing you want to look at is the config.toml file. We will describe al
 - twitter_site_handle = "@yourWebsite"
 - favicon = "favicon.jpg"
 - apple_touch_icon = "favicon.jpg"
-- logo = "thinking_tree2.jpg"
+- logo = "logo.jpg"
 - map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
 - latitude = "12.932376"
 - longitude = "77.630389"
@@ -1251,7 +1251,7 @@ The first thing you want to look at is the config.toml file. We will describe al
     apple_touch_icon = "favicon.jpg"
 
     #* 24. Diplay a logo in navigation bar (without the text). Try keeping width to height between 7:5 to 7:7
-    logo = "thinking_tree2.jpg"
+    logo = "logo.jpg"
 
     # 25. When a user refreshes the page, open the page at the top
     open_at_top = false
@@ -2178,7 +2178,7 @@ background_color = "#222"
     - disqusShortname
     - Company1, Company2, Company3, Company4, Company5
     - University1, University2
-    - thinking_tree2.jpg
+    - logo.jpg
     - UA-123456789-1 (google analytics)
     - map_api_key, latitude, longitude (google maps)
     - favicon.jpg

@@ -105,7 +105,7 @@ verboseLog =true
     apple_touch_icon = "favicon.jpg"
 
     #* 24. Diplay a logo in navigation bar (without the text). Try keeping width to height between 7:5 to 7:7
-    logo = "thinking_tree2.jpg"
+    logo = "logo.jpg"
 
     # 25. When a user refreshes the page, open the page at the top
     open_at_top = false
