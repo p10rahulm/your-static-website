@@ -34,11 +34,11 @@ text = "Learn about Static Websites"
 url = "/docs/understand_static_sites/introduction/"
 
 [[next_page]]
-text = "Website Templates"
+text = "Download Git Bash, Hugo and a text editor"
 url = "/docs/create_your_website/download_essentials/"
 
 [[quick_links]]
-text = "Download Git Bash, Hugo and a text editor"
+text = "Download Essential Software"
 url = "/docs/create_your_website/download_essentials/"
 [[quick_links]]
 text = "Setup Github"

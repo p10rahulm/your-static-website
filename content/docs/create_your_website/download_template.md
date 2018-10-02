@@ -38,10 +38,10 @@ text = "Preview the site"
 url = "/docs/create_your_website/preview_site/"
 
 [[quick_links]]
-text = "Implement static site with Godaddy & github"
+text = "Implement Static Site with Godaddy & github"
 url = "/docs/create_your_website/implement_static_website_godaddy_github/"
 [[quick_links]]
-text = "Download Git Bash, Hugo and a text editor"
+text = "Download Essential Software"
 url = "/docs/create_your_website/download_essentials/"
 [[quick_links]]
 text = "Setup Github"
