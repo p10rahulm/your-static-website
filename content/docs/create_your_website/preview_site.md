@@ -20,8 +20,8 @@ enable_comments = true
 
 # Highlight.js: https://highlightjs.org/static/demo/
 math = false
-highlight = false
-highlight_languages = ["bash","html"]
+highlight = true
+highlight_languages = ["bash"]
 highlight_style = "ocean"
 
 # Tags and categories
@@ -34,7 +34,7 @@ text = "Download the template files"
 url = "/docs/create_your_website/download_template/"
 
 [[next_page]]
-text = "Modify Settings"
+text = "Modify Site Settings"
 url = "/docs/create_your_website/modify_settings/"
 
 [[quick_links]]
@@ -50,7 +50,7 @@ url = "/docs/create_your_website/setup_github/"
 text = "Download the template files"
 url = "/docs/create_your_website/download_template/"
 [[quick_links]]
-text = "Modify Settings"
+text = "Modify Site Settings"
 url = "/docs/create_your_website/modify_settings/"
 [[quick_links]]
 text = "Check site and Upload to github"
@@ -71,15 +71,14 @@ url = "/docs/create_your_website/add_content/"
 # Writeup goes below
 +++
 
-The main steps for creating your own website are as follows:
+Check whether the website works as is. For this you need to locally create a hugo server. Thankfully, this is as simple as writing a simple command on your terminal/bash.
 
-1. Download Git Bash, Hugo and a text editor
-2. Setup Github
-3. Download the template files
-4. Preview the site
-5. Modify Basic Settings
-6. Check site and Upload to github
-7. Buy the domain and setup godaddy
-8. Connect github and Godaddy
-9. Plan your website
-10. Add your own content
+1. Open bash/terminal and cd into the folder with your website files
+2. Type into the terminal:
+
+    ```bash
+    hugo server -D -p 1313
+    ```
+3. This opens a server with all files including those which are in draft on port 1313
+4. Go to your favorite web browser (preferably Firefox or Chrome, i've not tested on IE)
+5. Open `http://localhost:1313`. Even after checking that everything works, keep this tab open.

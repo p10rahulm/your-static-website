@@ -71,15 +71,16 @@ url = "/docs/create_your_website/add_content/"
 # Writeup goes below
 +++
 
-The main steps for creating your own website are as follows:
+At this stage, you will want to modify all the settings like the site author name, website name, etc on the site to be your own. We will do this in this section.
 
-1. Download Git Bash, Hugo and a text editor
-2. Setup Github
-3. Download the template files
-4. Preview the site
-5. Modify Basic Settings
-6. Check site and Upload to github
-7. Buy the domain and setup godaddy
-8. Connect github and Godaddy
-9. Plan your website
-10. Add your own content
+## What needs to be modified
+
+The main files to be modified are:
+
+1. config.toml
+2. _index.md
+3. contact.md
+4. contact_success.md
+5. popup_success.md
+6. privacy.md
+7. termservice.md

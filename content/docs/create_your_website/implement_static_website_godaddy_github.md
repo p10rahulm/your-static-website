@@ -50,7 +50,7 @@ url = "/docs/create_your_website/download_template/"
 text = "Preview the site"
 url = "/docs/create_your_website/preview_site/"
 [[quick_links]]
-text = "Modify Settings"
+text = "Modify Site Settings"
 url = "/docs/create_your_website/modify_settings/"
 [[quick_links]]
 text = "Check site and Upload to github"

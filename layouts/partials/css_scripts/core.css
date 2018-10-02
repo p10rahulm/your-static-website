@@ -210,7 +210,7 @@ figcaption h4 {
 pre,
 code {
     font-family: 'Roboto Mono', monospace;
-    color: #7dba25;
+    color: #7da925;
     background-color: #f4f4f4;
     font-size: 0.85rem;
 }
@@ -220,10 +220,13 @@ pre {
     background-color: rgb(248, 248, 248); /* Match default highlight theme. */
     border-color: rgb(248, 248, 248);
 }
-
-pre code {
-    white-space: pre; /* Override Bootstrap to preserve line breaks in code. */
-    overflow-x: auto;
+pre {
+    /*Wrap long code lines by default*/
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
 hr {

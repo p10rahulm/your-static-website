@@ -30,7 +30,7 @@ tags = ["Static Sites","documentation","Hugo","websites","setup"]
 categories = ["Website"]
 
 [[previous_page]]
-text = "Modify Settings"
+text = "Modify Site Settings"
 url = "/docs/create_your_website/modify_settings/"
 
 [[next_page]]
@@ -53,7 +53,7 @@ url = "/docs/create_your_website/download_template/"
 text = "Preview the site"
 url = "/docs/create_your_website/preview_site/"
 [[quick_links]]
-text = "Modify Settings"
+text = "Modify Site Settings"
 url = "/docs/create_your_website/modify_settings/"
 [[quick_links]]
 text = "Buy the domain and setup godaddy"
