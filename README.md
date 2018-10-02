@@ -1436,7 +1436,7 @@ math = false
 
 highlight = false
 highlight_languages = ["bash","html"]
-highlight_style = "ocean"
+highlight_style = "railscasts"
 
 ```
 
@@ -1645,7 +1645,7 @@ Comments = "Published in the foremost literary publication"
 math = true
 highlight = false
 highlight_languages = []
-highlight_style = "ocean"
+highlight_style = "railscasts"
 
 #4. We provide a few taxonomies to classify the paper. These are fairly self explanatory. If you want to add any new taxonomies, do so below and also add these to the config.toml page
 publication_types = ["Journal article"]

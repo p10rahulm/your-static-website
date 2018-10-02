@@ -22,7 +22,7 @@ enable_comments = true
 math = false
 highlight = true
 highlight_languages = ["bash"]
-highlight_style = "ocean"
+highlight_style = "railscasts"
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
@@ -93,17 +93,17 @@ url = "/docs/create_your_website/add_content/"
     # #  We will create a submodule to link to your blog repo
     git submodule add https://github.com/yourusername/yourblogname.git public
 
-    # 5. Send your files into your git repository through script (you may have to 
+    # 5. Send your files into your git repository through script (you may have to
     # #  use backslash on windows). You may be asked for username and password now
     ./commit.sh
 
-    # 6. Ensure deploy function is working
-    ./deploy.sh
-
-    # 7. Check your repos to see that everything is in place
-    # #  Browse to https://github.com/yourusername/yourblogname-template-files/ 
-    # #  and https://github.com/yourusername/yourblogname/ to see that everything 
-    # #  is updated there
+    # 6. Now on your browser, check your template repository at
+    # #  https://github.com/yourusername/yourblogname-template-files/
+    # #  to see that everything is updated there
     ```
 
-Note: More advanced users may want to use ssh method for login, but that will not be covered here. You can find [good resources](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) from github itself on how to do this
+Note:
+
+1. More advanced users may want to use ssh method for login, but that will not be covered here. You can find [good resources](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) from github on how to do this at a later point.
+
+2. You have another repository at https://github.com/yourusername/yourblogname/ for our output files. As of now we have not yet deployed our site and so this will not be updated. We will come back here in the [Upload to github](/docs/create_your_website/upload_to_github/) step

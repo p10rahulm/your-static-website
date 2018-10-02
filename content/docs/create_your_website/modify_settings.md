@@ -110,13 +110,27 @@ If you are in a hurry though, you should come back to the above later and for no
     - Company1, Company2, Company3, Company4, Company5
     - University1, University2
     - logo.jpg (to your logo file in static folder)
-    - UA-123456789-1 (google analytics)
+    - googleAnalytics
     - map_api_key, latitude, longitude (google maps)
     - favicon.jpg (to your favicon file in static folder)
 
     Note that the context of usage at each occurance of above words may be different. For example yourName may occur for your email id as *yourName@gmail.com* or even as an author of website. So you may not want a simple replace all function without going through context of usage.
-3. Ensure favicon.jpg and logo.jpg are changed to your own
-4. After doing the replacements, you would want to get your public folder back.
+3. You may have noticed that disqus Shortname, google analytics key and maps api key require you to go to the specific sites and get your own key
+    1. disqusShortname:
+        - disqus is the third party application we will be using for comments. 
+        - Get your own disqus shortname here: https://disqus.com/admin/create/ and fill it in the place given
+    2. googleAnalytics:
+        - the static site uses a third party application - [google analytics](https://developers.google.com/analytics/devguides/collection/analyticsjs/), to enable analytics about the customer. 
+        - These analytics can include things like what are the parts and pages of the website your visitor spent time on, how they arrived at your site, what geography they are from and sometimes even the demographics of the customer
+        - enabling Google Analytics on your site enables you to track site usage, referrers and various other statistics.
+        - See how to get your google analytics ID [here](https://support.google.com/analytics/answer/1042508?hl=en) and fill it in config.toml at the place given for googleAnalytics
+    3. maps_api_key:
+        - We use a third party application, google maps, to show a map in the front page in the contact section
+        - Get your key from [here](https://developers.google.com/maps/documentation/javascript/get-api-key) and fill it in the place requiring 'map_api_key' in config.toml
+        - To get your coordinates, right-click on [Google Maps](https://www.google.com/maps) and choose "What's here?". The coords will show up at the bottom. Fill in 'latitude' and 'longitude' based on these
+
+4. Ensure favicon.jpg and logo.jpg are changed to your own
+5. After doing the replacements, you would want to get your public folder back.
     - Open bash/terminal and cd into your website folder
     - Run the `rebuild_public.sh` script. In windows you may want to replace the forward slash with backslash
 
@@ -124,6 +138,8 @@ If you are in a hurry though, you should come back to the above later and for no
         ./rebuild_public.sh
         ```
     - Check to see that your public folder is back as normal
+
+
 
 ### Replace All Instructions in different text editors
 

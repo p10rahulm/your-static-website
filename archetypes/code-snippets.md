@@ -30,7 +30,7 @@ enable_comments = true
 math = false
 highlight = false
 highlight_languages = []
-highlight_style = "ocean"
+highlight_style = "railscasts"
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
