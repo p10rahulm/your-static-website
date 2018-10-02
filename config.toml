@@ -125,7 +125,7 @@ verboseLog =true
 
     #* 29. You can set a map in the front page in the contact section from google maps.
     # 1. Get key here: https://developers.google.com/maps/documentation/javascript/get-api-key
-    # 2. To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
+# 2. To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
     map = true
     map_api_key = "AIzaSyBVTxUD4jy-hOKRaOquYgxpslLv1oMffFg"
     latitude = "12.932376"

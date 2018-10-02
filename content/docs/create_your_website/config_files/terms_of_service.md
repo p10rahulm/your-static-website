@@ -74,7 +74,7 @@ url = "/docs/create_your_website/add_content/"
 # Writeup goes below
 +++
 
-The privacy policy is simply a text file stored at `termsservice.md` file which is in the `content` folder. The terms of service will be displayed at http://www.your-domain.com/termsservice/ and you can view the sample page [in the demo site](https://template.thinkingtree.me/termsservice/)
+The privacy policy is simply a text file stored at `termsservice.md` file which is in the `content` folder. The terms of service will be displayed at http://www.yourdomain.com/termsservice/ and you can view the sample page [in the demo site](https://template.thinkingtree.me/termsservice/)
 
 1. I have created a generic terms and conditions template which may be useful.
 2. In this file, replace:

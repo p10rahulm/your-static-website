@@ -74,7 +74,7 @@ url = "/docs/create_your_website/add_content/"
 # Writeup goes below
 +++
 
-The privacy policy is simply a text file stored at `privacy.md` file which is in the `content` folder. The privacy policy will be displayed in http://www.your-domain.com/privacy/ and you can view the sample page [in the demo site](https://template.thinkingtree.me/privacy/)
+The privacy policy is simply a text file stored at `privacy.md` file which is in the `content` folder. The privacy policy will be displayed in http://www.yourdomain.com/privacy/ and you can view the sample page [in the demo site](https://template.thinkingtree.me/privacy/)
 
 1. I have created a generic privacy policy.
 2. In this file, replace:

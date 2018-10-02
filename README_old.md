@@ -281,7 +281,7 @@ The names for the above are fairly self explanatory, and we may have come across
 
 #### The front page
 
-- This is the page that a viewer visits when they arrive at http://www.your-domain.com
+- This is the page that a viewer visits when they arrive at http://www.yourdomain.com
 - This base website url is a necessary presence for almost every website. It is typically a descriptive page with some [call to action](https://blog.hubspot.com/marketing/call-to-action-examples)
 - This page if often the first point of contact with an incoming visitor to the webpage and therefore [conversion](https://optinmonster.com/11-web-design-principles-that-will-boost-your-conversion-rate/) happens in the first few seconds here
 - While some may follow a minimalistic design, most websites may want to spend some time on the design of this page
@@ -2690,7 +2690,7 @@ The steps in this, while simple need to be carefully done.
 
 1. Go to godaddy.com
 2. Search for preferred domain name
-3. Add to cart and buy. Just choose one domain for now, you can always add more later. Let's call this domain as "your-domain.com". Of course note that ".com" could be any other suffix like ".org" or some such.
+3. Add to cart and buy. Just choose one domain for now, you can always add more later. Let's call this domain as "yourdomain.com". Of course note that ".com" could be any other suffix like ".org" or some such.
 4. Go to https://account.godaddy.com/products/
 5. You should be able to see your domain.
 6. Typically you may see three buttons here next to your domain: Privacy DNS and Manage.
@@ -2701,7 +2701,7 @@ The steps in this, while simple need to be carefully done.
 1. On Your DNS page, if you scroll fown, you should see a Forwarding section.
 2. You are presently going to create a DNS forwarding from the yourdomain.com into the www.yourdomain.com
 3. Click on the button next to domain. The options to be input are as follows:
-    1. In the Forward to option, in the blank space next to http:// type "www.your-domain.com". This means that it is going to forward from http://your-domain.com to http://www.your-domain.com
+    1. In the Forward to option, in the blank space next to http:// type "www.yourdomain.com". This means that it is going to forward from http://yourdomain.com to http://www.yourdomain.com
     2. In options use forward type: Permanent (301)
     3. In options use settings: Forward only
 4. click on save
@@ -2718,20 +2718,20 @@ The steps in this, while simple need to be carefully done.
     1. Go to `https://github.com/yourusername/yourblogname`
     2. Click on the settings button towards the right side on the menu on top of the page
     3. Scroll down till you see the Github Pages section. Here you should see a dropdown for 'Source' - which should have a default setting 'None'. **Click this and choose 'master branch'**. Click Save
-    4. **Add a Custom Domain:** Just below the place where you selected the source, there is a text field where you can add a custom domain. Choose `www.your-domain.com`, where your-domain is the domain you purchased from godaddy
-    5. Save your changes: A success message such as 'Custom domain is saved' and 'Your site is ready to be published at http://www.your-domain.com/' should appear
+    4. **Add a Custom Domain:** Just below the place where you selected the source, there is a text field where you can add a custom domain. Choose `www.yourdomain.com`, where your-domain is the domain you purchased from godaddy
+    5. Save your changes: A success message such as 'Custom domain is saved' and 'Your site is ready to be published at http://www.yourdomain.com/' should appear
     6. You can optionally choose 'enforce https'. Sometimes this option works only after some time of the above options being chosen.
     
 3. On the DNS page that we saw in the last section, add a CNAME record
-    1. Go to your DNS page (which should be at https://dcc.godaddy.com/manage/your-domain.com/dns)
+    1. Go to your DNS page (which should be at https://dcc.godaddy.com/manage/yourdomain.com/dns)
     2. You should see the list of records right at the top.
     3. Click on 'Add' just below this list
     4. In the options that open up:
         1. Choose Type: `CNAME`
-        2. Choose Host: `www` (if you want to serve website on www.your-domain.com)
+        2. Choose Host: `www` (if you want to serve website on www.yourdomain.com)
         3. Choose Points To: `yourusername.github.io`. Of course replacing yourusername with your own github id
         4. Choose TTL: 1/2 hour or some such. Doesn't make a difference
-4. Use your web browser to go to the site http://www.your-domain.com and you should see the webpage ready
+4. Use your web browser to go to the site http://www.yourdomain.com and you should see the webpage ready
 
 ### Making changes to website from multiple locations
 
@@ -2872,12 +2872,12 @@ if it does not, then you would have to add TXT record. Let's look at how to do t
 3. If you landed on the browser page and do not have any storage buckets, you should see a large button asking you to create bucket. Other users would see an option to create bucket on the top of their screen above existing buckets.
 4. Click on create bucket. If this is the first use, you may be asked for some project name and organization name. This is to enable good organization of your assets. You can choose any relevant names for project and organization. You can create organization later if necessary.
     1. Older users would straight away go to the next page
-5. Choose name. Be careful here. You must choose exactly "www.your-domain.com"
+5. Choose name. Be careful here. You must choose exactly "www.yourdomain.com"
 6. In Default Storage Class choose Regional
 7. In location, choose the cheapest or the closest option to you depending on your priorities.
     1. If you open out the advanced settings, you should see Labels and encryption, neither of these need to be touched.
 8. Click on create.
-9. You would be back on the Cloud Storage Browser Page. You should be able to see your bucket by the name of "www.your-domain.com"
+9. You would be back on the Cloud Storage Browser Page. You should be able to see your bucket by the name of "www.yourdomain.com"
 10. You now have your very own bucket. Now it is empty, we will fill it with your website shortly. At this point we will go back to godaddy to create a record to live update the website when the bucket is changed.
 
 ## Create CNAME record on godaddy
@@ -2894,7 +2894,7 @@ if it does not, then you would have to add TXT record. Let's look at how to do t
 
 ## Create public permissions for your storage bucket
 1. Go back to Cloud Storage Browser page
-2. You should see the bucket name as "www.your-domain.com" along with location, public access level, lifecycle, labels and requester pays. At this point we are interested in making the bucket public.
+2. You should see the bucket name as "www.yourdomain.com" along with location, public access level, lifecycle, labels and requester pays. At this point we are interested in making the bucket public.
 3. At the right end of the row with the bucket you should be able to see 3 dots. Click this for settings. You will see (a) Edit bucket permissions (b) Edit labels (c) Edit website configuration and (d) edit default storage class.
 4. Of these the most important to us are (a) Edit bucket permissions and (c) edit website configuration
 5. Click on edit bucket permissions. You will see an option to add members. Use the following options:
