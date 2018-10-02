@@ -1,8 +1,8 @@
 +++
-title = "Implement your own static website with Godaddy and github in 10 easy steps"
+title = "Add your content to the website"
 date = 2018-06-08T19:44:35+05:30
 
-pageNumber = 1
+pageNumber = 11
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
@@ -30,13 +30,16 @@ tags = ["Static Sites","documentation","Hugo","websites","setup"]
 categories = ["Website"]
 
 [[previous_page]]
-text = "Learn about Static Websites"
-url = "/docs/understand_static_sites/introduction/"
+text = "Plan your website"
+url = "/docs/create_your_website/plan_website/"
 
 [[next_page]]
-text = "Website Templates"
-url = "/docs/create_your_website/download_essentials/"
+text = ""
+url = ""
 
+[[quick_links]]
+text = "Implement static site with Godaddy & github"
+url = "/docs/create_your_website/implement_static_website_godaddy_github/"
 [[quick_links]]
 text = "Download Git Bash, Hugo and a text editor"
 url = "/docs/create_your_website/download_essentials/"
@@ -64,9 +67,7 @@ url = "/docs/create_your_website/connect_github_godaddy/"
 [[quick_links]]
 text = "Plan your website"
 url = "/docs/create_your_website/plan_website/"
-[[quick_links]]
-text = "Add your content to the website"
-url = "/docs/create_your_website/add_content/"
+
 
 # Writeup goes below
 +++

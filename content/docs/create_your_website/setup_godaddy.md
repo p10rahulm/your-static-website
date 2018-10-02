@@ -1,8 +1,8 @@
 +++
-title = "Implement your own static website with Godaddy and github in 10 easy steps"
+title = "Buy the domain and setup godaddy"
 date = 2018-06-08T19:44:35+05:30
 
-pageNumber = 1
+pageNumber = 8
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
@@ -30,13 +30,16 @@ tags = ["Static Sites","documentation","Hugo","websites","setup"]
 categories = ["Website"]
 
 [[previous_page]]
-text = "Learn about Static Websites"
-url = "/docs/understand_static_sites/introduction/"
+text = "Check site and Upload to github"
+url = "/docs/create_your_website/upload_to_github/"
 
 [[next_page]]
-text = "Website Templates"
-url = "/docs/create_your_website/download_essentials/"
+text = "Connect github and Godaddy"
+url = "/docs/create_your_website/connect_github_godaddy/"
 
+[[quick_links]]
+text = "Implement static site with Godaddy & github"
+url = "/docs/create_your_website/implement_static_website_godaddy_github/"
 [[quick_links]]
 text = "Download Git Bash, Hugo and a text editor"
 url = "/docs/create_your_website/download_essentials/"
@@ -55,9 +58,6 @@ url = "/docs/create_your_website/modify_settings/"
 [[quick_links]]
 text = "Check site and Upload to github"
 url = "/docs/create_your_website/upload_to_github/"
-[[quick_links]]
-text = "Buy the domain and setup godaddy"
-url = "/docs/create_your_website/setup_godaddy/"
 [[quick_links]]
 text = "Connect github and Godaddy"
 url = "/docs/create_your_website/connect_github_godaddy/"
