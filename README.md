@@ -1316,16 +1316,17 @@ We have 15 different types of pages. These are listed below in approximately alp
 2. Books: This is meant for any books you have written
 3. Code-Snippet: This is meant for a mix of content and code.
 4. Courses: This is meant to showcase any courses that one has created
-5. Events: This page type can be used for showcasing events like concerts
-6. Notes: This is meant for a short content piece. Comes without a banner image
-7. People: This is for writing about people, possibly in your team or company
-8. Posts: This is meant for long generic content pieces. Comes with a banner image on top
-9. Presentations: This is meant to showcase presentation pdfs that you may have made
-10. Publications: You can link any publications (journals or otherwise) that you have made here
-11. Reviews: You can review any kinds of websites, products, movies etc here.
-12. Thoughts: This is meant for noting down any (profound) thoughts you may have
-13. Workshops: You can showcase any workshops (short courses) in these pages.
-14. Default: This is a default setting that is there.
+5. Docs: This is meant for any documentation. Like the one you are reading presently.
+6. Events: This page type can be used for showcasing events like concerts
+7. Notes: This is meant for a short content piece. Comes without a banner image
+8. People: This is for writing about people, possibly in your team or company
+9. Posts: This is meant for long generic content pieces. Comes with a banner image on top
+10. Presentations: This is meant to showcase presentation pdfs that you may have made
+11. Publications: You can link any publications (journals or otherwise) that you have made here
+12. Reviews: You can review any kinds of websites, products, movies etc here.
+13. Thoughts: This is meant for noting down any (profound) thoughts you may have
+14. Workshops: You can showcase any workshops (short courses) in these pages.
+15. Default: This is a default setting that is there.
 
 TODO: Add Docs
 

@@ -74,15 +74,49 @@ url = "/docs/create_your_website/add_content/"
 # Writeup goes below
 +++
 
-The main steps for creating your own website are as follows:
+Now your website is nearly ready to go live. All that remains is connecting github with godaddy. This consists of two parts:
 
-1. Download Git Bash, Hugo and a text editor
-2. Setup Github
-3. Download the template files
-4. Preview the site
-5. Modify Basic Settings
-6. Check site and Upload to github
-7. Buy the domain and setup godaddy
-8. Connect github and Godaddy
-9. Plan your website
-10. Add your own content
+1. Make github pages viewable
+2. Change godaddy CNAME to your github
+
+Let us look at these in more detail
+
+### Make your github pages viewable
+
+1. Do a deploy before you start
+    1. Open your terminal/bash and cd into the directory containing the website files.
+    2. type `./deploy.sh` into the terminal
+        - Note that on windows machines this may be `.\deplay.sh` or even just `deploy.sh`
+    3. Open a browser and check update times on your github repository at  `https://github.com/yourusername/yourblogname`
+2. Allow github pages
+    1. Go to `https://github.com/yourusername/yourblogname`
+    2. Click on the settings button towards the right side on the menu on top of the page
+    3. Scroll down till you see the Github Pages section. Here you should see a dropdown for 'Source' - which should have a default setting 'None'. Click this and choose **'master branch'**. Click Save
+    4. Add a Custom Domain: Just below the place where you selected the source, there is a text field where you can add a custom domain. Choose `www.yourdomain.com`, where yourdomain.com is the domain you purchased from godaddy
+    5. Save your changes: A success message such as 'Custom domain is saved' and 'Your site is ready to be published at http://www.yourdomain.com/' should appear
+    6. You can optionally choose 'enforce https'. Sometimes this option works only after some time of the above options being chosen.
+
+### Add a CNAME record to Godaddy to point to github
+
+On the godaddy DNS page that we saw in the [godaddy setup](/docs/create_your_website/setup_godaddy/) section, we need to now add a CNAME record
+
+1. Go to your DNS page (which should be at https://dcc.godaddy.com/manage/yourdomain.com/dns)
+2. You should see the list of records right at the top.
+3. Click on 'Add' just below this list
+4. In the options that open up:
+    1. Choose Type: `CNAME`
+    2. Choose Host: `www` (if you want to serve website on www.yourdomain.com)
+    3. Choose Points To: `yourusername.github.io`. Of course replacing yourusername with your own github id
+    4. Choose TTL: 1/2 hour or some such. Doesn't make a difference
+
+Now, use your web browser to go to the site http://www.yourdomain.com and ***you should see the webpage ready!***
+
+#### Regular Runs
+
+Now that it works once, it's always going to work. Every time you change or add a new page, if you want to see it on your site all you need to do:
+
+1. Open your bash/terminal/command prompt
+2. cd to your website folder `cd c:/users/yourname/website`
+3. Type `./deploy.sh` and then `./commit.sh` in your bash
+
+**Note**: windows uses backslash instead of forward slash in the commands above.

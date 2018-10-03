@@ -94,7 +94,7 @@ If you are in a hurry though, you should come back to the above later and for no
 
 ## How to modify quickly
 
-1. Before you start modifying the files, you would want to delete the `public` folder in case you have built your site. Don't worry we'll get this folder back! (Thank you github!)
+1. Before you start modifying the files, check your `public` folder. In case it has lots of directories, that means your the static files for site have been built. In that case, *you would want to delete the `public` folder* in case you have already built your site. Don't worry we'll get this folder back! (Thank you github!)
     - This is because a single config may be used in hundreds of output pages
     - If you are doing a find and replace, then instead of finding every instance in the output page, you might as well just change the config and then rebuild the site
 2. At this stage, you should ensure you modify the following words to your own. You can choose to do a Replace All in your favorite text editor. Instructions for some text editors are in the [next section](#replace-all-instructions-in-different-text-editors) below
@@ -130,7 +130,7 @@ If you are in a hurry though, you should come back to the above later and for no
         - To get your coordinates, right-click on [Google Maps](https://www.google.com/maps) and choose "What's here?". The coords will show up at the bottom. Fill in 'latitude' and 'longitude' based on these
 
 4. Ensure favicon.jpg and logo.jpg are changed to your own
-5. After doing the replacements, you would want to get your public folder back.
+5. After doing the replacements, in case you had deleted the `public` folder, you would want it back.
     - Open bash/terminal and cd into your website folder
     - Run the `rebuild_public.sh` script. In windows you may want to replace the forward slash with backslash
 
@@ -138,8 +138,6 @@ If you are in a hurry though, you should come back to the above later and for no
         ./rebuild_public.sh
         ```
     - Check to see that your public folder is back as normal
-
-
 
 ### Replace All Instructions in different text editors
 
