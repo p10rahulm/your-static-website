@@ -1,8 +1,8 @@
 +++
-title = "Add your content to the website"
+title = "Code-snippets Page Parameters"
 date = 2018-06-08T19:44:35+05:30
 
-pageNumber = 11
+pageNumber = 114
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
@@ -20,8 +20,8 @@ enable_comments = true
 
 # Highlight.js: https://highlightjs.org/static/demo/
 math = false
-highlight = false
-highlight_languages = ["bash","html"]
+highlight = true
+highlight_languages = ["bash","toml"]
 highlight_style = "railscasts"
 
 # Tags and categories
@@ -30,8 +30,8 @@ tags = ["Static Sites","documentation","Hugo","websites","setup"]
 categories = ["Website"]
 
 [[previous_page]]
-text = "Plan your website"
-url = "/docs/create_your_website/plan_website/"
+text = "Add your content to the website"
+url = "/docs/create_your_website/add_content/"
 
 [[next_page]]
 text = ""
@@ -74,12 +74,17 @@ url = "/docs/create_your_website/add_content/"
 
 # Writeup goes below
 +++
+Code snippets need a small number of additional settings
 
-At this stage you are ready to start running your website on your own. We will in this last section look at some more things that you may want to know - how to modify single page settings, gotchas with respect to git
+```toml
 
-## Common Page Parameters
-The term 'page configuration' may be met with a little bit of trepidation. Not to worry, these are most innocuous. Common page paramters include title, author, date, caption_image,summary_content,layout, tags, categories
+# 1. Do you use Math in the Code Page. If so, use math=true below. The math display is based on [mathjax](https://www.mathjax.org/)
+math = false
 
-## Git gotchas
+# 2. Do you use code in this page? If so mention highlight=true below. The style "ocean" is a dark themed style. You can choose themes and languages based on this site https://highlightjs.org/static/demo/
 
-In a lifetime of using git, you are likely to face at some point some major or minor errors. While the causes for these may not be immediately apparent, the fixes shouldn't be that hard. We will cover some of these glitches and their fixes in [this page](/docs/create_your_website/git_gotchas/). For everything else, use [stack-overflow](https://stackoverflow.com)
+highlight = true
+highlight_languages = ["bash","html"]
+highlight_style = "railscasts"
+
+```

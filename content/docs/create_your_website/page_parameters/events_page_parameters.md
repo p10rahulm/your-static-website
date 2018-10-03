@@ -1,8 +1,8 @@
 +++
-title = "Add your content to the website"
+title = "Events Page Parameters"
 date = 2018-06-08T19:44:35+05:30
 
-pageNumber = 11
+pageNumber = 116
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
@@ -20,8 +20,8 @@ enable_comments = true
 
 # Highlight.js: https://highlightjs.org/static/demo/
 math = false
-highlight = false
-highlight_languages = ["bash","html"]
+highlight = true
+highlight_languages = ["bash","toml"]
 highlight_style = "railscasts"
 
 # Tags and categories
@@ -30,8 +30,8 @@ tags = ["Static Sites","documentation","Hugo","websites","setup"]
 categories = ["Website"]
 
 [[previous_page]]
-text = "Plan your website"
-url = "/docs/create_your_website/plan_website/"
+text = "Add your content to the website"
+url = "/docs/create_your_website/add_content/"
 
 [[next_page]]
 text = ""
@@ -75,11 +75,28 @@ url = "/docs/create_your_website/add_content/"
 # Writeup goes below
 +++
 
-At this stage you are ready to start running your website on your own. We will in this last section look at some more things that you may want to know - how to modify single page settings, gotchas with respect to git
+The events pages unlike other pages do not contain many of the common settings. Instead they may contain a few additional (self-explanatory) settings
 
-## Common Page Parameters
-The term 'page configuration' may be met with a little bit of trepidation. Not to worry, these are most innocuous. Common page paramters include title, author, date, caption_image,summary_content,layout, tags, categories
+```toml
+# 1. A short description of the event that goes below the title
+tagline = "The beats are coming to town"
 
-## Git gotchas
+# 2. who, where and when describe the event to have an artist, a location and a time. This is used in list pages as well as the top of the events single page layout
+who = "Kailash Kher"
+where = "Asilomar, Aranyaka, India"
+when = "17th Dec 2018"
 
-In a lifetime of using git, you are likely to face at some point some major or minor errors. While the causes for these may not be immediately apparent, the fixes shouldn't be that hard. We will cover some of these glitches and their fixes in [this page](/docs/create_your_website/git_gotchas/). For everything else, use [stack-overflow](https://stackoverflow.com)
+# 3. The banner_image is an image that is used as a banner for the event page itself. Choose this carefully as it occupies a good amount of space on the webpage
+banner_image = "events/bw_crowd.jpg"
+
+# 4. Upload posters and youtube videos related to the event below. The first will appear featured and the visitor can scroll, zoom or click to view the images
+# Media will be from below list
+# Featured image The featured image will be the first from the following list
+posters = ["events/clean_bandit.jpg","orange-fractal.jpg","dog_popup_thanks3.jpg","dog_transparency1.jpg", ]
+# Currently only youtube is supported. Please enter only the id. For example if the video url is "https://www.youtube.com/watch?v=lk60ObnbIOk", please enter "lk60ObnbIOk"
+youtube_ids = ["lk60ObnbIOk","9hHq2lYof4U"]
+
+# 5. Apart from categories and tags, we provide an additional taxonomy for events called genres
+genres = ["Rock","Paper","Scissors"]
+
+```

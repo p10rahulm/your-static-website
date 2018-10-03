@@ -1,8 +1,8 @@
 +++
-title = "Add your content to the website"
+title = "Reviews Page Parameters"
 date = 2018-06-08T19:44:35+05:30
 
-pageNumber = 11
+pageNumber = 120
 # -----------------------------------------
 # Summary section
 # -----------------------------------------
@@ -20,8 +20,8 @@ enable_comments = true
 
 # Highlight.js: https://highlightjs.org/static/demo/
 math = false
-highlight = false
-highlight_languages = ["bash","html"]
+highlight = true
+highlight_languages = ["bash","toml"]
 highlight_style = "railscasts"
 
 # Tags and categories
@@ -30,8 +30,8 @@ tags = ["Static Sites","documentation","Hugo","websites","setup"]
 categories = ["Website"]
 
 [[previous_page]]
-text = "Plan your website"
-url = "/docs/create_your_website/plan_website/"
+text = "Add your content to the website"
+url = "/docs/create_your_website/add_content/"
 
 [[next_page]]
 text = ""
@@ -75,11 +75,26 @@ url = "/docs/create_your_website/add_content/"
 # Writeup goes below
 +++
 
-At this stage you are ready to start running your website on your own. We will in this last section look at some more things that you may want to know - how to modify single page settings, gotchas with respect to git
+The reviews pages mostly contain new configurations regarding the product or item being reviewed
 
-## Common Page Parameters
-The term 'page configuration' may be met with a little bit of trepidation. Not to worry, these are most innocuous. Common page paramters include title, author, date, caption_image,summary_content,layout, tags, categories
+```toml
 
-## Git gotchas
+# 1. Firstly enter some basic details about the item being reviewed including the name, the maker, and the item link
 
-In a lifetime of using git, you are likely to face at some point some major or minor errors. While the causes for these may not be immediately apparent, the fixes shouldn't be that hard. We will cover some of these glitches and their fixes in [this page](/docs/create_your_website/git_gotchas/). For everything else, use [stack-overflow](https://stackoverflow.com)
+reviewed_item = "Opel Astra Car"
+reviewed_item_maker = "General Motors"
+reviewed_item_link = "https://en.wikipedia.org/wiki/Opel_Astra"
+
+# 2. The taxonomies for reviewed items also includes reviewed_item_categories. This can be used to mention the item being reviewed like movies, or books or some such.
+reviewed_item_categories = ["Products"]
+
+# 3. The rating (number of stars) you give the item should be mentioned below. 0.5 being lowest and 5 being the highest number of stars
+stars = 4.5
+
+# 4. The title of the review is known here as headline
+headline = "Heartbeat on wheels"
+
+# 5. A good review may contain images also. The first of the following list will be featured and the rest can be clicked, zoomed, scrolled and shared
+images = ["reviews/opel1.png","reviews/opel2.png"]
+
+```
