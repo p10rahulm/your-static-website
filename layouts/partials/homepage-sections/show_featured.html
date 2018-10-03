@@ -30,7 +30,9 @@
 
     {{$pages := first $layout_data.num_featured (cond (eq $layout_data.sort_order "desc") ((where (where $.Data.Pages "Section" $name) "Params.featured" true).ByParam $layout_data.sort_field).Reverse ((where (where $.Data.Pages "Section" $name) "Params.featured" true).ByParam $layout_data.sort_field)) }}
     {{if (or (ne $layout_data.card_layout "") (ne $layout_data.card_layout "default")) }}
+    {{if gt (len $pages) 0}}
         {{partial (print "listLayouts/" $layout_data.card_layout ".html") (dict "pages" $pages "context" $layout_data "scratch" $.Scratch  "section" $section ) | safeHTML}}
+    {{end}}
     {{else}}
     {{end}}
 {{end}}

@@ -71,7 +71,6 @@ url = "/docs/create_your_website/plan_website/"
 text = "Add your content to the website"
 url = "/docs/create_your_website/add_content/"
 
-
 # Writeup goes below
 +++
 
@@ -79,7 +78,7 @@ Courses, similar to books, have a number of additional optional settings that ma
 
 ```toml
 # 1. The "faculty" for the course is a similar option to author name in the regular pages
-faculty = "yourName and Goody Two Shoes"
+faculty = "yourName and anotherName"
 
 # 2. A short intro may be provided which visitors may see for quickly understanding what the course is about. It should be similar to abstract for a book
 short_intro = "An in-depth look at management with a specific view on Marketing"

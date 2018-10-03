@@ -80,7 +80,7 @@ Workshops pages contain a good number of new configurations apart from the commo
 
 ```toml
 # 1. Equivalent to author in various other pages, we have presenters for the workshop pages
-presenters = "yourName and Goody Two Shoes"
+presenters = "yourName and anotherName"
 
 # 2. A short intro of the workshop may be given
 short_intro = "Sustainable practices for creating a new you"

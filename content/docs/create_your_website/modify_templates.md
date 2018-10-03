@@ -102,7 +102,6 @@ I will be extending this if useful to somebody later, but these [giraffe academy
     1. First at the single page Layout level
     2. These can be modified from Single Page prebuilt layout sheets. For example at /data/layouts/sectionwise_singlepage_layouts.toml
     3. These can be modified from the page parameters itself.
-
 11. Similarly defaults for list page Layouts are listed
     1. First at the list.html level
     2. These are passed to the listPages.html template piece (partial)

@@ -98,6 +98,7 @@ We saw above the common settings used across most single pages. Additionally, ea
 11. [Reviews Page Parameters](/docs/create_your_website/page_parameters/review_page_parameters/)
 12. [Thoughts Page Parameters](/docs/create_your_website/page_parameters/thought_page_parameters/)
 13. [Workshops Page Parameters](/docs/create_your_website/page_parameters/workshop_page_parameters/)
+14. [Documentation Page Parameters](/docs/create_your_website/page_parameters/doc_page_parameters/)
 
 ## Git gotchas
 
@@ -106,3 +107,13 @@ In a lifetime of using git, you are likely to face at some point some major or m
 ## Template Creation
 
 Now, while this section is not necessary, for the purpose of completeness you would want to learn to create your own templates. The best place to start are these [giraffe academy videos](https://www.youtube.com/watch?v=G7umPCU-8xc). Prior to that deep dive, [this page](/docs/create_your_website/modify_templates/) gives you a further idea on what is possible
+
+## Last remarks
+
+It would not be in order if i didn't mention why I created this website template. My main motivation was that I didn't like facebook. I wanted my output to be on the internet, but didn't want it lost in the thousands and thousands of posts that go on facebook. Facebook can be used to spread ideas, not to host them. I wanted my own address.
+
+I tried Wordpress for a while. In fact it was the first place of stop when I didn't know the least bit about coding. But i realized it was inefficient. Wordpress was not a good way to create sites. Further it was costing me every month. A bit later I found that the majority of content on wordpress sites was static but were hosted dynamically. This lead to my interest in static sites - especially given wordpress was hosting 20 percent of all sites on the internet.
+
+Building a website should not be hard at all. If your grandpa asks you to build a site, you should be able to tell him - it's really simple - here are the instructions, why don't you try? Also, apart from your domain name, it's free. This was my motivation.
+
+Given this motivation, these docs are aimed at people who don't have their own websites currently. Therefore the intention is to be free of technical jargon. There is a high likelihood that I have failed in this attempt. Therefore, if you find improvements to code or to docs, do send in.
