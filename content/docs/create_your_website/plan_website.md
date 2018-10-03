@@ -20,8 +20,8 @@ enable_comments = true
 
 # Highlight.js: https://highlightjs.org/static/demo/
 math = false
-highlight = false
-highlight_languages = ["bash","html"]
+highlight = true
+highlight_languages = ["bash"]
 highlight_style = "railscasts"
 
 # Tags and categories
@@ -74,75 +74,94 @@ url = "/docs/create_your_website/add_content/"
 # Writeup goes below
 +++
 
-Now that you have seen your site scaffold and seen what you can do with it, it is time for you to ***start planning*** what you want to launch your website with. The original motivation for this template I created was to present any and all output that I would produce. But your website may be completely different and may be about fiction, or art. So the question is:
+Now that you have seen your site scaffold and seen what you can do with it, it is time for you to ***start planning*** what you want to launch your website with. 
 
-## Deciding what to put on your website: My experience
+The original motivation for this template I created was to [present any and all output that I would produce](/docs/create_your_website/what_page_templates/). But your website may be completely different and may be about fiction, or art. So the question is:
 
-What I was creating on facebook, twitter, work, classes mainly fit into the following categories:
+## What pages can you create
 
-1. Random Thoughts
-2. Presentations
-3. Long articles
-4. Journal Publications (that I intended to create!)
-5. Code Snippets that may help others or I would revisit later
-6. Quick Notes
-7. Reviews of things I had done, movies I had seen and places I had visited
+### The single pages
 
-For the first iteration of my website I had the content for many of these already. Some I was going to create. The format always allowed me to add more later.
+We have 15 different types of pages available. These are listed below in approximately alphabetical order:
 
---
-
-Some (academically oriented) people that I went to for review of the templates mentioned that I should add for them pages for:
-
-1. Courses they had taken
-2. Books they had written
-3. Workshops they had conducted
-
-A friend who does podcasts and is into musicals suggested pages for audio and events. A company I worked for suggested they wanted pages for their employees. And of course I needed a page format that would help me write this documentation. So that gives us
-
-1. Audio pages
-2. Events
-3. People pages
-4. Documentation pages
-
-Each of these has a slightly different format and different inputs on the markdown side. Lets formalize this.
-
---
-
-### Types of Pages Available
-
-We have 15 different types of pages. These are listed below in approximately alphabetical order:
-
-1. Audios: This is for any recordings you might have taken including songs or podcasts
-2. Books: This is meant for any books you have written
-3. Code-Snippet: This is meant for a mix of content and code.
-4. Courses: This is meant to showcase any courses that one has created
-5. Docs: This is meant for any documentation. Like the one you are reading presently.
-6. Events: This page type can be used for showcasing events like concerts
-7. Notes: This is meant for a short content piece. Comes without a banner image
-8. People: This is for writing about people, possibly in your team or company
-9. Posts: This is meant for long generic content pieces. Comes with a banner image on top
-10. Presentations: This is meant to showcase presentation pdfs that you may have made
-11. Publications: You can link any publications (journals or otherwise) that you have made here
-12. Reviews: You can review any kinds of websites, products, movies etc here.
-13. Thoughts: This is meant for noting down any (profound) thoughts you may have
-14. Workshops: You can showcase any workshops (short courses) in these pages.
+1. [Audios](https://template.thinkingtree.me/audios/): This is for any recordings you might have taken including songs or podcasts
+2. [Books](https://template.thinkingtree.me/books/): This is meant for any books you have written
+3. [Code-Snippets](https://template.thinkingtree.me/code-snippets/): This is meant for a mix of content and code.
+4. [Courses](https://template.thinkingtree.me/courses/): This is meant to showcase any courses that one has created
+5. [Docs](https://template.thinkingtree.me/docs/understand_static_sites/): This is meant for any documentation. Like the one you are reading presently.
+6. [Events](https://template.thinkingtree.me/events/): This page type can be used for showcasing events like concerts
+7. [Notes](https://template.thinkingtree.me/notes/): This is meant for a short content piece. Comes without a banner image
+8. [People](https://template.thinkingtree.me/people/): This is for writing about people, possibly in your team or company
+9. [Posts](https://template.thinkingtree.me/posts/): This is meant for long generic content pieces. Comes with a banner image on top
+10. [Presentations](https://template.thinkingtree.me/presentations/): This is meant to showcase presentation pdfs that you may have made
+11. [Publications](https://template.thinkingtree.me/publications/): You can link any publications (journals or otherwise) that you have made here
+12. [Reviews](https://template.thinkingtree.me/reviews/): You can review any kinds of websites, products, movies etc here.
+13. [Thoughts](https://template.thinkingtree.me/thoughts/): This is meant for noting down any (profound) thoughts you may have
+14. [Workshops](https://template.thinkingtree.me/workshops/): You can showcase any workshops (short courses) in these pages.
 15. Default: This is a default setting for simple markdown.
 
 Given these page types, for starters, you may want to add *content that you have already created before* that falls into these categories. Further you may find that some kinds of pages, even if they don't directly fit into the above scheme may be coaxed into them. Lastly if you feel there are certain kinds of pages that just don't have a solution in the above pages, leave a comment below and I'll look to add them into the template.
 
-#### The front end
+### The front page
 
 The most important part of your website may be your front page, and it's possible you may want to have certain sections and leave out others. You may also want to change the text and content to be your own. You can make these changes in [_index.md](/docs/create_your_website/config_files/front_page_settings/)
 
-## How to modify
+### The list pages
 
-Let's say you know what you want to put on your site for starters, how do you go about changing the content of the site? For all pages other than the single pages we have already seen how to modify in the [modify site settings](/docs/create_your_website/modify_settings/) section. The list pages are auto generated (except the headings), so that leaves us with the single pages.
+We have 17 different types of list layouts, three types of pagination and various other settings that you can change. While the defaults of these are set already, you can have a look at [how to change these settings](/docs/create_your_website/config_files/list_index_file).
 
-There are two ways to go about this: Either delete the single pages and then add your own or modify existing pages to add your own content. Either should give you similar results.
+## How to add content to your site
 
-### Deleting all pages and starting afresh
+At this point, let's say you know what content you want to put on your website. In such a case, what are the steps you want to take?
 
-Let us take an example type `post` that you want to create
+1) Delete existing single page content
+2) Create a new content piece
 
-1. 
+### Delete existing single page content
+
+We have a script for this which should allow you to view and delete ***all*** single page content without removing the directory structure or the _index (list layout) files for each content folder.
+
+1. Open your bash/terminal/command prompt and cd into your website directory
+2. Type the below into your prompt
+
+    ```bash
+    # 1. View the files that you are going to be deleting
+    ./find_non_index_content_files.sh
+    # 2. Delete the files once you are satisfied that none of your personal files are in the list
+    ./delete_non_index_content_files.sh
+    ```
+3. Note that on windows you may need backslash instead of forward slash
+4. Open a file explorer and check to see that all the files from the content subfolders (for example `content/posts/post1.md`) are indeed gone
+
+### Create a new single page content piece
+
+Hugo provides us with archetypes for each kind of page that you simply need to modify rather than writing the whole settings for each page out yourself. Adding a new page is simple in hugo. Let us take an example type `post` that you want to create called `My New Post`
+
+1. Open your bash/terminal/command prompt and cd into your website directory. For example, if your website files are at `c:\users\yourname\website`, type
+    ```bash
+    cd c:\users\yourname\website
+    ```
+2. type the below into your prompt
+
+    ```bash
+    hugo new posts/my-new-post.md
+    ```
+3. You should have a new file at `c:\users\yourname\website\content\posts\my-new-post-md`. Open this with your favorite text editor
+4. You would find a whole set of options are already filled in. We will look at what they mean in the next section. For now, you can just leave them as is. At the bottom of the page, below the three plus marks `+++` is where you can fill in your content.
+5. Note that between the three plus signs on the top of the page and the three plus signs at the bottom of that page are where the `page configurations` are found. All parameters that are set here can be used to generate the html content.
+
+### Deploying your pages
+
+Keep adding pages till you like. At any point, if you want to view it on your live website, you can deploy it.
+
+1. Open a bash/terminal/command prompt and cd into your website directory
+2. type `./deploy.sh` and then `./commit.sh`
+3. If you added a post called my-new-post.md (as mentioned in the last section), then you should find this on your website at https://www.yourdomain.com/posts/my-new-post/
+
+**Note**: If you want to create this post at a different location (inside https://www.yourdomain.com/posts), then you would have to place it in the appropriate directory in the content folder
+
+- For example, let's say you want to create a new post named "My New Post" in a directory called `politics`, then when creating the file, you would have to type into your prompt
+    ```bash
+    hugo new posts/politics/my-new-post.md
+    ```
+- Then the output file can be viewed (after `deploy.sh`) at https://www.yourdomain.com/posts/politics/my-new-post/
