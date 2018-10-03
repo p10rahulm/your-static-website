@@ -78,7 +78,28 @@ url = "/docs/create_your_website/add_content/"
 At this stage you are ready to start running your website on your own. We will in this last section look at some more things that you may want to know - how to modify single page settings, gotchas with respect to git
 
 ## Common Page Parameters
-The term 'page configuration' may be met with a little bit of trepidation. Not to worry, these are most innocuous. Common page paramters include title, author, date, caption_image,summary_content,layout, tags, categories
+
+The term 'page configuration' may be met with a little bit of trepidation. Not to worry, these are most innocuous. Common page paramters include title, author, date, caption_image,summary_content,layout, tags and categories. There are also two true/false (boolean) parameters for 'enable_comments' and 'featured' on front page. You can read about these in further detail [here](/docs/create_your_website/page_parameters/common_page_parameters/)
+
+## Individual Page Parameters
+
+We saw above the common settings used across most single pages. Additionally, each page may have its own settings. Let's look at these below in order of alphabetical page types. 
+
+1. [Audio Page Parameters](/docs/create_your_website/page_parameters/audio_page_parameters/)
+2. [Books Page Parameters](/docs/create_your_website/page_parameters/book_page_parameters/)
+3. [Code Snippets Page Parameters](/docs/create_your_website/page_parameters/code_snippet_page_parameters/)
+4. [Courses Page Parameters](/docs/create_your_website/page_parameters/course_page_parameters/)
+5. [Events Page Parameters](/docs/create_your_website/page_parameters/event_page_parameters/)
+6. Notes Page Parameters: No additional parameters apart from [common ones](/docs/create_your_website/page_parameters/common_page_parameters/)
+7. [People Page Parameters](/docs/create_your_website/page_parameters/people_page_parameters/)
+8. Posts Page Parameters: No additional parameters apart from [common ones](/docs/create_your_website/page_parameters/common_page_parameters/)
+9. [Presentations Page Parameters]
+(/docs/create_your_website/page_parameters/presentation_page_parameters/)
+10. [Publications Page Parameters](/docs/create_your_website/page_parameters/publication_page_parameters/)
+11. [Reviews Page Parameters](/docs/create_your_website/page_parameters/review_page_parameters/)
+12. [Thoughts Page Parameters](/docs/create_your_website/page_parameters/thought_page_parameters/)
+13. [Workshops Page Parameters](/docs/create_your_website/page_parameters/workshop_page_parameters/)
+
 
 ## Git gotchas
 
