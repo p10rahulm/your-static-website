@@ -345,7 +345,7 @@
         prefix = ""
         class = "card_summary center_align"
         postfix = ""
-        truncate_size = 250
+        truncate_size = 100
         [[sections.fields.styles]]
             style = "margin"
             value = "3px auto 1.25rem auto"

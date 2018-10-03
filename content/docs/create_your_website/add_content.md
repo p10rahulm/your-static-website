@@ -83,7 +83,7 @@ The term 'page configuration' may be met with a little bit of trepidation. Not t
 
 ## Individual Page Parameters
 
-We saw above the common settings used across most single pages. Additionally, each page may have its own settings. Let's look at these below in order of alphabetical page types. 
+We saw above the common settings used across most single pages. Additionally, each page may have its own settings. Let's look at these below in order of alphabetical page types.
 
 1. [Audio Page Parameters](/docs/create_your_website/page_parameters/audio_page_parameters/)
 2. [Books Page Parameters](/docs/create_your_website/page_parameters/book_page_parameters/)
@@ -93,14 +93,16 @@ We saw above the common settings used across most single pages. Additionally, ea
 6. Notes Page Parameters: No additional parameters apart from [common ones](/docs/create_your_website/page_parameters/common_page_parameters/)
 7. [People Page Parameters](/docs/create_your_website/page_parameters/people_page_parameters/)
 8. Posts Page Parameters: No additional parameters apart from [common ones](/docs/create_your_website/page_parameters/common_page_parameters/)
-9. [Presentations Page Parameters]
-(/docs/create_your_website/page_parameters/presentation_page_parameters/)
+9. [Presentations Page Parameters](/docs/create_your_website/page_parameters/presentation_page_parameters/)
 10. [Publications Page Parameters](/docs/create_your_website/page_parameters/publication_page_parameters/)
 11. [Reviews Page Parameters](/docs/create_your_website/page_parameters/review_page_parameters/)
 12. [Thoughts Page Parameters](/docs/create_your_website/page_parameters/thought_page_parameters/)
 13. [Workshops Page Parameters](/docs/create_your_website/page_parameters/workshop_page_parameters/)
 
-
 ## Git gotchas
 
 In a lifetime of using git, you are likely to face at some point some major or minor errors. While the causes for these may not be immediately apparent, the fixes shouldn't be that hard. We will cover some of these glitches and their fixes in [this page](/docs/create_your_website/git_gotchas/). For everything else, use [stack-overflow](https://stackoverflow.com)
+
+## Template Creation
+
+Now, while this section is not necessary, for the purpose of completeness you would want to learn to create your own templates. The best place to start are these [giraffe academy videos](https://www.youtube.com/watch?v=G7umPCU-8xc). Prior to that deep dive, [this page](/docs/create_your_website/modify_templates/) gives you a further idea on what is possible

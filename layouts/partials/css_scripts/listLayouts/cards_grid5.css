@@ -22,6 +22,7 @@
  }
 #{{.name}}_cards .card_summary {
     height: 56px;
+    overflow-y: hidden;
 }
 #{{.name}}_cards .card_title {
     height: 25px;

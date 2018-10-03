@@ -1,8 +1,8 @@
 +++
-title = "Common Page Parameters"
+title = "Git Gotchas"
 date = 2018-06-08T19:44:35+05:30
 
-pageNumber = 111
+pageNumber = 130
 # -----------------------------------------
 # Summary section
 # -----------------------------------------

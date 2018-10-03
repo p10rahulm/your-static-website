@@ -33,7 +33,7 @@
 {{$pages := $paginator.Pages}}
 {{$section := $page_name}}
 <!--We have now set the required variables. The templating begins below-->
-
+<h1> len = {{len $pages}}</h1>
 {{partial $layout_file (dict "pages" $pages "context" ($layout_data | default .) "scratch" $.Scratch "section" $section ) | safeHTML}}
 {{$.Scratch.Set "layout_data" $layout_data}}
 {{partial (printf "paginationLayouts/%s.html" $layout_data.pagination_layout) . }}

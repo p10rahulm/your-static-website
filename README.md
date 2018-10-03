@@ -1328,7 +1328,6 @@ We have 15 different types of pages. These are listed below in approximately alp
 14. Workshops: You can showcase any workshops (short courses) in these pages.
 15. Default: This is a default setting that is there.
 
-TODO: Add Docs
 
 ### Steps to create a webpage
 
@@ -1818,7 +1817,7 @@ The steps in this, while simple need to be carefully done.
     4. **Add a Custom Domain:** Just below the place where you selected the source, there is a text field where you can add a custom domain. Choose `www.yourdomain.com`, where your-domain is the domain you purchased from godaddy
     5. Save your changes: A success message such as 'Custom domain is saved' and 'Your site is ready to be published at http://www.yourdomain.com/' should appear
     6. You can optionally choose 'enforce https'. Sometimes this option works only after some time of the above options being chosen.
-    
+
 3. On the DNS page that we saw in the last section, add a CNAME record
     1. Go to your DNS page (which should be at https://dcc.godaddy.com/manage/yourdomain.com/dns)
     2. You should see the list of records right at the top.
