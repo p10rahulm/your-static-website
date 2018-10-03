@@ -100,13 +100,42 @@ We saw above the common settings used across most single pages. Additionally, ea
 13. [Workshops Page Parameters](/docs/create_your_website/page_parameters/workshop_page_parameters/)
 14. [Documentation Page Parameters](/docs/create_your_website/page_parameters/doc_page_parameters/)
 
+## Template Creation
+
+Now, while this section is not necessary, for the purpose of completeness you would want to learn to create your own templates. The best place to start are these [giraffe academy videos](https://www.youtube.com/watch?v=G7umPCU-8xc). Prior to that deep dive, [this page](/docs/create_your_website/modify_templates/) gives you a further idea on what is possible
+
+## Template Creation Example
+
+## Making changes to website from multiple locations
+
+If you are making changes to your website from multiple locations, it is important to have them all with the same working files
+
+1. First time setup on a new computer
+    1. Do all setup like downloading [git bash](https://git-scm.com/downloads) and a good text editor like [Atom](https://atom.io/) or [VS Code](https://code.visualstudio.com/)
+    2. Create a directory where you want to host your files, say `c:\users\username\website\`
+    3. Open your git bash and cd to this new directory
+    4. type `git clone  --recurse-submodules -j8 https://github.com/your_username/yourWebsite.git .`
+    5. This should download all your files from the remote directory *including the submodule*
+    6. To ensure that everything is in order, you can further type `./pull.sh` and all your files should be synced
+2. Continue to make changes are required in your favorite text editor
+3. When you are done
+    1. Save the files you have created or worked on
+    2. Open the bash/terminal and cd into your website directory
+    3. type `./commit.sh`
+    4. If you further want to your changes to pass to the live website as well, type `./deploy.sh`
+    5. You will find that your website is updated with latest changes
+    6. Note on partial changes: If you have only made partial changes to some site page want to continue working on it without updating the live website then skip `./deploy.sh`
+4. When you want to get changes made on any other computer (and if initial setup has already been done):
+    1. Open the bash/terminal and cd into your website directory
+    2. type `./pull.sh`
+
 ## Git gotchas
 
 In a lifetime of using git, you are likely to face at some point some major or minor errors. While the causes for these may not be immediately apparent, the fixes shouldn't be that hard. We will cover some of these glitches and their fixes in [this page](/docs/create_your_website/git_gotchas/). For everything else, use [stack-overflow](https://stackoverflow.com)
 
-## Template Creation
+## Working with Google Cloud Storage instead of github
 
-Now, while this section is not necessary, for the purpose of completeness you would want to learn to create your own templates. The best place to start are these [giraffe academy videos](https://www.youtube.com/watch?v=G7umPCU-8xc). Prior to that deep dive, [this page](/docs/create_your_website/modify_templates/) gives you a further idea on what is possible
+Github is good. While good, you may find many reasons not to use it like: (a) It may be slow to serve website in your country, or (b) github is good but you can't get your head around *git*. Therefore there are many reasons why you may not want to work with github. If so an alternative is Google Cloud Storage. We detail instructions for cloud storage setup [in this page](/docs/create_your_website/google_cloud_storage/).
 
 ## Last remarks
 
