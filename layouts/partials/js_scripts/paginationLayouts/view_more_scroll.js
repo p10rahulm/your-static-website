@@ -11,7 +11,7 @@ var num_errors = 0;
 var base_url = window.location.href;
 var pages = [];
 {{range $index, $element := $.Paginator.Pagers}}
-    pages.push("{{ $element.URL |absURL}}");
+    pages.push("{{ $element.URL |relURL}}");
 {{end}}
  console.log("pages = " + pages);
 var jquery_request = function() {
