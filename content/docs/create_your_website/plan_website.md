@@ -76,7 +76,7 @@ url = "/docs/create_your_website/add_content/"
 
 Now that you have seen your site scaffold and seen what you can do with it, it is time for you to ***start planning*** what you want to launch your website with. 
 
-The original motivation for this template I created was to [present any and all output that I would produce](/docs/create_your_website/what_page_templates/). But your website may be completely different and may be about fiction, or art. So the question is:
+The original motivation for this template I created was to [present any and all output that I would produce](/docs/create_your_website/what_page_templates/). But your website may be completely different and may be about fiction, or art, or anything at all. So the question is:
 
 ## What pages can you create
 
@@ -108,11 +108,11 @@ The most important part of your website may be your front page, and it's possibl
 
 ### The list pages
 
-We have 17 different types of list layouts, three types of pagination and various other settings that you can change. While the defaults of these are set already, you can have a look at [how to change these settings](/docs/create_your_website/config_files/list_index_file).
+We have 17 different types of list layouts, three types of pagination and various other settings that you can change. The defaults of these are set already, so this is not necessary at the setup stage, but for reference, you can have a look at [how to change these settings](/docs/create_your_website/config_files/list_index_file).
 
 ## How to add content to your site
 
-At this point, let's say you know what content you want to put on your website. In such a case, what are the steps you want to take?
+At this point, let's say you know what content you want to put on your website. In such a case, what are the steps to adding content to your website?
 
 1) Delete existing single page content
 2) Create a new content piece

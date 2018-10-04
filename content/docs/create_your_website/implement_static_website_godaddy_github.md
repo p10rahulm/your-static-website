@@ -76,8 +76,8 @@ url = "/docs/create_your_website/add_content/"
 
 The main steps for creating your own website are as follows:
 
-1. [Download Git Bash, Hugo and a text editor](/docs/create_your_website/implement_static_website_godaddy_github/)
-2. [Setup Github](/docs/create_your_website/download_essentials/)
+1. [Download Git Bash, Hugo and a text editor](/docs/create_your_website/download_essentials/)
+2. [Setup Github](/docs/create_your_website/setup_github/)
 3. [Buy the domain and setup godaddy](/docs/create_your_website/setup_godaddy/)
 4. [Download the template files](/docs/create_your_website/download_template/)
 5. [Preview the site](/docs/create_your_website/preview_site/)

@@ -121,12 +121,11 @@ url = "/docs/create_your_website/add_content/"
 Note:
 
 1. The first time you use a git command to upload, it will ask you for your username and password. The password should appear in a small additional popup window that maintains encryption. It should only ask for your password the first time you are uploading. More advanced users may want to use ssh method for login, but that will not be covered here. You can find [good resources](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) from github on how to do this at a later point.
-
 2. You have another repository at https://github.com/yourusername/yourblogname/ for our output files. As of now we have not yet deployed our site and so this will not be updated. We will come back here in the [Upload to github](/docs/create_your_website/upload_to_github/) step
 3. If some part of above has failed, it is likely due to the step 4. We can do this manually by creating adding the following text to the `.gitmodules` file in the main website folder
 
     ```bash
     [submodule "public"]
-    path = public
-    url = https://github.com/yourusername/yourblogname.git
+        path = public
+        url = https://github.com/yourusername/yourblogname.git
     ```
