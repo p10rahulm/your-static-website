@@ -43,9 +43,7 @@ url = "/docs/create_your_website/implement_static_website_godaddy_github/"
 [[quick_links]]
 text = "Download Essential Software"
 url = "/docs/create_your_website/download_essentials/"
-[[quick_links]]
-text = "Setup Github"
-url = "/docs/create_your_website/setup_github/"
+
 [[quick_links]]
 text = "Buy the domain and setup godaddy"
 url = "/docs/create_your_website/setup_godaddy/"

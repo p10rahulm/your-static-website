@@ -67,9 +67,7 @@ url = "/docs/create_your_website/connect_github_godaddy/"
 [[quick_links]]
 text = "Plan your website"
 url = "/docs/create_your_website/plan_website/"
-[[quick_links]]
-text = "Add your content to the website"
-url = "/docs/create_your_website/add_content/"
+
 
 
 # Writeup goes below

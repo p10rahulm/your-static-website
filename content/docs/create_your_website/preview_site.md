@@ -52,9 +52,7 @@ url = "/docs/create_your_website/setup_godaddy/"
 [[quick_links]]
 text = "Download the template files"
 url = "/docs/create_your_website/download_template/"
-[[quick_links]]
-text = "Preview the site"
-url = "/docs/create_your_website/preview_site/"
+
 [[quick_links]]
 text = "Modify Site Settings"
 url = "/docs/create_your_website/modify_settings/"

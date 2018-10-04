@@ -58,9 +58,7 @@ url = "/docs/create_your_website/preview_site/"
 [[quick_links]]
 text = "Modify Site Settings"
 url = "/docs/create_your_website/modify_settings/"
-[[quick_links]]
-text = "Check site and Upload to github"
-url = "/docs/create_your_website/upload_to_github/"
+
 [[quick_links]]
 text = "Connect github and Godaddy"
 url = "/docs/create_your_website/connect_github_godaddy/"

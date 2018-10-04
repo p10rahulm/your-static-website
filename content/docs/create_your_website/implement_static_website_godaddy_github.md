@@ -37,9 +37,7 @@ url = "/docs/understand_static_sites/introduction/"
 text = "Download Git Bash, Hugo and a text editor"
 url = "/docs/create_your_website/download_essentials/"
 
-[[quick_links]]
-text = "Implement Static Site with Godaddy & github"
-url = "/docs/create_your_website/implement_static_website_godaddy_github/"
+
 [[quick_links]]
 text = "Download Essential Software"
 url = "/docs/create_your_website/download_essentials/"
