@@ -21,7 +21,7 @@ enable_comments = true
 # Highlight.js: https://highlightjs.org/static/demo/
 math = false
 highlight = false
-highlight_languages = ["bash","html"]
+highlight_languages = ["bash","toml"]
 highlight_style = "railscasts"
 
 # Tags and categories
@@ -100,11 +100,13 @@ We saw above the common settings used across most single pages. Additionally, ea
 13. [Workshops Page Parameters](/docs/create_your_website/page_parameters/workshop_page_parameters/)
 14. [Documentation Page Parameters](/docs/create_your_website/page_parameters/doc_page_parameters/)
 
+## Template Creation Example
+
+We will go through an example of template creation which should give you a good idea of how to go about creating your own template if required. We take up an [example template creation for actors](/docs/create_your_website/create_template_example/) ***which you should peruse***
+
 ## Template Creation
 
-Now, while this section is not necessary, for the purpose of completeness you would want to learn to create your own templates. The best place to start are these [giraffe academy videos](https://www.youtube.com/watch?v=G7umPCU-8xc). Prior to that deep dive, [this page](/docs/create_your_website/modify_templates/) gives you a further idea on what is possible
-
-## Template Creation Example
+Now, having gone through the example, you may want to take the next step of creating your own templates. I strongly suggest viewing these [giraffe academy videos](https://www.youtube.com/watch?v=G7umPCU-8xc) before you create as it will save you time later. Also, prior to that deep dive into the videos, [this page](/docs/create_your_website/modify_templates/) gives you a further idea on what is possible.
 
 ## Making changes to website from multiple locations
 

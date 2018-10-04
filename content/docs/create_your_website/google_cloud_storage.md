@@ -79,8 +79,6 @@ Github Pages is easy to use and free. The only problem could be that it is slow 
 
 ### Get Google Cloud SDK
 
-
-
 1. Go to [Google Cloud SDK Docs](https://cloud.google.com/sdk/docs/)
 2. This should enable you to install google cloud SDK.
     1. Though the cloud SDK consists of cloud gsutil and gq command line tools, we will only be using gsutil.
