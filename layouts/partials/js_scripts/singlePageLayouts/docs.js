@@ -105,11 +105,7 @@ function loadScript(url, callback){
     script.src = url;
     document.getElementsByTagName("head")[0].appendChild(script);
 }
-document.addEventListener('DOMContentLoaded', function() {
-    if( 1000 >  window.innerWidth){
-        document.getElementById("docs-menu").style.overflow = "visible"
-    }
-}, false);
+
 var isFirefox = typeof InstallTrigger !== 'undefined';
 if(isFirefox){
 if(window.innerWidth > 1000 ){

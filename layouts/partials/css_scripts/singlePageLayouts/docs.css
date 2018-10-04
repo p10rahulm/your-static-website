@@ -195,6 +195,7 @@ h1, h2, h3, h4, h5, h6 {
         visibility: hidden;
         position: relative;
         font-size: 0;
+        margin-right: 3px;
     }
 
     .docs_menu_heading_button:after {
