@@ -104,17 +104,22 @@ Above is based on [this answer](https://stackoverflow.com/questions/10228760/fix
 Removing a folder from git is more trouble than it's worth, but without going into how this happened, let us look at how to extricate yourself from this problem
 
 ```bash
+# The below steps might take time as git has to search all past versions to find the 'public' directory
 git filter-branch --tree-filter 'rm -rf public' --prune-empty HEAD
 git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
+# Below two steps are not necessary (if public is a submodule)
 echo public/ >> .gitignore
 git add .gitignore
+# Below steps are necessary, so even if you skipped the above two steps continue here
 git commit -m 'Removing public from git history'
 git gc
 git push origin master --force
 ```
+
+Note: You can skip the third and fourth step (.gitignore) since we are using a
 This [help from github](https://help.github.com/articles/removing-sensitive-data-from-a-repository/) is a good resource to look at as is [this stackoverflow answer](https://stackoverflow.com/questions/10067848/remove-folder-and-its-contents-from-git-githubs-history)
 
-### remote url not showing correctly in submodule
+### Remote url not showing correctly in submodule
 
 Say you typed `git remote -v` in the public folder, it should show the output repo that you created. If at any point it is still pointing to the template repo, one possible reason is that the submodule is not initialized
 In your main folder, try the following:
@@ -149,3 +154,4 @@ If in spite of following the instructions [here](/docs/create_your_website/downl
 ```bash
 git submodule sync
 ```
+
