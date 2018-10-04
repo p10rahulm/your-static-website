@@ -20,7 +20,7 @@ disqusShortname = "thinkingtree-template"
 ## - See how to get your google analytics ID here: https://support.google.com/analytics/answer/1042508?hl=en
 ## - The file where google analytics is implemented is /layouts/partials/js_scripts/ga.js
 
-googleAnalytics = "UA-123456789-1"
+googleAnalytics = "UA-119166503-3"
 
 # 5. uglyURLs decide how your pages are saved. When enabled, creates URL of the form /filename.html instead of /filename/.
 uglyURLs = false
