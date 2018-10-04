@@ -111,7 +111,7 @@ On the godaddy DNS page that we saw in the [godaddy setup](/docs/create_your_web
 
 Now, use your web browser to go to the site http://www.yourdomain.com and ***you should see the webpage ready!***
 
-#### Regular Runs
+### Regular Runs
 
 Now that it works once, it's always going to work. Every time you change or add a new page, if you want to see it on your site all you need to do:
 

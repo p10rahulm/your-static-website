@@ -75,7 +75,7 @@ url = "/docs/create_your_website/add_content/"
 # Writeup goes below
 +++
 
-At this stage you are ready to start running your website on your own. We will in this last section look at some more things that you may want to know - how to modify single page settings, gotchas with respect to git
+At this stage you are ready to start running your website on your own. We will in this last section look at some more things that you may want to know - how to modify single page settings, template creation, using multiple computers and gotchas with respect to git
 
 ## Common Page Parameters
 

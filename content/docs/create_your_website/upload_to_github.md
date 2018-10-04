@@ -74,7 +74,9 @@ url = "/docs/create_your_website/add_content/"
 # Writeup goes below
 +++
 
-So the files are now all with your settings and basic configurations have been changed, it's a good time to preview the site and then upload to github
+The files are now updated with *your* settings and basic configurations. It's a good time to preview the site and then upload to github
+
+### Preview the Site
 
 1. Open a bash/terminal/command prompt and cd into your website folder
     - For example if your website files are at `c:\users\yourname\website`, then type `cd c:\users\yourname\website`
@@ -84,8 +86,12 @@ So the files are now all with your settings and basic configurations have been c
     hugo server -D -p 1313
     ```
 3. The above command will create a local server at port 1313. You can check your site by going to `http://localhost:1313` on your browser and perusing all the links there for sanity check
-4. Now if all the files are fine, we can commit the templates and deploy the output to our output repository
-5. You have already gone through steps 1-4 below while [downloading the template](/docs/create_your_website/download_template/), so you can skip it here if you want
+
+### Deploy site to github
+
+If your site looks good now, we can commit the templates and deploy the output to your **github output repository**
+
+You have already gone through steps 1-4 below while [downloading the template](/docs/create_your_website/download_template/), but you can do it here again just in case
 
     ```bash
     # 1. Check your remote url for template folder. They should point to the 
