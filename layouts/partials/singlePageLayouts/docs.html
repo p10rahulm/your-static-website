@@ -21,7 +21,6 @@
 {{$link := "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"}}
 {{partial "functions/load_external_js.html" (dict "external_url" $link "scratch" .Scratch "async" true "defer" false)}}
 {{end}}
-
 <style type="text/css">
     {{ partial "css_scripts/singlePageLayouts/docs.css" . | safeCSS }}
 </style>
@@ -35,7 +34,7 @@
     <div id="docs_top_container">
         <div id = "docs-menu" class="docs_menu">
             <div id = "docs-menu-heading" class="docs_menu_heading ">Menu</div>
-            <!--<div id="doc_menu_items_container">-->
+            <!--<div id = "docs-menu-items-container">-->
             {{range .Params.quick_links}}
             <div class="docs_menu_item"><a href="{{.url}}">{{.text | markdownify | truncate 50 }}</a></div>
             {{end}}

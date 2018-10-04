@@ -83,6 +83,32 @@
     text-align: center;
     height: calc(100vh - 71px - 50px);
     transition: margin-top 0.5s cubic-bezier(0,0,0.58,1) 200ms;
+    z-index: 0;
+    position: relative;
+    overflow-y: hidden;
+    z-index: 0;
+}
+.docs_menu:hover{
+    overflow-y: auto;
+}
+.docs_menu:hover::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+.docs_menu:hover::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+.docs_menu:hover::-webkit-scrollbar-thumb {
+    background-color: gray;
+}
+
+@media screen and (max-width: 1200px) {
+    .docs_menu{
+        height: calc(100vh - 81px - 50px - 30px);
+    }
 }
 .docs_menu_heading{
     padding-bottom: 0.5rem;
