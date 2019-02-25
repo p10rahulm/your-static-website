@@ -34,6 +34,6 @@ categories = ["Art"]
 
 # Writeup goes below
 +++
-This is an example of a thought. It's a thought for the day. From all things hard comes learning.
+Happiness is -
 
-Pot calling the kettle black is racism.
+Teaching your three year old to say "Azaadi" and "Apna time aayega" when her mother scolds her!
